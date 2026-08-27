@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>San Diego Tide Times Today | High & Low Tide</title>
+<meta name="description" content="Today's San Diego tide predictions from NOAA station 9410170, plus a 7-day high and low tide table.">
+<link rel="canonical" href="https://example.com/tides/california/san-diego/">
+<link rel="stylesheet" href="../../../assets/site.css">
+<!-- AdSense code goes here after approval. -->
+<style>
+.sourcebar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0}
+.sourcebar span{font-size:.78rem;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;color:var(--muted)}
+.tide-events{display:flex;gap:8px;flex-wrap:wrap}.tide-event{display:inline-block;padding:6px 8px;border-radius:10px;background:#f5f8f9;font-size:.84rem}
+.status-ok{background:#e9f7ee;border:1px solid #b8dfc7}.status-stale{background:#fff3cd;border:1px solid #eadb91}.status-error{background:#fdecec;border:1px solid #efc3c3}
+.chartbox{overflow:hidden}.chart-live{width:100%;height:auto;background:linear-gradient(180deg,#f7fbfc,#fff);border:1px solid #edf2f4;border-radius:18px}
+.chart-grid{stroke:#dfe6ea;stroke-width:1}.chart-path{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.chart-label{font-size:13px;fill:#7a8790}
+</style>
+</head>
+<body>
+<header><div class="wrap header"><a class="brand" href="../../../index.html">CoastalNow</a>
+<nav><a href="../../../index.html">Home</a><a href="../index.html">California</a></nav></div></header>
+<main class="wrap">
+<div class="breadcrumbs"><a href="../../../index.html">Home</a> / <a href="../index.html">California</a> / San Diego</div>
+<section class="hero">
+<p class="eyebrow">CA · NOAA STATION 9410170</p>
+<h1>San Diego Tide Times Today</h1>
+<p class="lede">High and low tide predictions for San Diego, California, using NOAA/NOS/CO-OPS station 9410170.</p>
+<div class="sourcebar">
+<span>Datum: MLLW</span><span>Units: feet</span><span>Local time: LST/LDT</span><span>Station: San Diego 9410170</span>
+</div>
+</section>
+
+<div class="demo {{STATUS_CLASS}}">
+<strong>{{STATUS_TITLE}}</strong> {{STATUS_TEXT}}
+</div>
+
+<section class="stats">
+<div class="stat"><small>Next High Tide</small><strong>{{NEXT_HIGH_TIME}}</strong><small>{{NEXT_HIGH_HEIGHT}}</small></div>
+<div class="stat"><small>Next Low Tide</small><strong>{{NEXT_LOW_TIME}}</strong><small>{{NEXT_LOW_HEIGHT}}</small></div>
+<div class="stat"><small>Station</small><strong>9410170</strong><small>San Diego, CA</small></div>
+<div class="stat"><small>Last data update</small><strong>{{UPDATED_SHORT}}</strong><small>{{UPDATED_ZONE}}</small></div>
+</section>
+
+<div class="ad">ADVERTISEMENT PLACEHOLDER</div>
+
+<section class="panel chartbox">
+<p class="eyebrow">NOAA PREDICTION CURVE</p>
+<h2>Predicted water level today</h2>
+<p class="meta">30-minute NOAA prediction interval · heights relative to MLLW.</p>
+{{SVG_CHART}}
+</section>
+
+<section class="panel">
+<p class="eyebrow">7-DAY OUTLOOK</p>
+<h2>San Diego high & low tide table</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Date</th><th>High tides</th><th>Low tides</th></tr></thead>
+<tbody>{{TABLE_ROWS}}</tbody>
+</table>
+</div>
+</section>
+
+<section class="two">
+<div class="panel">
+<p class="eyebrow">DATA SOURCE</p><h2>NOAA station information</h2>
+<p><strong>San Diego, CA — Station 9410170</strong></p>
+<p class="meta">Latitude 32.71419 · Longitude -117.17358 · Reference datum MLLW.</p>
+<p>This page is generated from NOAA CO-OPS prediction data. Tide predictions are not the same as observed water levels.</p>
+</div>
+<div class="panel">
+<p class="eyebrow">SAFETY</p><h2>Use appropriate caution</h2>
+<p>Tide predictions can differ from actual water levels due to weather and local conditions. Do not rely on this page as the sole source for navigation or safety decisions.</p>
+</div>
+</section>
+</main>
+<footer><div class="wrap footer"><strong>CoastalNow</strong><div><a href="../../../about/index.html">About</a> · <a href="../../../privacy/index.html">Privacy</a></div></div></footer>
+</body></html>
