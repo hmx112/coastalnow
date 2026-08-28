@@ -106,11 +106,12 @@ def validate_curve(items: list[dict], start: date, end: date) -> list[dict]:
 def fetch_live() -> dict:
     now = datetime.now(LOCAL_TZ)
     start = now.date()
-    end = start + timedelta(days=6)
+    display_end = start + timedelta(days=6)
+    context_end = start + timedelta(days=7)
     curve_end = start + timedelta(days=1)
     hilo_payload = api_get({
         "begin_date": start.strftime("%Y%m%d"),
-        "end_date": end.strftime("%Y%m%d"),
+        "end_date": context_end.strftime("%Y%m%d"),
         "product": "predictions",
         "interval": "hilo",
     })
@@ -134,10 +135,10 @@ def fetch_live() -> dict:
         "datum": "MLLW",
         "units": "feet",
         "time_zone_mode": "LST/LDT",
-        "range": {"start": start.isoformat(), "end": end.isoformat()},
+        "range": {"start": start.isoformat(), "end": display_end.isoformat()},
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_at_local": now.isoformat(timespec="seconds"),
-        "hilo": validate_hilo(hilo_payload.get("predictions", []), start, end),
+        "hilo": validate_hilo(hilo_payload.get("predictions", []), start, context_end),
         "curve": validate_curve(curve_payload.get("predictions", []), start, curve_end),
     }
 
@@ -325,6 +326,31 @@ def render_chart_and_events(data: dict, today: date) -> str:
     return svg + '<div class="tide-list">' + ''.join(event_cards) + '</div>'
 
 
+def next_same_type_event(data: dict, day: date, tide_type: str):
+    """Return the first same-type tide after the given local calendar day."""
+    candidates = []
+    for event in data.get("hilo", []):
+        if event["type"] != tide_type:
+            continue
+        dt = parse_noaa_dt(event["t"])
+        if dt.date() > day:
+            candidates.append((dt, event))
+    return min(candidates, key=lambda x: x[0]) if candidates else None
+
+
+def next_tide_note(data: dict, day: date, tide_type: str) -> str:
+    """Show the next same-type tide when this calendar day has only one."""
+    grouped = grouped_hilo(data)
+    if len(grouped[day][tide_type]) != 1:
+        return ""
+    nxt = next_same_type_event(data, day, tide_type)
+    if not nxt:
+        return ""
+    dt, _ = nxt
+    arrow = "↑" if tide_type == "H" else "↓"
+    return f'<span class="next-tide-note">Next {arrow} {fmt_time(dt)} {dt.strftime("%a")}</span>'
+
+
 def desktop_forecast_rows(data: dict, start: date) -> str:
     grouped = grouped_hilo(data)
     rows = []
@@ -334,19 +360,29 @@ def desktop_forecast_rows(data: dict, start: date) -> str:
         sub = "Today" if i == 0 else ("Tomorrow" if i == 1 else day.strftime("%A"))
         highs = ''.join(f'<span class="pill-event">↑ {fmt_time(parse_noaa_dt(e["t"]))} · {fmt_height(float(e["v"]))}</span>' for e in grouped[day]["H"]) or '—'
         lows = ''.join(f'<span class="pill-event low">↓ {fmt_time(parse_noaa_dt(e["t"]))} · {fmt_height(float(e["v"]))}</span>' for e in grouped[day]["L"]) or '—'
+        highs += next_tide_note(data, day, "H")
+        lows += next_tide_note(data, day, "L")
         rows.append(f'<tr><td class="day"><strong>{day_label}</strong><span>{sub}</span></td><td>{highs}</td><td>{lows}</td></tr>')
     return ''.join(rows)
 
 
-def mobile_day(day: date, events: list[dict], label: str) -> str:
+def mobile_day(data: dict, day: date, events: list[dict], label: str) -> str:
     cells = []
     for event in events:
         kind = "High" if event["type"] == "H" else "Low"
         arrow = "↑" if event["type"] == "H" else "↓"
         cells.append(f'<div class="mobile-event">{arrow} {kind} · {fmt_time(parse_noaa_dt(event["t"]))} · {fmt_height(float(event["v"]))}</div>')
+    grouped = grouped_hilo(data)
+    for tide_type, kind in (("H", "High"), ("L", "Low")):
+        if len(grouped[day][tide_type]) == 1:
+            nxt = next_same_type_event(data, day, tide_type)
+            if nxt:
+                dt, _ = nxt
+                cells.append(f'<div class="mobile-event next-note">Next {kind} · {fmt_time(dt)} {dt.strftime("%a")}</div>')
     if not cells:
         cells.append('<div class="mobile-event">No tide events available</div>')
-    return f'''<article class="mobile-day"><div class="mobile-day-head"><strong>{day.strftime('%a, %b')} {day.day}</strong><span>{label}</span></div><div class="mobile-events">{''.join(cells)}</div></article>'''
+    day_text = day.strftime("%a, %b") + f" {day.day}"
+    return f'<article class="mobile-day"><div class="mobile-day-head"><strong>{day_text}</strong><span>{label}</span></div><div class="mobile-events">{"".join(cells)}</div></article>'
 
 
 def mobile_forecast(data: dict, start: date) -> str:
@@ -355,8 +391,8 @@ def mobile_forecast(data: dict, start: date) -> str:
     for i in range(7):
         day = start + timedelta(days=i)
         label = "Today" if i == 0 else ("Tomorrow" if i == 1 else day.strftime("%A"))
-        days.append(mobile_day(day, grouped[day]["all"], label))
-    return f'''<div class="mobile-days">{''.join(days[:3])}<div id="moreForecast" class="more-forecast" hidden>{''.join(days[3:])}</div><button class="forecast-toggle" id="forecastToggle" type="button" aria-expanded="false" aria-controls="moreForecast">Show all 7 days</button></div>'''
+        days.append(mobile_day(data, day, grouped[day]["all"], label))
+    return f'<div class="mobile-days">{"".join(days[:3])}<div id="moreForecast" class="more-forecast" hidden>{"".join(days[3:])}</div><button class="forecast-toggle" id="forecastToggle" type="button" aria-expanded="false" aria-controls="moreForecast">Show all 7 days</button></div>'
 
 
 def data_notice(mode: str, message: str = "") -> str:
@@ -420,7 +456,8 @@ def build_preview() -> tuple[dict, datetime]:
         [(4,16,-0.1,'L'),(10,40,4.4,'H'),(15,51,1.5,'L'),(21,35,6.1,'H')],
         [(4,46,0.3,'L'),(11,12,4.5,'H'),(16,35,1.4,'L'),(22,3,5.7,'H')],
         [(5,18,0.7,'L'),(11,46,4.6,'H'),(17,23,1.3,'L'),(22,34,5.3,'H')],
-        [(5,53,1.0,'L'),(12,23,4.7,'H'),(18,17,1.2,'L'),(23,9,5.0,'H')],
+        [(5,53,1.0,'L'),(12,23,4.7,'H'),(18,17,1.2,'L')],
+        [(0,59,3.8,'H'),(6,2,2.0,'L'),(12,52,5.8,'H'),(20,21,1.1,'L')],
     ]
     hilo=[]
     for i, events in enumerate(daily):
