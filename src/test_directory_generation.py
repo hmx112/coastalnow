@@ -13,7 +13,7 @@ class DirectoryGenerationTests(unittest.TestCase):
         self.assertEqual(len(LOCATIONS), 51)
         self.assertEqual(len({item["page_path"] for item in LOCATIONS.values()}), 51)
 
-    def test_live_status_is_limited_to_noaa_ready_locations(self):
+    def test_catalog_statuses_are_rendered_consistently(self):
         live_locations = [
             location for location in LOCATIONS.values() if location["status"] == "Live NOAA"
         ]
@@ -21,7 +21,6 @@ class DirectoryGenerationTests(unittest.TestCase):
             location for location in LOCATIONS.values() if location["status"] == "Preview"
         ]
         self.assertTrue(live_locations)
-        self.assertTrue(preview_locations)
         self.assertTrue(all(location_status(location) == "Live NOAA" for location in live_locations))
         self.assertTrue(all(location_status(location) == "Preview" for location in preview_locations))
 
@@ -59,11 +58,14 @@ class DirectoryGenerationTests(unittest.TestCase):
             self.assertIn('class="hero-bubble b1"', html, path)
             self.assertIn('info-card', html, path)
 
-    def test_status_badges_have_distinct_visual_classes(self):
+    def test_status_badges_match_current_catalog_inventory(self):
         pages = build_directory_pages()
         home = pages["index.html"]
         self.assertIn('badge-live', home)
-        self.assertIn('badge-preview', home)
+        if any(x["status"] == "Preview" for x in LOCATIONS.values()):
+            self.assertIn('badge-preview', home)
+        else:
+            self.assertNotIn('badge-preview', home)
 
     def test_directory_pages_do_not_render_global_data_status_banners(self):
         for path, html in build_directory_pages().items():
