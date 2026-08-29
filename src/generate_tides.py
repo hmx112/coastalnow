@@ -508,7 +508,7 @@ def data_notice(mode: str, message: str = "") -> str:
 def unavailable_fragments(now: datetime, message: str) -> dict:
     return {
         "DATA_NOTICE": data_notice("error", message),
-        "HERO_DATE": now.strftime("%A, %d").replace(" 0", " "),
+        "HERO_DATE": now.strftime("%A, %B %d").replace(" 0", " "),
         "UPDATED_TEXT": "Live NOAA refresh pending",
         "TIDE_CARDS": '<div class="tide-grid"><div class="unavailable-card">Next high tide unavailable.</div><div class="unavailable-card">Next low tide unavailable.</div></div>',
         "STATUS_STRIP": '<div class="status-strip"><span class="status-dot"></span><strong>Current tide direction unavailable</strong></div>',
