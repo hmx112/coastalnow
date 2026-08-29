@@ -1,0 +1,19 @@
+name: Test UI polish
+
+on:
+  push:
+    branches:
+      - "fix/unify-logo-sort-locations"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/unify-logo-sort-locations
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run directory regression tests
+        run: python src/test_directory_generation.py
