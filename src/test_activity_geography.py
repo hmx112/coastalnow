@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from locations import LOCATIONS
+from locations import LOCATIONS, validate_activity_geography
 from site_generator import build_directory_pages
 
 ROOT = Path(__file__).resolve().parent
@@ -45,6 +45,27 @@ class ActivityGeographyTests(unittest.TestCase):
                 self.assertTrue(math.isfinite(bearing), item["slug"])
                 self.assertGreaterEqual(bearing, 0, item["slug"])
                 self.assertLess(bearing, 360, item["slug"])
+
+    def test_validation_rejects_missing_and_invalid_activity_points(self):
+        with self.assertRaisesRegex(ValueError, "example:shore_point"):
+            validate_activity_geography({"slug": "example", "activity": {}})
+        with self.assertRaisesRegex(ValueError, "example:marine_point:latitude"):
+            validate_activity_geography({
+                "slug": "example",
+                "activity": {
+                    "shore_point": {"latitude": 34.0, "longitude": -77.0},
+                    "marine_point": {"latitude": 100.0, "longitude": -77.0},
+                },
+            })
+        with self.assertRaisesRegex(ValueError, "example:coast_bearing"):
+            validate_activity_geography({
+                "slug": "example",
+                "activity": {
+                    "shore_point": {"latitude": 34.0, "longitude": -77.0},
+                    "marine_point": {"latitude": 33.9, "longitude": -76.9},
+                    "coast_bearing": 360,
+                },
+            })
 
     def test_loaded_locations_preserve_activity_metadata(self):
         for slug, location in LOCATIONS.items():
