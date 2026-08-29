@@ -4,17 +4,30 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-LIVE_NOAA = {"san-diego", "los-angeles"}
+LIVE_NOAA_FILE = ROOT / "data" / "live_noaa.json"
 
+def _load_live_noaa_config():
+    if not LIVE_NOAA_FILE.exists():
+        return {}
+    raw = json.loads(LIVE_NOAA_FILE.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError("live_noaa.json must contain a JSON object keyed by location slug")
+    return raw
 
+LIVE_NOAA_CONFIG = _load_live_noaa_config()
+LIVE_NOAA = set(LIVE_NOAA_CONFIG)
 def _load_locations():
     raw = json.loads((ROOT / "data" / "locations.json").read_text(encoding="utf-8"))
     locations = {}
     for item in raw:
         slug = item["slug"]
+        live_config = LIVE_NOAA_CONFIG.get(slug, {})
+        station_id = live_config.get("station_id", item.get("station_id"))
+        station_name = live_config.get("station_name") or item.get("station_name") or f'{item["name"]}, {item["state_code"]}'
         locations[slug] = {
             **item,
-            "station": item.get("station_id"),
+            "station_id": station_id,
+            "station": station_id,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
             "page_title": f'{item["name"]} Tide Times Today | CoastalNow',
@@ -24,7 +37,7 @@ def _load_locations():
             "nearby": [],
             "time_label": "Pacific time" if item.get("timezone") == "America/Los_Angeles" else "Local time",
             "units_label": "Feet",
-            "station_name": item.get("station_name") or f'{item["name"]}, {item["state_code"]}',
+            "station_name": station_name,
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",
         }
     if "los-angeles" not in locations:
