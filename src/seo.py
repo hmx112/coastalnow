@@ -5,7 +5,7 @@ import json
 import re
 from html import escape
 
-SITE_ORIGIN = "https://coastalnow.pages.dev"
+SITE_ORIGIN = "https://coastalnowtides.com"
 
 
 def canonical_url(path: str) -> str:
