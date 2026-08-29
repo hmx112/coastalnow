@@ -16,5 +16,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run alphanumeric station tests
-        run: python src/test_alphanumeric_stations.py
+      - name: Verify official alphanumeric NOAA station
+        run: |
+          python - <<'PY'
+          from locations import LOCATIONS
+          from promote_location import validate_noaa_compatibility
+          validate_noaa_compatibility(LOCATIONS["emerald-isle"], "TEC2837", "hilo-derived")
+          print("TEC2837 NOAA high/low validation passed")
+          PY
+      - name: Run full regression suite
+        run: |
+          python src/test_alphanumeric_stations.py
+          python src/test_timezones.py
+          python src/test_location_promotion.py
+          python src/test_generate_tides.py
+          python src/test_directory_generation.py
+          python src/test_seo_generation.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
