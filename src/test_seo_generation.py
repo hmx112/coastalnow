@@ -1,6 +1,7 @@
 import json
 import sys
 import unittest
+from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -82,6 +83,7 @@ class SeoGenerationTests(unittest.TestCase):
         location = next(x for x in LOCATIONS.values() if x["status"] == "Preview")
         html = (
             '<!doctype html><html><head><title>Preview</title>'
+            '<meta name="description" content="Old preview description">'
             '<link rel="canonical" href="https://example.com/tides/example/">'
             '</head><body>demo</body></html>'
         )
@@ -89,6 +91,11 @@ class SeoGenerationTests(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex,follow">', updated)
         self.assertIn(
             f'<link rel="canonical" href="{canonical_url(location["page_path"])}">',
+            updated,
+        )
+        self.assertIn(f'<title>{escape(location["page_title"])}</title>', updated)
+        self.assertIn(
+            f'<meta name="description" content="{escape(location["meta_description"], quote=True)}">',
             updated,
         )
         self.assertNotIn("example.com", updated)
@@ -116,6 +123,16 @@ class SeoGenerationTests(unittest.TestCase):
             self.assertTrue(page.exists(), location["slug"])
             html = page.read_text(encoding="utf-8")
             self.assertNotIn("https://example.com", html, location["slug"])
+            self.assertIn(
+                f'<title>{escape(location["page_title"])}</title>',
+                html,
+                location["slug"],
+            )
+            self.assertIn(
+                f'<meta name="description" content="{escape(location["meta_description"], quote=True)}">',
+                html,
+                location["slug"],
+            )
             self.assertIn(
                 f'<link rel="canonical" href="{canonical_url(location["page_path"])}">',
                 html,
