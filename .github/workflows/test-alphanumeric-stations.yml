@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verify official alphanumeric NOAA station
+        env:
+          PYTHONPATH: src
         run: |
           python - <<'PY'
           from locations import LOCATIONS
