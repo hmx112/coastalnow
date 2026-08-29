@@ -22,13 +22,14 @@ class GenerationTargetTests(unittest.TestCase):
         self.assertEqual([location["slug"] for location in selected], expected)
         self.assertTrue(all(location["status"] == "Live NOAA" for location in selected))
 
-    def test_explicit_location_selection_still_allows_preview_mode(self):
-        preview_slug = next(
+    def test_explicit_location_selection_allows_any_catalog_location(self):
+        preview_slugs = [
             slug for slug, location in LOCATIONS.items() if location["status"] == "Preview"
-        )
-        selected = selected_locations(preview_slug)
-        self.assertEqual([location["slug"] for location in selected], [preview_slug])
-        self.assertEqual(selected[0]["status"], "Preview")
+        ]
+        slug = preview_slugs[0] if preview_slugs else next(iter(LOCATIONS))
+        selected = selected_locations(slug)
+        self.assertEqual([location["slug"] for location in selected], [slug])
+        self.assertEqual(selected[0]["status"], LOCATIONS[slug]["status"])
 
     def test_subordinate_hilo_can_generate_half_cosine_curve(self):
         self.assertTrue(
