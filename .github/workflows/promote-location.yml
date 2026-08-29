@@ -46,7 +46,7 @@ jobs:
       - name: Generate promoted location
         run: python src/generate_tides.py --location "${{ steps.request.outputs.slug }}"
 
-      - name: Rebuild directories
+      - name: Rebuild directories and SEO artifacts
         run: python src/build_site.py
 
       - name: Run regression tests
@@ -54,6 +54,7 @@ jobs:
           python src/test_location_promotion.py
           python src/test_generate_tides.py
           python src/test_directory_generation.py
+          python src/test_seo_generation.py
           python src/test_integrated_render.py
           python src/test_san_diego_fixture.py
 
@@ -65,7 +66,7 @@ jobs:
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
           git rm "$request"
-          git add src/data/live_noaa.json public/data public/tides public/index.html
+          git add src/data/live_noaa.json public/data public/tides public/index.html public/sitemap.xml public/robots.txt
           git commit -m "Promote ${slug} to Live NOAA"
           git push origin HEAD
 
@@ -79,5 +80,5 @@ jobs:
           if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
             gh pr view "$BRANCH" --json url
           else
-            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA prediction compatibility validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations may use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
+            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA prediction compatibility and SEO indexing policy validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations may use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
           fi

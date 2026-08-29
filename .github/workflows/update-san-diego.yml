@@ -33,7 +33,7 @@ jobs:
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
 
-      - name: Render directory pages from location catalog
+      - name: Render directories and SEO artifacts
         run: python src/build_site.py
 
       - name: Run offline regression tests
@@ -41,6 +41,7 @@ jobs:
           python src/test_location_promotion.py
           python src/test_generate_tides.py
           python src/test_directory_generation.py
+          python src/test_seo_generation.py
           python src/test_integrated_render.py
           python src/test_san_diego_fixture.py
 
@@ -48,7 +49,7 @@ jobs:
         run: |
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
-          git add public/data public/tides public/index.html
+          git add public/data public/tides public/index.html public/sitemap.xml public/robots.txt
           git diff --cached --quiet || git commit -m "Update live NOAA tide data"
           git push
 
