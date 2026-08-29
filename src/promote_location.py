@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Promote an existing CoastalNow catalog location to Live NOAA safely."""
+"""Promote existing CoastalNow catalog locations to Live NOAA safely."""
 from __future__ import annotations
 
 import argparse
@@ -21,7 +21,6 @@ PREDICTION_MODES = {"harmonic", "hilo-derived"}
 
 
 def load_catalog(path: Path = CATALOG) -> dict[str, dict]:
-    """Return the normalized catalog used by the site generator."""
     return {slug: dict(location) for slug, location in LOCATIONS.items()}
 
 
@@ -63,6 +62,36 @@ def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
         validate_prediction_mode(str(entry.get("prediction_mode", "harmonic")))
 
 
+def normalize_request_payload(payload: dict) -> list[dict]:
+    if not isinstance(payload, dict):
+        raise ValueError("promotion request must be a JSON object")
+    raw_items = payload.get("locations") if "locations" in payload else [payload]
+    if not isinstance(raw_items, list) or not raw_items:
+        raise ValueError("promotion request must contain at least one location")
+    items = []
+    seen = set()
+    for raw in raw_items:
+        if not isinstance(raw, dict):
+            raise ValueError("each promotion location must be an object")
+        missing = [key for key in ("slug", "station_id", "station_name") if key not in raw]
+        if missing:
+            raise ValueError("Promotion request missing fields: " + ", ".join(missing))
+        slug = str(raw["slug"]).strip()
+        if slug in seen:
+            raise ValueError(f"duplicate promotion slug: {slug}")
+        seen.add(slug)
+        station_name = str(raw["station_name"]).strip()
+        if not station_name:
+            raise ValueError("station_name is required")
+        items.append({
+            "slug": slug,
+            "station_id": validate_station_id(str(raw["station_id"])),
+            "station_name": station_name,
+            "prediction_mode": validate_prediction_mode(str(raw.get("prediction_mode", "harmonic"))),
+        })
+    return items
+
+
 def _request(station_id: str, params: dict) -> dict:
     query = {
         "station": station_id,
@@ -82,12 +111,7 @@ def _request(station_id: str, params: dict) -> dict:
     return payload
 
 
-def validate_noaa_compatibility(
-    location: dict,
-    station_id: str,
-    prediction_mode: str = "harmonic",
-) -> None:
-    """Validate the NOAA products required by the selected prediction mode."""
+def validate_noaa_compatibility(location: dict, station_id: str, prediction_mode: str = "harmonic") -> None:
     prediction_mode = validate_prediction_mode(prediction_mode)
     tz = ZoneInfo(location["timezone"])
     start = datetime.now(tz).date()
@@ -97,15 +121,12 @@ def validate_noaa_compatibility(
         "end_date": end.strftime("%Y%m%d"),
         "product": "predictions",
     }
-
     hilo = _request(station_id, {**dates, "interval": "hilo"}).get("predictions", [])
     types = {item.get("type") for item in hilo}
     if not hilo or not {"H", "L"} <= types:
         raise RuntimeError("Station does not provide usable NOAA high/low predictions")
-
     if prediction_mode == "hilo-derived":
         return
-
     curve = _request(station_id, {**dates, "interval": "30"}).get("predictions", [])
     valid_curve = []
     for item in curve:
@@ -122,6 +143,39 @@ def validate_noaa_compatibility(
         )
 
 
+def promote_batch(
+    items: list[dict],
+    *,
+    config_path: Path = LIVE_CONFIG,
+    validate_network: bool = False,
+) -> dict[str, dict]:
+    catalog = load_catalog()
+    normalized = normalize_request_payload({"locations": items})
+    for item in normalized:
+        slug = item["slug"]
+        if slug not in catalog:
+            raise ValueError(f"Unknown location slug: {slug}")
+        if validate_network:
+            validate_noaa_compatibility(
+                catalog[slug], item["station_id"], item["prediction_mode"]
+            )
+
+    config = load_live_config(config_path)
+    updated = dict(config)
+    for item in normalized:
+        updated[item["slug"]] = {
+            "station_id": item["station_id"],
+            "station_name": item["station_name"],
+            "prediction_mode": item["prediction_mode"],
+        }
+    validate_config(updated, catalog)
+    config_path.write_text(
+        json.dumps(dict(sorted(updated.items())), indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return updated
+
+
 def promote(
     slug: str,
     station_id: str,
@@ -131,38 +185,23 @@ def promote(
     config_path: Path = LIVE_CONFIG,
     validate_network: bool = False,
 ) -> dict[str, dict]:
-    catalog = load_catalog()
-    if slug not in catalog:
-        raise ValueError(f"Unknown location slug: {slug}")
-    station_id = validate_station_id(station_id)
-    station_name = station_name.strip()
-    if not station_name:
-        raise ValueError("station_name is required")
-    prediction_mode = validate_prediction_mode(prediction_mode)
-
-    if validate_network:
-        validate_noaa_compatibility(catalog[slug], station_id, prediction_mode)
-
-    config = load_live_config(config_path)
-    config[slug] = {
-        "station_id": station_id,
-        "station_name": station_name,
-        "prediction_mode": prediction_mode,
-    }
-    validate_config(config, catalog)
-    config_path.write_text(
-        json.dumps(dict(sorted(config.items())), indent=2) + "\n",
-        encoding="utf-8",
+    return promote_batch(
+        [{
+            "slug": slug,
+            "station_id": station_id,
+            "station_name": station_name,
+            "prediction_mode": prediction_mode,
+        }],
+        config_path=config_path,
+        validate_network=validate_network,
     )
-    return config
 
 
 def load_request(path: Path) -> dict:
     request = json.loads(path.read_text(encoding="utf-8"))
-    required = {"slug", "station_id", "station_name"}
-    missing = sorted(required - set(request))
-    if missing:
-        raise ValueError("Promotion request missing fields: " + ", ".join(missing))
+    if not isinstance(request, dict):
+        raise ValueError("promotion request must be a JSON object")
+    normalize_request_payload(request)
     return request
 
 
@@ -173,11 +212,8 @@ def promote_request(
     validate_network: bool = True,
 ) -> dict[str, dict]:
     request = load_request(request_path)
-    return promote(
-        request["slug"],
-        str(request["station_id"]),
-        request["station_name"],
-        prediction_mode=str(request.get("prediction_mode", "harmonic")),
+    return promote_batch(
+        normalize_request_payload(request),
         config_path=config_path,
         validate_network=validate_network,
     )
@@ -189,11 +225,7 @@ def main() -> int:
     parser.add_argument("--slug")
     parser.add_argument("--station-id")
     parser.add_argument("--station-name")
-    parser.add_argument(
-        "--prediction-mode",
-        choices=sorted(PREDICTION_MODES),
-        default="harmonic",
-    )
+    parser.add_argument("--prediction-mode", choices=sorted(PREDICTION_MODES), default="harmonic")
     parser.add_argument("--validate-network", action="store_true")
     parser.add_argument("--validate-config", action="store_true")
     args = parser.parse_args()
@@ -205,8 +237,9 @@ def main() -> int:
 
     if args.request:
         request = load_request(args.request)
-        promote_request(args.request, validate_network=True)
-        print(f'Promoted {request["slug"]} to Live NOAA from request file.')
+        items = normalize_request_payload(request)
+        promote_batch(items, validate_network=True)
+        print("Promoted to Live NOAA: " + ", ".join(item["slug"] for item in items))
         return 0
 
     if not (args.slug and args.station_id and args.station_name):
