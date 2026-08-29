@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from locations import LOCATIONS
 from site_generator import build_directory_pages, location_status
 
-TIDE_TEMPLATE = Path(__file__).parent / "templates" / "tide-page.html"
+PUBLIC = Path(__file__).resolve().parents[1] / "public"
 MAIN_LOGO_WAVE = "M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0"
 
 
@@ -69,9 +69,10 @@ class DirectoryGenerationTests(unittest.TestCase):
             self.assertIn('class="hero-bubble b1"', html, path)
             self.assertIn('info-card', html, path)
 
-    def test_location_template_uses_same_logo_wave_as_directory_pages(self):
-        template = TIDE_TEMPLATE.read_text(encoding="utf-8")
-        self.assertIn(MAIN_LOGO_WAVE, template)
+    def test_rendered_location_pages_use_same_logo_wave_as_directory_pages(self):
+        for location in LOCATIONS.values():
+            html = (PUBLIC / location["page_path"]).read_text(encoding="utf-8")
+            self.assertIn(MAIN_LOGO_WAVE, html, location["slug"])
 
     def test_status_badges_match_current_catalog_inventory(self):
         pages = build_directory_pages()
