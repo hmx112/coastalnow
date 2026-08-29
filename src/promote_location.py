@@ -6,6 +6,7 @@ import argparse
 import json
 import math
 import re
+import time
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta
@@ -125,7 +126,7 @@ def normalize_request_payload(payload: dict) -> list[dict]:
     return items
 
 
-def _request(station_id: str, params: dict) -> dict:
+def _request(station_id: str, params: dict, retries: int = 3) -> dict:
     query = {
         "station": station_id,
         "datum": "MLLW",
@@ -137,11 +138,21 @@ def _request(station_id: str, params: dict) -> dict:
     }
     url = API + "?" + urllib.parse.urlencode(query)
     req = urllib.request.Request(url, headers={"User-Agent": "CoastalNow station validator"})
-    with urllib.request.urlopen(req, timeout=30) as response:
-        payload = json.loads(response.read().decode("utf-8"))
-    if "error" in payload:
-        raise RuntimeError(f"NOAA API error: {payload['error']}")
-    return payload
+    last_error = None
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            if "error" in payload:
+                raise RuntimeError(f"NOAA API error: {payload['error']}")
+            return payload
+        except Exception as exc:
+            last_error = exc
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+    raise RuntimeError(
+        f"NOAA request failed for station {station_id} after {retries} attempts: {last_error}"
+    )
 
 
 def validate_noaa_compatibility(location: dict, station_id: str, prediction_mode: str = "harmonic") -> None:
@@ -189,9 +200,14 @@ def promote_batch(
         if slug not in catalog:
             raise ValueError(f"Unknown location slug: {slug}")
         if validate_network:
-            validate_noaa_compatibility(
-                catalog[slug], item["station_id"], item["prediction_mode"]
-            )
+            try:
+                validate_noaa_compatibility(
+                    catalog[slug], item["station_id"], item["prediction_mode"]
+                )
+            except Exception as exc:
+                raise RuntimeError(
+                    f"{slug} ({item['station_id']}) NOAA validation failed: {exc}"
+                ) from exc
 
     config = load_live_config(config_path)
     updated = dict(config)

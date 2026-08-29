@@ -32,11 +32,10 @@ class SeoGenerationTests(unittest.TestCase):
             "https://coastalnow.pages.dev/tides/california/san-diego/",
         )
 
-    def test_live_pages_index_and_preview_pages_noindex(self):
+    def test_indexing_policy_supports_live_and_preview_states(self):
         live = next(x for x in LOCATIONS.values() if x["status"] == "Live NOAA")
-        preview = next(x for x in LOCATIONS.values() if x["status"] == "Preview")
         self.assertEqual(robots_directive(live), "index,follow")
-        self.assertEqual(robots_directive(preview), "noindex,follow")
+        self.assertEqual(robots_directive({"status": "Preview"}), "noindex,follow")
 
     def test_sitemap_includes_directories_and_only_live_detail_pages(self):
         xml = build_sitemap(LOCATIONS)
@@ -80,7 +79,8 @@ class SeoGenerationTests(unittest.TestCase):
         )
 
     def test_preview_html_gets_noindex_and_real_canonical(self):
-        location = next(x for x in LOCATIONS.values() if x["status"] == "Preview")
+        location = dict(next(iter(LOCATIONS.values())))
+        location["status"] = "Preview"
         html = (
             '<!doctype html><html><head><title>Preview</title>'
             '<meta name="description" content="Old preview description">'
