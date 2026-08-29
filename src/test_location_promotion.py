@@ -42,6 +42,27 @@ class PromotionTests(unittest.TestCase):
 
             self.assertEqual(result["monterey"]["station_id"], "9413450")
 
+    def test_subordinate_request_preserves_prediction_mode(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            config_path = tmp_path / "live_noaa.json"
+            config_path.write_text("{}", encoding="utf-8")
+            request_path = tmp_path / "north-myrtle-beach.json"
+            request_path.write_text(json.dumps({
+                "slug": "north-myrtle-beach",
+                "station_id": "8660642",
+                "station_name": "North Myrtle Beach, ICWW, SC",
+                "prediction_mode": "hilo-derived"
+            }), encoding="utf-8")
+
+            result = promote_request(
+                request_path,
+                config_path=config_path,
+                validate_network=False,
+            )
+
+            self.assertEqual(result["north-myrtle-beach"]["prediction_mode"], "hilo-derived")
+
     def test_push_workflow_is_non_recursive(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github" / "workflows" / "promote-location.yml").read_text(encoding="utf-8")
         self.assertIn('"promotion/**"', workflow)
@@ -63,6 +84,17 @@ class PromotionTests(unittest.TestCase):
                 "not-a-real-place": {
                     "station_id": "9413450",
                     "station_name": "Example"
+                }
+            }, catalog)
+
+    def test_config_rejects_unknown_prediction_mode(self):
+        catalog = load_catalog()
+        with self.assertRaises(ValueError):
+            validate_config({
+                "north-myrtle-beach": {
+                    "station_id": "8660642",
+                    "station_name": "North Myrtle Beach, ICWW, SC",
+                    "prediction_mode": "made-up-mode"
                 }
             }, catalog)
 

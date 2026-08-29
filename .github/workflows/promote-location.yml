@@ -79,5 +79,5 @@ jobs:
           if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
             gh pr view "$BRANCH" --json url
           else
-            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA High/Low and 30-minute predictions validated automatically. The request file is removed before the PR, so merging cannot retrigger promotion."
+            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA prediction compatibility validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations may use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
           fi
