@@ -1,0 +1,20 @@
+name: Test alphanumeric NOAA stations
+
+on:
+  push:
+    branches:
+      - "feat/alphanumeric-noaa-stations"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run alphanumeric station tests
+        run: python src/test_alphanumeric_stations.py
