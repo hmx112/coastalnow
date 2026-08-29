@@ -76,8 +76,26 @@ def location_breadcrumbs(location: dict) -> list[tuple[str, str]]:
 
 
 def normalize_location_html(html: str, location: dict) -> str:
-    """Apply current indexing, canonical, and breadcrumb policy to a location page."""
+    """Apply current title, description, indexing, canonical, and breadcrumb policy."""
     canonical = canonical_url(location["page_path"])
+    title = escape(location["page_title"])
+    description = escape(location["meta_description"], quote=True)
+
+    if not re.search(r"<title[^>]*>.*?</title>", html, flags=re.IGNORECASE | re.DOTALL):
+        raise ValueError(f'Location page has no title: {location.get("slug", "unknown")}')
+    html = re.sub(
+        r"<title[^>]*>.*?</title>",
+        f"<title>{title}</title>",
+        html,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    html = re.sub(
+        r'<meta\s+name=["\']description["\'][^>]*>\s*',
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
     html = re.sub(
         r'<link\s+rel=["\']canonical["\'][^>]*>\s*',
         "",
@@ -97,6 +115,7 @@ def normalize_location_html(html: str, location: dict) -> str:
         flags=re.IGNORECASE | re.DOTALL,
     )
     tags = (
+        f'<meta name="description" content="{description}">\n'
         f'<meta name="robots" content="{robots_directive(location)}">\n'
         f'<link rel="canonical" href="{canonical}">\n'
         + breadcrumb_json_ld(location_breadcrumbs(location))
