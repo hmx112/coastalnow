@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta
@@ -34,9 +35,9 @@ def load_live_config(path: Path = LIVE_CONFIG) -> dict[str, dict]:
 
 
 def validate_station_id(station_id: str) -> str:
-    station_id = station_id.strip()
-    if not station_id.isdigit() or len(station_id) != 7:
-        raise ValueError("NOAA station_id must be a 7-digit numeric string")
+    station_id = station_id.strip().upper()
+    if not re.fullmatch(r"[A-Z0-9]{7}", station_id):
+        raise ValueError("NOAA station_id must be a 7-character alphanumeric string")
     return station_id
 
 
