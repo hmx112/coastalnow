@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 LIVE_NOAA_FILE = ROOT / "data" / "live_noaa.json"
 
+
 def _load_live_noaa_config():
     if not LIVE_NOAA_FILE.exists():
         return {}
@@ -14,8 +15,14 @@ def _load_live_noaa_config():
         raise ValueError("live_noaa.json must contain a JSON object keyed by location slug")
     return raw
 
+
 LIVE_NOAA_CONFIG = _load_live_noaa_config()
 LIVE_NOAA = set(LIVE_NOAA_CONFIG)
+
+TIMEZONE_BY_SLUG = {
+    "destin": "America/Chicago",
+    "panama-city-beach": "America/Chicago",
+}
 
 TIMEZONE_BY_STATE = {
     "CA": "America/Los_Angeles",
@@ -25,12 +32,18 @@ TIMEZONE_BY_STATE = {
 
 
 def _timezone_for(item):
-    return item.get("timezone") or TIMEZONE_BY_STATE.get(item.get("state_code"), "America/New_York")
+    return (
+        item.get("timezone")
+        or TIMEZONE_BY_SLUG.get(item.get("slug"))
+        or TIMEZONE_BY_STATE.get(item.get("state_code"), "America/New_York")
+    )
 
 
 def _time_label_for(timezone):
     if timezone == "America/Los_Angeles":
         return "Pacific time"
+    if timezone == "America/Chicago":
+        return "Central time"
     if timezone == "America/New_York":
         return "Eastern time"
     return "Local time"
