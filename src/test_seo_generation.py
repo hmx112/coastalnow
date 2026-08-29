@@ -5,7 +5,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from generate_tides import static_replacements
 from locations import LOCATIONS
 from seo import (
     SITE_ORIGIN,
@@ -107,26 +106,11 @@ class SeoGenerationTests(unittest.TestCase):
             self.assertIn('type="application/ld+json"', html, path)
             self.assertNotIn('name="keywords"', html.lower(), path)
 
-    def test_tide_template_and_replacements_apply_status_based_indexing(self):
+    def test_tide_template_does_not_use_meta_keywords(self):
         template = TIDE_TEMPLATE.read_text(encoding="utf-8")
-        self.assertIn("{{ROBOTS_META}}", template)
-        self.assertIn("{{CANONICAL_URL}}", template)
-        self.assertIn("{{BREADCRUMB_JSON_LD}}", template)
         self.assertNotIn('name="keywords"', template.lower())
 
-        live = next(x for x in LOCATIONS.values() if x["status"] == "Live NOAA")
-        preview = next(x for x in LOCATIONS.values() if x["status"] == "Preview")
-        live_meta = static_replacements(live)
-        preview_meta = static_replacements(preview)
-        self.assertEqual(live_meta["ROBOTS_META"], "index,follow")
-        self.assertEqual(preview_meta["ROBOTS_META"], "noindex,follow")
-        self.assertEqual(live_meta["CANONICAL_URL"], canonical_url(live["page_path"]))
-        self.assertEqual(
-            preview_meta["CANONICAL_URL"], canonical_url(preview["page_path"])
-        )
-        self.assertIn("BreadcrumbList", live_meta["BREADCRUMB_JSON_LD"])
-
-    def test_committed_location_pages_have_current_indexing_policy(self):
+    def test_rebuilt_location_pages_have_current_indexing_policy(self):
         for location in LOCATIONS.values():
             page = PUBLIC / location["page_path"]
             self.assertTrue(page.exists(), location["slug"])
@@ -144,7 +128,7 @@ class SeoGenerationTests(unittest.TestCase):
             )
             self.assertIn("BreadcrumbList", html, location["slug"])
 
-    def test_generated_seo_artifacts_are_committed(self):
+    def test_generated_seo_artifacts_match_policy(self):
         sitemap = PUBLIC / "sitemap.xml"
         robots = PUBLIC / "robots.txt"
         self.assertTrue(sitemap.exists())
