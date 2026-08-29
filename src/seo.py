@@ -75,8 +75,8 @@ def location_breadcrumbs(location: dict) -> list[tuple[str, str]]:
     ]
 
 
-def normalize_preview_html(html: str, location: dict) -> str:
-    """Apply current noindex/canonical/breadcrumb policy to a legacy Preview page."""
+def normalize_location_html(html: str, location: dict) -> str:
+    """Apply current indexing, canonical, and breadcrumb policy to a location page."""
     canonical = canonical_url(location["page_path"])
     html = re.sub(
         r'<link\s+rel=["\']canonical["\'][^>]*>\s*',
@@ -97,11 +97,18 @@ def normalize_preview_html(html: str, location: dict) -> str:
         flags=re.IGNORECASE | re.DOTALL,
     )
     tags = (
-        '<meta name="robots" content="noindex,follow">\n'
+        f'<meta name="robots" content="{robots_directive(location)}">\n'
         f'<link rel="canonical" href="{canonical}">\n'
         + breadcrumb_json_ld(location_breadcrumbs(location))
         + "\n"
     )
     if "</head>" not in html.lower():
-        raise ValueError(f'Preview page has no </head>: {location.get("slug", "unknown")}')
+        raise ValueError(f'Location page has no </head>: {location.get("slug", "unknown")}')
     return re.sub(r"</head>", tags + "</head>", html, count=1, flags=re.IGNORECASE)
+
+
+def normalize_preview_html(html: str, location: dict) -> str:
+    """Backward-compatible Preview normalizer used by tests and migration code."""
+    if location.get("status") == "Live NOAA":
+        raise ValueError("normalize_preview_html requires a Preview location")
+    return normalize_location_html(html, location)
