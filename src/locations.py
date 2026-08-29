@@ -58,12 +58,16 @@ def _load_locations():
         station_id = live_config.get("station_id", item.get("station_id"))
         station_name = live_config.get("station_name") or item.get("station_name") or f'{item["name"]}, {item["state_code"]}'
         prediction_mode = live_config.get("prediction_mode", "harmonic")
+        coverage_mode = live_config.get("coverage_mode", "local")
+        coverage_distance_miles = live_config.get("coverage_distance_miles")
         timezone = _timezone_for(item)
         locations[slug] = {
             **item,
             "station_id": station_id,
             "station": station_id,
             "prediction_mode": prediction_mode,
+            "coverage_mode": coverage_mode,
+            "coverage_distance_miles": coverage_distance_miles,
             "timezone": timezone,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
@@ -84,7 +88,7 @@ def _load_locations():
             "station_id": "9410660", "station": "9410660", "station_name": "Los Angeles, CA",
             "latitude": 33.72, "longitude": -118.272, "timezone": "America/Los_Angeles",
             "datum": "MLLW", "units": "english", "source": "NOAA/NOS/CO-OPS",
-            "prediction_mode": "harmonic",
+            "prediction_mode": "harmonic", "coverage_mode": "local", "coverage_distance_miles": None,
             "page_path": "tides/california/los-angeles/index.html", "data_path": "data/los-angeles.json",
             "page_title": "Los Angeles Tide Times Today | CoastalNow",
             "meta_description": "Los Angeles tide times and tide outlook for Los Angeles, California.",
