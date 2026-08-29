@@ -1,0 +1,89 @@
+name: Promote tide location
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Existing CoastalNow location slug (for example: monterey)"
+        required: true
+        type: string
+      station_id:
+        description: "7-digit NOAA prediction station ID"
+        required: true
+        type: string
+      station_name:
+        description: "NOAA station display name (for example: Monterey, CA)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    env:
+      SLUG: ${{ inputs.slug }}
+      STATION_ID: ${{ inputs.station_id }}
+      STATION_NAME: ${{ inputs.station_name }}
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate promotion against NOAA
+        run: |
+          python src/promote_location.py \
+            --slug "$SLUG" \
+            --station-id "$STATION_ID" \
+            --station-name "$STATION_NAME" \
+            --validate-network
+
+      - name: Generate promoted location
+        run: python src/generate_tides.py --location "$SLUG"
+
+      - name: Rebuild directories
+        run: python src/build_site.py
+
+      - name: Run regression tests
+        run: |
+          python src/test_location_promotion.py
+          python src/test_generate_tides.py
+          python src/test_directory_generation.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
+
+      - name: Commit and push preview branch
+        id: push
+        run: |
+          branch="live-${SLUG}-$(date -u +%Y%m%d%H%M%S)"
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add src/data/live_noaa.json public/data public/tides public/index.html
+          git commit -m "Promote ${SLUG} to Live NOAA"
+          git push -u origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.push.outputs.branch }}
+        run: |
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Promote ${SLUG} to Live NOAA" \
+            --body "Validated NOAA high/low and 30-minute predictions, generated the live tide page, rebuilt directories, and passed regression tests." \
+          || {
+            echo "PR creation was not permitted. The preview branch was still pushed successfully."
+            echo "Open the repository compare page for branch: $BRANCH"
+          }
