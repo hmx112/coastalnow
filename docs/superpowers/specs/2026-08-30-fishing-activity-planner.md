@@ -1,7 +1,7 @@
 # CoastalNow Fishing Activity Planner — Design Specification
 
 Date: 2026-08-30
-Status: Approved design pending implementation plan
+Status: Conversation design approved; written specification pending final user review
 Scope: Phase 1 Fishing only, with shared foundations for future Surfing, Beach, and Swimming
 
 ## 1. Product direction
@@ -13,24 +13,22 @@ CoastalNow will expand from a tide-only site into a **Coastal Conditions & Activ
 
 The existing tide site remains intact. Phase 1 adds Fishing as a new activity layer without moving, renaming, redirecting, or otherwise changing any existing indexed location URL.
 
-Phase 1 Fishing is explicitly defined as **shore / pier / nearshore recreational fishing conditions**. Offshore or boat-fishing conditions are out of scope because their weather, sea-state, and safety thresholds differ materially and should become a separate future activity if needed.
+Phase 1 Fishing is explicitly **shore / pier / nearshore recreational fishing conditions**. Offshore or boat-fishing is out of scope because its weather, sea-state, and safety thresholds differ materially.
 
-The Fishing Score is a planning and comparison metric, not a safety guarantee. Official warnings, local closures, signs, lifeguards, harbor authorities, and emergency guidance always take priority over CoastalNow scores.
+The Fishing Score is a planning and comparison metric, not a safety guarantee. Official warnings, closures, signs, lifeguards, harbor authorities, and emergency guidance always take priority.
 
-## 2. Non-negotiable URL and SEO constraints
+## 2. URL and SEO constraints
 
-The current location hierarchy is preserved exactly. Existing URLs such as:
+Existing URLs remain exactly as they are, for example:
 
 - `/tides/california/san-diego/`
 
-remain unchanged.
+Fishing adds only:
 
-Fishing adds only new URLs:
+- national hub: `/fishing/`
+- location Fishing page: `/tides/california/san-diego/fishing/`
 
-- National Fishing hub: `/fishing/`
-- Location Fishing page: `/tides/california/san-diego/fishing/`
-
-Future activities will follow the same pattern:
+Future activities follow the same additive pattern:
 
 - `/surfing/` and `/tides/.../surfing/`
 - `/beach/` and `/tides/.../beach/`
@@ -38,17 +36,15 @@ Future activities will follow the same pattern:
 
 No existing page relocation, directory reorganization, or redirect is part of this project.
 
-New indexable pages receive canonical URLs, BreadcrumbList structured data, internal links, and sitemap entries. Existing sitemap entries remain untouched. Activity pages with insufficient critical data are generated for continuity but remain `noindex,follow` until they meet the data-quality threshold.
+New indexable pages receive canonical URLs, BreadcrumbList structured data, internal links, and sitemap entries. Activity pages with insufficient critical data are generated for continuity but remain `noindex,follow` until they meet the data-quality threshold.
 
 ## 3. Location catalog is the source of truth
 
-The existing location catalog remains the single source of truth for site geography. No separate list of Fishing locations will be maintained.
+The existing location catalog remains the single source of truth for site geography. No separate list of Fishing locations is maintained.
 
 The core invariant is:
 
 > **Adding one CoastalNow location automatically expands every enabled activity.**
-
-Conceptually:
 
 ```text
 LOCATIONS
@@ -59,25 +55,23 @@ LOCATIONS
   └── Swimming    (future)
 ```
 
-A future location such as Galveston is added once to the location catalog. The build and update pipelines then automatically:
+A future location such as Galveston is added once. The pipelines then automatically:
 
-1. create or refresh its tide output,
+1. create or refresh Tide output,
 2. collect common coastal-condition data,
 3. run every enabled activity scorer,
 4. create `/tides/texas/galveston/fishing/`,
-5. add it to `/fishing/` when ranking eligibility is satisfied,
-6. add appropriate internal links,
+5. add the location to `/fishing/` when ranking eligibility is satisfied,
+6. create bidirectional internal links,
 7. add indexable activity URLs to the sitemap.
 
 No later “create Galveston Fishing” action is required.
 
-Any hard-coded references to “51 locations” in user-facing generated content must be replaced by values derived from `len(LOCATIONS)` or the corresponding eligible activity count.
+Hard-coded references to “51 locations” in generated UI must be replaced with catalog-derived counts.
 
-## 4. Location metadata for activities
+## 4. Activity geographic metadata
 
-Existing NOAA tide-station coordinates must not be assumed to represent the coastal location itself. This matters especially for locations using a nearby NOAA tide station.
-
-The location catalog will therefore be extended with activity-specific geographic metadata without changing existing tide metadata:
+NOAA tide-station coordinates must not be treated as the location itself, especially for Nearby NOAA locations. The location catalog is extended with activity-specific geography without changing existing Tide metadata:
 
 ```json
 {
@@ -89,28 +83,26 @@ The location catalog will therefore be extended with activity-specific geographi
 }
 ```
 
-Meaning:
+Definitions:
 
-- `shore_point`: representative shoreline / pier area used for weather and shore alerts.
-- `marine_point`: representative nearshore point used for marine forecasts and marine alerts.
-- `coast_bearing`: optional shoreline-facing bearing used only when a scorer needs wind-direction exposure. Missing bearing must not be fabricated; direction-based adjustments are skipped and confidence may be reduced if the activity depends on them.
+- `shore_point`: representative shoreline / pier point for local weather and shore alerts.
+- `marine_point`: representative nearshore point for marine forecasts and marine alerts.
+- `coast_bearing`: optional **seaward-facing bearing in degrees clockwise from true north**. It is used only for directional exposure rules such as onshore wind. It is never guessed when missing.
 
-The existing NOAA station ID and station coordinates remain Tide-specific.
+Existing NOAA station identifiers and station coordinates remain Tide-specific.
 
-For future location promotion, activity coordinates become part of location validation. The user should not need a second activity-registration workflow after a location is added.
+Future location promotion validates activity coordinates as part of adding the location, so the user never needs a separate activity-registration workflow.
 
 ## 5. Activity Registry
 
 Activities are registered once in a common registry. Fishing is the only enabled activity in Phase 1.
 
-Conceptual structure:
-
 ```python
 ACTIVITIES = {
     "fishing": {
         "enabled": True,
-        "scorer": FishingScorer,
         "slug": "fishing",
+        "scorer": FishingScorer,
         "requires": {...},
     },
     "surfing": {"enabled": False, ...},
@@ -119,75 +111,72 @@ ACTIVITIES = {
 }
 ```
 
-Generation loops over the location catalog and enabled activities rather than maintaining page lists manually:
+Generation is registry-driven:
 
 ```text
-for each location in LOCATIONS
-    for each enabled activity in ACTIVITIES
-        normalize inputs
+for location in LOCATIONS
+    for activity in ENABLED_ACTIVITIES
+        obtain normalized conditions
         score activity
         render activity page
 ```
 
-Enabling a future activity therefore produces that activity for all catalog locations from the same pipeline, subject to data availability and indexability rules.
+Enabling a future activity therefore expands that activity to all catalog locations without maintaining a second geographic list.
 
-## 6. Separation of data collection, scoring, and rendering
+## 6. Data architecture
 
-The activity architecture has three independent layers:
+### 6.1 Provider adapters
 
-### 6.1 Condition providers
+Provider-specific HTTP and parsing code is isolated from scoring.
 
-Provider adapters obtain source data and normalize it into a provider-independent schema.
-
-Phase 1 data policy:
+Phase 1 sources:
 
 - **Tides:** existing NOAA CO-OPS prediction cache.
 - **Weather / wind / precipitation:** U.S. National Weather Service (NWS) official API.
-- **Weather and coastal alerts:** NWS official active-alert API, queried for both shore and marine points where appropriate.
-- **Marine conditions:** NWS marine grid / point forecast where structured marine values are available.
-- **Water temperature:** NOAA CO-OPS observations when the relevant official station supports it; missing water temperature remains unknown.
+- **Alerts:** NWS official active alerts for relevant shore and marine zones/points.
+- **Marine conditions:** NWS marine grid / point forecast where structured values are available.
+- **Water temperature:** NOAA CO-OPS observation where a relevant official station supports it.
 - **Solar / lunar timing:** deterministic local calculation with tested astronomical functions; no AI API.
 
-A third-party marine provider may be added only after its commercial-use and redistribution terms are explicitly verified. No unverified free API is part of Phase 1 production scoring.
+A third-party marine provider may be added only after commercial-use and redistribution rights are explicitly verified. No unverified free API is part of Phase 1 production scoring.
+
+Provider code should cache and deduplicate NWS metadata, forecast-grid, and alert-zone requests so location growth does not cause unnecessary repeated calls. Alert retrieval should prefer reusable NWS zone/grid identifiers where that preserves correct geographic matching.
 
 ### 6.2 Common Condition Snapshot
 
-Providers write one normalized condition snapshot per location. This is shared by all activity scorers to avoid repeated API calls as additional activities are enabled.
-
-Target storage:
+One normalized snapshot is written per location:
 
 `public/data/conditions/<location-slug>.json`
 
-The snapshot contains source timestamps and provenance for every field. Missing data is represented as missing/unknown, never invented.
+It contains local-time hourly values plus source timestamps and provenance. Missing data is `unknown`; it is never invented.
 
-### 6.3 Activity scoring output
+### 6.3 Activity result
 
-Each activity writes its own deterministic result:
+Fishing writes:
 
 `public/data/activities/fishing/<location-slug>.json`
 
-The Fishing output contains:
+The result includes:
 
-- activity and location identifiers,
+- location/activity IDs,
 - input snapshot timestamp,
 - scorer version,
-- Today and Tomorrow scores,
+- Today and Tomorrow result,
 - hourly component scores,
-- best valid three-hour window,
-- rating,
-- confidence,
-- safety state,
-- active safety caps / hard stops,
-- rule-based explanation reasons,
-- data provenance references.
+- best three-hour window,
+- rating and confidence,
+- Safety Gate state,
+- caps / hard stops,
+- rule-based reason codes,
+- source provenance references.
 
-Keeping common raw conditions separate from activity results prevents duplicated weather/marine payloads when Surfing, Beach, and Swimming are later added.
+Common raw conditions remain separate so later activities reuse the same provider calls.
 
 ## 7. Fishing Quality Score
 
-Fishing is scored hourly before a daily score is selected. The quality model represents **general shore / pier / nearshore recreational fishing suitability**, not species-specific fishing.
+Scoring happens in each location’s **local timezone**. “Today” and “Tomorrow” always mean local calendar days for that location.
 
-Initial weights:
+Initial hourly quality weights:
 
 | Factor | Weight |
 | --- | ---: |
@@ -199,25 +188,25 @@ Initial weights:
 | Moon / Solunar | 5% |
 | Water temperature | 5% |
 
-Weights are configuration, not scattered constants. Future tuning changes the Fishing rules module, not the shared engine.
+Weights and thresholds live in Fishing configuration, not the shared engine.
 
-### 7.1 Tide factor
+### 7.1 Tide
 
-The Tide factor uses the existing NOAA high/low events and curve. It must not claim that tide-height change equals measured current velocity.
+Use existing NOAA high/low events and tide curve. Do not describe tide-height change as measured current velocity.
 
-The generic Phase 1 model favors moving water and reduces the score near slack water. For each interval between adjacent official turning points, phase progress is calculated from 0 to 1 and a smooth movement potential is derived from the middle of the cycle, for example:
+Between adjacent official turning points, compute phase progress from 0 to 1 and favor moving water using a smooth function such as:
 
 ```text
 movement_potential = sin(pi × phase_progress)
 ```
 
-The component is then mapped into a bounded score. Rising and falling tides are treated symmetrically in Phase 1 because a nationwide species-agnostic engine does not have evidence to prefer one direction everywhere.
+Rising and falling tides are treated symmetrically in Phase 1 because the score is species-agnostic and nationwide.
 
-### 7.2 Wind factor
+### 7.2 Wind quality
 
-Wind scoring favors light to moderate conditions and declines nonlinearly as sustained wind and gusts increase. A starting rule table is:
+Starting sustained-wind quality bands:
 
-| Sustained wind | Base quality |
+| Wind | Quality |
 | --- | ---: |
 | 4–12 mph | 100 |
 | 0–3 mph | 85 |
@@ -226,13 +215,13 @@ Wind scoring favors light to moderate conditions and declines nonlinearly as sus
 | 25–30 mph | 25 |
 | >30 mph | 0 |
 
-Gusts apply additional quality penalties and may activate Safety Gate caps independently of this quality score.
+Gusts can reduce quality and independently activate Safety Gate caps.
 
-### 7.3 Wave factor
+### 7.3 Wave quality
 
-The Fishing quality factor favors manageable nearshore conditions. The starting generic band is intentionally conservative:
+Starting significant-wave-height quality bands:
 
-| Significant wave height | Base quality |
+| Height | Quality |
 | --- | ---: |
 | 1–3 ft | 100 |
 | <1 ft | 85 |
@@ -241,168 +230,156 @@ The Fishing quality factor favors manageable nearshore conditions. The starting 
 | 7–9 ft | 20 |
 | >9 ft | 0 |
 
-Wave period modifies this factor and is also evaluated separately by the Safety Gate. This score is a generic shoreline planning heuristic, not a physical safety limit.
+Wave period modifies quality and is evaluated again by the Safety Gate. These are CoastalNow generic planning heuristics, not official safety limits.
 
-### 7.4 Weather factor
+### 7.4 Weather quality
 
-Cloud cover by itself should not materially penalize fishing. Precipitation likelihood and intensity reduce quality; thunder/lightning is handled by the Safety Gate rather than being allowed to average against favorable factors.
+Cloud cover alone is not a major penalty. Starting precipitation-probability mapping:
 
-Starting precipitation-probability mapping:
-
-| Probability | Base quality |
+| Probability | Quality |
 | --- | ---: |
 | 0–20% | 100 |
 | 21–40% | 75 |
 | 41–60% | 50 |
 | >60% | 30 |
 
-Heavy rainfall can reduce this further.
+Heavy rain can reduce it further. Thunder/lightning is handled by Safety Gate, not averaged against favorable quality factors.
 
-### 7.5 Time-of-day factor
+### 7.5 Time of day
 
-Dawn and dusk receive a modest general boost without making night or daytime fishing invalid:
+Local dawn/dusk receive a modest boost; normal daylight remains good; full night is reduced but not zero. Solar times are calculated per location rather than using fixed clock windows.
 
-- dawn/dusk window: highest score,
-- normal daylight: good,
-- twilight: good to very good,
-- full night: reduced but not zero.
+### 7.6 Moon / Solunar
 
-The exact window is derived from local solar times rather than a fixed clock time.
+This remains a low-weight secondary factor. Its effect is intentionally narrow so uncertain biological assumptions cannot dominate weather, waves, tides, or safety.
 
-### 7.6 Moon / Solunar factor
+### 7.7 Water temperature
 
-Moon/Solunar remains a low-weight secondary factor. It must never dominate Tide, Wind, Wave, Weather, or Safety.
+Water temperature has only 5% weight because useful ranges vary by target species. It detects broad extremes rather than claiming a nationwide optimum.
 
-Phase 1 constrains its effect to a narrow range so uncertain biological assumptions cannot create large score swings. The public explanation describes it as a secondary timing factor, not a guarantee of fish activity.
+## 8. Missing data
 
-### 7.7 Water-temperature factor
-
-Water temperature has only 5% weight because ideal temperature varies by target species. Phase 1 uses it mainly to detect broad extremes rather than claiming one nationwide optimum.
-
-If water temperature is unavailable, it is not guessed. The component receives a neutral-unknown treatment and confidence is lowered; its weight is not redistributed to other factors.
-
-## 8. Missing-data behavior
-
-Missing data must never make a location look artificially better.
+Missing data must never improve a location artificially.
 
 Rules:
 
-- Safety-critical data is never replaced with optimistic defaults.
-- Missing optional quality data is not reweighted into the remaining factors.
-- A missing optional factor uses an explicit neutral-unknown component and lowers confidence.
-- Missing wave/marine safety information lowers the page to `Limited` unless an equivalent verified official field is available.
-- Failure to retrieve active alert state is `Unavailable`, not “no alerts.”
+- safety-critical data never receives optimistic defaults,
+- weights are never redistributed because an input is missing,
+- an optional unknown quality factor uses a fixed **neutral-unknown score of 50** and lowers confidence,
+- missing marine/wave safety context lowers the page to `Limited` unless an equivalent verified official source is available,
+- alert retrieval failure is `Unavailable`, never “no alerts.”
 
-This prevents a page with unknown sea state from receiving a top national rank simply because its remaining factors are favorable.
+Water temperature and detailed Solunar data are optional. Tide, wind, weather, active alert state, and sufficient marine context for shoreline risk are critical to normal ranking eligibility.
 
 ## 9. Safety Gate
 
-The Safety Gate is separate from the Fishing Quality Score and always runs after quality scoring.
+Safety is evaluated separately after Fishing Quality Score:
 
 ```text
 Quality Score
     ↓
 Safety penalties
     ↓
-Safety score cap
+Safety cap
     ↓
 Hard-stop override
     ↓
 Final Hourly Score / Status
 ```
 
-General formula when no hard stop is active:
+When no hard stop is active:
 
 ```text
-final = min(quality - safety_penalties, safety_cap_if_any)
+final = min(quality - penalties, active_safety_cap)
 ```
 
-When a hard-stop condition applies:
+If no cap exists, the cap is effectively 100.
+
+When a hard stop applies:
 
 ```text
 status = NOT RECOMMENDED
 ```
 
-A raw quality score may still be stored internally for diagnostics, but the public page must never display it as the recommendation while a hard stop is active.
+The raw quality score may remain in diagnostic JSON but must not be presented as the public recommendation during a hard stop.
 
-### 9.1 Safety precedence
+Safety precedence:
 
-1. Hard stop
-2. Lowest active safety cap
-3. Cumulative safety penalties
-4. Quality score
+1. hard stop,
+2. lowest active cap,
+3. cumulative penalties,
+4. quality score.
 
-Multiple hazards cannot cancel one another or be averaged away.
+Hazards never average one another away.
 
-### 9.2 Official-alert hard stops
+### 9.1 Official-alert hard stops
 
-The initial hard-stop event map includes severe hazards relevant to shoreline access or immediate outdoor exposure, such as:
+The initial configuration includes severe shoreline/outdoor hazards such as:
 
-- Tornado Warning
-- Hurricane Warning
-- Tropical Storm Warning
-- Storm Surge Warning
-- Tsunami Warning
-- Extreme Wind Warning
-- Severe Thunderstorm Warning
-- High Surf Warning
-- Special Marine Warning when it covers the relevant nearshore point
-- other NWS event names explicitly added to the tested hard-stop configuration
+- Tornado Warning,
+- Hurricane Warning,
+- Tropical Storm Warning,
+- Storm Surge Warning,
+- Tsunami Warning,
+- Extreme Wind Warning,
+- Severe Thunderstorm Warning,
+- High Surf Warning,
+- Special Marine Warning when it affects the relevant nearshore area.
 
-Coastal Flood Warning and Flash Flood Warning are treated conservatively when they affect the shore point or access area. Event handling is configuration-driven so wording and regional NWS products can be maintained without changing the engine.
+Coastal Flood Warning and Flash Flood Warning are handled conservatively when they affect the shore/access area.
 
-A Rip Current Statement or equivalent explicit high-rip-current hazard receives a strong cap or hard stop according to the NWS product severity and text. Because Phase 1 combines shore and pier fishing into one general score, the public output remains conservative and explains the shoreline hazard rather than implying pier fishing is automatically safe.
+A Rip Current Statement or equivalent explicit high-rip-current hazard receives a strong cap or hard stop according to the official product severity/text. Because the Phase 1 score combines shore and pier use, public messaging stays conservative and does not imply pier fishing is automatically safe.
 
-### 9.3 Wind safety thresholds
+The event mapping is configuration-driven and unit-tested so changing NWS terminology does not require rewriting the engine.
 
-The starting rule-based wind safety tiers are deliberately more conservative than the quality bands:
+### 9.2 Wind safety
 
-- sustained 25–29 mph or gust 35–39 mph: cap at 59,
-- sustained 30–39 mph or gust 40–49 mph: cap at 39,
-- sustained >=40 mph or gust >=50 mph: hard stop unless a stricter official warning already applies.
+Starting heuristic tiers:
 
-These are CoastalNow planning heuristics, not official boating criteria, and are documented as such.
+- sustained 25–29 mph or gust 35–39 mph → cap 59,
+- sustained 30–39 mph or gust 40–49 mph → cap 39,
+- sustained >=40 mph or gust >=50 mph → hard stop unless an even stricter official warning already controls the state.
 
-### 9.4 Wave-exposure heuristic
+These are CoastalNow planning thresholds, not official boating criteria.
 
-Wave height is not evaluated alone. A configurable **exposure heuristic** combines significant wave height and period. It is intentionally not labeled “physical wave energy.”
+### 9.3 Wave-exposure safety
 
-Starting form:
+Height is not evaluated alone. Use a configurable **exposure heuristic** that is explicitly not described as physical wave energy:
 
 ```text
 exposure_index = height_ft × sqrt(period_seconds / 8)
 ```
 
-Initial tiers:
+Starting tiers:
 
-- <3.5: normal quality evaluation,
-- 3.5–5.5: caution,
-- 5.5–7.5: maximum 69,
-- 7.5–9.5: maximum 39,
-- >=9.5: hard stop / Not Recommended.
+- <3.5 → normal evaluation,
+- 3.5–5.5 → caution,
+- 5.5–7.5 → cap 69,
+- 7.5–9.5 → cap 39,
+- >=9.5 → hard stop / Not Recommended.
 
-When coast bearing is known, strong onshore gusts can move the exposure one severity tier higher. If coast bearing is unavailable, no direction adjustment is invented.
+When `coast_bearing` exists, sufficiently strong onshore gusts can increase exposure by one severity tier. Missing bearing never triggers a guessed directional adjustment.
 
-All thresholds live in configuration and require fixture tests at each boundary before production changes.
+Every threshold is configuration and receives boundary fixtures.
 
-### 9.5 Thunder / lightning
+### 9.4 Thunder / lightning
 
-Active thunderstorm warnings are hard stops. When structured NWS hourly thunder probability is available, elevated thunder risk can cap the affected hours even before a warning exists. If that structured field is unavailable, the engine relies on official alerts and forecast condition text rather than inventing a probability.
+Active severe-thunderstorm warnings are hard stops. When structured NWS hourly thunder probability is available, elevated risk can cap affected hours before a warning exists. If that field is unavailable, the engine may use official alert state and explicit forecast-condition text but must not invent a thunder probability.
 
-### 9.6 Other hazards
+### 9.5 Other hazards
 
-Small Craft Advisories, dense fog, heavy rain, excessive heat/cold, coastal flooding, and similar products do not all produce the same result. They are mapped by relevance to shore/pier fishing into:
+Small Craft Advisories, dense fog, heavy rain, excessive temperature, coastal flooding, and similar products are explicitly mapped to one of:
 
 - information only,
 - penalty,
 - score cap,
 - hard stop.
 
-The mapping is explicit, versioned, and unit-tested.
+No generic “all advisories subtract N points” rule is allowed.
 
-## 10. Fishing ratings
+## 10. Ratings
 
-Normal quality ratings use:
+Normal quality ratings:
 
 - 90–100: Excellent
 - 75–89: Good
@@ -410,157 +387,127 @@ Normal quality ratings use:
 - 40–59: Poor
 - 0–39: Unfavorable
 
-`NOT RECOMMENDED` is reserved for Safety Gate hard stops and is not simply another quality band.
+`NOT RECOMMENDED` is reserved for Safety Gate hard stops.
 
-## 11. Hourly scoring and the daily score
+## 11. Hourly and daily score
 
-The engine scores each usable hour independently for Today and Tomorrow.
+The engine evaluates hourly conditions for Today and Tomorrow.
 
-The user-facing daily score represents the best **safe, continuous three-hour fishing window**, not a simple 24-hour average.
+The daily user-facing score is the best **safe continuous three-hour window**, not a 24-hour average.
 
-For each candidate three-hour window:
-
-- all three hours must have valid safety state,
-- no hour may be hard-stopped or unavailable,
-- a window confidence is derived from its three hourly confidences,
-- score continuity is favored using:
+A candidate window is valid only when all three hours have usable safety state and none is hard-stopped or unavailable.
 
 ```text
-window_score = 0.70 × mean(hourly_final_scores)
-             + 0.30 × min(hourly_final_scores)
+window_score = 0.70 × mean(hourly final scores)
+             + 0.30 × minimum(hourly final scores)
 ```
 
-This prevents one excellent hour from hiding a poor hour inside the recommended window.
+The minimum component penalizes a weak hour inside an otherwise good window.
 
-The highest valid three-hour window becomes:
+The highest valid window becomes:
 
-- Today’s Fishing Score,
-- Today’s rating,
+- Fishing Score,
+- rating,
 - Best Fishing Time.
 
-Tomorrow is calculated independently with the same rules.
+Tomorrow is calculated independently. If no valid three-hour window exists, the day is shown as Unavailable or Not Recommended depending on cause.
 
-If no valid three-hour window exists, the day is shown as unavailable or Not Recommended depending on the cause.
+## 12. Confidence
 
-## 12. Confidence model
-
-Confidence describes input completeness, not certainty about catching fish.
+Confidence measures **input completeness**, not the probability of catching fish.
 
 ### High
 
-All critical inputs for the selected window are fresh and available:
-
-- tide,
-- wind,
-- weather,
-- wave/marine conditions,
-- active alerts.
+Fresh Tide, Wind, Weather, Wave/Marine, and Alert inputs are all available for the chosen window, with optional supporting inputs also available.
 
 ### Medium
 
-All safety-critical inputs are available, but one secondary input such as water temperature or moon detail is missing or degraded.
+All safety-critical inputs are available, but one or more secondary inputs such as water temperature or detailed moon data are missing/degraded.
 
 ### Limited
 
-A major quality/safety context field such as structured marine wave data is missing, but enough information remains to render an informational page. Limited pages are excluded from top national rankings and are `noindex,follow` until sufficient data becomes available.
+Important marine/wave context is insufficient for normal national comparison, but enough data exists to render an informational page. Limited pages are excluded from primary ranking and use `noindex,follow`.
 
 ### Unavailable
 
-A critical safety input is unavailable, including active-alert retrieval, or core tide/weather/wind data cannot be validated. No normal Fishing Score is published and the page is excluded from ranking and indexing.
+Alert state or another critical safety/core input cannot be validated. No normal Fishing Score is published; the page is excluded from ranking and indexing.
 
 ## 13. Rule-based explanations
 
-No AI API is used for score generation or explanation text.
+No AI API is used for scoring or explanation text.
 
-Explanations are composed from deterministic rules tied to component scores and changes through the day, for example:
+Scorers emit structured reason codes, for example:
 
 - favorable tide movement,
 - light wind,
-- manageable wave conditions,
+- manageable sea state,
 - worsening afternoon gusts,
 - active coastal hazard,
-- missing marine observations.
+- unavailable marine context.
 
-The explanation layer receives structured reason codes from the scorer and maps them to approved sentence fragments. The same inputs therefore produce the same score and the same explanation.
+A deterministic explanation layer maps these codes to approved sentence fragments. Same inputs produce the same score and explanation.
 
 ## 14. National Fishing hub
 
 URL: `/fishing/`
 
-Purpose: answer activity-first discovery intent rather than act as a flat directory.
+Purpose: answer “where is fishing good today?” rather than provide a flat list.
 
 Required sections:
 
-1. Hero: `Best Fishing Conditions in the U.S. Today`
-2. Scope note: shore / pier / nearshore recreational fishing
-3. Today / Tomorrow switch
+1. `Best Fishing Conditions in the U.S. Today`
+2. shore / pier / nearshore scope note
+3. Today / Tomorrow control
 4. Top Locations Today
-5. #1 location explanation
+5. explanation for the #1 location
 6. Excellent / Good / Fair groups
 7. Poor / Unfavorable group
 8. Not Recommended safety group
 9. Limited / Unavailable data group
-10. Methodology / safety disclaimer
+10. methodology and safety disclaimer
 
-Ranking cards show:
+Ranking cards show location/state, score, rating, Best Fishing Time, short reasons, and Confidence.
 
-- location and state,
-- Fishing Score,
-- rating,
-- Best Fishing Time,
-- one or two top reason codes rendered as short text,
-- Confidence.
+Only High and Medium confidence locations can enter the primary numerical ranking. Limited/Unavailable locations remain visible in separate status groups.
 
-Only High and Medium confidence locations are eligible for the primary numerical ranking. Limited and Unavailable locations remain visible in separate status groups but cannot rank above fully evaluated locations.
-
-Every ranked location links to its location Fishing page.
-
-`This Weekend` is intentionally excluded from Phase 1 UI. The data contracts should not prevent adding it later.
+`This Weekend` is intentionally out of Phase 1 UI, while data contracts remain extensible.
 
 ## 15. Location Fishing page
 
-URL pattern:
+Pattern:
 
-`/tides/<state-slug>/<location-slug>/fishing/`
+`/tides/<state>/<location>/fishing/`
 
 Example:
 
 `/tides/california/san-diego/fishing/`
 
-Title pattern:
+Title: `San Diego Fishing Conditions Today | CoastalNow`
 
-`San Diego Fishing Conditions Today | CoastalNow`
+H1: `San Diego Fishing Conditions Today`
 
-H1 pattern:
+Breadcrumb: `Home → California → San Diego → Fishing`
 
-`San Diego Fishing Conditions Today`
+Required hierarchy:
 
-Breadcrumb:
+1. safety alert strip when applicable,
+2. Fishing Score / rating,
+3. Best Fishing Time,
+4. Confidence,
+5. hourly Fishing Score timeline,
+6. `Why this score?` factor breakdown,
+7. Today / Tomorrow outlook,
+8. fishing-relevant Tide summary,
+9. Wind / Wave / Weather summary,
+10. deterministic reasons,
+11. link to parent Tide page,
+12. link to `/fishing/`,
+13. future sibling activity links when enabled,
+14. safety/methodology disclaimer.
 
-`Home → California → San Diego → Fishing`
-
-Required page hierarchy:
-
-1. Safety alert strip, when applicable, above recommendation content.
-2. Fishing Score and rating.
-3. Best Fishing Time.
-4. Confidence.
-5. Hour-by-hour Fishing Score timeline.
-6. `Why this score?` factor breakdown.
-7. Today / Tomorrow outlook.
-8. Fishing-relevant tide summary.
-9. Wind / wave / weather summary.
-10. Rule-based reasons and expected deterioration/improvement.
-11. Link to detailed parent tide page.
-12. Link back to national Fishing hub.
-13. Future sibling activity links when those activities become enabled.
-14. Clear safety and methodology disclaimer.
-
-The Fishing page must not duplicate the full tide page. Detailed tide tables and charts remain on the parent Tide page; Fishing uses only the tide information needed for the activity decision.
+The Fishing page must not duplicate the full Tide forecast. Detailed Tide tables/charts remain on the parent page.
 
 ## 16. Bidirectional navigation
-
-The internal-link graph must support both discovery directions:
 
 ```text
 /fishing/
@@ -569,99 +516,98 @@ The internal-link graph must support both discovery directions:
   ↓
 /tides/california/san-diego/
   ↓
-future sibling activities
+future sibling activity pages
   ↓
-future /surfing/, /beach/, /swimming/
+future activity hubs
 ```
 
-The existing location Tide page receives a generated Activities section. In Phase 1 it contains Fishing and its current score/status.
+Existing location pages gain a generated Activities section. Phase 1 shows Fishing and its current score/status.
 
-The main homepage receives `Explore by activity` alongside the existing state-based discovery. In Phase 1 this contains Fishing. Future activity cards are generated from the Activity Registry.
+The homepage gains `Explore by activity` alongside state discovery. Cards are generated from Activity Registry so future activities appear automatically.
 
 ## 17. SEO and indexability
 
-Existing indexed URL behavior is preserved.
+Existing URL/indexing behavior is preserved.
 
-Fishing adds:
+Fishing adds `/fishing/` plus one generated Fishing URL per catalog location.
 
-- `/fishing/`, and
-- one generated Fishing URL per catalog location.
+A location Fishing page is `index,follow` only when it has a real Today result with High or Medium confidence. Limited and Unavailable pages use `noindex,follow`.
 
-A Fishing location page is `index,follow` only when the latest output is High or Medium confidence and contains a real computed Today result. Limited or Unavailable pages use `noindex,follow`.
+The sitemap includes existing indexable URLs, `/fishing/`, and only indexable location Fishing URLs. Canonicals always use `https://coastalnowtides.com`.
 
-The sitemap includes:
+## 18. Refresh and fail-safe policy
 
-- all existing indexable URLs,
-- `/fishing/`,
-- only indexable location Fishing pages.
+Tide predictions keep their current NOAA refresh cycle.
 
-As a result, page count can grow automatically with location count without exposing thin or unverified activity pages to search engines.
+### Full condition refresh
 
-Canonical URLs always use `https://coastalnowtides.com`.
+Weather, wind, marine conditions, optional water temperature, solar/lunar fields, scoring, hubs, and pages refresh every **3 hours**.
 
-## 18. Refresh and caching strategy
+### Safety alert refresh
 
-Tide predictions remain on the existing NOAA refresh cycle. Activity conditions run on a separate **three-hour schedule** because wind, weather, alerts, and marine conditions change more rapidly.
+Active NWS safety alerts refresh **hourly**, independently of the full three-hour condition cycle. A newly detected hard stop or safety cap must be able to update the affected activity page/hub without waiting for the next full forecast refresh.
 
-Activity refresh sequence:
+At scale, the alert adapter should group/collapse requests by reusable NWS zone or grid identifiers when correct, rather than blindly issuing two independent alert queries per location forever.
 
-1. load current location catalog,
-2. load verified tide caches,
+### Full refresh sequence
+
+1. load catalog,
+2. load verified Tide caches,
 3. fetch NWS shore weather/grid data,
 4. fetch NWS marine conditions,
-5. fetch active alerts for shore and marine points,
-6. fetch optional NOAA water temperature where supported,
+5. obtain current active alerts,
+6. fetch optional NOAA water temperature,
 7. calculate solar/lunar fields,
-8. write normalized condition snapshots,
+8. write Condition Snapshots,
 9. run all enabled activity scorers,
-10. write activity result JSON,
-11. render all activity location pages,
-12. render all activity hubs,
-13. update homepage activity links and parent-location activity links,
-14. rebuild sitemap and robots artifacts,
-15. run regression tests,
-16. commit generated output only if validation passes.
+10. write activity results,
+11. render location activity pages and hubs,
+12. rebuild homepage/location activity links,
+13. rebuild sitemap/robots,
+14. run regressions,
+15. commit only validated output.
 
-### Cache policy
+### Cache rules
 
-- Fresh validated provider response: use it.
-- Temporary provider failure with recent validated cache: use cache, mark stale source age, and lower confidence when appropriate.
-- Cache too old for a safe decision: do not calculate a normal score.
-- Alert API failure: never use a previous “no alert” result as proof that the location is currently safe. The safety state becomes Unavailable unless a recent alert cache is explicitly within a conservative freshness threshold.
+- fresh validated data → use,
+- temporary provider failure with sufficiently recent verified cache → use cache and downgrade confidence if appropriate,
+- data older than configured safe freshness → no normal score,
+- Alert API failure → never infer “no alert.”
 
-Freshness thresholds are configuration and must be tested.
+The initial alert-cache maximum age for publishing a normal safety state is **2 hours**. Beyond that, alert state becomes Unavailable until a fresh check succeeds. Full weather/marine forecast freshness for High/Medium eligibility is **6 hours**; older validated forecasts may render stale informational content but cannot remain High/Medium.
+
+These freshness values are configuration and receive boundary tests.
 
 ## 19. Automatic location-promotion integration
 
-The existing promotion workflow remains the location-entry point. It will be extended rather than replaced.
+The existing location promotion workflow is extended, not replaced.
 
-After a location is validated and its Tide page is generated, the workflow must:
+After Tide validation/generation it must:
 
-1. validate `activity.shore_point` and `activity.marine_point`,
-2. collect an initial common condition snapshot,
-3. run all enabled activity scorers,
-4. render all activity pages for the promoted location,
+1. validate shore/marine activity points,
+2. collect initial common conditions,
+3. run every enabled activity scorer,
+4. render every enabled activity page for the new location,
 5. rebuild activity hubs,
-6. rebuild homepage/state/location links,
+6. rebuild homepage/location links,
 7. rebuild sitemap,
-8. run activity and existing Tide/SEO regressions,
+8. run existing and activity regressions,
 9. include generated activity output in the same promotion PR.
 
-The important invariant is tested explicitly:
+Invariant:
 
-> A promoted location automatically appears in every enabled activity pipeline without a separate activity request.
+> A promoted location automatically enters every enabled activity pipeline without a separate activity request.
 
-If an activity cannot produce an indexable score due to provider coverage, the page is still generated with an explicit Limited/Unavailable state and `noindex,follow`; the Tide promotion itself does not silently fabricate activity data.
+If an activity cannot produce a normal result because provider coverage is insufficient, its page is still generated as Limited/Unavailable with `noindex,follow`. Tide promotion never fabricates activity data.
 
-## 20. Proposed module boundaries
+## 20. Module boundaries
 
-The target structure is intentionally modular:
+Target structure:
 
 ```text
 src/
   activities/
     registry.py
-
     conditions/
       providers/
         nws.py
@@ -669,17 +615,14 @@ src/
       astronomy.py
       snapshot.py
       validation.py
-
     scoring/
       engine.py
       safety.py
       fishing.py
-
     rendering/
       location_page.py
       hub_page.py
       links.py
-
   templates/
     activity-location.html
     activity-hub.html
@@ -687,120 +630,124 @@ src/
 
 Responsibilities:
 
-- `registry.py`: enabled activities and requirements.
-- provider adapters: HTTP/source-specific parsing only.
-- `snapshot.py`: normalized provider-independent condition model.
-- `engine.py`: generic weighted scoring and best-window mechanics.
-- `safety.py`: generic cap/hard-stop framework and hazard precedence.
-- `fishing.py`: Fishing weights, quality functions, and Fishing-specific hazard mapping.
-- renderers: HTML only; no scoring logic.
+- registry → enabled activities/requirements,
+- provider adapters → source HTTP/parsing only,
+- snapshot → normalized provider-independent condition schema,
+- engine → generic weighted scoring and best-window mechanics,
+- safety → generic cap/hard-stop framework and precedence,
+- fishing → Fishing weights, quality functions, hazard mapping,
+- renderers → HTML only, no scoring logic.
 
-The existing Tide generator should not accumulate Fishing-specific code.
+Existing Tide generator must not accumulate Fishing-specific scoring code.
 
-## 21. Testing requirements
+## 21. Tests
 
-Implementation follows test-driven development. At minimum, Phase 1 requires tests for:
+Implementation uses TDD.
+
+Required test classes include:
 
 ### Scoring
 
-- every component boundary,
-- weights sum correctly,
-- missing optional fields do not increase the score,
-- missing critical fields cannot produce a normal score,
-- window score uses 70% mean + 30% minimum,
-- best window excludes unsafe hours,
-- Today and Tomorrow are independent.
+- every component threshold boundary,
+- weight correctness,
+- missing optional data cannot raise score,
+- critical missing data cannot publish a normal score,
+- neutral-unknown optional score is 50,
+- best-window formula is 70% mean + 30% minimum,
+- unsafe hours are excluded,
+- Today/Tomorrow use each location’s local date.
 
 ### Safety
 
-- each hard-stop alert event,
-- score-cap precedence,
-- multiple hazards choose the strictest cap,
-- wind boundary values,
-- wave-exposure boundary values,
-- alert API failure is never interpreted as no alert,
-- hard-stop output cannot render `Excellent`, `Good`, or another normal recommendation.
+- every hard-stop event,
+- strictest cap wins,
+- multiple hazards never offset,
+- wind boundaries,
+- wave-exposure boundaries,
+- alert failure never means “no alerts,”
+- alert freshness >2 hours prevents normal safety state,
+- hard stop cannot render Excellent/Good/Fair/Poor/Unfavorable as recommendation.
 
-### Data
+### Data/cache
 
-- provider payload validation,
-- stale-cache behavior,
-- provenance timestamps,
-- NOAA/NWS error handling,
-- no fabricated values.
+- provider validation,
+- provenance/timestamps,
+- no fabricated values,
+- stale cache handling,
+- >6-hour full forecast cannot remain High/Medium.
 
-### Rendering and SEO
+### Rendering/SEO
 
 - `/fishing/` exists,
-- every eligible catalog location has a Fishing URL,
-- parent Tide page links to Fishing,
-- Fishing page links to parent Tide page and national hub,
-- breadcrumb and canonical are correct,
-- High/Medium pages are indexable,
-- Limited/Unavailable pages are noindex,
+- every catalog location receives an activity page/status,
+- parent Tide ↔ Fishing links are bidirectional,
+- hub links to location Fishing pages,
+- canonical/breadcrumb are correct,
+- High/Medium → indexable,
+- Limited/Unavailable → noindex,
 - sitemap contains only indexable activity URLs,
-- existing 51 location URLs remain byte-for-byte path-compatible.
+- existing location paths are unchanged.
 
 ### Automatic expansion invariant
 
-A synthetic new location added to the test catalog must automatically produce:
+A synthetic new location added to a fixture must automatically produce:
 
-- its existing-style Tide path,
+- its standard Tide path,
 - its Fishing path,
-- its Fishing hub entry/status,
-- bidirectional internal links,
-- sitemap inclusion when indexable.
+- hub entry/status,
+- bidirectional links,
+- sitemap entry when indexable.
 
-The test must not contain the number 51 as an expected permanent site size.
+The test must not assume permanent site size 51.
 
-When a second activity is enabled in a fixture, the same synthetic location must automatically receive both activities. This proves the architecture is truly registry-driven rather than Fishing-specific.
+When a second activity is enabled in a fixture, the same synthetic location must automatically receive both activity paths. This proves registry-driven expansion rather than Fishing-specific page lists.
 
 ## 22. Deployment strategy
 
-Fishing should be introduced as an additive change on a feature branch and merged only after:
+Fishing is additive and ships only after:
 
-1. all existing Tide and SEO regressions still pass,
-2. all Fishing scorer/safety tests pass,
-3. all 51 current locations have validated activity geographic metadata,
-4. activity data generation has been exercised against all current locations,
-5. generated pages have no broken internal links,
-6. sitemap changes contain only additive intended URLs,
-7. no existing location path has changed,
-8. Cloudflare preview deployment is checked before production merge.
+1. existing Tide/SEO regressions pass,
+2. Fishing scorer/safety tests pass,
+3. all current locations have validated activity geography,
+4. all current locations have been exercised through data generation,
+5. generated internal links are valid,
+6. sitemap changes are only the intended additions,
+7. no existing location path changes,
+8. Cloudflare preview is checked before production merge.
 
-The initial release may have fewer than 51 indexable Fishing pages if official marine/safety data is insufficient at some locations. This is preferable to publishing thin or falsely confident pages.
+The initial release may contain fewer than all catalog locations in Google’s index if some official marine/safety data is insufficient. That is preferable to thin or falsely confident pages.
 
 ## 23. Future activities
 
-The shared architecture must allow future activity modules to define their own:
+Each future activity supplies its own:
 
-- factor weights,
-- component scoring functions,
-- critical data requirements,
-- hazard penalties,
-- score caps,
-- hard-stop rules,
-- rating labels,
+- weights,
+- component functions,
+- critical input requirements,
+- penalties,
+- caps,
+- hard stops,
+- ratings,
 - explanation fragments.
 
-Expected future emphasis:
+Expected emphasis:
 
-- Surfing: wave height/period/direction, wind direction, tide, water temperature.
-- Beach: air/water temperature, rain, wind, wave height, UV.
-- Swimming: water temperature, wave height, wind, weather, and a substantially stricter safety policy.
+- Surfing → wave height/period/direction, wind direction, Tide, water temperature.
+- Beach → air/water temperature, rain, wind, wave height, UV.
+- Swimming → water temperature, wave height, wind, weather, with a substantially stricter Safety Gate.
 
-No future activity should require a second geographic catalog or manual per-location page list.
+No future activity gets a second location catalog or manual per-location page list.
 
-## 24. Success criteria for Phase 1
+## 24. Phase 1 success criteria
 
 Phase 1 is complete when:
 
-- existing CoastalNow Tide URLs and indexing behavior remain intact,
+- existing Tide URLs/indexing remain intact,
 - `/fishing/` is a real comparison/discovery page,
-- every catalog location automatically receives a Fishing page/status,
-- eligible locations can be ranked Today and Tomorrow,
-- Fishing results are deterministic and reproducible without AI APIs,
-- Safety Gate overrides favorable conditions when required,
+- every catalog location automatically receives Fishing output/status,
+- eligible locations can be ranked for Today and Tomorrow,
+- scoring is deterministic and reproducible without AI APIs,
+- Safety Gate can override otherwise excellent conditions,
 - missing safety data fails conservatively,
-- a newly promoted location automatically flows into Fishing without separate manual setup,
-- the architecture can add Surfing/Beach/Swimming by registering new scorers rather than rewriting the site.
+- a new promoted location automatically enters Fishing with no separate setup,
+- the architecture can add Surfing/Beach/Swimming by registering new scorers instead of rewriting geography or page generation.
