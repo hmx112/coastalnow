@@ -16,5 +16,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run directory regression test
-        run: python src/test_directory_generation.py
+      - name: Rebuild directory pages
+        run: python src/build_site.py
+      - name: Run full regression suite
+        run: |
+          python src/test_location_promotion.py
+          python src/test_generate_tides.py
+          python src/test_directory_generation.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
