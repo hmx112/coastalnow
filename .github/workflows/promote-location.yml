@@ -1,54 +1,50 @@
-name: Promote tide location
+name: Promote location from request
 
 on:
-  workflow_dispatch:
-    inputs:
-      slug:
-        description: "Existing CoastalNow location slug (for example: monterey)"
-        required: true
-        type: string
-      station_id:
-        description: "7-digit NOAA prediction station ID"
-        required: true
-        type: string
-      station_name:
-        description: "NOAA station display name (for example: Monterey, CA)"
-        required: true
-        type: string
+  push:
+    branches:
+      - "promotion/**"
+    paths:
+      - "promotion-request/*.json"
 
 permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: promotion-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   promote:
     runs-on: ubuntu-latest
-    env:
-      SLUG: ${{ inputs.slug }}
-      STATION_ID: ${{ inputs.station_id }}
-      STATION_NAME: ${{ inputs.station_name }}
-
     steps:
-      - name: Check out main
+      - name: Check out request branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Validate promotion against NOAA
+      - name: Resolve promotion request
+        id: request
+        shell: bash
         run: |
-          python src/promote_location.py \
-            --slug "$SLUG" \
-            --station-id "$STATION_ID" \
-            --station-name "$STATION_NAME" \
-            --validate-network
+          request=$(git diff-tree --no-commit-id --name-only --diff-filter=AM -r "$GITHUB_SHA"             | grep -E '^promotion-request/[^/]+\.json$'             | head -n 1)
+          test -n "$request"
+          slug=$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["slug"])' "$request")
+          echo "path=$request" >> "$GITHUB_OUTPUT"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+
+      - name: Validate NOAA and update Live config
+        run: python src/promote_location.py "${{ steps.request.outputs.path }}"
 
       - name: Generate promoted location
-        run: python src/generate_tides.py --location "$SLUG"
+        run: python src/generate_tides.py --location "${{ steps.request.outputs.slug }}"
 
       - name: Rebuild directories
         run: python src/build_site.py
@@ -61,29 +57,27 @@ jobs:
           python src/test_integrated_render.py
           python src/test_san_diego_fixture.py
 
-      - name: Commit and push preview branch
-        id: push
+      - name: Commit generated promotion
+        shell: bash
         run: |
-          branch="live-${SLUG}-$(date -u +%Y%m%d%H%M%S)"
+          request="${{ steps.request.outputs.path }}"
+          slug="${{ steps.request.outputs.slug }}"
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
-          git checkout -b "$branch"
+          git rm "$request"
           git add src/data/live_noaa.json public/data public/tides public/index.html
-          git commit -m "Promote ${SLUG} to Live NOAA"
-          git push -u origin "$branch"
-          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          git commit -m "Promote ${slug} to Live NOAA"
+          git push origin HEAD
 
       - name: Open pull request
         env:
           GH_TOKEN: ${{ github.token }}
-          BRANCH: ${{ steps.push.outputs.branch }}
+          BRANCH: ${{ github.ref_name }}
+          SLUG: ${{ steps.request.outputs.slug }}
+        shell: bash
         run: |
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "Promote ${SLUG} to Live NOAA" \
-            --body "Validated NOAA high/low and 30-minute predictions, generated the live tide page, rebuilt directories, and passed regression tests." \
-          || {
-            echo "PR creation was not permitted. The preview branch was still pushed successfully."
-            echo "Open the repository compare page for branch: $BRANCH"
-          }
+          if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
+            gh pr view "$BRANCH" --json url
+          else
+            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA High/Low and 30-minute predictions validated automatically. The request file is removed before the PR, so merging cannot retrigger promotion."
+          fi

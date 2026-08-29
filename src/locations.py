@@ -16,6 +16,26 @@ def _load_live_noaa_config():
 
 LIVE_NOAA_CONFIG = _load_live_noaa_config()
 LIVE_NOAA = set(LIVE_NOAA_CONFIG)
+
+TIMEZONE_BY_STATE = {
+    "CA": "America/Los_Angeles",
+    "OR": "America/Los_Angeles",
+    "WA": "America/Los_Angeles",
+}
+
+
+def _timezone_for(item):
+    return item.get("timezone") or TIMEZONE_BY_STATE.get(item.get("state_code"), "America/New_York")
+
+
+def _time_label_for(timezone):
+    if timezone == "America/Los_Angeles":
+        return "Pacific time"
+    if timezone == "America/New_York":
+        return "Eastern time"
+    return "Local time"
+
+
 def _load_locations():
     raw = json.loads((ROOT / "data" / "locations.json").read_text(encoding="utf-8"))
     locations = {}
@@ -24,10 +44,12 @@ def _load_locations():
         live_config = LIVE_NOAA_CONFIG.get(slug, {})
         station_id = live_config.get("station_id", item.get("station_id"))
         station_name = live_config.get("station_name") or item.get("station_name") or f'{item["name"]}, {item["state_code"]}'
+        timezone = _timezone_for(item)
         locations[slug] = {
             **item,
             "station_id": station_id,
             "station": station_id,
+            "timezone": timezone,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
             "page_title": f'{item["name"]} Tide Times Today | CoastalNow',
@@ -35,7 +57,7 @@ def _load_locations():
             "hero_copy": "Today’s tide times and a quick coastal outlook.",
             "local_guide": f'{item["name"]} coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.',
             "nearby": [],
-            "time_label": "Pacific time" if item.get("timezone") == "America/Los_Angeles" else "Local time",
+            "time_label": _time_label_for(timezone),
             "units_label": "Feet",
             "station_name": station_name,
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",

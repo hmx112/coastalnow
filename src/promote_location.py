@@ -11,6 +11,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from locations import LOCATIONS
+
 ROOT = Path(__file__).resolve().parent
 CATALOG = ROOT / "data" / "locations.json"
 LIVE_CONFIG = ROOT / "data" / "live_noaa.json"
@@ -18,17 +20,8 @@ API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
 
 
 def load_catalog(path: Path = CATALOG) -> dict[str, dict]:
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    items = {item["slug"]: item for item in raw}
-    items.setdefault("los-angeles", {
-        "slug": "los-angeles",
-        "name": "Los Angeles",
-        "state": "California",
-        "state_code": "CA",
-        "state_slug": "california",
-        "timezone": "America/Los_Angeles",
-    })
-    return items
+    """Return the normalized catalog used by the site generator."""
+    return {slug: dict(location) for slug, location in LOCATIONS.items()}
 
 
 def load_live_config(path: Path = LIVE_CONFIG) -> dict[str, dict]:
@@ -139,8 +132,34 @@ def promote(
     return config
 
 
+def load_request(path: Path) -> dict:
+    request = json.loads(path.read_text(encoding="utf-8"))
+    required = {"slug", "station_id", "station_name"}
+    missing = sorted(required - set(request))
+    if missing:
+        raise ValueError("Promotion request missing fields: " + ", ".join(missing))
+    return request
+
+
+def promote_request(
+    request_path: Path,
+    *,
+    config_path: Path = LIVE_CONFIG,
+    validate_network: bool = True,
+) -> dict[str, dict]:
+    request = load_request(request_path)
+    return promote(
+        request["slug"],
+        str(request["station_id"]),
+        request["station_name"],
+        config_path=config_path,
+        validate_network=validate_network,
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("request", nargs="?", type=Path)
     parser.add_argument("--slug")
     parser.add_argument("--station-id")
     parser.add_argument("--station-name")
@@ -151,6 +170,12 @@ def main() -> int:
     if args.validate_config:
         validate_config(load_live_config(), load_catalog())
         print("Live NOAA config is valid.")
+        return 0
+
+    if args.request:
+        request = load_request(args.request)
+        promote_request(args.request, validate_network=True)
+        print(f'Promoted {request["slug"]} to Live NOAA from request file.')
         return 0
 
     if not (args.slug and args.station_id and args.station_name):
