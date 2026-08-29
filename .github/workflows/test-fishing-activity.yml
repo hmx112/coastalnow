@@ -1,0 +1,19 @@
+name: Test Fishing activity planner
+
+on:
+  push:
+    branches:
+      - "feat/fishing-activity-planner"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/fishing-activity-planner
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Activity geography tests
+        run: python src/test_activity_geography.py
