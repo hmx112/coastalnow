@@ -65,6 +65,11 @@ class DirectoryGenerationTests(unittest.TestCase):
         self.assertIn('badge-live', home)
         self.assertIn('badge-preview', home)
 
+    def test_directory_pages_do_not_render_global_data_status_banners(self):
+        for path, html in build_directory_pages().items():
+            self.assertNotIn('class="preview-note"', html, path)
+            self.assertNotIn('<strong>Data status:</strong>', html, path)
+
 
 if __name__ == "__main__":
     unittest.main()
