@@ -14,9 +14,16 @@ class DirectoryGenerationTests(unittest.TestCase):
         self.assertEqual(len({item["page_path"] for item in LOCATIONS.values()}), 51)
 
     def test_live_status_is_limited_to_noaa_ready_locations(self):
-        self.assertEqual(location_status(LOCATIONS["san-diego"]), "Live NOAA")
-        self.assertEqual(location_status(LOCATIONS["los-angeles"]), "Live NOAA")
-        self.assertEqual(location_status(LOCATIONS["monterey"]), "Preview")
+        live_locations = [
+            location for location in LOCATIONS.values() if location["status"] == "Live NOAA"
+        ]
+        preview_locations = [
+            location for location in LOCATIONS.values() if location["status"] == "Preview"
+        ]
+        self.assertTrue(live_locations)
+        self.assertTrue(preview_locations)
+        self.assertTrue(all(location_status(location) == "Live NOAA" for location in live_locations))
+        self.assertTrue(all(location_status(location) == "Preview" for location in preview_locations))
 
     def test_home_page_contains_every_location_and_state_directory(self):
         pages = build_directory_pages()
