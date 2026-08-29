@@ -61,11 +61,11 @@ class DirectoryGenerationTests(unittest.TestCase):
     def test_status_badges_match_current_catalog_inventory(self):
         pages = build_directory_pages()
         home = pages["index.html"]
-        self.assertIn('badge-live', home)
+        self.assertIn('class="status-badge badge-live">Live NOAA</span>', home)
         if any(x["status"] == "Preview" for x in LOCATIONS.values()):
-            self.assertIn('badge-preview', home)
+            self.assertIn('class="status-badge badge-preview">Preview</span>', home)
         else:
-            self.assertNotIn('badge-preview', home)
+            self.assertNotIn('class="status-badge badge-preview">Preview</span>', home)
 
     def test_directory_pages_do_not_render_global_data_status_banners(self):
         for path, html in build_directory_pages().items():
