@@ -603,7 +603,7 @@ def selected_locations(slug: str | None) -> list[dict]:
         if slug not in LOCATIONS:
             raise KeyError(f"Unknown location: {slug}")
         return [LOCATIONS[slug]]
-    return list(LOCATIONS.values())
+    return [location for location in LOCATIONS.values() if location.get("status") == "Live NOAA"]
 
 
 def main() -> int:
