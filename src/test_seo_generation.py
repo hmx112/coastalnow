@@ -25,11 +25,11 @@ TIDE_TEMPLATE = ROOT / "src" / "templates" / "tide-page.html"
 
 class SeoGenerationTests(unittest.TestCase):
     def test_site_origin_and_canonical_url(self):
-        self.assertEqual(SITE_ORIGIN, "https://coastalnow.pages.dev")
-        self.assertEqual(canonical_url(""), "https://coastalnow.pages.dev/")
+        self.assertEqual(SITE_ORIGIN, "https://coastalnowtides.com")
+        self.assertEqual(canonical_url(""), "https://coastalnowtides.com/")
         self.assertEqual(
             canonical_url("tides/california/san-diego/index.html"),
-            "https://coastalnow.pages.dev/tides/california/san-diego/",
+            "https://coastalnowtides.com/tides/california/san-diego/",
         )
 
     def test_indexing_policy_supports_live_and_preview_states(self):
@@ -39,11 +39,11 @@ class SeoGenerationTests(unittest.TestCase):
 
     def test_sitemap_includes_directories_and_only_live_detail_pages(self):
         xml = build_sitemap(LOCATIONS)
-        self.assertIn("https://coastalnow.pages.dev/</loc>", xml)
+        self.assertIn("https://coastalnowtides.com/</loc>", xml)
         states = {x["state_slug"] for x in LOCATIONS.values()}
         for state in states:
             self.assertIn(
-                f"https://coastalnow.pages.dev/tides/{state}/</loc>", xml
+                f"https://coastalnowtides.com/tides/{state}/</loc>", xml
             )
         for location in LOCATIONS.values():
             url = canonical_url(location["page_path"])
@@ -57,7 +57,7 @@ class SeoGenerationTests(unittest.TestCase):
         self.assertIn("User-agent: *", robots)
         self.assertIn("Allow: /", robots)
         self.assertIn(
-            "Sitemap: https://coastalnow.pages.dev/sitemap.xml", robots
+            "Sitemap: https://coastalnowtides.com/sitemap.xml", robots
         )
 
     def test_breadcrumb_json_ld_is_valid_schema_markup(self):
@@ -75,7 +75,7 @@ class SeoGenerationTests(unittest.TestCase):
         self.assertEqual(len(data["itemListElement"]), 3)
         self.assertEqual(
             data["itemListElement"][-1]["item"],
-            "https://coastalnow.pages.dev/tides/california/san-diego/",
+            "https://coastalnowtides.com/tides/california/san-diego/",
         )
 
     def test_preview_html_gets_noindex_and_real_canonical(self):
