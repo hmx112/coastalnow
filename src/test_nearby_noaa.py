@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from generate_tides import coverage_notice
+from locations import coverage_disclosure
 from promote_location import normalize_request_payload, promote_batch
 
 
@@ -59,21 +59,21 @@ class NearbyNoaaCoverageTests(unittest.TestCase):
             saved = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(saved["huntington-beach"]["coverage_mode"], "nearby-noaa")
 
-    def test_nearby_notice_is_explicit(self):
-        html = coverage_notice({
+    def test_nearby_disclosure_is_explicit(self):
+        text = coverage_disclosure({
             "name": "Huntington Beach",
             "station_name": "Newport Beach, Newport Bay Entrance, CA",
             "coverage_mode": "nearby-noaa",
             "coverage_distance_miles": 8,
         })
-        self.assertIn("Nearby NOAA station", html)
-        self.assertIn("Huntington Beach", html)
-        self.assertIn("Newport Beach, Newport Bay Entrance, CA", html)
-        self.assertIn("8 miles away", html)
-        self.assertIn("Local tide timing and height may differ", html)
+        self.assertIn("Nearby NOAA station", text)
+        self.assertIn("Huntington Beach", text)
+        self.assertIn("Newport Beach, Newport Bay Entrance, CA", text)
+        self.assertIn("8 miles away", text)
+        self.assertIn("Local tide timing and height may differ", text)
 
-    def test_local_coverage_has_no_extra_notice(self):
-        self.assertEqual(coverage_notice({"coverage_mode": "local"}), "")
+    def test_local_coverage_has_no_extra_disclosure(self):
+        self.assertEqual(coverage_disclosure({"coverage_mode": "local"}), "")
 
 
 if __name__ == "__main__":
