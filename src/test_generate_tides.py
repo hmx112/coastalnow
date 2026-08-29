@@ -1,9 +1,12 @@
 import sys
 import unittest
+from datetime import date
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import generate_tides
 from generate_tides import selected_locations
 from locations import LOCATIONS
 
@@ -26,6 +29,31 @@ class GenerationTargetTests(unittest.TestCase):
         selected = selected_locations(preview_slug)
         self.assertEqual([location["slug"] for location in selected], [preview_slug])
         self.assertEqual(selected[0]["status"], "Preview")
+
+    def test_subordinate_hilo_can_generate_half_cosine_curve(self):
+        self.assertTrue(
+            hasattr(generate_tides, "derive_curve_from_hilo"),
+            "generate_tides must provide derive_curve_from_hilo for subordinate stations",
+        )
+        hilo = [
+            {"t": "2026-08-28 22:00", "v": 0.0, "type": "L"},
+            {"t": "2026-08-29 04:00", "v": 4.0, "type": "H"},
+            {"t": "2026-08-29 10:00", "v": 0.0, "type": "L"},
+            {"t": "2026-08-29 16:00", "v": 4.0, "type": "H"},
+            {"t": "2026-08-29 22:00", "v": 0.0, "type": "L"},
+            {"t": "2026-08-30 04:00", "v": 4.0, "type": "H"},
+        ]
+        curve = generate_tides.derive_curve_from_hilo(
+            hilo,
+            date(2026, 8, 29),
+            date(2026, 8, 29),
+            ZoneInfo("America/New_York"),
+        )
+        by_time = {item["t"]: item["v"] for item in curve}
+        self.assertEqual(len(curve), 48)
+        self.assertAlmostEqual(by_time["2026-08-29 04:00"], 4.0, places=3)
+        self.assertAlmostEqual(by_time["2026-08-29 07:00"], 2.0, places=3)
+        self.assertAlmostEqual(by_time["2026-08-29 10:00"], 0.0, places=3)
 
 
 if __name__ == "__main__":
