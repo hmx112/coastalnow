@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parent
 CATALOG = ROOT / "data" / "locations.json"
 LIVE_CONFIG = ROOT / "data" / "live_noaa.json"
 API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+PREDICTION_MODES = {"harmonic", "hilo-derived"}
 
 
 def load_catalog(path: Path = CATALOG) -> dict[str, dict]:
@@ -40,6 +41,15 @@ def validate_station_id(station_id: str) -> str:
     return station_id
 
 
+def validate_prediction_mode(prediction_mode: str) -> str:
+    prediction_mode = prediction_mode.strip()
+    if prediction_mode not in PREDICTION_MODES:
+        raise ValueError(
+            "prediction_mode must be one of: " + ", ".join(sorted(PREDICTION_MODES))
+        )
+    return prediction_mode
+
+
 def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
     unknown = sorted(set(config) - set(catalog))
     if unknown:
@@ -50,6 +60,7 @@ def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
         validate_station_id(str(entry.get("station_id", "")))
         if not str(entry.get("station_name", "")).strip():
             raise ValueError(f"{slug}: station_name is required")
+        validate_prediction_mode(str(entry.get("prediction_mode", "harmonic")))
 
 
 def _request(station_id: str, params: dict) -> dict:
@@ -71,8 +82,13 @@ def _request(station_id: str, params: dict) -> dict:
     return payload
 
 
-def validate_noaa_compatibility(location: dict, station_id: str) -> None:
-    """Require both hilo and 30-minute predictions used by the current page renderer."""
+def validate_noaa_compatibility(
+    location: dict,
+    station_id: str,
+    prediction_mode: str = "harmonic",
+) -> None:
+    """Validate the NOAA products required by the selected prediction mode."""
+    prediction_mode = validate_prediction_mode(prediction_mode)
     tz = ZoneInfo(location["timezone"])
     start = datetime.now(tz).date()
     end = start + timedelta(days=1)
@@ -87,6 +103,9 @@ def validate_noaa_compatibility(location: dict, station_id: str) -> None:
     if not hilo or not {"H", "L"} <= types:
         raise RuntimeError("Station does not provide usable NOAA high/low predictions")
 
+    if prediction_mode == "hilo-derived":
+        return
+
     curve = _request(station_id, {**dates, "interval": "30"}).get("predictions", [])
     valid_curve = []
     for item in curve:
@@ -99,7 +118,7 @@ def validate_noaa_compatibility(location: dict, station_id: str) -> None:
     if len(valid_curve) < 70:
         raise RuntimeError(
             "Station does not provide enough 30-minute prediction points. "
-            "It may be a subordinate station; keep it Preview until subordinate support is added."
+            "Use prediction_mode=hilo-derived only for an official NOAA subordinate station."
         )
 
 
@@ -108,6 +127,7 @@ def promote(
     station_id: str,
     station_name: str,
     *,
+    prediction_mode: str = "harmonic",
     config_path: Path = LIVE_CONFIG,
     validate_network: bool = False,
 ) -> dict[str, dict]:
@@ -118,12 +138,17 @@ def promote(
     station_name = station_name.strip()
     if not station_name:
         raise ValueError("station_name is required")
+    prediction_mode = validate_prediction_mode(prediction_mode)
 
     if validate_network:
-        validate_noaa_compatibility(catalog[slug], station_id)
+        validate_noaa_compatibility(catalog[slug], station_id, prediction_mode)
 
     config = load_live_config(config_path)
-    config[slug] = {"station_id": station_id, "station_name": station_name}
+    config[slug] = {
+        "station_id": station_id,
+        "station_name": station_name,
+        "prediction_mode": prediction_mode,
+    }
     validate_config(config, catalog)
     config_path.write_text(
         json.dumps(dict(sorted(config.items())), indent=2) + "\n",
@@ -152,6 +177,7 @@ def promote_request(
         request["slug"],
         str(request["station_id"]),
         request["station_name"],
+        prediction_mode=str(request.get("prediction_mode", "harmonic")),
         config_path=config_path,
         validate_network=validate_network,
     )
@@ -163,6 +189,11 @@ def main() -> int:
     parser.add_argument("--slug")
     parser.add_argument("--station-id")
     parser.add_argument("--station-name")
+    parser.add_argument(
+        "--prediction-mode",
+        choices=sorted(PREDICTION_MODES),
+        default="harmonic",
+    )
     parser.add_argument("--validate-network", action="store_true")
     parser.add_argument("--validate-config", action="store_true")
     args = parser.parse_args()
@@ -185,6 +216,7 @@ def main() -> int:
         args.slug,
         args.station_id,
         args.station_name,
+        prediction_mode=args.prediction_mode,
         validate_network=args.validate_network,
     )
     print(f"Promoted {args.slug} to Live NOAA using station {args.station_id}.")
