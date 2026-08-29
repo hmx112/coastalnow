@@ -34,17 +34,26 @@ jobs:
         id: request
         shell: bash
         run: |
-          request=$(git diff-tree --no-commit-id --name-only --diff-filter=AM -r "$GITHUB_SHA"             | grep -E '^promotion-request/[^/]+\.json$'             | head -n 1)
+          request=$(git diff-tree --no-commit-id --name-only --diff-filter=AM -r "$GITHUB_SHA" \
+            | grep -E '^promotion-request/[^/]+\.json$' \
+            | head -n 1)
           test -n "$request"
-          slug=$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["slug"])' "$request")
+          slugs=$(python -c 'import json,sys; p=json.load(open(sys.argv[1])); xs=p.get("locations", [p]); print(",".join(x["slug"] for x in xs))' "$request")
+          title=$(python -c 'import pathlib,sys; print(pathlib.Path(sys.argv[1]).stem.replace("-", " ").title())' "$request")
           echo "path=$request" >> "$GITHUB_OUTPUT"
-          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          echo "title=$title" >> "$GITHUB_OUTPUT"
 
       - name: Validate NOAA and update Live config
         run: python src/promote_location.py "${{ steps.request.outputs.path }}"
 
-      - name: Generate promoted location
-        run: python src/generate_tides.py --location "${{ steps.request.outputs.slug }}"
+      - name: Generate promoted locations
+        shell: bash
+        run: |
+          IFS=',' read -ra SLUGS <<< "${{ steps.request.outputs.slugs }}"
+          for slug in "${SLUGS[@]}"; do
+            python src/generate_tides.py --location "$slug"
+          done
 
       - name: Rebuild directories and SEO artifacts
         run: python src/build_site.py
@@ -62,23 +71,27 @@ jobs:
         shell: bash
         run: |
           request="${{ steps.request.outputs.path }}"
-          slug="${{ steps.request.outputs.slug }}"
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
           git rm "$request"
           git add src/data/live_noaa.json public/data public/tides public/index.html public/sitemap.xml public/robots.txt
-          git commit -m "Promote ${slug} to Live NOAA"
+          git commit -m "Promote regional batch to Live NOAA"
           git push origin HEAD
 
       - name: Open pull request
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: ${{ github.ref_name }}
-          SLUG: ${{ steps.request.outputs.slug }}
+          SLUGS: ${{ steps.request.outputs.slugs }}
+          WAVE_TITLE: ${{ steps.request.outputs.title }}
         shell: bash
         run: |
           if gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
             gh pr view "$BRANCH" --json url
           else
-            gh pr create               --base main               --head "$BRANCH"               --title "Promote ${SLUG} to Live NOAA"               --body "NOAA prediction compatibility and SEO indexing policy validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations may use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "Promote ${WAVE_TITLE} to Live NOAA" \
+              --body "Promoted locations: ${SLUGS}. NOAA prediction compatibility and SEO indexing policy validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
           fi
