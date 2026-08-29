@@ -1,6 +1,7 @@
-"""Single location catalog used by NOAA pages and directory generation."""
+"""Single location catalog used by NOAA pages and activity generation."""
 
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -70,11 +71,37 @@ def coverage_disclosure(location: dict) -> str:
     )
 
 
+def validate_activity_geography(item: dict) -> dict:
+    """Validate representative shore/marine points without deriving them from Tide stations."""
+    slug = item.get("slug", "unknown")
+    activity = item.get("activity")
+    if not isinstance(activity, dict):
+        raise ValueError(f"{slug}:activity must be an object")
+    for field in ("shore_point", "marine_point"):
+        point = activity.get(field)
+        if not isinstance(point, dict):
+            raise ValueError(f"{slug}:{field} must be an object")
+        lat = point.get("latitude")
+        lon = point.get("longitude")
+        if not isinstance(lat, (int, float)) or not math.isfinite(lat) or not -90 <= lat <= 90:
+            raise ValueError(f"{slug}:{field}:latitude must be a finite value from -90 to 90")
+        if not isinstance(lon, (int, float)) or not math.isfinite(lon) or not -180 <= lon <= 180:
+            raise ValueError(f"{slug}:{field}:longitude must be a finite value from -180 to 180")
+    bearing = activity.get("coast_bearing")
+    if bearing is not None:
+        if not isinstance(bearing, (int, float)) or not math.isfinite(bearing) or not 0 <= bearing < 360:
+            raise ValueError(f"{slug}:coast_bearing must be a finite value from 0 to less than 360")
+    return activity
+
+
 def _load_locations():
     raw = json.loads((ROOT / "data" / "locations.json").read_text(encoding="utf-8"))
     locations = {}
     for item in raw:
         slug = item["slug"]
+        if slug in locations:
+            raise ValueError(f"Duplicate location slug: {slug}")
+        validate_activity_geography(item)
         live_config = LIVE_NOAA_CONFIG.get(slug, {})
         station_id = live_config.get("station_id", item.get("station_id"))
         station_name = live_config.get("station_name") or item.get("station_name") or f'{item["name"]}, {item["state_code"]}'
@@ -108,21 +135,6 @@ def _load_locations():
             "units_label": "Feet",
             "station_name": station_name,
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",
-        }
-    if "los-angeles" not in locations:
-        locations["los-angeles"] = {
-            "state": "California", "state_code": "CA", "state_slug": "california",
-            "name": "Los Angeles", "slug": "los-angeles", "priority": "A",
-            "station_id": "9410660", "station": "9410660", "station_name": "Los Angeles, CA",
-            "latitude": 33.72, "longitude": -118.272, "timezone": "America/Los_Angeles",
-            "datum": "MLLW", "units": "english", "source": "NOAA/NOS/CO-OPS",
-            "prediction_mode": "harmonic", "coverage_mode": "local", "coverage_distance_miles": None,
-            "page_path": "tides/california/los-angeles/index.html", "data_path": "data/los-angeles.json",
-            "page_title": "Los Angeles Tide Times Today | CoastalNow",
-            "meta_description": "Los Angeles tide times and tide outlook for Los Angeles, California.",
-            "hero_copy": "Today’s tide times and a quick coastal outlook.", "time_label": "Pacific time",
-            "local_guide": "Los Angeles coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.", "nearby": [],
-            "units_label": "Feet", "status": "Live NOAA",
         }
     return locations
 
