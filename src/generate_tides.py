@@ -10,8 +10,9 @@ One location:
 Offline layout preview:
     python3 src/generate_tides.py --location san-diego --preview
 
-The production path never invents tide values. If NOAA cannot be reached it uses
-only a same-day verified cache; otherwise it renders an explicit unavailable state.
+The production path never invents NOAA high/low values. Harmonic stations use
+NOAA interval predictions directly. Subordinate stations derive a smooth curve
+between official NOAA high/low predictions and label that curve as estimated.
 """
 from __future__ import annotations
 
@@ -123,6 +124,62 @@ def validate_curve(items: list[dict], start: date, end: date, tz: ZoneInfo) -> l
     return sorted(out, key=lambda x: x["t"])
 
 
+def derive_curve_from_hilo(
+    hilo: list[dict],
+    start: date,
+    end: date,
+    tz: ZoneInfo,
+    interval_minutes: int = 30,
+) -> list[dict]:
+    """Build a smooth half-cosine curve between official NOAA high/low events.
+
+    The input must include a turning point before the requested window and one
+    after it so every output point is bracketed by official high/low events.
+    No high/low time or height is changed; only the values between events are
+    estimated for display and tide-direction calculations.
+    """
+    if interval_minutes <= 0:
+        raise ValueError("interval_minutes must be positive")
+    control = []
+    for event in hilo:
+        if event.get("type") not in {"H", "L"}:
+            continue
+        dt = parse_noaa_dt(event["t"], tz)
+        value = float(event["v"])
+        if math.isfinite(value):
+            control.append((dt, value))
+    control.sort(key=lambda item: item[0])
+    if len(control) < 2:
+        raise ValueError("At least two high/low events are required to derive a curve")
+
+    window_start = datetime.combine(start, datetime.min.time(), tzinfo=tz)
+    window_end = datetime.combine(end + timedelta(days=1), datetime.min.time(), tzinfo=tz)
+    if control[0][0] > window_start or control[-1][0] < window_end:
+        raise ValueError("High/low context does not bracket the requested curve window")
+
+    curve = []
+    index = 0
+    t = window_start
+    while t < window_end:
+        while index + 1 < len(control) and control[index + 1][0] < t:
+            index += 1
+        if index + 1 >= len(control):
+            raise ValueError("High/low context ended before the requested curve window")
+        t0, v0 = control[index]
+        t1, v1 = control[index + 1]
+        if not (t0 <= t <= t1):
+            raise ValueError("High/low context contains a gap around the requested curve point")
+        span = (t1 - t0).total_seconds()
+        if span <= 0:
+            raise ValueError("High/low events must be strictly increasing")
+        frac = (t - t0).total_seconds() / span
+        smooth = (1 - math.cos(math.pi * frac)) / 2
+        value = v0 + (v1 - v0) * smooth
+        curve.append({"t": t.strftime("%Y-%m-%d %H:%M"), "v": round(value, 3)})
+        t += timedelta(minutes=interval_minutes)
+    return curve
+
+
 def fetch_live(location: dict) -> dict:
     tz = location_tz(location)
     now = datetime.now(tz)
@@ -130,18 +187,30 @@ def fetch_live(location: dict) -> dict:
     display_end = start + timedelta(days=6)
     context_end = start + timedelta(days=7)
     curve_end = start + timedelta(days=1)
+    prediction_mode = location.get("prediction_mode", "harmonic")
+    hilo_start = start - timedelta(days=1) if prediction_mode == "hilo-derived" else start
+
     hilo_payload = api_get(location, {
-        "begin_date": start.strftime("%Y%m%d"),
+        "begin_date": hilo_start.strftime("%Y%m%d"),
         "end_date": context_end.strftime("%Y%m%d"),
         "product": "predictions",
         "interval": "hilo",
     })
-    curve_payload = api_get(location, {
-        "begin_date": start.strftime("%Y%m%d"),
-        "end_date": curve_end.strftime("%Y%m%d"),
-        "product": "predictions",
-        "interval": "30",
-    })
+    hilo = validate_hilo(hilo_payload.get("predictions", []), hilo_start, context_end, tz)
+
+    if prediction_mode == "hilo-derived":
+        curve = derive_curve_from_hilo(hilo, start, curve_end, tz)
+        curve_source = "derived_from_noaa_hilo"
+    else:
+        curve_payload = api_get(location, {
+            "begin_date": start.strftime("%Y%m%d"),
+            "end_date": curve_end.strftime("%Y%m%d"),
+            "product": "predictions",
+            "interval": "30",
+        })
+        curve = validate_curve(curve_payload.get("predictions", []), start, curve_end, tz)
+        curve_source = "noaa_interval"
+
     return {
         "schema_version": 3,
         "mode": "live",
@@ -156,11 +225,13 @@ def fetch_live(location: dict) -> dict:
         "datum": location.get("datum", "MLLW"),
         "units": "feet" if location.get("units", "english") == "english" else "metric",
         "time_zone_mode": "LST/LDT",
+        "prediction_mode": prediction_mode,
+        "curve_source": curve_source,
         "range": {"start": start.isoformat(), "end": display_end.isoformat()},
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_at_local": now.isoformat(timespec="seconds"),
-        "hilo": validate_hilo(hilo_payload.get("predictions", []), start, context_end, tz),
-        "curve": validate_curve(curve_payload.get("predictions", []), start, curve_end, tz),
+        "hilo": hilo,
+        "curve": curve,
     }
 
 
@@ -337,7 +408,7 @@ def render_chart_and_events(location: dict, data: dict, today: date) -> str:
         f'<line class="axis" x1="{left}" y1="194" x2="{right}" y2="194"/>',
         f'<line class="axis" x1="{left}" y1="118" x2="{right}" y2="118"/>',
     ])
-    svg = f'''<svg class="chart" viewBox="0 0 920 330" role="img" aria-label="NOAA predicted tide curve for {location['name']} today">
+    svg = f'''<svg class="chart" viewBox="0 0 920 330" role="img" aria-label="Tide curve for {location['name']} today">
       <defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#65c1c7" stop-opacity=".32"/><stop offset="100%" stop-color="#65c1c7" stop-opacity=".03"/></linearGradient></defs>
       {grid}<path class="area" d="{area_path}"/><path class="line" d="{line_path}"/>{''.join(marker_html)}
       <text class="axis-label" x="55" y="315">12 AM</text><text class="axis-label" x="256" y="315">6 AM</text><text class="axis-label" x="453" y="315">12 PM</text><text class="axis-label" x="653" y="315">6 PM</text><text class="axis-label" x="842" y="315">12 AM</text>
@@ -348,7 +419,10 @@ def render_chart_and_events(location: dict, data: dict, today: date) -> str:
         dt = parse_noaa_dt(event["t"], tz)
         kind = "High" if event["type"] == "H" else "Low"
         event_cards.append(f'<div class="event"><span>{kind}</span><strong>{fmt_time(dt)}</strong><small>{fmt_height(float(event["v"]))}</small></div>')
-    return svg + '<div class="tide-list">' + ''.join(event_cards) + '</div>'
+    note = ""
+    if data.get("curve_source") == "derived_from_noaa_hilo":
+        note = '<p style="margin:12px 4px 0;color:#73878f;font-size:.78rem">Tide curve is estimated between official NOAA high and low predictions.</p>'
+    return svg + '<div class="tide-list">' + ''.join(event_cards) + '</div>' + note
 
 
 def next_same_type_event(data: dict, day: date, tide_type: str):
@@ -434,7 +508,7 @@ def data_notice(mode: str, message: str = "") -> str:
 def unavailable_fragments(now: datetime, message: str) -> dict:
     return {
         "DATA_NOTICE": data_notice("error", message),
-        "HERO_DATE": now.strftime("%A, %B %d").replace(" 0", " "),
+        "HERO_DATE": now.strftime("%A, %d").replace(" 0", " "),
         "UPDATED_TEXT": "Live NOAA refresh pending",
         "TIDE_CARDS": '<div class="tide-grid"><div class="unavailable-card">Next high tide unavailable.</div><div class="unavailable-card">Next low tide unavailable.</div></div>',
         "STATUS_STRIP": '<div class="status-strip"><span class="status-dot"></span><strong>Current tide direction unavailable</strong></div>',
