@@ -19,6 +19,7 @@ CATALOG = ROOT / "data" / "locations.json"
 LIVE_CONFIG = ROOT / "data" / "live_noaa.json"
 API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
 PREDICTION_MODES = {"harmonic", "hilo-derived"}
+COVERAGE_MODES = {"local", "nearby-noaa"}
 
 
 def load_catalog(path: Path = CATALOG) -> dict[str, dict]:
@@ -50,6 +51,29 @@ def validate_prediction_mode(prediction_mode: str) -> str:
     return prediction_mode
 
 
+def validate_coverage_mode(coverage_mode: str) -> str:
+    coverage_mode = coverage_mode.strip()
+    if coverage_mode not in COVERAGE_MODES:
+        raise ValueError(
+            "coverage_mode must be one of: " + ", ".join(sorted(COVERAGE_MODES))
+        )
+    return coverage_mode
+
+
+def validate_coverage_distance(value, coverage_mode: str) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        distance = float(value)
+    except (TypeError, ValueError):
+        raise ValueError("coverage_distance_miles must be a positive number") from None
+    if not math.isfinite(distance) or distance <= 0:
+        raise ValueError("coverage_distance_miles must be a positive number")
+    if coverage_mode != "nearby-noaa":
+        raise ValueError("coverage_distance_miles is only valid for nearby-noaa coverage")
+    return distance
+
+
 def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
     unknown = sorted(set(config) - set(catalog))
     if unknown:
@@ -61,6 +85,8 @@ def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
         if not str(entry.get("station_name", "")).strip():
             raise ValueError(f"{slug}: station_name is required")
         validate_prediction_mode(str(entry.get("prediction_mode", "harmonic")))
+        coverage_mode = validate_coverage_mode(str(entry.get("coverage_mode", "local")))
+        validate_coverage_distance(entry.get("coverage_distance_miles"), coverage_mode)
 
 
 def normalize_request_payload(payload: dict) -> list[dict]:
@@ -84,11 +110,17 @@ def normalize_request_payload(payload: dict) -> list[dict]:
         station_name = str(raw["station_name"]).strip()
         if not station_name:
             raise ValueError("station_name is required")
+        coverage_mode = validate_coverage_mode(str(raw.get("coverage_mode", "local")))
+        coverage_distance = validate_coverage_distance(
+            raw.get("coverage_distance_miles"), coverage_mode
+        )
         items.append({
             "slug": slug,
             "station_id": validate_station_id(str(raw["station_id"])),
             "station_name": station_name,
             "prediction_mode": validate_prediction_mode(str(raw.get("prediction_mode", "harmonic"))),
+            "coverage_mode": coverage_mode,
+            "coverage_distance_miles": coverage_distance,
         })
     return items
 
@@ -164,11 +196,16 @@ def promote_batch(
     config = load_live_config(config_path)
     updated = dict(config)
     for item in normalized:
-        updated[item["slug"]] = {
+        entry = {
             "station_id": item["station_id"],
             "station_name": item["station_name"],
             "prediction_mode": item["prediction_mode"],
         }
+        if item["coverage_mode"] == "nearby-noaa":
+            entry["coverage_mode"] = "nearby-noaa"
+            if item["coverage_distance_miles"] is not None:
+                entry["coverage_distance_miles"] = item["coverage_distance_miles"]
+        updated[item["slug"]] = entry
     validate_config(updated, catalog)
     config_path.write_text(
         json.dumps(dict(sorted(updated.items())), indent=2) + "\n",
@@ -183,6 +220,8 @@ def promote(
     station_name: str,
     *,
     prediction_mode: str = "harmonic",
+    coverage_mode: str = "local",
+    coverage_distance_miles: float | None = None,
     config_path: Path = LIVE_CONFIG,
     validate_network: bool = False,
 ) -> dict[str, dict]:
@@ -192,6 +231,8 @@ def promote(
             "station_id": station_id,
             "station_name": station_name,
             "prediction_mode": prediction_mode,
+            "coverage_mode": coverage_mode,
+            "coverage_distance_miles": coverage_distance_miles,
         }],
         config_path=config_path,
         validate_network=validate_network,
@@ -227,6 +268,8 @@ def main() -> int:
     parser.add_argument("--station-id")
     parser.add_argument("--station-name")
     parser.add_argument("--prediction-mode", choices=sorted(PREDICTION_MODES), default="harmonic")
+    parser.add_argument("--coverage-mode", choices=sorted(COVERAGE_MODES), default="local")
+    parser.add_argument("--coverage-distance-miles", type=float)
     parser.add_argument("--validate-network", action="store_true")
     parser.add_argument("--validate-config", action="store_true")
     args = parser.parse_args()
@@ -251,6 +294,8 @@ def main() -> int:
         args.station_id,
         args.station_name,
         prediction_mode=args.prediction_mode,
+        coverage_mode=args.coverage_mode,
+        coverage_distance_miles=args.coverage_distance_miles,
         validate_network=args.validate_network,
     )
     print(f"Promoted {args.slug} to Live NOAA using station {args.station_id}.")
