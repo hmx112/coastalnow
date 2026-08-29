@@ -22,7 +22,7 @@ def _load_locations():
             "hero_copy": "Today’s tide times and a quick coastal outlook.",
             "local_guide": f'{item["name"]} coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.',
             "nearby": [],
-            "time_label": "Local time",
+            "time_label": "Pacific time" if item.get("timezone") == "America/Los_Angeles" else "Local time",
             "units_label": "Feet",
             "station_name": item.get("station_name") or f'{item["name"]}, {item["state_code"]}',
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",
@@ -37,7 +37,7 @@ def _load_locations():
             "page_path": "tides/california/los-angeles/index.html", "data_path": "data/los-angeles.json",
             "page_title": "Los Angeles Tide Times Today | CoastalNow",
             "meta_description": "Los Angeles tide times and tide outlook for Los Angeles, California.",
-            "hero_copy": "Today’s tide times and a quick coastal outlook.", "time_label": "Local time",
+            "hero_copy": "Today’s tide times and a quick coastal outlook.", "time_label": "Pacific time",
             "local_guide": "Los Angeles coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.", "nearby": [],
             "units_label": "Feet", "status": "Live NOAA",
         }

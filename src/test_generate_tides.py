@@ -21,3 +21,8 @@ class GenerationTargetTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+def test_live_pacific_locations_use_pacific_time_label():
+    from locations import LOCATIONS
+    assert LOCATIONS["san-diego"]["time_label"] == "Pacific time"
+    assert LOCATIONS["los-angeles"]["time_label"] == "Pacific time"
