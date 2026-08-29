@@ -3,10 +3,20 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from promote_location import load_catalog, load_request, promote, promote_request, validate_config, validate_station_id
+from promote_location import (
+    load_catalog,
+    load_request,
+    normalize_request_payload,
+    promote,
+    promote_batch,
+    promote_request,
+    validate_config,
+    validate_station_id,
+)
 
 
 class PromotionTests(unittest.TestCase):
@@ -14,6 +24,110 @@ class PromotionTests(unittest.TestCase):
     def test_catalog_supplies_timezone_for_preview_location(self):
         catalog = load_catalog()
         self.assertEqual(catalog["monterey"]["timezone"], "America/Los_Angeles")
+
+    def test_batch_request_normalizes_multiple_locations(self):
+        payload = {
+            "locations": [
+                {
+                    "slug": "santa-cruz",
+                    "station_id": "9413745",
+                    "station_name": "Santa Cruz, Monterey Bay, CA",
+                    "prediction_mode": "hilo-derived",
+                },
+                {
+                    "slug": "half-moon-bay",
+                    "station_id": "9414131",
+                    "station_name": "Pillar Point Harbor, Half Moon Bay, CA",
+                },
+            ]
+        }
+        items = normalize_request_payload(payload)
+        self.assertEqual([x["slug"] for x in items], ["santa-cruz", "half-moon-bay"])
+        self.assertEqual(items[0]["prediction_mode"], "hilo-derived")
+        self.assertEqual(items[1]["prediction_mode"], "harmonic")
+
+    def test_legacy_request_still_normalizes_to_one_item(self):
+        payload = {
+            "slug": "santa-cruz",
+            "station_id": "9413745",
+            "station_name": "Santa Cruz, Monterey Bay, CA",
+            "prediction_mode": "hilo-derived",
+        }
+        items = normalize_request_payload(payload)
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["slug"], "santa-cruz")
+
+    def test_unknown_mode_is_rejected_before_config_write(self):
+        payload = {
+            "locations": [
+                {
+                    "slug": "santa-cruz",
+                    "station_id": "9413745",
+                    "station_name": "Santa Cruz, Monterey Bay, CA",
+                    "prediction_mode": "wrong",
+                }
+            ]
+        }
+        with self.assertRaises(ValueError):
+            normalize_request_payload(payload)
+
+    def test_duplicate_slug_is_rejected(self):
+        payload = {
+            "locations": [
+                {
+                    "slug": "santa-cruz",
+                    "station_id": "9413745",
+                    "station_name": "Santa Cruz, Monterey Bay, CA",
+                    "prediction_mode": "hilo-derived",
+                },
+                {
+                    "slug": "santa-cruz",
+                    "station_id": "9413745",
+                    "station_name": "Santa Cruz, Monterey Bay, CA",
+                    "prediction_mode": "hilo-derived",
+                },
+            ]
+        }
+        with self.assertRaises(ValueError):
+            normalize_request_payload(payload)
+
+    def test_batch_is_atomic_when_later_network_validation_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "live_noaa.json"
+            original = json.dumps(
+                {
+                    "san-diego": {
+                        "station_id": "9410170",
+                        "station_name": "San Diego, CA",
+                    }
+                },
+                indent=2,
+            ) + "\n"
+            path.write_text(original, encoding="utf-8")
+            items = normalize_request_payload(
+                {
+                    "locations": [
+                        {
+                            "slug": "santa-cruz",
+                            "station_id": "9413745",
+                            "station_name": "Santa Cruz, Monterey Bay, CA",
+                            "prediction_mode": "hilo-derived",
+                        },
+                        {
+                            "slug": "half-moon-bay",
+                            "station_id": "9414131",
+                            "station_name": "Pillar Point Harbor, Half Moon Bay, CA",
+                        },
+                    ]
+                }
+            )
+            with patch(
+                "promote_location.validate_noaa_compatibility",
+                side_effect=[None, RuntimeError("second station failed")],
+            ):
+                with self.assertRaises(RuntimeError):
+                    promote_batch(items, config_path=path, validate_network=True)
+            self.assertEqual(path.read_text(encoding="utf-8"), original)
 
     def test_request_file_promotes_without_network(self):
         with tempfile.TemporaryDirectory() as tmp:
