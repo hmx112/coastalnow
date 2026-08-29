@@ -1,31 +1,42 @@
 # CoastalNow Live Location Automation
 
-After this automation is merged, converting an existing Preview location to Live NOAA no longer requires editing Python or workflow files.
+Live NOAA promotion is started by pushing one request file to a dedicated `promotion/*` branch. The user does not need to open GitHub Actions or Codespaces for normal location promotion.
 
-## Normal promotion flow
+## Promotion request
 
-1. Research the best NOAA prediction station for the location.
-2. In GitHub, open **Actions -> Promote tide location -> Run workflow**.
-3. Enter:
-   - `slug` - existing CoastalNow slug, such as `monterey`
-   - `station_id` - seven-digit NOAA prediction station ID
-   - `station_name` - NOAA station name shown to users
-4. The workflow:
-   - validates the slug and station configuration,
-   - calls NOAA for both high/low and 30-minute predictions,
-   - refuses incompatible/subordinate stations that cannot power the current curve,
-   - updates `src/data/live_noaa.json`,
-   - generates the location page and JSON data,
-   - rebuilds home/state directories,
-   - runs regression tests,
-   - pushes a preview branch,
-   - attempts to open a pull request.
-5. Review the Cloudflare Preview deployment and merge the PR.
+Create a branch from current `main` using the prefix `promotion/`, for example:
+
+`promotion/monterey-20260829`
+
+Add one file under `promotion-request/`, for example `promotion-request/monterey.json`:
+
+```json
+{
+  "slug": "monterey",
+  "station_id": "9413450",
+  "station_name": "Monterey, CA"
+}
+```
+
+The workflow then:
+
+1. Resolves the request added by the triggering commit.
+2. Uses the normalized `LOCATIONS` catalog, including derived timezone data.
+3. Validates NOAA high/low and 30-minute prediction support.
+4. Updates `src/data/live_noaa.json`.
+5. Generates the Live NOAA data and location page.
+6. Rebuilds home and state directory pages.
+7. Runs regression tests.
+8. Removes the request file before committing, preventing a merge from retriggering promotion.
+9. Pushes the generated result back to the same `promotion/*` branch.
+10. Opens a pull request to `main`.
+
+Cloudflare can use that branch as the Preview deployment. After review, the PR can be squash-merged.
 
 ## Single source of truth
 
-`src/data/live_noaa.json` contains only the station mapping required to promote existing catalog locations. Paths, titles, status, timezone labels and directory membership continue to be derived automatically from the location catalog and existing generators.
+`src/data/live_noaa.json` contains the NOAA station mapping for Live locations. Paths, titles, timezone labels, status and directory membership are derived from the catalog and generators.
 
-## Adding an entirely new location
+## Adding a brand-new catalog location
 
-This automation promotes locations that already exist in `src/data/locations.json`. Adding a brand-new catalog location is a separate operation and should first add that location to the catalog.
+This promotion flow only promotes a location that already exists in `src/data/locations.json`. Adding a completely new catalog location remains a separate catalog change.
