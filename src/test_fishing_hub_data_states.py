@@ -143,6 +143,50 @@ class FishingHubDataStateTests(unittest.TestCase):
         self.assertIn("Safety condition takes priority", hourly)
         self.assertNotIn("42", hourly)
 
+    def test_location_score_and_breakdown_explain_normalized_scale(self):
+        result = self.result(
+            status="Ready",
+            confidence="High",
+            score=82.0,
+            rating="Good",
+        )
+        html = render_fishing_location(self.location, result, self.snapshot())
+        hero = html.split('class="activity-score-card', 1)[1].split("</section>", 1)[0]
+        self.assertIn("0–100 composite planning score", hero)
+        self.assertIn("not a raw environmental measurement", hero)
+        self.assertNotIn("82%", hero)
+
+        hourly = html.split("<h2>Hourly Fishing Score</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("0–100 score", hourly)
+
+        breakdown = html.split("<h2>Why this score?</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("Factor scores are normalized from 0–100", breakdown)
+        self.assertIn("not raw weather or ocean measurements", breakdown)
+        self.assertIn("Wind score", breakdown)
+        self.assertIn("Water temperature score", breakdown)
+
+    def test_hub_explains_fishing_scores_are_composite_not_measurements(self):
+        results = {
+            "bar-harbor": self.result(
+                status="Ready",
+                confidence="High",
+                score=82.0,
+                rating="Good",
+            )
+        }
+        html = render_fishing_hub({"bar-harbor": self.location}, results)
+        self.assertIn("0–100 composite planning scores", html)
+        self.assertIn("not measured environmental values", html)
+        ranking = html.split("<h2>Best Fishing Windows</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertNotIn("82%", ranking)
+
+    def test_score_explanations_use_quiet_supporting_styles(self):
+        css = (Path(__file__).resolve().parent.parent / "public" / "assets" / "activity.css").read_text(encoding="utf-8")
+        self.assertIn(".activity-score-definition{", css)
+        self.assertIn(".activity-score-note{", css)
+        self.assertIn("font-size:.72rem", css)
+        self.assertIn("font-size:.82rem", css)
+
 
 if __name__ == "__main__":
     unittest.main()
