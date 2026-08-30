@@ -44,18 +44,19 @@ jobs:
           echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
           echo "title=$title" >> "$GITHUB_OUTPUT"
 
-      - name: Validate NOAA and update Live config
+      - name: Validate NOAA, Activity geography and update Live config
         run: python src/promote_location.py "${{ steps.request.outputs.path }}"
 
-      - name: Generate promoted locations
+      - name: Generate promoted Tide and Activity outputs
         shell: bash
         run: |
           IFS=',' read -ra SLUGS <<< "${{ steps.request.outputs.slugs }}"
           for slug in "${SLUGS[@]}"; do
             python src/generate_tides.py --location "$slug"
+            python src/generate_activities.py --location "$slug"
           done
 
-      - name: Rebuild directories and SEO artifacts
+      - name: Rebuild directories, Activity pages and SEO artifacts
         run: python src/build_site.py
 
       - name: Run regression tests
@@ -66,6 +67,18 @@ jobs:
           python src/test_seo_generation.py
           python src/test_integrated_render.py
           python src/test_san_diego_fixture.py
+          python src/test_activity_geography.py
+          python src/test_activity_registry.py
+          python src/test_activity_conditions.py
+          python src/test_activity_collection.py
+          python src/test_activity_scoring_engine.py
+          python src/test_activity_safety.py
+          python src/test_fishing_scoring.py
+          python src/test_fishing_safety.py
+          python src/test_activity_generation.py
+          python src/test_activity_rendering.py
+          python src/test_activity_seo_navigation.py
+          python src/test_activity_workflows.py
 
       - name: Commit generated promotion
         shell: bash
@@ -74,8 +87,8 @@ jobs:
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
           git rm "$request"
-          git add src/data/live_noaa.json public/data public/tides public/index.html public/sitemap.xml public/robots.txt
-          git commit -m "Promote regional batch to Live NOAA"
+          git add src/data/live_noaa.json public/data public/tides public/fishing public/index.html public/sitemap.xml public/robots.txt
+          git commit -m "Promote regional batch to Live NOAA and Activities"
           git push origin HEAD
 
       - name: Open pull request
@@ -93,5 +106,5 @@ jobs:
               --base main \
               --head "$BRANCH" \
               --title "Promote ${WAVE_TITLE} to Live NOAA" \
-              --body "Promoted locations: ${SLUGS}. NOAA prediction compatibility and SEO indexing policy validated automatically. Harmonic stations use NOAA interval predictions; subordinate stations use an estimated curve between official NOAA high/low predictions. The request file is removed before the PR, so merging cannot retrigger promotion."
+              --body "Promoted locations: ${SLUGS}. NOAA prediction compatibility, Activity geography, enabled Activity generation, and SEO indexing policy were validated automatically. The request file is removed before the PR, so merging cannot retrigger promotion."
           fi
