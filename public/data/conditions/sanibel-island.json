@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sanibel-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-08-30T18:40:49+00:00",
+  "generated_at_utc": "2026-08-30T20:00:48+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-08-30T18:40:49+00:00"
+      "fetched_at_utc": "2026-08-30T20:00:48+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a6ec698c585a8488579a2034c9b06123acc723f.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-08-30T14:22:00-04:00",
-        "onset": "2026-08-30T14:22:00-04:00",
-        "expires": "2026-08-30T15:45:00-04:00",
-        "ends": "2026-08-30T15:45:00-04:00",
-        "headline": "Special Marine Warning issued August 30 at 2:22PM EDT until August 30 at 3:45PM EDT by NWS Tampa Bay Ruskin FL",
-        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nCharlotte Harbor and Pine Island Sound...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\n\n* Until 345 PM EDT.\n\n* At 222 PM EDT, strong thunderstorms were located along a line\nextending from 23 nm west of Moore Haven to 12 nm northeast of\nLovers Key State Park to near Bonita Shores, moving northwest at 15\nknots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, frequent lightning, and heavy downpours. Make sure\nall on board are wearing life jackets.\n\n* Locations impacted include...\nLovers Key State Park, Englewood, Fort Myers Beach, Boca Grande,\nManasota Key, Palm Island, Cayo Costa Island, Captiva, Sanibel,\nNorth Captiva Island, Don Pedro Island, and Bonita Beach.",
-        "instruction": "Move to safe harbor immediately as gusty winds and high waves are\nexpected.\n\nFrequent lightning is occurring with these storms. If caught on the\nopen water stay below deck if possible, keep away from ungrounded\nmetal objects.",
-        "sender_name": "NWS Tampa Bay Ruskin FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2533,5 +2517,5 @@
       "grid_y": 32
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

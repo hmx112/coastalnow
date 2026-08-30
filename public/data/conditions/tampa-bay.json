@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "tampa-bay",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-08-30T18:40:52+00:00",
+  "generated_at_utc": "2026-08-30T20:00:49+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-08-30T18:40:52+00:00"
+      "fetched_at_utc": "2026-08-30T20:00:49+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.425bd485b66aab6661cbd2e257fce80902844fdd.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-08-30T15:05:00-04:00",
+        "onset": "2026-08-30T15:05:00-04:00",
+        "expires": "2026-08-30T16:30:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued August 30 at 3:05PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "The areas affected include...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\nAt 304 PM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from 16 nm northeast of Venice to 24\nnm east of Siesta Key to 34 nm southeast of Hillsborough Bay, moving\nnorthwest at 25 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.\n\nThese strong thunderstorms will likely produce winds to around 30\nknots, and could pose a serious hazard for boaters. A special marine\nwarning may eventually be required when these strong thunderstorms\nreaches the nearshore waters. Boaters should consider heading for\nshore before these strong thunderstorms arrives.\n\nIntense lightning is occurring with these storms. If caught on the\nopen water stay below deck if possible, keep away from ungrounded\nmetal objects.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2497,5 +2513,5 @@
       "grid_y": 88
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
