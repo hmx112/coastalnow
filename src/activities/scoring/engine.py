@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 from statistics import mean
+from zoneinfo import ZoneInfo
 
 NEUTRAL_UNKNOWN_SCORE = 50.0
 _CONFIDENCE_RANK = {
@@ -56,6 +57,26 @@ def rating_for_score(score: float) -> str:
     if value >= 40:
         return "Poor"
     return "Unfavorable"
+
+
+def group_local_days(hourly: list[dict], timezone_name: str, now: datetime) -> dict[str, list[dict]]:
+    """Split hourly rows into the location's local Today and Tomorrow calendars."""
+    if now.tzinfo is None or now.utcoffset() is None:
+        raise ValueError("now must be timezone-aware")
+    timezone = ZoneInfo(timezone_name)
+    local_today = now.astimezone(timezone).date()
+    local_tomorrow = local_today + timedelta(days=1)
+    grouped = {"today": [], "tomorrow": []}
+    for row in hourly:
+        stamp = datetime.fromisoformat(row["time"])
+        if stamp.tzinfo is None or stamp.utcoffset() is None:
+            raise ValueError("hourly times must be offset-aware")
+        local_date = stamp.astimezone(timezone).date()
+        if local_date == local_today:
+            grouped["today"].append(row)
+        elif local_date == local_tomorrow:
+            grouped["tomorrow"].append(row)
+    return grouped
 
 
 def _window_is_consecutive(rows: list[dict]) -> bool:
