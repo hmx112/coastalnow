@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "location": "st-pete-beach",
+  "timezone": "America/New_York",
+  "generated_at_utc": "2026-08-30T05:07:04+00:00",
+  "refresh_state": "unavailable",
+  "refresh_error": "wave_period_s must be > 0 and <= 60",
+  "providers": {
+    "alerts": {
+      "source": "NWS",
+      "status": "error",
+      "fetched_at_utc": "2026-08-30T05:07:04+00:00"
+    },
+    "forecast": {
+      "source": "NWS",
+      "status": "unavailable",
+      "fetched_at_utc": "2026-08-30T05:07:04+00:00"
+    },
+    "marine": {
+      "source": "NWS forecastGridData",
+      "status": "unavailable",
+      "fetched_at_utc": "2026-08-30T05:07:04+00:00"
+    },
+    "tide": {
+      "source": "NOAA/NOS/CO-OPS",
+      "status": "unavailable",
+      "fetched_at_utc": "2026-08-30T05:07:04+00:00"
+    }
+  },
+  "hourly": [],
+  "alerts": {
+    "status": "error",
+    "items": []
+  },
+  "provenance": {
+    "failure": "wave_period_s must be > 0 and <= 60"
+  },
+  "tide": null,
+  "astronomy": {}
+}
