@@ -8,9 +8,15 @@ from pathlib import Path
 
 from activities.paths import activity_data_path, activity_hub_path, activity_page_path
 from activities.registry import enabled_activities
+from activities.rendering.attribution import (
+    hub_attribution_html,
+    inject_attribution,
+    location_attribution_html,
+)
 from activities.rendering.hub_page import render_fishing_hub
 from activities.rendering.links import activity_location_url
 from activities.rendering.location_page import render_fishing_location
+from activities.rendering.methodology_page import render_methodology_page
 from locations import LOCATIONS
 from seo import (
     activity_hub_seo_tags,
@@ -116,6 +122,14 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     raise ValueError("Could not find insertion point for Activity links")
 
 
+def render_methodology_output(public_root: Path) -> str:
+    relative = "methodology/index.html"
+    output = public_root / relative
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(render_methodology_page(), encoding="utf-8")
+    return relative
+
+
 def render_activity_outputs(
     public_root: Path,
     locations: dict[str, dict],
@@ -141,28 +155,26 @@ def render_activity_outputs(
             relative = activity_page_path(location, slug)
             output = public_root / relative
             output.parent.mkdir(parents=True, exist_ok=True)
-            output.write_text(
-                render_fishing_location(
-                    location,
-                    result,
-                    snapshot,
-                    head_extra=activity_seo_tags(location, slug, result, activity["label"]),
-                ),
-                encoding="utf-8",
+            html = render_fishing_location(
+                location,
+                result,
+                snapshot,
+                head_extra=activity_seo_tags(location, slug, result, activity["label"]),
             )
+            html = inject_attribution(html, location_attribution_html(location, snapshot))
+            output.write_text(html, encoding="utf-8")
             rendered.add(relative)
 
         hub_relative = activity_hub_path(slug)
         hub_output = public_root / hub_relative
         hub_output.parent.mkdir(parents=True, exist_ok=True)
-        hub_output.write_text(
-            render_fishing_hub(
-                locations,
-                results,
-                head_extra=activity_hub_seo_tags(slug, activity["label"]),
-            ),
-            encoding="utf-8",
+        hub_html = render_fishing_hub(
+            locations,
+            results,
+            head_extra=activity_hub_seo_tags(slug, activity["label"]),
         )
+        hub_html = inject_attribution(hub_html, hub_attribution_html())
+        hub_output.write_text(hub_html, encoding="utf-8")
         rendered.add(hub_relative)
     return rendered
 
@@ -175,6 +187,9 @@ def main():
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(html, encoding="utf-8")
         print(f"Rendered {output}")
+
+    methodology_relative = render_methodology_output(ROOT)
+    print(f"Rendered {ROOT / methodology_relative}")
 
     rendered_activities = render_activity_outputs(ROOT, LOCATIONS, inventory)
     for relative_path in sorted(rendered_activities):
