@@ -25,14 +25,26 @@ def robots_directive(location: dict) -> str:
     return "index,follow" if location.get("status") == "Live NOAA" else "noindex,follow"
 
 
+def _activity_day_has_usable_data(day: dict | None) -> bool:
+    day = day or {}
+    return (
+        day.get("confidence") in {"High", "Medium"}
+        and day.get("status") not in {"Limited", "Unavailable"}
+    )
+
+
 def activity_robots_directive(result: dict | None) -> str:
-    """Index Activity pages only when current critical data has usable confidence."""
+    """Index an Activity page when Today or Tomorrow has usable critical data.
+
+    This deliberately avoids toggling a healthy page to noindex late in the local
+    evening merely because fewer than three hours remain for today's best window.
+    """
     if not result:
         return "noindex,follow"
-    today = result.get("today") or {}
-    confidence = today.get("confidence")
-    status = today.get("status")
-    if confidence in {"High", "Medium"} and status not in {"Limited", "Unavailable"}:
+    if any(
+        _activity_day_has_usable_data(result.get(day_key))
+        for day_key in ("today", "tomorrow")
+    ):
         return "index,follow"
     return "noindex,follow"
 
