@@ -83,10 +83,10 @@ def _group_card(location: dict, day: dict) -> str:
     score = day.get("score")
     status = day.get("status") or "Unavailable"
     confidence = day.get("confidence") or "Unavailable"
-    if _limited_or_unavailable(day):
-        display = "Limited" if "Limited" in {status, confidence} else "Unavailable"
-    elif status == "NOT RECOMMENDED":
+    if status == "NOT RECOMMENDED":
         display = "NOT RECOMMENDED"
+    elif _limited_or_unavailable(day):
+        display = "Limited" if "Limited" in {status, confidence} else "Unavailable"
     elif status == END_OF_DAY_STATUS:
         display = END_OF_DAY_STATUS
     elif score is None:
