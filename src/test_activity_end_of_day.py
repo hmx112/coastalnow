@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from activities.scoring.fishing import score_fishing_snapshot
+from activities.scoring.fishing_policy import score_fishing_activity
 from seo import activity_robots_directive
 
 
@@ -84,7 +84,7 @@ class ActivityEndOfDayTests(unittest.TestCase):
         }
 
     def test_late_evening_is_not_mislabeled_as_data_unavailable(self):
-        result = score_fishing_snapshot(self.snapshot, location=self.location, now=self.now)
+        result = score_fishing_activity(self.snapshot, location=self.location, now=self.now)
         self.assertEqual(result["today"]["status"], "No 3-hour window remaining")
         self.assertIsNone(result["today"]["score"])
         self.assertFalse(result["today"]["ranking_eligible"])
@@ -92,7 +92,7 @@ class ActivityEndOfDayTests(unittest.TestCase):
         self.assertIsNotNone(result["tomorrow"]["score"])
 
     def test_tomorrow_usable_data_keeps_page_indexable_after_today_window_closes(self):
-        result = score_fishing_snapshot(self.snapshot, location=self.location, now=self.now)
+        result = score_fishing_activity(self.snapshot, location=self.location, now=self.now)
         self.assertEqual(activity_robots_directive(result), "index,follow")
 
     def test_true_data_failure_still_noindexes(self):
