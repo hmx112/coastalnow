@@ -12,6 +12,7 @@ PROMOTION = ROOT / ".github" / "workflows" / "promote-location.yml"
 TIDE_REFRESH = ROOT / ".github" / "workflows" / "update-san-diego.yml"
 ACTIVITY_REFRESH = ROOT / ".github" / "workflows" / "update-activities.yml"
 ALERT_REFRESH = ROOT / ".github" / "workflows" / "update-activity-alerts.yml"
+WRITE_LOCK = "group: coastalnow-site-writes"
 
 
 class ActivityWorkflowTests(unittest.TestCase):
@@ -46,37 +47,60 @@ class ActivityWorkflowTests(unittest.TestCase):
         text = PROMOTION.read_text(encoding="utf-8")
         self.assertIn('python src/generate_activities.py --location "$slug"', text)
         self.assertLess(text.index('python src/generate_activities.py --location "$slug"'), text.index("python src/build_site.py"))
-        self.assertIn("src/test_activity_generation.py", text)
-        self.assertIn("src/test_activity_rendering.py", text)
-        self.assertIn("src/test_activity_seo_navigation.py", text)
+        for test in (
+            "src/test_activity_generation.py",
+            "src/test_activity_rendering.py",
+            "src/test_activity_end_of_day.py",
+            "src/test_activity_attribution.py",
+            "src/test_activity_seo_navigation.py",
+        ):
+            self.assertIn(test, text)
         self.assertIn("public/fishing", text)
+        self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
         self.assertIn('"promotion/**"', text)
         self.assertIn('git rm "$request"', text)
 
-    def test_full_activity_refresh_runs_every_three_hours_with_shared_concurrency_group(self):
+    def test_full_activity_refresh_runs_every_three_hours_with_shared_site_write_lock(self):
         text = ACTIVITY_REFRESH.read_text(encoding="utf-8")
         self.assertIn('cron: "23 */3 * * *"', text)
-        self.assertIn("group: coastalnow-activity-writes", text)
+        self.assertIn(WRITE_LOCK, text)
         self.assertIn("python src/generate_activities.py", text)
         self.assertNotIn("--alerts-only", text)
         self.assertIn("python src/build_site.py", text)
+        for test in (
+            "src/test_nws_duration_parsing.py",
+            "src/test_nws_zero_wave_period.py",
+            "src/test_activity_end_of_day.py",
+            "src/test_activity_attribution.py",
+        ):
+            self.assertIn(test, text)
         self.assertIn("public/data/conditions", text)
         self.assertIn("public/data/activities", text)
         self.assertIn("public/fishing", text)
+        self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
 
-    def test_alert_refresh_runs_hourly_and_reuses_the_same_write_lock(self):
+    def test_alert_refresh_runs_hourly_and_reuses_site_write_lock(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
         self.assertIn('cron: "41 * * * *"', text)
-        self.assertIn("group: coastalnow-activity-writes", text)
+        self.assertIn(WRITE_LOCK, text)
         self.assertIn("python src/generate_activities.py --alerts-only", text)
         self.assertIn("python src/build_site.py", text)
+        self.assertIn("src/test_activity_end_of_day.py", text)
+        self.assertIn("src/test_activity_attribution.py", text)
+        self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
 
-    def test_tide_refresh_remains_six_hourly_and_does_not_gain_ci_skip_markers(self):
+    def test_tide_refresh_remains_six_hourly_and_uses_the_same_site_write_lock(self):
         text = TIDE_REFRESH.read_text(encoding="utf-8")
         self.assertIn('cron: "17 */6 * * *"', text)
+        self.assertIn(WRITE_LOCK, text)
+        self.assertIn("python src/build_site.py", text)
+        self.assertIn("src/test_activity_attribution.py", text)
+        self.assertIn("src/test_activity_seo_navigation.py", text)
+        self.assertIn("public/fishing", text)
+        self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
 
 
