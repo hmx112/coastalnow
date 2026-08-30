@@ -1,0 +1,59 @@
+name: Update coastal Activity conditions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coastalnow-activity-writes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Live NOAA and Activity geography
+        run: python src/promote_location.py --validate-config
+
+      - name: Collect common coastal conditions and score enabled Activities
+        run: python src/generate_activities.py
+
+      - name: Render Activity pages, Tide links and SEO artifacts
+        run: python src/build_site.py
+
+      - name: Run Activity and site regressions
+        run: |
+          python src/test_activity_geography.py
+          python src/test_activity_registry.py
+          python src/test_activity_conditions.py
+          python src/test_activity_collection.py
+          python src/test_activity_scoring_engine.py
+          python src/test_activity_safety.py
+          python src/test_fishing_scoring.py
+          python src/test_fishing_safety.py
+          python src/test_activity_generation.py
+          python src/test_activity_rendering.py
+          python src/test_activity_seo_navigation.py
+          python src/test_directory_generation.py
+          python src/test_seo_generation.py
+
+      - name: Commit refreshed Activity conditions
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/data/conditions public/data/activities public/fishing public/tides public/index.html public/sitemap.xml public/robots.txt
+          git diff --cached --quiet || git commit -m "Update coastal Activity conditions"
+          git push
