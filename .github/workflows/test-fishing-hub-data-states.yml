@@ -1,0 +1,19 @@
+name: Test Fishing hub data states
+
+on:
+  push:
+    branches:
+      - "fix/fishing-hub-data-states"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/fishing-hub-data-states
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Fishing hub data-state regression
+        run: python src/test_fishing_hub_data_states.py
