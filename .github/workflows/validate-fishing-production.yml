@@ -35,7 +35,7 @@ jobs:
       - name: Generate all Fishing production condition data
         run: python src/generate_activities.py
 
-      - name: Render Fishing hub, location pages, Tide links and SEO
+      - name: Render Fishing hub, location pages, methodology, Tide links and SEO
         run: python src/build_site.py
 
       - name: Validate all Activity points and report live coverage
@@ -62,8 +62,10 @@ jobs:
           python src/test_activity_safety.py
           python src/test_fishing_scoring.py
           python src/test_fishing_safety.py
+          python src/test_activity_end_of_day.py
           python src/test_activity_generation.py
           python src/test_activity_rendering.py
+          python src/test_activity_attribution.py
           python src/test_activity_seo_navigation.py
           python src/test_activity_workflows.py
           python src/test_activity_network_validation.py
@@ -73,6 +75,6 @@ jobs:
         run: |
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
-          git add public/data/conditions public/data/activities public/fishing public/tides public/index.html public/sitemap.xml public/robots.txt
+          git add public/data/conditions public/data/activities public/fishing public/methodology public/tides public/index.html public/sitemap.xml public/robots.txt
           git diff --cached --quiet || git commit -m "Generate Fishing activity production outputs"
           git push origin HEAD:feat/fishing-activity-planner
