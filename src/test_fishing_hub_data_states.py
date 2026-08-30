@@ -156,6 +156,9 @@ class FishingHubDataStateTests(unittest.TestCase):
         self.assertIn("not a raw environmental measurement", hero)
         self.assertNotIn("82%", hero)
 
+        hourly = html.split("<h2>Hourly Fishing Score</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("0–100 score", hourly)
+
         breakdown = html.split("<h2>Why this score?</h2>", 1)[1].split("</section>", 1)[0]
         self.assertIn("Factor scores are normalized from 0–100", breakdown)
         self.assertIn("not raw weather or ocean measurements", breakdown)
