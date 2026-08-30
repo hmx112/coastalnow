@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-cruz",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-08-30T06:19:11+00:00",
+  "generated_at_utc": "2026-08-30T12:10:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-08-30T06:19:11+00:00"
+      "fetched_at_utc": "2026-08-30T12:10:50+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.face9cdb9e8396e0d4ef91bf284a6a3e7d008d87.008.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-08-29T20:20:00-07:00",
-        "onset": "2026-08-29T20:20:00-07:00",
-        "expires": "2026-08-30T03:00:00-07:00",
-        "ends": "2026-08-30T03:00:00-07:00",
-        "headline": "Small Craft Advisory issued August 29 at 8:20PM PDT until August 30 at 3:00AM PDT by NWS San Francisco CA",
-        "description": "* WHAT...Northwest winds 10 to 20 kt.\n\n* WHERE...Monterey Bay.\n\n* WHEN...Until 3 AM PDT Sunday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS San Francisco CA"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2563,5 +2547,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
