@@ -1,4 +1,6 @@
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,6 +14,7 @@ from activities.rendering.attribution import (
 from activities.rendering.hub_page import render_fishing_hub
 from activities.rendering.location_page import render_fishing_location
 from activities.rendering.methodology_page import render_methodology_page
+from build_site import render_activity_outputs, render_methodology_output
 
 
 class ActivityAttributionTests(unittest.TestCase):
@@ -39,6 +42,7 @@ class ActivityAttributionTests(unittest.TestCase):
         }
         self.result = {
             "activity": "fishing",
+            "location": "san-diego",
             "today": day,
             "tomorrow": dict(day),
             "hourly": {"today": [], "tomorrow": []},
@@ -103,6 +107,27 @@ class ActivityAttributionTests(unittest.TestCase):
         self.assertIn("does not predict whether you will catch fish", html)
         self.assertIn('<meta name="robots" content="index,follow">', html)
         self.assertIn('https://coastalnowtides.com/methodology/', html)
+
+    def test_site_build_writes_methodology_and_attribution_to_hub_and_child(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            public = Path(tmp)
+            condition_dir = public / "data" / "conditions"
+            condition_dir.mkdir(parents=True)
+            (condition_dir / "san-diego.json").write_text(json.dumps(self.snapshot), encoding="utf-8")
+            inventory = {"fishing": {"san-diego": self.result}}
+            locations = {"san-diego": self.location}
+            rendered = render_activity_outputs(public, locations, inventory)
+            methodology = render_methodology_output(public)
+            self.assertIn("tides/california/san-diego/fishing/index.html", rendered)
+            self.assertIn("fishing/index.html", rendered)
+            self.assertEqual(methodology, "methodology/index.html")
+            child = (public / "tides/california/san-diego/fishing/index.html").read_text(encoding="utf-8")
+            hub = (public / "fishing/index.html").read_text(encoding="utf-8")
+            method = (public / "methodology/index.html").read_text(encoding="utf-8")
+            self.assertIn("ACTIVITY_ATTRIBUTION_START", child)
+            self.assertIn("San Diego, San Diego Bay", child)
+            self.assertIn("ACTIVITY_ATTRIBUTION_START", hub)
+            self.assertIn("Data Sources &amp; Methodology", method)
 
 
 if __name__ == "__main__":
