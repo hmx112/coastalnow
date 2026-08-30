@@ -180,6 +180,13 @@ class FishingHubDataStateTests(unittest.TestCase):
         ranking = html.split("<h2>Best Fishing Windows</h2>", 1)[1].split("</section>", 1)[0]
         self.assertNotIn("82%", ranking)
 
+    def test_score_explanations_use_quiet_supporting_styles(self):
+        css = (Path(__file__).resolve().parent.parent / "public" / "assets" / "activity.css").read_text(encoding="utf-8")
+        self.assertIn(".activity-score-definition{", css)
+        self.assertIn(".activity-score-note{", css)
+        self.assertIn("font-size:.72rem", css)
+        self.assertIn("font-size:.82rem", css)
+
 
 if __name__ == "__main__":
     unittest.main()
