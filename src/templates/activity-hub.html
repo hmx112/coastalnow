@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+{{HEAD_EXTRA}}
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">{{LOGO}}<span>CoastalNow</span></a><nav class="nav"><a href="/">Home</a><a href="/#states">States</a><a class="search-pill" href="/#search">Search</a></nav></div></header>
+<main class="wrap activity-page activity-hub">
+<div class="breadcrumbs"><a href="/">Home</a><span>/</span>Fishing</div>
+<section class="activity-hero hub-hero"><div><p class="eyebrow">EXPLORE BY ACTIVITY</p><h1>Best Fishing Conditions in the U.S. Today</h1><p class="activity-scope">Compare shore, pier and nearshore recreational fishing conditions across CoastalNow locations.</p></div><div class="activity-hub-summary"><strong>{{RANKED_COUNT}}</strong><span>locations eligible for today’s ranking</span></div></section>
+{{DAY_SWITCH}}
+<section class="section" id="top-locations"><div class="section-head"><div><p class="eyebrow">TOP LOCATIONS TODAY</p><h2>Best Fishing Windows</h2></div><p>High and Medium confidence only</p></div>{{TOP_LOCATIONS}}</section>
+<section class="activity-number-one">{{NUMBER_ONE}}</section>
+<section class="section" id="condition-groups"><div class="section-head"><div><p class="eyebrow">ALL CONDITIONS</p><h2>Browse by today’s status</h2></div></div>{{GROUPS}}</section>
+<section class="activity-method-note"><strong>How to read this ranking</strong><p>Scores compare planning conditions, not personal safety or the chance of catching fish. Official warnings, closures, signs and local guidance always take priority.</p></section>
+<div class="ad-slot"><span>ADVERTISEMENT</span></div>
+</main>
+<footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div></div></footer>
+</body>
+</html>
