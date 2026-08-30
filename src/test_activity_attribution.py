@@ -4,9 +4,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from activities.rendering.attribution import (
+    hub_attribution_html,
+    inject_attribution,
+    location_attribution_html,
+)
 from activities.rendering.hub_page import render_fishing_hub
 from activities.rendering.location_page import render_fishing_location
-from site_generator import build_directory_pages
+from activities.rendering.methodology_page import render_methodology_page
 
 
 class ActivityAttributionTests(unittest.TestCase):
@@ -53,8 +58,9 @@ class ActivityAttributionTests(unittest.TestCase):
         }
 
     def test_location_page_distinguishes_government_sources_from_coastalnow_calculations(self):
-        html = render_fishing_location(self.location, self.result, self.snapshot)
-        self.assertIn("Data sources & methodology", html)
+        base = render_fishing_location(self.location, self.result, self.snapshot)
+        html = inject_attribution(base, location_attribution_html(self.location, self.snapshot))
+        self.assertIn("Data sources &amp; methodology", html)
         self.assertIn("NOAA/NOS/CO-OPS", html)
         self.assertIn("National Weather Service", html)
         self.assertIn("San Diego, San Diego Bay", html)
@@ -63,19 +69,30 @@ class ActivityAttributionTests(unittest.TestCase):
         self.assertIn("calculated by CoastalNow", html)
         self.assertIn("not an official NOAA/NWS product", html)
         self.assertIn('href="/methodology/"', html)
+        twice = inject_attribution(html, location_attribution_html(self.location, self.snapshot))
+        self.assertEqual(twice.count("ACTIVITY_ATTRIBUTION_START"), 1)
 
     def test_hub_links_to_methodology_and_identifies_score_as_coastalnow_metric(self):
-        html = render_fishing_hub({"san-diego": self.location}, {"san-diego": self.result})
-        self.assertIn("Data sources & methodology", html)
+        base = render_fishing_hub({"san-diego": self.location}, {"san-diego": self.result})
+        html = inject_attribution(base, hub_attribution_html())
+        self.assertIn("Data sources &amp; methodology", html)
         self.assertIn("NOAA", html)
         self.assertIn("National Weather Service", html)
         self.assertIn("CoastalNow", html)
         self.assertIn('href="/methodology/"', html)
 
+    def test_nearby_noaa_is_explicitly_disclosed(self):
+        nearby = {
+            **self.location,
+            "coverage_mode": "nearby-noaa",
+            "coverage_distance_miles": 8.4,
+        }
+        block = location_attribution_html(nearby, self.snapshot)
+        self.assertIn("Nearby NOAA station", block)
+        self.assertIn("8.4 miles away", block)
+
     def test_methodology_page_is_indexable_and_explains_source_boundaries(self):
-        pages = build_directory_pages()
-        self.assertIn("methodology/index.html", pages)
-        html = pages["methodology/index.html"]
+        html = render_methodology_page()
         self.assertIn("Data Sources &amp; Methodology", html)
         self.assertIn("NOAA/NOS/CO-OPS", html)
         self.assertIn("National Weather Service", html)
