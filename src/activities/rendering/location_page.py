@@ -108,13 +108,17 @@ def _day_cards(result: dict) -> str:
     cards = []
     for key, label in (("today", "Today"), ("tomorrow", "Tomorrow")):
         day = result.get(key) or {}
+        status = day.get("status") or "Unavailable"
         score = day.get("score")
-        if _limited_or_unavailable(day):
+        if status == "NOT RECOMMENDED":
+            score_text = "—"
+            detail = "NOT RECOMMENDED"
+        elif _limited_or_unavailable(day):
             score_text = "—"
             detail = _data_state_label(day)
         else:
             score_text = "—" if score is None else f"{score:g}"
-            detail = day.get("status") if score is None else day.get("rating")
+            detail = status if score is None else day.get("rating")
         cards.append(
             f'<article class="activity-day-card" data-day="{key}"><span>{label}</span>'
             f'<strong>{escape(score_text)}</strong><small>{escape(str(detail or "Unavailable"))}</small>'
@@ -125,8 +129,15 @@ def _day_cards(result: dict) -> str:
 
 def _hourly_section(result: dict) -> str:
     day = result.get("today") or {}
+    status = day.get("status") or "Unavailable"
     rows = (result.get("hourly") or {}).get("today") or []
-    if _limited_or_unavailable(day):
+    if status == "NOT RECOMMENDED":
+        body = (
+            '<div class="activity-empty">'
+            'Safety condition takes priority — hourly numerical recommendation is not shown.'
+            '</div>'
+        )
+    elif _limited_or_unavailable(day):
         label = _data_state_label(day)
         body = (
             '<div class="activity-empty">'
