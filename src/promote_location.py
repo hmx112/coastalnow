@@ -75,6 +75,31 @@ def validate_coverage_distance(value, coverage_mode: str) -> float | None:
     return distance
 
 
+def _validate_activity_point(point, label: str, slug: str) -> None:
+    if not isinstance(point, dict):
+        raise ValueError(f"{slug}: {label} must be an object")
+    latitude = point.get("latitude")
+    longitude = point.get("longitude")
+    if not isinstance(latitude, (int, float)) or not math.isfinite(latitude) or not -90 <= latitude <= 90:
+        raise ValueError(f"{slug}: {label}.latitude must be between -90 and 90")
+    if not isinstance(longitude, (int, float)) or not math.isfinite(longitude) or not -180 <= longitude <= 180:
+        raise ValueError(f"{slug}: {label}.longitude must be between -180 and 180")
+
+
+def validate_activity_geography(location: dict) -> None:
+    """Require reusable shore/marine points before a location can be promoted."""
+    slug = str(location.get("slug") or "unknown")
+    activity = location.get("activity")
+    if not isinstance(activity, dict):
+        raise ValueError(f"{slug}: activity geography is required")
+    _validate_activity_point(activity.get("shore_point"), "activity.shore_point", slug)
+    _validate_activity_point(activity.get("marine_point"), "activity.marine_point", slug)
+    bearing = activity.get("coast_bearing")
+    if bearing is not None:
+        if not isinstance(bearing, (int, float)) or not math.isfinite(bearing) or not 0 <= bearing < 360:
+            raise ValueError(f"{slug}: activity.coast_bearing must be >= 0 and < 360")
+
+
 def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
     unknown = sorted(set(config) - set(catalog))
     if unknown:
@@ -82,6 +107,7 @@ def validate_config(config: dict[str, dict], catalog: dict[str, dict]) -> None:
     for slug, entry in config.items():
         if not isinstance(entry, dict):
             raise ValueError(f"{slug}: config must be an object")
+        validate_activity_geography(catalog[slug])
         validate_station_id(str(entry.get("station_id", "")))
         if not str(entry.get("station_name", "")).strip():
             raise ValueError(f"{slug}: station_name is required")
@@ -199,6 +225,7 @@ def promote_batch(
         slug = item["slug"]
         if slug not in catalog:
             raise ValueError(f"Unknown location slug: {slug}")
+        validate_activity_geography(catalog[slug])
         if validate_network:
             try:
                 validate_noaa_compatibility(
@@ -292,7 +319,7 @@ def main() -> int:
 
     if args.validate_config:
         validate_config(load_live_config(), load_catalog())
-        print("Live NOAA config is valid.")
+        print("Live NOAA config and Activity geography are valid.")
         return 0
 
     if args.request:

@@ -1,0 +1,69 @@
+"""Render the public CoastalNow data-sources and methodology page."""
+from __future__ import annotations
+
+from site_generator import LOGO
+from seo import breadcrumb_json_ld, canonical_url
+
+
+def render_methodology_page() -> str:
+    canonical = canonical_url("methodology/index.html")
+    breadcrumbs = breadcrumb_json_ld([
+        ("Home", ""),
+        ("Data Sources & Methodology", "methodology/index.html"),
+    ])
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Sources &amp; Methodology | CoastalNow</title>
+<meta name="description" content="How CoastalNow uses NOAA and National Weather Service data, calculates activity scores, handles safety, and discloses data limitations.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{canonical}">
+{breadcrumbs}
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/activity.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">{LOGO}<span>CoastalNow</span></a><nav class="nav"><a href="/">Home</a><a href="/fishing/">Fishing</a><a class="search-pill" href="/#search">Search</a></nav></div></header>
+<main class="wrap activity-page">
+<div class="breadcrumbs"><a href="/">Home</a><span>/</span>Data Sources &amp; Methodology</div>
+<section class="hero"><div class="hero-inner"><div><p class="eyebrow">TRANSPARENCY</p><h1>Data Sources &amp; Methodology</h1><p class="hero-copy">Where CoastalNow's coastal-condition data comes from, what CoastalNow calculates itself, and how missing data and safety conditions are handled.</p></div><div class="hero-date"><span>CORE PRINCIPLE</span><strong>Source data and CoastalNow calculations stay separate.</strong><small>Official alerts and local guidance always take priority.</small></div></div><svg class="hero-wave" viewBox="0 0 520 170" aria-hidden="true"><path d="M0 110 C90 25 155 155 255 75 S400 35 540 100"/><path d="M0 145 C90 60 155 180 255 110 S400 70 540 135"/></svg><i class="hero-bubble b1"></i><i class="hero-bubble b2"></i></section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">SOURCE DATA</p><h2>Government data used by CoastalNow</h2></div></div>
+<div class="activity-source-list">
+<p><strong>Tides and supported water observations:</strong> NOAA/NOS/CO-OPS. CoastalNow retrieves tide predictions and, where a station supports it, water-temperature observations through NOAA's Tides &amp; Currents services. <a href="https://api.tidesandcurrents.noaa.gov/api/prod/" rel="noopener">NOAA CO-OPS API</a> · <a href="https://tidesandcurrents.noaa.gov/disclaimers.html" rel="noopener">NOAA disclaimer</a>.</p>
+<p><strong>Weather, wind, marine forecast context and active alerts:</strong> NOAA National Weather Service. CoastalNow resolves local forecast points and uses NWS hourly/grid forecast data plus active alerts. <a href="https://www.weather.gov/documentation/services-web-api" rel="noopener">NWS API documentation</a> · <a href="https://www.weather.gov/disclaimer" rel="noopener">NWS disclaimer</a>.</p>
+<p><strong>Solar and lunar context:</strong> calculated locally by CoastalNow from location and date. No paid astronomy API is required.</p>
+</div></section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">FISHING V1</p><h2>What the Fishing Score means</h2></div></div>
+<p>Fishing v1 is designed for shore, pier and nearshore recreational fishing conditions. It does not cover offshore or boat-fishing safety.</p>
+<p>The Fishing Score is calculated by CoastalNow from tide movement, wind, wave/sea state, weather, time of day, a low-weight lunar factor, and optional water-temperature context. It is a planning comparison metric; it <strong>does not predict whether you will catch fish</strong>.</p>
+<p>CoastalNow first calculates activity quality and then applies a separate Safety Gate. A serious hazard can cap the score or replace the numerical recommendation with <strong>NOT RECOMMENDED</strong>. Good tide or weather conditions can never cancel a hard safety stop.</p>
+</section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">DATA QUALITY</p><h2>Missing, stale and limited data</h2></div></div>
+<p>Missing values are not silently converted into favorable conditions. Optional missing factors use a fixed neutral-unknown treatment, while missing critical safety or forecast data lowers confidence or prevents a normal recommendation.</p>
+<p>High and Medium confidence locations may enter numerical rankings. Limited and Unavailable locations remain visible for transparency but are excluded from the primary ranking. If fewer than three hours remain before local midnight, CoastalNow reports that no full three-hour window remains rather than mislabeling the location as a data failure.</p>
+</section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">TIDE COVERAGE</p><h2>Local, Nearby NOAA and derived curves</h2></div></div>
+<p>Some CoastalNow locations use a local NOAA tide station. Others are explicitly labeled <strong>Nearby NOAA</strong> when the best available official station is nearby rather than at the exact location. The station used is disclosed on the location's Tide page and Activity source block.</p>
+<p>For NOAA subordinate stations that do not provide a full 30-minute prediction series, CoastalNow may display an estimated curve between official NOAA high/low predictions. That estimated curve is a CoastalNow visualization and is not represented as an official NOAA 30-minute prediction.</p>
+</section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">INDEPENDENCE</p><h2>Attribution, rights and official status</h2></div></div>
+<p>CoastalNow identifies NOAA/NOS/CO-OPS and the National Weather Service as the sources of government data used on Activity pages. CoastalNow's score, best-time window, explanations, page design and rule-based methodology are separate CoastalNow outputs.</p>
+<p>CoastalNow is an independent service and is <strong>not an official NOAA or National Weather Service product</strong>. It is not affiliated with, sponsored by, or endorsed by NOAA or NWS. CoastalNow does not use NOAA or NWS agency logos to imply endorsement.</p>
+<p>For source-data rights, limitations and official terms, refer to the linked NOAA and NWS agency pages above. CoastalNow does not claim ownership of the underlying NOAA/NWS source data.</p>
+</section>
+
+<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">SAFETY</p><h2>Planning information is not a safety guarantee</h2></div></div>
+<p>Coastal conditions can change quickly. A CoastalNow score is not a statement that conditions are safe. Current official warnings, closures, posted signs, local authorities, lifeguards and first responders always take priority over CoastalNow.</p>
+</section>
+<div class="ad-slot"><span>ADVERTISEMENT</span></div>
+</main>
+<footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div></div></footer>
+</body>
+</html>'''

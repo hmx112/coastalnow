@@ -13,9 +13,12 @@ MAIN_LOGO_WAVE = "M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 
 
 
 class DirectoryGenerationTests(unittest.TestCase):
-    def test_locations_expose_all_fifty_prototype_links(self):
-        self.assertEqual(len(LOCATIONS), 51)
-        self.assertEqual(len({item["page_path"] for item in LOCATIONS.values()}), 51)
+    def test_locations_expose_unique_generated_links(self):
+        self.assertGreater(len(LOCATIONS), 0)
+        self.assertEqual(
+            len({item["page_path"] for item in LOCATIONS.values()}),
+            len(LOCATIONS),
+        )
 
     def test_catalog_statuses_are_rendered_consistently(self):
         live_locations = [

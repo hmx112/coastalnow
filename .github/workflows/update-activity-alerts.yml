@@ -1,0 +1,52 @@
+name: Update coastal Activity safety alerts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coastalnow-site-writes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh NWS alerts and recompute enabled Activity safety states
+        run: python src/generate_activities.py --alerts-only
+
+      - name: Render Activity pages, methodology, Tide links and SEO artifacts
+        run: python src/build_site.py
+
+      - name: Run safety-focused regressions
+        run: |
+          python src/test_activity_conditions.py
+          python src/test_activity_safety.py
+          python src/test_fishing_safety.py
+          python src/test_activity_end_of_day.py
+          python src/test_activity_generation.py
+          python src/test_activity_rendering.py
+          python src/test_activity_attribution.py
+          python src/test_activity_seo_navigation.py
+          python src/test_activity_workflows.py
+
+      - name: Commit refreshed Activity safety state
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/data/conditions public/data/activities public/fishing public/methodology public/tides public/index.html public/sitemap.xml public/robots.txt
+          git diff --cached --quiet || git commit -m "Update coastal Activity safety alerts"
+          git push
