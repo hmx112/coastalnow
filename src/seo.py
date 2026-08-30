@@ -105,7 +105,10 @@ def build_sitemap(
     locations: dict[str, dict],
     activity_inventory: dict[str, dict[str, dict]] | None = None,
 ) -> str:
-    urls = {canonical_url("")}
+    urls = {
+        canonical_url(""),
+        canonical_url("methodology/index.html"),
+    }
     for location in locations.values():
         urls.add(canonical_url(f'tides/{location["state_slug"]}/index.html'))
         if location.get("status") == "Live NOAA":
