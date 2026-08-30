@@ -12,13 +12,13 @@ from site_generator import LOGO
 TEMPLATE = Path(__file__).resolve().parents[2] / "templates" / "activity-location.html"
 
 _FACTOR_LABELS = {
-    "tide": "Tide movement",
-    "wind": "Wind",
-    "wave": "Wave / sea state",
-    "weather": "Weather",
-    "time_of_day": "Time of day",
-    "solunar": "Moon / Solunar",
-    "water_temperature": "Water temperature",
+    "tide": "Tide movement score",
+    "wind": "Wind score",
+    "wave": "Wave / sea state score",
+    "weather": "Weather score",
+    "time_of_day": "Time of day score",
+    "solunar": "Moon / Solunar score",
+    "water_temperature": "Water temperature score",
 }
 
 
@@ -85,6 +85,7 @@ def _score_card(day: dict) -> str:
         '<span class="activity-score-label">Fishing Score</span>'
         f'<strong class="activity-score-value">{score:g}</strong>'
         f'<small>{escape(str(day.get("rating") or ""))}</small>'
+        '<div class="activity-score-definition">0–100 composite planning score · not a raw environmental measurement</div>'
         f'<div class="activity-best-time"><span>Best Fishing Time</span><b>{escape(_fmt_window(day))}</b></div>'
         f'<div class="activity-confidence">Confidence: {escape(confidence)}</div>'
         '</section>'
@@ -172,7 +173,7 @@ def _hourly_section(result: dict) -> str:
                 '</div>'
             )
         body = '<div class="activity-hourly-list">' + "".join(items) + "</div>"
-    return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">BY HOUR</p><h2>Hourly Fishing Score</h2></div><p>Local time</p></div>' + body + '</section>'
+    return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">BY HOUR</p><h2>Hourly Fishing Score</h2></div><p>0–100 score · Local time</p></div>' + body + '</section>'
 
 
 def _factor_section(result: dict) -> str:
@@ -192,7 +193,8 @@ def _factor_section(result: dict) -> str:
             f'<strong>{"—" if value is None else f"{float(value):g}"}</strong>'
             '</div>'
         )
-    return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">BREAKDOWN</p><h2>Why this score?</h2></div></div><div class="activity-factor-list">' + "".join(factor_rows) + '</div></section>'
+    note = '<p class="activity-score-note">Factor scores are normalized from 0–100. They are scoring inputs, not raw weather or ocean measurements.</p>'
+    return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">BREAKDOWN</p><h2>Why this score?</h2></div></div>' + note + '<div class="activity-factor-list">' + "".join(factor_rows) + '</div></section>'
 
 
 def _condition_row(snapshot: dict, result: dict) -> dict:
