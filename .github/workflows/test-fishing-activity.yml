@@ -23,6 +23,8 @@ jobs:
         run: python src/test_activity_conditions.py
       - name: Run NWS duration parsing regression
         run: python src/test_nws_duration_parsing.py
+      - name: Run zero wave-period normalization regression
+        run: python src/test_nws_zero_wave_period.py
       - name: Run Activity collection tests
         run: python src/test_activity_collection.py
       - name: Run generic Activity scoring tests
