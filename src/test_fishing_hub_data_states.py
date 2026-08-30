@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from activities.rendering.hub_page import render_fishing_hub
+from activities.rendering.location_page import render_fishing_location
 
 
 class FishingHubDataStateTests(unittest.TestCase):
@@ -16,6 +17,7 @@ class FishingHubDataStateTests(unittest.TestCase):
             "state_slug": "maine",
             "slug": "bar-harbor",
             "page_path": "tides/maine/bar-harbor/index.html",
+            "timezone": "America/New_York",
         }
 
     def result(self, *, status, confidence, score=None, rating=None):
@@ -28,7 +30,41 @@ class FishingHubDataStateTests(unittest.TestCase):
             "best_window": None,
             "reasons": [],
         }
-        return {"activity": "fishing", "today": day, "tomorrow": dict(day)}
+        return {
+            "activity": "fishing",
+            "today": day,
+            "tomorrow": dict(day),
+            "hourly": {
+                "today": [{
+                    "time": "2026-08-30T10:00:00-04:00",
+                    "final_score": score,
+                    "raw_quality_score": score,
+                    "confidence": confidence,
+                    "hard_stop": False,
+                    "components": {},
+                    "reasons": [],
+                }],
+                "tomorrow": [],
+            },
+            "safety_disclaimer": "Fishing Score is a planning metric, not a safety guarantee.",
+        }
+
+    def snapshot(self):
+        return {
+            "hourly": [{
+                "time": "2026-08-30T10:00:00-04:00",
+                "wind_mph": 8.0,
+                "gust_mph": 10.0,
+                "wave_height_ft": None,
+                "wave_period_s": None,
+                "precip_probability_pct": 10.0,
+                "air_temperature_f": 70.0,
+                "water_temperature_f": None,
+                "condition_text": "Partly Sunny",
+            }],
+            "alerts": {"status": "ok", "items": []},
+            "tide": {"hilo": []},
+        }
 
     def test_limited_group_hides_numeric_recommendation_even_if_diagnostic_score_exists(self):
         results = {
@@ -59,6 +95,23 @@ class FishingHubDataStateTests(unittest.TestCase):
         if "<h3>Poor / Unfavorable</h3>" in html:
             poor = html.split("<h3>Poor / Unfavorable</h3>", 1)[1].split("</section>", 1)[0]
             self.assertNotIn("Bar Harbor", poor)
+
+    def test_limited_location_page_hides_diagnostic_fishing_scores(self):
+        result = self.result(
+            status="Limited",
+            confidence="Limited",
+            score=88.4,
+            rating="Good",
+        )
+        html = render_fishing_location(self.location, result, self.snapshot())
+        hero = html.split('class="activity-score-card', 1)[1].split("</section>", 1)[0]
+        self.assertIn("Limited", hero)
+        self.assertNotIn("88.4", hero)
+        day_cards = html.split('class="activity-day-switch"', 1)[1].split("</section>", 1)[0]
+        self.assertNotIn("88.4", day_cards)
+        hourly = html.split("<h2>Hourly Fishing Score</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("Limited", hourly)
+        self.assertNotIn("88.4", hourly)
 
 
 if __name__ == "__main__":
