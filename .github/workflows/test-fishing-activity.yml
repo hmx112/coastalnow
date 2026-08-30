@@ -21,6 +21,8 @@ jobs:
         run: python src/test_activity_registry.py
       - name: Run Condition Snapshot tests
         run: python src/test_activity_conditions.py
+      - name: Run NWS duration parsing regression
+        run: python src/test_nws_duration_parsing.py
       - name: Run Activity collection tests
         run: python src/test_activity_collection.py
       - name: Run generic Activity scoring tests
