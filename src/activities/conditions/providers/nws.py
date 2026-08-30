@@ -111,7 +111,6 @@ def parse_hourly_forecast(payload: dict) -> list[dict]:
         start = period.get("startTime")
         if not start:
             continue
-        # Parsing here guarantees an offset-aware timestamp without changing NWS local wall time.
         parsed = datetime.fromisoformat(start)
         if parsed.tzinfo is None or parsed.utcoffset() is None:
             raise ValueError("NWS hourly forecast startTime must be offset-aware")
@@ -132,12 +131,17 @@ def parse_hourly_forecast(payload: dict) -> list[dict]:
 
 
 def _parse_duration(value: str) -> timedelta:
-    match = re.fullmatch(r"PT(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?", value)
+    """Parse the day/hour/minute ISO-8601 durations emitted by NWS validTime."""
+    match = re.fullmatch(
+        r"P(?:(\d+(?:\.\d+)?)D)?(?:T(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?)?",
+        value,
+    )
     if not match:
         raise ValueError(f"Unsupported NWS validTime duration: {value}")
-    hours = float(match.group(1) or 0)
-    minutes = float(match.group(2) or 0)
-    duration = timedelta(hours=hours, minutes=minutes)
+    days = float(match.group(1) or 0)
+    hours = float(match.group(2) or 0)
+    minutes = float(match.group(3) or 0)
+    duration = timedelta(days=days, hours=hours, minutes=minutes)
     if duration.total_seconds() <= 0:
         raise ValueError(f"NWS validTime duration must be positive: {value}")
     return duration
@@ -204,10 +208,7 @@ def parse_grid_data(payload: dict) -> list[dict]:
 
 def merge_hourly_conditions(hourly: list[dict], grid: list[dict]) -> list[dict]:
     """Merge grid/marine fields by absolute forecast hour."""
-    grid_by_time = {
-        datetime.fromisoformat(item["time"]): item
-        for item in grid
-    }
+    grid_by_time = {datetime.fromisoformat(item["time"]): item for item in grid}
     out = []
     for row in hourly:
         merged = dict(row)
