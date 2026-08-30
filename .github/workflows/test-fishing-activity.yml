@@ -27,3 +27,7 @@ jobs:
         run: python src/test_activity_scoring_engine.py
       - name: Run generic Activity Safety Gate tests
         run: python src/test_activity_safety.py
+      - name: Run Fishing quality tests
+        run: python src/test_fishing_scoring.py
+      - name: Run Fishing Safety Gate tests
+        run: python src/test_fishing_safety.py
