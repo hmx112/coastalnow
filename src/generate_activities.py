@@ -12,12 +12,12 @@ from activities.conditions.collect import collect_location_conditions
 from activities.conditions.providers.nws import active_alerts, dedupe_alerts
 from activities.paths import activity_data_path
 from activities.registry import ACTIVITIES, enabled_activities
-from activities.scoring.fishing import score_fishing_snapshot
+from activities.scoring.fishing_policy import score_fishing_activity
 from locations import LOCATIONS
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
-DEFAULT_SCORERS = {"fishing": score_fishing_snapshot}
+DEFAULT_SCORERS = {"fishing": score_fishing_activity}
 
 
 def read_json(path: Path) -> dict | None:
