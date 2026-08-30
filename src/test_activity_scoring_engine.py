@@ -1,11 +1,16 @@
 import sys
 import unittest
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from activities.scoring.engine import best_continuous_window, rating_for_score, weighted_score
+from activities.scoring.engine import (
+    best_continuous_window,
+    group_local_days,
+    rating_for_score,
+    weighted_score,
+)
 
 
 class ActivityScoringEngineTests(unittest.TestCase):
@@ -57,6 +62,26 @@ class ActivityScoringEngineTests(unittest.TestCase):
             {"time": "2026-08-30T08:00:00-07:00", "final_score": 90, "available": True, "hard_stop": False, "confidence": "High"},
         ]
         self.assertIsNone(best_continuous_window(hourly, hours=3))
+
+    def test_today_and_tomorrow_follow_location_calendar_not_utc(self):
+        # 2026-08-30 02:00 UTC is still Aug 29 evening in Los Angeles.
+        now = datetime(2026, 8, 30, 2, 0, tzinfo=timezone.utc)
+        hourly = [
+            {"time": "2026-08-29T18:00:00-07:00"},
+            {"time": "2026-08-29T23:00:00-07:00"},
+            {"time": "2026-08-30T00:00:00-07:00"},
+            {"time": "2026-08-30T08:00:00-07:00"},
+            {"time": "2026-08-31T00:00:00-07:00"},
+        ]
+        grouped = group_local_days(hourly, "America/Los_Angeles", now)
+        self.assertEqual([x["time"] for x in grouped["today"]], [
+            "2026-08-29T18:00:00-07:00",
+            "2026-08-29T23:00:00-07:00",
+        ])
+        self.assertEqual([x["time"] for x in grouped["tomorrow"]], [
+            "2026-08-30T00:00:00-07:00",
+            "2026-08-30T08:00:00-07:00",
+        ])
 
 
 if __name__ == "__main__":
