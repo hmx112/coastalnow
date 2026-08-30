@@ -5,6 +5,8 @@ import json
 import re
 from html import escape
 
+from activities.paths import activity_page_path
+
 SITE_ORIGIN = "https://coastalnowtides.com"
 
 
@@ -21,6 +23,18 @@ def canonical_url(path: str) -> str:
 
 def robots_directive(location: dict) -> str:
     return "index,follow" if location.get("status") == "Live NOAA" else "noindex,follow"
+
+
+def activity_robots_directive(result: dict | None) -> str:
+    """Index Activity pages only when current critical data has usable confidence."""
+    if not result:
+        return "noindex,follow"
+    today = result.get("today") or {}
+    confidence = today.get("confidence")
+    status = today.get("status")
+    if confidence in {"High", "Medium"} and status not in {"Limited", "Unavailable"}:
+        return "index,follow"
+    return "noindex,follow"
 
 
 def breadcrumb_json_ld(items: list[tuple[str, str]]) -> str:
@@ -44,12 +58,55 @@ def breadcrumb_json_ld(items: list[tuple[str, str]]) -> str:
     )
 
 
-def build_sitemap(locations: dict[str, dict]) -> str:
+def activity_breadcrumbs(location: dict, activity_slug: str, activity_label: str) -> list[tuple[str, str]]:
+    return [
+        ("Home", ""),
+        (location["state"], f'tides/{location["state_slug"]}/index.html'),
+        (location["name"], location["page_path"]),
+        (activity_label, activity_page_path(location, activity_slug)),
+    ]
+
+
+def activity_seo_tags(location: dict, activity_slug: str, result: dict, activity_label: str | None = None) -> str:
+    label = activity_label or activity_slug.replace("-", " ").title()
+    path = activity_page_path(location, activity_slug)
+    return (
+        f'<meta name="robots" content="{activity_robots_directive(result)}">\n'
+        f'<link rel="canonical" href="{canonical_url(path)}">\n'
+        + breadcrumb_json_ld(activity_breadcrumbs(location, activity_slug, label))
+        + "\n"
+    )
+
+
+def activity_hub_seo_tags(activity_slug: str, activity_label: str | None = None) -> str:
+    label = activity_label or activity_slug.replace("-", " ").title()
+    path = f"{activity_slug}/index.html"
+    return (
+        '<meta name="robots" content="index,follow">\n'
+        f'<link rel="canonical" href="{canonical_url(path)}">\n'
+        + breadcrumb_json_ld([("Home", ""), (label, path)])
+        + "\n"
+    )
+
+
+def build_sitemap(
+    locations: dict[str, dict],
+    activity_inventory: dict[str, dict[str, dict]] | None = None,
+) -> str:
     urls = {canonical_url("")}
     for location in locations.values():
         urls.add(canonical_url(f'tides/{location["state_slug"]}/index.html'))
         if location.get("status") == "Live NOAA":
             urls.add(canonical_url(location["page_path"]))
+
+    if activity_inventory is not None:
+        for activity_slug, results in activity_inventory.items():
+            urls.add(canonical_url(f"{activity_slug}/index.html"))
+            for location_slug, result in results.items():
+                location = locations.get(location_slug)
+                if location and activity_robots_directive(result) == "index,follow":
+                    urls.add(canonical_url(activity_page_path(location, activity_slug)))
+
     rows = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in sorted(urls))
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
