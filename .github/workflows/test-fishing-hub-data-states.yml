@@ -17,3 +17,5 @@ jobs:
           python-version: "3.12"
       - name: Run Fishing hub data-state regression
         run: python src/test_fishing_hub_data_states.py
+      - name: Run complete Tide and Activity regression suite
+        run: python -m unittest discover -s src -p "test_*.py"
