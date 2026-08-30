@@ -1,3 +1,4 @@
+import copy
 import sys
 import unittest
 from datetime import datetime, timezone
@@ -90,6 +91,13 @@ class ActivityEndOfDayTests(unittest.TestCase):
         self.assertFalse(result["today"]["ranking_eligible"])
         self.assertIn(result["tomorrow"]["confidence"], {"High", "Medium"})
         self.assertIsNotNone(result["tomorrow"]["score"])
+
+    def test_late_evening_critical_data_failure_stays_unavailable(self):
+        broken = copy.deepcopy(self.snapshot)
+        broken["hourly"][0]["wind_mph"] = None
+        result = score_fishing_activity(broken, location=self.location, now=self.now)
+        self.assertEqual(result["today"]["status"], "Unavailable")
+        self.assertEqual(result["today"]["confidence"], "Unavailable")
 
     def test_tomorrow_usable_data_keeps_page_indexable_after_today_window_closes(self):
         result = score_fishing_activity(self.snapshot, location=self.location, now=self.now)
