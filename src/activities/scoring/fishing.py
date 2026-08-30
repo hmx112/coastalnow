@@ -2,10 +2,16 @@
 from __future__ import annotations
 
 import math
-from datetime import datetime
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
-from activities.scoring.engine import weighted_score
+from activities.scoring.engine import (
+    best_continuous_window,
+    group_local_days,
+    weighted_score,
+)
 from activities.scoring.safety import SafetyDecision
+from activities.conditions.validation import assess_snapshot_freshness
 
 FISHING_WEIGHTS = {
     "tide": 0.30,
@@ -354,4 +360,136 @@ def score_fishing_hour(
         "available": confidence != "Unavailable",
         "ranking_eligible": confidence in {"High", "Medium"} and not safety["hard_stop"] and safety["final_score"] is not None,
         "reasons": reasons,
+    }
+
+
+def tide_phase_progress_for_time(tide: dict | None, timestamp: str, timezone_name: str) -> float | None:
+    """Return phase progress between adjacent official NOAA high/low turning points."""
+    if not tide:
+        return None
+    tz = ZoneInfo(timezone_name)
+    target = _aware(timestamp).astimezone(tz)
+    events = []
+    for item in tide.get("hilo", []):
+        try:
+            event_time = datetime.strptime(item["t"], "%Y-%m-%d %H:%M").replace(tzinfo=tz)
+        except (KeyError, TypeError, ValueError):
+            continue
+        events.append(event_time)
+    events.sort()
+    for left, right in zip(events, events[1:]):
+        if left <= target <= right:
+            span = (right - left).total_seconds()
+            if span <= 0:
+                return None
+            return max(0.0, min(1.0, (target - left).total_seconds() / span))
+    return None
+
+
+def _alert_active_at(item: dict, timestamp: str) -> bool:
+    target = _aware(timestamp)
+    start = item.get("onset") or item.get("effective")
+    end = item.get("ends") or item.get("expires")
+    try:
+        if start and target < _aware(start):
+            return False
+        if end and target > _aware(end):
+            return False
+    except ValueError:
+        # Active-alert payloads without parseable bounds remain conservatively active.
+        return True
+    return True
+
+
+def _unique_reasons(rows: list[dict]) -> list[str]:
+    seen = set()
+    reasons = []
+    for row in rows:
+        for reason in row.get("reasons", []):
+            if reason not in seen:
+                seen.add(reason)
+                reasons.append(reason)
+    return reasons
+
+
+def _summarize_day(rows: list[dict]) -> dict:
+    best = best_continuous_window(rows, hours=3)
+    if best is not None:
+        confidence = best["confidence"]
+        return {
+            "status": "Limited" if confidence == "Limited" else "normal",
+            "score": best["score"],
+            "rating": best["rating"],
+            "confidence": confidence,
+            "best_window": {"start": best["start"], "end": best["end"]},
+            "ranking_eligible": confidence in {"High", "Medium"},
+            "reasons": _unique_reasons(best["hours"]),
+        }
+
+    if rows and all(row.get("available") and row.get("hard_stop") for row in rows):
+        return {
+            "status": "NOT RECOMMENDED",
+            "score": None,
+            "rating": None,
+            "confidence": min((row.get("confidence", "Unavailable") for row in rows), default="Unavailable"),
+            "best_window": None,
+            "ranking_eligible": False,
+            "reasons": _unique_reasons(rows),
+        }
+    return {
+        "status": "Unavailable",
+        "score": None,
+        "rating": None,
+        "confidence": "Unavailable",
+        "best_window": None,
+        "ranking_eligible": False,
+        "reasons": _unique_reasons(rows),
+    }
+
+
+def score_fishing_snapshot(snapshot: dict, *, location: dict, now: datetime) -> dict:
+    """Score Today/Tomorrow from one common Condition Snapshot."""
+    if now.tzinfo is None or now.utcoffset() is None:
+        raise ValueError("now must be timezone-aware")
+    freshness = assess_snapshot_freshness(snapshot, now)
+    grouped = group_local_days(snapshot.get("hourly", []), location["timezone"], now)
+    astronomy = snapshot.get("astronomy") or {}
+    tide = snapshot.get("tide")
+    coast_bearing = (location.get("activity") or {}).get("coast_bearing")
+    all_alerts = (snapshot.get("alerts") or {}).get("items", [])
+    scored_days = {}
+
+    for label in ("today", "tomorrow"):
+        day_astro = astronomy.get(label) or {}
+        moon_phase = day_astro.get("moon_phase_fraction")
+        solar = day_astro
+        rows = []
+        for hour in grouped[label]:
+            phase = tide_phase_progress_for_time(tide, hour["time"], location["timezone"])
+            active = [item for item in all_alerts if _alert_active_at(item, hour["time"])]
+            rows.append(score_fishing_hour(
+                hour,
+                tide_phase_progress=phase,
+                solar=solar,
+                moon_phase_fraction=moon_phase,
+                alerts=active,
+                freshness=freshness,
+                tide_available=phase is not None,
+                coast_bearing=coast_bearing,
+            ))
+        scored_days[label] = rows
+
+    return {
+        "schema_version": 1,
+        "activity": "fishing",
+        "location": location["slug"],
+        "scorer_version": "fishing-v1",
+        "generated_at_utc": now.isoformat(timespec="seconds"),
+        "input_snapshot_generated_at_utc": snapshot.get("generated_at_utc"),
+        "freshness": freshness,
+        "today": _summarize_day(scored_days["today"]),
+        "tomorrow": _summarize_day(scored_days["tomorrow"]),
+        "hourly": scored_days,
+        "scope": "shore / pier / nearshore recreational fishing",
+        "safety_disclaimer": "Fishing Score is a planning metric, not a safety guarantee. Official warnings and local guidance always take priority.",
     }
