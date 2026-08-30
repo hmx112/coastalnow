@@ -3,6 +3,7 @@ import json
 from collections import defaultdict
 from html import escape
 
+from activities.registry import enabled_activities
 from locations import LOCATIONS
 from seo import breadcrumb_json_ld, canonical_url
 
@@ -21,6 +22,10 @@ def _badge(x):
 
 def _card(x,href): return f'<a class="info-card location-card" href="{escape(href)}">{_badge(x)}<h3>{escape(x["name"])}</h3><p>{escape(x["state"])} · Today + 7-day view</p><span class="card-arrow">View location →</span></a>'
 
+def _activity_card(activity):
+ label=escape(activity['label']); slug=escape(activity['slug'])
+ return f'<a class="info-card activity-directory-card" href="{slug}/index.html"><span class="state-code">ACTIVITY</span><h3>{label}</h3><p>Compare today and tomorrow across CoastalNow locations.</p><span class="card-arrow">Explore {label.lower()} →</span></a>'
+
 def _hero(eyebrow,title,copy): return f'''<section class="hero"><div class="hero-inner"><div><p class="eyebrow">{escape(eyebrow)}</p><h1>{escape(title)}</h1><p class="hero-copy">{escape(copy)}</p></div><div class="hero-date"><span>DIRECTORY STATUS</span><strong>NOAA-ready locations</strong><small>Live data and preview pages clearly marked</small></div></div><svg class="hero-wave" viewBox="0 0 520 170" aria-hidden="true"><path d="M0 110 C90 25 155 155 255 75 S400 35 540 100"/><path d="M0 145 C90 60 155 180 255 110 S400 70 540 135"/></svg><i class="hero-bubble b1"></i><i class="hero-bubble b2"></i></section>'''
 
 def _shell(title,desc,prefix,body,canonical_path,breadcrumbs):
@@ -32,8 +37,12 @@ def _state_card(slug,items): return f'<a class="info-card state-card" href="tide
 
 def _home(groups):
  all_items=sorted((x for v in groups.values() for x in v),key=lambda x:x['name'].casefold()); data=json.dumps([{'name':x['name'],'state':x['state'],'url':x['page_path'],'status':location_status(x)} for x in all_items],ensure_ascii=False)
+ activities=enabled_activities()
  body=_hero('COASTAL TIDE DIRECTORY','Find tide times by coastal location.','A clear starting point for today’s tide times, NOAA pages and coastal location guides.')
- body+=f'''<section class="section" id="search"><div class="section-head"><h2>Find a beach or city</h2><p>Search {len(all_items)} coastal locations</p></div><div class="search-box"><input id="q" placeholder="San Diego, Florida, Holden Beach…"><button onclick="go()">Search</button></div><div id="results" class="directory-grid"></div></section><section class="section" id="states"><div class="section-head"><h2>Browse by state</h2><p>State directories</p></div><div class="directory-grid">{"".join(_state_card(k,v) for k,v in groups.items())}</div></section><section class="section"><div class="section-head"><h2>All coastal locations</h2><p>Live NOAA and Preview status</p></div><div class="directory-grid">{"".join(_card(x,x["page_path"]) for x in all_items)}</div></section><div class="ad-slot"><span>ADVERTISEMENT</span></div><script>const L={data};function go(){{const q=document.getElementById('q').value.toLowerCase().trim();document.getElementById('results').innerHTML=q?L.filter(x=>(x.name+' '+x.state).toLowerCase().includes(q)).slice(0,12).map(x=>`<a class="info-card" href="${{x.url}}"><span class="status-badge ${{x.status==='Live NOAA'?'badge-live':'badge-preview'}}">${{x.status}}</span><h3>${{x.name}}</h3><p>${{x.state}}</p></a>`).join('')||'<p>No result</p>':''}}</script>'''
+ body+=f'''<section class="section" id="search"><div class="section-head"><h2>Find a beach or city</h2><p>Search {len(all_items)} coastal locations</p></div><div class="search-box"><input id="q" placeholder="San Diego, Florida, Holden Beach…"><button onclick="go()">Search</button></div><div id="results" class="directory-grid"></div></section>'''
+ if activities:
+  body+=f'''<section class="section" id="activities"><div class="section-head"><h2>Explore by activity</h2><p>Compare coastal conditions by what you want to do</p></div><div class="directory-grid">{"".join(_activity_card(item) for item in activities)}</div></section>'''
+ body+=f'''<section class="section" id="states"><div class="section-head"><h2>Browse by state</h2><p>State directories</p></div><div class="directory-grid">{"".join(_state_card(k,v) for k,v in groups.items())}</div></section><section class="section"><div class="section-head"><h2>All coastal locations</h2><p>Live NOAA and Preview status</p></div><div class="directory-grid">{"".join(_card(x,x["page_path"]) for x in all_items)}</div></section><div class="ad-slot"><span>ADVERTISEMENT</span></div><script>const L={data};function go(){{const q=document.getElementById('q').value.toLowerCase().trim();document.getElementById('results').innerHTML=q?L.filter(x=>(x.name+' '+x.state).toLowerCase().includes(q)).slice(0,12).map(x=>`<a class="info-card" href="${{x.url}}"><span class="status-badge ${{x.status==='Live NOAA'?'badge-live':'badge-preview'}}">${{x.status}}</span><h3>${{x.name}}</h3><p>${{x.state}}</p></a>`).join('')||'<p>No result</p>':''}}</script>'''
  return _shell('CoastalNow — Tide Times by U.S. Coastal Location','Browse tide times by U.S. coastal location.','',body,'',[('Home','')])
 
 def _state_page(items):
