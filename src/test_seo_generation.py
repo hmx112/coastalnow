@@ -6,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+from build_site import load_activity_inventory
 from locations import LOCATIONS
 from seo import (
     SITE_ORIGIN,
@@ -150,7 +151,11 @@ class SeoGenerationTests(unittest.TestCase):
         robots = PUBLIC / "robots.txt"
         self.assertTrue(sitemap.exists())
         self.assertTrue(robots.exists())
-        self.assertEqual(sitemap.read_text(encoding="utf-8"), build_sitemap(LOCATIONS))
+        inventory = load_activity_inventory(PUBLIC)
+        self.assertEqual(
+            sitemap.read_text(encoding="utf-8"),
+            build_sitemap(LOCATIONS, inventory),
+        )
         self.assertEqual(robots.read_text(encoding="utf-8"), build_robots_txt())
 
 
