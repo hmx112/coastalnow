@@ -25,13 +25,21 @@ def _less_than_three_hours_to_midnight(now: datetime, timezone_name: str) -> boo
     return timedelta(0) <= midnight - local_now < timedelta(hours=3)
 
 
+def _day_has_usable_data(day: dict | None) -> bool:
+    day = day or {}
+    return (
+        day.get("confidence") in {"High", "Medium"}
+        and day.get("status") not in {"Limited", "Unavailable"}
+    )
+
+
 def apply_end_of_day_policy(result: dict, *, location: dict, now: datetime) -> dict:
     """Distinguish a closing local day from genuine data unavailability.
 
     A full Fishing recommendation requires a consecutive three-hour window. When
     fewer than three hours remain before local midnight, lack of such a window is
-    a clock/calendar state rather than a provider failure. Any remaining hard-stop
-    condition still takes priority over this presentation state.
+    a clock/calendar state rather than a provider failure. Safety hard stops and
+    genuine critical-data failures always take priority over this presentation state.
     """
     today = result.get("today") or {}
     rows = (result.get("hourly") or {}).get("today") or []
@@ -52,7 +60,15 @@ def apply_end_of_day_policy(result: dict, *, location: dict, now: datetime) -> d
         })
         return result
 
-    fallback = (result.get("tomorrow") or {}).get("confidence", "Unavailable")
+    # A closing-day label must never disguise a real critical-data failure.
+    if rows and any(not row.get("available", False) for row in rows):
+        return result
+
+    tomorrow = result.get("tomorrow") or {}
+    if not rows and not _day_has_usable_data(tomorrow):
+        return result
+
+    fallback = tomorrow.get("confidence", "Unavailable")
     today.update({
         "status": END_OF_DAY_STATUS,
         "score": None,
