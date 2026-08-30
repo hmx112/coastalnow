@@ -9,6 +9,7 @@ from activities.rendering.links import activity_location_url
 from site_generator import LOGO
 
 TEMPLATE = Path(__file__).resolve().parents[2] / "templates" / "activity-hub.html"
+END_OF_DAY_STATUS = "No 3-hour window remaining"
 
 
 def _fill(template: str, values: dict[str, str]) -> str:
@@ -73,10 +74,25 @@ def _number_one(rows: list[tuple[dict, dict]], day_key: str) -> str:
     )
 
 
+def _limited_or_unavailable(day: dict) -> bool:
+    status = day.get("status") or "Unavailable"
+    return day.get("confidence") in {"Limited", "Unavailable"} or status in {"Limited", "Unavailable"}
+
+
 def _group_card(location: dict, day: dict) -> str:
     score = day.get("score")
     status = day.get("status") or "Unavailable"
-    display = status if score is None else f'{float(score):g} {day.get("rating") or ""}'
+    confidence = day.get("confidence") or "Unavailable"
+    if status == "NOT RECOMMENDED":
+        display = "NOT RECOMMENDED"
+    elif _limited_or_unavailable(day):
+        display = "Limited" if "Limited" in {status, confidence} else "Unavailable"
+    elif status == END_OF_DAY_STATUS:
+        display = END_OF_DAY_STATUS
+    elif score is None:
+        display = status
+    else:
+        display = f'{float(score):g} {day.get("rating") or ""}'.strip()
     return (
         f'<a class="activity-group-card" href="{escape(activity_location_url(location, "fishing"))}">'
         f'<h3>{escape(location["name"])}</h3><p>{escape(location["state_code"])}</p><strong>{escape(display)}</strong></a>'
@@ -88,6 +104,7 @@ def _groups(locations: dict[str, dict], results: dict[str, dict], day_key: str) 
         "Excellent": [],
         "Good": [],
         "Fair": [],
+        "Today’s Window Closed": [],
         "Poor / Unfavorable": [],
         "Not Recommended": [],
         "Limited / Unavailable": [],
@@ -100,8 +117,10 @@ def _groups(locations: dict[str, dict], results: dict[str, dict], day_key: str) 
         status = day.get("status") or "Unavailable"
         if status == "NOT RECOMMENDED":
             key = "Not Recommended"
-        elif day.get("confidence") in {"Limited", "Unavailable"} or status in {"Limited", "Unavailable"}:
+        elif _limited_or_unavailable(day):
             key = "Limited / Unavailable"
+        elif status == END_OF_DAY_STATUS:
+            key = "Today’s Window Closed"
         elif day.get("rating") == "Excellent":
             key = "Excellent"
         elif day.get("rating") == "Good":

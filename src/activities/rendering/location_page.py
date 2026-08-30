@@ -42,6 +42,21 @@ def _fmt_window(day: dict) -> str:
     return f'{_fmt_time(window["start"])}–{_fmt_time(window["end"])}'
 
 
+def _limited_or_unavailable(day: dict) -> bool:
+    status = day.get("status") or "Unavailable"
+    return day.get("confidence") in {"Limited", "Unavailable"} or status in {"Limited", "Unavailable"}
+
+
+def _data_state_label(day: dict) -> str:
+    status = day.get("status") or "Unavailable"
+    confidence = day.get("confidence") or "Unavailable"
+    if "Limited" in {status, confidence}:
+        return "Limited"
+    if "Unavailable" in {status, confidence}:
+        return "Unavailable"
+    return status
+
+
 def _score_card(day: dict) -> str:
     status = day.get("status") or "Unavailable"
     score = day.get("score")
@@ -55,12 +70,13 @@ def _score_card(day: dict) -> str:
             f'<div class="activity-confidence">Confidence: {escape(confidence)}</div>'
             '</section>'
         )
-    if score is None:
+    if score is None or _limited_or_unavailable(day):
+        label = _data_state_label(day)
         return (
-            f'<section class="activity-score-card data-state {escape(status.lower().replace(" ", "-"))}">'
+            f'<section class="activity-score-card data-state {escape(label.lower().replace(" ", "-"))}">'
             '<span class="activity-score-label">Fishing Score</span>'
             '<strong class="activity-score-value">—</strong>'
-            f'<small>{escape(status)}</small>'
+            f'<small>{escape(label)}</small>'
             f'<div class="activity-confidence">Confidence: {escape(confidence)}</div>'
             '</section>'
         )
@@ -92,9 +108,17 @@ def _day_cards(result: dict) -> str:
     cards = []
     for key, label in (("today", "Today"), ("tomorrow", "Tomorrow")):
         day = result.get(key) or {}
+        status = day.get("status") or "Unavailable"
         score = day.get("score")
-        score_text = "—" if score is None else f"{score:g}"
-        detail = day.get("status") if score is None else day.get("rating")
+        if status == "NOT RECOMMENDED":
+            score_text = "—"
+            detail = "NOT RECOMMENDED"
+        elif _limited_or_unavailable(day):
+            score_text = "—"
+            detail = _data_state_label(day)
+        else:
+            score_text = "—" if score is None else f"{score:g}"
+            detail = status if score is None else day.get("rating")
         cards.append(
             f'<article class="activity-day-card" data-day="{key}"><span>{label}</span>'
             f'<strong>{escape(score_text)}</strong><small>{escape(str(detail or "Unavailable"))}</small>'
@@ -104,25 +128,47 @@ def _day_cards(result: dict) -> str:
 
 
 def _hourly_section(result: dict) -> str:
+    day = result.get("today") or {}
+    status = day.get("status") or "Unavailable"
     rows = (result.get("hourly") or {}).get("today") or []
-    if not rows:
+    if status == "NOT RECOMMENDED":
+        body = (
+            '<div class="activity-empty">'
+            'Safety condition takes priority — hourly numerical recommendation is not shown.'
+            '</div>'
+        )
+    elif _limited_or_unavailable(day):
+        label = _data_state_label(day)
+        body = (
+            '<div class="activity-empty">'
+            f'{escape(label)} data — hourly numerical recommendation is not shown because critical coastal context is incomplete.'
+            '</div>'
+        )
+    elif not rows:
         body = '<div class="activity-empty">Hourly score is unavailable for today.</div>'
     else:
         items = []
         for row in rows:
             score = row.get("final_score")
+            confidence = row.get("confidence") or "Unavailable"
             if row.get("hard_stop"):
                 score_text = "STOP"
+                width = 0
+            elif confidence in {"Limited", "Unavailable"}:
+                score_text = confidence
+                width = 0
             elif score is None:
                 score_text = "—"
+                width = 0
             else:
                 score_text = f"{score:g}"
+                width = max(0, min(100, float(score)))
             items.append(
                 '<div class="activity-hour-row">'
                 f'<span>{escape(_fmt_time(row["time"]))}</span>'
-                f'<div class="activity-hour-track"><i style="width:{0 if score is None else max(0, min(100, float(score))):g}%"></i></div>'
+                f'<div class="activity-hour-track"><i style="width:{width:g}%"></i></div>'
                 f'<strong>{escape(score_text)}</strong>'
-                f'<small>{escape(str(row.get("confidence") or ""))}</small>'
+                f'<small>{escape(confidence)}</small>'
                 '</div>'
             )
         body = '<div class="activity-hourly-list">' + "".join(items) + "</div>"
@@ -195,10 +241,11 @@ def _why_section(result: dict) -> str:
     reasons = (result.get("today") or {}).get("reasons") or []
     text = explain_reasons(reasons)
     if not text:
-        status = (result.get("today") or {}).get("status")
+        day = result.get("today") or {}
+        status = day.get("status")
         if status == "NOT RECOMMENDED":
             text = "Current safety conditions prevent a normal Fishing recommendation."
-        elif status in {"Limited", "Unavailable"}:
+        elif _limited_or_unavailable(day):
             text = "Some critical coastal-condition data is not complete enough for a normal recommendation."
         else:
             text = "The score combines tide movement, wind, waves, weather and time-of-day conditions."
