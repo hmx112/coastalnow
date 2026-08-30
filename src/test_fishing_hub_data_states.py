@@ -96,6 +96,21 @@ class FishingHubDataStateTests(unittest.TestCase):
             poor = html.split("<h3>Poor / Unfavorable</h3>", 1)[1].split("</section>", 1)[0]
             self.assertNotIn("Bar Harbor", poor)
 
+    def test_not_recommended_remains_visible_when_confidence_is_limited(self):
+        results = {
+            "bar-harbor": self.result(
+                status="NOT RECOMMENDED",
+                confidence="Limited",
+                score=42.0,
+                rating="Poor",
+            )
+        }
+        html = render_fishing_hub({"bar-harbor": self.location}, results)
+        section = html.split("<h3>Not Recommended</h3>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("Bar Harbor", section)
+        self.assertIn("NOT RECOMMENDED", section)
+        self.assertNotIn("<strong>Limited</strong>", section)
+
     def test_limited_location_page_hides_diagnostic_fishing_scores(self):
         result = self.result(
             status="Limited",
