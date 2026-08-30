@@ -128,6 +128,21 @@ class FishingHubDataStateTests(unittest.TestCase):
         self.assertIn("Limited", hourly)
         self.assertNotIn("88.4", hourly)
 
+    def test_not_recommended_location_sections_override_limited_confidence(self):
+        result = self.result(
+            status="NOT RECOMMENDED",
+            confidence="Limited",
+            score=42.0,
+            rating="Poor",
+        )
+        html = render_fishing_location(self.location, result, self.snapshot())
+        day_cards = html.split('class="activity-day-switch"', 1)[1].split("</section>", 1)[0]
+        self.assertIn("NOT RECOMMENDED", day_cards)
+        self.assertNotIn("<small>Limited</small>", day_cards)
+        hourly = html.split("<h2>Hourly Fishing Score</h2>", 1)[1].split("</section>", 1)[0]
+        self.assertIn("Safety condition takes priority", hourly)
+        self.assertNotIn("42", hourly)
+
 
 if __name__ == "__main__":
     unittest.main()
