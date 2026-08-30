@@ -89,7 +89,7 @@ def _wind_mph(value: str | int | float | None) -> float | None:
     numbers = [float(item) for item in re.findall(r"\d+(?:\.\d+)?", text)]
     if not numbers:
         return None
-    speed = max(numbers)  # conservative end of an NWS range such as "10 to 14 mph"
+    speed = max(numbers)
     if "kt" in text or "knot" in text:
         speed *= 1.150779448
     elif "km" in text:
@@ -162,6 +162,9 @@ def _unit_value(field: str, value: float | None, uom: str | None) -> float | Non
     elif field == "wave_height_ft":
         if unit.endswith(":m") or unit == "m" or "wmoUnit:m" == unit:
             number *= 3.280839895
+    elif field == "wave_period_s":
+        if number <= 0:
+            return None
     elif field == "air_temperature_f":
         if "degC" in unit:
             number = number * 9 / 5 + 32
