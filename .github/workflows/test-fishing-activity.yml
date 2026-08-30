@@ -35,10 +35,14 @@ jobs:
         run: python src/test_fishing_scoring.py
       - name: Run Fishing Safety Gate tests
         run: python src/test_fishing_safety.py
+      - name: Run end-of-day Fishing regression
+        run: python src/test_activity_end_of_day.py
       - name: Run Activity generation tests
         run: python src/test_activity_generation.py
       - name: Run Activity rendering tests
         run: python src/test_activity_rendering.py
+      - name: Run Activity attribution tests
+        run: python src/test_activity_attribution.py
       - name: Run Activity SEO and navigation tests
         run: python src/test_activity_seo_navigation.py
       - name: Run Activity workflow integration tests
