@@ -1,0 +1,35 @@
+name: Notify IndexNow of public page changes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coastalnow-indexnow-main
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Submit changed public URLs to IndexNow
+        env:
+          INDEXNOW_BEFORE: ${{ github.event.before }}
+          INDEXNOW_AFTER: ${{ github.sha }}
+        run: python src/indexnow_submit.py --before "$INDEXNOW_BEFORE" --after "$INDEXNOW_AFTER"
