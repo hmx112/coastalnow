@@ -182,8 +182,6 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     primary_block = _primary_activity_cta(location, configured, activity_results)
     html = _inject_primary_activity_cta(html, primary_block)
 
-    primary_block = _primary_activity_cta(location, configured, activity_results)
-    html = _inject_primary_activity_cta(html, primary_block)
 
     block = ""
     if cards:
