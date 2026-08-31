@@ -1,0 +1,45 @@
+name: One-time regenerate Tide navigation
+
+on:
+  push:
+    branches:
+      - "ops/regenerate-tide-navigation"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coastalnow-site-writes
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate site from current data
+        run: python src/build_site.py
+
+      - name: Verify Tide branding and Activity navigation
+        run: |
+          python src/test_tide_brand_navigation.py
+          python src/test_activity_seo_navigation.py
+          python src/test_directory_generation.py
+
+      - name: Commit regenerated public pages
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/tides public/fishing public/methodology public/index.html public/sitemap.xml public/robots.txt
+          git diff --cached --quiet || git commit -m "Regenerate Tide Activity navigation"
+          git push origin HEAD:main
