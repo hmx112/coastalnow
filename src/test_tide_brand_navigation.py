@@ -25,6 +25,7 @@ def fishing_result():
 
 
 class TideBrandNavigationTests(unittest.TestCase):
+    # These regressions cover the user-visible Tide header before dynamic public pages are regenerated.
     def render_san_diego_tide(self) -> str:
         location = LOCATIONS["san-diego"]
         data, preview_now = build_preview(location)
