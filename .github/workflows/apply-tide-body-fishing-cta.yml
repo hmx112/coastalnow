@@ -73,7 +73,7 @@ jobs:
                   return html
               hero = HERO_SECTION_PATTERN.search(html)
               if not hero:
-                  raise ValueError("Could not find Tide hero insertion point for primary Activity CTA")
+                  return html
               return html[:hero.end()] + primary_block + html[hero.end():]
 
 
