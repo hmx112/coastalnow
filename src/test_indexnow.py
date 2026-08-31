@@ -15,8 +15,11 @@ class IndexNowIntegrationTests(unittest.TestCase):
     def module(self):
         spec = importlib.util.find_spec("indexnow_submit")
         self.assertIsNotNone(spec, "src/indexnow_submit.py must exist")
-        module = __import__("indexnow_submit")
-        return module
+        return __import__("indexnow_submit")
+
+    def require_attr(self, module, name):
+        self.assertTrue(hasattr(module, name), f"indexnow_submit.{name} must exist")
+        return getattr(module, name)
 
     def test_public_html_paths_map_to_canonical_site_urls(self):
         module = self.module()
@@ -103,6 +106,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
 
     def test_post_batch_sends_utf8_json_to_official_indexnow_endpoint(self):
         module = self.module()
+        post_batch = self.require_attr(module, "post_batch")
         captured = {}
 
         class Response:
@@ -118,7 +122,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
             return Response()
 
         urls = [self.BASE_URL + "/fishing/"]
-        status = module.post_batch(urls, opener=opener)
+        status = post_batch(urls, opener=opener)
         request = captured["request"]
         self.assertEqual(status, 200)
         self.assertEqual(request.full_url, "https://api.indexnow.org/indexnow")
@@ -129,6 +133,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
 
     def test_submit_urls_retries_temporary_403_then_accepts_initial_202(self):
         module = self.module()
+        submit_urls = self.require_attr(module, "submit_urls")
         attempts = []
         sleeps = []
 
@@ -145,7 +150,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
                 raise HTTPError(request.full_url, 403, "key not propagated yet", {}, None)
             return Response()
 
-        statuses = module.submit_urls(
+        statuses = submit_urls(
             [self.BASE_URL + "/"],
             opener=opener,
             sleep=lambda seconds: sleeps.append(seconds),
@@ -158,6 +163,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
 
     def test_run_submission_uses_git_diff_and_sitemap_then_submits(self):
         module = self.module()
+        run_submission = self.require_attr(module, "run_submission")
         calls = {}
         diff = f"A\tpublic/{self.KEY}.txt\n"
         sitemap = """<?xml version=\"1.0\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://coastalnowtides.com/</loc></url><url><loc>https://coastalnowtides.com/fishing/</loc></url></urlset>"""
@@ -174,7 +180,7 @@ class IndexNowIntegrationTests(unittest.TestCase):
             calls["urls"] = list(urls)
             return [200]
 
-        count = module.run_submission(
+        count = run_submission(
             "before-sha",
             "after-sha",
             diff_loader=diff_loader,
