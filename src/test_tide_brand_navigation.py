@@ -38,14 +38,16 @@ class TideBrandNavigationTests(unittest.TestCase):
         self.assertIn(LOGO, html)
         self.assertNotIn("M3 13c3.5-4 6.8-4 10.1 0", html)
 
-    def test_site_build_adds_visible_enabled_fishing_navigation_link_to_tide_header(self):
+    def test_site_build_adds_mobile_visible_enabled_fishing_navigation_link_to_tide_header(self):
         location = LOCATIONS["san-diego"]
         html = self.render_san_diego_tide()
         updated = inject_activity_links(html, location, {"fishing": fishing_result()})
-        expected = '<a href="/tides/california/san-diego/fishing/">Fishing</a>'
+        expected = '<a class="activity-nav-link" href="/tides/california/san-diego/fishing/">Fishing</a>'
         header = updated.split("</header>", 1)[0]
         self.assertIn(expected, header)
         self.assertIn("Plan coastal activities", updated)
+        self.assertIn(".nav>a:not(.activity-nav-link){display:none}", updated)
+        self.assertNotIn(".nav>a{display:none}", updated)
 
 
 if __name__ == "__main__":
