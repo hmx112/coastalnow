@@ -1,0 +1,136 @@
+name: Apply Tide body Fishing CTA
+
+on:
+  push:
+    branches:
+      - "fix/tide-body-fishing-cta"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: contains(github.event.head_commit.message, 'Apply Tide body Fishing CTA')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/tide-body-fishing-cta
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch Tide primary Activity CTA
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import textwrap
+
+          path = Path('src/build_site.py')
+          text = path.read_text(encoding='utf-8')
+
+          marker = textwrap.dedent('''\
+          ACTIVITY_NAV_PATTERN = re.compile(
+              r"<!-- ACTIVITY_NAV_START -->.*?<!-- ACTIVITY_NAV_END -->",
+              re.DOTALL,
+          )
+          ''')
+          addition = marker + textwrap.dedent('''\
+          ACTIVITY_PRIMARY_PATTERN = re.compile(
+              r"<!-- ACTIVITY_PRIMARY_START -->.*?<!-- ACTIVITY_PRIMARY_END -->",
+              re.DOTALL,
+          )
+          HERO_SECTION_PATTERN = re.compile(
+              r'(<section class="hero"[^>]*>.*?</section>)',
+              re.DOTALL,
+          )
+          ''')
+          if marker not in text:
+              raise SystemExit('Activity nav pattern marker not found')
+          text = text.replace(marker, addition, 1)
+
+          helper_marker = 'def inject_activity_links(html: str, location: dict, activity_results: dict[str, dict]) -> str:\n'
+          helpers = textwrap.dedent('''\
+          def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
+              fishing = configured.get("fishing")
+              if not fishing or not activity_results.get("fishing"):
+                  return ""
+              href = escape(activity_location_url(location, "fishing"))
+              city = escape(location["city"])
+              return (
+                  '<!-- ACTIVITY_PRIMARY_START -->'
+                  '<section class="section activity-primary-section">'
+                  f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+                  '<p class="eyebrow">FISHING</p>'
+                  f'<h2>Fishing conditions for {city}</h2>'
+                  '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
+                  '<p><strong>View fishing conditions →</strong></p>'
+                  '</div></a></section>'
+                  '<!-- ACTIVITY_PRIMARY_END -->'
+              )
+
+
+          def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
+              if ACTIVITY_PRIMARY_PATTERN.search(html):
+                  return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
+              if not primary_block:
+                  return html
+              hero = HERO_SECTION_PATTERN.search(html)
+              if not hero:
+                  raise ValueError("Could not find Tide hero insertion point for primary Activity CTA")
+              return html[:hero.end()] + primary_block + html[hero.end():]
+
+
+          ''')
+          if helper_marker not in text:
+              raise SystemExit('inject_activity_links marker not found')
+          text = text.replace(helper_marker, helpers + helper_marker, 1)
+
+          old = textwrap.dedent('''\
+              if nav_block:
+                  html = html.replace(
+                      ".nav>a{display:none}",
+                      ".nav>a:not(.activity-nav-link){display:none}",
+                      1,
+                  )
+
+              block = ""
+          ''')
+          new = textwrap.dedent('''\
+              if nav_block:
+                  html = html.replace(
+                      ".nav>a{display:none}",
+                      ".nav>a:not(.activity-nav-link){display:none}",
+                      1,
+                  )
+
+              primary_block = _primary_activity_cta(location, configured, activity_results)
+              html = _inject_primary_activity_cta(html, primary_block)
+
+              block = ""
+          ''')
+          if old not in text:
+              raise SystemExit('Activity block insertion point not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Compile source
+        run: python -m py_compile src/build_site.py src/test_tide_body_activity_cta.py
+      - name: Regenerate final Tide pages
+        run: python src/build_site.py
+      - name: Run focused regressions
+        run: |
+          python src/test_tide_body_activity_cta.py
+          python src/test_tide_brand_navigation.py
+          python src/test_tide_mobile_activity_nav.py
+          python src/test_activity_seo_navigation.py
+      - name: Install Pinterest test dependency
+        run: pip install -r requirements-pinterest.txt
+      - name: Run complete regression suite
+        run: python -m unittest discover -s src -p "test_*.py"
+      - name: Commit implementation and generated Tide pages
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add src/build_site.py public/tides
+          git diff --cached --quiet || git commit -m "Add visible Fishing CTA to Tide pages"
+          git push
