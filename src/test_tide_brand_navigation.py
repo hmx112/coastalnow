@@ -5,9 +5,23 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from build_site import inject_activity_links
 from generate_tides import build_preview, render_location
 from locations import LOCATIONS
 from site_generator import LOGO
+
+
+def fishing_result():
+    return {
+        "activity": "fishing",
+        "location": "san-diego",
+        "today": {
+            "confidence": "High",
+            "status": "normal",
+            "score": 88,
+            "rating": "Good",
+        },
+    }
 
 
 class TideBrandNavigationTests(unittest.TestCase):
@@ -24,12 +38,14 @@ class TideBrandNavigationTests(unittest.TestCase):
         self.assertIn(LOGO, html)
         self.assertNotIn("M3 13c3.5-4 6.8-4 10.1 0", html)
 
-    def test_direct_tide_render_has_visible_enabled_fishing_navigation_link(self):
+    def test_site_build_adds_visible_enabled_fishing_navigation_link_to_tide_header(self):
+        location = LOCATIONS["san-diego"]
         html = self.render_san_diego_tide()
+        updated = inject_activity_links(html, location, {"fishing": fishing_result()})
         expected = '<a href="/tides/california/san-diego/fishing/">Fishing</a>'
-        self.assertIn(expected, html)
-        header = html.split("</header>", 1)[0]
+        header = updated.split("</header>", 1)[0]
         self.assertIn(expected, header)
+        self.assertIn("Plan coastal activities", updated)
 
 
 if __name__ == "__main__":
