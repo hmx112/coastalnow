@@ -6,7 +6,7 @@ on:
       - "feat/pinterest-domain-verification"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test:
@@ -20,3 +20,13 @@ jobs:
           python-version: "3.12"
       - name: Run Pinterest verification regression
         run: python src/test_directory_generation.py
+      - name: Regenerate directory pages
+        run: python src/build_site.py
+      - name: Commit regenerated directory pages
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/index.html public/tides/*/index.html
+          git diff --cached --quiet || git commit -m "Regenerate directory pages with Pinterest verification"
+          git push
