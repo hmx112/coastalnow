@@ -1,4 +1,4 @@
-name: Apply Tide body Fishing CTA
+name: Clean Tide body Fishing CTA implementation
 
 on:
   push:
@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 jobs:
-  patch:
-    if: contains(github.event.head_commit.message, 'Apply Tide body Fishing CTA')
+  cleanup:
+    if: contains(github.event.head_commit.message, 'Clean Tide body Fishing CTA')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,78 +19,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Patch Tide primary Activity CTA
+      - name: Remove duplicate CTA definitions
         run: |
           python - <<'PY'
           from pathlib import Path
-          import textwrap
 
           path = Path('src/build_site.py')
           text = path.read_text(encoding='utf-8')
 
-          marker = '''ACTIVITY_NAV_PATTERN = re.compile(
-              r"<!-- ACTIVITY_NAV_START -->.*?<!-- ACTIVITY_NAV_END -->",
-              re.DOTALL,
-          )'''.replace('          ', '')
-          addition = marker + '\n' + textwrap.dedent('''\
-          ACTIVITY_PRIMARY_PATTERN = re.compile(
-              r"<!-- ACTIVITY_PRIMARY_START -->.*?<!-- ACTIVITY_PRIMARY_END -->",
-              re.DOTALL,
-          )
-          HERO_SECTION_PATTERN = re.compile(
-              r'(<section class="hero"[^>]*>.*?</section>)',
-              re.DOTALL,
-          )''')
-          if marker not in text:
-              raise SystemExit('Activity nav pattern marker not found')
-          text = text.replace(marker, addition, 1)
+          pattern_start = 'ACTIVITY_PRIMARY_PATTERN = re.compile('
+          first = text.index(pattern_start)
+          second = text.index(pattern_start, first + 1)
+          read_json = text.index('\n\ndef read_json', second)
+          text = text[:first] + text[second:read_json] + text[read_json:]
 
-          helper_marker = 'def inject_activity_links(html: str, location: dict, activity_results: dict[str, dict]) -> str:\n'
-          helpers = textwrap.dedent('''\
-          def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
-              fishing = configured.get("fishing")
-              if not fishing or not activity_results.get("fishing"):
-                  return ""
-              href = escape(activity_location_url(location, "fishing"))
-              location_name = escape(location["name"])
-              return (
-                  '<!-- ACTIVITY_PRIMARY_START -->'
-                  '<section class="section activity-primary-section">'
-                  f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
-                  '<p class="eyebrow">FISHING</p>'
-                  f'<h2>Fishing conditions for {location_name}</h2>'
-                  '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
-                  '<p><strong>View fishing conditions →</strong></p>'
-                  '</div></a></section>'
-                  '<!-- ACTIVITY_PRIMARY_END -->'
-              )
+          helper_start = 'def _primary_activity_cta('
+          first = text.index(helper_start)
+          second = text.index(helper_start, first + 1)
+          text = text[:first] + text[second:]
 
-
-          def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
-              if ACTIVITY_PRIMARY_PATTERN.search(html):
-                  return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
-              if not primary_block:
-                  return html
-              hero = HERO_SECTION_PATTERN.search(html)
-              if not hero:
-                  return html
-              return html[:hero.end()] + primary_block + html[hero.end():]
-
-
-          ''')
-          if helper_marker not in text:
-              raise SystemExit('inject_activity_links marker not found')
-          text = text.replace(helper_marker, helpers + helper_marker, 1)
-
-          anchor = '    block = ""\n    if cards:\n'
-          replacement = (
-              '    primary_block = _primary_activity_cta(location, configured, activity_results)\n'
-              '    html = _inject_primary_activity_cta(html, primary_block)\n\n'
-              + anchor
-          )
-          if anchor not in text:
-              raise SystemExit('Activity block anchor not found')
-          text = text.replace(anchor, replacement, 1)
+          if text.count(pattern_start) != 1:
+              raise SystemExit('expected exactly one ACTIVITY_PRIMARY_PATTERN after cleanup')
+          if text.count(helper_start) != 1:
+              raise SystemExit('expected exactly one primary CTA helper after cleanup')
           path.write_text(text, encoding='utf-8')
           PY
       - name: Compile source
@@ -107,10 +58,10 @@ jobs:
         run: pip install -r requirements-pinterest.txt
       - name: Run complete regression suite
         run: python -m unittest discover -s src -p "test_*.py"
-      - name: Commit implementation and generated Tide pages
+      - name: Commit cleaned source
         run: |
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
-          git add src/build_site.py public/tides
-          git diff --cached --quiet || git commit -m "Add visible Fishing CTA to Tide pages"
+          git add src/build_site.py
+          git diff --cached --quiet || git commit -m "Clean Tide Fishing CTA implementation"
           git push
