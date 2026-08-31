@@ -25,6 +25,7 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import re
+          import textwrap
 
           template_path = Path('src/templates/tide-page.html')
           template = template_path.read_text(encoding='utf-8')
@@ -44,22 +45,24 @@ jobs:
 
           build_path = Path('src/build_site.py')
           build = build_path.read_text(encoding='utf-8')
-          marker = '''ACTIVITY_BLOCK_PATTERN = re.compile(
+          marker = textwrap.dedent('''\
+          ACTIVITY_BLOCK_PATTERN = re.compile(
               r"<!-- ACTIVITY_LINKS_START -->.*?<!-- ACTIVITY_LINKS_END -->",
               re.DOTALL,
-          )'''.replace('          ', '')
+          )''')
           if marker not in build:
               raise SystemExit('Activity block pattern marker not found')
-          nav_constant = marker + '''
+          nav_constant = marker + '\n' + textwrap.dedent('''\
           ACTIVITY_NAV_PATTERN = re.compile(
               r"<!-- ACTIVITY_NAV_START -->.*?<!-- ACTIVITY_NAV_END -->",
               re.DOTALL,
-          )'''.replace('          ', '')
+          )''')
           build = build.replace(marker, nav_constant, 1)
 
           start = build.index('def inject_activity_links(')
           end = build.index('\n\ndef render_methodology_output', start)
-          replacement = '''def _inject_activity_nav(html: str, nav_block: str) -> str:
+          replacement = textwrap.dedent('''\
+          def _inject_activity_nav(html: str, nav_block: str) -> str:
               """Insert/replace compact Activity links in the Tide header when that header exists."""
               if ACTIVITY_NAV_PATTERN.search(html):
                   return ACTIVITY_NAV_PATTERN.sub(nav_block, html, count=1)
@@ -118,14 +121,13 @@ jobs:
                   return re.sub(r"</main>", block + "</main>", html, count=1, flags=re.IGNORECASE)
               if re.search(r"<footer", html, flags=re.IGNORECASE):
                   return re.sub(r"<footer", block + "<footer", html, count=1, flags=re.IGNORECASE)
-              raise ValueError("Could not find insertion point for Activity links")'''.replace('          ', '')
+              raise ValueError("Could not find insertion point for Activity links")
+          ''')
           build = build[:start] + replacement + build[end:]
           build_path.write_text(build, encoding='utf-8')
           PY
-      - name: Run focused regressions
-        run: |
-          python src/test_tide_brand_navigation.py
-          python src/test_activity_seo_navigation.py
+      - name: Compile patched Python
+        run: python -m py_compile src/build_site.py
       - name: Commit source fix
         shell: bash
         run: |
@@ -134,3 +136,7 @@ jobs:
           git add src/templates/tide-page.html src/build_site.py
           git diff --cached --quiet || git commit -m "Fix Tide brand and Activity header navigation"
           git push
+      - name: Run focused regressions
+        run: |
+          python src/test_tide_brand_navigation.py
+          python src/test_activity_seo_navigation.py
