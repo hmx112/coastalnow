@@ -9,6 +9,9 @@ from activities.rendering.links import activity_location_url
 from generate_tides import render_location
 from locations import LOCATIONS
 
+# Regression coverage intentionally calls the raw Tide renderer without build_site.py.
+# This protects the Fishing reverse link in every production regeneration path.
+
 
 class GenerateTidesActivityCtaTests(unittest.TestCase):
     def test_raw_tide_renderer_includes_primary_fishing_cta_before_tide_summary(self):
