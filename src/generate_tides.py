@@ -28,6 +28,9 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from html import escape
+from activities.registry import enabled_activities
+from activities.rendering.links import activity_location_url
 from locations import LOCATIONS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -525,6 +528,25 @@ def nearby_links(location: dict) -> str:
     )
 
 
+def primary_activity_cta(location: dict) -> str:
+    configured = {item["slug"]: item for item in enabled_activities()}
+    if "fishing" not in configured:
+        return ""
+    href = escape(activity_location_url(location, "fishing"))
+    location_name = escape(location["name"])
+    return (
+        '<!-- ACTIVITY_PRIMARY_START -->'
+        '<section class="section activity-primary-section">'
+        f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+        '<p class="eyebrow">FISHING</p>'
+        f'<h2>Fishing conditions for {location_name}</h2>'
+        '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
+        '<p><strong>View fishing conditions →</strong></p>'
+        '</div></a></section>'
+        '<!-- ACTIVITY_PRIMARY_END -->'
+    )
+
+
 def static_replacements(location: dict) -> dict:
     return {
         "PAGE_TITLE": location["page_title"],
@@ -534,6 +556,7 @@ def static_replacements(location: dict) -> dict:
         "LOCATION_NAME": location["name"],
         "LOCATION_UPPER": location["name"].upper(),
         "HERO_COPY": location["hero_copy"],
+        "ACTIVITY_PRIMARY_CTA": primary_activity_cta(location),
         "TIME_LABEL": location["time_label"],
         "LOCAL_GUIDE": location["local_guide"],
         "NEARBY_LINKS": nearby_links(location),
