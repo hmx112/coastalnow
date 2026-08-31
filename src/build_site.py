@@ -36,6 +36,10 @@ ACTIVITY_BLOCK_PATTERN = re.compile(
     r"<!-- ACTIVITY_LINKS_START -->.*?<!-- ACTIVITY_LINKS_END -->",
     re.DOTALL,
 )
+ACTIVITY_NAV_PATTERN = re.compile(
+    r"<!-- ACTIVITY_NAV_START -->.*?<!-- ACTIVITY_NAV_END -->",
+    re.DOTALL,
+)
 
 
 def read_json(path: Path) -> dict:
@@ -91,14 +95,45 @@ def _activity_link_card(location: dict, activity: dict, result: dict) -> str:
     )
 
 
+def _inject_activity_nav(html: str, nav_block: str) -> str:
+    """Insert/replace compact Activity links in the Tide header when that header exists."""
+    if ACTIVITY_NAV_PATTERN.search(html):
+        return ACTIVITY_NAV_PATTERN.sub(nav_block, html, count=1)
+    if not nav_block:
+        return html
+
+    header_end = html.lower().find("</header>")
+    if header_end < 0:
+        return html
+    header = html[:header_end]
+    search_marker = '<span class="search-pill">'
+    marker_index = header.rfind(search_marker)
+    if marker_index >= 0:
+        return html[:marker_index] + nav_block + html[marker_index:]
+    nav_end = header.rfind("</nav>")
+    if nav_end >= 0:
+        return html[:nav_end] + nav_block + html[nav_end:]
+    return html
+
+
 def inject_activity_links(html: str, location: dict, activity_results: dict[str, dict]) -> str:
-    """Insert/replace the generated Activity section without changing the parent Tide URL."""
+    """Insert/replace Tide-to-Activity navigation and cards without changing the Tide URL."""
     cards = []
+    nav_links = []
     configured = {item["slug"]: item for item in enabled_activities()}
     for slug, activity in configured.items():
         result = activity_results.get(slug)
         if result:
             cards.append(_activity_link_card(location, activity, result))
+            nav_links.append(
+                f'<a class="activity-nav-link" href="{escape(activity_location_url(location, slug))}">'
+                f'{escape(activity["label"])}</a>'
+            )
+
+    nav_block = ""
+    if nav_links:
+        nav_block = '<!-- ACTIVITY_NAV_START -->' + "".join(nav_links) + '<!-- ACTIVITY_NAV_END -->'
+    html = _inject_activity_nav(html, nav_block)
 
     block = ""
     if cards:
