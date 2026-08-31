@@ -1,0 +1,22 @@
+name: Test Pinterest domain verification
+
+on:
+  push:
+    branches:
+      - "feat/pinterest-domain-verification"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pinterest-domain-verification
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Pinterest verification regression
+        run: python src/test_directory_generation.py
