@@ -52,13 +52,13 @@ jobs:
               if not fishing or not activity_results.get("fishing"):
                   return ""
               href = escape(activity_location_url(location, "fishing"))
-              city = escape(location["city"])
+              location_name = escape(location["name"])
               return (
                   '<!-- ACTIVITY_PRIMARY_START -->'
                   '<section class="section activity-primary-section">'
                   f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
                   '<p class="eyebrow">FISHING</p>'
-                  f'<h2>Fishing conditions for {city}</h2>'
+                  f'<h2>Fishing conditions for {location_name}</h2>'
                   '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
                   '<p><strong>View fishing conditions →</strong></p>'
                   '</div></a></section>'
