@@ -41,6 +41,7 @@ class TideBodyActivityCtaTests(unittest.TestCase):
         self.assertGreater(updated.index("ACTIVITY_PRIMARY_START"), updated.index('</section>'))
 
     def test_all_generated_tide_pages_have_exactly_one_primary_fishing_cta(self):
+        # Final-output coverage: every public Tide page must expose the visible CTA once.
         for slug, location in LOCATIONS.items():
             with self.subTest(location=slug):
                 html = (ROOT / location["page_path"]).read_text(encoding="utf-8")
