@@ -133,7 +133,13 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     nav_block = ""
     if nav_links:
         nav_block = '<!-- ACTIVITY_NAV_START -->' + "".join(nav_links) + '<!-- ACTIVITY_NAV_END -->'
-    html = _inject_activity_nav(html, nav_block)
+        html = _inject_activity_nav(html, nav_block)
+    if nav_block:
+        html = html.replace(
+            ".nav>a{display:none}",
+            ".nav>a:not(.activity-nav-link){display:none}",
+            1,
+        )
 
     block = ""
     if cards:
