@@ -258,7 +258,7 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
 .footer-links{display:flex;gap:18px;color:#bdd0d4;font-size:.82rem}
 
 @media(max-width:800px){
-  .nav>a{display:none}
+  .nav>a:not(.activity-nav-link){display:none}
   .hero-inner{grid-template-columns:1fr;padding:32px 26px 28px}
   .hero-date{justify-self:start;width:auto;min-width:225px}
   .hero-wave{width:390px;right:-100px}
@@ -323,7 +323,7 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
   <div class="wrap header-inner">
     <a class="brand" href="../../../index.html">
       <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-      CoastalNow
+      <span>CoastalNow</span>
     </a>
     <nav class="nav">
       <a href="#forecast">7-Day forecast</a>
@@ -360,7 +360,7 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
       <div class="hero-date">
         <span>Today</span>
         <strong>Monday, August 31</strong>
-        <small>Updated 1:37 AM UTC-04:00</small>
+        <small>Updated 9:54 AM UTC-04:00</small>
       </div>
     </div>
   </section>
@@ -378,17 +378,17 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
         <div class="label"><span class="arrow-icon">↑</span>Next high tide</div>
         <div class="tide-time">10:11 AM</div>
         <div class="tide-height">4.1 ft</div>
-        <div class="tide-meta">High tide in 8h 33m</div>
+        <div class="tide-meta">High tide in 16m</div>
         <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
       </article><article class="tide-card low">
         <div class="label"><span class="arrow-icon">↓</span>Next low tide</div>
-        <div class="tide-time">3:48 AM</div>
-        <div class="tide-height">0.2 ft</div>
-        <div class="tide-meta">Low tide in 2h 10m</div>
+        <div class="tide-time">4:25 PM</div>
+        <div class="tide-height">0.5 ft</div>
+        <div class="tide-meta">Low tide in 6h 30m</div>
         <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
       </article></div>
 
-    <div class="status-strip"><span class="status-dot"></span><strong>Tide is falling now ↓</strong></div>
+    <div class="status-strip"><span class="status-dot"></span><strong>Tide is rising now ↑</strong></div>
   </section>
 
   <section class="section chart-card">
