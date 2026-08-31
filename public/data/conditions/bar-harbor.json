@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-08-30T23:37:00+00:00",
+  "generated_at_utc": "2026-08-31T01:34:11+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-08-30T23:37:00+00:00"
+      "fetched_at_utc": "2026-08-31T01:34:11+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f98ce85770510885d4ec347d0335ee6e5f628bc4.001.1",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-08-29T21:55:00-04:00",
-        "onset": "2026-08-30T08:00:00-04:00",
-        "expires": "2026-08-30T20:00:00-04:00",
-        "ends": "2026-08-30T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued August 29 at 9:55PM EDT until August 30 at 8:00PM EDT by NWS Caribou ME",
-        "description": "* WHAT...The warm air temperatures from the mid 70 to around 80\nmay cause people to underestimate the dangers of the cold water\ntemperatures which are currently in the 50 to 55 degree range.\n\n* WHERE...Coastal Hancock and Coastal Washington Counties.\n\n* WHEN...From 8 AM EDT Sunday through Sunday evening.\n\n* IMPACTS...The cold water temperatures can quickly cause\nhypothermia to anyone immersed in the waters. Anyone on boats\nor paddlecraft should use extreme caution to avoid this threat.",
-        "instruction": "A Beach Hazards Statement is issued on days when a significant\nnumber of boats and paddlecraft are expected to be out on the\nwater and when warm air temperatures may cause people to\nunderestimate the danger of the cold water. Paddle smart from the\nstart. Always wear your life jacket. Be aware of wind conditions,\ntides, and localized currents.",
-        "sender_name": "NWS Caribou ME"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2548,5 +2532,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
