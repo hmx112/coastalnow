@@ -24,23 +24,19 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
 
           template_path = Path('src/templates/tide-page.html')
           template = template_path.read_text(encoding='utf-8')
-          old_logo = '''      <span class="logo-mark">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 13c3.5-4 6.8-4 10.1 0 2.5 3 5 3 7.9.8" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M3 17c3.5-3 6.8-3 10.1 0 2.5 2.2 5 2.2 7.9.5" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".76"/>
-                </svg>
-              </span>
-              CoastalNow'''
-          # Exact source indentation in the template is six spaces inside the brand link.
-          old_logo = old_logo.replace('                ', '        ').replace('              ', '      ')
-          new_logo = '''      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-              <span>CoastalNow</span>'''.replace('              ', '      ')
-          if old_logo not in template:
-              raise SystemExit('stale Tide logo block not found exactly once')
-          template = template.replace(old_logo, new_logo, 1)
+          stale_logo = re.compile(
+              r'<span class="logo-mark">\s*<svg viewBox="0 0 24 24" aria-hidden="true">\s*'
+              r'<path d="M3 13c3\.5-4 6\.8-4 10\.1 0.*?</svg>\s*</span>\s*CoastalNow',
+              re.DOTALL,
+          )
+          new_logo = '<span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>\n      <span>CoastalNow</span>'
+          template, logo_count = stale_logo.subn(new_logo, template, count=1)
+          if logo_count != 1:
+              raise SystemExit(f'stale Tide logo match count was {logo_count}, expected 1')
           if '.nav>a{display:none}' not in template:
               raise SystemExit('mobile Tide nav selector not found')
           template = template.replace('.nav>a{display:none}', '.nav>a:not(.activity-nav-link){display:none}', 1)
