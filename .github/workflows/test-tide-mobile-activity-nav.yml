@@ -1,0 +1,19 @@
+name: Test Tide mobile Activity nav
+
+on:
+  push:
+    branches:
+      - "fix/tide-mobile-activity-nav"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/tide-mobile-activity-nav
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run mobile Activity nav regression
+        run: python src/test_tide_mobile_activity_nav.py
