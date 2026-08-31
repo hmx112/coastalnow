@@ -48,7 +48,7 @@ class TideBodyActivityCtaTests(unittest.TestCase):
                 self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 1)
                 primary = html.split("<!-- ACTIVITY_PRIMARY_START -->", 1)[1].split("<!-- ACTIVITY_PRIMARY_END -->", 1)[0]
                 self.assertIn(f'href="{href}"', primary)
-                self.assertIn(f"Fishing conditions for {location['city']}", primary)
+                self.assertIn(f"Fishing conditions for {location['name']}", primary)
 
 
 if __name__ == "__main__":
