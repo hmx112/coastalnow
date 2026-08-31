@@ -48,14 +48,6 @@ HERO_SECTION_PATTERN = re.compile(
     r'(<section class="hero"[^>]*>.*?</section>)',
     re.DOTALL,
 )
-ACTIVITY_PRIMARY_PATTERN = re.compile(
-    r"<!-- ACTIVITY_PRIMARY_START -->.*?<!-- ACTIVITY_PRIMARY_END -->",
-    re.DOTALL,
-)
-HERO_SECTION_PATTERN = re.compile(
-    r'(<section class="hero"[^>]*>.*?</section>)',
-    re.DOTALL,
-)
 
 
 def read_json(path: Path) -> dict:
@@ -130,36 +122,6 @@ def _inject_activity_nav(html: str, nav_block: str) -> str:
     if nav_end >= 0:
         return html[:nav_end] + nav_block + html[nav_end:]
     return html
-
-
-def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
-    fishing = configured.get("fishing")
-    if not fishing or not activity_results.get("fishing"):
-        return ""
-    href = escape(activity_location_url(location, "fishing"))
-    location_name = escape(location["name"])
-    return (
-        '<!-- ACTIVITY_PRIMARY_START -->'
-        '<section class="section activity-primary-section">'
-        f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
-        '<p class="eyebrow">FISHING</p>'
-        f'<h2>Fishing conditions for {location_name}</h2>'
-        '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
-        '<p><strong>View fishing conditions →</strong></p>'
-        '</div></a></section>'
-        '<!-- ACTIVITY_PRIMARY_END -->'
-    )
-
-
-def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
-    if ACTIVITY_PRIMARY_PATTERN.search(html):
-        return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
-    if not primary_block:
-        return html
-    hero = HERO_SECTION_PATTERN.search(html)
-    if not hero:
-        return html
-    return html[:hero.end()] + primary_block + html[hero.end():]
 
 
 def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
