@@ -3,6 +3,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -99,6 +100,91 @@ class IndexNowIntegrationTests(unittest.TestCase):
         self.assertFalse(module.is_success_status(400))
         self.assertFalse(module.is_success_status(403))
         self.assertFalse(module.is_success_status(429))
+
+    def test_post_batch_sends_utf8_json_to_official_indexnow_endpoint(self):
+        module = self.module()
+        captured = {}
+
+        class Response:
+            status = 200
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        def opener(request, timeout):
+            captured["request"] = request
+            captured["timeout"] = timeout
+            return Response()
+
+        urls = [self.BASE_URL + "/fishing/"]
+        status = module.post_batch(urls, opener=opener)
+        request = captured["request"]
+        self.assertEqual(status, 200)
+        self.assertEqual(request.full_url, "https://api.indexnow.org/indexnow")
+        self.assertEqual(request.get_method(), "POST")
+        self.assertEqual(request.get_header("Content-type"), "application/json; charset=utf-8")
+        self.assertEqual(json.loads(request.data.decode("utf-8")), module.build_payload(urls))
+        self.assertGreater(captured["timeout"], 0)
+
+    def test_submit_urls_retries_temporary_403_then_accepts_initial_202(self):
+        module = self.module()
+        attempts = []
+        sleeps = []
+
+        class Response:
+            status = 202
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        def opener(request, timeout):
+            attempts.append(request.full_url)
+            if len(attempts) == 1:
+                raise HTTPError(request.full_url, 403, "key not propagated yet", {}, None)
+            return Response()
+
+        statuses = module.submit_urls(
+            [self.BASE_URL + "/"],
+            opener=opener,
+            sleep=lambda seconds: sleeps.append(seconds),
+            max_attempts=3,
+            retry_delay=0.01,
+        )
+        self.assertEqual(statuses, [202])
+        self.assertEqual(len(attempts), 2)
+        self.assertEqual(sleeps, [0.01])
+
+    def test_run_submission_uses_git_diff_and_sitemap_then_submits(self):
+        module = self.module()
+        calls = {}
+        diff = f"A\tpublic/{self.KEY}.txt\n"
+        sitemap = """<?xml version=\"1.0\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://coastalnowtides.com/</loc></url><url><loc>https://coastalnowtides.com/fishing/</loc></url></urlset>"""
+
+        def diff_loader(before, after):
+            calls["diff"] = (before, after)
+            return diff
+
+        def sitemap_loader():
+            calls["sitemap"] = True
+            return sitemap
+
+        def submitter(urls):
+            calls["urls"] = list(urls)
+            return [200]
+
+        count = module.run_submission(
+            "before-sha",
+            "after-sha",
+            diff_loader=diff_loader,
+            sitemap_loader=sitemap_loader,
+            submitter=submitter,
+        )
+        self.assertEqual(count, 2)
+        self.assertEqual(calls["diff"], ("before-sha", "after-sha"))
+        self.assertTrue(calls["sitemap"])
+        self.assertEqual(calls["urls"], [self.BASE_URL + "/", self.BASE_URL + "/fishing/"])
 
     def test_main_push_workflow_is_isolated_from_content_refresh_workflows(self):
         workflow = (Path(__file__).resolve().parent.parent / ".github" / "workflows" / "indexnow.yml")
