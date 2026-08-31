@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from activities.paths import activity_location_url
+from activities.rendering.links import activity_location_url
 from build_site import inject_activity_links
 from locations import LOCATIONS
 
