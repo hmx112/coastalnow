@@ -30,3 +30,20 @@ jobs:
         run: python src/test_pinterest_generation.py
       - name: Run Pinterest workflow contract test
         run: python src/test_pinterest_workflow.py
+      - name: Run complete regression suite
+        run: python -m unittest discover -s src -p "test_*.py"
+      - name: Generate first Pinterest release
+        run: python src/generate_pinterest.py --date 2026-08-31
+      - name: Commit first Pinterest release
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/pinterest
+          git diff --cached --quiet || git commit -m "Generate first CoastalNow Pinterest release"
+          git push
+      - name: Verify clean deterministic regeneration
+        shell: bash
+        run: |
+          python src/generate_pinterest.py --date 2026-08-31
+          git diff --exit-code -- public/pinterest
