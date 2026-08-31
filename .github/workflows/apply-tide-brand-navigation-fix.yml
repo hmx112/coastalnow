@@ -1,0 +1,140 @@
+name: Apply Tide brand navigation source fix
+
+on:
+  push:
+    branches:
+      - "fix/tide-brand-activity-navigation"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: contains(github.event.head_commit.message, 'Apply Tide brand navigation source fix')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/tide-brand-activity-navigation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch Tide logo and Activity header navigation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          template_path = Path('src/templates/tide-page.html')
+          template = template_path.read_text(encoding='utf-8')
+          old_logo = '''      <span class="logo-mark">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 13c3.5-4 6.8-4 10.1 0 2.5 3 5 3 7.9.8" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M3 17c3.5-3 6.8-3 10.1 0 2.5 2.2 5 2.2 7.9.5" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".76"/>
+                </svg>
+              </span>
+              CoastalNow'''
+          # Exact source indentation in the template is six spaces inside the brand link.
+          old_logo = old_logo.replace('                ', '        ').replace('              ', '      ')
+          new_logo = '''      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <span>CoastalNow</span>'''.replace('              ', '      ')
+          if old_logo not in template:
+              raise SystemExit('stale Tide logo block not found exactly once')
+          template = template.replace(old_logo, new_logo, 1)
+          if '.nav>a{display:none}' not in template:
+              raise SystemExit('mobile Tide nav selector not found')
+          template = template.replace('.nav>a{display:none}', '.nav>a:not(.activity-nav-link){display:none}', 1)
+          template_path.write_text(template, encoding='utf-8')
+
+          build_path = Path('src/build_site.py')
+          build = build_path.read_text(encoding='utf-8')
+          marker = '''ACTIVITY_BLOCK_PATTERN = re.compile(
+              r"<!-- ACTIVITY_LINKS_START -->.*?<!-- ACTIVITY_LINKS_END -->",
+              re.DOTALL,
+          )'''.replace('          ', '')
+          if marker not in build:
+              raise SystemExit('Activity block pattern marker not found')
+          nav_constant = marker + '''
+          ACTIVITY_NAV_PATTERN = re.compile(
+              r"<!-- ACTIVITY_NAV_START -->.*?<!-- ACTIVITY_NAV_END -->",
+              re.DOTALL,
+          )'''.replace('          ', '')
+          build = build.replace(marker, nav_constant, 1)
+
+          start = build.index('def inject_activity_links(')
+          end = build.index('\n\ndef render_methodology_output', start)
+          replacement = '''def _inject_activity_nav(html: str, nav_block: str) -> str:
+              """Insert/replace compact Activity links in the Tide header when that header exists."""
+              if ACTIVITY_NAV_PATTERN.search(html):
+                  return ACTIVITY_NAV_PATTERN.sub(nav_block, html, count=1)
+              if not nav_block:
+                  return html
+
+              header_end = html.lower().find("</header>")
+              if header_end < 0:
+                  return html
+              header = html[:header_end]
+              search_marker = '<span class="search-pill">'
+              marker_index = header.rfind(search_marker)
+              if marker_index >= 0:
+                  return html[:marker_index] + nav_block + html[marker_index:]
+              nav_end = header.rfind("</nav>")
+              if nav_end >= 0:
+                  return html[:nav_end] + nav_block + html[nav_end:]
+              return html
+
+
+          def inject_activity_links(html: str, location: dict, activity_results: dict[str, dict]) -> str:
+              """Insert/replace Tide-to-Activity navigation and cards without changing the Tide URL."""
+              cards = []
+              nav_links = []
+              configured = {item["slug"]: item for item in enabled_activities()}
+              for slug, activity in configured.items():
+                  result = activity_results.get(slug)
+                  if result:
+                      cards.append(_activity_link_card(location, activity, result))
+                      nav_links.append(
+                          f'<a class="activity-nav-link" href="{escape(activity_location_url(location, slug))}">'
+                          f'{escape(activity["label"])}</a>'
+                      )
+
+              nav_block = ""
+              if nav_links:
+                  nav_block = '<!-- ACTIVITY_NAV_START -->' + "".join(nav_links) + '<!-- ACTIVITY_NAV_END -->'
+              html = _inject_activity_nav(html, nav_block)
+
+              block = ""
+              if cards:
+                  block = (
+                      '<!-- ACTIVITY_LINKS_START -->'
+                      '<section class="section activity-parent-section"><div class="section-head">'
+                      '<div><p class="eyebrow">ACTIVITY PLANNER</p><h2>Plan coastal activities</h2></div>'
+                      '<p>Conditions use activity-specific rules and safety context.</p></div>'
+                      '<div class="directory-grid">' + "".join(cards) + '</div></section>'
+                      '<!-- ACTIVITY_LINKS_END -->'
+                  )
+
+              if ACTIVITY_BLOCK_PATTERN.search(html):
+                  return ACTIVITY_BLOCK_PATTERN.sub(block, html, count=1)
+              if not block:
+                  return html
+              if re.search(r"</main>", html, flags=re.IGNORECASE):
+                  return re.sub(r"</main>", block + "</main>", html, count=1, flags=re.IGNORECASE)
+              if re.search(r"<footer", html, flags=re.IGNORECASE):
+                  return re.sub(r"<footer", block + "<footer", html, count=1, flags=re.IGNORECASE)
+              raise ValueError("Could not find insertion point for Activity links")'''.replace('          ', '')
+          build = build[:start] + replacement + build[end:]
+          build_path.write_text(build, encoding='utf-8')
+          PY
+      - name: Run focused regressions
+        run: |
+          python src/test_tide_brand_navigation.py
+          python src/test_activity_seo_navigation.py
+      - name: Commit source fix
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add src/templates/tide-page.html src/build_site.py
+          git diff --cached --quiet || git commit -m "Fix Tide brand and Activity header navigation"
+          git push
