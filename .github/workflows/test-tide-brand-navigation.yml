@@ -1,0 +1,22 @@
+name: Test Tide brand and Activity navigation
+
+on:
+  push:
+    branches:
+      - "fix/tide-brand-activity-navigation"
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/tide-brand-activity-navigation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Tide brand/navigation regressions
+        run: python src/test_tide_brand_navigation.py
