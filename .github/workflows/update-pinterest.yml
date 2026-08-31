@@ -1,0 +1,48 @@
+name: Update Pinterest distribution assets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 15 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coastalnow-site-writes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pinterest image dependency
+        run: pip install -r requirements-pinterest.txt
+
+      - name: Generate due Pinterest assets and feeds
+        run: python src/generate_pinterest.py
+
+      - name: Run Pinterest regressions
+        run: |
+          python src/test_pinterest_catalog_schedule.py
+          python src/test_pinterest_rss.py
+          python src/test_pinterest_render.py
+          python src/test_pinterest_generation.py
+          python src/test_pinterest_workflow.py
+
+      - name: Commit Pinterest release
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/pinterest
+          git diff --cached --quiet || git commit -m "Update Pinterest distribution assets"
+          git push
