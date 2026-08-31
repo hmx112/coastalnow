@@ -10,6 +10,7 @@ from site_generator import build_directory_pages, location_status
 
 PUBLIC = Path(__file__).resolve().parents[1] / "public"
 MAIN_LOGO_WAVE = "M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0"
+PINTEREST_DOMAIN_VERIFY = '<meta name="p:domain_verify" content="2d1606bc6882843fbb5143b963ef1cc2">'
 
 
 class DirectoryGenerationTests(unittest.TestCase):
@@ -37,6 +38,11 @@ class DirectoryGenerationTests(unittest.TestCase):
         for location in LOCATIONS.values():
             self.assertIn(location["page_path"], home)
         self.assertEqual(home.count('class="info-card state-card"'), len({x["state_slug"] for x in LOCATIONS.values()}))
+
+    def test_home_page_contains_pinterest_domain_verification(self):
+        home = build_directory_pages()["index.html"]
+        self.assertIn(PINTEREST_DOMAIN_VERIFY, home)
+        self.assertEqual(home.count(PINTEREST_DOMAIN_VERIFY), 1)
 
     def test_all_coastal_locations_are_sorted_by_location_name(self):
         home = build_directory_pages()["index.html"]
