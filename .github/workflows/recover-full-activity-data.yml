@@ -1,0 +1,58 @@
+name: Recover full Activity data
+
+on:
+  push:
+    branches:
+      - ops/recover-full-activity-data
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coastalnow-site-writes
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh all Activity condition data
+        run: python src/generate_activities.py
+
+      - name: Rebuild Activity pages and site artifacts
+        run: python src/build_site.py
+
+      - name: Run Activity recovery regressions
+        run: |
+          python src/test_activity_conditions.py
+          python src/test_activity_safety.py
+          python src/test_fishing_safety.py
+          python src/test_activity_generation.py
+          python src/test_activity_stale_forecast_fallback.py
+          python src/test_activity_rendering.py
+          python src/test_activity_attribution.py
+          python src/test_activity_seo_navigation.py
+          python src/test_activity_workflows.py
+
+      - name: Commit recovered Activity data to main
+        shell: bash
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/data/conditions public/data/activities public/fishing public/methodology public/tides public/index.html public/sitemap.xml public/robots.txt
+          if git diff --cached --quiet; then
+            echo "No Activity data changes to commit."
+          else
+            git commit -m "Refresh coastal Activity data"
+            git push origin HEAD:main
+          fi
