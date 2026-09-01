@@ -1,0 +1,37 @@
+name: Apply Pinterest Pin v2 samples
+
+on:
+  push:
+    branches:
+      - "feat/pinterest-pin-v2"
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    if: contains(github.event.head_commit.message, 'Regenerate Pinterest v2 samples')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pinterest-pin-v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: pip install -r requirements-pinterest.txt
+      - name: Regenerate San Diego v2 assets
+        run: python src/generate_pinterest.py --date 2026-08-31
+      - name: Verify RSS identity unchanged
+        run: |
+          git diff --exit-code -- public/pinterest/rss/tides.xml public/pinterest/rss/fishing.xml
+      - name: Verify generated images
+        run: python src/test_pinterest_render.py
+      - name: Commit San Diego v2 images
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/pinterest/images/san-diego-tides.png public/pinterest/images/san-diego-fishing.png
+          git diff --cached --quiet || git commit -m "Regenerate San Diego Pinterest v2 samples"
+          git push
