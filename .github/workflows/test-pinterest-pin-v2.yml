@@ -1,0 +1,24 @@
+name: Test Pinterest Pin v2
+
+on:
+  push:
+    branches:
+      - "feat/pinterest-pin-v2"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pinterest-pin-v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: pip install -r requirements-pinterest.txt
+      - name: Run Pinterest renderer regression
+        run: python src/test_pinterest_render.py
