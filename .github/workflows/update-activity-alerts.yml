@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Refresh NWS alerts and recompute enabled Activity safety states
+      - name: Refresh alerts and refresh full Activity data when forecast cache is aging
         run: python src/generate_activities.py --alerts-only
 
       - name: Render Activity pages, methodology, Tide links and SEO artifacts
@@ -37,6 +37,7 @@ jobs:
           python src/test_fishing_safety.py
           python src/test_activity_end_of_day.py
           python src/test_activity_generation.py
+          python src/test_activity_stale_forecast_fallback.py
           python src/test_activity_rendering.py
           python src/test_activity_attribution.py
           python src/test_activity_seo_navigation.py
