@@ -1,0 +1,49 @@
+name: Apply Fishing explanation summary
+
+on:
+  push:
+    branches:
+      - "fix/fishing-explanation-summary"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: contains(github.event.head_commit.message, 'Trigger Fishing explanation page integration')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/fishing-explanation-summary
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Connect location page to coherent summary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/activities/rendering/location_page.py')
+          text = path.read_text(encoding='utf-8')
+          old_import = 'from activities.explanations import explain_reasons\n'
+          new_import = 'from activities.explanations import summarize_fishing_result\n'
+          if old_import not in text:
+              raise SystemExit('expected explanation import not found')
+          text = text.replace(old_import, new_import, 1)
+
+          old = '''def _why_section(result: dict) -> str:\n    reasons = (result.get("today") or {}).get("reasons") or []\n    text = explain_reasons(reasons)\n    if not text:\n        day = result.get("today") or {}\n        status = day.get("status")\n        if status == "NOT RECOMMENDED":\n            text = "Current safety conditions prevent a normal Fishing recommendation."\n        elif _limited_or_unavailable(day):\n            text = "Some critical coastal-condition data is not complete enough for a normal recommendation."\n        else:\n            text = "The score combines tide movement, wind, waves, weather and time-of-day conditions."\n    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(text) + '</p></section>'\n'''
+          new = '''def _why_section(result: dict) -> str:\n    day = result.get("today") or {}\n    text = summarize_fishing_result(day)\n    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(text) + '</p></section>'\n'''
+          if old not in text:
+              raise SystemExit('expected _why_section block not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+      - name: Run focused explanation tests
+        run: python src/test_fishing_explanations.py
+      - name: Commit page integration
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add src/activities/rendering/location_page.py
+          git diff --cached --quiet || git commit -m "Use coherent Fishing summary on location pages"
+          git push
