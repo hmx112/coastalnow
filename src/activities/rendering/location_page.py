@@ -5,7 +5,7 @@ from datetime import datetime
 from html import escape
 from pathlib import Path
 
-from activities.explanations import explain_reasons
+from activities.explanations import summarize_fishing_result
 from activities.rendering.links import activity_hub_url, tide_parent_url
 from site_generator import LOGO
 
@@ -240,17 +240,8 @@ def _tide_section(snapshot: dict) -> str:
 
 
 def _why_section(result: dict) -> str:
-    reasons = (result.get("today") or {}).get("reasons") or []
-    text = explain_reasons(reasons)
-    if not text:
-        day = result.get("today") or {}
-        status = day.get("status")
-        if status == "NOT RECOMMENDED":
-            text = "Current safety conditions prevent a normal Fishing recommendation."
-        elif _limited_or_unavailable(day):
-            text = "Some critical coastal-condition data is not complete enough for a normal recommendation."
-        else:
-            text = "The score combines tide movement, wind, waves, weather and time-of-day conditions."
+    day = result.get("today") or {}
+    text = summarize_fishing_result(day)
     return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(text) + '</p></section>'
 
 
