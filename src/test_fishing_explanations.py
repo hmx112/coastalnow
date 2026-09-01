@@ -104,6 +104,28 @@ class FishingExplanationTests(unittest.TestCase):
         self.assertIn("timing state", text.lower())
         self.assertIn("not a statement that coastal conditions are unsafe", text.lower())
 
+    def test_location_page_why_section_uses_coherent_summary(self):
+        from activities.rendering.location_page import _why_section
+
+        result = {
+            "today": {
+                "status": "normal",
+                "score": 39,
+                "rating": "Poor",
+                "confidence": "High",
+                "reasons": [
+                    "favorable-tide-movement",
+                    "light-wind",
+                    "manageable-sea-state",
+                    "forecast-thunder-cap",
+                ],
+            }
+        }
+        html = _why_section(result)
+        self.assertIn("Thunderstorm conditions", html)
+        self.assertIn("do not outweigh", html)
+        self.assertNotIn("Moving tide supports the fishing window. Winds are light to moderate.", html)
+
 
 if __name__ == "__main__":
     unittest.main()
