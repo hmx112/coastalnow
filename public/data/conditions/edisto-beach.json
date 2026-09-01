@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "edisto-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-01T22:49:01+00:00",
+  "generated_at_utc": "2026-09-01T23:24:15+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:01+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:15+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:01+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:15+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:01+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:15+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-01T22:49:01+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:15+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-01T18:00:00-04:00",
-      "wind_mph": 12.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 4.0,
-      "air_temperature_f": 83.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-09-01T19:00:00-04:00",
       "wind_mph": 10.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-08T06:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 17.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
@@ -2547,5 +2547,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

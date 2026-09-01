@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "st-pete-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-01T22:49:19+00:00",
+  "generated_at_utc": "2026-09-01T23:24:26+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:19+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:26+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:19+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:26+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-01T22:49:19+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:26+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-01T22:49:19+00:00"
+      "fetched_at_utc": "2026-09-01T23:24:26+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-01T18:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 64.0,
-      "air_temperature_f": 84.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 2.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-01T19:00:00-04:00",
       "wind_mph": 10.0,
@@ -1902,27 +1890,23 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-08T06:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 31.0,
+      "air_temperature_f": 80.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e27f0d503c511c493962aa336adb57f8ee8cf0ed.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-01T18:12:00-04:00",
-        "onset": "2026-09-01T18:12:00-04:00",
-        "expires": "2026-09-01T19:00:00-04:00",
-        "ends": "2026-09-01T19:00:00-04:00",
-        "headline": "Special Marine Warning issued September 1 at 6:12PM EDT until September 1 at 7:00PM EDT by NWS Tampa Bay Ruskin FL",
-        "description": "SMWTBW\n\nThe National Weather Service in Tampa Bay Ruskin has issued a\n\n* Special Marine Warning for...\nTampa Bay waters...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\n\n* Until 700 PM EDT.\n\n* At 612 PM EDT, strong thunderstorms were located along a line from\n7 NM west of Pass-A-Grille Channel to over Tampa Bay, moving\nsouthwest at 20 knots.\n\nHAZARD...Wind gusts to 34 knots.\n\nSOURCE...Radar indicated.\n\nIMPACT...Small craft could be damaged in briefly higher winds and\nsuddenly higher waves.\n\n* Locations impacted include...\nEgmont Key, Fort Desoto Park, Pass-A-Grille Channel, Tierra Verde,\nPass-A-Grille Beach, Southwest Channel, St. Pete Beach, Passage Key\nInlet, Saint Pete Beach Reef, Anna Maria, Anna Maria Island,\nSunshine Skyway Bridge, Manatee 3 Mile North Reef, Holmes Beach,\nTreasure Island, Manatee 7 Mile North Reef, Johns Pass, Manatee 1\nMile Reef, Treasure Island Reef and Madeira Beach.",
-        "instruction": "Move to safe harbor until hazardous weather passes.\n\nMove to safe harbor immediately as gusty winds and high waves are\nexpected.",
-        "sender_name": "NWS Tampa Bay Ruskin FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2533,5 +2517,5 @@
       "grid_y": 86
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
