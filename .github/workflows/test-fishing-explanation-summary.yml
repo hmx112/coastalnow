@@ -1,0 +1,22 @@
+name: Test Fishing explanation summary
+
+on:
+  push:
+    branches:
+      - "fix/fishing-explanation-summary"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/fishing-explanation-summary
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run focused explanation tests
+        run: python src/test_fishing_explanations.py
