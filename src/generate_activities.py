@@ -18,6 +18,7 @@ from locations import LOCATIONS
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 DEFAULT_SCORERS = {"fishing": score_fishing_activity}
+ALERTS_ONLY_FULL_REFRESH_AGE_HOURS = 4
 
 
 def read_json(path: Path) -> dict | None:
@@ -70,6 +71,30 @@ def _cached_or_unavailable(location: dict, public_root: Path, now: datetime, err
         cached["refresh_error"] = str(error)
         return cached, "cache-fallback"
     return _unavailable_snapshot(location, now, str(error)), "unavailable"
+
+
+def _forecast_full_refresh_due(snapshot: dict | None, now: datetime) -> bool:
+    """Return True when alerts-only mode should refresh the full forecast snapshot.
+
+    The publication policy marks forecast data stale at six hours. Refreshing from the
+    hourly safety job once the cached forecast reaches four hours leaves a two-hour
+    recovery window if the normal three-hour Activity schedule is delayed or skipped.
+    """
+    if not snapshot:
+        return True
+    provider = (snapshot.get("providers") or {}).get("forecast") or {}
+    if provider.get("status") != "ok":
+        return True
+    try:
+        fetched = datetime.fromisoformat(provider["fetched_at_utc"])
+    except (KeyError, TypeError, ValueError):
+        return True
+    if fetched.tzinfo is None or fetched.utcoffset() is None:
+        return True
+    age_hours = (now - fetched).total_seconds() / 3600
+    if age_hours < 0:
+        return True
+    return age_hours >= ALERTS_ONLY_FULL_REFRESH_AGE_HOURS
 
 
 def _refresh_alerts_only(
@@ -130,12 +155,27 @@ def generate_location(
     scorers = DEFAULT_SCORERS if scorers is None else scorers
 
     if alerts_only:
-        snapshot, source = _refresh_alerts_only(
-            location,
-            public_root,
-            now,
-            alerts_fetch=alerts_fetch,
-        )
+        cached = read_json(condition_path(public_root, location))
+        if _forecast_full_refresh_due(cached, now):
+            try:
+                snapshot = collector(location, public_root=public_root, now=now)
+                snapshot["refresh_state"] = "alerts-only-full-refresh"
+                source = "alerts-only-full-refresh"
+            except Exception as exc:
+                snapshot, source = _refresh_alerts_only(
+                    location,
+                    public_root,
+                    now,
+                    alerts_fetch=alerts_fetch,
+                )
+                snapshot["full_refresh_error"] = str(exc)
+        else:
+            snapshot, source = _refresh_alerts_only(
+                location,
+                public_root,
+                now,
+                alerts_fetch=alerts_fetch,
+            )
     else:
         try:
             snapshot = collector(location, public_root=public_root, now=now)

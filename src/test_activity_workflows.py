@@ -87,6 +87,7 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn(WRITE_LOCK, text)
         self.assertIn("python src/generate_activities.py --alerts-only", text)
         self.assertIn("python src/build_site.py", text)
+        self.assertIn("src/test_activity_stale_forecast_fallback.py", text)
         self.assertIn("src/test_activity_end_of_day.py", text)
         self.assertIn("src/test_activity_attribution.py", text)
         self.assertIn("public/methodology", text)
