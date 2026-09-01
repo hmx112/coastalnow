@@ -85,8 +85,8 @@ class PinterestRenderTests(unittest.TestCase):
         self.assertNotIn("def _wave_polygon", source)
         self.assertNotIn("draw.polygon(_wave_polygon", source)
         self.assertNotIn("draw.ellipse((72, 60, 172, 160), fill=TEAL)", source)
-        render_source = inspect.getsource(render.render_pin)
-        self.assertIn("_draw_coastalnow_brand", render_source)
+        heading_source = inspect.getsource(render._draw_common_heading)
+        self.assertIn("_draw_coastalnow_brand", heading_source)
 
     def test_rendered_pins_are_exactly_1000_by_1500_png(self):
         from pinterest.render import render_pin
