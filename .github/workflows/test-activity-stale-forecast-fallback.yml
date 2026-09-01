@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install test dependencies
+        run: pip install -r requirements-pinterest.txt
       - name: Run focused fallback regression
         run: python src/test_activity_stale_forecast_fallback.py
       - name: Run Activity regression suite
