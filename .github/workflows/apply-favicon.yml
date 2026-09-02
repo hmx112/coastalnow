@@ -1,0 +1,92 @@
+name: Apply CoastalNow favicon
+on:
+  push:
+    branches: ["fix/search-favicon"]
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: contains(github.event.head_commit.message, 'Apply CoastalNow favicon')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/search-favicon
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install Pillow==11.3.0
+      - name: Generate CoastalNow icons and patch persistent sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw
+          import math
+
+          def make_icon(size, path):
+              scale=4
+              s=size*scale
+              img=Image.new('RGBA',(s,s),(0,0,0,0))
+              px=img.load()
+              top=(11,129,144); bottom=(101,196,198)
+              for y in range(s):
+                  t=y/max(s-1,1)
+                  c=tuple(round(top[i]*(1-t)+bottom[i]*t) for i in range(3))+(255,)
+                  for x in range(s): px[x,y]=c
+              mask=Image.new('L',(s,s),0)
+              md=ImageDraw.Draw(mask)
+              md.rounded_rectangle((0,0,s-1,s-1),radius=round(s*.22),fill=255)
+              img.putalpha(mask)
+              d=ImageDraw.Draw(img)
+              for row in (0.34,0.50,0.66):
+                  pts=[]
+                  for i in range(121):
+                      x=s*(0.20+0.60*i/120)
+                      y=s*(row+0.035*math.sin(i/120*4*math.pi))
+                      pts.append((x,y))
+                  d.line(pts,fill='white',width=round(s*.035),joint='curve')
+              img=img.resize((size,size),Image.Resampling.LANCZOS)
+              img.save(path,optimize=True)
+
+          public=Path('public')
+          make_icon(192, public/'favicon.png')
+          make_icon(180, public/'apple-touch-icon.png')
+          Image.open(public/'favicon.png').save(public/'favicon.ico', sizes=[(16,16),(32,32),(48,48)])
+
+          site=Path('src/site_generator.py')
+          text=site.read_text(encoding='utf-8')
+          marker="PINTEREST_DOMAIN_VERIFY='<meta name=\"p:domain_verify\" content=\"2d1606bc6882843fbb5143b963ef1cc2\">'\n"
+          insert=marker+"FAVICON_LINKS='<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/favicon.png\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">'\n"
+          if 'FAVICON_LINKS=' not in text:
+              if marker not in text: raise SystemExit('site_generator favicon constant marker missing')
+              text=text.replace(marker,insert,1)
+          old='{PINTEREST_DOMAIN_VERIFY}<title>'
+          new='{PINTEREST_DOMAIN_VERIFY}{FAVICON_LINKS}<title>'
+          if old in text: text=text.replace(old,new,1)
+          elif new not in text: raise SystemExit('site_generator head marker missing')
+          site.write_text(text,encoding='utf-8')
+
+          tide=Path('src/templates/tide-page.html')
+          tpl=tide.read_text(encoding='utf-8')
+          fav='<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">\n<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n'
+          if '/favicon.png' not in tpl:
+              marker='<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+              if marker not in tpl: raise SystemExit('tide head marker missing')
+              tpl=tpl.replace(marker,marker+fav,1)
+          tide.write_text(tpl,encoding='utf-8')
+          PY
+      - name: Regenerate directory pages
+        run: python src/build_site.py
+      - name: Run favicon regression
+        run: python src/test_favicon.py
+      - name: Run full regression suite
+        run: |
+          pip install -r requirements-pinterest.txt
+          python -m unittest discover -s src -p "test_*.py"
+      - name: Commit favicon implementation
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add public/favicon.png public/favicon.ico public/apple-touch-icon.png public/index.html src/site_generator.py src/templates/tide-page.html
+          git diff --cached --quiet || git commit -m "Add CoastalNow search favicon"
+          git push
