@@ -9,6 +9,7 @@ from seo import breadcrumb_json_ld, canonical_url
 
 LOGO='''<span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>'''
 PINTEREST_DOMAIN_VERIFY='<meta name="p:domain_verify" content="2d1606bc6882843fbb5143b963ef1cc2">'
+FAVICON_LINKS='<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">'
 
 def location_status(x): return x.get('status','Preview')
 
@@ -32,7 +33,7 @@ def _hero(eyebrow,title,copy): return f'''<section class="hero"><div class="hero
 def _shell(title,desc,prefix,body,canonical_path,breadcrumbs):
  canonical=canonical_url(canonical_path)
  structured=breadcrumb_json_ld(breadcrumbs)
- return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{PINTEREST_DOMAIN_VERIFY}<title>{escape(title)}</title><meta name="description" content="{escape(desc)}"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}">{structured}<link rel="stylesheet" href="{prefix}assets/site.css"></head><body><header class="site-header"><div class="wrap header-inner"><a class="brand" href="{prefix}index.html">{LOGO}<span>CoastalNow</span></a><nav class="nav"><a href="{prefix}index.html">Home</a><a href="{prefix}index.html#states">States</a><a class="search-pill" href="{prefix}index.html#search">Search</a></nav></div></header><main class="wrap">{body}</main><footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="{prefix}about/index.html">About</a><a href="{prefix}privacy/index.html">Privacy</a><a href="{prefix}contact/index.html">Contact</a></div></div></footer></body></html>'''
+ return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{PINTEREST_DOMAIN_VERIFY}{FAVICON_LINKS}<title>{escape(title)}</title><meta name="description" content="{escape(desc)}"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}">{structured}<link rel="stylesheet" href="{prefix}assets/site.css"></head><body><header class="site-header"><div class="wrap header-inner"><a class="brand" href="{prefix}index.html">{LOGO}<span>CoastalNow</span></a><nav class="nav"><a href="{prefix}index.html">Home</a><a href="{prefix}index.html#states">States</a><a class="search-pill" href="{prefix}index.html#search">Search</a></nav></div></header><main class="wrap">{body}</main><footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="{prefix}about/index.html">About</a><a href="{prefix}privacy/index.html">Privacy</a><a href="{prefix}contact/index.html">Contact</a></div></div></footer></body></html>'''
 
 def _state_card(slug,items): return f'<a class="info-card state-card" href="tides/{slug}/index.html"><span class="state-code">{items[0]["state_code"]}</span><h3>{items[0]["state"]}</h3><p>{len(items)} coastal locations</p><span class="card-arrow">Browse state →</span></a>'
 
