@@ -1,0 +1,38 @@
+name: Verify Surfing daylight hotfix
+
+on:
+  push:
+    branches:
+      - "fix/surfing-daylight-attribution"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/surfing-daylight-attribution
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependency
+        run: pip install -r requirements-pinterest.txt
+      - name: Run hotfix regression tests
+        run: |
+          status=0
+          python src/test_surfing_daylight_hotfix.py || status=1
+          python src/test_surfing_attribution_hotfix.py || status=1
+          exit $status
+      - name: Run focused existing Surfing tests
+        run: |
+          python src/test_surfing_policy.py
+          python src/test_surfing_rendering.py
+          python src/test_surfing_navigation.py
+          python src/test_surfing_publication.py
+      - name: Run complete regression suite
+        run: python -m unittest discover -s src -p "test_*.py"
