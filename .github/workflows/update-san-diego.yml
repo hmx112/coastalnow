@@ -2,6 +2,12 @@ name: Update live NOAA tide data
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - ".github/workflows/update-san-diego.yml"
   schedule:
     - cron: "17 */6 * * *"
 
@@ -53,6 +59,7 @@ jobs:
           python src/test_activity_attribution.py
           python src/test_activity_seo_navigation.py
           python src/test_activity_workflows.py
+          python src/test_tide_refresh_on_main_merge.py
 
       - name: Commit refreshed tide data
         run: |
