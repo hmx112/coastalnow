@@ -17,6 +17,7 @@ from activities.rendering.hub_page import render_fishing_hub
 from activities.rendering.links import activity_location_url
 from activities.rendering.location_page import render_fishing_location
 from activities.rendering.methodology_page import render_methodology_page
+from activities.rendering.surfing_page import render_surfing_hub, render_surfing_location
 from locations import LOCATIONS
 from seo import (
     activity_hub_seo_tags,
@@ -182,7 +183,6 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     primary_block = _primary_activity_cta(location, configured, activity_results)
     html = _inject_primary_activity_cta(html, primary_block)
 
-
     block = ""
     if cards:
         block = (
@@ -223,8 +223,13 @@ def render_activity_outputs(
     for activity in enabled_activities():
         slug = activity["slug"]
         results = inventory.get(slug, {})
-        if slug != "fishing":
-            # Future activities plug into this dispatcher when their renderer is implemented.
+        if slug == "fishing":
+            location_renderer = render_fishing_location
+            hub_renderer = render_fishing_hub
+        elif slug == "surfing":
+            location_renderer = render_surfing_location
+            hub_renderer = render_surfing_hub
+        else:
             continue
 
         for location_slug, result in results.items():
@@ -238,7 +243,7 @@ def render_activity_outputs(
             relative = activity_page_path(location, slug)
             output = public_root / relative
             output.parent.mkdir(parents=True, exist_ok=True)
-            html = render_fishing_location(
+            html = location_renderer(
                 location,
                 result,
                 snapshot,
@@ -251,7 +256,7 @@ def render_activity_outputs(
         hub_relative = activity_hub_path(slug)
         hub_output = public_root / hub_relative
         hub_output.parent.mkdir(parents=True, exist_ok=True)
-        hub_html = render_fishing_hub(
+        hub_html = hub_renderer(
             locations,
             results,
             head_extra=activity_hub_seo_tags(slug, activity["label"]),
