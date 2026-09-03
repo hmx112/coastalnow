@@ -70,6 +70,8 @@ def load_activity_inventory(public_root: Path = ROOT, *, locations: dict[str, di
         slug = activity["slug"]
         results: dict[str, dict] = {}
         for location_slug, location in locations.items():
+            if not any(item["slug"] == slug for item in enabled_activities_for_location(location)):
+                continue
             path = public_root / activity_data_path(location, slug)
             if not path.exists():
                 continue

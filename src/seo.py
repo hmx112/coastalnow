@@ -6,6 +6,7 @@ import re
 from html import escape
 
 from activities.paths import activity_page_path
+from activities.registry import ACTIVITIES, activity_enabled_for_location
 
 SITE_ORIGIN = "https://coastalnowtides.com"
 
@@ -116,10 +117,17 @@ def build_sitemap(
 
     if activity_inventory is not None:
         for activity_slug, results in activity_inventory.items():
+            activity = ACTIVITIES.get(activity_slug)
+            if not activity or not activity.get("enabled"):
+                continue
             urls.add(canonical_url(f"{activity_slug}/index.html"))
             for location_slug, result in results.items():
                 location = locations.get(location_slug)
-                if location and activity_robots_directive(result) == "index,follow":
+                if (
+                    location
+                    and activity_enabled_for_location(activity, location_slug)
+                    and activity_robots_directive(result) == "index,follow"
+                ):
                     urls.add(canonical_url(activity_page_path(location, activity_slug)))
 
     rows = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in sorted(urls))
