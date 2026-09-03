@@ -43,7 +43,7 @@ def _tide_source_text(location: dict) -> str:
     return f"NOAA station: {station}."
 
 
-def location_attribution_html(location: dict, snapshot: dict) -> str:
+def location_attribution_html(location: dict, snapshot: dict, activity_slug: str = "fishing") -> str:
     timezone_name = location.get("timezone") or "UTC"
     forecast_update = _provider_local_time(snapshot, "forecast", timezone_name)
     alert_update = _provider_local_time(snapshot, "alerts", timezone_name)
@@ -57,6 +57,15 @@ def location_attribution_html(location: dict, snapshot: dict) -> str:
         updates.append(f"Tides: {tide_update}")
     update_html = " · ".join(escape(item) for item in updates) or "Source update times unavailable."
 
+    if activity_slug == "surfing":
+        score_line = '<p><strong>Surf Conditions Score &amp; Surf Planning Window:</strong> calculated by CoastalNow from the source data above using published rule-based methodology.</p>'
+        context_line = '<p><strong>Daylight context:</strong> calculated locally by CoastalNow and used as a low-weight planning input.</p>'
+        product_note = 'Surf Conditions Score is a CoastalNow planning metric and is not an official NOAA/NWS product or safety determination. CoastalNow is not affiliated with or endorsed by NOAA or the National Weather Service.'
+    else:
+        score_line = '<p><strong>Fishing Score &amp; Best Fishing Time:</strong> calculated by CoastalNow from the source data above using published rule-based methodology.</p>'
+        context_line = '<p><strong>Solar &amp; lunar context:</strong> calculated locally by CoastalNow; lunar influence has low weight and is not presented as a catch guarantee.</p>'
+        product_note = 'Fishing Score is a CoastalNow planning metric and is not an official NOAA/NWS product or safety determination. CoastalNow is not affiliated with or endorsed by NOAA or the National Weather Service.'
+
     return (
         '<!-- ACTIVITY_ATTRIBUTION_START -->'
         '<section class="section activity-panel activity-sources">'
@@ -66,30 +75,32 @@ def location_attribution_html(location: dict, snapshot: dict) -> str:
         f'<p><strong>Tides &amp; water observations:</strong> <a href="{NOAA_COOPS_URL}" rel="noopener">NOAA/NOS/CO-OPS</a>. '
         f'{escape(_tide_source_text(location))}</p>'
         f'<p><strong>Weather, wind, waves &amp; alerts:</strong> <a href="{NWS_API_URL}" rel="noopener">NOAA National Weather Service</a>.</p>'
-        '<p><strong>Fishing Score &amp; Best Fishing Time:</strong> calculated by CoastalNow from the source data above using published rule-based methodology.</p>'
-        '<p><strong>Solar &amp; lunar context:</strong> calculated locally by CoastalNow; lunar influence has low weight and is not presented as a catch guarantee.</p>'
-        '</div>'
-        f'<p class="meta">{update_html}</p>'
-        '<p class="meta">Fishing Score is a CoastalNow planning metric and is not an official NOAA/NWS product or safety determination. CoastalNow is not affiliated with or endorsed by NOAA or the National Weather Service.</p>'
-        f'<a class="card-arrow" href="{METHODOLOGY_URL}">Full Data Sources &amp; Methodology →</a>'
-        '</section>'
-        '<!-- ACTIVITY_ATTRIBUTION_END -->'
+        + score_line
+        + context_line
+        + '</div>'
+        + f'<p class="meta">{update_html}</p>'
+        + f'<p class="meta">{escape(product_note)}</p>'
+        + f'<a class="card-arrow" href="{METHODOLOGY_URL}">Full Data Sources &amp; Methodology →</a>'
+        + '</section>'
+        + '<!-- ACTIVITY_ATTRIBUTION_END -->'
     )
 
-
-def hub_attribution_html() -> str:
+def hub_attribution_html(activity_slug: str = "fishing") -> str:
+    if activity_slug == "surfing":
+        product_note = 'Surf Conditions Scores and planning windows are calculated by CoastalNow. They are not official NOAA/NWS products, safety determinations, or break-specific forecasts.'
+    else:
+        product_note = 'Fishing Scores and best-time windows are calculated by CoastalNow. They are not official NOAA/NWS products, safety determinations, or catch predictions.'
     return (
         '<!-- ACTIVITY_ATTRIBUTION_START -->'
         '<section class="section activity-panel activity-sources">'
         '<div class="section-head"><div><p class="eyebrow">TRANSPARENCY</p>'
         '<h2>Data sources &amp; methodology</h2></div></div>'
         f'<p>Tide inputs come from <a href="{NOAA_COOPS_URL}" rel="noopener">NOAA/NOS/CO-OPS</a>; weather, wind, wave context and alerts come from the <a href="{NWS_API_URL}" rel="noopener">NOAA National Weather Service</a>.</p>'
-        '<p>Fishing Scores and best-time windows are calculated by CoastalNow. They are not official NOAA/NWS products, safety determinations, or catch predictions.</p>'
-        f'<a class="card-arrow" href="{METHODOLOGY_URL}">Full Data Sources &amp; Methodology →</a>'
-        '</section>'
-        '<!-- ACTIVITY_ATTRIBUTION_END -->'
+        + f'<p>{escape(product_note)}</p>'
+        + f'<a class="card-arrow" href="{METHODOLOGY_URL}">Full Data Sources &amp; Methodology →</a>'
+        + '</section>'
+        + '<!-- ACTIVITY_ATTRIBUTION_END -->'
     )
-
 
 def inject_attribution(html: str, block: str) -> str:
     """Insert or replace a source block idempotently before the methodology note."""

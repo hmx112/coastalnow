@@ -116,8 +116,8 @@ def weather_quality(precip_probability_pct: float | None, condition_text: str = 
 
 
 def daylight_quality(timestamp: str, solar: dict) -> float | None:
-    dawn_raw = solar.get("civil_dawn")
-    dusk_raw = solar.get("civil_dusk")
+    dawn_raw = solar.get("civil_dawn") or solar.get("dawn")
+    dusk_raw = solar.get("civil_dusk") or solar.get("dusk")
     if not dawn_raw or not dusk_raw:
         return None
     current = _aware(timestamp)
