@@ -11,13 +11,17 @@ from pathlib import Path
 from activities.conditions.collect import collect_location_conditions
 from activities.conditions.providers.nws import active_alerts, dedupe_alerts
 from activities.paths import activity_data_path
-from activities.registry import ACTIVITIES, enabled_activities
+from activities.registry import ACTIVITIES, enabled_activities_for_location
 from activities.scoring.fishing_policy import score_fishing_activity
+from activities.scoring.surfing_policy import score_surfing_activity
 from locations import LOCATIONS
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
-DEFAULT_SCORERS = {"fishing": score_fishing_activity}
+DEFAULT_SCORERS = {
+    "fishing": score_fishing_activity,
+    "surfing": score_surfing_activity,
+}
 ALERTS_ONLY_FULL_REFRESH_AGE_HOURS = 4
 
 
@@ -147,7 +151,7 @@ def generate_location(
     alerts_only: bool = False,
     alerts_fetch=active_alerts,
 ) -> dict:
-    """Collect once, score every enabled Activity, and atomically persist outputs."""
+    """Collect once, score every Activity enabled for this location, and persist outputs."""
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None or now.utcoffset() is None:
         raise ValueError("now must be timezone-aware")
@@ -187,7 +191,7 @@ def generate_location(
     atomic_write_json(condition_path(public_root, location), snapshot)
 
     outputs = {}
-    for activity in enabled_activities(registry):
+    for activity in enabled_activities_for_location(location, registry):
         slug = activity["slug"]
         scorer = scorers.get(slug)
         if scorer is None:
