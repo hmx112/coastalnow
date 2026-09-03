@@ -17,6 +17,7 @@ class PinterestRenderTests(unittest.TestCase):
             "state": "California",
             "state_slug": "california",
             "fishing_enabled": True,
+            "surfing_enabled": True,
         }
 
     def test_pin_text_is_evergreen_and_activity_specific(self):
@@ -24,6 +25,7 @@ class PinterestRenderTests(unittest.TestCase):
 
         tide = pin_text(self.item, "tides")
         fishing = pin_text(self.item, "fishing")
+        surfing = pin_text(self.item, "surfing")
 
         self.assertEqual(tide["location"], "SAN DIEGO")
         self.assertEqual(tide["state"], "CALIFORNIA")
@@ -57,7 +59,12 @@ class PinterestRenderTests(unittest.TestCase):
             ),
         )
 
-        for payload in (tide, fishing):
+        self.assertEqual(surfing["category"], "SURF CONDITIONS & BEST TIMES")
+        self.assertEqual(surfing["headline_lines"], ("SURF CONDITIONS", "& BEST TIMES"))
+        self.assertEqual(surfing["cta"], "See current surf conditions →")
+        self.assertEqual(surfing["scene"], "surfing")
+
+        for payload in (tide, fishing, surfing):
             text_values = []
             for value in payload.values():
                 if isinstance(value, str):
@@ -77,37 +84,41 @@ class PinterestRenderTests(unittest.TestCase):
             ):
                 self.assertNotIn(forbidden, combined)
 
-    def test_renderer_uses_shared_site_style_brand_helper_and_removes_old_wave_layers(self):
+    def test_renderer_uses_shared_brand_and_three_distinct_scenic_templates(self):
         import pinterest.render as render
 
         self.assertTrue(callable(render._draw_coastalnow_brand))
+        self.assertTrue(callable(render._draw_tide_scene))
+        self.assertTrue(callable(render._draw_fishing_scene))
+        self.assertTrue(callable(render._draw_surfing_scene))
         source = inspect.getsource(render)
         self.assertNotIn("def _wave_polygon", source)
-        self.assertNotIn("draw.polygon(_wave_polygon", source)
-        self.assertNotIn("draw.ellipse((72, 60, 172, 160), fill=TEAL)", source)
         heading_source = inspect.getsource(render._draw_common_heading)
         self.assertIn("_draw_coastalnow_brand", heading_source)
 
-    def test_rendered_pins_are_exactly_1000_by_1500_png(self):
+    def test_rendered_pins_are_exactly_1000_by_1500_png_and_visually_distinct(self):
         from pinterest.render import render_pin
 
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for kind in ("tides", "fishing"):
+            payloads = {}
+            for kind in ("tides", "fishing", "surfing"):
                 output = root / f"san-diego-{kind}.png"
                 rendered = render_pin(self.item, kind, output)
                 self.assertEqual(rendered, output)
                 self.assertTrue(output.exists())
+                payloads[kind] = output.read_bytes()
                 with Image.open(output) as image:
                     self.assertEqual(image.format, "PNG")
                     self.assertEqual(image.size, (1000, 1500))
                     self.assertIn(image.mode, {"RGB", "RGBA"})
+            self.assertEqual(len({payloads[kind] for kind in payloads}), 3)
 
     def test_unknown_pin_kind_fails(self):
         from pinterest.render import pin_text
 
         with self.assertRaises(ValueError):
-            pin_text(self.item, "surfing")
+            pin_text(self.item, "swimming")
 
 
 if __name__ == "__main__":
