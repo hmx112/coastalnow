@@ -15,7 +15,7 @@ PILOT = {
     "cocoa-beach",
     "daytona-beach",
     "wrightsville-beach",
-    "virginia-beach",
+    "nags-head",
 }
 
 
