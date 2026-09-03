@@ -3,13 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime
 
-_WEIGHTS = {
-    "wave_height": 0.30,
-    "wave_period": 0.25,
-    "wind": 0.25,
-    "weather": 0.10,
-    "daylight": 0.10,
-}
+from activities.scoring.surfing_policy import SURFING_WEIGHTS
 
 _ALERT_REASONS = {
     "Rip Current Statement": {"rip-current-statement", "high-rip-current-risk"},
@@ -138,13 +132,13 @@ def _alert_sentence(result: dict, snapshot: dict, scored: dict) -> str | None:
         if cap is not None and float(cap) < 100:
             return (
                 f"NWS {event} is active during the best planning window and caps the Surf Conditions Score at "
-                f"{_fmt_number(cap)} before the other conditions are considered."
+                f"{_fmt_number(cap)}, even if the underlying wave, wind, and weather inputs would score higher."
             )
         penalty = scored.get("safety_penalty")
         if penalty is not None and float(penalty) > 0:
             return (
                 f"NWS {event} is active during the best planning window and applies a "
-                f"{_fmt_number(penalty)}-point safety penalty before the other conditions are considered."
+                f"{_fmt_number(penalty)}-point Safety Gate penalty to the composite score."
             )
         return (
             f"NWS {event} is active during the relevant period and is treated as the first planning consideration."
@@ -240,7 +234,7 @@ def _safety_gate_sentence(result: dict, scored: dict, raw: dict) -> str | None:
         else:
             measured = "The combined wave height and period"
         return (
-            f"{measured} adds a {_fmt_number(penalty)}-point Safety Gate penalty before the final score is shown."
+            f"{measured} subtracts {_fmt_number(penalty)} points from the composite score through the Safety Gate."
         )
 
     if status == "NOT RECOMMENDED" and scored.get("hard_stop"):
@@ -330,15 +324,15 @@ def _score_sentences(result: dict, scored: dict, raw: dict) -> list[str]:
     available = {
         key: float(value)
         for key, value in components.items()
-        if key in _WEIGHTS and value is not None
+        if key in SURFING_WEIGHTS and value is not None
     }
     supports = sorted(
         (key for key, value in available.items() if value >= 85),
-        key=lambda key: -(_WEIGHTS[key] * available[key]),
+        key=lambda key: -(SURFING_WEIGHTS[key] * available[key]),
     )
     drags = sorted(
         (key for key, value in available.items() if value < 85),
-        key=lambda key: -(_WEIGHTS[key] * (100 - available[key])),
+        key=lambda key: -(SURFING_WEIGHTS[key] * (100 - available[key])),
     )
 
     support_text = _join_phrases([_support_phrase(key, raw) for key in supports[:3]])
