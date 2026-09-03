@@ -267,7 +267,7 @@ def render_activity_outputs(
                 snapshot,
                 head_extra=activity_seo_tags(location, slug, result, activity["label"]),
             )
-            html = inject_attribution(html, location_attribution_html(location, snapshot))
+            html = inject_attribution(html, location_attribution_html(location, snapshot, activity_slug=slug))
             output.write_text(html, encoding="utf-8")
             rendered.add(relative)
 
@@ -279,7 +279,7 @@ def render_activity_outputs(
             results,
             head_extra=activity_hub_seo_tags(slug, activity["label"]),
         )
-        hub_html = inject_attribution(hub_html, hub_attribution_html())
+        hub_html = inject_attribution(hub_html, hub_attribution_html(activity_slug=slug))
         hub_output.write_text(hub_html, encoding="utf-8")
         rendered.add(hub_relative)
     return rendered

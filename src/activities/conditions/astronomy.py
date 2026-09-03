@@ -35,17 +35,26 @@ def _local_event(day: date, latitude: float, longitude: float, tz, *, sunrise: b
     if utc_hours is None:
         return None
     midnight = datetime.combine(day, time.min, tzinfo=timezone.utc)
-    return (midnight + timedelta(hours=utc_hours)).astimezone(tz)
-
+    local = (midnight + timedelta(hours=utc_hours)).astimezone(tz)
+    # _sun_utc_hours is normalized to 0..24 and therefore loses the UTC
+    # day rollover for western longitudes. The function contract is a
+    # solar event for the requested *local* day, so restore that day here.
+    day_delta = (day - local.date()).days
+    return local + timedelta(days=day_delta)
 
 def solar_events(day: date, latitude: float, longitude: float, tz) -> dict:
+    dawn = _local_event(day, latitude, longitude, tz, sunrise=True, zenith=96.0)
+    sunrise = _local_event(day, latitude, longitude, tz, sunrise=True, zenith=90.833)
+    sunset = _local_event(day, latitude, longitude, tz, sunrise=False, zenith=90.833)
+    dusk = _local_event(day, latitude, longitude, tz, sunrise=False, zenith=96.0)
     return {
-        "dawn": _local_event(day, latitude, longitude, tz, sunrise=True, zenith=96.0),
-        "sunrise": _local_event(day, latitude, longitude, tz, sunrise=True, zenith=90.833),
-        "sunset": _local_event(day, latitude, longitude, tz, sunrise=False, zenith=90.833),
-        "dusk": _local_event(day, latitude, longitude, tz, sunrise=False, zenith=96.0),
+        "dawn": dawn,
+        "civil_dawn": dawn,
+        "sunrise": sunrise,
+        "sunset": sunset,
+        "dusk": dusk,
+        "civil_dusk": dusk,
     }
-
 
 def moon_phase_fraction(day: date) -> float:
     """Return deterministic synodic phase fraction: 0=new, ~0.5=full."""
