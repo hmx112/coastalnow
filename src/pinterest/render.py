@@ -1,4 +1,4 @@
-"""Deterministic 1000x1500 CoastalNow Pinterest image renderer."""
+"""Pinterest-first 1000x1500 CoastalNow poster renderer."""
 from __future__ import annotations
 
 import math
@@ -9,30 +9,28 @@ from PIL import Image, ImageDraw, ImageFont
 WIDTH = 1000
 HEIGHT = 1500
 
-OFF_WHITE = (247, 250, 249)
-PANEL = (255, 255, 255)
-PALE_AQUA = (234, 246, 246)
-SEAFOAM = (190, 232, 224)
-TEAL = (20, 151, 158)
-DEEP_TEAL = (9, 112, 122)
-NAVY = (8, 45, 76)
-MUTED = (76, 101, 113)
-LINE = (216, 233, 232)
-SOFT_SHADOW = (226, 237, 236)
+WHITE = (255, 255, 255)
+NAVY = (7, 31, 55)
+TEAL = (19, 154, 161)
+MUTED_WHITE = (227, 241, 240)
 
 BOLD_FONT = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
 REGULAR_FONT = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
 
 
 def pin_text(item: dict, kind: str) -> dict[str, object]:
-    if kind not in {"tides", "fishing"}:
+    if kind not in {"tides", "fishing", "surfing"}:
         raise ValueError(f"Unsupported Pinterest pin kind: {kind}")
+
+    base = {
+        "brand": "CoastalNow",
+        "location": item["name"].upper(),
+        "state": item["state"].upper(),
+    }
 
     if kind == "tides":
         return {
-            "brand": "CoastalNow",
-            "location": item["name"].upper(),
-            "state": item["state"].upper(),
+            **base,
             "category": "TIDE TIMES & TIDE CHART",
             "headline_lines": ("TIDE TIMES &", "TIDE CHART"),
             "subtitle": "Fast local tide info for planning by the water.",
@@ -45,26 +43,44 @@ def pin_text(item: dict, kind: str) -> dict[str, object]:
             "feature_icons": ("tide", "calendar", "data", "chart"),
             "cta": "See today’s tide times →",
             "footer": "Your go-to source for coastal conditions.",
+            "scene": "tides",
+        }
+
+    if kind == "fishing":
+        return {
+            **base,
+            "category": "FISHING CONDITIONS & BEST TIMES",
+            "headline_lines": ("FISHING CONDITIONS", "& BEST TIMES"),
+            "subtitle": "For shore, pier and nearshore fishing.",
+            "features": (
+                ("Live 0–100 Fishing Score", "See how conditions rate for fishing."),
+                ("Tide", "Tide movement and timing"),
+                ("Wind", "Wind speed and direction"),
+                ("Waves", "Wave height and period"),
+                ("Weather", "Sky, rain chance and more"),
+                ("Best 3-hour fishing window", "Top window based on today’s conditions"),
+            ),
+            "feature_icons": ("score", "tide", "wind", "waves", "weather", "window"),
+            "cta": "See today’s fishing conditions →",
+            "footer": "Live tide, wind & wave context",
+            "scene": "fishing",
         }
 
     return {
-        "brand": "CoastalNow",
-        "location": item["name"].upper(),
-        "state": item["state"].upper(),
-        "category": "FISHING CONDITIONS & BEST TIMES",
-        "headline_lines": ("FISHING CONDITIONS", "& BEST TIMES"),
-        "subtitle": "For shore, pier and nearshore fishing.",
+        **base,
+        "category": "SURF CONDITIONS & BEST TIMES",
+        "headline_lines": ("SURF CONDITIONS", "& BEST TIMES"),
+        "subtitle": "Wave, wind and weather context for coastal surf planning.",
         "features": (
-            ("Live 0–100 Fishing Score", "See how conditions rate for fishing."),
-            ("Tide", "Tide movement and timing"),
-            ("Wind", "Wind speed and direction"),
-            ("Waves", "Wave height and period"),
-            ("Weather", "Sky, rain chance and more"),
-            ("Best 3-hour fishing window", "Top window based on today’s conditions"),
+            ("Wave & Swell Context", "Wave height and period context"),
+            ("Wind & Weather", "Wind, rain and sky conditions"),
+            ("Surf Planning Window", "Best 3-hour planning window"),
+            ("NWS Alert Context", "Official warnings always take priority"),
         ),
-        "feature_icons": ("score", "tide", "wind", "waves", "weather", "window"),
-        "cta": "See today’s fishing conditions →",
-        "footer": "Live tide, wind & wave context",
+        "feature_icons": ("waves", "wind", "window", "alert"),
+        "cta": "See current surf conditions →",
+        "footer": "Wave, wind & weather context",
+        "scene": "surfing",
     }
 
 
@@ -77,10 +93,10 @@ def _font(path: Path, size: int):
 def _fit_font(
     draw: ImageDraw.ImageDraw,
     text: str,
-    path: Path,
     max_size: int,
     min_size: int,
     max_width: int,
+    path: Path = BOLD_FONT,
 ):
     for size in range(max_size, min_size - 1, -2):
         font = _font(path, size)
@@ -90,483 +106,202 @@ def _fit_font(
     return _font(path, min_size)
 
 
-def _wrap_lines(draw: ImageDraw.ImageDraw, text: str, font, max_width: int) -> list[str]:
-    words = text.split()
-    if not words:
-        return [""]
-    lines: list[str] = []
-    current = words[0]
-    for word in words[1:]:
-        candidate = f"{current} {word}"
-        bbox = draw.textbbox((0, 0), candidate, font=font)
-        if bbox[2] - bbox[0] <= max_width:
-            current = candidate
-        else:
-            lines.append(current)
-            current = word
-    lines.append(current)
-    return lines
+def _gradient(top: tuple[int, int, int], bottom: tuple[int, int, int]) -> Image.Image:
+    image = Image.new("RGB", (WIDTH, HEIGHT), top)
+    draw = ImageDraw.Draw(image)
+    for y in range(HEIGHT):
+        progress = y / (HEIGHT - 1)
+        color = tuple(
+            round(top[index] * (1 - progress) + bottom[index] * progress)
+            for index in range(3)
+        )
+        draw.line((0, y, WIDTH, y), fill=color)
+    return image
 
 
-def _fit_wrapped(
-    draw: ImageDraw.ImageDraw,
-    text: str,
-    path: Path,
-    max_size: int,
-    min_size: int,
-    max_width: int,
-    max_height: int,
-    spacing: int = 6,
-) -> tuple[object, list[str], int]:
-    for size in range(max_size, min_size - 1, -2):
-        font = _font(path, size)
-        lines = _wrap_lines(draw, text, font, max_width)
-        line_bbox = draw.textbbox((0, 0), "Ag", font=font)
-        line_height = line_bbox[3] - line_bbox[1]
-        total_height = line_height * len(lines) + spacing * max(0, len(lines) - 1)
-        if total_height <= max_height:
-            return font, lines, total_height
-    font = _font(path, min_size)
-    lines = _wrap_lines(draw, text, font, max_width)
-    line_bbox = draw.textbbox((0, 0), "Ag", font=font)
-    line_height = line_bbox[3] - line_bbox[1]
-    total_height = line_height * len(lines) + spacing * max(0, len(lines) - 1)
-    return font, lines, total_height
-
-
-def _draw_lines(
-    draw: ImageDraw.ImageDraw,
-    lines: list[str],
-    x: int,
+def _sine_points(
+    x1: int,
+    x2: int,
     y: int,
-    font,
-    fill: tuple[int, int, int],
-    spacing: int = 6,
-    align: str = "left",
-    width: int | None = None,
-) -> int:
-    line_bbox = draw.textbbox((0, 0), "Ag", font=font)
-    line_height = line_bbox[3] - line_bbox[1]
-    cursor = y
-    for line in lines:
-        bbox = draw.textbbox((0, 0), line, font=font)
-        line_width = bbox[2] - bbox[0]
-        tx = x
-        if align == "center" and width is not None:
-            tx = x + max(0, (width - line_width) // 2)
-        draw.text((tx, cursor), line, fill=fill, font=font)
-        cursor += line_height + spacing
-    return cursor - spacing
-
-
-def _draw_wrapped_text(
-    draw: ImageDraw.ImageDraw,
-    text: str,
-    box: tuple[int, int, int, int],
-    font_path: Path,
-    max_size: int,
-    min_size: int,
-    fill: tuple[int, int, int],
-    spacing: int = 6,
-    align: str = "left",
-) -> int:
-    x1, y1, x2, y2 = box
-    font, lines, _ = _fit_wrapped(
-        draw,
-        text,
-        font_path,
-        max_size,
-        min_size,
-        x2 - x1,
-        y2 - y1,
-        spacing,
-    )
-    return _draw_lines(
-        draw,
-        lines,
-        x1,
-        y1,
-        font,
-        fill,
-        spacing=spacing,
-        align=align,
-        width=x2 - x1,
-    )
-
-
-def _sine_points(x1: int, x2: int, y: int, amplitude: int, cycles: float = 1.5) -> list[tuple[int, int]]:
+    amplitude: int,
+    cycles: float = 1.5,
+    step: int = 4,
+) -> list[tuple[int, int]]:
     width = max(1, x2 - x1)
     points = []
-    for x in range(x1, x2 + 1, 3):
+    for x in range(x1, x2 + 1, step):
         phase = ((x - x1) / width) * math.tau * cycles
         points.append((x, y + int(math.sin(phase) * amplitude)))
     return points
 
 
-def _draw_coastalnow_brand(draw: ImageDraw.ImageDraw, x: int, y: int) -> None:
-    """Draw the site-style rounded-square three-wave logo and CoastalNow wordmark."""
-    mark = (x, y, x + 78, y + 78)
-    draw.rounded_rectangle(mark, radius=21, fill=TEAL)
-    for wave_y in (y + 25, y + 39, y + 53):
-        draw.line(_sine_points(x + 17, x + 61, wave_y, 4, cycles=1.35), fill=OFF_WHITE, width=5)
-
-    brand_font = _font(BOLD_FONT, 51)
-    draw.text((x + 101, y + 10), "CoastalNow", fill=NAVY, font=brand_font)
-
-
-def _draw_icon(draw: ImageDraw.ImageDraw, name: str, center: tuple[int, int], size: int = 58) -> None:
-    cx, cy = center
-    c = DEEP_TEAL
-    w = 5
-
-    if name == "score":
-        r = size // 2
-        draw.arc((cx - r, cy - r, cx + r, cy + r), 200, 340, fill=c, width=7)
-        draw.line((cx, cy, cx + 19, cy - 14), fill=c, width=6)
-        draw.ellipse((cx - 6, cy - 6, cx + 6, cy + 6), fill=c)
-        return
-
-    if name == "tide":
-        for offset in (-12, 0, 12):
-            draw.line(_sine_points(cx - 31, cx + 31, cy + offset, 4, cycles=1.25), fill=c, width=w)
-        draw.line((cx, cy - 52, cx, cy - 32), fill=c, width=w)
-        draw.line((cx, cy - 52, cx - 8, cy - 43), fill=c, width=w)
-        draw.line((cx, cy - 52, cx + 8, cy - 43), fill=c, width=w)
-        return
-
-    if name == "wind":
-        for offset, length in ((-17, 52), (0, 65), (18, 45)):
-            y = cy + offset
-            draw.line((cx - 32, y, cx - 5 + length // 3, y), fill=c, width=w)
-            draw.arc((cx + 2, y - 14, cx + 32, y + 14), 250, 80, fill=c, width=w)
-        return
-
-    if name == "waves":
-        draw.arc((cx - 38, cy - 32, cx + 25, cy + 29), 195, 345, fill=c, width=7)
-        draw.arc((cx - 7, cy - 22, cx + 42, cy + 25), 145, 300, fill=c, width=6)
-        draw.line(_sine_points(cx - 34, cx + 35, cy + 26, 3, cycles=1.25), fill=c, width=5)
-        return
-
-    if name == "weather":
-        draw.ellipse((cx + 1, cy - 37, cx + 33, cy - 5), outline=c, width=5)
-        for angle in range(0, 360, 45):
-            rad = math.radians(angle)
-            x1 = cx + 17 + int(math.cos(rad) * 23)
-            y1 = cy - 21 + int(math.sin(rad) * 23)
-            x2 = cx + 17 + int(math.cos(rad) * 31)
-            y2 = cy - 21 + int(math.sin(rad) * 31)
-            draw.line((x1, y1, x2, y2), fill=c, width=4)
-        draw.rounded_rectangle((cx - 35, cy - 8, cx + 27, cy + 27), radius=16, outline=c, width=6)
-        draw.ellipse((cx - 25, cy - 22, cx + 3, cy + 7), fill=PALE_AQUA, outline=c, width=5)
-        return
-
-    if name == "window":
-        r = 31
-        draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=c, width=6)
-        draw.line((cx, cy, cx, cy - 17), fill=c, width=6)
-        draw.line((cx, cy, cx + 15, cy + 9), fill=c, width=6)
-        return
-
-    if name == "calendar":
-        draw.rounded_rectangle((cx - 34, cy - 30, cx + 34, cy + 31), radius=8, outline=c, width=5)
-        draw.line((cx - 34, cy - 10, cx + 34, cy - 10), fill=c, width=5)
-        draw.line((cx - 18, cy - 39, cx - 18, cy - 21), fill=c, width=5)
-        draw.line((cx + 18, cy - 39, cx + 18, cy - 21), fill=c, width=5)
-        for dx in (-17, 0, 17):
-            for dy in (3, 18):
-                draw.rounded_rectangle((cx + dx - 4, cy + dy - 4, cx + dx + 4, cy + dy + 4), radius=2, fill=c)
-        return
-
-    if name == "data":
-        draw.ellipse((cx - 31, cy - 31, cx + 18, cy - 13), outline=c, width=5)
-        draw.line((cx - 31, cy - 22, cx - 31, cy + 23), fill=c, width=5)
-        draw.line((cx + 18, cy - 22, cx + 18, cy + 10), fill=c, width=5)
-        draw.arc((cx - 31, cy - 5, cx + 18, cy + 13), 0, 180, fill=c, width=5)
-        draw.arc((cx - 31, cy + 10, cx + 18, cy + 28), 0, 180, fill=c, width=5)
-        draw.ellipse((cx + 5, cy + 4, cx + 39, cy + 38), fill=PANEL, outline=c, width=5)
-        draw.line((cx + 13, cy + 21, cx + 20, cy + 28), fill=c, width=4)
-        draw.line((cx + 20, cy + 28, cx + 32, cy + 14), fill=c, width=4)
-        return
-
-    if name == "chart":
-        points = []
-        for i in range(0, 67, 3):
-            x = cx - 33 + i
-            y = cy + int(math.sin((i / 66) * math.tau * 1.25) * 19)
-            points.append((x, y))
-        draw.line(points, fill=c, width=5)
-        draw.line((cx - 34, cy + 31, cx + 35, cy + 31), fill=c, width=4)
-        draw.ellipse((points[-1][0] - 5, points[-1][1] - 5, points[-1][0] + 5, points[-1][1] + 5), fill=c)
-        return
-
-    raise ValueError(f"Unsupported Pinterest icon: {name}")
-
-
-def _draw_feature_card(
-    draw: ImageDraw.ImageDraw,
-    box: tuple[int, int, int, int],
-    icon: str,
-    title: str,
-    description: str,
-    compact: bool,
-) -> None:
-    x1, y1, x2, y2 = box
-    draw.rounded_rectangle((x1 + 4, y1 + 7, x2 + 4, y2 + 7), radius=28, fill=SOFT_SHADOW)
-    draw.rounded_rectangle(box, radius=28, fill=PANEL, outline=LINE, width=2)
-
-    if compact:
-        icon_center = ((x1 + x2) // 2, y1 + 56)
-        _draw_icon(draw, icon, icon_center, size=52)
-        title_y = y1 + 105
-        title_bottom = _draw_wrapped_text(
-            draw,
-            title,
-            (x1 + 19, title_y, x2 - 19, y1 + 184),
-            BOLD_FONT,
-            28,
-            22,
-            NAVY,
-            spacing=4,
-            align="center",
-        )
-        desc_y = max(title_bottom + 10, y1 + 172)
-        _draw_wrapped_text(
-            draw,
-            description,
-            (x1 + 19, desc_y, x2 - 19, y2 - 18),
-            REGULAR_FONT,
-            20,
-            16,
-            MUTED,
-            spacing=3,
-            align="center",
-        )
-    else:
-        icon_center = (x1 + 70, y1 + 78)
-        draw.ellipse((x1 + 28, y1 + 36, x1 + 112, y1 + 120), fill=PALE_AQUA)
-        _draw_icon(draw, icon, icon_center, size=48)
-        title_bottom = _draw_wrapped_text(
-            draw,
-            title,
-            (x1 + 135, y1 + 35, x2 - 22, y1 + 118),
-            BOLD_FONT,
-            32,
-            25,
-            NAVY,
-            spacing=4,
-        )
-        _draw_wrapped_text(
-            draw,
-            description,
-            (x1 + 135, max(title_bottom + 8, y1 + 117), x2 - 22, y2 - 25),
-            REGULAR_FONT,
-            22,
-            18,
-            MUTED,
-            spacing=3,
+def _draw_tide_scene(image: Image.Image) -> None:
+    draw = ImageDraw.Draw(image)
+    draw.ellipse((655, 205, 930, 480), fill=(255, 188, 104))
+    draw.polygon(
+        [(0, 690), (145, 575), (260, 625), (365, 540), (520, 620), (600, 740), (0, 820)],
+        fill=(8, 64, 82),
+    )
+    draw.polygon([(0, 680), (1000, 650), (1000, 1040), (0, 1040)], fill=(24, 137, 153))
+    for y, amplitude, color, width in (
+        (745, 22, (113, 232, 219), 11),
+        (805, 28, WHITE, 14),
+        (890, 18, (91, 212, 204), 10),
+        (975, 25, WHITE, 13),
+    ):
+        draw.line(_sine_points(-40, 1040, y, amplitude, 2.3), fill=color, width=width)
+    for radius in (88, 55, 26):
+        draw.ellipse(
+            (785 - radius, 755 - radius, 785 + radius, 755 + radius),
+            outline=(223, 250, 245),
+            width=4,
         )
 
 
-def _draw_benefit_icon(draw: ImageDraw.ImageDraw, kind: str, cx: int, cy: int) -> None:
-    c = DEEP_TEAL
-    if kind == "local":
-        draw.ellipse((cx - 15, cy - 19, cx + 15, cy + 11), outline=c, width=5)
-        draw.polygon([(cx - 12, cy + 5), (cx + 12, cy + 5), (cx, cy + 29)], fill=c)
-        draw.ellipse((cx - 5, cy - 10, cx + 5, cy), fill=c)
-    elif kind == "accurate":
-        draw.polygon([(cx, cy - 24), (cx + 20, cy - 15), (cx + 16, cy + 13), (cx, cy + 27), (cx - 16, cy + 13), (cx - 20, cy - 15)], outline=c)
-        draw.line((cx - 8, cy + 1, cx - 1, cy + 9), fill=c, width=4)
-        draw.line((cx - 1, cy + 9, cx + 11, cy - 7), fill=c, width=4)
-    elif kind == "realtime":
-        draw.ellipse((cx - 24, cy - 24, cx + 24, cy + 24), outline=c, width=5)
-        draw.line((cx, cy, cx, cy - 13), fill=c, width=4)
-        draw.line((cx, cy, cx + 12, cy + 5), fill=c, width=4)
-    elif kind == "clear":
-        draw.ellipse((cx - 23, cy - 23, cx + 23, cy + 23), outline=c, width=5)
-        draw.line((cx - 10, cy, cx - 2, cy + 9), fill=c, width=4)
-        draw.line((cx - 2, cy + 9, cx + 13, cy - 10), fill=c, width=4)
-    else:
-        raise ValueError(kind)
+def _draw_fishing_scene(image: Image.Image) -> None:
+    draw = ImageDraw.Draw(image)
+    draw.ellipse((105, 210, 365, 470), fill=(255, 183, 86))
+    draw.polygon([(0, 690), (1000, 665), (1000, 1040), (0, 1040)], fill=(20, 111, 132))
+    for y in (760, 840, 930):
+        draw.line(_sine_points(-30, 1030, y, 18, 2.0), fill=(183, 233, 220), width=8)
+
+    # Pier and angler silhouette: a strong category-specific focal image.
+    draw.polygon([(515, 610), (1000, 560), (1000, 710), (520, 720)], fill=(11, 37, 48))
+    for x in (580, 700, 825, 940):
+        draw.rectangle((x, 690, x + 18, 965), fill=(11, 37, 48))
+    draw.ellipse((625, 507, 663, 545), fill=(8, 26, 36))
+    draw.line((644, 545, 638, 625), fill=(8, 26, 36), width=18)
+    draw.line((641, 575, 596, 610), fill=(8, 26, 36), width=12)
+    draw.line((641, 575, 683, 607), fill=(8, 26, 36), width=12)
+    draw.line((638, 620, 608, 674), fill=(8, 26, 36), width=13)
+    draw.line((638, 620, 665, 674), fill=(8, 26, 36), width=13)
+    draw.line((680, 606, 792, 457), fill=(8, 26, 36), width=5)
+    draw.arc((770, 453, 955, 790), 260, 20, fill=(225, 239, 231), width=3)
+
+
+def _draw_surfing_scene(image: Image.Image) -> None:
+    draw = ImageDraw.Draw(image)
+    draw.ellipse((675, 175, 940, 440), fill=(255, 184, 112))
+    draw.polygon([(0, 665), (1000, 610), (1000, 1065), (0, 1065)], fill=(20, 128, 164))
+
+    # Large curling wave and surfer silhouette create a Pinterest-first visual hook.
+    draw.polygon(
+        [(80, 965), (120, 785), (230, 650), (385, 570), (565, 590), (715, 700), (815, 865), (740, 1015)],
+        fill=(24, 177, 190),
+    )
+    draw.ellipse((410, 620, 790, 1000), fill=(8, 80, 121))
+    draw.pieslice((365, 565, 830, 1050), 198, 355, fill=(38, 192, 198))
+    draw.ellipse((500, 705, 790, 1010), fill=(9, 76, 113))
+    for y, amplitude in ((665, 15), (720, 20), (775, 17), (945, 23)):
+        draw.line(_sine_points(160, 830, y, amplitude, 1.4), fill=WHITE, width=14)
+
+    center_x, center_y = 555, 825
+    draw.ellipse((center_x - 16, center_y - 58, center_x + 16, center_y - 26), fill=(6, 26, 40))
+    draw.line((center_x, center_y - 25, center_x - 4, center_y + 32), fill=(6, 26, 40), width=14)
+    draw.line((center_x - 2, center_y - 4, center_x - 48, center_y + 18), fill=(6, 26, 40), width=10)
+    draw.line((center_x - 2, center_y - 2, center_x + 47, center_y - 19), fill=(6, 26, 40), width=10)
+    draw.line((center_x - 3, center_y + 27, center_x - 41, center_y + 66), fill=(6, 26, 40), width=11)
+    draw.line((center_x - 3, center_y + 27, center_x + 38, center_y + 62), fill=(6, 26, 40), width=11)
+    draw.arc((center_x - 90, center_y + 42, center_x + 100, center_y + 84), 185, 350, fill=(244, 248, 239), width=10)
+
+
+def _draw_coastalnow_brand(draw: ImageDraw.ImageDraw, x: int, y: int, inverse: bool = True) -> None:
+    mark_fill = WHITE if inverse else TEAL
+    wave_fill = TEAL if inverse else WHITE
+    draw.rounded_rectangle((x, y, x + 68, y + 68), radius=18, fill=mark_fill)
+    for wave_y in (y + 23, y + 34, y + 45):
+        draw.line(_sine_points(x + 14, x + 54, wave_y, 3, 1.25, 2), fill=wave_fill, width=4)
+    brand_font = _font(BOLD_FONT, 42)
+    draw.text((x + 88, y + 6), "CoastalNow", fill=WHITE if inverse else NAVY, font=brand_font)
 
 
 def _draw_common_heading(draw: ImageDraw.ImageDraw, text: dict[str, object]) -> None:
-    _draw_coastalnow_brand(draw, 58, 46)
+    _draw_coastalnow_brand(draw, 58, 50, True)
 
-    # Soft coastal accent: abstract corner only, never a chart or measurement.
-    draw.polygon([(770, 0), (1000, 0), (1000, 300), (902, 250)], fill=PALE_AQUA)
-    draw.ellipse((840, 80, 1050, 290), fill=SEAFOAM)
+    category = str(text["category"])
+    category_font = _fit_font(draw, category, 27, 20, 720)
+    category_bbox = draw.textbbox((0, 0), category, font=category_font)
+    category_width = category_bbox[2] - category_bbox[0]
+    draw.rounded_rectangle((58, 150, 86 + category_width, 205), radius=26, fill=WHITE)
+    draw.text((72, 162), category, fill=NAVY, font=category_font)
 
     location = str(text["location"])
-    location_font = _fit_font(draw, location, BOLD_FONT, 103, 62, 870)
-    draw.text((58, 175), location, fill=NAVY, font=location_font)
-    location_bbox = draw.textbbox((58, 175), location, font=location_font)
-    state_y = location_bbox[3] + 8
-    state_font = _fit_font(draw, str(text["state"]), BOLD_FONT, 38, 28, 600)
-    draw.text((62, state_y), str(text["state"]), fill=DEEP_TEAL, font=state_font)
-
-    headline_lines = tuple(text["headline_lines"])
-    headline_y = max(340, state_y + 80)
-    headline_font = _font(BOLD_FONT, 67)
-    cursor = headline_y
-    for line in headline_lines:
-        fit = _fit_font(draw, str(line), BOLD_FONT, 67, 48, 885)
-        draw.text((58, cursor), str(line), fill=NAVY, font=fit)
-        bbox = draw.textbbox((58, cursor), str(line), font=fit)
-        cursor = bbox[3] + 2
-
-    subtitle_y = cursor + 18
-    _draw_wrapped_text(
-        draw,
-        str(text["subtitle"]),
-        (62, subtitle_y, 935, subtitle_y + 74),
-        REGULAR_FONT,
-        31,
-        23,
-        MUTED,
-        spacing=4,
-    )
+    location_font = _fit_font(draw, location, 88, 54, 880)
+    draw.text((58, 245), location, fill=WHITE, font=location_font, stroke_width=2, stroke_fill=(0, 0, 0))
+    location_bbox = draw.textbbox((58, 245), location, font=location_font)
+    state_y = location_bbox[3] + 2
+    state_font = _fit_font(draw, str(text["state"]), 30, 22, 600, REGULAR_FONT)
+    draw.text((62, state_y), str(text["state"]), fill=MUTED_WHITE, font=state_font)
 
 
-def _draw_fishing_template(draw: ImageDraw.ImageDraw, text: dict[str, object]) -> None:
-    features = tuple(text["features"])
-    icons = tuple(text["feature_icons"])
-    card_w = 276
-    card_h = 252
-    gap_x = 20
-    gap_y = 20
-    start_x = 56
-    start_y = 638
+def _draw_bottom_panel(image: Image.Image, text: dict[str, object], kind: str) -> None:
+    overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    overlay_draw = ImageDraw.Draw(overlay)
+    for y in range(880, HEIGHT):
+        alpha = min(240, int(20 + (y - 880) / 620 * 220))
+        overlay_draw.rectangle((0, y, WIDTH, y + 1), fill=(4, 23, 38, alpha))
+    image.alpha_composite(overlay)
 
-    for index, ((title, description), icon) in enumerate(zip(features, icons)):
-        row, col = divmod(index, 3)
-        x1 = start_x + col * (card_w + gap_x)
-        y1 = start_y + row * (card_h + gap_y)
-        _draw_feature_card(
-            draw,
-            (x1, y1, x1 + card_w, y1 + card_h),
-            str(icon),
-            str(title),
-            str(description),
-            compact=True,
-        )
+    draw = ImageDraw.Draw(image)
+    cursor_y = 930
+    for line in text["headline_lines"]:
+        line_text = str(line)
+        line_font = _fit_font(draw, line_text, 66, 46, 884)
+        draw.text((58, cursor_y), line_text, font=line_font, fill=WHITE, stroke_width=1, stroke_fill=(0, 0, 0))
+        bbox = draw.textbbox((58, cursor_y), line_text, font=line_font)
+        cursor_y = bbox[3] + 2
 
-    cta_box = (67, 1215, 933, 1325)
-    draw.rounded_rectangle(cta_box, radius=30, fill=DEEP_TEAL)
-    _draw_wrapped_text(
-        draw,
-        str(text["cta"]),
-        (95, 1245, 905, 1305),
-        BOLD_FONT,
-        37,
-        27,
-        OFF_WHITE,
-        align="center",
-    )
+    subtitle = str(text["subtitle"])
+    subtitle_font = _fit_font(draw, subtitle, 29, 21, 870, REGULAR_FONT)
+    draw.text((62, cursor_y + 18), subtitle, font=subtitle_font, fill=(222, 239, 239))
 
-    draw.rectangle((0, 1382, WIDTH, HEIGHT), fill=NAVY)
-    for wave_y in (1423, 1437, 1451):
-        draw.line(_sine_points(67, 112, wave_y, 3, cycles=1.15), fill=SEAFOAM, width=4)
-    _draw_wrapped_text(
-        draw,
-        str(text["footer"]),
-        (135, 1411, 925, 1478),
-        REGULAR_FONT,
-        27,
-        21,
-        OFF_WHITE,
-        align="left",
-    )
+    chip_y = cursor_y + 87
+    chip_width = 282
+    if kind == "tides":
+        labels = ("HIGH + LOW", "7-DAY VIEW", "NOAA DATA")
+    elif kind == "fishing":
+        labels = ("FISHING SCORE", "TIDE + WIND", "BEST WINDOW")
+    else:
+        labels = ("WAVE + SWELL", "WIND + WEATHER", "BEST WINDOW")
 
+    for index, label in enumerate(labels):
+        x = 58 + index * (chip_width + 16)
+        draw.rounded_rectangle((x, chip_y, x + chip_width, chip_y + 70), radius=22, fill=(255, 255, 255, 235))
+        label_font = _fit_font(draw, label, 23, 18, chip_width - 28)
+        draw.text((x + 14, chip_y + 21), label, font=label_font, fill=NAVY)
 
-def _draw_tide_template(draw: ImageDraw.ImageDraw, text: dict[str, object]) -> None:
-    features = tuple(text["features"])
-    icons = tuple(text["feature_icons"])
-    card_w = 422
-    card_h = 205
-    gap_x = 22
-    gap_y = 22
-    start_x = 56
-    start_y = 640
+    cta_y = chip_y + 98
+    draw.rounded_rectangle((58, cta_y, 942, cta_y + 94), radius=28, fill=(35, 193, 190, 255))
+    cta = str(text["cta"])
+    cta_font = _fit_font(draw, cta, 33, 24, 820)
+    cta_bbox = draw.textbbox((0, 0), cta, font=cta_font)
+    text_width = cta_bbox[2] - cta_bbox[0]
+    draw.text(((WIDTH - text_width) // 2, cta_y + 27), cta, font=cta_font, fill=NAVY)
 
-    for index, ((title, description), icon) in enumerate(zip(features, icons)):
-        row, col = divmod(index, 2)
-        x1 = start_x + col * (card_w + gap_x)
-        y1 = start_y + row * (card_h + gap_y)
-        _draw_feature_card(
-            draw,
-            (x1, y1, x1 + card_w, y1 + card_h),
-            str(icon),
-            str(title),
-            str(description),
-            compact=False,
-        )
-
-    benefits_box = (56, 1089, 944, 1195)
-    draw.rounded_rectangle(benefits_box, radius=24, fill=PALE_AQUA, outline=LINE, width=2)
-    benefit_items = (
-        ("local", "Local Focus"),
-        ("accurate", "Accurate NOAA Data"),
-        ("realtime", "Real-time Updates"),
-        ("clear", "Clean & Clear"),
-    )
-    segment_w = (benefits_box[2] - benefits_box[0]) // 4
-    for i, (icon, label) in enumerate(benefit_items):
-        sx = benefits_box[0] + i * segment_w
-        cx = sx + segment_w // 2
-        _draw_benefit_icon(draw, icon, cx, benefits_box[1] + 36)
-        _draw_wrapped_text(
-            draw,
-            label,
-            (sx + 10, benefits_box[1] + 67, sx + segment_w - 10, benefits_box[3] - 9),
-            BOLD_FONT,
-            19,
-            15,
-            NAVY,
-            spacing=2,
-            align="center",
-        )
-        if i:
-            draw.line((sx, benefits_box[1] + 18, sx, benefits_box[3] - 18), fill=LINE, width=2)
-
-    cta_box = (150, 1232, 850, 1340)
-    draw.rounded_rectangle(cta_box, radius=30, fill=DEEP_TEAL)
-    _draw_wrapped_text(
-        draw,
-        str(text["cta"]),
-        (178, 1262, 822, 1320),
-        BOLD_FONT,
-        37,
-        27,
-        OFF_WHITE,
-        align="center",
-    )
-
-    for wave_y in (1410, 1424, 1438):
-        draw.line(_sine_points(150, 195, wave_y, 3, cycles=1.15), fill=TEAL, width=4)
-    _draw_wrapped_text(
-        draw,
-        str(text["footer"]),
-        (220, 1395, 900, 1470),
-        REGULAR_FONT,
-        25,
-        20,
-        MUTED,
-    )
+    footer = str(text["footer"])
+    footer_font = _fit_font(draw, footer, 23, 18, 850, REGULAR_FONT)
+    draw.text((62, 1450), footer, font=footer_font, fill=(190, 216, 219))
 
 
 def render_pin(item: dict, kind: str, output: Path) -> Path:
     text = pin_text(item, kind)
-    image = Image.new("RGB", (WIDTH, HEIGHT), OFF_WHITE)
-    draw = ImageDraw.Draw(image)
-
-    _draw_common_heading(draw, text)
     if kind == "tides":
-        _draw_tide_template(draw, text)
+        image = _gradient((30, 94, 120), NAVY)
+        _draw_tide_scene(image)
     elif kind == "fishing":
-        _draw_fishing_template(draw, text)
-    else:  # pin_text already validates, kept explicit for readability.
+        image = _gradient((74, 76, 91), NAVY)
+        _draw_fishing_scene(image)
+    elif kind == "surfing":
+        image = _gradient((20, 103, 156), (5, 32, 73))
+        _draw_surfing_scene(image)
+    else:
         raise ValueError(f"Unsupported Pinterest pin kind: {kind}")
 
+    image = image.convert("RGBA")
+    draw = ImageDraw.Draw(image)
+    _draw_common_heading(draw, text)
+    _draw_bottom_panel(image, text, kind)
+
     output.parent.mkdir(parents=True, exist_ok=True)
-    image.save(output, format="PNG", optimize=True)
+    image.convert("RGB").save(output, format="PNG", optimize=True)
     return output
