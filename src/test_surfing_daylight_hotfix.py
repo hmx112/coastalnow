@@ -49,6 +49,16 @@ class SurfingDaylightHotfixTests(unittest.TestCase):
         self.assertLess(events["sunrise"], events["sunset"])
         self.assertLess(events["sunset"], events["dusk"])
 
+    def test_solar_events_expose_civil_aliases_for_scoring_contract(self):
+        events = solar_events(
+            date(2026, 9, 3),
+            latitude=32.71419,
+            longitude=-117.17358,
+            tz=ZoneInfo("America/Los_Angeles"),
+        )
+        self.assertEqual(events["civil_dawn"], events["dawn"])
+        self.assertEqual(events["civil_dusk"], events["dusk"])
+
     def test_daylight_quality_uses_snapshot_dawn_and_dusk_keys(self):
         self.assertEqual(daylight_quality("2026-09-03T00:00:00-07:00", SOLAR), 35)
         self.assertEqual(daylight_quality("2026-09-03T12:00:00-07:00", SOLAR), 100)
