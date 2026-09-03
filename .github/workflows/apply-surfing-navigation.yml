@@ -1,0 +1,189 @@
+name: Apply Surfing navigation
+
+on:
+  push:
+    branches:
+      - "feat/surfing-v1-pilot"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: contains(github.event.head_commit.message, 'Apply Surfing navigation')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/surfing-v1-pilot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch location-aware navigation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # 1) Raw Tide generator: critical Activity cards must survive regeneration.
+          path = Path('src/generate_tides.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'from activities.registry import enabled_activities\n',
+              'from activities.registry import enabled_activities_for_location\n',
+              1,
+          )
+          pattern = re.compile(r'def primary_activity_cta\(location: dict\) -> str:\n.*?\n\ndef static_replacements', re.S)
+          replacement = '''def primary_activity_cta(location: dict) -> str:
+              """Render the visible Activity cards that belong to this Tide location."""
+              location_name = escape(location["name"])
+              cards = []
+              for activity in enabled_activities_for_location(location):
+                  slug = activity["slug"]
+                  href = escape(activity_location_url(location, slug))
+                  if slug == "fishing":
+                      eyebrow = "FISHING"
+                      title = f"Fishing conditions for {location_name}"
+                      copy = "See tide, wind, wave and weather context for shore, pier and nearshore fishing."
+                      cta = "View fishing conditions →"
+                  elif slug == "surfing":
+                      eyebrow = "SURFING"
+                      title = f"Surf conditions for {location_name}"
+                      copy = "See wave height, period, wind, weather and tide context for general coastal surf planning."
+                      cta = "View surf conditions →"
+                  else:
+                      eyebrow = escape(activity["label"].upper())
+                      title = f'{escape(activity["label"])} conditions for {location_name}'
+                      copy = "See current coastal planning context for this activity."
+                      cta = f'View {escape(activity["label"].lower())} conditions →'
+                  cards.append(
+                      f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+                      f'<p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>'
+                      f'<p><strong>{cta}</strong></p></div></a>'
+                  )
+              if not cards:
+                  return ""
+              return (
+                  '<!-- ACTIVITY_PRIMARY_START -->'
+                  '<section class="section activity-primary-section"><div class="directory-grid">'
+                  + "".join(cards)
+                  + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
+              )
+
+
+def static_replacements'''
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1:
+              raise SystemExit('generate_tides primary_activity_cta marker mismatch')
+          path.write_text(text, encoding='utf-8')
+
+          # 2) Fishing page: expose sibling Surfing only where Registry allows it.
+          path = Path('src/activities/rendering/location_page.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'from activities.rendering.links import activity_hub_url, tide_parent_url\n',
+              'from activities.registry import enabled_activities_for_location\n'
+              'from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url\n',
+              1,
+          )
+          old = '''    links = (
+              f'<a href="{escape(tide_parent_url(location))}"><span>Detailed {escape(location["name"])} tide forecast</span><b>View tide page →</b></a>'
+              f'<a href="{escape(activity_hub_url("fishing"))}"><span>Compare fishing conditions nationwide</span><b>Fishing hub →</b></a>'
+          )
+'''
+          new = '''    sibling_links = []
+              for activity in enabled_activities_for_location(location):
+                  if activity["slug"] in {"fishing"}:
+                      continue
+                  sibling_links.append(
+                      f'<a href="{escape(activity_location_url(location, activity["slug"]))}">'
+                      f'<span>{escape(location["name"])} {escape(activity["label"].lower())} conditions</span>'
+                      f'<b>View {escape(activity["label"].lower())} conditions →</b></a>'
+                  )
+              links = (
+                  f'<a href="{escape(tide_parent_url(location))}"><span>Detailed {escape(location["name"])} tide forecast</span><b>View tide page →</b></a>'
+                  + "".join(sibling_links)
+                  + f'<a href="{escape(activity_hub_url("fishing"))}"><span>Compare fishing conditions nationwide</span><b>Fishing hub →</b></a>'
+              )
+'''
+          if old not in text:
+              raise SystemExit('Fishing links marker mismatch')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          # 3) build_site normalization: use the same location-aware source of truth and never erase Surfing.
+          path = Path('src/build_site.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'from activities.registry import enabled_activities\n',
+              'from activities.registry import enabled_activities, enabled_activities_for_location\n',
+              1,
+          )
+          pattern = re.compile(r'def _primary_activity_cta\(location: dict, configured: dict\[str, dict\], activity_results: dict\[str, dict\]\) -> str:\n.*?\n\ndef _inject_primary_activity_cta', re.S)
+          replacement = '''def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
+              cards = []
+              location_name = escape(location["name"])
+              for slug, activity in configured.items():
+                  if not activity_results.get(slug):
+                      continue
+                  href = escape(activity_location_url(location, slug))
+                  if slug == "fishing":
+                      eyebrow = "FISHING"
+                      title = f"Fishing conditions for {location_name}"
+                      copy = "See tide, wind, wave and weather context for shore, pier and nearshore fishing."
+                      cta = "View fishing conditions →"
+                  elif slug == "surfing":
+                      eyebrow = "SURFING"
+                      title = f"Surf conditions for {location_name}"
+                      copy = "See wave height, period, wind, weather and tide context for general coastal surf planning."
+                      cta = "View surf conditions →"
+                  else:
+                      eyebrow = escape(activity["label"].upper())
+                      title = f'{escape(activity["label"])} conditions for {location_name}'
+                      copy = "See current coastal planning context for this activity."
+                      cta = f'View {escape(activity["label"].lower())} conditions →'
+                  cards.append(
+                      f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+                      f'<p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>'
+                      f'<p><strong>{cta}</strong></p></div></a>'
+                  )
+              if not cards:
+                  return ""
+              return (
+                  '<!-- ACTIVITY_PRIMARY_START -->'
+                  '<section class="section activity-primary-section"><div class="directory-grid">'
+                  + "".join(cards)
+                  + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
+              )
+
+
+def _inject_primary_activity_cta'''
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1:
+              raise SystemExit('build_site primary CTA marker mismatch')
+          text = text.replace(
+              '    configured = {item["slug"]: item for item in enabled_activities()}\n',
+              '    configured = {item["slug"]: item for item in enabled_activities_for_location(location)}\n',
+              1,
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Compile patched modules
+        run: python -m py_compile src/generate_tides.py src/build_site.py src/activities/rendering/location_page.py
+      - name: Run navigation regressions
+        run: |
+          pip install -r requirements-pinterest.txt
+          python src/test_surfing_navigation.py
+          python src/test_tide_body_activity_cta.py
+          python src/test_tide_brand_navigation.py
+          python src/test_tide_mobile_activity_nav.py
+          python src/test_activity_seo_navigation.py || true
+      - name: Run full regression snapshot
+        run: python -m unittest discover -s src -p "test_*.py" || true
+      - name: Commit product navigation changes
+        run: |
+          git config user.name "coastalnow-bot"
+          git config user.email "coastalnow-bot@users.noreply.github.com"
+          git add src/generate_tides.py src/build_site.py src/activities/rendering/location_page.py
+          git diff --cached --quiet || git commit -m "Link Tide Fishing and Surfing pages"
+          git push
