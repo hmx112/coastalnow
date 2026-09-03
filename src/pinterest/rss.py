@@ -11,7 +11,7 @@ ET.register_namespace("media", MEDIA_NS)
 
 
 def _validate_kind(kind: str) -> None:
-    if kind not in {"tides", "fishing"}:
+    if kind not in {"tides", "fishing", "surfing"}:
         raise ValueError(f"Unsupported Pinterest feed kind: {kind}")
 
 
@@ -30,7 +30,7 @@ def pin_record(item: dict, kind: str) -> dict:
         )
         link = f"{BASE_URL}/tides/{state_slug}/{slug}/"
         image_url = f"{BASE_URL}/pinterest/images/{slug}-tides.png"
-    else:
+    elif kind == "fishing":
         title = f"{name}, {state} Fishing Conditions & Best Times"
         description = (
             f"Plan shore, pier and nearshore fishing with current tide, wind, wave and weather context for {name}, {state}. "
@@ -38,6 +38,14 @@ def pin_record(item: dict, kind: str) -> dict:
         )
         link = f"{BASE_URL}/tides/{state_slug}/{slug}/fishing/"
         image_url = f"{BASE_URL}/pinterest/images/{slug}-fishing.png"
+    else:
+        title = f"{name}, {state} Surf Conditions & Best Times"
+        description = (
+            f"Plan coastal surf sessions with current wave, wind and weather context for {name}, {state}. "
+            "CoastalNow Surf Conditions Score is a planning metric, not a safety guarantee or break-specific forecast."
+        )
+        link = f"{BASE_URL}/tides/{state_slug}/{slug}/surfing/"
+        image_url = f"{BASE_URL}/pinterest/images/{slug}-surfing.png"
 
     return {
         "kind": kind,
@@ -55,22 +63,58 @@ def _pub_date(value) -> str:
     return format_datetime(stamp)
 
 
+def _channel_copy(kind: str) -> tuple[str, str]:
+    if kind == "tides":
+        return (
+            "CoastalNow Tide Times & Tide Charts",
+            "Evergreen U.S. coastal tide planning pins from CoastalNow.",
+        )
+    if kind == "fishing":
+        return (
+            "CoastalNow Fishing Conditions & Best Times",
+            "Evergreen U.S. shore, pier and nearshore fishing planning pins from CoastalNow.",
+        )
+    return (
+        "CoastalNow Surf Conditions & Best Times",
+        "Evergreen U.S. coastal surf planning pins from CoastalNow.",
+    )
+
+
+def _enabled_for_kind(location: dict, kind: str) -> bool:
+    if kind == "fishing":
+        return bool(location.get("fishing_enabled"))
+    if kind == "surfing":
+        return bool(location.get("surfing_enabled"))
+    return True
+
+
 def build_rss(kind: str, released: list[dict]) -> str:
     _validate_kind(kind)
     rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
-    if kind == "tides":
-        ET.SubElement(channel, "title").text = "CoastalNow Tide Times & Tide Charts"
-        ET.SubElement(channel, "description").text = "Evergreen U.S. coastal tide planning pins from CoastalNow."
-    else:
-        ET.SubElement(channel, "title").text = "CoastalNow Fishing Conditions & Best Times"
-        ET.SubElement(channel, "description").text = "Evergreen U.S. shore, pier and nearshore fishing planning pins from CoastalNow."
+    title, description = _channel_copy(kind)
+    ET.SubElement(channel, "title").text = title
+    ET.SubElement(channel, "description").text = description
     ET.SubElement(channel, "link").text = BASE_URL + "/"
 
+    seen_guids: set[str] = set()
+    seen_links: set[str] = set()
+    seen_images: set[str] = set()
+
     for location in released:
-        if kind == "fishing" and not location.get("fishing_enabled"):
+        if not _enabled_for_kind(location, kind):
             continue
         record = pin_record(location, kind)
+        identities = (
+            ("GUID", record["guid"], seen_guids),
+            ("link", record["link"], seen_links),
+            ("image URL", record["image_url"], seen_images),
+        )
+        for label, value, seen in identities:
+            if value in seen:
+                raise ValueError(f"Duplicate Pinterest {kind} RSS {label}: {value}")
+            seen.add(value)
+
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = record["title"]
         ET.SubElement(item, "description").text = record["description"]
