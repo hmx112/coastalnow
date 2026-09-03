@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Verify pilot Registry expectation
+        run: python src/test_activity_location_enablement.py
+
       - name: Install test dependency
         run: pip install -r requirements-pinterest.txt
 
