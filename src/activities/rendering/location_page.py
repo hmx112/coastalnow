@@ -6,7 +6,8 @@ from html import escape
 from pathlib import Path
 
 from activities.explanations import summarize_fishing_result
-from activities.rendering.links import activity_hub_url, tide_parent_url
+from activities.registry import enabled_activities_for_location
+from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
 from site_generator import LOGO
 
 TEMPLATE = Path(__file__).resolve().parents[2] / "templates" / "activity-location.html"
@@ -253,9 +254,19 @@ def render_fishing_location(location: dict, result: dict, snapshot: dict, *, hea
         f'<a href="/tides/{escape(location["state_slug"])}/">{escape(location["state"])}</a><span>/</span>'
         f'<a href="{escape(tide_parent_url(location))}">{escape(location["name"])}</a><span>/</span>Fishing</div>'
     )
+    sibling_links = []
+    for activity in enabled_activities_for_location(location):
+        if activity["slug"] == "fishing":
+            continue
+        sibling_links.append(
+            f'<a href="{escape(activity_location_url(location, activity["slug"]))}">'
+            f'<span>{escape(location["name"])} {escape(activity["label"].lower())} conditions</span>'
+            f'<b>View {escape(activity["label"].lower())} conditions →</b></a>'
+        )
     links = (
         f'<a href="{escape(tide_parent_url(location))}"><span>Detailed {escape(location["name"])} tide forecast</span><b>View tide page →</b></a>'
-        f'<a href="{escape(activity_hub_url("fishing"))}"><span>Compare fishing conditions nationwide</span><b>Fishing hub →</b></a>'
+        + "".join(sibling_links)
+        + f'<a href="{escape(activity_hub_url("fishing"))}"><span>Compare fishing conditions nationwide</span><b>Fishing hub →</b></a>'
     )
     return _fill(template, {
         "TITLE": escape(f'{location["name"]} Fishing Conditions Today | CoastalNow'),

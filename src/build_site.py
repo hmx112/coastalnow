@@ -7,7 +7,7 @@ from html import escape
 from pathlib import Path
 
 from activities.paths import activity_data_path, activity_hub_path, activity_page_path
-from activities.registry import enabled_activities
+from activities.registry import enabled_activities, enabled_activities_for_location
 from activities.rendering.attribution import (
     hub_attribution_html,
     inject_attribution,
@@ -17,6 +17,7 @@ from activities.rendering.hub_page import render_fishing_hub
 from activities.rendering.links import activity_location_url
 from activities.rendering.location_page import render_fishing_location
 from activities.rendering.methodology_page import render_methodology_page
+from activities.rendering.surfing_page import render_surfing_hub, render_surfing_location
 from locations import LOCATIONS
 from seo import (
     activity_hub_seo_tags,
@@ -69,6 +70,8 @@ def load_activity_inventory(public_root: Path = ROOT, *, locations: dict[str, di
         slug = activity["slug"]
         results: dict[str, dict] = {}
         for location_slug, location in locations.items():
+            if not any(item["slug"] == slug for item in enabled_activities_for_location(location)):
+                continue
             path = public_root / activity_data_path(location, slug)
             if not path.exists():
                 continue
@@ -125,24 +128,40 @@ def _inject_activity_nav(html: str, nav_block: str) -> str:
 
 
 def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
-    fishing = configured.get("fishing")
-    if not fishing or not activity_results.get("fishing"):
-        return ""
-    href = escape(activity_location_url(location, "fishing"))
+    cards = []
     location_name = escape(location["name"])
+    for slug, activity in configured.items():
+        if not activity_results.get(slug):
+            continue
+        href = escape(activity_location_url(location, slug))
+        if slug == "fishing":
+            eyebrow = "FISHING"
+            title = f"Fishing conditions for {location_name}"
+            copy = "See tide, wind, wave and weather context for shore, pier and nearshore fishing."
+            cta = "View fishing conditions →"
+        elif slug == "surfing":
+            eyebrow = "SURFING"
+            title = f"Surf conditions for {location_name}"
+            copy = "See wave height, period, wind, weather and tide context for general coastal surf planning."
+            cta = "View surf conditions →"
+        else:
+            eyebrow = escape(activity["label"].upper())
+            title = f'{escape(activity["label"])} conditions for {location_name}'
+            copy = "See current coastal planning context for this activity."
+            cta = f'View {escape(activity["label"].lower())} conditions →'
+        cards.append(
+            f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+            f'<p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>'
+            f'<p><strong>{cta}</strong></p></div></a>'
+        )
+    if not cards:
+        return ""
     return (
         '<!-- ACTIVITY_PRIMARY_START -->'
-        '<section class="section activity-primary-section">'
-        f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
-        '<p class="eyebrow">FISHING</p>'
-        f'<h2>Fishing conditions for {location_name}</h2>'
-        '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
-        '<p><strong>View fishing conditions →</strong></p>'
-        '</div></a></section>'
-        '<!-- ACTIVITY_PRIMARY_END -->'
+        '<section class="section activity-primary-section"><div class="directory-grid">'
+        + "".join(cards)
+        + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
     )
-
-
 def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
     if ACTIVITY_PRIMARY_PATTERN.search(html):
         return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
@@ -158,7 +177,7 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     """Insert/replace Tide-to-Activity navigation and cards without changing the Tide URL."""
     cards = []
     nav_links = []
-    configured = {item["slug"]: item for item in enabled_activities()}
+    configured = {item["slug"]: item for item in enabled_activities_for_location(location)}
     for slug, activity in configured.items():
         result = activity_results.get(slug)
         if result:
@@ -181,7 +200,6 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
 
     primary_block = _primary_activity_cta(location, configured, activity_results)
     html = _inject_primary_activity_cta(html, primary_block)
-
 
     block = ""
     if cards:
@@ -223,8 +241,13 @@ def render_activity_outputs(
     for activity in enabled_activities():
         slug = activity["slug"]
         results = inventory.get(slug, {})
-        if slug != "fishing":
-            # Future activities plug into this dispatcher when their renderer is implemented.
+        if slug == "fishing":
+            location_renderer = render_fishing_location
+            hub_renderer = render_fishing_hub
+        elif slug == "surfing":
+            location_renderer = render_surfing_location
+            hub_renderer = render_surfing_hub
+        else:
             continue
 
         for location_slug, result in results.items():
@@ -238,7 +261,7 @@ def render_activity_outputs(
             relative = activity_page_path(location, slug)
             output = public_root / relative
             output.parent.mkdir(parents=True, exist_ok=True)
-            html = render_fishing_location(
+            html = location_renderer(
                 location,
                 result,
                 snapshot,
@@ -251,7 +274,7 @@ def render_activity_outputs(
         hub_relative = activity_hub_path(slug)
         hub_output = public_root / hub_relative
         hub_output.parent.mkdir(parents=True, exist_ok=True)
-        hub_html = render_fishing_hub(
+        hub_html = hub_renderer(
             locations,
             results,
             head_extra=activity_hub_seo_tags(slug, activity["label"]),

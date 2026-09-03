@@ -21,14 +21,19 @@ class ActivityRegistryTests(unittest.TestCase):
             "name": "Galveston",
         }
 
-    def test_fishing_is_the_only_enabled_phase_one_activity(self):
+    def test_fishing_and_surfing_are_globally_enabled(self):
         enabled = enabled_activities()
-        self.assertEqual([item["slug"] for item in enabled], ["fishing"])
+        self.assertEqual([item["slug"] for item in enabled], ["fishing", "surfing"])
         fishing = ACTIVITIES["fishing"]
+        surfing = ACTIVITIES["surfing"]
         self.assertEqual(fishing["label"], "Fishing")
         self.assertTrue(fishing["enabled"])
         self.assertTrue(fishing["scorer_version"])
         self.assertTrue(fishing["requires"])
+        self.assertEqual(surfing["label"], "Surfing")
+        self.assertTrue(surfing["enabled"])
+        self.assertEqual(surfing["scorer_version"], "surfing-v1")
+        self.assertEqual(len(surfing["location_allowlist"]), 10)
 
     def test_activity_paths_follow_the_existing_tide_hierarchy(self):
         self.assertEqual(
@@ -41,7 +46,7 @@ class ActivityRegistryTests(unittest.TestCase):
         )
         self.assertEqual(activity_hub_path("fishing"), "fishing/index.html")
 
-    def test_new_location_expands_to_every_enabled_activity(self):
+    def test_new_location_expands_to_every_enabled_activity_without_allowlist(self):
         fake_registry = {
             "fishing": {
                 "slug": "fishing",
@@ -76,7 +81,7 @@ class ActivityRegistryTests(unittest.TestCase):
             },
         )
 
-    def test_registry_does_not_contain_a_location_inventory(self):
+    def test_registry_does_not_contain_a_global_location_inventory(self):
         for item in ACTIVITIES.values():
             self.assertNotIn("locations", item)
             self.assertNotIn("location_slugs", item)
