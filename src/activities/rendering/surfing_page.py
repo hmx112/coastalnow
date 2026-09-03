@@ -6,6 +6,7 @@ from html import escape
 from pathlib import Path
 
 from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
+from activities.rendering.surfing_explanation import build_surfing_explanation
 from site_generator import LOGO
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -18,14 +19,6 @@ _FACTOR_LABELS = {
     "wind": "Wind score",
     "weather": "Weather score",
     "daylight": "Daylight score",
-}
-
-_REASON_COPY = {
-    "moderate-wave-height": "Moderate wave height supports the composite planning score.",
-    "organized-wave-period": "Wave period is in the stronger v1 planning range.",
-    "lighter-wind": "Lighter wind supports the composite planning score.",
-    "stronger-wind": "Stronger wind is reducing the planning score.",
-    "wet-weather": "Wetter weather is reducing the planning score.",
 }
 
 
@@ -227,12 +220,9 @@ def _tide_section(snapshot: dict) -> str:
     return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">TIDE CONTEXT</p><h2>Today’s tide turning points</h2></div><p>Tide is shown as context and is not included in the v1 composite score.</p></div>' + body + '</section>'
 
 
-def _why_section(result: dict) -> str:
-    reasons = (result.get("today") or {}).get("reasons") or []
-    messages = [_REASON_COPY[reason] for reason in reasons if reason in _REASON_COPY]
-    if not messages:
-        messages = ["The current result combines wave height, wave period, wind, weather and daylight scoring inputs with the Safety Gate."]
-    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(" ".join(messages)) + '</p></section>'
+def _why_section(result: dict, snapshot: dict) -> str:
+    explanation = build_surfing_explanation(result, snapshot)
+    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(explanation) + '</p></section>'
 
 
 def render_surfing_location(location: dict, result: dict, snapshot: dict, *, head_extra: str = "") -> str:
@@ -272,7 +262,7 @@ def render_surfing_location(location: dict, result: dict, snapshot: dict, *, hea
         "FACTOR_SECTION": _factor_section(result),
         "CONDITION_SECTION": _condition_section(snapshot, result),
         "TIDE_SECTION": _tide_section(snapshot),
-        "WHY_SECTION": _why_section(result),
+        "WHY_SECTION": _why_section(result, snapshot),
         "LINKS": links,
         "DISCLAIMER": escape(disclaimer),
     })
