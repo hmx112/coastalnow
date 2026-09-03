@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "newport-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-03T04:57:41+00:00",
+  "generated_at_utc": "2026-09-03T10:03:12+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-03T04:57:41+00:00"
+      "fetched_at_utc": "2026-09-03T10:03:12+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -2537,5 +2537,6 @@
       "grid_y": 22
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "alerts-only",
+  "full_refresh_error": "NWS request failed after 3 attempts for https://api.weather.gov/gridpoints/SGX/36,57/forecast/hourly: HTTP Error 503: Service Unavailable"
 }
