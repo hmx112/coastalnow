@@ -23,7 +23,6 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import textwrap
 
           # Inventory boundary: a stale/rogue JSON file for a non-pilot location
           # must never become public merely because it exists on disk.
@@ -58,22 +57,22 @@ jobs:
               raise SystemExit("seo activity sitemap block markers missing")
           block = text[start:end]
           if "activity_enabled_for_location(activity, location_slug)" not in block:
-              replacement = textwrap.dedent('''\
-                  if activity_inventory is not None:
-                      for activity_slug, results in activity_inventory.items():
-                          activity = ACTIVITIES.get(activity_slug)
-                          if not activity or not activity.get("enabled"):
-                              continue
-                          urls.add(canonical_url(f"{activity_slug}/index.html"))
-                          for location_slug, result in results.items():
-                              location = locations.get(location_slug)
-                              if (
-                                  location
-                                  and activity_enabled_for_location(activity, location_slug)
-                                  and activity_robots_directive(result) == "index,follow"
-                              ):
-                                  urls.add(canonical_url(activity_page_path(location, activity_slug)))
-              ''').rstrip("\n")
+              replacement = (
+                  "    if activity_inventory is not None:\n"
+                  "        for activity_slug, results in activity_inventory.items():\n"
+                  "            activity = ACTIVITIES.get(activity_slug)\n"
+                  "            if not activity or not activity.get(\"enabled\"):\n"
+                  "                continue\n"
+                  "            urls.add(canonical_url(f\"{activity_slug}/index.html\"))\n"
+                  "            for location_slug, result in results.items():\n"
+                  "                location = locations.get(location_slug)\n"
+                  "                if (\n"
+                  "                    location\n"
+                  "                    and activity_enabled_for_location(activity, location_slug)\n"
+                  "                    and activity_robots_directive(result) == \"index,follow\"\n"
+                  "                ):\n"
+                  "                    urls.add(canonical_url(activity_page_path(location, activity_slug)))\n"
+              )
               text = text[:start] + replacement + text[end:]
           path.write_text(text, encoding="utf-8")
           PY
