@@ -29,7 +29,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from html import escape
-from activities.registry import enabled_activities
+from activities.registry import enabled_activities_for_location
 from activities.rendering.links import activity_location_url
 from locations import LOCATIONS
 
@@ -529,24 +529,40 @@ def nearby_links(location: dict) -> str:
 
 
 def primary_activity_cta(location: dict) -> str:
-    configured = {item["slug"]: item for item in enabled_activities()}
-    if "fishing" not in configured:
-        return ""
-    href = escape(activity_location_url(location, "fishing"))
+    """Render visible Activity cards from the location-aware Registry."""
     location_name = escape(location["name"])
+    cards = []
+    for activity in enabled_activities_for_location(location):
+        slug = activity["slug"]
+        href = escape(activity_location_url(location, slug))
+        if slug == "fishing":
+            eyebrow = "FISHING"
+            title = f"Fishing conditions for {location_name}"
+            copy = "See tide, wind, wave and weather context for shore, pier and nearshore fishing."
+            cta = "View fishing conditions →"
+        elif slug == "surfing":
+            eyebrow = "SURFING"
+            title = f"Surf conditions for {location_name}"
+            copy = "See wave height, period, wind, weather and tide context for general coastal surf planning."
+            cta = "View surf conditions →"
+        else:
+            eyebrow = escape(activity["label"].upper())
+            title = f'{escape(activity["label"])} conditions for {location_name}'
+            copy = "See current coastal planning context for this activity."
+            cta = f'View {escape(activity["label"].lower())} conditions →'
+        cards.append(
+            f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+            f'<p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>'
+            f'<p><strong>{cta}</strong></p></div></a>'
+        )
+    if not cards:
+        return ""
     return (
         '<!-- ACTIVITY_PRIMARY_START -->'
-        '<section class="section activity-primary-section">'
-        f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
-        '<p class="eyebrow">FISHING</p>'
-        f'<h2>Fishing conditions for {location_name}</h2>'
-        '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
-        '<p><strong>View fishing conditions →</strong></p>'
-        '</div></a></section>'
-        '<!-- ACTIVITY_PRIMARY_END -->'
+        '<section class="section activity-primary-section"><div class="directory-grid">'
+        + "".join(cards)
+        + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
     )
-
-
 def static_replacements(location: dict) -> dict:
     return {
         "PAGE_TITLE": location["page_title"],

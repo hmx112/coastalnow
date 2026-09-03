@@ -7,7 +7,7 @@ from html import escape
 from pathlib import Path
 
 from activities.paths import activity_data_path, activity_hub_path, activity_page_path
-from activities.registry import enabled_activities
+from activities.registry import enabled_activities, enabled_activities_for_location
 from activities.rendering.attribution import (
     hub_attribution_html,
     inject_attribution,
@@ -126,24 +126,40 @@ def _inject_activity_nav(html: str, nav_block: str) -> str:
 
 
 def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_results: dict[str, dict]) -> str:
-    fishing = configured.get("fishing")
-    if not fishing or not activity_results.get("fishing"):
-        return ""
-    href = escape(activity_location_url(location, "fishing"))
+    cards = []
     location_name = escape(location["name"])
+    for slug, activity in configured.items():
+        if not activity_results.get(slug):
+            continue
+        href = escape(activity_location_url(location, slug))
+        if slug == "fishing":
+            eyebrow = "FISHING"
+            title = f"Fishing conditions for {location_name}"
+            copy = "See tide, wind, wave and weather context for shore, pier and nearshore fishing."
+            cta = "View fishing conditions →"
+        elif slug == "surfing":
+            eyebrow = "SURFING"
+            title = f"Surf conditions for {location_name}"
+            copy = "See wave height, period, wind, weather and tide context for general coastal surf planning."
+            cta = "View surf conditions →"
+        else:
+            eyebrow = escape(activity["label"].upper())
+            title = f'{escape(activity["label"])} conditions for {location_name}'
+            copy = "See current coastal planning context for this activity."
+            cta = f'View {escape(activity["label"].lower())} conditions →'
+        cards.append(
+            f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
+            f'<p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>'
+            f'<p><strong>{cta}</strong></p></div></a>'
+        )
+    if not cards:
+        return ""
     return (
         '<!-- ACTIVITY_PRIMARY_START -->'
-        '<section class="section activity-primary-section">'
-        f'<a class="activity-primary-cta" href="{href}"><div class="info-card">'
-        '<p class="eyebrow">FISHING</p>'
-        f'<h2>Fishing conditions for {location_name}</h2>'
-        '<p>See tide, wind, wave and weather context for shore, pier and nearshore fishing.</p>'
-        '<p><strong>View fishing conditions →</strong></p>'
-        '</div></a></section>'
-        '<!-- ACTIVITY_PRIMARY_END -->'
+        '<section class="section activity-primary-section"><div class="directory-grid">'
+        + "".join(cards)
+        + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
     )
-
-
 def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
     if ACTIVITY_PRIMARY_PATTERN.search(html):
         return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
@@ -159,7 +175,7 @@ def inject_activity_links(html: str, location: dict, activity_results: dict[str,
     """Insert/replace Tide-to-Activity navigation and cards without changing the Tide URL."""
     cards = []
     nav_links = []
-    configured = {item["slug"]: item for item in enabled_activities()}
+    configured = {item["slug"]: item for item in enabled_activities_for_location(location)}
     for slug, activity in configured.items():
         result = activity_results.get(slug)
         if result:
