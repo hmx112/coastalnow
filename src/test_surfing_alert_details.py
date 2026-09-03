@@ -1,6 +1,8 @@
 import unittest
 
-from activities.rendering.surfing_explanation import build_surfing_explanation
+from activities.rendering.surfing_alert_details import (
+    build_detailed_surfing_explanation as build_surfing_explanation,
+)
 from activities.rendering.surfing_page import render_surfing_location
 from locations import LOCATIONS
 
