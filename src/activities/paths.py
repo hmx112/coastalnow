@@ -1,7 +1,7 @@
 """URL/output paths derived from the location catalog and Activity Registry."""
 from __future__ import annotations
 
-from activities.registry import enabled_activities
+from activities.registry import enabled_activities_for_location
 
 
 def activity_page_path(location: dict, activity_slug: str) -> str:
@@ -19,5 +19,5 @@ def activity_hub_path(activity_slug: str) -> str:
 def activity_page_paths_for_location(location: dict, registry: dict | None = None) -> dict[str, str]:
     return {
         activity["slug"]: activity_page_path(location, activity["slug"])
-        for activity in enabled_activities(registry)
+        for activity in enabled_activities_for_location(location, registry)
     }
