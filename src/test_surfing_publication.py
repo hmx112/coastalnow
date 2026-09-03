@@ -13,7 +13,7 @@ from site_generator import _groups, _home
 PILOT = {
     "san-diego", "la-jolla", "huntington-beach", "santa-cruz", "malibu",
     "half-moon-bay", "cocoa-beach", "daytona-beach", "wrightsville-beach",
-    "virginia-beach",
+    "nags-head",
 }
 
 
