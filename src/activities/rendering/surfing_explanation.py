@@ -100,7 +100,9 @@ def _fmt_window(window: dict | None) -> str:
     end = _aware(window.get("end"))
     if not start or not end:
         return "today's planning window"
-    return f"{start.strftime('%-I:%M %p')}–{end.strftime('%-I:%M %p')}"
+    start_text = start.strftime("%I:%M %p").lstrip("0")
+    end_text = end.strftime("%I:%M %p").lstrip("0")
+    return f"{start_text}–{end_text}"
 
 
 def _alert_sentence(result: dict, snapshot: dict, scored: dict) -> str | None:
@@ -167,6 +169,85 @@ def _alert_sentence(result: dict, snapshot: dict, scored: dict) -> str | None:
         f"NWS {event} is active today. Its timing cannot be matched confidently to the planning window, "
         "so the official alert should be reviewed first."
     )
+
+
+def _safety_gate_sentence(result: dict, scored: dict, raw: dict) -> str | None:
+    reasons = set(scored.get("reasons") or [])
+    day = result.get("today") or {}
+    status = day.get("status") or "Unavailable"
+    cap = scored.get("safety_cap")
+    penalty = scored.get("safety_penalty")
+
+    wind = raw.get("wind_mph")
+    gust = raw.get("gust_mph")
+    height = raw.get("wave_height_ft")
+    period = raw.get("wave_period_s")
+    condition = str(raw.get("condition_text") or "")
+
+    if "wind-hard-stop" in reasons:
+        detail = []
+        if wind is not None:
+            detail.append(f"{_fmt_number(wind)} mph sustained wind")
+        if gust is not None:
+            detail.append(f"{_fmt_number(gust)} mph gusts")
+        measured = _join_phrases(detail) or "the forecast wind"
+        return (
+            f"{measured.capitalize()} triggers the Surfing Safety Gate, making today NOT RECOMMENDED "
+            "regardless of otherwise favorable score inputs."
+        )
+
+    if "wave-exposure-hard-stop" in reasons:
+        if height is not None and period is not None:
+            measured = f"{_fmt_number(height, one_decimal=True)} ft waves at {_fmt_number(period)} sec"
+        else:
+            measured = "The combined wave height and period"
+        return (
+            f"{measured} triggers the Surfing Safety Gate, making today NOT RECOMMENDED "
+            "regardless of otherwise favorable score inputs."
+        )
+
+    if "forecast-thunder-cap" in reasons:
+        label = condition if condition else "Thunderstorms"
+        return (
+            f"{label} during the planning window triggers the Surfing Safety Gate and caps the numerical score at "
+            f"{_fmt_number(cap if cap is not None else 39)}."
+        )
+
+    if reasons.intersection({"wind-cap-39", "wind-cap-59"}):
+        detail = []
+        if wind is not None:
+            detail.append(f"{_fmt_number(wind)} mph sustained wind")
+        if gust is not None:
+            detail.append(f"{_fmt_number(gust)} mph gusts")
+        measured = _join_phrases(detail) or "Stronger wind"
+        return (
+            f"{measured.capitalize()} triggers a Safety Gate cap of "
+            f"{_fmt_number(cap)} on the Surf Conditions Score."
+        )
+
+    if reasons.intersection({"wave-exposure-cap-39", "wave-exposure-cap-69"}):
+        if height is not None and period is not None:
+            measured = f"{_fmt_number(height, one_decimal=True)} ft waves at {_fmt_number(period)} sec"
+        else:
+            measured = "The combined wave height and period"
+        return (
+            f"{measured} triggers a Safety Gate cap of {_fmt_number(cap)} on the Surf Conditions Score."
+        )
+
+    if "wave-exposure-caution" in reasons and penalty is not None and float(penalty) > 0:
+        if height is not None and period is not None:
+            measured = f"{_fmt_number(height, one_decimal=True)} ft waves at {_fmt_number(period)} sec"
+        else:
+            measured = "The combined wave height and period"
+        return (
+            f"{measured} adds a {_fmt_number(penalty)}-point Safety Gate penalty before the final score is shown."
+        )
+
+    if status == "NOT RECOMMENDED" and scored.get("hard_stop"):
+        return (
+            "A Surfing Safety Gate hard stop is active, making today NOT RECOMMENDED before normal score inputs are considered."
+        )
+    return None
 
 
 def _support_phrase(key: str, raw: dict) -> str:
@@ -300,5 +381,16 @@ def build_surfing_explanation(result: dict, snapshot: dict) -> str:
     alert = _alert_sentence(result, snapshot, scored)
     if alert:
         sentences.append(alert)
+
+    alerts = (snapshot.get("alerts") or {}).get("items") or []
+    reasons = set(scored.get("reasons") or [])
+    alert_applied = any(
+        reasons.intersection(_alert_reason_keys(str(item.get("event") or "").strip()))
+        for item in alerts
+    )
+    safety = None if alert_applied else _safety_gate_sentence(result, scored, raw)
+    if safety:
+        sentences.append(safety)
+
     sentences.extend(_score_sentences(result, scored, raw))
     return " ".join(sentences[:3])
