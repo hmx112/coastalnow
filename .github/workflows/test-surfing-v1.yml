@@ -1,0 +1,24 @@
+name: Test Surfing v1 branch
+
+on:
+  push:
+    branches:
+      - "feat/surfing-v1-pilot"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/surfing-v1-pilot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependency
+        run: pip install -r requirements-pinterest.txt
+      - name: Run complete regression suite
+        run: python -m unittest discover -s src -p "test_*.py"
