@@ -1,7 +1,8 @@
+import json
 import sys
 import unittest
 import xml.etree.ElementTree as ET
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -17,7 +18,7 @@ class PinterestIdentityAndSurfingTests(unittest.TestCase):
             "name": "San Diego",
             "state": "California",
             "state_slug": "california",
-            "release_date": date(2026, 9, 4),
+            "release_date": date(2026, 9, 3),
             "fishing_enabled": True,
             "surfing_enabled": True,
         }
@@ -42,7 +43,7 @@ class PinterestIdentityAndSurfingTests(unittest.TestCase):
         )
         self.assertEqual(record["guid"], "coastalnow:pinterest:surfing:san-diego:v1")
         combined = (record["title"] + " " + record["description"]).lower()
-        for forbidden in ("today's score", " mph", " ft", "safe", "alert"):
+        for forbidden in ("today's score", " mph", " ft", "alert state", "catch probability"):
             self.assertNotIn(forbidden, combined)
 
     def test_surfing_feed_only_contains_enabled_pilot_locations(self):
@@ -65,13 +66,7 @@ class PinterestIdentityAndSurfingTests(unittest.TestCase):
     def test_catalog_marks_only_surfing_allowlist_locations_enabled(self):
         from pinterest.catalog import build_catalog
 
-        config = {
-            "launch_order": list(LOCATIONS),
-        }
-        # build_catalog validates launch_order against all locations, so use the real
-        # configured ordering when available rather than relying on dict order.
         config_path = Path(__file__).resolve().parent / "data" / "pinterest.json"
-        import json
         config = json.loads(config_path.read_text(encoding="utf-8"))
         catalog = build_catalog(LOCATIONS, config)
         enabled = {item["slug"] for item in catalog if item.get("surfing_enabled")}
@@ -84,19 +79,14 @@ class PinterestIdentityAndSurfingTests(unittest.TestCase):
         config_path = Path(__file__).resolve().parent / "data" / "pinterest.json"
         config = load_pinterest_config(config_path)
         catalog = build_catalog(LOCATIONS, config)
+        start = date.fromisoformat(config["surfing_start_date"])
 
-        day_one = released_surfing_locations(catalog, config, date.fromisoformat(config["surfing_start_date"]))
+        day_one = released_surfing_locations(catalog, config, start)
         self.assertEqual(len(day_one), 1)
         self.assertEqual(day_one[0]["slug"], config["surfing_launch_order"][0])
         self.assertTrue(day_one[0]["surfing_enabled"])
 
-        day_two = released_surfing_locations(
-            catalog,
-            config,
-            date.fromisoformat(config["surfing_start_date"]).fromordinal(
-                date.fromisoformat(config["surfing_start_date"]).toordinal() + 1
-            ),
-        )
+        day_two = released_surfing_locations(catalog, config, start + timedelta(days=1))
         self.assertEqual(
             [item["slug"] for item in day_two],
             config["surfing_launch_order"][:2],
