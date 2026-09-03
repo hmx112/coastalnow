@@ -2,6 +2,15 @@ name: Update Pinterest distribution assets
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/pinterest/**"
+      - "src/generate_pinterest.py"
+      - "src/data/pinterest.json"
+      - "requirements-pinterest.txt"
+      - ".github/workflows/update-pinterest.yml"
   schedule:
     - cron: "17 15 * * *"
 
@@ -33,6 +42,7 @@ jobs:
       - name: Run Pinterest regressions
         run: |
           python src/test_pinterest_catalog_schedule.py
+          python src/test_pinterest_identity_surfing.py
           python src/test_pinterest_rss.py
           python src/test_pinterest_render.py
           python src/test_pinterest_generation.py
