@@ -6,7 +6,10 @@ from html import escape
 from pathlib import Path
 
 from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
-from activities.rendering.surfing_explanation import build_surfing_explanation
+from activities.rendering.surfing_alert_details import (
+    build_detailed_surfing_explanation as build_surfing_explanation,
+    build_nws_alert_details,
+)
 from site_generator import LOGO
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -93,14 +96,34 @@ def _score_card(day: dict) -> str:
 
 def _safety_strip(result: dict, snapshot: dict) -> str:
     day = result.get("today") or {}
-    if day.get("status") == "NOT RECOMMENDED":
-        return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> Check current official warnings, closures and local guidance before approaching or entering the water.</div>'
     alerts = snapshot.get("alerts") or {}
     if alerts.get("status") != "ok":
+        if day.get("status") == "NOT RECOMMENDED":
+            return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> NWS alert status is unavailable; check current official warnings, closures and local guidance before approaching or entering the water.</div>'
         return '<div class="activity-safety-strip unknown"><strong>Safety alert status unavailable.</strong> CoastalNow is not treating this as a no-alert condition.</div>'
-    count = len(alerts.get("items") or [])
-    if count:
-        return f'<div class="activity-safety-strip caution"><strong>{count} active NWS alert(s) detected.</strong> Review official alert details before making plans.</div>'
+
+    details = build_nws_alert_details(snapshot)
+    if details:
+        count = len(details)
+        noun = "alert" if count == 1 else "alerts"
+        items = []
+        for detail in details:
+            summary = f'<br><small>{escape(detail["summary"])}</small>' if detail.get("summary") else ""
+            items.append(
+                '<div class="activity-alert-item">'
+                f'<b>{escape(detail["event"])}</b><br>'
+                f'<span>{escape(detail["period"])}</span>'
+                f'{summary}</div>'
+            )
+        priority = "Safety condition takes priority. " if day.get("status") == "NOT RECOMMENDED" else ""
+        css_class = "danger" if day.get("status") == "NOT RECOMMENDED" else "caution"
+        return (
+            f'<div class="activity-safety-strip {css_class}"><strong>{priority}{count} NWS {noun} for this location.</strong>'
+            '<div class="activity-alert-list">' + "".join(items) + '</div></div>'
+        )
+
+    if day.get("status") == "NOT RECOMMENDED":
+        return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> Check current official warnings, closures and local guidance before approaching or entering the water.</div>'
     return '<div class="activity-safety-strip normal"><strong>Latest NWS alert check completed.</strong> This is not a safety clearance; local signs, closures and official guidance take priority.</div>'
 
 
