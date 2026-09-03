@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "nags-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-03T16:33:14+00:00",
+  "generated_at_utc": "2026-09-03T18:51:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-03T16:33:14+00:00"
+      "fetched_at_utc": "2026-09-03T18:51:21+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,17 +1908,32 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ece082c9110db6156db980a3b4720f9c8ac8fb54.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.88b41b8dfac265972e098e9e230812a7614a1ebe.001.1",
         "event": "Heat Advisory",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-03T01:48:00-04:00",
-        "onset": "2026-09-03T11:00:00-04:00",
-        "expires": "2026-09-03T16:00:00-04:00",
+        "effective": "2026-09-03T14:04:00-04:00",
+        "onset": "2026-09-04T11:00:00-04:00",
+        "expires": "2026-09-03T22:15:00-04:00",
+        "ends": "2026-09-04T20:00:00-04:00",
+        "headline": "Heat Advisory issued September 3 at 2:04PM EDT until September 4 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the first Heat Advisory, heat index values up to 109.\nFor the second Heat Advisory, heat index values up to 109 expected.\n\n* WHERE...A portion of eastern North Carolina.\n\n* WHEN...For the first Heat Advisory, until 8 PM EDT this evening.\nFor the second Heat Advisory, from 11 AM to 8 PM EDT Friday.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to early morning\nor evening. Take action when you see symptoms of heat exhaustion and\nheat stroke.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.88b41b8dfac265972e098e9e230812a7614a1ebe.001.2",
+        "event": "Heat Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-03T14:04:00-04:00",
+        "onset": "2026-09-03T14:04:00-04:00",
+        "expires": "2026-09-03T22:15:00-04:00",
         "ends": "2026-09-03T20:00:00-04:00",
-        "headline": "Heat Advisory issued September 3 at 1:48AM EDT until September 3 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Heat index values around 105 expected.\n\n* WHERE...Coastal Onslow, East Carteret, and West Carteret Counties,\nand Northern Outer Banks.\n\n* WHEN...From 11 AM this morning to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+        "headline": "Heat Advisory issued September 3 at 2:04PM EDT until September 3 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the first Heat Advisory, heat index values up to 109.\nFor the second Heat Advisory, heat index values up to 109 expected.\n\n* WHERE...A portion of eastern North Carolina.\n\n* WHEN...For the first Heat Advisory, until 8 PM EDT this evening.\nFor the second Heat Advisory, from 11 AM to 8 PM EDT Friday.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
         "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to early morning\nor evening. Take action when you see symptoms of heat exhaustion and\nheat stroke.",
         "sender_name": "NWS Newport/Morehead City NC"
       }
@@ -2567,5 +2582,5 @@
       "grid_y": 119
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

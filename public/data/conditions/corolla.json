@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-03T16:33:27+00:00",
+  "generated_at_utc": "2026-09-03T18:51:24+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-03T16:33:27+00:00"
+      "fetched_at_utc": "2026-09-03T18:51:24+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e1d09ccb18aa4f6c193fad52c93ba48b336e0f7a.004.1",
+        "event": "Heat Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-03T14:07:00-04:00",
+        "onset": "2026-09-04T11:00:00-04:00",
+        "expires": "2026-09-03T22:15:00-04:00",
+        "ends": "2026-09-04T20:00:00-04:00",
+        "headline": "Heat Advisory issued September 3 at 2:07PM EDT until September 4 at 8:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Heat index values of 105 to 109 degrees expected.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...From 11 AM to 8 PM EDT Friday.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2531,5 +2547,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
