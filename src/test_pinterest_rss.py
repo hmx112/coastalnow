@@ -16,6 +16,7 @@ class PinterestRssTests(unittest.TestCase):
             "state_slug": "california",
             "release_date": date(2026, 8, 31),
             "fishing_enabled": True,
+            "surfing_enabled": True,
         }
 
     def test_tide_and_fishing_records_use_claimed_domain_and_evergreen_copy(self):
@@ -59,7 +60,7 @@ class PinterestRssTests(unittest.TestCase):
         from pinterest.rss import build_rss
 
         with self.assertRaises(ValueError):
-            build_rss("surfing", [self.location])
+            build_rss("swimming", [self.location])
 
 
 if __name__ == "__main__":
