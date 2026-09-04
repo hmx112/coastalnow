@@ -47,6 +47,19 @@ class PinterestPhotoTemplateTests(unittest.TestCase):
         self.assertNotIn("_draw_tide_scene", source)
         self.assertNotIn("chip_width", source)
 
+    def test_pinterest_brand_matches_site_header_logo_spec(self):
+        import pinterest.render as render
+
+        self.assertEqual(render.WEBSITE_LOGO_GRADIENT_HEX, ("#0b8190", "#65c4c6"))
+        self.assertEqual(
+            render.WEBSITE_LOGO_WAVE_PATH,
+            "M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0",
+        )
+        helper = inspect.getsource(render._draw_coastalnow_brand)
+        self.assertIn("_draw_website_logo_mark", helper)
+        self.assertIn("BOLD_FONT", helper)
+        self.assertNotIn("SERIF_FONT", helper)
+
 
 if __name__ == "__main__":
     unittest.main()
