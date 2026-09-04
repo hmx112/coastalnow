@@ -14,4 +14,21 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-pinterest.txt
-      - run: python src/test_pinterest_photo_template.py
+      - name: Run Pinterest regression suite
+        run: |
+          python src/test_pinterest_catalog_schedule.py
+          python src/test_pinterest_identity_surfing.py
+          python src/test_pinterest_rss.py
+          python src/test_pinterest_render.py
+          python src/test_pinterest_photo_template.py
+          python src/test_pinterest_generation.py
+          python src/test_pinterest_workflow.py
+      - name: Generate Sep 4 Pinterest samples
+        run: python src/generate_pinterest.py --date 2026-09-04
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-v4-samples
+          path: |
+            public/pinterest/images/san-francisco-tides.png
+            public/pinterest/images/san-francisco-fishing.png
+            public/pinterest/images/la-jolla-surfing.png
