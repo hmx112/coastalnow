@@ -14,4 +14,33 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-pinterest.txt
-      - run: python src/test_pinterest_photo_template.py
+      - name: Run Pinterest regressions
+        run: |
+          python src/test_pinterest_catalog_schedule.py
+          python src/test_pinterest_identity_surfing.py
+          python src/test_pinterest_rss.py
+          python src/test_pinterest_render.py
+          python src/test_pinterest_photo_template.py
+          python src/test_pinterest_generation.py
+          python src/test_pinterest_workflow.py
+      - name: Render logo preview
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, 'src')
+          from pinterest.render import render_pin
+          item = {
+              'slug': 'la-jolla',
+              'name': 'La Jolla',
+              'state': 'California',
+              'state_slug': 'california',
+              'fishing_enabled': True,
+              'surfing_enabled': True,
+          }
+          render_pin(item, 'surfing', Path('/tmp/pinterest-site-logo-preview.png'))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-site-logo-preview
+          path: /tmp/pinterest-site-logo-preview.png
