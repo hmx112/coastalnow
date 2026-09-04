@@ -20,6 +20,14 @@ REGULAR_FONT = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
 SERIF_FONT = Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf")
 SERIF_ITALIC_FONT = Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf")
 
+# Exact visual specification used by the website header logo in tide-page.html.
+WEBSITE_LOGO_GRADIENT_HEX = ("#0b8190", "#65c4c6")
+WEBSITE_LOGO_WAVE_PATH = (
+    "M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0"
+    "M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0"
+    "M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0"
+)
+
 # Fixed free-to-use Unsplash photographs. The URLs are intentionally stable and
 # category-specific; generated Pinterest PNGs remain immutable after first publish.
 PHOTO_BACKGROUNDS = {
@@ -104,6 +112,65 @@ def _centered_x(draw: ImageDraw.ImageDraw, text: str, font) -> int:
     return max(0, (WIDTH - (bbox[2] - bbox[0])) // 2)
 
 
+def _hex_to_rgb(value: str) -> tuple[int, int, int]:
+    value = value.lstrip("#")
+    return tuple(int(value[index:index + 2], 16) for index in (0, 2, 4))
+
+
+def _cubic_points(p0, p1, p2, p3, steps: int = 24):
+    points = []
+    for step in range(steps + 1):
+        t = step / steps
+        mt = 1 - t
+        x = mt**3 * p0[0] + 3 * mt**2 * t * p1[0] + 3 * mt * t**2 * p2[0] + t**3 * p3[0]
+        y = mt**3 * p0[1] + 3 * mt**2 * t * p1[1] + 3 * mt * t**2 * p2[1] + t**3 * p3[1]
+        points.append((x, y))
+    return points
+
+
+def _website_wave_points(base_y: float, scale: float):
+    first = _cubic_points(
+        (3, base_y),
+        (6.5, base_y - 4),
+        (9.5, base_y + 4),
+        (13, base_y),
+    )
+    second = _cubic_points(
+        (13, base_y),
+        (16.5, base_y - 4),
+        (19.5, base_y + 4),
+        (21, base_y),
+    )
+    return [(round(x * scale), round(y * scale)) for x, y in first + second[1:]]
+
+
+def _draw_website_logo_mark(image: Image.Image, x: int, y: int, size: int) -> None:
+    start = _hex_to_rgb(WEBSITE_LOGO_GRADIENT_HEX[0])
+    end = _hex_to_rgb(WEBSITE_LOGO_GRADIENT_HEX[1])
+    gradient = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    pixels = gradient.load()
+    denominator = max(1, 2 * (size - 1))
+    for py in range(size):
+        for px in range(size):
+            # CSS 145deg approximation: darker upper-left to lighter lower-right.
+            ratio = (px + py) / denominator
+            pixels[px, py] = tuple(round(start[i] * (1 - ratio) + end[i] * ratio) for i in range(3)) + (255,)
+
+    mask = Image.new("L", (size, size), 0)
+    mask_draw = ImageDraw.Draw(mask)
+    mask_draw.rounded_rectangle((0, 0, size - 1, size - 1), radius=round(size * 10 / 31), fill=255)
+    mark = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    mark.paste(gradient, (0, 0), mask)
+
+    wave_draw = ImageDraw.Draw(mark)
+    scale = size / 24
+    stroke_width = max(2, round(1.8 * scale))
+    for base_y in (8, 13, 18):
+        wave_draw.line(_website_wave_points(base_y, scale), fill=WHITE, width=stroke_width, joint="curve")
+
+    image.alpha_composite(mark, (x, y))
+
+
 def _gradient_fallback(kind: str) -> Image.Image:
     top, bottom = _FALLBACK_GRADIENTS[kind]
     image = Image.new("RGB", (WIDTH, HEIGHT), top)
@@ -156,15 +223,25 @@ def _overlay_readability(image: Image.Image) -> Image.Image:
     return image
 
 
-def _draw_coastalnow_brand(draw: ImageDraw.ImageDraw) -> None:
+def _draw_coastalnow_brand(image: Image.Image) -> None:
+    draw = ImageDraw.Draw(image)
     brand = "CoastalNow"
-    font = _font(SERIF_FONT, 47)
-    x = _centered_x(draw, brand, font)
-    draw.text((x, 72), brand, font=font, fill=WHITE, stroke_width=1, stroke_fill=(0, 0, 0))
+    font = _font(BOLD_FONT, 46)
+    text_bbox = draw.textbbox((0, 0), brand, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    mark_size = 58
+    gap = 14
+    total_width = mark_size + gap + text_width
+    x = max(0, (WIDTH - total_width) // 2)
+    y = 56
+    _draw_website_logo_mark(image, x, y, mark_size)
+    draw = ImageDraw.Draw(image)
+    text_y = y + (mark_size - (text_bbox[3] - text_bbox[1])) // 2 - text_bbox[1]
+    draw.text((x + mark_size + gap, text_y), brand, font=font, fill=WHITE, stroke_width=1, stroke_fill=(0, 0, 0))
 
 
-def _draw_heading(draw: ImageDraw.ImageDraw, text: dict[str, str]) -> None:
-    _draw_coastalnow_brand(draw)
+def _draw_heading(image: Image.Image, draw: ImageDraw.ImageDraw, text: dict[str, str]) -> None:
+    _draw_coastalnow_brand(image)
 
     category = text["category"]
     category_font = _fit_font(draw, category, 112, 62, 900)
@@ -211,7 +288,7 @@ def render_pin(item: dict, kind: str, output: Path) -> Path:
     text = pin_text(item, kind)
     image = _overlay_readability(_load_photo_background(kind))
     draw = ImageDraw.Draw(image)
-    _draw_heading(draw, text)
+    _draw_heading(image, draw, text)
     _draw_footer(draw, text)
 
     output.parent.mkdir(parents=True, exist_ok=True)
