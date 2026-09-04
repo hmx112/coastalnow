@@ -32,8 +32,8 @@ PHOTO_BACKGROUNDS = {
         "credit": "Vince Russell / Unsplash",
     },
     "tides": {
-        "url": "https://images.unsplash.com/photo-1779844383248-79980909cd8a?auto=format&fit=crop&w=1600&h=2400&q=85",
-        "credit": "Dan Begel / Unsplash",
+        "url": "https://images.unsplash.com/photo-1571275293073-5dbb5ee70107?auto=format&fit=crop&w=1600&h=2400&q=85",
+        "credit": "Lianhao Qu / Unsplash",
     },
 }
 
