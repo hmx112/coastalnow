@@ -20,7 +20,7 @@ class PinterestRenderTests(unittest.TestCase):
             "surfing_enabled": True,
         }
 
-    def test_pin_text_is_evergreen_and_activity_specific(self):
+    def test_pin_text_is_evergreen_and_matches_final_poster_copy(self):
         from pinterest.render import pin_text
 
         tide = pin_text(self.item, "tides")
@@ -28,73 +28,45 @@ class PinterestRenderTests(unittest.TestCase):
         surfing = pin_text(self.item, "surfing")
 
         self.assertEqual(tide["location"], "SAN DIEGO")
-        self.assertEqual(tide["state"], "CALIFORNIA")
-        self.assertEqual(tide["category"], "TIDE TIMES & TIDE CHART")
-        self.assertEqual(tide["subtitle"], "Fast local tide info for planning by the water.")
-        self.assertEqual(tide["cta"], "See today’s tide times →")
-        self.assertEqual(tide["footer"], "Your go-to source for coastal conditions.")
-        self.assertEqual(
-            tide["features"],
-            (
-                ("High & Low Tide Times", "Know when tides rise and fall."),
-                ("7-Day Tide Forecast", "Plan ahead with a weekly outlook."),
-                ("Live NOAA Tide Data", "Reliable local prediction data."),
-                ("Today’s Tide Chart", "See the tide pattern at a glance."),
-            ),
-        )
+        self.assertEqual(tide["state"], "California")
+        self.assertEqual(tide["category"], "TIDE TIMES")
+        self.assertEqual(tide["subtitle"], "Tide Times & Tide Chart")
+        self.assertEqual(tide["cta"], "View Tide Times")
 
-        self.assertEqual(fishing["category"], "FISHING CONDITIONS & BEST TIMES")
-        self.assertEqual(fishing["subtitle"], "For shore, pier and nearshore fishing.")
-        self.assertEqual(fishing["cta"], "See today’s fishing conditions →")
-        self.assertEqual(fishing["footer"], "Live tide, wind & wave context")
-        self.assertEqual(
-            fishing["features"],
-            (
-                ("Live 0–100 Fishing Score", "See how conditions rate for fishing."),
-                ("Tide", "Tide movement and timing"),
-                ("Wind", "Wind speed and direction"),
-                ("Waves", "Wave height and period"),
-                ("Weather", "Sky, rain chance and more"),
-                ("Best 3-hour fishing window", "Top window based on today’s conditions"),
-            ),
-        )
+        self.assertEqual(fishing["category"], "FISHING CONDITIONS")
+        self.assertEqual(fishing["subtitle"], "Fishing Conditions & Best Times")
+        self.assertEqual(fishing["cta"], "View Fishing Conditions")
 
-        self.assertEqual(surfing["category"], "SURF CONDITIONS & BEST TIMES")
-        self.assertEqual(surfing["headline_lines"], ("SURF CONDITIONS", "& BEST TIMES"))
-        self.assertEqual(surfing["cta"], "See current surf conditions →")
-        self.assertEqual(surfing["scene"], "surfing")
+        self.assertEqual(surfing["category"], "SURF CONDITIONS")
+        self.assertEqual(surfing["subtitle"], "Surf Conditions & Best Times")
+        self.assertEqual(surfing["cta"], "View Surf Conditions")
 
         for payload in (tide, fishing, surfing):
-            text_values = []
-            for value in payload.values():
-                if isinstance(value, str):
-                    text_values.append(value)
-                elif isinstance(value, tuple):
-                    for item in value:
-                        if isinstance(item, tuple):
-                            text_values.extend(item)
-            combined = " ".join(text_values).lower()
+            combined = " ".join(str(value) for value in payload.values()).lower()
             for forbidden in (
                 "mph",
                 "°f",
                 "2026-",
-                "fishing score 88",
-                "tide height 5",
-                "wave height 3",
+                "fishing score",
+                "tide height",
+                "wave height",
+                "best window",
             ):
                 self.assertNotIn(forbidden, combined)
 
-    def test_renderer_uses_shared_brand_and_three_distinct_scenic_templates(self):
+    def test_renderer_uses_photo_backgrounds_and_final_minimal_layout(self):
         import pinterest.render as render
 
         self.assertTrue(callable(render._draw_coastalnow_brand))
-        self.assertTrue(callable(render._draw_tide_scene))
-        self.assertTrue(callable(render._draw_fishing_scene))
-        self.assertTrue(callable(render._draw_surfing_scene))
+        self.assertTrue(callable(render._load_photo_background))
         source = inspect.getsource(render)
-        self.assertNotIn("def _wave_polygon", source)
-        heading_source = inspect.getsource(render._draw_common_heading)
-        self.assertIn("_draw_coastalnow_brand", heading_source)
+        self.assertIn("PHOTO_BACKGROUNDS", source)
+        self.assertIn("images.unsplash.com", source)
+        self.assertIn("ImageOps.fit", source)
+        self.assertNotIn("_draw_tide_scene", source)
+        self.assertNotIn("_draw_fishing_scene", source)
+        self.assertNotIn("_draw_surfing_scene", source)
+        self.assertNotIn("chip_width", source)
 
     def test_rendered_pins_are_exactly_1000_by_1500_png_and_visually_distinct(self):
         from pinterest.render import render_pin
