@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-04T11:29:36+00:00",
+  "generated_at_utc": "2026-09-04T14:31:25+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T11:29:36+00:00"
+      "fetched_at_utc": "2026-09-04T14:31:25+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9416601fd63bd153db763c3ecedbfaf72ece326f.001.1",
-        "event": "Special Weather Statement",
-        "severity": "Moderate",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-09-04T05:38:00-04:00",
-        "onset": "2026-09-04T05:38:00-04:00",
-        "expires": "2026-09-04T09:00:00-04:00",
-        "ends": null,
-        "headline": "Special Weather Statement issued September 4 at 5:38AM EDT by NWS Caribou ME",
-        "description": "Areas of fog, locally dense with visibility occasionally down to\naround a quarter mile, will occur across the region this morning.\nIf traveling this morning remain alert for rapidly changing\nvisibilities. Maintain a safe distance between other vehicles and\nallow extra time to reach your destination.",
-        "instruction": "",
-        "sender_name": "NWS Caribou ME"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
