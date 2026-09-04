@@ -29,10 +29,15 @@ class PinterestWorkflowTests(unittest.TestCase):
         self.assertIn("python src/test_pinterest_identity_surfing.py", text)
         self.assertIn("python src/test_pinterest_rss.py", text)
         self.assertIn("python src/test_pinterest_render.py", text)
+        self.assertIn("python src/test_pinterest_photo_template.py", text)
         self.assertIn("python src/test_pinterest_generation.py", text)
         self.assertIn("python src/test_pinterest_workflow.py", text)
         self.assertIn("git add public/pinterest", text)
         self.assertIn('git commit -m "Update Pinterest distribution assets"', text)
+        self.assertIn("git fetch origin main", text)
+        self.assertIn("git rebase origin/main", text)
+        self.assertLess(text.index("git fetch origin main"), text.index("git push"))
+        self.assertLess(text.index("git rebase origin/main"), text.index("git push"))
 
 
 if __name__ == "__main__":
