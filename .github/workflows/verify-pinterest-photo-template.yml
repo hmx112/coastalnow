@@ -1,0 +1,17 @@
+name: Verify Pinterest photo template
+
+on:
+  push:
+    branches:
+      - feat/pinterest-photo-template-v4
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-pinterest.txt
+      - run: python src/test_pinterest_photo_template.py
