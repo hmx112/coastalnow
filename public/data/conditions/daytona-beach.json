@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "daytona-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-04T21:01:17+00:00",
+  "generated_at_utc": "2026-09-04T23:06:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T21:01:17+00:00"
+      "fetched_at_utc": "2026-09-04T23:06:09+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T20:52:24+00:00"
+      "fetched_at_utc": "2026-09-04T23:06:09+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T20:52:24+00:00"
+      "fetched_at_utc": "2026-09-04T23:06:09+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-04T20:52:24+00:00"
+      "fetched_at_utc": "2026-09-04T23:06:09+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-04T16:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 43.0,
-      "air_temperature_f": 86.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-09-04T17:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 60.0,
-      "air_temperature_f": 83.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-09-04T18:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 63.0,
-      "air_temperature_f": 83.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-09-04T19:00:00-04:00",
       "wind_mph": 5.0,
@@ -1902,11 +1866,78 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T04:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T05:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T06:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 247.5,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.27deb39fb54d4d52d1f245a36b3ef86522977ccf.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-04T18:07:00-04:00",
+        "onset": "2026-09-04T18:07:00-04:00",
+        "expires": "2026-09-04T19:45:00-04:00",
+        "ends": "2026-09-04T19:45:00-04:00",
+        "headline": "Special Marine Warning issued September 4 at 6:07PM EDT until September 4 at 7:45PM EDT by NWS Melbourne FL",
+        "description": "SMWMLB\n\nThe National Weather Service in Melbourne has issued a\n\n* Special Marine Warning for...\nFlagler Beach to Volusia-Brevard County Line 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\n\n* Until 745 PM EDT.\n\n* At 607 PM EDT, strong thunderstorms were located along a line\nextending from near Daytona Beach to near Edgewater to 9 nm west of\nTitusville to 11 nm southwest of Rockledge, moving east at 20\nknots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, lightning and heavy downpours. Make sure all on\nboard are wearing life jackets. Return to safe harbor if\npossible.\n\n* Locations impacted include...\nPort Saint John, Bellwood, Canaveral Groves, Rockledge, and Cocoa.",
+        "instruction": "",
+        "sender_name": "NWS Melbourne FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9875723576500d47d74066c3a35c78d65dbeea61.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-04T17:55:00-04:00",
+        "onset": "2026-09-04T17:55:00-04:00",
+        "expires": "2026-09-04T19:30:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 4 at 5:55PM EDT by NWS Melbourne FL",
+        "description": "The areas affected include...\nFlagler Beach to Volusia-Brevard County Line 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\n\nAt 553 PM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from 7 nm southwest of Daytona Beach\nto 8 nm northwest of Maytown to 14 nm southwest of Rockledge, moving\nnortheast at 15 knots.",
+        "instruction": "These strong thunderstorms will likely produce winds to around 30\nknots, and could pose a serious hazard for boaters. A special marine\nwarning may eventually be required if these strong thunderstorms\nreach the nearshore waters. Boaters should consider heading for\nshore before these strong thunderstorms arrive.",
+        "sender_name": "NWS Melbourne FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2587,5 @@
       "grid_y": 100
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

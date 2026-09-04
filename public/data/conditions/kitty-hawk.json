@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "kitty-hawk",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-04T21:00:46+00:00",
+  "generated_at_utc": "2026-09-04T23:05:37+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T21:00:46+00:00"
+      "fetched_at_utc": "2026-09-04T23:05:37+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T20:51:29+00:00"
+      "fetched_at_utc": "2026-09-04T23:05:37+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-04T20:51:29+00:00"
+      "fetched_at_utc": "2026-09-04T23:05:37+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-04T20:51:29+00:00"
+      "fetched_at_utc": "2026-09-04T23:05:37+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-04T16:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 43.0,
-      "air_temperature_f": 92.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-09-04T17:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 53.0,
-      "air_temperature_f": 93.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-09-04T18:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 51.0,
-      "air_temperature_f": 91.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-04T19:00:00-04:00",
       "wind_mph": 7.0,
@@ -1902,26 +1866,47 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T04:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 79.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T05:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-11T06:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60576a99e2cee3e11d28ba7a7371eb54e3762789.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-04T15:52:00-04:00",
-        "onset": "2026-09-04T15:52:00-04:00",
-        "expires": "2026-09-04T17:15:00-04:00",
-        "ends": "2026-09-04T17:15:00-04:00",
-        "headline": "Special Marine Warning issued September 4 at 3:52PM EDT until September 4 at 5:15PM EDT by NWS Newport/Morehead City NC",
-        "description": "SMWMHX\n\nThe National Weather Service in Newport has issued a\n\n* Special Marine Warning for...\nAlbemarle Sound...\nCroatan and Roanoke Sounds...\nS of Currituck Beach Light NC to Oregon Inlet NC out to 20 NM...\n\n* Until 515 PM EDT.\n\n* At 351 PM EDT, strong thunderstorms were located along a line\nextending from Currituck Beach to 12 nm west of Currituck Sound to\n11 nm north of The Mouth Of The Perquimans River, moving southeast\nat 15 knots.\n\nHAZARD...Wind gusts to 40 knots.\n\nSOURCE...Land observation. A 44 knot wind gust was recently\nmeasured north of the Albemarle Sound.\n\nIMPACT...Small craft could be damaged in briefly higher winds and\nsuddenly higher waves.\n\n* Locations impacted include...\nThe Center Of The Albemarle Sound, Kitty Hawk, and Kill Devil\nHills.",
-        "instruction": "Boaters should seek safe harbor immediately until these storms pass.\nWind gusts to 40 knots, high waves, dangerous lightning, and heavy\nrain are possible with these storms.\n\nFrequent lightning is occurring with these storms. If caught on the\nopen water stay below deck if possible, keep away from ungrounded\nmetal objects.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3123075f85ab76bfd8dc0038bd46a30ba314a433.003.1",
         "event": "Heat Advisory",
@@ -2582,5 +2567,5 @@
       "grid_y": 123
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
