@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "cape-hatteras",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-05T19:25:07+00:00",
+  "generated_at_utc": "2026-09-05T20:29:58+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T19:25:07+00:00"
+      "fetched_at_utc": "2026-09-05T20:29:58+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T17:26:01+00:00"
+      "fetched_at_utc": "2026-09-05T20:29:58+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T17:26:01+00:00"
+      "fetched_at_utc": "2026-09-05T20:29:58+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T15:15:56+00:00"
+      "fetched_at_utc": "2026-09-05T20:22:32+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-05T17:26:01+00:00"
+      "fetched_at_utc": "2026-09-05T20:29:58+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-05T13:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 14.0,
-      "air_temperature_f": 84.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
-      "time": "2026-09-05T14:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 15.0,
-      "air_temperature_f": 85.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-09-05T15:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 20.0,
-      "air_temperature_f": 86.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-05T16:00:00-04:00",
       "wind_mph": 9.0,
@@ -1902,11 +1866,63 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-12T01:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 19.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-12T02:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-12T03:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dacd2c518601f06466cdb6a4c4e3f95318922261.002.1",
+        "event": "Severe Thunderstorm Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-09-05T16:14:00-04:00",
+        "onset": "2026-09-05T16:14:00-04:00",
+        "expires": "2026-09-05T22:00:00-04:00",
+        "ends": "2026-09-05T22:00:00-04:00",
+        "headline": "Severe Thunderstorm Watch issued September 5 at 4:14PM EDT until September 5 at 10:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "THE NATIONAL WEATHER SERVICE HAS ISSUED SEVERE THUNDERSTORM WATCH\n657 IN EFFECT UNTIL 10 PM EDT THIS EVENING FOR THE FOLLOWING\nAREAS\n\nTHIS WATCH INCLUDES THE FOLLOWING ADJACENT COASTAL WATERS\n\nALLIGATOR RIVER       PAMLICO SOUND\nPAMLICO AND PUNGO RIVERS                    NEUSE AND BAY RIVERS\nS OF CURRITUCK BEACH LIGHT TO OREGON INLET NC OUT 20 NM\nS OF OREGON INLET TO CAPE HATTERAS NC OUT 20 NM\nS OF CAPE HATTERAS TO OCRACOKE INLET NC OUT 20 NM\nINCLUDING THE MONITOR NATIONAL MARINE SANCTUARY\nS OF OCRACOKE INLET TO CAPE LOOKOUT NC OUT 20 NM\nS OF CAPE LOOKOUT TO N OF SURF CITY NC OUT 20 NM\nALBEMARLE SOUND       CROATAN AND ROANOKE SOUNDS",
+        "instruction": "",
+        "sender_name": "NWS Newport/Morehead City NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1940,8 +1956,8 @@
       "start": "2026-09-05",
       "end": "2026-09-11"
     },
-    "generated_at_utc": "2026-09-05T15:15:56+00:00",
-    "generated_at_local": "2026-09-05T11:15:56-04:00",
+    "generated_at_utc": "2026-09-05T20:22:32+00:00",
+    "generated_at_local": "2026-09-05T16:22:31-04:00",
     "hilo": [
       {
         "t": "2026-09-05 01:56",
@@ -2536,5 +2552,5 @@
       "grid_y": 85
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
