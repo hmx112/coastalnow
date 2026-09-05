@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cape-may",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-05T04:41:24+00:00",
+  "generated_at_utc": "2026-09-05T06:17:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T04:41:24+00:00"
+      "fetched_at_utc": "2026-09-05T06:17:21+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e36ae7068c7e7d5af775e973f86358f96f65700c.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-05T01:38:00-04:00",
+        "onset": "2026-09-05T01:38:00-04:00",
+        "expires": "2026-09-05T02:45:00-04:00",
+        "ends": "2026-09-05T02:45:00-04:00",
+        "headline": "Special Marine Warning issued September 5 at 1:38AM EDT until September 5 at 2:45AM EDT by NWS Mount Holly NJ",
+        "description": "SMWPHI\n\nThe National Weather Service in Mount Holly NJ has issued a\n\n* Special Marine Warning for...\nDelaware Bay...\nCoastal waters from Great Egg Inlet NJ to Fenwick Island DE out 20\nnm...\n\n* Until 245 AM EDT.\n\n* At 138 AM EDT, a strong thunderstorm was located near Fortesque\nBeach, moving southeast at 25 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Small craft could be damaged in briefly higher winds and\nsuddenly higher waves.\n\n* Locations impacted include...\nBuoy 2fb, Brown Shoal Light, Buoy 4fb, Buoy 3fb, Fourteen Foot Bank\nLight, East Point, Cape May Point, Miah Maull Light, Brandywine\nShoal Light, Wildwood, Overfalls Shoal, The Lump, 28-\nMile Wreck, Fortesque Beach, Cape May Reef, Buoy 2ms, Cross Ledge\nLight, Wildwood Reef, and Sea Isle City.",
+        "instruction": "",
+        "sender_name": "NWS Mount Holly NJ"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
