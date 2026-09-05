@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pawleys-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-05T20:30:37+00:00",
+  "generated_at_utc": "2026-09-05T21:38:46+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-05T20:30:37+00:00"
+      "fetched_at_utc": "2026-09-05T21:38:46+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1bc82d326836a3683b21eacecd5ccdcefb6d6196.002.1",
+        "event": "Severe Thunderstorm Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-09-05T17:02:00-04:00",
+        "onset": "2026-09-05T17:02:00-04:00",
+        "expires": "2026-09-05T22:00:00-04:00",
+        "ends": "2026-09-05T22:00:00-04:00",
+        "headline": "Severe Thunderstorm Watch issued September 5 at 5:02PM EDT until September 5 at 10:00PM EDT by NWS Wilmington NC",
+        "description": "THE NATIONAL WEATHER SERVICE HAS EXTENDED SEVERE THUNDERSTORM\nWATCH 657 TO INCLUDE THE FOLLOWING AREAS UNTIL 10 PM EDT THIS\nEVENING\n\nTHIS WATCH INCLUDES THE FOLLOWING ADJACENT COASTAL WATERS\n\nCOASTAL WATERS FROM MURRELLS INLET TO SOUTH SANTEE RIVER SC OUT\n20 NM",
+        "instruction": "",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
