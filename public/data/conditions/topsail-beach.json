@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "topsail-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-06T21:39:51+00:00",
+  "generated_at_utc": "2026-09-06T22:56:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-06T21:39:51+00:00"
+      "fetched_at_utc": "2026-09-06T22:56:09+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-06T20:32:14+00:00"
+      "fetched_at_utc": "2026-09-06T22:56:09+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-06T20:32:14+00:00"
+      "fetched_at_utc": "2026-09-06T22:56:09+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,52 +27,28 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-06T20:32:14+00:00"
+      "fetched_at_utc": "2026-09-06T22:56:09+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-06T16:00:00-04:00",
-      "wind_mph": 12.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 34.0,
-      "air_temperature_f": 81.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-09-06T17:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 19.563,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 31.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-06T18:00:00-04:00",
       "wind_mph": 13.0,
       "gust_mph": 20.714,
       "wind_direction_deg": 90.0,
-      "precip_probability_pct": 29.0,
+      "precip_probability_pct": 57.0,
       "air_temperature_f": 80.0,
       "wave_height_ft": 2.0,
       "wave_period_s": 5.0,
       "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
+      "condition_text": "Showers And Thunderstorms Likely"
     },
     {
       "time": "2026-09-06T19:00:00-04:00",
       "wind_mph": 14.0,
       "gust_mph": 20.714,
       "wind_direction_deg": 90.0,
-      "precip_probability_pct": 26.0,
+      "precip_probability_pct": 34.0,
       "air_temperature_f": 79.0,
       "wave_height_ft": 2.0,
       "wave_period_s": 5.0,
@@ -81,10 +57,10 @@
     },
     {
       "time": "2026-09-06T20:00:00-04:00",
-      "wind_mph": 14.0,
+      "wind_mph": 13.0,
       "gust_mph": 20.714,
       "wind_direction_deg": 90.0,
-      "precip_probability_pct": 23.0,
+      "precip_probability_pct": 24.0,
       "air_temperature_f": 79.0,
       "wave_height_ft": 3.0,
       "wave_period_s": 4.0,
@@ -1902,27 +1878,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-13T04:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-13T05:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.96c14b690cecf06502c82a94ac8d4d382c8eecdd.001.1",
-        "event": "Special Weather Statement",
-        "severity": "Moderate",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-09-06T17:10:00-04:00",
-        "onset": "2026-09-06T17:10:00-04:00",
-        "expires": "2026-09-06T18:15:00-04:00",
-        "ends": null,
-        "headline": "Special Weather Statement issued September 6 at 5:10PM EDT by NWS Wilmington NC",
-        "description": "At 509 PM EDT, Doppler radar was tracking strong thunderstorms along\na line extending from Northwest to Hammond. Movement was southeast at\n30 mph.\n\nHAZARD...Wind gusts up to 50 mph and pea size hail.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects. Minor hail damage to vegetation is\npossible.\n\nLocations impacted include...\nWilmington, North Myrtle Beach, Leland, Oak Island, Carolina Beach,\nBurgaw, Shallotte, Sunset Beach, Wrightsville Beach, Kure Beach, Surf\nCity, Holden Beach, Ocean Isle Beach, Caswell Beach, Bald Head\nIsland, Snows Cut, South Masonboro Island, Ocean Crest Pier, Figure\nEight Island, and North Myrtle Beach Airport.\n\nThis includes the following highways...\nInterstate 40 between mile markers 388 and 416.\nInterstate 140 between mile markers 15 and 20.",
-        "instruction": "If outdoors, consider seeking shelter inside a building.",
-        "sender_name": "NWS Wilmington NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2572,5 +2556,5 @@
       "grid_y": 82
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
