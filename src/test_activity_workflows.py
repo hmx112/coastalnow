@@ -93,6 +93,20 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
 
+    def test_alert_refresh_runs_after_activity_source_merges_without_self_trigger(self):
+        text = ALERT_REFRESH.read_text(encoding="utf-8")
+        self.assertIn("push:", text)
+        self.assertIn("branches:", text)
+        self.assertIn("- main", text)
+        for path in (
+            '"src/activities/**"',
+            '"src/build_site.py"',
+            '"src/templates/activity-*.html"',
+            '".github/workflows/update-activity-alerts.yml"',
+        ):
+            self.assertIn(path, text)
+        self.assertNotIn('"public/**"', text)
+
     def test_tide_refresh_remains_six_hourly_and_uses_the_same_site_write_lock(self):
         text = TIDE_REFRESH.read_text(encoding="utf-8")
         self.assertIn('cron: "17 */6 * * *"', text)
