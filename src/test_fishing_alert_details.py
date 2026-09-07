@@ -56,6 +56,35 @@ class FishingAlertDetailTests(unittest.TestCase):
         self.assertIn("official alert should be reviewed first", html)
         self.assertLess(html.index("NWS alert details:"), html.index("Conditions are generally supportive"))
 
+    def test_why_section_explains_each_alert_when_multiple_alerts_exist(self):
+        snapshot = {
+            "timezone": "America/Los_Angeles",
+            "alerts": {
+                "status": "ok",
+                "items": [
+                    {
+                        "event": "Heat Advisory",
+                        "onset": "2026-08-31T10:00:00-07:00",
+                        "ends": "2026-08-31T22:00:00-07:00",
+                        "description": "* WHAT...Hot conditions are expected.",
+                    },
+                    {
+                        "event": "Beach Hazards Statement",
+                        "onset": "2026-08-30T05:00:00-07:00",
+                        "ends": "2026-08-30T11:00:00-07:00",
+                        "description": "* WHAT...Sneaker waves and strong rip currents are expected.",
+                    },
+                ],
+            },
+        }
+        html = _why_section(self.result, snapshot)
+        self.assertIn("Hot conditions are expected.", html)
+        self.assertIn("The Heat Advisory begins after the 6:00 AM–9:00 AM fishing window", html)
+        self.assertIn("Sneaker waves and strong rip currents are expected.", html)
+        self.assertIn("The Beach Hazards Statement overlaps the 6:00 AM–9:00 AM fishing window", html)
+        self.assertLess(html.index("Heat Advisory"), html.index("Conditions are generally supportive"))
+        self.assertLess(html.index("Beach Hazards Statement"), html.index("Conditions are generally supportive"))
+
 
 if __name__ == "__main__":
     unittest.main()
