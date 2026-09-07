@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cannon-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-07T04:56:55+00:00",
+  "generated_at_utc": "2026-09-07T06:36:30+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-07T04:56:55+00:00"
+      "fetched_at_utc": "2026-09-07T06:36:30+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e00958f2cf3daa7d85a29b184b401a2288fce874.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-06T22:22:00-07:00",
+        "onset": "2026-09-08T14:00:00-07:00",
+        "expires": "2026-09-07T14:30:00-07:00",
+        "ends": "2026-09-08T23:00:00-07:00",
+        "headline": "Small Craft Advisory issued September 6 at 10:22PM PDT until September 8 at 11:00PM PDT by NWS Portland OR",
+        "description": "* WHAT...Seas 2 to 5 ft at 7 seconds and north winds 10 to 20 kt\nwith gusts up to 25 kt expected.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM.\n\n* WHEN...From 2 PM to 11 PM PDT Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Portland OR"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 130
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
