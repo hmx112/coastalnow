@@ -42,7 +42,7 @@ class FishingAlertDetailTests(unittest.TestCase):
         }
 
     def test_safety_strip_shows_event_period_and_hazard_summary(self):
-        html = _safety_strip(self.snapshot)
+        html = _safety_strip(self.result, self.snapshot)
         self.assertIn("Beach Hazards Statement", html)
         self.assertIn("Aug 30, 5:00 AM–11:00 AM PDT", html)
         self.assertIn("Sneaker waves and strong rip currents are expected.", html)
