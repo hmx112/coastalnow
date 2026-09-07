@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "panama-city-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-07T01:17:08+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-07T01:17:08+00:00",
+  "generated_at_utc": "2026-09-07T04:56:52+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-07T04:56:52+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,25 +12,23 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 83.6,
-    "rating": "Good",
+    "status": "No 3-hour window remaining",
+    "score": null,
+    "rating": null,
     "confidence": "High",
-    "best_window": {
-      "start": "2026-09-06T19:00:00-05:00",
-      "end": "2026-09-06T22:00:00-05:00"
-    },
-    "ranking_eligible": true,
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
+      "favorable-tide-movement",
       "light-wind",
       "manageable-sea-state",
-      "favorable-tide-movement"
+      "forecast-thunder-cap"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 50.7,
-    "rating": "Poor",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "High",
     "best_window": {
       "start": "2026-09-07T00:00:00-05:00",
@@ -47,109 +45,9 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-06T17:00:00-05:00",
+        "time": "2026-09-06T23:00:00-05:00",
         "components": {
-          "tide": 12.8,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 58.4,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 66.3,
-        "final_score": 66.3,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-06T18:00:00-05:00",
-        "components": {
-          "tide": 36.1,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 58.4,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 74.8,
-        "final_score": 74.8,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-06T19:00:00-05:00",
-        "components": {
-          "tide": 57.3,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 58.4,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 81.1,
-        "final_score": 81.1,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-06T20:00:00-05:00",
-        "components": {
-          "tide": 75.2,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 58.4,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 86.5,
-        "final_score": 86.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-06T21:00:00-05:00",
-        "components": {
-          "tide": 88.8,
+          "tide": 100.0,
           "wind": 100,
           "wave": 90,
           "weather": 100,
@@ -157,11 +55,11 @@
           "solunar": 58.4,
           "water_temperature": 50
         },
-        "raw_quality_score": 86.6,
-        "final_score": 86.6,
+        "raw_quality_score": 89.9,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 100.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
@@ -169,21 +67,24 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "forecast-thunder-cap"
         ]
-      },
+      }
+    ],
+    "tomorrow": [
       {
-        "time": "2026-09-06T22:00:00-05:00",
+        "time": "2026-09-07T00:00:00-05:00",
         "components": {
-          "tide": 97.2,
+          "tide": 97.0,
           "wind": 100,
           "wave": 90,
-          "weather": 100,
+          "weather": 75,
           "time_of_day": 60,
-          "solunar": 58.4,
+          "solunar": 62.0,
           "water_temperature": 50
         },
-        "raw_quality_score": 89.1,
+        "raw_quality_score": 85.4,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -200,71 +101,17 @@
         ]
       },
       {
-        "time": "2026-09-06T23:00:00-05:00",
-        "components": {
-          "tide": 100.0,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 58.4,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 89.9,
-        "final_score": 89.9,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      }
-    ],
-    "tomorrow": [
-      {
-        "time": "2026-09-07T00:00:00-05:00",
-        "components": {
-          "tide": 97.0,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 62.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 89.2,
-        "final_score": 89.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
         "time": "2026-09-07T01:00:00-05:00",
         "components": {
           "tide": 88.4,
           "wind": 100,
           "wave": 90,
-          "weather": 75,
+          "weather": 100,
           "time_of_day": 60,
           "solunar": 62.0,
           "water_temperature": 50
         },
-        "raw_quality_score": 82.9,
+        "raw_quality_score": 86.6,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -286,12 +133,12 @@
           "tide": 74.7,
           "wind": 100,
           "wave": 90,
-          "weather": 75,
+          "weather": 100,
           "time_of_day": 60,
           "solunar": 62.0,
           "water_temperature": 50
         },
-        "raw_quality_score": 78.8,
+        "raw_quality_score": 82.5,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -312,12 +159,12 @@
           "tide": 56.7,
           "wind": 100,
           "wave": 90,
-          "weather": 75,
+          "weather": 100,
           "time_of_day": 60,
           "solunar": 62.0,
           "water_temperature": 50
         },
-        "raw_quality_score": 73.4,
+        "raw_quality_score": 77.1,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
