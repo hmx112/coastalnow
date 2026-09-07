@@ -2,6 +2,14 @@ name: Update coastal Activity safety alerts
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/activities/**"
+      - "src/build_site.py"
+      - "src/templates/activity-*.html"
+      - ".github/workflows/update-activity-alerts.yml"
   schedule:
     - cron: "41 * * * *"
 
