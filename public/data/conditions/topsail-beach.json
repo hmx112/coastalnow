@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "topsail-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-06T23:07:42+00:00",
+  "generated_at_utc": "2026-09-07T01:16:57+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-06T23:07:42+00:00"
+      "fetched_at_utc": "2026-09-07T01:16:57+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a471c8269ec00e678c64a84d77186ee448130e31.001.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-06T20:01:00-04:00",
+        "onset": "2026-09-07T06:00:00-04:00",
+        "expires": "2026-09-07T20:00:00-04:00",
+        "ends": "2026-09-07T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued September 6 at 8:01PM EDT until September 7 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Strong north to south longshore current. There is also a\nModerate Risk of rip currents expected.\n\n* WHERE...In North Carolina, Coastal Pender and Coastal New\nHanover Counties. In South Carolina, Coastal Horry and Coastal\nGeorgetown Counties.\n\n* WHEN...From 6 AM EDT Monday through Monday evening.\n\n* IMPACTS...Longshore currents can sweep swimmers and surfers into\nrip currents, piers, jetties, and other hazardous areas. It may\nsweep swimmers off their feet, making it difficult to return to\nshore.",
+        "instruction": "Caution should be used when in or near the water. Check with\nlifeguards before entering the ocean for possible hazards you may\nbe swept into.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
