@@ -13,4 +13,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python src/test_fishing_alert_details.py
+      - name: Run relevant regressions
+        run: |
+          python src/test_fishing_alert_details.py
+          python src/test_fishing_explanations.py
+          python src/test_fishing_safety.py
+          python src/test_activity_rendering.py
+          python src/test_surfing_alert_details.py
+          python src/test_surfing_explanation.py
+      - name: Verify current San Francisco Fishing page render
+        run: |
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          sys.path.insert(0, 'src')
+          from locations import LOCATIONS
+          from activities.rendering.location_page import render_fishing_location
+          from activities.rendering.surfing_alert_details import build_nws_alert_details
+
+          snapshot = json.loads(Path('public/data/conditions/san-francisco.json').read_text())
+          result = json.loads(Path('public/data/activities/fishing/san-francisco.json').read_text())
+          details = build_nws_alert_details(snapshot)
+          assert details, 'San Francisco fixture must contain the reported NWS alert'
+          html = render_fishing_location(LOCATIONS['san-francisco'], result, snapshot)
+          first = details[0]
+          assert first['event'] in html
+          assert first['period'] in html
+          assert 'NWS alert details:' in html
+          if first['summary']:
+              assert first['summary'] in html
+          Path('/tmp/san-francisco-fishing.html').write_text(html)
+          print(first)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: san-francisco-fishing-alert-preview
+          path: /tmp/san-francisco-fishing.html
