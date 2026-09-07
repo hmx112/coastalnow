@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "miami-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-07T19:16:42+00:00",
+  "generated_at_utc": "2026-09-07T21:45:22+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-07T19:16:42+00:00"
+      "fetched_at_utc": "2026-09-07T21:45:22+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.003a78487d3fa5efbdea1987fbf2d23e55a008e0.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-07T17:25:00-04:00",
+        "onset": "2026-09-07T17:25:00-04:00",
+        "expires": "2026-09-07T18:00:00-04:00",
+        "ends": "2026-09-07T18:00:00-04:00",
+        "headline": "Special Marine Warning issued September 7 at 5:25PM EDT until September 7 at 6:00PM EDT by NWS Miami FL",
+        "description": "SMWMFL\n\nThe National Weather Service in Miami has issued a\n\n* Special Marine Warning for...\nBiscayne Bay...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\nWaters from Deerfield Beach to Ocean Reef FL from 20 to 60 NM\nexcluding the territorial waters of Bahamas...\n\n* Until 600 PM EDT.\n\n* At 524 PM EDT, a severe thunderstorm capable of producing\nwaterspouts was located 15 nm east of Port Everglades, or 16 nm\nnortheast of Sunny Isles, moving southeast at 15 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nVirginia Key, Miami Beach, Bal Harbour, Surfside, Indian Creek, Bay\nHarbor Islands, and North Bay Village.",
+        "instruction": "Move to safe harbor until hazardous weather passes.\n\nReport severe weather to the Coast Guard or the National Weather\nService. You can also share your report with NWS Miami on Facebook\nand Twitter.",
+        "sender_name": "NWS Miami FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 52
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
