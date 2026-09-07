@@ -8,6 +8,8 @@ from pathlib import Path
 from activities.explanations import summarize_fishing_result
 from activities.registry import enabled_activities_for_location
 from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
+from activities.rendering.surfing_alert_details import build_nws_alert_details
+from activities.rendering.surfing_explanation import _alert_relation, _fmt_window as _fmt_alert_window
 from site_generator import LOGO
 
 TEMPLATE = Path(__file__).resolve().parents[2] / "templates" / "activity-location.html"
@@ -93,16 +95,42 @@ def _score_card(day: dict) -> str:
     )
 
 
+def _alert_detail_markup(snapshot: dict) -> str:
+    blocks = []
+    for detail in build_nws_alert_details(snapshot):
+        summary = detail.get("summary") or ""
+        summary_html = f'<p>{escape(summary)}</p>' if summary else ""
+        blocks.append(
+            '<div class="activity-alert-detail">'
+            f'<strong>{escape(detail["event"])}</strong>'
+            f'<span>{escape(detail["period"])}</span>'
+            f'{summary_html}'
+            '</div>'
+        )
+    return "".join(blocks)
+
+
 def _safety_strip(result: dict, snapshot: dict) -> str:
     day = result.get("today") or {}
-    if day.get("status") == "NOT RECOMMENDED":
-        return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> Check current official warnings and local guidance before approaching the shore.</div>'
     alerts = snapshot.get("alerts") or {}
     if alerts.get("status") != "ok":
+        if day.get("status") == "NOT RECOMMENDED":
+            return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> NWS alert status is unavailable; check current official warnings and local guidance before approaching the shore.</div>'
         return '<div class="activity-safety-strip unknown"><strong>Safety alert status unavailable.</strong> CoastalNow is not treating this as a no-alert condition.</div>'
-    count = len(alerts.get("items") or [])
-    if count:
-        return f'<div class="activity-safety-strip caution"><strong>{count} active NWS alert(s) detected.</strong> Review official alert details before making plans.</div>'
+
+    details = build_nws_alert_details(snapshot)
+    if details:
+        css_class = "danger" if day.get("status") == "NOT RECOMMENDED" else "caution"
+        priority = "Safety condition takes priority. " if day.get("status") == "NOT RECOMMENDED" else ""
+        return (
+            f'<div class="activity-safety-strip {css_class}">'
+            f'<div><strong>{priority}{len(details)} active NWS alert(s) detected.</strong> Official alert details take priority over the numerical Fishing Score.</div>'
+            f'{_alert_detail_markup(snapshot)}'
+            '</div>'
+        )
+
+    if day.get("status") == "NOT RECOMMENDED":
+        return '<div class="activity-safety-strip danger"><strong>Safety condition takes priority.</strong> Check current official warnings and local guidance before approaching the shore.</div>'
     return '<div class="activity-safety-strip normal"><strong>Latest NWS alert check completed.</strong> Conditions can still change; local signs and official guidance take priority.</div>'
 
 
@@ -134,18 +162,10 @@ def _hourly_section(result: dict) -> str:
     status = day.get("status") or "Unavailable"
     rows = (result.get("hourly") or {}).get("today") or []
     if status == "NOT RECOMMENDED":
-        body = (
-            '<div class="activity-empty">'
-            'Safety condition takes priority — hourly numerical recommendation is not shown.'
-            '</div>'
-        )
+        body = '<div class="activity-empty">Safety condition takes priority — hourly numerical recommendation is not shown.</div>'
     elif _limited_or_unavailable(day):
         label = _data_state_label(day)
-        body = (
-            '<div class="activity-empty">'
-            f'{escape(label)} data — hourly numerical recommendation is not shown because critical coastal context is incomplete.'
-            '</div>'
-        )
+        body = f'<div class="activity-empty">{escape(label)} data — hourly numerical recommendation is not shown because critical coastal context is incomplete.</div>'
     elif not rows:
         body = '<div class="activity-empty">Hourly score is unavailable for today.</div>'
     else:
@@ -154,14 +174,11 @@ def _hourly_section(result: dict) -> str:
             score = row.get("final_score")
             confidence = row.get("confidence") or "Unavailable"
             if row.get("hard_stop"):
-                score_text = "STOP"
-                width = 0
+                score_text, width = "STOP", 0
             elif confidence in {"Limited", "Unavailable"}:
-                score_text = confidence
-                width = 0
+                score_text, width = confidence, 0
             elif score is None:
-                score_text = "—"
-                width = 0
+                score_text, width = "—", 0
             else:
                 score_text = f"{score:g}"
                 width = max(0, min(100, float(score)))
@@ -169,8 +186,7 @@ def _hourly_section(result: dict) -> str:
                 '<div class="activity-hour-row">'
                 f'<span>{escape(_fmt_time(row["time"]))}</span>'
                 f'<div class="activity-hour-track"><i style="width:{width:g}%"></i></div>'
-                f'<strong>{escape(score_text)}</strong>'
-                f'<small>{escape(confidence)}</small>'
+                f'<strong>{escape(score_text)}</strong><small>{escape(confidence)}</small>'
                 '</div>'
             )
         body = '<div class="activity-hourly-list">' + "".join(items) + "</div>"
@@ -240,10 +256,52 @@ def _tide_section(snapshot: dict) -> str:
     return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">TIDE CONTEXT</p><h2>Today’s tide turning points</h2></div><p>For detailed tide charts, use the Tide page.</p></div>' + body + '</section>'
 
 
-def _why_section(result: dict) -> str:
+def _fishing_alert_explanation(result: dict, snapshot: dict) -> list[str]:
+    details = build_nws_alert_details(snapshot)
+    if not details:
+        return []
+
+    joined = "; ".join(f'{detail["event"]} ({detail["period"]})' for detail in details)
+    sentences = [f"NWS alert details: {joined}."]
+    first_summary = details[0].get("summary") or ""
+    if first_summary:
+        sentences.append(first_summary)
+
+    items = ((snapshot.get("alerts") or {}).get("items") or [])
+    if items:
+        item = items[0]
+        event = str(item.get("event") or "weather alert").strip()
+        window = (result.get("today") or {}).get("best_window")
+        relation = _alert_relation(item, window)
+        window_text = _fmt_alert_window(window)
+        if relation == "after":
+            sentences.append(
+                f"The {event} begins after the {window_text} fishing window, so it may not directly reduce that window's numerical score; the official alert still takes priority once its stated period begins."
+            )
+        elif relation == "before":
+            sentences.append(
+                f"The {event} ends before the {window_text} fishing window, so it does not directly reduce that window's numerical score; the official alert should still be reviewed first."
+            )
+        elif relation == "overlap":
+            sentences.append(
+                f"The {event} overlaps the {window_text} fishing window; the official alert should be reviewed first even when it is not a direct Fishing Score adjustment."
+            )
+        else:
+            sentences.append(
+                f"The timing of the {event} cannot be matched confidently to the fishing window, so the official alert should be reviewed first."
+            )
+    return sentences
+
+
+def _why_section(result: dict, snapshot: dict | None = None) -> str:
     day = result.get("today") or {}
-    text = summarize_fishing_result(day)
-    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div><p>' + escape(text) + '</p></section>'
+    score_text = summarize_fishing_result(day)
+    paragraphs = []
+    if snapshot is not None:
+        paragraphs.extend(_fishing_alert_explanation(result, snapshot))
+    paragraphs.append(score_text)
+    body = "".join(f'<p>{escape(text)}</p>' for text in paragraphs if text)
+    return '<section class="section activity-panel activity-why"><div class="section-head"><div><p class="eyebrow">EXPLANATION</p><h2>What is driving today’s result?</h2></div></div>' + body + '</section>'
 
 
 def render_fishing_location(location: dict, result: dict, snapshot: dict, *, head_extra: str = "") -> str:
@@ -282,7 +340,7 @@ def render_fishing_location(location: dict, result: dict, snapshot: dict, *, hea
         "FACTOR_SECTION": _factor_section(result),
         "CONDITION_SECTION": _condition_section(snapshot, result),
         "TIDE_SECTION": _tide_section(snapshot),
-        "WHY_SECTION": _why_section(result),
+        "WHY_SECTION": _why_section(result, snapshot),
         "LINKS": links,
         "DISCLAIMER": escape(result.get("safety_disclaimer") or "Fishing Score is a planning metric, not a safety guarantee. Official warnings and local guidance always take priority."),
     })
