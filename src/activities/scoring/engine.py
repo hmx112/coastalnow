@@ -60,20 +60,29 @@ def rating_for_score(score: float) -> str:
 
 
 def group_local_days(hourly: list[dict], timezone_name: str, now: datetime) -> dict[str, list[dict]]:
-    """Split hourly rows into the location's local Today and Tomorrow calendars."""
+    """Split hourly rows into remaining local Today hours and Tomorrow.
+
+    An hourly row represents the one-hour period beginning at its timestamp. A row
+    whose period has already ended is not useful for a current planning recommendation,
+    so Today keeps the current in-progress hour and future hours only. Tomorrow keeps
+    the full local calendar day.
+    """
     if now.tzinfo is None or now.utcoffset() is None:
         raise ValueError("now must be timezone-aware")
     timezone = ZoneInfo(timezone_name)
-    local_today = now.astimezone(timezone).date()
+    local_now = now.astimezone(timezone)
+    local_today = local_now.date()
     local_tomorrow = local_today + timedelta(days=1)
     grouped = {"today": [], "tomorrow": []}
     for row in hourly:
         stamp = datetime.fromisoformat(row["time"])
         if stamp.tzinfo is None or stamp.utcoffset() is None:
             raise ValueError("hourly times must be offset-aware")
-        local_date = stamp.astimezone(timezone).date()
+        local_stamp = stamp.astimezone(timezone)
+        local_date = local_stamp.date()
         if local_date == local_today:
-            grouped["today"].append(row)
+            if local_stamp + timedelta(hours=1) > local_now:
+                grouped["today"].append(row)
         elif local_date == local_tomorrow:
             grouped["tomorrow"].append(row)
     return grouped
