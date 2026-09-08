@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "myrtle-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-08T10:03:21+00:00",
+  "generated_at_utc": "2026-09-08T11:29:45+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:21+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:45+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:21+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:45+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:21+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:45+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T04:39:00+00:00"
+      "fetched_at_utc": "2026-09-08T11:21:22+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:21+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:45+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-08T06:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": 83.7,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-09-08T07:00:00-04:00",
       "wind_mph": 14.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": 83.7,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-14T18:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 83.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": 83.7,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
@@ -1920,21 +1920,6 @@
         "headline": "Beach Hazards Statement issued September 8 at 2:38AM EDT until September 8 at 8:00PM EDT by NWS Wilmington NC",
         "description": "* WHAT...Strong east to west longshore current for south-facing\nbeaches. Strong north to south longshore current for east-facing\nbeaches. There is also a Moderate Risk of rip currents expected\nfor Horry County beaches.\n\n* WHERE...In North Carolina, Coastal Brunswick County. In South\nCarolina, Coastal Horry County.\n\n* WHEN...Today.\n\n* IMPACTS...Longshore currents can sweep swimmers and surfers\ninto rip currents, piers, jetties, and other hazardous areas.\nIt may sweep swimmers off their feet, making it difficult to\nreturn to shore.",
         "instruction": "Caution should be used when in or near the water. Check with\nlifeguards before entering the ocean for possible hazards you may\nbe swept into.",
-        "sender_name": "NWS Wilmington NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c49333c217a8d46518c6868efa184d2ebe9757c.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-08T02:28:00-04:00",
-        "onset": "2026-09-08T02:28:00-04:00",
-        "expires": "2026-09-08T07:00:00-04:00",
-        "ends": "2026-09-08T07:00:00-04:00",
-        "headline": "Small Craft Advisory issued September 8 at 2:28AM EDT until September 8 at 7:00AM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Seas 4 to 6 ft.\n\n* WHERE...Southeast North Carolina and Northeast South Carolina\ncoastal waters out 20 NM.\n\n* WHEN...Until 7 AM EDT this morning.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Wilmington NC"
       }
     ]
@@ -1971,8 +1956,8 @@
       "start": "2026-09-08",
       "end": "2026-09-14"
     },
-    "generated_at_utc": "2026-09-08T04:39:00+00:00",
-    "generated_at_local": "2026-09-08T00:39:00-04:00",
+    "generated_at_utc": "2026-09-08T11:21:22+00:00",
+    "generated_at_local": "2026-09-08T07:21:22-04:00",
     "hilo": [
       {
         "t": "2026-09-08 05:34",
@@ -2567,5 +2552,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

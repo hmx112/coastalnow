@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "carolina-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-08T10:03:11+00:00",
+  "generated_at_utc": "2026-09-08T11:29:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:11+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:33+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:11+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:33+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:11+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:33+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T04:38:59+00:00"
+      "fetched_at_utc": "2026-09-08T11:21:21+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-08T10:03:11+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:33+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-08T06:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-09-08T07:00:00-04:00",
       "wind_mph": 15.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-14T18:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 84.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
@@ -1920,21 +1920,6 @@
         "headline": "Rip Current Statement issued September 8 at 2:38AM EDT until September 8 at 8:00PM EDT by NWS Wilmington NC",
         "description": "* WHAT...Dangerous rip currents expected. A strong north to south\nlongshore current is also expected.\n\n* WHERE...In North Carolina, Coastal Pender and Coastal New\nHanover Counties. In South Carolina, Coastal Georgetown County.\n\n* WHEN...Today.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Wilmington NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c49333c217a8d46518c6868efa184d2ebe9757c.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-08T02:28:00-04:00",
-        "onset": "2026-09-08T02:28:00-04:00",
-        "expires": "2026-09-08T07:00:00-04:00",
-        "ends": "2026-09-08T07:00:00-04:00",
-        "headline": "Small Craft Advisory issued September 8 at 2:28AM EDT until September 8 at 7:00AM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Seas 4 to 6 ft.\n\n* WHERE...Southeast North Carolina and Northeast South Carolina\ncoastal waters out 20 NM.\n\n* WHEN...Until 7 AM EDT this morning.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Wilmington NC"
       }
     ]
@@ -1971,8 +1956,8 @@
       "start": "2026-09-08",
       "end": "2026-09-14"
     },
-    "generated_at_utc": "2026-09-08T04:38:59+00:00",
-    "generated_at_local": "2026-09-08T00:38:59-04:00",
+    "generated_at_utc": "2026-09-08T11:21:21+00:00",
+    "generated_at_local": "2026-09-08T07:21:21-04:00",
     "hilo": [
       {
         "t": "2026-09-07 04:39",
@@ -2587,5 +2572,5 @@
       "grid_y": 65
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

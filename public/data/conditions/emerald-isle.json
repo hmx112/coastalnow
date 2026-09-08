@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-08T10:03:13+00:00",
+  "generated_at_utc": "2026-09-08T11:29:36+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:13+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:36+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:13+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:36+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T10:03:13+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:36+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T04:38:59+00:00"
+      "fetched_at_utc": "2026-09-08T11:21:22+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-08T10:03:13+00:00"
+      "fetched_at_utc": "2026-09-08T11:29:36+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-08T06:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-09-08T07:00:00-04:00",
       "wind_mph": 12.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-14T18:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 83.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-09-08",
       "end": "2026-09-14"
     },
-    "generated_at_utc": "2026-09-08T04:38:59+00:00",
-    "generated_at_local": "2026-09-08T00:38:59-04:00",
+    "generated_at_utc": "2026-09-08T11:21:22+00:00",
+    "generated_at_local": "2026-09-08T07:21:21-04:00",
     "hilo": [
       {
         "t": "2026-09-07 04:34",
@@ -2556,5 +2556,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "hilton-head",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-08T10:03:19+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-08T10:03:19+00:00",
+  "generated_at_utc": "2026-09-08T11:29:43+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-08T11:29:43+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,19 +13,22 @@
   },
   "today": {
     "status": "Limited",
-    "score": 47.3,
-    "rating": "Poor",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "Limited",
     "best_window": {
-      "start": "2026-09-08T06:00:00-04:00",
-      "end": "2026-09-08T09:00:00-04:00"
+      "start": "2026-09-08T21:00:00-04:00",
+      "end": "2026-09-09T00:00:00-04:00"
     },
     "ranking_eligible": false,
     "reasons": [
-      "manageable-sea-state",
       "worsening-wind",
+      "wet-weather",
+      "coastal-flood-advisory",
       "small-craft-advisory",
-      "rip-current-statement"
+      "forecast-thunder-cap",
+      "favorable-tide-movement",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -48,32 +51,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-08T06:00:00-04:00",
-        "components": {
-          "tide": 34.0,
-          "wind": 55,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 100,
-          "solunar": 65.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 59.5,
-        "final_score": 59.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "small-craft-advisory"
-        ]
-      },
-      {
         "time": "2026-09-08T07:00:00-04:00",
         "components": {
           "tide": 16.2,
@@ -88,15 +65,14 @@
         "final_score": 54.1,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 69.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Limited",
         "available": true,
         "ranking_eligible": false,
         "reasons": [
           "manageable-sea-state",
-          "worsening-wind",
-          "small-craft-advisory"
+          "worsening-wind"
         ]
       },
       {
@@ -111,10 +87,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 68.1,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 69.0,
         "safety_penalty": 0,
         "confidence": "Limited",
         "available": true,
@@ -122,7 +98,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory"
         ]
       },
@@ -138,10 +114,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 75.7,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 69.0,
         "safety_penalty": 0,
         "confidence": "Limited",
         "available": true,
@@ -150,7 +126,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory"
         ]
       },
@@ -166,10 +142,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 73.7,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 69.0,
         "safety_penalty": 0,
         "confidence": "Limited",
         "available": true,
@@ -179,7 +155,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory"
         ]
       },
@@ -195,9 +171,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 67.9,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -207,7 +183,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
@@ -224,9 +200,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 55.8,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -236,7 +212,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
@@ -253,9 +229,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 47.2,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -265,7 +241,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
@@ -282,9 +258,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 64.4,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -293,7 +269,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
@@ -310,9 +286,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 68.1,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -322,7 +298,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "wind-cap-59",
           "forecast-thunder-cap"
@@ -340,9 +316,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 71.8,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -352,7 +328,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "wind-cap-59",
           "forecast-thunder-cap"
@@ -370,9 +346,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 68.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -382,7 +358,8 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
-          "rip-current-statement",
+          "coastal-flood-advisory",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "wind-cap-59",
           "forecast-thunder-cap"
@@ -400,9 +377,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 58.3,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -410,7 +387,8 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "rip-current-statement",
+          "coastal-flood-advisory",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "wind-cap-59",
           "forecast-thunder-cap"
@@ -428,9 +406,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 42.6,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -438,7 +416,8 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "rip-current-statement",
+          "coastal-flood-advisory",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "wind-cap-59",
           "forecast-thunder-cap"
@@ -456,9 +435,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 55.8,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -466,7 +445,8 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "rip-current-statement",
+          "coastal-flood-advisory",
+          "high-rip-current-risk",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
@@ -494,6 +474,7 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "forecast-thunder-cap"
         ]
