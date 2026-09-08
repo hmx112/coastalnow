@@ -26,6 +26,9 @@ SURFING_HARD_STOP_EVENTS = {
     "High Surf Warning",
     "Special Marine Warning",
     "Coastal Flood Warning",
+    "Small Craft Advisory",
+    "Rip Current Statement",
+    "Beach Hazards Statement",
 }
 
 
