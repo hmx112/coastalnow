@@ -15,6 +15,13 @@ ALERT_REFRESH = ROOT / ".github" / "workflows" / "update-activity-alerts.yml"
 WRITE_LOCK = "group: coastalnow-site-writes"
 
 
+def _assert_rebase_before_push(testcase: unittest.TestCase, text: str) -> None:
+    testcase.assertIn("git fetch origin main", text)
+    testcase.assertIn("git rebase origin/main", text)
+    testcase.assertLess(text.index("git fetch origin main"), text.index("git push"))
+    testcase.assertLess(text.index("git rebase origin/main"), text.index("git push"))
+
+
 class ActivityWorkflowTests(unittest.TestCase):
     def test_every_current_catalog_location_passes_activity_geography_validation(self):
         for slug, location in LOCATIONS.items():
@@ -80,6 +87,7 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("public/fishing", text)
         self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
+        _assert_rebase_before_push(self, text)
 
     def test_alert_refresh_runs_hourly_and_reuses_site_write_lock(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
@@ -92,6 +100,7 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("src/test_activity_attribution.py", text)
         self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
+        _assert_rebase_before_push(self, text)
 
     def test_alert_refresh_runs_after_activity_source_merges_without_self_trigger(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
