@@ -64,7 +64,8 @@ class ActivityScoringEngineTests(unittest.TestCase):
         self.assertIsNone(best_continuous_window(hourly, hours=3))
 
     def test_today_and_tomorrow_follow_location_calendar_not_utc(self):
-        # 2026-08-30 02:00 UTC is still Aug 29 evening in Los Angeles.
+        # 2026-08-30 02:00 UTC is Aug 29 7:00 PM in Los Angeles. The 6 PM hourly
+        # period has ended, so Today keeps only remaining local-day periods.
         now = datetime(2026, 8, 30, 2, 0, tzinfo=timezone.utc)
         hourly = [
             {"time": "2026-08-29T18:00:00-07:00"},
@@ -75,7 +76,6 @@ class ActivityScoringEngineTests(unittest.TestCase):
         ]
         grouped = group_local_days(hourly, "America/Los_Angeles", now)
         self.assertEqual([x["time"] for x in grouped["today"]], [
-            "2026-08-29T18:00:00-07:00",
             "2026-08-29T23:00:00-07:00",
         ])
         self.assertEqual([x["time"] for x in grouped["tomorrow"]], [
