@@ -1,8 +1,10 @@
 import unittest
 
 from activities.scoring.surfing_policy import (
+    SURFING_HARD_STOP_EVENTS,
     SURFING_WEIGHTS,
     score_surfing_hour,
+    surfing_safety_decision,
     wave_height_quality,
     wave_period_quality,
     wind_quality,
@@ -99,6 +101,19 @@ class SurfingPolicyTests(unittest.TestCase):
         )
         self.assertTrue(row["hard_stop"])
         self.assertEqual(row["safety_status"], "NOT RECOMMENDED")
+
+    def test_active_surf_relevant_nws_statements_hard_stop_numeric_score(self):
+        for event in ("Small Craft Advisory", "Rip Current Statement", "Beach Hazards Statement"):
+            with self.subTest(event=event):
+                self.assertIn(event, SURFING_HARD_STOP_EVENTS)
+                decision = surfing_safety_decision(
+                    GOOD_HOUR,
+                    [{"event": event, "headline": event, "description": "Dangerous coastal conditions expected."}],
+                    coast_bearing=270.0,
+                ).apply(95)
+                self.assertTrue(decision["hard_stop"])
+                self.assertEqual(decision["status"], "NOT RECOMMENDED")
+                self.assertIsNone(decision["final_score"])
 
     def test_not_recommended_priority_above_limited(self):
         hour = dict(GOOD_HOUR)
