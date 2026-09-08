@@ -13,7 +13,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run Surfing and current-planning regressions
+      - name: Run Activity regressions
         run: |
           python src/test_surfing_policy.py
           python src/test_activity_current_planning.py
+          python src/test_activity_scoring_engine.py
+          python src/test_activity_end_of_day.py
+          python src/test_fishing_safety.py
+          python src/test_activity_rendering.py
+          python src/test_surfing_rendering.py
+          python src/test_surfing_alert_details.py
+          python src/test_surfing_explanation.py
