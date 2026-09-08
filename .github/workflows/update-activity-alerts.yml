@@ -53,12 +53,13 @@ jobs:
           python src/test_activity_attribution.py
           python src/test_activity_seo_navigation.py
           python src/test_activity_workflows.py
+          python src/test_surfing_hub_sync.py
 
       - name: Commit refreshed Activity safety state
         shell: bash
         run: |
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
-          git add public/data/conditions public/data/activities public/fishing public/methodology public/tides public/index.html public/sitemap.xml public/robots.txt
+          git add public/data/conditions public/data/activities public/fishing public/surfing public/methodology public/tides public/index.html public/sitemap.xml public/robots.txt
           git diff --cached --quiet || git commit -m "Update coastal Activity safety alerts"
           git push
