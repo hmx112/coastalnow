@@ -13,4 +13,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python src/test_fishing_safety.py
+      - name: Run Fishing safety regressions
+        run: |
+          python src/test_fishing_safety.py
+          python src/test_activity_end_of_day.py
+          python src/test_activity_rendering.py
+      - name: Verify San Francisco active Beach Hazards state
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from datetime import datetime
+          from pathlib import Path
+
+          sys.path.insert(0, 'src')
+          from activities.scoring.fishing_policy import score_fishing_activity
+          from locations import LOCATIONS
+
+          snapshot = json.loads(Path('public/data/conditions/san-francisco.json').read_text())
+          now = datetime.fromisoformat('2026-09-07T18:30:00-07:00')
+          result = score_fishing_activity(snapshot, location=LOCATIONS['san-francisco'], now=now)
+          today = result['today']
+          assert today['status'] == 'NOT RECOMMENDED', today
+          assert today['score'] is None, today
+          assert today['rating'] is None, today
+          assert today['ranking_eligible'] is False, today
+          assert 'beach-hazards-statement' in today['reasons'], today
+          print(today)
+          PY
