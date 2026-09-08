@@ -1,0 +1,50 @@
+name: Apply Surfing active alert hard stop
+
+on:
+  push:
+    branches:
+      - fix/surfing-active-alert-hard-stop
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/surfing-active-alert-hard-stop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add surf-relevant NWS statements to hard stops
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/activities/scoring/surfing_policy.py')
+          text = path.read_text()
+          anchor = '    "Coastal Flood Warning",\n}'
+          replacement = (
+              '    "Coastal Flood Warning",\n'
+              '    "Small Craft Advisory",\n'
+              '    "Rip Current Statement",\n'
+              '    "Beach Hazards Statement",\n'
+              '}'
+          )
+          if '    "Beach Hazards Statement",\n}' not in text:
+              if anchor not in text:
+                  raise SystemExit('Surfing hard-stop anchor not found')
+              path.write_text(text.replace(anchor, replacement, 1))
+          PY
+      - name: Run Surfing policy regression
+        run: python src/test_surfing_policy.py
+      - name: Commit implementation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/activities/scoring/surfing_policy.py
+          git diff --cached --quiet || git commit -m "Block Surfing scores during active coastal safety alerts"
+          git push origin HEAD:fix/surfing-active-alert-hard-stop
