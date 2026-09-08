@@ -154,15 +154,7 @@ def surfing_safety_decision(hour: dict, alerts: list[dict], *, coast_bearing: fl
         if event in SURFING_HARD_STOP_EVENTS:
             decision.add_hard_stop(event.lower().replace(" ", "-"))
             continue
-        if event == "Rip Current Statement":
-            text = " ".join(str(item.get(name) or "") for name in ("headline", "description")).lower()
-            if "high rip current risk" in text:
-                decision.add_hard_stop("high-rip-current-risk")
-            else:
-                decision.add_cap(39, "rip-current-statement")
-        elif event == "Small Craft Advisory":
-            decision.add_cap(69, "small-craft-advisory")
-        elif event == "Dense Fog Advisory":
+        if event == "Dense Fog Advisory":
             decision.add_penalty(15, "dense-fog-advisory")
         elif event == "Coastal Flood Advisory":
             decision.add_cap(59, "coastal-flood-advisory")
@@ -292,6 +284,20 @@ def _alert_active_at(item: dict, timestamp: str) -> bool:
     return True
 
 
+def _active_hard_stop_reasons(alerts: list[dict], timestamp: str) -> list[str]:
+    reasons: list[str] = []
+    for item in alerts:
+        if not _alert_active_at(item, timestamp):
+            continue
+        event = str(item.get("event") or "").strip()
+        if event not in SURFING_HARD_STOP_EVENTS:
+            continue
+        reason = event.lower().replace(" ", "-")
+        if reason not in reasons:
+            reasons.append(reason)
+    return reasons
+
+
 def _unique_reasons(rows: list[dict]) -> list[str]:
     seen: set[str] = set()
     output: list[str] = []
@@ -384,6 +390,20 @@ def score_surfing_activity(snapshot: dict, *, location: dict, now: datetime) -> 
             )
         scored_days[label] = rows
 
+    today = _summarize_day(scored_days["today"])
+    active_now_reasons = _active_hard_stop_reasons(all_alerts, now.isoformat())
+    if active_now_reasons:
+        today = {
+            "status": "NOT RECOMMENDED",
+            "score": None,
+            "rating": None,
+            "confidence": today.get("confidence") or "Unavailable",
+            "best_window": None,
+            "ranking_eligible": False,
+            "reasons": active_now_reasons,
+        }
+    tomorrow = _summarize_day(scored_days["tomorrow"])
+
     return {
         "schema_version": 1,
         "activity": "surfing",
@@ -392,8 +412,8 @@ def score_surfing_activity(snapshot: dict, *, location: dict, now: datetime) -> 
         "generated_at_utc": now.isoformat(timespec="seconds"),
         "input_snapshot_generated_at_utc": snapshot.get("generated_at_utc"),
         "freshness": freshness,
-        "today": _summarize_day(scored_days["today"]),
-        "tomorrow": _summarize_day(scored_days["tomorrow"]),
+        "today": today,
+        "tomorrow": tomorrow,
         "hourly": scored_days,
         "scope": "general coastal surf planning; not break-specific",
         "safety_disclaimer": (
