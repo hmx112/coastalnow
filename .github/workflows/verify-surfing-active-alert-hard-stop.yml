@@ -24,3 +24,34 @@ jobs:
           python src/test_surfing_rendering.py
           python src/test_surfing_alert_details.py
           python src/test_surfing_explanation.py
+      - name: Verify Wrightsville Beach at reported time
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from datetime import datetime
+          from pathlib import Path
+
+          sys.path.insert(0, 'src')
+          from activities.rendering.surfing_page import render_surfing_location
+          from activities.scoring.surfing_policy import score_surfing_activity
+          from locations import LOCATIONS
+
+          snapshot = json.loads(Path('public/data/conditions/wrightsville-beach.json').read_text())
+          now = datetime.fromisoformat('2026-09-07T23:19:00-04:00')
+          result = score_surfing_activity(snapshot, location=LOCATIONS['wrightsville-beach'], now=now)
+          today = result['today']
+          assert today['status'] == 'NOT RECOMMENDED', today
+          assert today['score'] is None, today
+          assert today['best_window'] is None, today
+          assert today['ranking_eligible'] is False, today
+          assert 'small-craft-advisory' in today['reasons'], today
+
+          html = render_surfing_location(LOCATIONS['wrightsville-beach'], result, snapshot)
+          score_card = html.split('class="activity-score-card', 1)[1].split('</section>', 1)[0]
+          assert 'NOT RECOMMENDED' in score_card
+          assert 'activity-score-value' not in score_card
+          assert 'Best Surf Planning Window' not in score_card
+          assert 'Safety condition takes priority — hourly numerical planning score is not shown.' in html
+          print(today)
+          PY
