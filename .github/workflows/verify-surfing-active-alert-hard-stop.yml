@@ -13,5 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run Surfing alert regression
-        run: python src/test_surfing_policy.py
+      - name: Run Surfing and current-planning regressions
+        run: |
+          python src/test_surfing_policy.py
+          python src/test_activity_current_planning.py
