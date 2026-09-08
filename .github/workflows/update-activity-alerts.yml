@@ -41,9 +41,11 @@ jobs:
       - name: Run safety-focused regressions
         run: |
           python src/test_activity_conditions.py
+          python src/test_activity_current_planning.py
           python src/test_activity_safety.py
           python src/test_fishing_safety.py
           python src/test_fishing_alert_details.py
+          python src/test_surfing_policy.py
           python src/test_activity_end_of_day.py
           python src/test_activity_generation.py
           python src/test_activity_stale_forecast_fallback.py
