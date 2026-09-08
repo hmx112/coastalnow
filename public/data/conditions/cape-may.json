@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cape-may",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-08T16:45:34+00:00",
+  "generated_at_utc": "2026-09-08T18:56:51+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-08T16:45:34+00:00"
+      "fetched_at_utc": "2026-09-08T18:56:51+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ab23f23d48a358098c61a51b044d3cf96701f434.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-08T14:00:00-04:00",
+        "onset": "2026-09-09T16:00:00-04:00",
+        "expires": "2026-09-09T05:00:00-04:00",
+        "ends": "2026-09-10T14:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 8 at 2:00PM EDT until September 10 at 2:00PM EDT by NWS Mount Holly NJ",
+        "description": "* WHAT...Southwest winds 15 to 25 kt with gusts up to 30 kt and\nseas 3 to 6 ft expected.\n\n* WHERE...Coastal waters from Sandy Hook to Manasquan Inlet NJ\nout 20 NM, Coastal waters from Manasquan Inlet to Little Egg\nInlet NJ out 20 NM, Coastal waters from Little Egg Inlet to\nGreat Egg Inlet NJ out 20 NM and Coastal waters from Great Egg\nInlet to Cape May NJ out 20 NM.\n\n* WHEN...From 4 PM Wednesday to 2 PM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Mount Holly NJ"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
