@@ -51,6 +51,23 @@ class FishingSafetyTests(unittest.TestCase):
             self.assertEqual(result["status"], "NOT RECOMMENDED", event)
             self.assertIsNone(result["final_score"], event)
 
+    def test_active_beach_hazards_statement_blocks_numeric_fishing_score(self):
+        result = fishing_safety_decision(
+            {"wind_mph": 8, "gust_mph": 12, "wave_height_ft": 3, "wave_period_s": 7, "condition_text": "Clear"},
+            [alert(
+                "Beach Hazards Statement",
+                description=(
+                    "Increased risk of sneaker waves and strong rip currents. "
+                    "Breaking waves to around 10 feet expected."
+                ),
+            )],
+            coast_bearing=270,
+        ).apply(95)
+        self.assertTrue(result["hard_stop"])
+        self.assertEqual(result["status"], "NOT RECOMMENDED")
+        self.assertIsNone(result["final_score"])
+        self.assertIn("beach-hazards-statement", result["reasons"])
+
     def test_high_rip_current_risk_is_hard_stop_other_statement_is_strong_cap(self):
         high = fishing_safety_decision(
             {"wind_mph": 8, "gust_mph": 10, "wave_height_ft": 2, "wave_period_s": 8, "condition_text": "Clear"},
