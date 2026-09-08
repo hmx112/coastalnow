@@ -1,0 +1,16 @@
+name: Verify Surfing hub sync
+
+on:
+  push:
+    branches:
+      - fix/surfing-hub-stale-rankings
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python src/test_surfing_hub_sync.py
