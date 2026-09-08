@@ -38,6 +38,7 @@ class FishingSafetyTests(unittest.TestCase):
             "Special Marine Warning",
             "Coastal Flood Warning",
             "Flash Flood Warning",
+            "Beach Hazards Statement",
         }
         self.assertEqual(FISHING_HARD_STOP_EVENTS, expected)
         for event in sorted(expected):
