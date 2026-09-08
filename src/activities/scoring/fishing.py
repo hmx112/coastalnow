@@ -35,6 +35,7 @@ FISHING_HARD_STOP_EVENTS = {
     "Special Marine Warning",
     "Coastal Flood Warning",
     "Flash Flood Warning",
+    "Beach Hazards Statement",
 }
 
 
