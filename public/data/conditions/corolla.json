@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-07T23:36:09+00:00",
+  "generated_at_utc": "2026-09-08T00:39:00+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-07T23:36:09+00:00"
+      "fetched_at_utc": "2026-09-08T00:39:00+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.27fc3857418c0d9930f0b57381f3e0c086959485.006.1",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-07T14:21:00-04:00",
-        "onset": "2026-09-07T14:21:00-04:00",
-        "expires": "2026-09-07T20:00:00-04:00",
-        "ends": "2026-09-07T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued September 7 at 2:21PM EDT until September 7 at 8:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...High risk for rip currents expected.\n\n* WHERE...In North Carolina, Eastern Currituck County. In\nVirginia, Virginia Beach.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Breaking waves of 4 ft will result in rough surf\nconditions and a high risk of rip currents.",
-        "instruction": "Remain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
