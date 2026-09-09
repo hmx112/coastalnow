@@ -1,0 +1,48 @@
+name: Apply Fishing 24-hour forecast
+
+on:
+  push:
+    branches:
+      - feat/fishing-24h-hourly-forecast
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/fishing-24h-hourly-forecast
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply 24-hour Fishing forecast renderer
+        env:
+          HOURLY_SECTION_B64: ZGVmIF9ob3VybHlfc2VjdGlvbihyZXN1bHQ6IGRpY3QpIC0+IHN0cjoKICAgIGhvdXJseSA9IHJlc3VsdC5nZXQoImhvdXJseSIpIG9yIHt9CiAgICByb3dzID0gbGlzdChob3VybHkuZ2V0KCJ0b2RheSIpIG9yIFtdKSArIGxpc3QoaG91cmx5LmdldCgidG9tb3Jyb3ciKSBvciBbXSkKICAgIHJvd3MgPSBzb3J0ZWQocm93cywga2V5PWxhbWJkYSByb3c6IHJvdy5nZXQoInRpbWUiKSBvciAiIilbOjI0XQoKICAgIGlmIG5vdCByb3dzOgogICAgICAgIGJvZHkgPSAnPGRpdiBjbGFzcz0iYWN0aXZpdHktZW1wdHkiPjI0LWhvdXIgRmlzaGluZyBDb25kaXRpb25zIEZvcmVjYXN0IGlzIHVuYXZhaWxhYmxlLjwvZGl2PicKICAgIGVsc2U6CiAgICAgICAgaXRlbXMgPSBbXQogICAgICAgIGZvciByb3cgaW4gcm93czoKICAgICAgICAgICAgc2NvcmUgPSByb3cuZ2V0KCJmaW5hbF9zY29yZSIpCiAgICAgICAgICAgIGNvbmZpZGVuY2UgPSByb3cuZ2V0KCJjb25maWRlbmNlIikgb3IgIlVuYXZhaWxhYmxlIgogICAgICAgICAgICBpZiByb3cuZ2V0KCJoYXJkX3N0b3AiKToKICAgICAgICAgICAgICAgIHNjb3JlX3RleHQsIHdpZHRoLCBkZXRhaWwgPSAiTk9UIFJFQ09NTUVOREVEIiwgMCwgIkFsZXJ0IGFjdGl2ZSIKICAgICAgICAgICAgZWxpZiBjb25maWRlbmNlIGluIHsiTGltaXRlZCIsICJVbmF2YWlsYWJsZSJ9OgogICAgICAgICAgICAgICAgc2NvcmVfdGV4dCwgd2lkdGgsIGRldGFpbCA9IGNvbmZpZGVuY2UsIDAsIGNvbmZpZGVuY2UKICAgICAgICAgICAgZWxpZiBzY29yZSBpcyBOb25lOgogICAgICAgICAgICAgICAgc2NvcmVfdGV4dCwgd2lkdGgsIGRldGFpbCA9ICLigJQiLCAwLCBjb25maWRlbmNlCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBzY29yZV90ZXh0ID0gZiJ7c2NvcmU6Z30iCiAgICAgICAgICAgICAgICB3aWR0aCA9IG1heCgwLCBtaW4oMTAwLCBmbG9hdChzY29yZSkpKQogICAgICAgICAgICAgICAgZGV0YWlsID0gY29uZmlkZW5jZQogICAgICAgICAgICBpdGVtcy5hcHBlbmQoCiAgICAgICAgICAgICAgICAnPGRpdiBjbGFzcz0iYWN0aXZpdHktaG91ci1yb3ciPicKICAgICAgICAgICAgICAgIGYnPHNwYW4+e2VzY2FwZShfZm10X3RpbWUocm93WyJ0aW1lIl0pKX08L3NwYW4+JwogICAgICAgICAgICAgICAgZic8ZGl2IGNsYXNzPSJhY3Rpdml0eS1ob3VyLXRyYWNrIj48aSBzdHlsZT0id2lkdGg6e3dpZHRoOmd9JSI+PC9pPjwvZGl2PicKICAgICAgICAgICAgICAgIGYnPHN0cm9uZz57ZXNjYXBlKHNjb3JlX3RleHQpfTwvc3Ryb25nPjxzbWFsbD57ZXNjYXBlKGRldGFpbCl9PC9zbWFsbD4nCiAgICAgICAgICAgICAgICAnPC9kaXY+JwogICAgICAgICAgICApCiAgICAgICAgYm9keSA9ICc8ZGl2IGNsYXNzPSJhY3Rpdml0eS1ob3VybHktbGlzdCI+JyArICIiLmpvaW4oaXRlbXMpICsgIjwvZGl2PiIKICAgIHJldHVybiAoCiAgICAgICAgJzxzZWN0aW9uIGNsYXNzPSJzZWN0aW9uIGFjdGl2aXR5LXBhbmVsIj48ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWQiPjxkaXY+JwogICAgICAgICc8cCBjbGFzcz0iZXllYnJvdyI+TkVYVCAyNCBIT1VSUzwvcD48aDI+MjQtSG91ciBGaXNoaW5nIENvbmRpdGlvbnMgRm9yZWNhc3Q8L2gyPjwvZGl2PicKICAgICAgICAnPHA+MOKAkzEwMCBzY29yZSDCtyBMb2NhbCB0aW1lIMK3IFNhZmV0eSBoYXJkLXN0b3AgaG91cnMgc2hvdyBOT1QgUkVDT01NRU5ERUQ8L3A+PC9kaXY+JwogICAgICAgICsgYm9keSArICc8L3NlY3Rpb24+JwogICAgKQo=
+        run: |
+          python - <<'PY'
+          import base64, os
+          from pathlib import Path
+          path = Path('src/activities/rendering/location_page.py')
+          text = path.read_text()
+          start = text.index('def _hourly_section(result: dict) -> str:\n')
+          end = text.index('\n\ndef _factor_section(result: dict) -> str:\n', start)
+          new = base64.b64decode(os.environ['HOURLY_SECTION_B64']).decode()
+          path.write_text(text[:start] + new + text[end:])
+          PY
+      - name: Run focused regressions
+        run: |
+          python src/test_fishing_24h_forecast.py
+          python src/test_activity_rendering.py
+          python src/test_fishing_safety.py
+          python src/test_fishing_alert_details.py
+      - name: Commit implementation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/activities/rendering/location_page.py
+          git diff --cached --quiet || git commit -m "Show next 24 hours in Fishing forecast"
+          git push origin HEAD:feat/fishing-24h-hourly-forecast
