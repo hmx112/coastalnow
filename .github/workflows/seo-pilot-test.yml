@@ -1,0 +1,32 @@
+name: SEO Pilot Test
+
+on:
+  push:
+    branches:
+      - feat/huntington-seo-pilot
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  tide-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Huntington pilot and tide regression tests
+        run: |
+          python src/test_huntington_seo_pilot.py
+          python src/test_generate_tides_activity_cta.py
+          python src/test_generate_tides.py
+          python src/test_seo_generation.py
+          python src/test_tide_body_activity_cta.py
