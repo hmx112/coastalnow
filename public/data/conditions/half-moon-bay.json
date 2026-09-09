@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "half-moon-bay",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-09T10:04:27+00:00",
+  "generated_at_utc": "2026-09-09T11:34:53+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-09T10:04:27+00:00"
+      "fetched_at_utc": "2026-09-09T11:34:53+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-09T10:04:27+00:00"
+      "fetched_at_utc": "2026-09-09T11:34:53+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-09T10:04:27+00:00"
+      "fetched_at_utc": "2026-09-09T11:34:53+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-09T06:11:29+00:00"
+      "fetched_at_utc": "2026-09-09T11:25:47+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-09T10:04:27+00:00"
+      "fetched_at_utc": "2026-09-09T11:34:53+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-09T03:00:00-07:00",
-      "wind_mph": 0.0,
-      "gust_mph": 2.302,
-      "wind_direction_deg": null,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-09-09T04:00:00-07:00",
       "wind_mph": 0.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-09-15T15:00:00-07:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94e48368c392ab3901ebe7c3456160d1a2dd9a4c.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ac96bb01ba9fddc9e7545fa02ccb84a8c78b799e.001.1",
         "event": "Heat Advisory",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-08T19:33:00-07:00",
-        "onset": "2026-09-08T19:33:00-07:00",
-        "expires": "2026-09-09T09:00:00-07:00",
+        "effective": "2026-09-09T03:14:00-07:00",
+        "onset": "2026-09-09T03:14:00-07:00",
+        "expires": "2026-09-10T22:00:00-07:00",
         "ends": "2026-09-10T22:00:00-07:00",
-        "headline": "Heat Advisory issued September 8 at 7:33PM PDT until September 10 at 10:00PM PDT by NWS San Francisco CA",
-        "description": "* WHAT...Hot conditions with temperatures 10 to 20 degrees above\nnormal during the day, with overnight lows also running 10 to 20\ndegrees above normal.\n\n* WHERE...Bay Area and Central Coast.\n\n* WHEN...Until 10 PM PDT Thursday.\n\n* IMPACTS...This level of heat affects most individuals sensitive\nto heat, especially those without effective cooling and/or\nadequate hydration. Impacts possible in some health systems and\nin heat-sensitive industries. Hot conditions can cause heat\nillnesses.",
+        "headline": "Heat Advisory issued September 9 at 3:14AM PDT until September 10 at 10:00PM PDT by NWS San Francisco CA",
+        "description": "* WHAT...Hot conditions with temperatures 10 to 20 degrees above\nnormal during the day, with overnight lows also running 10 to 20\ndegrees above normal.\n\n* WHERE...Bay Area and Central Coast.\n\n* WHEN...Until 10 PM PDT Thursday.\n\n* IMPACTS...This level of heat affects most individuals sensitive to\nheat, especially those without effective cooling and/or adequate\nhydration. Impacts possible in some health systems and in\nheat-sensitive industries. Hot conditions can cause heat illnesses.",
         "instruction": "Hydration is a critical piece to surviving the heat. Drink water, and\nif possible, take water to those who are vulnerable.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to the early\nmorning or evening. Take action when you experience symptoms of heat\nexhaustion and/or heat stroke.\n\nBeat the heat and check the backseat! Do not leave young children or\npets in unattended vehicles. Car interiors will reach lethal\ntemperatures in a matter of minutes.",
         "sender_name": "NWS San Francisco CA"
       }
@@ -1953,32 +1953,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-09-08",
-      "end": "2026-09-14"
+      "start": "2026-09-09",
+      "end": "2026-09-15"
     },
-    "generated_at_utc": "2026-09-09T06:11:29+00:00",
-    "generated_at_local": "2026-09-08T23:11:29-07:00",
+    "generated_at_utc": "2026-09-09T11:25:47+00:00",
+    "generated_at_local": "2026-09-09T04:25:47-07:00",
     "hilo": [
-      {
-        "t": "2026-09-08 03:21",
-        "v": -0.567,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-08 09:59",
-        "v": 4.759,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-08 15:10",
-        "v": 2.241,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-08 21:07",
-        "v": 6.242,
-        "type": "H"
-      },
       {
         "t": "2026-09-09 04:04",
         "v": -0.508,
@@ -2113,201 +2093,29 @@
         "t": "2026-09-15 20:48",
         "v": 0.691,
         "type": "L"
+      },
+      {
+        "t": "2026-09-16 03:18",
+        "v": 3.831,
+        "type": "H"
+      },
+      {
+        "t": "2026-09-16 07:56",
+        "v": 2.776,
+        "type": "L"
+      },
+      {
+        "t": "2026-09-16 14:14",
+        "v": 5.264,
+        "type": "H"
+      },
+      {
+        "t": "2026-09-16 21:48",
+        "v": 0.841,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-09-08 00:00",
-        "v": 2.459
-      },
-      {
-        "t": "2026-09-08 00:30",
-        "v": 1.734
-      },
-      {
-        "t": "2026-09-08 01:00",
-        "v": 1.067
-      },
-      {
-        "t": "2026-09-08 01:30",
-        "v": 0.486
-      },
-      {
-        "t": "2026-09-08 02:00",
-        "v": 0.014
-      },
-      {
-        "t": "2026-09-08 02:30",
-        "v": -0.329
-      },
-      {
-        "t": "2026-09-08 03:00",
-        "v": -0.525
-      },
-      {
-        "t": "2026-09-08 03:30",
-        "v": -0.56
-      },
-      {
-        "t": "2026-09-08 04:00",
-        "v": -0.43
-      },
-      {
-        "t": "2026-09-08 04:30",
-        "v": -0.144
-      },
-      {
-        "t": "2026-09-08 05:00",
-        "v": 0.278
-      },
-      {
-        "t": "2026-09-08 05:30",
-        "v": 0.803
-      },
-      {
-        "t": "2026-09-08 06:00",
-        "v": 1.398
-      },
-      {
-        "t": "2026-09-08 06:30",
-        "v": 2.025
-      },
-      {
-        "t": "2026-09-08 07:00",
-        "v": 2.651
-      },
-      {
-        "t": "2026-09-08 07:30",
-        "v": 3.24
-      },
-      {
-        "t": "2026-09-08 08:00",
-        "v": 3.763
-      },
-      {
-        "t": "2026-09-08 08:30",
-        "v": 4.192
-      },
-      {
-        "t": "2026-09-08 09:00",
-        "v": 4.509
-      },
-      {
-        "t": "2026-09-08 09:30",
-        "v": 4.699
-      },
-      {
-        "t": "2026-09-08 10:00",
-        "v": 4.759
-      },
-      {
-        "t": "2026-09-08 10:30",
-        "v": 4.691
-      },
-      {
-        "t": "2026-09-08 11:00",
-        "v": 4.506
-      },
-      {
-        "t": "2026-09-08 11:30",
-        "v": 4.226
-      },
-      {
-        "t": "2026-09-08 12:00",
-        "v": 3.881
-      },
-      {
-        "t": "2026-09-08 12:30",
-        "v": 3.507
-      },
-      {
-        "t": "2026-09-08 13:00",
-        "v": 3.139
-      },
-      {
-        "t": "2026-09-08 13:30",
-        "v": 2.807
-      },
-      {
-        "t": "2026-09-08 14:00",
-        "v": 2.534
-      },
-      {
-        "t": "2026-09-08 14:30",
-        "v": 2.342
-      },
-      {
-        "t": "2026-09-08 15:00",
-        "v": 2.247
-      },
-      {
-        "t": "2026-09-08 15:30",
-        "v": 2.268
-      },
-      {
-        "t": "2026-09-08 16:00",
-        "v": 2.414
-      },
-      {
-        "t": "2026-09-08 16:30",
-        "v": 2.685
-      },
-      {
-        "t": "2026-09-08 17:00",
-        "v": 3.065
-      },
-      {
-        "t": "2026-09-08 17:30",
-        "v": 3.528
-      },
-      {
-        "t": "2026-09-08 18:00",
-        "v": 4.039
-      },
-      {
-        "t": "2026-09-08 18:30",
-        "v": 4.563
-      },
-      {
-        "t": "2026-09-08 19:00",
-        "v": 5.066
-      },
-      {
-        "t": "2026-09-08 19:30",
-        "v": 5.515
-      },
-      {
-        "t": "2026-09-08 20:00",
-        "v": 5.879
-      },
-      {
-        "t": "2026-09-08 20:30",
-        "v": 6.128
-      },
-      {
-        "t": "2026-09-08 21:00",
-        "v": 6.238
-      },
-      {
-        "t": "2026-09-08 21:30",
-        "v": 6.196
-      },
-      {
-        "t": "2026-09-08 22:00",
-        "v": 5.993
-      },
-      {
-        "t": "2026-09-08 22:30",
-        "v": 5.635
-      },
-      {
-        "t": "2026-09-08 23:00",
-        "v": 5.135
-      },
-      {
-        "t": "2026-09-08 23:30",
-        "v": 4.515
-      },
       {
         "t": "2026-09-09 00:00",
         "v": 3.807
@@ -2499,6 +2307,198 @@
       {
         "t": "2026-09-09 23:30",
         "v": 5.447
+      },
+      {
+        "t": "2026-09-10 00:00",
+        "v": 4.909
+      },
+      {
+        "t": "2026-09-10 00:30",
+        "v": 4.264
+      },
+      {
+        "t": "2026-09-10 01:00",
+        "v": 3.546
+      },
+      {
+        "t": "2026-09-10 01:30",
+        "v": 2.794
+      },
+      {
+        "t": "2026-09-10 02:00",
+        "v": 2.049
+      },
+      {
+        "t": "2026-09-10 02:30",
+        "v": 1.355
+      },
+      {
+        "t": "2026-09-10 03:00",
+        "v": 0.748
+      },
+      {
+        "t": "2026-09-10 03:30",
+        "v": 0.261
+      },
+      {
+        "t": "2026-09-10 04:00",
+        "v": -0.078
+      },
+      {
+        "t": "2026-09-10 04:30",
+        "v": -0.247
+      },
+      {
+        "t": "2026-09-10 05:00",
+        "v": -0.234
+      },
+      {
+        "t": "2026-09-10 05:30",
+        "v": -0.042
+      },
+      {
+        "t": "2026-09-10 06:00",
+        "v": 0.317
+      },
+      {
+        "t": "2026-09-10 06:30",
+        "v": 0.814
+      },
+      {
+        "t": "2026-09-10 07:00",
+        "v": 1.415
+      },
+      {
+        "t": "2026-09-10 07:30",
+        "v": 2.083
+      },
+      {
+        "t": "2026-09-10 08:00",
+        "v": 2.779
+      },
+      {
+        "t": "2026-09-10 08:30",
+        "v": 3.463
+      },
+      {
+        "t": "2026-09-10 09:00",
+        "v": 4.093
+      },
+      {
+        "t": "2026-09-10 09:30",
+        "v": 4.629
+      },
+      {
+        "t": "2026-09-10 10:00",
+        "v": 5.037
+      },
+      {
+        "t": "2026-09-10 10:30",
+        "v": 5.293
+      },
+      {
+        "t": "2026-09-10 11:00",
+        "v": 5.386
+      },
+      {
+        "t": "2026-09-10 11:30",
+        "v": 5.321
+      },
+      {
+        "t": "2026-09-10 12:00",
+        "v": 5.109
+      },
+      {
+        "t": "2026-09-10 12:30",
+        "v": 4.768
+      },
+      {
+        "t": "2026-09-10 13:00",
+        "v": 4.323
+      },
+      {
+        "t": "2026-09-10 13:30",
+        "v": 3.803
+      },
+      {
+        "t": "2026-09-10 14:00",
+        "v": 3.247
+      },
+      {
+        "t": "2026-09-10 14:30",
+        "v": 2.694
+      },
+      {
+        "t": "2026-09-10 15:00",
+        "v": 2.186
+      },
+      {
+        "t": "2026-09-10 15:30",
+        "v": 1.757
+      },
+      {
+        "t": "2026-09-10 16:00",
+        "v": 1.439
+      },
+      {
+        "t": "2026-09-10 16:30",
+        "v": 1.256
+      },
+      {
+        "t": "2026-09-10 17:00",
+        "v": 1.221
+      },
+      {
+        "t": "2026-09-10 17:30",
+        "v": 1.342
+      },
+      {
+        "t": "2026-09-10 18:00",
+        "v": 1.614
+      },
+      {
+        "t": "2026-09-10 18:30",
+        "v": 2.017
+      },
+      {
+        "t": "2026-09-10 19:00",
+        "v": 2.524
+      },
+      {
+        "t": "2026-09-10 19:30",
+        "v": 3.102
+      },
+      {
+        "t": "2026-09-10 20:00",
+        "v": 3.713
+      },
+      {
+        "t": "2026-09-10 20:30",
+        "v": 4.319
+      },
+      {
+        "t": "2026-09-10 21:00",
+        "v": 4.879
+      },
+      {
+        "t": "2026-09-10 21:30",
+        "v": 5.353
+      },
+      {
+        "t": "2026-09-10 22:00",
+        "v": 5.704
+      },
+      {
+        "t": "2026-09-10 22:30",
+        "v": 5.904
+      },
+      {
+        "t": "2026-09-10 23:00",
+        "v": 5.939
+      },
+      {
+        "t": "2026-09-10 23:30",
+        "v": 5.807
       }
     ]
   },
@@ -2552,5 +2552,5 @@
       "grid_y": 94
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
