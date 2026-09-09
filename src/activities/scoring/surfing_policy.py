@@ -151,13 +151,8 @@ def surfing_safety_decision(hour: dict, alerts: list[dict], *, coast_bearing: fl
 
     for item in alerts:
         event = str(item.get("event") or "").strip()
-        if event in SURFING_HARD_STOP_EVENTS:
+        if event:
             decision.add_hard_stop(event.lower().replace(" ", "-"))
-            continue
-        if event == "Dense Fog Advisory":
-            decision.add_penalty(15, "dense-fog-advisory")
-        elif event == "Coastal Flood Advisory":
-            decision.add_cap(59, "coastal-flood-advisory")
 
     sustained = hour.get("wind_mph")
     gust = hour.get("gust_mph")
@@ -290,7 +285,7 @@ def _active_hard_stop_reasons(alerts: list[dict], timestamp: str) -> list[str]:
         if not _alert_active_at(item, timestamp):
             continue
         event = str(item.get("event") or "").strip()
-        if event not in SURFING_HARD_STOP_EVENTS:
+        if not event:
             continue
         reason = event.lower().replace(" ", "-")
         if reason not in reasons:
