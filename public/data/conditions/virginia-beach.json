@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "virginia-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-09T16:47:21+00:00",
+  "generated_at_utc": "2026-09-09T18:50:19+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-09T16:47:21+00:00"
+      "fetched_at_utc": "2026-09-09T18:50:19+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e0bbaaf5401b09d2fbe495e6bd4524f18100f910.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-09T14:40:00-04:00",
+        "onset": "2026-09-09T19:00:00-04:00",
+        "expires": "2026-09-09T22:45:00-04:00",
+        "ends": "2026-09-10T13:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 9 at 2:40PM EDT until September 10 at 1:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Southwest winds 15 to 20 kt with gusts up to 25 kt and\nseas 3 to 4 ft expected.\n\n* WHERE...Coastal Waters from Cape Charles Light to Virginia-\nNorth Carolina border out 20 NM.\n\n* WHEN...From 7 PM this evening to 1 PM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2551,5 +2567,5 @@
       "grid_y": 54
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
