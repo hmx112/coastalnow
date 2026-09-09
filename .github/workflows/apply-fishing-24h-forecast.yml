@@ -32,6 +32,11 @@ jobs:
           end = text.index('\n\ndef _factor_section(result: dict) -> str:\n', start)
           new = base64.b64decode(os.environ['HOURLY_SECTION_B64']).decode()
           path.write_text(text[:start] + new + text[end:])
+
+          test_path = Path('src/test_activity_rendering.py')
+          test_text = test_path.read_text()
+          test_text = test_text.replace('self.assertIn("Hourly Fishing Score", html)', 'self.assertIn("24-Hour Fishing Conditions Forecast", html)')
+          test_path.write_text(test_text)
           PY
       - name: Run focused regressions
         run: |
@@ -43,6 +48,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/activities/rendering/location_page.py
+          git add src/activities/rendering/location_page.py src/test_activity_rendering.py
           git diff --cached --quiet || git commit -m "Show next 24 hours in Fishing forecast"
           git push origin HEAD:feat/fishing-24h-hourly-forecast
