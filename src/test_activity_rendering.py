@@ -85,7 +85,7 @@ class ActivityRenderingTests(unittest.TestCase):
         self.assertIn("Confidence", html)
         self.assertIn("High", html)
         self.assertIn("Why this score?", html)
-        self.assertIn("Hourly Fishing Score", html)
+        self.assertIn("24-Hour Fishing Conditions Forecast", html)
         self.assertIn("Tide movement", html)
         self.assertIn("Wind", html)
         self.assertIn("Wave / sea state", html)

@@ -158,39 +158,41 @@ def _day_cards(result: dict) -> str:
 
 
 def _hourly_section(result: dict) -> str:
-    day = result.get("today") or {}
-    status = day.get("status") or "Unavailable"
-    rows = (result.get("hourly") or {}).get("today") or []
-    if status == "NOT RECOMMENDED":
-        body = '<div class="activity-empty">Safety condition takes priority — hourly numerical recommendation is not shown.</div>'
-    elif _limited_or_unavailable(day):
-        label = _data_state_label(day)
-        body = f'<div class="activity-empty">{escape(label)} data — hourly numerical recommendation is not shown because critical coastal context is incomplete.</div>'
-    elif not rows:
-        body = '<div class="activity-empty">Hourly score is unavailable for today.</div>'
+    hourly = result.get("hourly") or {}
+    rows = list(hourly.get("today") or []) + list(hourly.get("tomorrow") or [])
+    rows = sorted(rows, key=lambda row: row.get("time") or "")[:24]
+
+    if not rows:
+        body = '<div class="activity-empty">24-hour Fishing Conditions Forecast is unavailable.</div>'
     else:
         items = []
         for row in rows:
             score = row.get("final_score")
             confidence = row.get("confidence") or "Unavailable"
             if row.get("hard_stop"):
-                score_text, width = "STOP", 0
+                score_text, width, detail = "NOT RECOMMENDED", 0, "Alert active"
             elif confidence in {"Limited", "Unavailable"}:
-                score_text, width = confidence, 0
+                score_text, width, detail = confidence, 0, confidence
             elif score is None:
-                score_text, width = "—", 0
+                score_text, width, detail = "—", 0, confidence
             else:
                 score_text = f"{score:g}"
                 width = max(0, min(100, float(score)))
+                detail = confidence
             items.append(
                 '<div class="activity-hour-row">'
                 f'<span>{escape(_fmt_time(row["time"]))}</span>'
                 f'<div class="activity-hour-track"><i style="width:{width:g}%"></i></div>'
-                f'<strong>{escape(score_text)}</strong><small>{escape(confidence)}</small>'
+                f'<strong>{escape(score_text)}</strong><small>{escape(detail)}</small>'
                 '</div>'
             )
         body = '<div class="activity-hourly-list">' + "".join(items) + "</div>"
-    return '<section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">BY HOUR</p><h2>Hourly Fishing Score</h2></div><p>0–100 score · Local time</p></div>' + body + '</section>'
+    return (
+        '<section class="section activity-panel"><div class="section-head"><div>'
+        '<p class="eyebrow">NEXT 24 HOURS</p><h2>24-Hour Fishing Conditions Forecast</h2></div>'
+        '<p>0–100 score · Local time · Safety hard-stop hours show NOT RECOMMENDED</p></div>'
+        + body + '</section>'
+    )
 
 
 def _factor_section(result: dict) -> str:
