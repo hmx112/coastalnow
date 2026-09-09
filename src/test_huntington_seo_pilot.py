@@ -27,7 +27,10 @@ class HuntingtonSeoPilotTests(unittest.TestCase):
         html = self._render("huntington-beach")
         self.assertIn('class="tide-answer"', html)
         self.assertIn("NEXT TIDE", html)
+        self.assertIn("Next high", html)
+        self.assertIn("Next low", html)
         self.assertIn("Today's range", html)
+        self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 1)
         self.assertLess(html.index('class="tide-answer"'), html.index("ACTIVITY_PRIMARY_START"))
         self.assertLess(html.index("Your next tides"), html.index("ACTIVITY_PRIMARY_START"))
 
