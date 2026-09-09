@@ -1,0 +1,82 @@
+name: Apply Surfing 24-hour forecast
+
+on:
+  push:
+    branches:
+      - feat/surfing-24h-hourly-forecast
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/surfing-24h-hourly-forecast
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply 24-hour Surfing forecast renderer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/activities/rendering/surfing_page.py')
+          text = path.read_text()
+          start = text.index('def _hourly_section(result: dict) -> str:\n')
+          end = text.index('\n\ndef _factor_section(result: dict) -> str:\n', start)
+          new = '''def _hourly_section(result: dict) -> str:
+    hourly = result.get("hourly") or {}
+    rows = list(hourly.get("today") or []) + list(hourly.get("tomorrow") or [])
+    rows = sorted(rows, key=lambda row: row.get("time") or "")[:24]
+
+    if not rows:
+        body = '<div class="activity-empty">24-hour Surf Conditions Forecast is unavailable.</div>'
+    else:
+        items = []
+        for row in rows:
+            confidence = row.get("confidence") or "Unavailable"
+            score = row.get("final_score")
+            if row.get("hard_stop"):
+                score_text, width, detail = "NOT RECOMMENDED", 0, "Alert active"
+            elif confidence in {"Limited", "Unavailable"}:
+                score_text, width, detail = confidence, 0, confidence
+            elif score is None:
+                score_text, width, detail = "—", 0, confidence
+            else:
+                score_text = f"{float(score):g}"
+                width = max(0, min(100, float(score)))
+                detail = confidence
+            items.append(
+                '<div class="activity-hour-row">'
+                f'<span>{escape(_fmt_time(row["time"]))}</span>'
+                f'<div class="activity-hour-track"><i style="width:{width:g}%"></i></div>'
+                f'<strong>{escape(score_text)}</strong><small>{escape(detail)}</small></div>'
+            )
+        body = '<div class="activity-hourly-list">' + "".join(items) + '</div>'
+    return (
+        '<section class="section activity-panel"><div class="section-head"><div>'
+        '<p class="eyebrow">NEXT 24 HOURS</p><h2>24-Hour Surf Conditions Forecast</h2></div>'
+        '<p>0–100 score · Local time · Active NWS alert hours show NOT RECOMMENDED</p></div>'
+        + body + '</section>'
+    )
+'''
+          text = text[:start] + new + text[end:]
+          path.write_text(text)
+          PY
+      - name: Run focused regressions
+        run: |
+          python src/test_surfing_24h_forecast.py
+          python src/test_surfing_rendering.py
+          python src/test_surfing_alert_policy.py
+          python src/test_surfing_policy.py
+      - name: Commit implementation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/activities/rendering/surfing_page.py
+          git diff --cached --quiet || git commit -m "Show next 24 hours in Surfing forecast"
+          git push origin HEAD:feat/surfing-24h-hourly-forecast
