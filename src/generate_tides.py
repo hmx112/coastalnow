@@ -39,6 +39,7 @@ PUBLIC = ROOT / "public"
 TEMPLATE = SRC / "templates" / "tide-page.html"
 PREVIEW_DIR = ROOT / "preview"
 API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+HUNTINGTON_SEO_PILOT = "huntington-beach"
 
 
 def location_tz(location: dict) -> ZoneInfo:
@@ -313,6 +314,57 @@ def next_event(data: dict, tide_type: str, now: datetime):
     return min(events, key=lambda x: x[0]) if events else None
 
 
+def next_tide_event(data: dict, now: datetime):
+    tz = data_tz(data)
+    events = []
+    for event in data.get("hilo", []):
+        dt = parse_noaa_dt(event["t"], tz)
+        if dt >= now:
+            events.append((dt, event))
+    return min(events, key=lambda x: x[0]) if events else None
+
+
+def render_tide_answer(location: dict, data: dict, now: datetime) -> str:
+    if location.get("slug") != HUNTINGTON_SEO_PILOT:
+        return ""
+    next_tide = next_tide_event(data, now)
+    high = next_event(data, "H", now)
+    low = next_event(data, "L", now)
+    today = now.astimezone(data_tz(data)).date()
+    events = grouped_hilo(data)[today]["all"]
+    values = [float(event["v"]) for event in events]
+    range_text = f"{max(values) - min(values):.1f} ft" if len(values) >= 2 else "Unavailable"
+
+    def stat(label: str, event) -> str:
+        value = fmt_time(event[0]) if event else "Unavailable"
+        return f'<div><span>{label}</span><strong>{value}</strong></div>'
+
+    if next_tide:
+        dt, raw = next_tide
+        kind = "High" if raw["type"] == "H" else "Low"
+        arrow = "↑" if raw["type"] == "H" else "↓"
+        primary = (
+            f'<div class="tide-answer-main"><p class="eyebrow">NEXT TIDE</p>'
+            f'<strong class="tide-answer-kind">{arrow} {kind} tide</strong>'
+            f'<div class="tide-answer-time">{fmt_time(dt)}</div>'
+            f'<div class="tide-answer-height">{fmt_height(float(raw["v"]))}</div>'
+            f'<small>{countdown(dt, now, kind)}</small></div>'
+        )
+    else:
+        primary = (
+            '<div class="tide-answer-main"><p class="eyebrow">NEXT TIDE</p>'
+            '<strong class="tide-answer-kind">Next tide unavailable</strong></div>'
+        )
+    stats = (
+        '<div class="tide-answer-stats">'
+        + stat("Next high", high)
+        + stat("Next low", low)
+        + f'<div><span>Today\'s range</span><strong>{range_text}</strong></div>'
+        + '</div>'
+    )
+    return f'<article class="tide-answer">{primary}{stats}</article>'
+
+
 def tide_direction(data: dict, now: datetime) -> str | None:
     tz = data_tz(data)
     points = [(parse_noaa_dt(x["t"], tz), float(x["v"])) for x in data.get("curve", [])]
@@ -513,6 +565,7 @@ def unavailable_fragments(now: datetime, message: str) -> dict:
         "DATA_NOTICE": data_notice("error", message),
         "HERO_DATE": now.strftime("%A, %B %d").replace(" 0", " "),
         "UPDATED_TEXT": "Live NOAA refresh pending",
+        "TIDE_ANSWER": "",
         "TIDE_CARDS": '<div class="tide-grid"><div class="unavailable-card">Next high tide unavailable.</div><div class="unavailable-card">Next low tide unavailable.</div></div>',
         "STATUS_STRIP": '<div class="status-strip"><span class="status-dot"></span><strong>Current tide direction unavailable</strong></div>',
         "CHART_AND_EVENTS": '<div class="unavailable-card">Today’s NOAA tide curve is temporarily unavailable.</div>',
@@ -564,6 +617,8 @@ def primary_activity_cta(location: dict) -> str:
         + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
     )
 def static_replacements(location: dict) -> dict:
+    activity_cta = primary_activity_cta(location)
+    is_huntington_pilot = location.get("slug") == HUNTINGTON_SEO_PILOT
     return {
         "PAGE_TITLE": location["page_title"],
         "META_DESCRIPTION": location["meta_description"],
@@ -572,7 +627,8 @@ def static_replacements(location: dict) -> dict:
         "LOCATION_NAME": location["name"],
         "LOCATION_UPPER": location["name"].upper(),
         "HERO_COPY": location["hero_copy"],
-        "ACTIVITY_PRIMARY_CTA": primary_activity_cta(location),
+        "ACTIVITY_PRIMARY_PRE_TIDES": "" if is_huntington_pilot else activity_cta,
+        "ACTIVITY_PRIMARY_POST_TIDES": activity_cta if is_huntington_pilot else "",
         "TIME_LABEL": location["time_label"],
         "LOCAL_GUIDE": location["local_guide"],
         "NEARBY_LINKS": nearby_links(location),
@@ -596,6 +652,7 @@ def render_location(location: dict, data: dict | None, output: Path, mode: str, 
             "DATA_NOTICE": data_notice(mode),
             "HERO_DATE": start.strftime("%A, %B %d").replace(" 0", " "),
             "UPDATED_TEXT": f"Updated {fmt_time(generated)} {generated.tzname() or 'local time'}",
+            "TIDE_ANSWER": render_tide_answer(location, data, now),
             "TIDE_CARDS": render_tide_cards(data, now),
             "STATUS_STRIP": render_status(data, now),
             "CHART_AND_EVENTS": render_chart_and_events(location, data, start),
