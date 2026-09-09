@@ -1,0 +1,16 @@
+name: Verify Fishing any active alert
+
+on:
+  push:
+    branches:
+      - feat/fishing-24h-hourly-forecast
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python src/test_fishing_any_alert_policy.py
