@@ -23,39 +23,15 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-
           path = Path('src/activities/scoring/surfing_policy.py')
           text = path.read_text()
-
-          old = '''    for item in alerts:
-        event = str(item.get("event") or "").strip()
-        if event in SURFING_HARD_STOP_EVENTS:
-            decision.add_hard_stop(event.lower().replace(" ", "-"))
-            continue
-        if event == "Dense Fog Advisory":
-            decision.add_penalty(15, "dense-fog-advisory")
-        elif event == "Coastal Flood Advisory":
-            decision.add_cap(59, "coastal-flood-advisory")
-'''
-          new = '''    for item in alerts:
-        event = str(item.get("event") or "").strip()
-        if event:
-            decision.add_hard_stop(event.lower().replace(" ", "-"))
-'''
+          old = '        if event in SURFING_HARD_STOP_EVENTS:\n            decision.add_hard_stop(event.lower().replace(" ", "-"))\n            continue\n        if event == "Dense Fog Advisory":\n            decision.add_penalty(15, "dense-fog-advisory")\n        elif event == "Coastal Flood Advisory":\n            decision.add_cap(59, "coastal-flood-advisory")\n'
+          new = '        if event:\n            decision.add_hard_stop(event.lower().replace(" ", "-"))\n'
           if old not in text:
               raise SystemExit('Surfing alert decision block not found')
           text = text.replace(old, new, 1)
-
-          old_helper = '''        event = str(item.get("event") or "").strip()
-        if event not in SURFING_HARD_STOP_EVENTS:
-            continue
-        reason = event.lower().replace(" ", "-")
-'''
-          new_helper = '''        event = str(item.get("event") or "").strip()
-        if not event:
-            continue
-        reason = event.lower().replace(" ", "-")
-'''
+          old_helper = '        if event not in SURFING_HARD_STOP_EVENTS:\n            continue\n        reason = event.lower().replace(" ", "-")\n'
+          new_helper = '        if not event:\n            continue\n        reason = event.lower().replace(" ", "-")\n'
           if old_helper not in text:
               raise SystemExit('Surfing active-alert helper block not found')
           text = text.replace(old_helper, new_helper, 1)
