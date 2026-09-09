@@ -69,22 +69,17 @@ class FishingSafetyTests(unittest.TestCase):
         self.assertIsNone(result["final_score"])
         self.assertIn("beach-hazards-statement", result["reasons"])
 
-    def test_high_rip_current_risk_is_hard_stop_other_statement_is_strong_cap(self):
-        high = fishing_safety_decision(
-            {"wind_mph": 8, "gust_mph": 10, "wave_height_ft": 2, "wave_period_s": 8, "condition_text": "Clear"},
-            [alert("Rip Current Statement", headline="HIGH RIP CURRENT RISK")],
-            coast_bearing=270,
-        ).apply(95)
-        self.assertTrue(high["hard_stop"])
+    def test_rip_current_statements_are_hard_stops_under_active_alert_policy(self):
+        for headline in ("HIGH RIP CURRENT RISK", "Rip currents possible"):
+            result = fishing_safety_decision(
+                {"wind_mph": 8, "gust_mph": 10, "wave_height_ft": 2, "wave_period_s": 8, "condition_text": "Clear"},
+                [alert("Rip Current Statement", headline=headline)],
+                coast_bearing=270,
+            ).apply(95)
+            self.assertTrue(result["hard_stop"])
+            self.assertEqual(result["status"], "NOT RECOMMENDED")
+            self.assertIsNone(result["final_score"])
 
-        statement = fishing_safety_decision(
-            {"wind_mph": 8, "gust_mph": 10, "wave_height_ft": 2, "wave_period_s": 8, "condition_text": "Clear"},
-            [alert("Rip Current Statement", headline="Rip currents possible")],
-            coast_bearing=270,
-        ).apply(95)
-        self.assertFalse(statement["hard_stop"])
-        self.assertEqual(statement["cap"], 39)
-        self.assertEqual(statement["final_score"], 39)
 
     def test_wind_safety_boundaries_apply_caps_then_hard_stop(self):
         cases = [
