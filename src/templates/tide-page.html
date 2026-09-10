@@ -230,6 +230,8 @@ h1{
   font-size:.72rem;text-transform:uppercase;letter-spacing:.08em
 }
 .desktop-table td{padding:14px 12px;border-top:1px solid #e7eeee;font-size:.9rem;vertical-align:top}
+.desktop-table th:first-child,.desktop-table td:first-child{width:13%}
+.forecast-events{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
 .desktop-table tbody tr:hover{background:#f8fbfb}
 .day strong{display:block}.day span{font-size:.75rem;color:var(--muted)}
 .pill-event{
@@ -427,11 +429,11 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
         <p class="eyebrow">PLAN AHEAD</p>
         <h2>7-day tide forecast</h2>
       </div>
-      <p>High & low tide times</p>
+      <p>High and low tide events in chronological order</p>
     </div>
 
     <table class="desktop-table">
-      <thead><tr><th>Date</th><th>High tides</th><th>Low tides</th></tr></thead>
+      <thead><tr><th>Date</th><th>Tide events</th></tr></thead>
       <tbody>
         {{DESKTOP_FORECAST_ROWS}}
       </tbody>

@@ -512,11 +512,20 @@ def desktop_forecast_rows(data: dict, start: date) -> str:
         day = start + timedelta(days=i)
         day_label = day.strftime("%a %d")
         sub = "Today" if i == 0 else ("Tomorrow" if i == 1 else day.strftime("%A"))
-        highs = ''.join(f'<span class="pill-event">↑ {fmt_time(parse_noaa_dt(e["t"], tz))} · {fmt_height(float(e["v"]))}</span>' for e in grouped[day]["H"]) or '—'
-        lows = ''.join(f'<span class="pill-event low">↓ {fmt_time(parse_noaa_dt(e["t"], tz))} · {fmt_height(float(e["v"]))}</span>' for e in grouped[day]["L"]) or '—'
-        highs += next_tide_note(data, day, "H")
-        lows += next_tide_note(data, day, "L")
-        rows.append(f'<tr><td class="day"><strong>{day_label}</strong><span>{sub}</span></td><td>{highs}</td><td>{lows}</td></tr>')
+        events = []
+        for event in grouped[day]["all"]:
+            kind = "High" if event["type"] == "H" else "Low"
+            arrow = "↑" if event["type"] == "H" else "↓"
+            css = "pill-event" if event["type"] == "H" else "pill-event low"
+            dt = parse_noaa_dt(event["t"], tz)
+            events.append(
+                f'<span class="{css}">{arrow} {kind} {fmt_time(dt)} · {fmt_height(float(event["v"]))}</span>'
+            )
+        event_html = ''.join(events) or '—'
+        rows.append(
+            f'<tr><td class="day"><strong>{day_label}</strong><span>{sub}</span></td>'
+            f'<td><div class="forecast-events">{event_html}</div></td></tr>'
+        )
     return ''.join(rows)
 
 
@@ -527,13 +536,6 @@ def mobile_day(data: dict, day: date, events: list[dict], label: str) -> str:
         kind = "High" if event["type"] == "H" else "Low"
         arrow = "↑" if event["type"] == "H" else "↓"
         cells.append(f'<div class="mobile-event">{arrow} {kind} · {fmt_time(parse_noaa_dt(event["t"], tz))} · {fmt_height(float(event["v"]))}</div>')
-    grouped = grouped_hilo(data)
-    for tide_type, kind in (("H", "High"), ("L", "Low")):
-        if len(grouped[day][tide_type]) == 1:
-            nxt = next_same_type_event(data, day, tide_type)
-            if nxt:
-                dt, _ = nxt
-                cells.append(f'<div class="mobile-event next-note">Next {kind} · {fmt_time(dt)} {dt.strftime("%a")}</div>')
     if not cells:
         cells.append('<div class="mobile-event">No tide events available</div>')
     day_text = day.strftime("%a, %b") + f" {day.day}"
@@ -569,7 +571,7 @@ def unavailable_fragments(now: datetime, message: str) -> dict:
         "TIDE_CARDS": '<div class="tide-grid"><div class="unavailable-card">Next high tide unavailable.</div><div class="unavailable-card">Next low tide unavailable.</div></div>',
         "STATUS_STRIP": '<div class="status-strip"><span class="status-dot"></span><strong>Current tide direction unavailable</strong></div>',
         "CHART_AND_EVENTS": '<div class="unavailable-card">Today’s NOAA tide curve is temporarily unavailable.</div>',
-        "DESKTOP_FORECAST_ROWS": '<tr><td colspan="3">7-day NOAA forecast temporarily unavailable.</td></tr>',
+        "DESKTOP_FORECAST_ROWS": '<tr><td colspan="2">7-day NOAA forecast temporarily unavailable.</td></tr>',
         "MOBILE_FORECAST": '<div class="mobile-days"><div class="unavailable-card">7-day NOAA forecast temporarily unavailable.</div></div>',
     }
 
