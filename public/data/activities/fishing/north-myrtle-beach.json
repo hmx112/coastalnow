@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "north-myrtle-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-09T23:22:23+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-09T23:22:23+00:00",
+  "generated_at_utc": "2026-09-10T00:32:53+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-10T00:32:53+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
-    "confidence": "Unavailable",
-    "best_window": null,
-    "ranking_eligible": false,
+    "status": "normal",
+    "score": 73.4,
+    "rating": "Fair",
+    "confidence": "Medium",
+    "best_window": {
+      "start": "2026-09-09T20:00:00-04:00",
+      "end": "2026-09-09T23:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "coastal-flood-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -41,33 +46,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-09T19:00:00-04:00",
-        "components": {
-          "tide": 99.9,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 67.5,
-          "water_temperature": null
-        },
-        "raw_quality_score": 95.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "coastal-flood-advisory"
-        ]
-      },
-      {
         "time": "2026-09-09T20:00:00-04:00",
         "components": {
           "tide": 85.5,
@@ -79,19 +57,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 91.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 91.5,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state",
-          "coastal-flood-advisory"
+          "manageable-sea-state"
         ]
       },
       {
@@ -106,18 +83,17 @@
           "water_temperature": null
         },
         "raw_quality_score": 74.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 74.8,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
-          "manageable-sea-state",
-          "coastal-flood-advisory"
+          "manageable-sea-state"
         ]
       },
       {
