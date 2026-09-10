@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "isle-of-palms",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-10T21:09:14+00:00",
+  "generated_at_utc": "2026-09-10T23:15:40+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T21:09:14+00:00"
+      "fetched_at_utc": "2026-09-10T23:15:40+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T20:59:38+00:00"
+      "fetched_at_utc": "2026-09-10T23:15:40+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T20:59:38+00:00"
+      "fetched_at_utc": "2026-09-10T23:15:40+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T20:57:41+00:00"
+      "fetched_at_utc": "2026-09-10T21:04:27+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-10T20:59:38+00:00"
+      "fetched_at_utc": "2026-09-10T23:15:40+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-10T16:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 87.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
-      "time": "2026-09-10T17:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 11.0,
-      "air_temperature_f": 86.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
-      "time": "2026-09-10T18:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 6.0,
-      "air_temperature_f": 85.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-09-10T19:00:00-04:00",
       "wind_mph": 8.0,
@@ -1902,23 +1866,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-17T04:00:00-04:00",
+      "wind_mph": 2.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-17T05:00:00-04:00",
+      "wind_mph": 2.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-09-17T06:00:00-04:00",
+      "wind_mph": 2.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 74.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e4873b204008b9439250525d94a845b18d3756b3.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fc093de081473f48d681dcf9ef710b6ab00cfc6b.001.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-10T12:26:00-04:00",
-        "onset": "2026-09-10T19:00:00-04:00",
+        "effective": "2026-09-10T19:14:00-04:00",
+        "onset": "2026-09-10T19:14:00-04:00",
         "expires": "2026-09-10T22:00:00-04:00",
         "ends": "2026-09-10T22:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued September 10 at 12:26PM EDT until September 10 at 10:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected along shorelines and tidal waterways (7.0 to 7.2 feet\nMean Lower Low Water at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...From 7 PM to 10 PM EDT this evening.\n\n* IMPACTS...This could result in some roads becoming impassable.\n\n* ADDITIONAL DETAILS...High tide will occur around 8:18 PM today\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
+        "headline": "Coastal Flood Advisory issued September 10 at 7:14PM EDT until September 10 at 10:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...Up to one half foot of inundation above ground level\nalong shorelines and tidal waterways (7.1 to 7.3 feet Mean\nLower Low Water at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...Until 10 PM EDT this evening.\n\n* IMPACTS...This could result in some roads becoming impassable.\n\n* ADDITIONAL DETAILS...High tide will occur around 8:18 PM today\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.",
         "sender_name": "NWS Charleston SC"
       }
@@ -1956,8 +1956,8 @@
       "start": "2026-09-10",
       "end": "2026-09-16"
     },
-    "generated_at_utc": "2026-09-10T20:57:41+00:00",
-    "generated_at_local": "2026-09-10T16:57:41-04:00",
+    "generated_at_utc": "2026-09-10T21:04:27+00:00",
+    "generated_at_local": "2026-09-10T17:04:27-04:00",
     "hilo": [
       {
         "t": "2026-09-09 00:32",
@@ -2572,5 +2572,5 @@
       "grid_y": 76
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
