@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "hilton-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-10T11:32:21+00:00",
+  "generated_at_utc": "2026-09-10T14:37:01+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T11:32:21+00:00"
+      "fetched_at_utc": "2026-09-10T14:37:01+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f1c76e0989ed16ec7b17e23b38fcf42a71da49d7.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-10T08:43:00-04:00",
+        "onset": "2026-09-10T08:43:00-04:00",
+        "expires": "2026-09-10T13:00:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 10 at 8:43AM EDT by NWS Charleston SC",
+        "description": "The areas affected include...\nWaters from Edisto Beach SC to Altamaha Sound out 20 NM...\n\nConditions will be favorable for the development of waterspouts\nacross the nearshore waters of far southern South Carolina and\nSoutheast Georgia this morning. The risk will be highest along lines\nof towering clouds and near showers and thunderstorms. Conditions\nwill become less favorable for waterspout development by late morning\nas the sea breeze begins to form along the beaches.",
+        "instruction": "If waterspouts occur, move your boat away from the waterspout.\nRemember that waterspouts can develop rapidly and produce winds and\nseas that are dangerous for vessels and everyone onboard.\n\nReport waterspouts via social media or call the National Weather\nService directly at 1-888-383-2024.",
+        "sender_name": "NWS Charleston SC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 44
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

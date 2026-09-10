@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "virginia-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-10T11:33:26+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-10T11:33:26+00:00",
+  "generated_at_utc": "2026-09-10T14:37:20+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-10T14:37:20+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "Limited",
+    "score": 88.0,
+    "rating": "Good",
     "confidence": "Limited",
-    "best_window": null,
+    "best_window": {
+      "start": "2026-09-10T16:00:00-04:00",
+      "end": "2026-09-10T19:00:00-04:00"
+    },
     "ranking_eligible": false,
     "reasons": [
-      "small-craft-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -41,84 +46,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-10T07:00:00-04:00",
-        "components": {
-          "tide": 36.9,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 69.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 73.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory"
-        ]
-      },
-      {
-        "time": "2026-09-10T08:00:00-04:00",
-        "components": {
-          "tide": 13.6,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 69.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 66.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory"
-        ]
-      },
-      {
-        "time": "2026-09-10T09:00:00-04:00",
-        "components": {
-          "tide": 60.4,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 69.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 78.6,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory"
-        ]
-      },
-      {
         "time": "2026-09-10T10:00:00-04:00",
         "components": {
           "tide": 91.7,
@@ -130,9 +57,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 88.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 88.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -141,8 +68,7 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory"
+          "manageable-sea-state"
         ]
       },
       {
