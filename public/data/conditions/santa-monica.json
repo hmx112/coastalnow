@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-monica",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-10T16:32:18+00:00",
+  "generated_at_utc": "2026-09-10T17:46:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-10T16:32:18+00:00"
+      "fetched_at_utc": "2026-09-10T17:46:50+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.da6aaa8f347fbe314f1632cb780c50fc3106c696.003.1",
+        "event": "Extreme Heat Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-10T10:00:00-07:00",
+        "onset": "2026-09-10T10:00:00-07:00",
+        "expires": "2026-09-10T20:00:00-07:00",
+        "ends": "2026-09-10T20:00:00-07:00",
+        "headline": "Extreme Heat Warning issued September 10 at 10:00AM PDT until September 10 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Temperatures between 92 and 108 expected.\n\n* WHERE...Calabasas and Agoura Hills, Eastern San Fernando Valley,\nEastern Santa Monica Mountains Recreational Area, Los Angeles\nCounty Beaches, Los Angeles County Inland Coast including Downtown\nLos Angeles, Los Angeles County San Gabriel Valley, Malibu Coast,\nPalos Verdes Hills, Western San Fernando Valley, and Western Santa\nMonica Mountains Recreational Area\n\n* WHEN...Until 8 PM PDT this evening.\n\n* IMPACTS...Heat related illnesses increase significantly during\nextreme heat events. Hot temperatures may cause heat illnesses.\n\n* ADDITIONAL DETAILS...Humid conditions will add to heat discomfort.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nDo not leave young children and pets in unattended vehicles. Car\ninteriors will reach lethal temperatures in a matter of minutes.\n\nStay cool, stay hydrated, stay informed.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c56fe95e214a160ac10ab3ea5ba1d9d98597a1d8.001.1",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
@@ -1920,21 +1935,6 @@
         "headline": "Beach Hazards Statement issued September 10 at 8:10AM PDT until September 11 at 12:00AM PDT by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Dangerous rip currents and breaking waves due to\nelevated surf. Abnormally high tides around 7 feet are\nexpected in the evening between 8pm and 10pm.\n\n* WHERE...Catalina and Santa Barbara Islands, Santa Barbara\nCounty Southwestern Coast, Santa Barbara County Southeastern\nCoast, Ventura County Beaches, Malibu Coast and Los Angeles\nCounty Beaches.\n\n* WHEN...Through this evening.\n\n* IMPACTS...Pooling of sea water is possible around high tide at\nbeach and harbor areas that is uncommon with normal tidal\nranges. Enhanced beach erosion is also possible. No\nsignificant damage is expected. There is also an increased\nrisk of ocean drowning due to strong rip currents. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore.\n\n* ADDITIONAL DETAILS...Lingering southerly swell will create\nhazardous rip currents and elevated surf conditions. Elevated\nsurf may also enhance any minor coastal flood impacts during\nhigh tide.",
         "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17cb1e528944e36343079a2f7ec5859fe540afb4.001.2",
-        "event": "Extreme Heat Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-09T08:09:00-07:00",
-        "onset": "2026-09-09T08:09:00-07:00",
-        "expires": "2026-09-10T20:00:00-07:00",
-        "ends": "2026-09-10T20:00:00-07:00",
-        "headline": "Extreme Heat Warning issued September 9 at 8:09AM PDT until September 10 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Temperatures between 92 and 108 expected.\n\n* WHERE...Calabasas and Agoura Hills, Eastern San Fernando Valley,\nEastern Santa Monica Mountains Recreational Area, Los Angeles\nCounty Beaches, Los Angeles County Inland Coast including Downtown\nLos Angeles, Los Angeles County San Gabriel Valley, Malibu Coast,\nPalos Verdes Hills, Western San Fernando Valley, and Western Santa\nMonica Mountains Recreational Area.\n\n* WHEN...Until 8 PM PDT Thursday.\n\n* IMPACTS...Heat related illnesses increase significantly during\nextreme heat events. Hot temperatures may cause heat illnesses.\n\n* ADDITIONAL DETAILS...Humid conditions will add to heat discomfort.\nHeat peaking today for most areas.",
-        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nDo not leave young children and pets in unattended vehicles. Car\ninteriors will reach lethal temperatures in a matter of minutes.\n\nStay cool, stay hydrated, stay informed.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -2557,5 +2557,5 @@
       "grid_y": 44
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
