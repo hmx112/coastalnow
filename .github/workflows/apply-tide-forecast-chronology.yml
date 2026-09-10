@@ -1,0 +1,64 @@
+name: Apply chronological 7-day tide forecast
+
+on:
+  push:
+    branches:
+      - feat/tide-forecast-chronological
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/tide-forecast-chronological
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply chronological forecast rendering
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/generate_tides.py')
+          text = path.read_text(encoding='utf-8')
+
+          start = text.index('def desktop_forecast_rows(data: dict, start: date) -> str:\n')
+          end = text.index('\n\ndef mobile_day(data: dict, day: date, events: list[dict], label: str) -> str:\n', start)
+          desktop = '''def desktop_forecast_rows(data: dict, start: date) -> str:\n    tz = data_tz(data)\n    grouped = grouped_hilo(data)\n    rows = []\n    for i in range(7):\n        day = start + timedelta(days=i)\n        day_label = day.strftime("%a %d")\n        sub = "Today" if i == 0 else ("Tomorrow" if i == 1 else day.strftime("%A"))\n        events = []\n        for event in grouped[day]["all"]:\n            kind = "High" if event["type"] == "H" else "Low"\n            arrow = "↑" if event["type"] == "H" else "↓"\n            css = "pill-event" if event["type"] == "H" else "pill-event low"\n            dt = parse_noaa_dt(event["t"], tz)\n            events.append(\n                f'<span class="{css}">{arrow} {kind} {fmt_time(dt)} · {fmt_height(float(event["v"]))}</span>'\n            )\n        event_html = ''.join(events) or '—'\n        rows.append(\n            f'<tr><td class="day"><strong>{day_label}</strong><span>{sub}</span></td>'\n            f'<td><div class="forecast-events">{event_html}</div></td></tr>'\n        )\n    return ''.join(rows)\n'''
+          text = text[:start] + desktop + text[end:]
+
+          mobile_start = text.index('def mobile_day(data: dict, day: date, events: list[dict], label: str) -> str:\n')
+          mobile_end = text.index('\n\ndef mobile_forecast(data: dict, start: date) -> str:\n', mobile_start)
+          mobile = '''def mobile_day(data: dict, day: date, events: list[dict], label: str) -> str:\n    tz = data_tz(data)\n    cells = []\n    for event in events:\n        kind = "High" if event["type"] == "H" else "Low"\n        arrow = "↑" if event["type"] == "H" else "↓"\n        cells.append(f'<div class="mobile-event">{arrow} {kind} · {fmt_time(parse_noaa_dt(event["t"], tz))} · {fmt_height(float(event["v"]))}</div>')\n    if not cells:\n        cells.append('<div class="mobile-event">No tide events available</div>')\n    day_text = day.strftime("%a, %b") + f" {day.day}"\n    return f'<article class="mobile-day"><div class="mobile-day-head"><strong>{day_text}</strong><span>{label}</span></div><div class="mobile-events">{"".join(cells)}</div></article>'\n'''
+          text = text[:mobile_start] + mobile + text[mobile_end:]
+          text = text.replace('<tr><td colspan="3">7-day NOAA forecast temporarily unavailable.</td></tr>', '<tr><td colspan="2">7-day NOAA forecast temporarily unavailable.</td></tr>')
+          path.write_text(text, encoding='utf-8')
+
+          template = Path('src/templates/tide-page.html')
+          tpl = template.read_text(encoding='utf-8')
+          tpl = tpl.replace('<p>High & low tide times</p>', '<p>High and low tide events in chronological order</p>', 1)
+          tpl = tpl.replace('<thead><tr><th>Date</th><th>High tides</th><th>Low tides</th></tr></thead>', '<thead><tr><th>Date</th><th>Tide events</th></tr></thead>', 1)
+          css_anchor = '.desktop-table td{padding:14px 12px;border-top:1px solid #e7eeee;font-size:.9rem;vertical-align:top}\n'
+          css_add = css_anchor + '.desktop-table th:first-child,.desktop-table td:first-child{width:13%}\n.forecast-events{display:flex;flex-wrap:wrap;align-items:center;gap:2px}\n'
+          if '.forecast-events{' not in tpl:
+              tpl = tpl.replace(css_anchor, css_add, 1)
+          template.write_text(tpl, encoding='utf-8')
+          PY
+      - name: Run tide forecast regressions
+        run: |
+          python src/test_tide_forecast_chronology.py
+          python src/test_generate_tides.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
+      - name: Commit implementation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/generate_tides.py src/templates/tide-page.html
+          git diff --cached --quiet || git commit -m "Show 7-day tide events chronologically"
+          git push origin HEAD:feat/tide-forecast-chronological
