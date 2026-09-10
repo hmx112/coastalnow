@@ -73,8 +73,12 @@ jobs:
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
           git add public/data public/tides public/fishing public/surfing public/methodology public/index.html public/sitemap.xml public/robots.txt
-          git diff --cached --quiet || git commit -m "Update live NOAA tide data"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Update live NOAA tide data"
+            git fetch origin main
+            git rebase origin/main
+            git push
+          fi
 
       - name: Report NOAA refresh failures
         if: steps.tide-refresh.outputs.exit_code != '0'
