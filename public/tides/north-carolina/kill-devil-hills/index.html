@@ -229,6 +229,8 @@ h1{
   font-size:.72rem;text-transform:uppercase;letter-spacing:.08em
 }
 .desktop-table td{padding:14px 12px;border-top:1px solid #e7eeee;font-size:.9rem;vertical-align:top}
+.desktop-table th:first-child,.desktop-table td:first-child{width:13%}
+.forecast-events{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
 .desktop-table tbody tr:hover{background:#f8fbfb}
 .day strong{display:block}.day span{font-size:.75rem;color:var(--muted)}
 .pill-event{
@@ -380,7 +382,7 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
       <div class="hero-date">
         <span>Today</span>
         <strong>Thursday, September 10</strong>
-        <small>Updated 4:57 PM UTC-04:00</small>
+        <small>Updated 5:04 PM UTC-04:00</small>
       </div>
     </div>
   </section>
@@ -402,13 +404,13 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
         <div class="label"><span class="arrow-icon">↑</span>Next high tide</div>
         <div class="tide-time">7:46 PM</div>
         <div class="tide-height">4.2 ft</div>
-        <div class="tide-meta">High tide in 2h 48m</div>
+        <div class="tide-meta">High tide in 2h 41m</div>
         <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
       </article><article class="tide-card low">
         <div class="label"><span class="arrow-icon">↓</span>Next low tide</div>
         <div class="tide-time">2:04 AM</div>
         <div class="tide-height">0.1 ft</div>
-        <div class="tide-meta">Low tide in 9h 6m</div>
+        <div class="tide-meta">Low tide in 8h 59m</div>
         <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
       </article></div>
 
@@ -446,13 +448,13 @@ footer{margin-top:48px;background:#102a32;color:#d9e6e8}
         <p class="eyebrow">PLAN AHEAD</p>
         <h2>7-day tide forecast</h2>
       </div>
-      <p>High & low tide times</p>
+      <p>High and low tide events in chronological order</p>
     </div>
 
     <table class="desktop-table">
-      <thead><tr><th>Date</th><th>High tides</th><th>Low tides</th></tr></thead>
+      <thead><tr><th>Date</th><th>Tide events</th></tr></thead>
       <tbody>
-        <tr><td class="day"><strong>Thu 10</strong><span>Today</span></td><td><span class="pill-event">↑ 7:28 AM · 4.0 ft</span><span class="pill-event">↑ 7:46 PM · 4.2 ft</span></td><td><span class="pill-event low">↓ 1:24 AM · 0.2 ft</span><span class="pill-event low">↓ 1:38 PM · 0.2 ft</span></td></tr><tr><td class="day"><strong>Fri 11</strong><span>Tomorrow</span></td><td><span class="pill-event">↑ 8:14 AM · 4.2 ft</span><span class="pill-event">↑ 8:29 PM · 4.1 ft</span></td><td><span class="pill-event low">↓ 2:04 AM · 0.1 ft</span><span class="pill-event low">↓ 2:25 PM · 0.2 ft</span></td></tr><tr><td class="day"><strong>Sat 12</strong><span>Saturday</span></td><td><span class="pill-event">↑ 8:56 AM · 4.3 ft</span><span class="pill-event">↑ 9:10 PM · 3.9 ft</span></td><td><span class="pill-event low">↓ 2:42 AM · 0.1 ft</span><span class="pill-event low">↓ 3:10 PM · 0.4 ft</span></td></tr><tr><td class="day"><strong>Sun 13</strong><span>Sunday</span></td><td><span class="pill-event">↑ 9:38 AM · 4.3 ft</span><span class="pill-event">↑ 9:51 PM · 3.7 ft</span></td><td><span class="pill-event low">↓ 3:19 AM · 0.2 ft</span><span class="pill-event low">↓ 3:55 PM · 0.6 ft</span></td></tr><tr><td class="day"><strong>Mon 14</strong><span>Monday</span></td><td><span class="pill-event">↑ 10:20 AM · 4.2 ft</span><span class="pill-event">↑ 10:32 PM · 3.4 ft</span></td><td><span class="pill-event low">↓ 3:56 AM · 0.5 ft</span><span class="pill-event low">↓ 4:42 PM · 0.9 ft</span></td></tr><tr><td class="day"><strong>Tue 15</strong><span>Tuesday</span></td><td><span class="pill-event">↑ 11:02 AM · 4.1 ft</span><span class="pill-event">↑ 11:14 PM · 3.2 ft</span></td><td><span class="pill-event low">↓ 4:36 AM · 0.8 ft</span><span class="pill-event low">↓ 5:30 PM · 1.2 ft</span></td></tr><tr><td class="day"><strong>Wed 16</strong><span>Wednesday</span></td><td><span class="pill-event">↑ 11:44 AM · 3.9 ft</span><span class="pill-event">↑ 11:56 PM · 3.0 ft</span></td><td><span class="pill-event low">↓ 5:19 AM · 1.1 ft</span><span class="pill-event low">↓ 6:17 PM · 1.4 ft</span></td></tr>
+        <tr><td class="day"><strong>Thu 10</strong><span>Today</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 1:24 AM · 0.2 ft</span><span class="pill-event">↑ High 7:28 AM · 4.0 ft</span><span class="pill-event low">↓ Low 1:38 PM · 0.2 ft</span><span class="pill-event">↑ High 7:46 PM · 4.2 ft</span></div></td></tr><tr><td class="day"><strong>Fri 11</strong><span>Tomorrow</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 2:04 AM · 0.1 ft</span><span class="pill-event">↑ High 8:14 AM · 4.2 ft</span><span class="pill-event low">↓ Low 2:25 PM · 0.2 ft</span><span class="pill-event">↑ High 8:29 PM · 4.1 ft</span></div></td></tr><tr><td class="day"><strong>Sat 12</strong><span>Saturday</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 2:42 AM · 0.1 ft</span><span class="pill-event">↑ High 8:56 AM · 4.3 ft</span><span class="pill-event low">↓ Low 3:10 PM · 0.4 ft</span><span class="pill-event">↑ High 9:10 PM · 3.9 ft</span></div></td></tr><tr><td class="day"><strong>Sun 13</strong><span>Sunday</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 3:19 AM · 0.2 ft</span><span class="pill-event">↑ High 9:38 AM · 4.3 ft</span><span class="pill-event low">↓ Low 3:55 PM · 0.6 ft</span><span class="pill-event">↑ High 9:51 PM · 3.7 ft</span></div></td></tr><tr><td class="day"><strong>Mon 14</strong><span>Monday</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 3:56 AM · 0.5 ft</span><span class="pill-event">↑ High 10:20 AM · 4.2 ft</span><span class="pill-event low">↓ Low 4:42 PM · 0.9 ft</span><span class="pill-event">↑ High 10:32 PM · 3.4 ft</span></div></td></tr><tr><td class="day"><strong>Tue 15</strong><span>Tuesday</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 4:36 AM · 0.8 ft</span><span class="pill-event">↑ High 11:02 AM · 4.1 ft</span><span class="pill-event low">↓ Low 5:30 PM · 1.2 ft</span><span class="pill-event">↑ High 11:14 PM · 3.2 ft</span></div></td></tr><tr><td class="day"><strong>Wed 16</strong><span>Wednesday</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 5:19 AM · 1.1 ft</span><span class="pill-event">↑ High 11:44 AM · 3.9 ft</span><span class="pill-event low">↓ Low 6:17 PM · 1.4 ft</span><span class="pill-event">↑ High 11:56 PM · 3.0 ft</span></div></td></tr>
       </tbody>
     </table>
 
