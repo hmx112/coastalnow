@@ -7,6 +7,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from generate_tides import desktop_forecast_rows, mobile_forecast
 
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE = ROOT / "src" / "templates" / "tide-page.html"
+
 
 class TideForecastChronologyTests(unittest.TestCase):
     def setUp(self):
@@ -41,6 +44,13 @@ class TideForecastChronologyTests(unittest.TestCase):
         self.assertLess(first_day.index("Low · 3:17 PM"), first_day.index("High · 9:22 PM"))
         self.assertNotIn("Next", first_day)
         self.assertNotIn("3:47 AM Fri", first_day)
+
+    def test_template_labels_forecast_as_chronological_tide_events(self):
+        text = TEMPLATE.read_text(encoding="utf-8")
+        forecast = text.split('<section class="section forecast" id="forecast">', 1)[1].split("</section>", 1)[0]
+        self.assertIn("Tide events", forecast)
+        self.assertIn("chronological", forecast.lower())
+        self.assertNotIn("High tides</th><th>Low tides", forecast)
 
 
 if __name__ == "__main__":
