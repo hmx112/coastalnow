@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-09-11T11:34:19+00:00",
+  "generated_at_utc": "2026-09-11T11:45:36+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-11T11:34:19+00:00"
+      "fetched_at_utc": "2026-09-11T11:45:36+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8d3d5399901ae960f6164bf88214f165170db0ec.002.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-11T06:03:00-05:00",
-        "onset": "2026-09-11T06:03:00-05:00",
-        "expires": "2026-09-11T06:45:00-05:00",
-        "ends": "2026-09-11T06:45:00-05:00",
-        "headline": "Special Marine Warning issued September 11 at 6:03AM CDT until September 11 at 6:45AM CDT by NWS Mobile AL",
-        "description": "For the following areas...\nCoastal waters from Okaloosa-Walton County Line to Pensacola FL out\n20 NM...\nPensacola Bay Area including Santa Rosa Sound...\nWaters from Okaloosa-Walton County Line to Pensacola FL from 20 to 60\nNM...\n\nAt 602 AM CDT, severe thunderstorms capable of producing waterspouts\nwere located along a line extending from near Navarre Beach to near\nOriskany Reef, moving north at 25 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar indicated.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\nLocations impacted include...\nMary Esther, East Santa Rosa Sound, Okaloosa Pier, Oriskany Reef,\nFort Walton Liberty Ship Reef, and Navarre Beach.",
-        "instruction": "Move to safe harbor until hazardous weather passes.\n\nMove to safe harbor immediately as gusty winds and high waves are\nexpected.\n\nThunderstorms can produce sudden waterspouts. Waterspouts can easily\noverturn boats and create locally hazardous seas. Seek safe harbor\nimmediately.",
-        "sender_name": "NWS Mobile AL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2497,5 +2481,5 @@
       "grid_y": 55
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
