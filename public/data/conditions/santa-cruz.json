@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "santa-cruz",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-12T19:38:12+00:00",
+  "generated_at_utc": "2026-09-12T20:40:14+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-12T19:38:12+00:00"
+      "fetched_at_utc": "2026-09-12T20:40:14+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-12T19:38:12+00:00"
+      "fetched_at_utc": "2026-09-12T20:40:14+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-12T19:38:12+00:00"
+      "fetched_at_utc": "2026-09-12T20:40:14+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-12T15:33:20+00:00"
+      "fetched_at_utc": "2026-09-12T20:34:21+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-12T19:38:12+00:00"
+      "fetched_at_utc": "2026-09-12T20:40:14+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-12T12:00:00-07:00",
-      "wind_mph": 9.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 72.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-09-12T13:00:00-07:00",
       "wind_mph": 10.0,
@@ -1898,7 +1886,19 @@
       "wind_direction_deg": 337.5,
       "precip_probability_pct": 0.0,
       "air_temperature_f": 61.0,
-      "wave_height_ft": null,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-09-19T00:00:00-07:00",
+      "wind_mph": 2.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 2.0,
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
@@ -1971,8 +1971,8 @@
       "start": "2026-09-12",
       "end": "2026-09-18"
     },
-    "generated_at_utc": "2026-09-12T15:33:20+00:00",
-    "generated_at_local": "2026-09-12T08:33:20-07:00",
+    "generated_at_utc": "2026-09-12T20:34:21+00:00",
+    "generated_at_local": "2026-09-12T13:34:21-07:00",
     "hilo": [
       {
         "t": "2026-09-11 04:58",
@@ -2582,5 +2582,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
