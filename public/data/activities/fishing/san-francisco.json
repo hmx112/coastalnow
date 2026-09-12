@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "san-francisco",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-12T11:12:42+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-12T11:12:42+00:00",
+  "generated_at_utc": "2026-09-12T14:20:42+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-12T14:20:42+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 76.2,
-    "rating": "Good",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-09-12T04:00:00-07:00",
-      "end": "2026-09-12T07:00:00-07:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
-      "manageable-sea-state"
+      "manageable-sea-state",
+      "favorable-tide-movement",
+      "small-craft-advisory",
+      "worsening-wind",
+      "wind-cap-59"
     ]
   },
   "tomorrow": {
@@ -45,82 +45,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-12T04:00:00-07:00",
-        "components": {
-          "tide": 97.2,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.1,
-        "final_score": 87.1,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-12T05:00:00-07:00",
-        "components": {
-          "tide": 71.8,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 79.5,
-        "final_score": 79.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-12T06:00:00-07:00",
-        "components": {
-          "tide": 26.4,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 69.9,
-        "final_score": 69.9,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-09-12T07:00:00-07:00",
         "components": {
