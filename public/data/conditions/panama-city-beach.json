@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-09-12T10:58:47+00:00",
+  "generated_at_utc": "2026-09-12T11:12:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-12T10:58:47+00:00"
+      "fetched_at_utc": "2026-09-12T11:12:54+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6357bd9e5e506ff882785d9f6cb0371061265ae3.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-12T05:58:00-05:00",
+        "onset": "2026-09-12T05:58:00-05:00",
+        "expires": "2026-09-12T09:00:00-05:00",
+        "ends": "2026-09-12T09:00:00-05:00",
+        "headline": "Special Marine Warning issued September 12 at 5:58AM CDT until September 12 at 9:00AM CDT by NWS Tallahassee FL",
+        "description": "SMWTAE\n\nThe National Weather Service in Tallahassee has issued a\n\n* Special Marine Warning for...\nCoastal Waters from Mexico Beach to Apalachicola out 20 NM...\nCoastal waters from Okaloosa-Walton County Line to Mexico Beach out\n20 NM...\nSt. Andrews Bay Waterways...\nWaters from Okaloosa-Walton County Line to Mexico Beach from 20 to\n60 NM...\n\n* Until 900 AM CDT.\n\n* At 558 AM CDT, a cluster of strong thunderstorms capable of\nproducing waterspouts were located along a line extending from\nSanta Rosa Beach to 25 nm south of Okaloosa Deep Water Reef,\nmoving east at 25 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar indicated.\n\nIMPACT...Waterspouts can quickly form and capsize boats...damage\nvessels...and create suddenly higher waves. Make sure all\non board are in a secure location and wearing life\njackets. Expect wind gusts in excess of 34\nknots...suddenly higher waves...frequent lightning...and\nheavy downpours. Make sure all on board are wearing life\njackets.\n\n* Locations impacted include...\nMexico Beach, Panama City Beach, and Laguna Beach.",
+        "instruction": "Move to safe harbor until hazardous weather passes.",
+        "sender_name": "NWS Tallahassee FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2466,5 +2482,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
