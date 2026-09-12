@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "folly-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-12T15:38:52+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-12T15:38:52+00:00",
+  "generated_at_utc": "2026-09-12T17:25:14+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-12T17:25:14+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "Limited",
+    "score": 70.5,
+    "rating": "Fair",
     "confidence": "Limited",
-    "best_window": null,
+    "best_window": {
+      "start": "2026-09-12T20:00:00-04:00",
+      "end": "2026-09-12T23:00:00-04:00"
+    },
     "ranking_eligible": false,
     "reasons": [
-      "marine-weather-statement"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -40,61 +45,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-12T11:00:00-04:00",
-        "components": {
-          "tide": 54.3,
-          "wind": 100,
-          "wave": 100,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 77.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "marine-weather-statement",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-12T12:00:00-04:00",
-        "components": {
-          "tide": 90.5,
-          "wind": 100,
-          "wave": 100,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.9,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "marine-weather-statement",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-09-12T13:00:00-04:00",
         "components": {
