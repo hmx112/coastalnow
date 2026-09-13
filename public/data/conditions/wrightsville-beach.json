@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "wrightsville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-13T17:02:43+00:00",
+  "generated_at_utc": "2026-09-13T19:43:07+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-13T17:02:43+00:00"
+      "fetched_at_utc": "2026-09-13T19:43:07+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5aa62a664ed1b17f663850addf8a233c3d26ba40.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-13T14:19:00-04:00",
+        "onset": "2026-09-14T20:00:00-04:00",
+        "expires": "2026-09-14T03:00:00-04:00",
+        "ends": "2026-09-15T12:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 13 at 2:19PM EDT until September 15 at 12:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Northeast winds 20 to 25 kt and seas 4 to 6 ft expected.\n\n* WHERE...Southeast North Carolina coastal waters out 20 NM.\n\n* WHEN...From 8 PM Monday to noon EDT Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",

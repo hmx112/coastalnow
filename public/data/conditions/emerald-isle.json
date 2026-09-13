@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-13T17:02:44+00:00",
+  "generated_at_utc": "2026-09-13T19:43:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-13T17:02:44+00:00"
+      "fetched_at_utc": "2026-09-13T19:43:09+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7e82fce1f9a1843d9060177d11e6b319b8df4bed.003.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-13T14:16:00-04:00",
+        "onset": "2026-09-14T20:00:00-04:00",
+        "expires": "2026-09-14T05:00:00-04:00",
+        "ends": "2026-09-15T14:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 13 at 2:16PM EDT until September 15 at 2:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Northeast winds 15 to 25 kt expected and seas 4 to 6 ft\nexpected.\n\n* WHERE...The coastal waters from Ocracoke Inlet to Surf City.\n\n* WHEN...From 8 PM Monday to 2 PM EDT Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...A cold front will move south through the\narea Monday evening and will be accompanied by a period of\nelevated winds and seas through Monday night. Elevated seas may\nlast into Tuesday.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
