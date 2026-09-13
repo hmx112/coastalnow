@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<title>Redondo Beach Tide Times, High &amp; Low Tides Today | CoastalNow</title>
+<style>
+:root{
+  --ink:#10252d;
+  --muted:#627780;
+  --line:#dce8eb;
+  --paper:#f4f8f8;
+  --white:#ffffff;
+  --teal:#087c8c;
+  --teal-deep:#056373;
+  --aqua:#dff4f3;
+  --sky:#eaf5f8;
+  --sand:#f7f3e8;
+  --high:#087c8c;
+  --low:#7faeb7;
+  --shadow:0 18px 50px rgba(23,61,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 7% -5%, rgba(102,202,207,.15), transparent 28rem),
+    var(--paper);
+  line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(248,251,251,.88);
+  border-bottom:1px solid rgba(220,232,235,.8);
+  backdrop-filter:blur(16px);
+}
+.header-inner{
+  height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.04em;font-size:1.18rem}
+.logo-mark{
+  width:31px;height:31px;border-radius:10px;
+  background:linear-gradient(145deg,#0b8190,#65c4c6);
+  display:grid;place-items:center;
+  box-shadow:0 7px 20px rgba(8,124,140,.22);
+}
+.logo-mark svg{width:21px;height:21px}
+.nav{display:flex;align-items:center;gap:24px;font-size:.91rem;color:#4e6670}
+.nav a:hover{color:var(--teal)}
+.search-pill{
+  display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);
+  border-radius:999px;background:rgba(255,255,255,.82);color:var(--muted)
+}
+.search-pill svg{width:16px;height:16px}
+
+.preview-note{
+  background:#fff9df;border-bottom:1px solid #eee1a4;color:#66591f;
+  font-size:.79rem;text-align:center;padding:8px 16px;
+}
+.preview-note strong{font-weight:850}
+
+.breadcrumbs{
+  display:flex;gap:8px;align-items:center;
+  padding-top:22px;font-size:.78rem;color:#789099;
+}
+.breadcrumbs span{opacity:.55}
+
+.hero{
+  position:relative;overflow:hidden;
+  margin-top:16px;border:1px solid rgba(197,222,226,.9);
+  border-radius:28px;
+  background:
+    linear-gradient(128deg,rgba(255,255,255,.96),rgba(233,247,248,.94) 60%,rgba(221,243,244,.95));
+  min-height:278px;
+  box-shadow:var(--shadow);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:42px 44px 38px;
+  display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:end;
+}
+.eyebrow{
+  margin:0 0 10px;
+  color:var(--teal);font-size:.72rem;font-weight:850;letter-spacing:.13em;
+}
+h1{
+  margin:0;max-width:700px;
+  font-size:clamp(2.55rem,5vw,4.65rem);
+  line-height:.98;letter-spacing:-.06em;
+}
+.hero-copy{
+  margin:17px 0 0;max-width:650px;
+  color:#526d76;font-size:1.03rem;
+}
+.hero-date{
+  align-self:end;justify-self:end;width:100%;
+  background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(10px);border-radius:20px;padding:18px 19px;
+}
+.hero-date span{display:block;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em}
+.hero-date strong{display:block;margin-top:4px;font-size:1.04rem}
+.hero-date small{display:block;color:#769099;margin-top:3px}
+.hero-wave{
+  position:absolute;right:-55px;bottom:-35px;width:520px;height:170px;opacity:.52
+}
+.hero-wave path{fill:none;stroke:#5fbdc3;stroke-width:2}
+.hero-bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.46)}
+.b1{width:95px;height:95px;right:60px;top:-25px}
+.b2{width:48px;height:48px;right:205px;top:27px}
+
+.section{margin-top:24px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:13px}
+.section-head h2{margin:0;font-size:1.4rem;letter-spacing:-.035em}
+.section-head p{margin:0;color:var(--muted);font-size:.84rem}
+
+.tide-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tide-card{
+  position:relative;overflow:hidden;
+  min-height:205px;border-radius:24px;padding:25px;
+  border:1px solid var(--line);background:var(--white);
+  box-shadow:0 12px 34px rgba(24,60,70,.055);
+}
+.tide-card.high{
+  color:white;border-color:transparent;
+  background:linear-gradient(145deg,#057789,#0b91a0);
+}
+.tide-card.low{background:linear-gradient(145deg,#fff,#f1f8f9)}
+.tide-card .label{
+  display:flex;align-items:center;gap:8px;
+  font-size:.77rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;
+  opacity:.78;
+}
+.arrow-icon{
+  width:26px;height:26px;border-radius:9px;display:grid;place-items:center;
+  background:rgba(255,255,255,.16);
+}
+.low .arrow-icon{background:#e5f1f3;color:var(--teal)}
+.tide-time{
+  margin-top:25px;font-size:clamp(2.15rem,5vw,3.65rem);
+  font-weight:850;line-height:.95;letter-spacing:-.055em;
+}
+.tide-height{margin-top:9px;font-size:1.02rem;font-weight:720;opacity:.84}
+.tide-meta{
+  position:absolute;right:24px;bottom:22px;text-align:right;
+  font-size:.79rem;opacity:.7;
+}
+.card-wave{
+  position:absolute;right:-25px;bottom:-31px;width:250px;height:95px;opacity:.23
+}
+.card-wave path{fill:none;stroke:white;stroke-width:2}
+.low .card-wave path{stroke:#2f98a4}
+
+.tide-answer{
+  margin:0 0 16px;border:1px solid #bcdfe1;border-radius:24px;padding:24px;
+  background:linear-gradient(135deg,#f7ffff,#e8f7f7);box-shadow:0 12px 34px rgba(24,60,70,.055);
+  display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:24px;align-items:center
+}
+.tide-answer-main{min-width:0}.tide-answer-main .eyebrow{margin-bottom:6px}
+.tide-answer-kind{display:block;font-size:1rem;color:#315d62}
+.tide-answer-time{font-size:clamp(2.2rem,5vw,3.7rem);font-weight:850;line-height:.98;letter-spacing:-.055em;margin-top:8px}
+.tide-answer-height{font-weight:750;color:#526d76;margin-top:6px}.tide-answer-main small{display:block;color:#73878f;margin-top:4px}
+.tide-answer-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #d4e8e8;border-radius:18px;background:rgba(255,255,255,.78);overflow:hidden}
+.tide-answer-stats>div{padding:16px;min-width:0}.tide-answer-stats>div+div{border-left:1px solid #dce9e9}
+.tide-answer-stats span{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
+.tide-answer-stats strong{display:block;margin-top:5px;font-size:.98rem}
+
+.status-strip{
+  margin-top:14px;padding:13px 16px;border-radius:15px;
+  background:#e7f4f2;border:1px solid #c9e7e4;
+  display:flex;align-items:center;gap:10px;
+  color:#315d62;font-size:.85rem;
+}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#36a493;box-shadow:0 0 0 5px rgba(54,164,147,.1)}
+
+.chart-card{
+  background:var(--white);border:1px solid var(--line);border-radius:26px;
+  padding:26px 26px 19px;box-shadow:var(--shadow);
+}
+.chart-top{
+  display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:8px
+}
+.chart-top h2{margin:0;font-size:1.38rem;letter-spacing:-.035em}
+.legend{display:flex;gap:12px;color:var(--muted);font-size:.78rem}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.legend .h{background:var(--high)}.legend .l{background:var(--low)}
+.chart{
+  width:100%;height:auto;display:block;margin-top:4px;
+}
+.axis{stroke:#dbe7e9;stroke-width:1}
+.area{fill:url(#areaGradient)}
+.line{fill:none;stroke:#0b8794;stroke-width:4;stroke-linecap:round}
+.dot-high{fill:#087c8c;stroke:white;stroke-width:4}
+.dot-low{fill:#82b1ba;stroke:white;stroke-width:4}
+.chart text{font-family:inherit}
+.axis-label{font-size:12px;fill:#84979e}
+.point-label{font-size:12px;font-weight:800;fill:#314b54}
+.tide-list{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px
+}
+.event{
+  border-top:1px solid var(--line);padding:12px 6px 5px;
+}
+.event span{display:block;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.event strong{display:block;margin-top:3px;font-size:.95rem}
+.event small{color:#73878f}
+
+.ad-slot{
+  min-height:106px;margin-top:24px;border:1px dashed #bdcdd1;border-radius:18px;
+  background:rgba(255,255,255,.52);
+  display:grid;place-items:center;text-align:center;color:#95a5aa;font-size:.73rem;letter-spacing:.08em;
+}
+.ad-slot span{display:block;font-size:.61rem;margin-bottom:3px}
+
+.forecast{
+  background:white;border:1px solid var(--line);border-radius:26px;
+  padding:26px;box-shadow:var(--shadow)
+}
+.desktop-table{width:100%;border-collapse:collapse}
+.desktop-table th{
+  text-align:left;padding:0 12px 12px;color:#7a8e96;
+  font-size:.72rem;text-transform:uppercase;letter-spacing:.08em
+}
+.desktop-table td{padding:14px 12px;border-top:1px solid #e7eeee;font-size:.9rem;vertical-align:top}
+.desktop-table th:first-child,.desktop-table td:first-child{width:13%}
+.forecast-events{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
+.desktop-table tbody tr:hover{background:#f8fbfb}
+.day strong{display:block}.day span{font-size:.75rem;color:var(--muted)}
+.pill-event{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 8px;margin:2px 4px 2px 0;border-radius:10px;
+  background:#eef7f7;font-size:.78rem;white-space:nowrap
+}
+.pill-event.low{background:#f3f6f7}
+.next-tide-note{
+  display:inline-flex;align-items:center;
+  padding:6px 8px;margin:2px 4px 2px 0;border-radius:10px;
+  background:#f7fafb;color:#7e9198;font-size:.74rem;font-weight:650;white-space:nowrap;
+  border:1px solid #e3ecee
+}
+.mobile-event.next-note{background:transparent;border:1px dashed #d7e3e6;color:#7e9198}
+.mobile-days{display:none}
+
+.lower-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.info-card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px
+}
+.info-card h2{margin:0;font-size:1.26rem;letter-spacing:-.03em}
+.info-card p{color:#5e737b;font-size:.89rem;margin:12px 0 0}
+.source-list{margin-top:15px;display:grid;gap:0}
+.source-row{
+  display:flex;justify-content:space-between;gap:20px;padding:10px 0;
+  border-top:1px solid var(--line);font-size:.82rem
+}
+.source-row span:first-child{color:var(--muted)}
+.nearby{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.place{
+  padding:9px 11px;border:1px solid var(--line);border-radius:999px;
+  background:#fbfdfd;font-size:.8rem;transition:.15s
+}
+.place:hover{border-color:#9fcbd0;color:var(--teal);transform:translateY(-1px)}
+
+footer{margin-top:48px;background:#102a32;color:#d9e6e8}
+.footer-inner{
+  min-height:145px;padding:30px 0;display:flex;justify-content:space-between;gap:30px;align-items:flex-start
+}
+.footer-brand{font-weight:850;font-size:1.05rem}
+.footer-copy{color:#9eb1b7;font-size:.79rem;max-width:370px;margin-top:8px}
+.footer-links{display:flex;gap:18px;color:#bdd0d4;font-size:.82rem}
+
+@media(max-width:800px){
+  .nav>a:not(.activity-nav-link){display:none}
+  .hero-inner{grid-template-columns:1fr;padding:32px 26px 28px}
+  .hero-date{justify-self:start;width:auto;min-width:225px}
+  .hero-wave{width:390px;right:-100px}
+  .tide-answer{grid-template-columns:1fr}
+  .tide-grid{grid-template-columns:1fr}
+  .tide-card{min-height:178px}
+  .tide-list{grid-template-columns:1fr 1fr}
+  .desktop-table{display:none}
+  .mobile-days{display:grid;gap:10px}
+  .mobile-day{border:1px solid var(--line);border-radius:16px;padding:14px}
+  .mobile-day-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .mobile-day-head strong{font-size:.9rem}.mobile-day-head span{font-size:.75rem;color:var(--muted)}
+  .mobile-events{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .mobile-event{background:#f4f8f8;border-radius:10px;padding:8px;font-size:.76rem}
+  .lower-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .wrap{width:min(100% - 22px,1120px)}
+  .site-header .header-inner{height:62px}
+  .search-pill span{display:none}
+  .preview-note{text-align:left}
+  .breadcrumbs{padding-top:14px}
+  .hero{border-radius:22px}
+  .hero-inner{padding:28px 20px 25px}
+  h1{font-size:2.55rem}
+  .hero-copy{font-size:.94rem}
+  .hero-date{padding:14px 15px;border-radius:16px}
+  .section{margin-top:18px}
+  .section-head{align-items:flex-start;flex-direction:column;gap:3px}
+  .tide-answer{border-radius:20px;padding:19px}
+  .tide-answer-stats{grid-template-columns:1fr}
+  .tide-answer-stats>div+div{border-left:0;border-top:1px solid #dce9e9}
+  .tide-card{border-radius:20px;padding:21px;min-height:170px}
+  .tide-time{font-size:2.65rem}
+  .chart-card,.forecast,.info-card{border-radius:20px;padding:19px}
+  .chart-top{flex-direction:column}
+  .tide-list{grid-template-columns:1fr 1fr}
+  .event{padding-top:9px}
+  .mobile-events{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;min-height:auto}
+}
+
+.more-forecast{display:grid;gap:10px}
+.more-forecast[hidden]{display:none}
+.forecast-toggle{width:100%;margin-top:2px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#f8fbfb;color:var(--teal);font:inherit;font-size:.82rem;font-weight:800;cursor:pointer}
+.forecast-toggle:hover{background:#eef7f7}
+.forecast-toggle::after{content:" ↓";font-weight:900}
+.forecast-toggle[aria-expanded="true"]::after{content:" ↑"}
+
+.data-notice{margin:16px auto 0;padding:11px 14px;border-radius:14px;font-size:.81rem;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.data-notice.stale{background:#fff8df;border-color:#eadb91;color:#695d29}
+.data-notice.error{background:#fff0f0;border-color:#efc7c7;color:#804848}
+.unavailable-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;color:var(--muted)}
+.tide-list{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+</style>
+<meta name="description" content="See today’s high tide and low tide times for Redondo Beach, California, with a tide chart, 7-day tide schedule, and NOAA source details.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://coastalnowtides.com/tides/california/redondo-beach/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coastalnowtides.com/"},{"@type":"ListItem","position":2,"name":"California","item":"https://coastalnowtides.com/tides/california/"},{"@type":"ListItem","position":3,"name":"Redondo Beach","item":"https://coastalnowtides.com/tides/california/redondo-beach/"}]}</script>
+</head>
+<body>
+
+
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../../index.html">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <span>CoastalNow</span>
+    </a>
+    <nav class="nav">
+      <a href="#forecast">7-Day forecast</a>
+      <a href="#nearby">Nearby tides</a>
+      <span class="search-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/>
+        </svg>
+        <span>Search location</span>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumbs">
+    <a href="../../../index.html">Home</a><span>›</span><a href="../index.html">California</a><span>›</span><strong>Redondo Beach</strong>
+  </div>
+
+  <section class="hero">
+    <span class="hero-bubble b1"></span><span class="hero-bubble b2"></span>
+    <svg class="hero-wave" viewBox="0 0 520 170" aria-hidden="true">
+      <path d="M0 95 C85 40 145 145 230 91 S385 44 520 100"/>
+      <path d="M0 122 C85 67 145 168 230 119 S385 70 520 126" opacity=".56"/>
+    </svg>
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">REDONDO BEACH · CALIFORNIA</p>
+        <h1>Redondo Beach Tide Times Today</h1>
+        <p class="hero-copy">
+          Today’s tide times and a quick coastal outlook.
+        </p>
+      </div>
+      <div class="hero-date">
+        <span>Today</span>
+        <strong>Sunday, September 13</strong>
+        <small>Updated 8:56 AM UTC-07:00</small>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">AT A GLANCE</p>
+        <h2>Today’s High and Low Tides</h2>
+      </div>
+      <p>Times shown in local Pacific time</p>
+    </div>
+
+    <article class="tide-answer"><div class="tide-answer-main"><p class="eyebrow">NEXT TIDE</p><strong class="tide-answer-kind">↑ High tide</strong><div class="tide-answer-time">11:10 AM</div><div class="tide-answer-height">5.5 ft</div><small>High tide in 2h 13m</small></div><div class="tide-answer-stats"><div><span>Next high</span><strong>11:10 AM</strong></div><div><span>Next low</span><strong>5:38 PM</strong></div><div><span>Today's range</span><strong>5.0 ft</strong></div></div></article>
+
+    <div class="tide-grid"><article class="tide-card high">
+        <div class="label"><span class="arrow-icon">↑</span>Next high tide</div>
+        <div class="tide-time">11:10 AM</div>
+        <div class="tide-height">5.5 ft</div>
+        <div class="tide-meta">High tide in 2h 13m</div>
+        <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
+      </article><article class="tide-card low">
+        <div class="label"><span class="arrow-icon">↓</span>Next low tide</div>
+        <div class="tide-time">5:38 PM</div>
+        <div class="tide-height">0.5 ft</div>
+        <div class="tide-meta">Low tide in 8h 41m</div>
+        <svg class="card-wave" viewBox="0 0 250 95" aria-hidden="true"><path d="M0 55 C40 20 72 80 116 48 S195 23 250 58"/><path d="M0 72 C40 38 72 94 116 67 S195 42 250 75" opacity=".55"/></svg>
+      </article></div>
+
+    <div class="status-strip"><span class="status-dot"></span><strong>Tide is rising now ↑</strong></div>
+  </section>
+
+  
+
+  <section class="section chart-card">
+    <div class="chart-top">
+      <div>
+        <p class="eyebrow">TODAY’S TIDE CURVE</p>
+        <h2>Today’s Tide Chart</h2>
+      </div>
+      <div class="legend">
+        <span><i class="h"></i> High tide</span>
+        <span><i class="l"></i> Low tide</span>
+      </div>
+    </div>
+
+    <svg class="chart" viewBox="0 0 920 330" role="img" aria-label="Tide curve for Redondo Beach today">
+      <defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#65c1c7" stop-opacity=".32"/><stop offset="100%" stop-color="#65c1c7" stop-opacity=".03"/></linearGradient></defs>
+      <line class="axis" x1="55" y1="270" x2="878" y2="270"/><line class="axis" x1="55" y1="194" x2="878" y2="194"/><line class="axis" x1="55" y1="118" x2="878" y2="118"/><path class="area" d="M55.0,94.9 L72.1,107.4 L89.3,123.5 L106.4,142.2 L123.6,162.1 L140.7,181.9 L157.9,200.1 L175.0,215.4 L192.2,226.9 L209.3,233.7 L226.5,235.3 L243.6,231.5 L260.8,222.7 L277.9,209.2 L295.0,192.0 L312.2,172.2 L329.3,151.0 L346.5,129.7 L363.6,109.6 L380.8,92.0 L397.9,78.0 L415.1,68.5 L432.2,64.1 L449.4,65.0 L466.5,71.2 L483.6,82.4 L500.8,98.0 L517.9,116.9 L535.1,138.2 L552.2,160.4 L569.4,182.4 L586.5,202.9 L603.7,220.6 L620.8,234.5 L638.0,243.8 L655.1,247.9 L672.2,246.9 L689.4,241.2 L706.5,231.3 L723.7,217.8 L740.8,201.7 L758.0,184.0 L775.1,165.9 L792.3,148.5 L809.4,133.1 L826.6,120.6 L843.7,111.9 L860.9,107.6 L860.9,270 L55.0,270 Z"/><path class="line" d="M55.0,94.9 L72.1,107.4 L89.3,123.5 L106.4,142.2 L123.6,162.1 L140.7,181.9 L157.9,200.1 L175.0,215.4 L192.2,226.9 L209.3,233.7 L226.5,235.3 L243.6,231.5 L260.8,222.7 L277.9,209.2 L295.0,192.0 L312.2,172.2 L329.3,151.0 L346.5,129.7 L363.6,109.6 L380.8,92.0 L397.9,78.0 L415.1,68.5 L432.2,64.1 L449.4,65.0 L466.5,71.2 L483.6,82.4 L500.8,98.0 L517.9,116.9 L535.1,138.2 L552.2,160.4 L569.4,182.4 L586.5,202.9 L603.7,220.6 L620.8,234.5 L638.0,243.8 L655.1,247.9 L672.2,246.9 L689.4,241.2 L706.5,231.3 L723.7,217.8 L740.8,201.7 L758.0,184.0 L775.1,165.9 L792.3,148.5 L809.4,133.1 L826.6,120.6 L843.7,111.9 L860.9,107.6"/><circle class="dot-low" cx="223.0" cy="235.4" r="8"/><text class="point-label" x="181.0" y="263.4">4:54 AM · Low</text><circle class="dot-high" cx="437.9" cy="63.8" r="8"/><text class="point-label" x="395.9" y="48.8">11:10 AM · High</text><circle class="dot-low" cx="659.7" cy="248.1" r="8"/><text class="point-label" x="617.7" y="276.1">5:38 PM · Low</text><circle class="dot-high" cx="868.3" cy="107.2" r="8"/><text class="point-label" x="805.0" y="92.2">11:43 PM · High</text>
+      <text class="axis-label" x="55" y="315">12 AM</text><text class="axis-label" x="256" y="315">6 AM</text><text class="axis-label" x="453" y="315">12 PM</text><text class="axis-label" x="653" y="315">6 PM</text><text class="axis-label" x="842" y="315">12 AM</text>
+    </svg><div class="tide-list"><div class="event"><span>Low</span><strong>4:54 AM</strong><small>0.9 ft</small></div><div class="event"><span>High</span><strong>11:10 AM</strong><small>5.5 ft</small></div><div class="event"><span>Low</span><strong>5:38 PM</strong><small>0.5 ft</small></div><div class="event"><span>High</span><strong>11:43 PM</strong><small>4.3 ft</small></div></div><p style="margin:12px 4px 0;color:#73878f;font-size:.78rem">Tide curve is estimated between official NOAA high and low predictions.</p>
+  </section>
+
+  <div class="ad-slot">
+    <div><span>ADVERTISEMENT</span>AdSense placement after core tide information</div>
+  </div>
+
+  <section class="section forecast" id="forecast">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">PLAN AHEAD</p>
+        <h2>7-Day Tide Schedule</h2>
+      </div>
+      <p>High and low tide events in chronological order</p>
+    </div>
+
+    <table class="desktop-table">
+      <thead><tr><th>Date</th><th>Tide events</th></tr></thead>
+      <tbody>
+        <tr><td class="day"><strong>Sun 13</strong><span>Today</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 4:54 AM · 0.9 ft</span><span class="pill-event">↑ High 11:10 AM · 5.5 ft</span><span class="pill-event low">↓ Low 5:38 PM · 0.5 ft</span><span class="pill-event">↑ High 11:43 PM · 4.3 ft</span></div></td></tr><tr><td class="day"><strong>Mon 14</strong><span>Tomorrow</span></td><td><div class="forecast-events"><span class="pill-event low">↓ Low 5:18 AM · 1.5 ft</span><span class="pill-event">↑ High 11:38 AM · 5.4 ft</span><span class="pill-event low">↓ Low 6:25 PM · 0.7 ft</span></div></td></tr><tr><td class="day"><strong>Tue 15</strong><span>Tuesday</span></td><td><div class="forecast-events"><span class="pill-event">↑ High 12:31 AM · 3.7 ft</span><span class="pill-event low">↓ Low 5:38 AM · 2.1 ft</span><span class="pill-event">↑ High 12:06 PM · 5.2 ft</span><span class="pill-event low">↓ Low 7:19 PM · 1.0 ft</span></div></td></tr><tr><td class="day"><strong>Wed 16</strong><span>Wednesday</span></td><td><div class="forecast-events"><span class="pill-event">↑ High 1:36 AM · 3.2 ft</span><span class="pill-event low">↓ Low 5:50 AM · 2.6 ft</span><span class="pill-event">↑ High 12:38 PM · 4.9 ft</span><span class="pill-event low">↓ Low 8:33 PM · 1.2 ft</span></div></td></tr><tr><td class="day"><strong>Thu 17</strong><span>Thursday</span></td><td><div class="forecast-events"><span class="pill-event">↑ High 4:11 AM · 2.9 ft</span><span class="pill-event low">↓ Low 5:10 AM · 3.0 ft</span><span class="pill-event">↑ High 1:21 PM · 4.6 ft</span><span class="pill-event low">↓ Low 10:16 PM · 1.3 ft</span></div></td></tr><tr><td class="day"><strong>Fri 18</strong><span>Friday</span></td><td><div class="forecast-events"><span class="pill-event">↑ High 2:46 PM · 4.3 ft</span><span class="pill-event low">↓ Low 11:48 PM · 1.1 ft</span></div></td></tr><tr><td class="day"><strong>Sat 19</strong><span>Saturday</span></td><td><div class="forecast-events"><span class="pill-event">↑ High 8:29 AM · 3.5 ft</span><span class="pill-event low">↓ Low 10:47 AM · 3.6 ft</span><span class="pill-event">↑ High 4:43 PM · 4.3 ft</span></div></td></tr>
+      </tbody>
+    </table>
+
+    <div class="mobile-days"><article class="mobile-day"><div class="mobile-day-head"><strong>Sun, Sep 13</strong><span>Today</span></div><div class="mobile-events"><div class="mobile-event">↓ Low · 4:54 AM · 0.9 ft</div><div class="mobile-event">↑ High · 11:10 AM · 5.5 ft</div><div class="mobile-event">↓ Low · 5:38 PM · 0.5 ft</div><div class="mobile-event">↑ High · 11:43 PM · 4.3 ft</div></div></article><article class="mobile-day"><div class="mobile-day-head"><strong>Mon, Sep 14</strong><span>Tomorrow</span></div><div class="mobile-events"><div class="mobile-event">↓ Low · 5:18 AM · 1.5 ft</div><div class="mobile-event">↑ High · 11:38 AM · 5.4 ft</div><div class="mobile-event">↓ Low · 6:25 PM · 0.7 ft</div></div></article><article class="mobile-day"><div class="mobile-day-head"><strong>Tue, Sep 15</strong><span>Tuesday</span></div><div class="mobile-events"><div class="mobile-event">↑ High · 12:31 AM · 3.7 ft</div><div class="mobile-event">↓ Low · 5:38 AM · 2.1 ft</div><div class="mobile-event">↑ High · 12:06 PM · 5.2 ft</div><div class="mobile-event">↓ Low · 7:19 PM · 1.0 ft</div></div></article><div id="moreForecast" class="more-forecast" hidden><article class="mobile-day"><div class="mobile-day-head"><strong>Wed, Sep 16</strong><span>Wednesday</span></div><div class="mobile-events"><div class="mobile-event">↑ High · 1:36 AM · 3.2 ft</div><div class="mobile-event">↓ Low · 5:50 AM · 2.6 ft</div><div class="mobile-event">↑ High · 12:38 PM · 4.9 ft</div><div class="mobile-event">↓ Low · 8:33 PM · 1.2 ft</div></div></article><article class="mobile-day"><div class="mobile-day-head"><strong>Thu, Sep 17</strong><span>Thursday</span></div><div class="mobile-events"><div class="mobile-event">↑ High · 4:11 AM · 2.9 ft</div><div class="mobile-event">↓ Low · 5:10 AM · 3.0 ft</div><div class="mobile-event">↑ High · 1:21 PM · 4.6 ft</div><div class="mobile-event">↓ Low · 10:16 PM · 1.3 ft</div></div></article><article class="mobile-day"><div class="mobile-day-head"><strong>Fri, Sep 18</strong><span>Friday</span></div><div class="mobile-events"><div class="mobile-event">↑ High · 2:46 PM · 4.3 ft</div><div class="mobile-event">↓ Low · 11:48 PM · 1.1 ft</div></div></article><article class="mobile-day"><div class="mobile-day-head"><strong>Sat, Sep 19</strong><span>Saturday</span></div><div class="mobile-events"><div class="mobile-event">↑ High · 8:29 AM · 3.5 ft</div><div class="mobile-event">↓ Low · 10:47 AM · 3.6 ft</div><div class="mobile-event">↑ High · 4:43 PM · 4.3 ft</div></div></article></div><button class="forecast-toggle" id="forecastToggle" type="button" aria-expanded="false" aria-controls="moreForecast">Show all 7 days</button></div>
+  </section>
+
+  <div class="ad-slot">
+    <div><span>ADVERTISEMENT</span>Second AdSense placement</div>
+  </div>
+
+  <section class="section lower-grid">
+    <article class="info-card">
+      <p class="eyebrow">LOCAL GUIDE</p>
+      <h2>About Redondo Beach tides</h2>
+      <p>Redondo Beach coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.</p>
+      <div class="nearby" id="nearby"><a class="place state-directory-link" href="../index.html">More California tide locations</a><a class="place" href="../los-angeles/index.html">Los Angeles</a><a class="place" href="../santa-monica/index.html">Santa Monica</a><a class="place" href="../long-beach/index.html">Long Beach</a><a class="place" href="../seal-beach/index.html">Seal Beach</a></div>
+    </article>
+
+    <article class="info-card" id="data">
+      <p class="eyebrow">DATA & TRUST</p>
+      <h2>Source details</h2>
+      <div class="source-list">
+        <div class="source-row"><span>Source</span><strong>NOAA CO-OPS</strong></div>
+        <div class="source-row"><span>Station</span><strong>9410738</strong></div>
+        <div class="source-row"><span>Datum</span><strong>MLLW</strong></div>
+        <div class="source-row"><span>Units</span><strong>Feet</strong></div>
+      </div>
+      <p>Tide predictions can differ from observed water levels because of weather and local conditions.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">CoastalNow</div>
+      <div class="footer-copy">Fast, clear coastal information designed around what you need to know before you go.</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../../about/index.html">About</a><a href="../../../privacy/index.html">Privacy</a><a href="../../../contact/index.html">Contact</a><a href="#data">Data sources</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const forecastToggle=document.getElementById('forecastToggle');
+const moreForecast=document.getElementById('moreForecast');
+if(forecastToggle&&moreForecast){
+  forecastToggle.addEventListener('click',()=>{
+    const expanded=forecastToggle.getAttribute('aria-expanded')==='true';
+    forecastToggle.setAttribute('aria-expanded',String(!expanded));
+    moreForecast.hidden=expanded;
+    forecastToggle.textContent=expanded?'Show all 7 days':'Show first 3 days';
+  });
+}
+</script>
+</body>
+</html>
