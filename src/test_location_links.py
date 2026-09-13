@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from location_links import nearest_same_state_locations
+from locations import LOCATIONS
 
 
 class LocationLinksTests(unittest.TestCase):
@@ -103,6 +104,10 @@ class LocationLinksTests(unittest.TestCase):
         }
         result = nearest_same_state_locations(locations["origin"], locations, limit=4)
         self.assertEqual([item["slug"] for item in result], ["near"])
+
+    def test_los_angeles_nearby_cluster_uses_new_southern_california_locations(self):
+        nearby = {item["slug"] for item in LOCATIONS["los-angeles"]["nearby"]}
+        self.assertTrue({"long-beach", "redondo-beach"} & nearby, nearby)
 
 
 if __name__ == "__main__":

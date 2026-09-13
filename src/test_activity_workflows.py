@@ -129,6 +129,7 @@ class ActivityWorkflowTests(unittest.TestCase):
             "src/test_location_seo_template.py",
             "src/test_seo_audit.py",
             "src/test_gsc_report.py",
+            "src/test_gsc_expansion_batch.py",
         ):
             self.assertIn(test, text)
         self.assertIn("public/fishing", text)

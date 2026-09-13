@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from site_generator import build_directory_pages
+from state_landing import STATE_LANDING
 
 
 class StateLandingTests(unittest.TestCase):
@@ -38,6 +39,16 @@ class StateLandingTests(unittest.TestCase):
         for state_slug in ("california", "florida"):
             html = pages[f"tides/{state_slug}/index.html"]
             self.assertIn("All tide locations", html)
+
+    def test_southern_california_region_contains_expansion_locations(self):
+        region = next(item for item in STATE_LANDING["california"]["regions"] if item["key"] == "southern-california")
+        self.assertTrue({"long-beach", "ventura", "santa-barbara", "redondo-beach", "dana-point", "seal-beach"} <= set(region["slugs"]))
+
+    def test_florida_regions_contain_expansion_locations(self):
+        slugs = set()
+        for region in STATE_LANDING["florida"]["regions"]:
+            slugs.update(region["slugs"])
+        self.assertTrue({"key-biscayne", "west-palm-beach", "fort-myers-beach", "pompano-beach", "marco-island", "sarasota"} <= slugs)
 
 
 if __name__ == "__main__":
