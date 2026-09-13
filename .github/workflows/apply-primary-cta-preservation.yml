@@ -1,0 +1,42 @@
+name: Apply primary Activity CTA preservation
+
+on:
+  push:
+    branches:
+      - fix/advance-tide-url-baseline
+    paths:
+      - ".github/workflows/apply-primary-cta-preservation.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/advance-tide-url-baseline
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Preserve primary Activity CTA before result data exists
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/build_site.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''    for slug, activity in configured.items():\n        if not activity_results.get(slug):\n            continue\n        href = escape(activity_location_url(location, slug))\n'''
+          new = '''    for slug, activity in configured.items():\n        href = escape(activity_location_url(location, slug))\n'''
+          if old not in text:
+              raise SystemExit('target build_site.py block not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          python src/test_tide_body_activity_cta.py
+      - name: Commit production fix
+        run: |
+          git config user.name "hmx112"
+          git config user.email "hmx112@naver.com"
+          git add src/build_site.py
+          git commit -m "Preserve Activity CTA before results exist"
+          git push origin HEAD:fix/advance-tide-url-baseline
