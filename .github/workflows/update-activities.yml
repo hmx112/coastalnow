@@ -2,6 +2,13 @@ name: Update coastal Activity conditions
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/locations.json"
+      - "src/data/live_noaa.json"
+      - ".github/workflows/update-activities.yml"
   schedule:
     - cron: "23 */3 * * *"
 
