@@ -1,0 +1,78 @@
+name: Validate GSC expansion NOAA stations
+
+on:
+  push:
+    branches:
+      - feat/gsc-cluster-expansion
+    paths:
+      - ".github/workflows/validate-gsc-expansion-noaa.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate candidate NOAA prediction support
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.request
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, str(Path('src').resolve()))
+          from locations import LOCATIONS
+          from promote_location import validate_noaa_compatibility
+
+          candidates = [
+              ("long-beach", "9410678"),
+              ("ventura", "9411189"),
+              ("santa-barbara", "9411340"),
+              ("redondo-beach", "9410738"),
+              ("dana-point", "9410519"),
+              ("seal-beach", "9410678"),
+              ("key-biscayne", "8723214"),
+              ("west-palm-beach", "8722670"),
+              ("fort-myers-beach", "8725366"),
+              ("pompano-beach", "8722861"),
+              ("marco-island", "8724967"),
+              ("sarasota", "8726083"),
+          ]
+
+          failures = []
+          print("slug\tstation\tstation_name\tharmonic\thilo-derived\tlat\tlon")
+          for slug, station in candidates:
+              name = ""
+              lat = ""
+              lon = ""
+              try:
+                  url = f"https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/{station}.json"
+                  req = urllib.request.Request(url, headers={"User-Agent": "CoastalNow validation"})
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      payload = json.loads(response.read().decode("utf-8"))
+                  station_rows = payload.get("stations") or []
+                  if station_rows:
+                      info = station_rows[0]
+                      name = str(info.get("name") or "")
+                      lat = info.get("lat", "")
+                      lon = info.get("lng", "")
+              except Exception as exc:
+                  name = f"metadata-error:{exc}"
+
+              results = {}
+              for mode in ("harmonic", "hilo-derived"):
+                  try:
+                      validate_noaa_compatibility(LOCATIONS[slug], station, mode)
+                      results[mode] = "PASS"
+                  except Exception as exc:
+                      results[mode] = f"FAIL:{exc}"
+              if results["hilo-derived"] != "PASS":
+                  failures.append((slug, station, results))
+              print(f"{slug}\t{station}\t{name}\t{results['harmonic']}\t{results['hilo-derived']}\t{lat}\t{lon}")
+
+          if failures:
+              raise SystemExit("Stations without usable H/L predictions: " + ", ".join(slug for slug, _, _ in failures))
+          PY
