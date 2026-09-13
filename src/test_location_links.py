@@ -84,6 +84,26 @@ class LocationLinksTests(unittest.TestCase):
         result = nearest_same_state_locations(locations["origin"], locations, limit=2)
         self.assertEqual([item["slug"] for item in result], ["alpha", "beta"])
 
+    def test_nearby_links_fall_back_to_activity_shore_point_coordinates(self):
+        locations = {
+            "origin": {
+                "slug": "origin",
+                "name": "Origin",
+                "state_slug": "california",
+                "status": "Live NOAA",
+                "activity": {"shore_point": {"latitude": 33.0, "longitude": -117.0}},
+            },
+            "near": {
+                "slug": "near",
+                "name": "Near",
+                "state_slug": "california",
+                "status": "Live NOAA",
+                "activity": {"shore_point": {"latitude": 33.1, "longitude": -117.0}},
+            },
+        }
+        result = nearest_same_state_locations(locations["origin"], locations, limit=4)
+        self.assertEqual([item["slug"] for item in result], ["near"])
+
 
 if __name__ == "__main__":
     unittest.main()
