@@ -29,6 +29,9 @@ jobs:
       - name: Render current Live NOAA tide pages for PR verification
         run: python src/generate_tides.py
 
+      - name: Generate current Activity data for Tide links
+        run: python src/generate_activities.py
+
       - name: Rebuild directories and SEO artifacts
         run: python src/build_site.py
 
