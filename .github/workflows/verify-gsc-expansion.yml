@@ -13,5 +13,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run controlled expansion regression
-        run: python src/test_gsc_expansion_batch.py
+      - name: Run controlled expansion regressions
+        run: |
+          python src/test_gsc_expansion_batch.py
+          python src/test_state_landing.py
+          python src/test_location_links.py
