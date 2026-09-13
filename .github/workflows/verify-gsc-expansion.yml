@@ -1,0 +1,17 @@
+name: Verify GSC expansion
+
+on:
+  push:
+    branches:
+      - feat/gsc-cluster-expansion
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run controlled expansion regression
+        run: python src/test_gsc_expansion_batch.py
