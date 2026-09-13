@@ -23,7 +23,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run Huntington pilot and tide regression tests
+      - name: Validate Live NOAA configuration
+        run: python src/promote_location.py --validate-config
+
+      - name: Render current Live NOAA tide pages for PR verification
+        run: python src/generate_tides.py
+
+      - name: Rebuild directories and SEO artifacts
+        run: python src/build_site.py
+
+      - name: Run Tide PR regression tests
         run: |
           python src/test_huntington_seo_pilot.py
           python src/test_generate_tides_activity_cta.py
