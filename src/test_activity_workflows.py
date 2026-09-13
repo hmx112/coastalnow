@@ -123,6 +123,14 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("python src/build_site.py", text)
         self.assertIn("src/test_activity_attribution.py", text)
         self.assertIn("src/test_activity_seo_navigation.py", text)
+        for test in (
+            "src/test_location_links.py",
+            "src/test_state_landing.py",
+            "src/test_location_seo_template.py",
+            "src/test_seo_audit.py",
+            "src/test_gsc_report.py",
+        ):
+            self.assertIn(test, text)
         self.assertIn("public/fishing", text)
         self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())

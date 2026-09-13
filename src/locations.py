@@ -4,6 +4,8 @@ import json
 import math
 from pathlib import Path
 
+from location_links import nearest_same_state_locations
+
 ROOT = Path(__file__).resolve().parent
 LIVE_NOAA_FILE = ROOT / "data" / "live_noaa.json"
 
@@ -126,8 +128,11 @@ def _load_locations():
             "timezone": timezone,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
-            "page_title": f'{item["name"]} Tide Times Today | CoastalNow',
-            "meta_description": f'{item["name"]} tide times and tide outlook for {item["name"]}, {item["state"]}.',
+            "page_title": f'{item["name"]} Tide Times, High & Low Tides Today | CoastalNow',
+            "meta_description": (
+                f'See today’s high tide and low tide times for {item["name"]}, {item["state"]}, '
+                'with a tide chart, 7-day tide schedule, and NOAA source details.'
+            ),
             "hero_copy": coverage or "Today’s tide times and a quick coastal outlook.",
             "local_guide": base_guide + ((" " + coverage) if coverage else ""),
             "nearby": [],
@@ -136,6 +141,8 @@ def _load_locations():
             "station_name": station_name,
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",
         }
+    for location in locations.values():
+        location["nearby"] = nearest_same_state_locations(location, locations, limit=4)
     return locations
 
 
