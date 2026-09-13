@@ -67,6 +67,8 @@ jobs:
               text = text.replace(old, new, 1)
           template.write_text(text, encoding='utf-8')
           PY
+      - name: Normalize generated site artifacts with updated metadata
+        run: python src/build_site.py
       - name: Run focused location SEO regressions
         run: |
           python src/test_location_seo_template.py
