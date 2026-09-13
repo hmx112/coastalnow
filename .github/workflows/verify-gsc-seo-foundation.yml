@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Normalize generated artifacts for source-branch verification
+        run: python src/build_site.py
       - name: Run GSC SEO foundation regressions
         run: |
           python src/test_location_links.py
