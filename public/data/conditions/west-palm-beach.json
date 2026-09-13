@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "west-palm-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-13T20:58:24+00:00",
+  "generated_at_utc": "2026-09-13T22:35:13+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-13T20:58:24+00:00"
+      "fetched_at_utc": "2026-09-13T22:35:13+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bc76ba6dadc9990f515915238827e38c2e133d77.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-13T18:21:00-04:00",
+        "onset": "2026-09-13T18:21:00-04:00",
+        "expires": "2026-09-13T19:15:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 13 at 6:21PM EDT by NWS Miami FL",
+        "description": "The areas affected include...\nCoastal waters from Jupiter Inlet to Deerfield Beach FL out 20\nNM...\nWaters from Jupiter Inlet to Deerfield Beach FL from 20 to 60\nNM...\n\nAt 621 PM EDT, Doppler radar indicated a strong thunderstorm, capable\nof producing winds to around 30 knots. This thunderstorm was located\nnear Palm Beach, moving northeast at 15 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots and locally higher\nwaves. Boaters should seek safe harbor immediately until this storm\npasses.\n\nWaterspouts are possible with this activity. Remain on the alert in\ncase warnings are issued for waterspout development.",
+        "sender_name": "NWS Miami FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 92
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

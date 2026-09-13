@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "corolla",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-13T20:57:27+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-13T20:57:27+00:00",
+  "generated_at_utc": "2026-09-13T22:34:59+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-13T22:34:59+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "Limited",
+    "score": 73.9,
+    "rating": "Fair",
     "confidence": "Limited",
-    "best_window": null,
+    "best_window": {
+      "start": "2026-09-13T20:00:00-04:00",
+      "end": "2026-09-13T23:00:00-04:00"
+    },
     "ranking_eligible": false,
     "reasons": [
-      "special-marine-warning"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -41,61 +46,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-13T16:00:00-04:00",
-        "components": {
-          "tide": 6.1,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 68.8,
-          "water_temperature": 70
-        },
-        "raw_quality_score": 59.8,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-13T17:00:00-04:00",
-        "components": {
-          "tide": 55.3,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 68.8,
-          "water_temperature": 70
-        },
-        "raw_quality_score": 74.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "special-marine-warning",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-09-13T18:00:00-04:00",
         "components": {
           "tide": 89.6,
@@ -107,9 +57,9 @@
           "water_temperature": 70
         },
         "raw_quality_score": 86.3,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 39.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -120,7 +70,6 @@
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "special-marine-warning",
           "forecast-thunder-cap"
         ]
       },

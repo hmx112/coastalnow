@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-13T20:57:47+00:00",
+  "generated_at_utc": "2026-09-13T22:35:04+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-13T20:57:47+00:00"
+      "fetched_at_utc": "2026-09-13T22:35:04+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.964c829f59e6a1178daf202405ee5fa77b62c67c.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-13T18:14:00-04:00",
+        "onset": "2026-09-13T18:14:00-04:00",
+        "expires": "2026-09-13T18:45:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 13 at 6:14PM EDT by NWS Key West FL",
+        "description": "The areas affected include...\nHawk Channel and Straits of Florida from west end of Seven Mile\nBridge to Halfmoon Shoal out 20 nm...\nGulf Waters from East Cape Sable to Chokoloskee 20 to 60 nm out and\nbeyond 5 fathoms...\nGulf of America from west end of Seven Mile Bridge to Halfmoon Shoal\nout to 5 fathoms...\n\nAt 614 PM EDT, Doppler radar indicated a a strong thunderstorm,\ncapable of producing wind gusts near 30 knots. This thunderstorm was\nlocated over Northwest Channel Buoy 1, moving southeast at 15 knots.\n\nLocations that will be affected include...\nStock Island, Smith Shoal Light, Western Dry Rocks, Northwest Channel\nBuoy 1, Sand Key Light, and Cottrell Key.",
+        "instruction": "Prepare for thunderstorms with wind gusts near 30 knots, locally\nrough and confused seas, occasional lightning strikes, and\npotentially blinding downpours. Get to a safe port as quickly, and as\nsafely as possible. When downpours reduce visibility, slow down.",
+        "sender_name": "NWS Key West FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

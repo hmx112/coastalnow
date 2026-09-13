@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-13T20:57:27+00:00",
+  "generated_at_utc": "2026-09-13T22:34:59+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-13T20:57:27+00:00"
+      "fetched_at_utc": "2026-09-13T22:34:59+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,21 +1908,6 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f604630652f047bb14492ad81d264a666af5fa31.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-13T16:49:00-04:00",
-        "onset": "2026-09-13T16:49:00-04:00",
-        "expires": "2026-09-13T18:15:00-04:00",
-        "ends": "2026-09-13T18:15:00-04:00",
-        "headline": "Special Marine Warning issued September 13 at 4:49PM EDT until September 13 at 6:15PM EDT by NWS Wakefield VA",
-        "description": "SMWAKQ\n\nThe National Weather Service in Wakefield has issued a\n\n* Special Marine Warning for...\nCoastal waters from NC VA border to Currituck Beach Light NC out 20\nNM...\nCurrituck Sound...\n\n* Until 615 PM EDT.\n\n* At 449 PM EDT, a severe thunderstorm capable of producing\nwaterspouts was located near Knotts Island Bay, moving southeast at\n10 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* The severe thunderstorm will be near...\nKnotts Island Bay around 455 PM EDT.\nCurrituck Beach Light around 515 PM EDT.\nCurrituck Beach around 525 PM EDT.\nCurrituck Sound around 535 PM EDT.",
-        "instruction": "Move to safe harbor until hazardous weather passes.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17332f5e706fbe4f37b658b0759429d7eed67f6a.004.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -2567,5 +2552,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
