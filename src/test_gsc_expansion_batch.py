@@ -35,6 +35,12 @@ class GscExpansionBatchTests(unittest.TestCase):
             self.assertIsInstance(item.get("longitude"), (int, float), slug)
             validate_activity_geography(item)
 
+    def test_gsc_expansion_batch_is_live_after_validation(self):
+        for slug in EXPECTED_NEW:
+            item = LOCATIONS[slug]
+            self.assertEqual(item["status"], "Live NOAA", slug)
+            self.assertTrue(item.get("station"), slug)
+
 
 if __name__ == "__main__":
     unittest.main()
