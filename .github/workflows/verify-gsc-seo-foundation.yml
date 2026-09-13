@@ -1,0 +1,23 @@
+name: Verify GSC SEO foundation
+
+on:
+  push:
+    branches:
+      - feat/gsc-seo-foundation
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run existing SEO and Tide baseline regressions
+        run: |
+          python src/test_directory_generation.py
+          python src/test_seo_generation.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
+          python src/test_tide_forecast_chronology.py
+          python src/test_activity_workflows.py
