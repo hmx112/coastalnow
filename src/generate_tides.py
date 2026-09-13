@@ -39,7 +39,6 @@ PUBLIC = ROOT / "public"
 TEMPLATE = SRC / "templates" / "tide-page.html"
 PREVIEW_DIR = ROOT / "preview"
 API = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
-HUNTINGTON_SEO_PILOT = "huntington-beach"
 
 
 def location_tz(location: dict) -> ZoneInfo:
@@ -325,8 +324,6 @@ def next_tide_event(data: dict, now: datetime):
 
 
 def render_tide_answer(location: dict, data: dict, now: datetime) -> str:
-    if location.get("slug") != HUNTINGTON_SEO_PILOT:
-        return ""
     next_tide = next_tide_event(data, now)
     high = next_event(data, "H", now)
     low = next_event(data, "L", now)
@@ -577,10 +574,15 @@ def unavailable_fragments(now: datetime, message: str) -> dict:
 
 
 def nearby_links(location: dict) -> str:
-    return ''.join(
+    state_link = (
+        f'<a class="place state-directory-link" href="../index.html">'
+        f'More {location["state"]} tide locations</a>'
+    )
+    neighbors = ''.join(
         f'<a class="place" href="../{item["slug"]}/index.html">{item["name"]}</a>'
         for item in location.get("nearby", [])
     )
+    return state_link + neighbors
 
 
 def primary_activity_cta(location: dict) -> str:
@@ -620,7 +622,6 @@ def primary_activity_cta(location: dict) -> str:
     )
 def static_replacements(location: dict) -> dict:
     activity_cta = primary_activity_cta(location)
-    is_huntington_pilot = location.get("slug") == HUNTINGTON_SEO_PILOT
     return {
         "PAGE_TITLE": location["page_title"],
         "META_DESCRIPTION": location["meta_description"],
@@ -629,8 +630,8 @@ def static_replacements(location: dict) -> dict:
         "LOCATION_NAME": location["name"],
         "LOCATION_UPPER": location["name"].upper(),
         "HERO_COPY": location["hero_copy"],
-        "ACTIVITY_PRIMARY_PRE_TIDES": "" if is_huntington_pilot else activity_cta,
-        "ACTIVITY_PRIMARY_POST_TIDES": activity_cta if is_huntington_pilot else "",
+        "ACTIVITY_PRIMARY_PRE_TIDES": "",
+        "ACTIVITY_PRIMARY_POST_TIDES": activity_cta,
         "TIME_LABEL": location["time_label"],
         "LOCAL_GUIDE": location["local_guide"],
         "NEARBY_LINKS": nearby_links(location),

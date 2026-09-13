@@ -128,8 +128,11 @@ def _load_locations():
             "timezone": timezone,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
-            "page_title": f'{item["name"]} Tide Times Today | CoastalNow',
-            "meta_description": f'{item["name"]} tide times and tide outlook for {item["name"]}, {item["state"]}.',
+            "page_title": f'{item["name"]} Tide Times, High & Low Tides Today | CoastalNow',
+            "meta_description": (
+                f'See today’s high tide and low tide times for {item["name"]}, {item["state"]}, '
+                'with a tide chart, 7-day tide schedule, and NOAA source details.'
+            ),
             "hero_copy": coverage or "Today’s tide times and a quick coastal outlook.",
             "local_guide": base_guide + ((" " + coverage) if coverage else ""),
             "nearby": [],
