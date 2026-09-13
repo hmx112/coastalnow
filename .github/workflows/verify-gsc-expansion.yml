@@ -13,8 +13,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate Live NOAA config and Activity geography
+        run: python src/promote_location.py --validate-config
+      - name: Fetch NOAA data and render all live tide pages
+        run: python src/generate_tides.py
+      - name: Render directories and SEO artifacts
+        run: python src/build_site.py
       - name: Run controlled expansion regressions
         run: |
           python src/test_gsc_expansion_batch.py
-          python src/test_state_landing.py
+          python src/test_location_promotion.py
+          python src/test_generate_tides.py
+          python src/test_directory_generation.py
+          python src/test_seo_generation.py
           python src/test_location_links.py
+          python src/test_state_landing.py
+          python src/test_location_seo_template.py
+          python src/test_integrated_render.py
+          python src/test_san_diego_fixture.py
+          python src/test_activity_workflows.py
