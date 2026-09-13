@@ -53,7 +53,7 @@ class ActivitySeoNavigationTests(unittest.TestCase):
     def test_existing_tide_url_set_is_frozen(self):
         expected = set(json.loads(BASELINE.read_text(encoding="utf-8")))
         actual = {location["page_path"] for location in LOCATIONS.values()}
-        self.assertEqual(len(expected), 51)
+        self.assertEqual(len(expected), 63)
         self.assertEqual(actual, expected)
 
     def test_homepage_has_registry_driven_explore_by_activity_link(self):
