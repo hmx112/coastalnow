@@ -13,8 +13,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run existing SEO and Tide baseline regressions
+      - name: Run GSC SEO foundation regressions
         run: |
+          python src/test_location_links.py
           python src/test_directory_generation.py
           python src/test_seo_generation.py
           python src/test_integrated_render.py
