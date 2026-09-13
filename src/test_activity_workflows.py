@@ -89,6 +89,19 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertNotIn("[skip ci]", text.lower())
         _assert_rebase_before_push(self, text)
 
+    def test_full_activity_refresh_runs_after_catalog_or_live_noaa_changes_without_public_loop(self):
+        text = ACTIVITY_REFRESH.read_text(encoding="utf-8")
+        self.assertIn("push:", text)
+        self.assertIn("branches:", text)
+        self.assertIn("- main", text)
+        for path in (
+            '"src/data/locations.json"',
+            '"src/data/live_noaa.json"',
+            '".github/workflows/update-activities.yml"',
+        ):
+            self.assertIn(path, text)
+        self.assertNotIn('"public/**"', text)
+
     def test_alert_refresh_runs_hourly_and_reuses_site_write_lock(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
         self.assertIn('cron: "41 * * * *"', text)
