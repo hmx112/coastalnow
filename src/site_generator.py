@@ -6,6 +6,7 @@ from html import escape
 from activities.registry import enabled_activities
 from locations import LOCATIONS
 from seo import breadcrumb_json_ld, canonical_url
+from state_landing import items_for_slugs, state_landing_config, state_region_items
 
 LOGO='''<span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3.5-4 6.5 4 10 0s6.5 4 8 0M3 13c3.5-4 6.5 4 10 0s6.5 4 8 0M3 18c3.5-4 6.5 4 10 0s6.5 4 8 0" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>'''
 PINTEREST_DOMAIN_VERIFY='<meta name="p:domain_verify" content="2d1606bc6882843fbb5143b963ef1cc2">'
@@ -47,11 +48,31 @@ def _home(groups):
  body+=f'''<section class="section" id="states"><div class="section-head"><h2>Browse by state</h2><p>State directories</p></div><div class="directory-grid">{"".join(_state_card(k,v) for k,v in groups.items())}</div></section><section class="section"><div class="section-head"><h2>All coastal locations</h2><p>Live NOAA and Preview status</p></div><div class="directory-grid">{"".join(_card(x,x["page_path"]) for x in all_items)}</div></section><div class="ad-slot"><span>ADVERTISEMENT</span></div><script>const L={data};function go(){{const q=document.getElementById('q').value.toLowerCase().trim();document.getElementById('results').innerHTML=q?L.filter(x=>(x.name+' '+x.state).toLowerCase().includes(q)).slice(0,12).map(x=>`<a class="info-card" href="${{x.url}}"><span class="status-badge ${{x.status==='Live NOAA'?'badge-live':'badge-preview'}}">${{x.status}}</span><h3>${{x.name}}</h3><p>${{x.state}}</p></a>`).join('')||'<p>No result</p>':''}}</script>'''
  return _shell('CoastalNow — Tide Times by U.S. Coastal Location','Browse tide times by U.S. coastal location.','',body,'',[('Home','')])
 
+def _state_location_section(title, items, helper_text=''):
+ if not items: return ''
+ copy=f'<p>{escape(helper_text)}</p>' if helper_text else f'<p>{len(items)} locations</p>'
+ cards=''.join(_card(x,x['slug']+'/index.html') for x in items)
+ return f'<section class="section"><div class="section-head"><h2>{escape(title)}</h2>{copy}</div><div class="directory-grid">{cards}</div></section>'
+
 def _state_page(items):
- name=items[0]['state']; slug=items[0]['state_slug']; cards=''.join(_card(x,x['slug']+'/index.html') for x in items)
- body=f'<div class="breadcrumbs"><a href="../../index.html">Home</a><span>/</span>{escape(name)}</div>'+_hero(f'{items[0]["state_code"]} DIRECTORY',f'{name} Tide Times',f'Browse {len(items)} coastal locations with the same clear status and page layout.')+f'<section class="section"><div class="section-head"><h2>Choose a coastal location</h2><p>{len(items)} locations</p></div><div class="directory-grid">{cards}</div></section><div class="ad-slot"><span>ADVERTISEMENT</span></div>'
+ name=items[0]['state']; slug=items[0]['state_slug']; config=state_landing_config(slug)
+ hero_copy=(config['intro'] if config else f'Browse {len(items)} coastal locations with the same clear status and page layout.')
+ body=f'<div class="breadcrumbs"><a href="../../index.html">Home</a><span>/</span>{escape(name)}</div>'+_hero(f'{items[0]["state_code"]} DIRECTORY',f'{name} Tide Times',hero_copy)
+ if config:
+  body+=f'<section class="section"><article class="info-card"><p class="eyebrow">STATE TIDE GUIDE</p><h2>{escape(config["guide_title"])}</h2><p>{escape(config["intro"])}</p></article></section>'
+  featured=items_for_slugs(items,config.get('featured',[]))
+  body+=_state_location_section(config['featured_title'],featured,'Current search-response locations')
+  for region in config.get('regions',[]):
+   members=state_region_items(slug,region['key'],items)
+   body+=_state_location_section(region['title'],members,'Browse local tide times and 7-day schedules')
+  body+=_state_location_section('All tide locations',items,f'{len(items)} coastal locations')
+  desc=config['meta_description']
+ else:
+  body+=_state_location_section('Choose a coastal location',items,f'{len(items)} locations')
+  desc=f'Browse tide pages for coastal locations in {name}.'
+ body+='<div class="ad-slot"><span>ADVERTISEMENT</span></div>'
  path=f'tides/{slug}/index.html'
- return _shell(f'{name} Tide Times | CoastalNow',f'Browse tide pages for coastal locations in {name}.','../../',body,path,[('Home',''),(name,path)])
+ return _shell(f'{name} Tide Times | CoastalNow',desc,'../../',body,path,[('Home',''),(name,path)])
 
 def build_directory_pages():
  g=_groups(); return {'index.html':_home(g),**{f'tides/{k}/index.html':_state_page(v) for k,v in g.items()}}
