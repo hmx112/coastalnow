@@ -118,6 +118,8 @@ The common template improvements should therefore be applied first. San Diego-sp
 
 ## 2. State landing pages
 
+State landing content should be data-driven from a small explicit state SEO configuration module/map. Search Console numbers are not fetched at runtime and do not dynamically reorder pages; current GSC findings are used only to choose the initial featured lists committed in configuration.
+
 ### California
 
 `/tides/california/` should become a search landing page rather than only a directory.
@@ -146,6 +148,8 @@ Natural-language coverage should include the concepts behind:
 
 These phrases should appear in readable explanatory sentences, not as a keyword list.
 
+California grouping is explicit configuration, not latitude inference. For this release, the Southern California cluster contains the existing/new Southern California locations selected by the project plus the six new California locations in PR B. Remaining California locations are rendered under the northern/other California group as configured. This avoids silently changing regional labels because of coordinate thresholds.
+
 ### Florida
 
 `/tides/florida/` receives the same landing-page model with state-specific grouping:
@@ -155,6 +159,8 @@ These phrases should appear in readable explanatory sentences, not as a keyword 
 - Gulf Coast.
 - Atlantic Coast / Keys.
 - Full Florida location directory.
+
+Florida region membership is also explicit configuration. A location belongs to one configured landing-page group even when geography could reasonably fit multiple labels.
 
 The implementation should use structured state metadata rather than hard-coding large HTML fragments directly in `site_generator.py`. A small state configuration map is acceptable and keeps future Country → State expansion possible.
 
@@ -235,6 +241,8 @@ Rules:
 - Keep deterministic ordering by distance and then name.
 - If fewer than 4 valid same-state locations exist, show the available set.
 
+All new PR B locations must therefore have explicit latitude and longitude values. Existing locations missing coordinates should not be used as distance anchors until coordinates are provided; they may still appear in state directories.
+
 This produces geographically useful links such as Southern California clusters without maintaining dozens of hand-written relationships.
 
 ### State → locations
@@ -245,9 +253,7 @@ State pages keep a full location directory, plus featured/region blocks above it
 
 New entries must use the existing `locations.json` + `live_noaa.json` separation.
 
-For each new location:
-
-`locations.json` must contain:
+For each new location, `locations.json` must contain:
 
 - state
 - state_code
@@ -255,7 +261,8 @@ For each new location:
 - name
 - slug
 - priority
-- latitude/longitude where applicable
+- latitude
+- longitude
 - timezone
 - datum/units/source where applicable
 - activity shore point
@@ -370,6 +377,7 @@ Implementation uses TDD for each behavior group.
 
 - Exactly 12 intended new slugs are added unless a documented NOAA-validation replacement is required.
 - No duplicate slugs or page paths.
+- Every new location has explicit latitude/longitude values.
 - Each new location passes activity geography validation.
 - Each Live NOAA source returns valid high and low tide predictions through the production fetch/validation path.
 - New pages are generated.
@@ -402,6 +410,7 @@ This release does not:
 - Replace NOAA as the tide source.
 - Expand nationwide by dozens or hundreds of cities.
 - Add a database.
+- Dynamically fetch Search Console data at site-build time.
 - Create a fake Page × Query mapping from unrelated Search Console CSV exports.
 - Redesign Fishing/Surfing scoring logic.
 - Change the long-term Country → State → Location hierarchy.
