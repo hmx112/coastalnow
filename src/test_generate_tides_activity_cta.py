@@ -14,7 +14,7 @@ from locations import LOCATIONS
 
 
 class GenerateTidesActivityCtaTests(unittest.TestCase):
-    def test_raw_tide_renderer_includes_primary_fishing_cta_before_tide_summary(self):
+    def test_raw_tide_renderer_places_primary_fishing_cta_after_core_tide_heading(self):
         location = LOCATIONS["san-diego"]
         with tempfile.TemporaryDirectory() as tmp:
             output = Path(tmp) / "index.html"
@@ -25,7 +25,8 @@ class GenerateTidesActivityCtaTests(unittest.TestCase):
         self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 1)
         self.assertIn(f'href="{href}"', html)
         self.assertIn("Fishing conditions for San Diego", html)
-        self.assertLess(html.index("ACTIVITY_PRIMARY_START"), html.index("Your next tides"))
+        self.assertIn("Today’s High and Low Tides", html)
+        self.assertGreater(html.index("ACTIVITY_PRIMARY_START"), html.index("Today’s High and Low Tides"))
         self.assertGreater(html.index("ACTIVITY_PRIMARY_START"), html.index("</section>"))
 
     def test_raw_tide_renderer_includes_one_correct_primary_fishing_cta_for_every_location(self):
