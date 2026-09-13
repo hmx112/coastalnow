@@ -13,7 +13,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Normalize generated artifacts for source-branch verification
+      - name: Validate Live NOAA configuration and Activity geography
+        run: python src/promote_location.py --validate-config
+      - name: Fetch NOAA data and render all live tide pages
+        run: python src/generate_tides.py
+      - name: Render directories, Activity pages, methodology and SEO artifacts
         run: python src/build_site.py
       - name: Run GSC SEO foundation regressions
         run: |
@@ -28,3 +32,8 @@ jobs:
           python src/test_san_diego_fixture.py
           python src/test_tide_forecast_chronology.py
           python src/test_activity_workflows.py
+      - name: Audit indexed-no-impression and responding Tide pages
+        run: |
+          python src/seo_audit.py --slugs \
+            san-diego cape-hatteras kill-devil-hills myrtle-beach \
+            oceanside huntington-beach miami-beach clearwater-beach
