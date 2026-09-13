@@ -16,6 +16,7 @@ jobs:
       - name: Run GSC SEO foundation regressions
         run: |
           python src/test_location_links.py
+          python src/test_state_landing.py
           python src/test_directory_generation.py
           python src/test_seo_generation.py
           python src/test_integrated_render.py
