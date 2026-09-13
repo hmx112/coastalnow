@@ -4,6 +4,8 @@ import json
 import math
 from pathlib import Path
 
+from location_links import nearest_same_state_locations
+
 ROOT = Path(__file__).resolve().parent
 LIVE_NOAA_FILE = ROOT / "data" / "live_noaa.json"
 
@@ -136,6 +138,8 @@ def _load_locations():
             "station_name": station_name,
             "status": "Live NOAA" if slug in LIVE_NOAA else "Preview",
         }
+    for location in locations.values():
+        location["nearby"] = nearest_same_state_locations(location, locations, limit=4)
     return locations
 
 
