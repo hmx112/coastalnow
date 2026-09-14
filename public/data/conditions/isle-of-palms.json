@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "isle-of-palms",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-14T21:52:00+00:00",
+  "generated_at_utc": "2026-09-14T23:55:20+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-14T21:52:00+00:00"
+      "fetched_at_utc": "2026-09-14T23:55:20+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-14T21:52:00+00:00"
+      "fetched_at_utc": "2026-09-14T23:55:20+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-14T21:52:00+00:00"
+      "fetched_at_utc": "2026-09-14T23:55:20+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-14T21:52:00+00:00"
+      "fetched_at_utc": "2026-09-14T23:55:20+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-14T17:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 91.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-09-14T18:00:00-04:00",
-      "wind_mph": 6.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 89.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-09-14T19:00:00-04:00",
       "wind_mph": 5.0,
@@ -1902,23 +1878,47 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-21T05:00:00-04:00",
+      "wind_mph": 2.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-09-21T06:00:00-04:00",
+      "wind_mph": 2.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63d9fcab11e29ddc63e11d07308e56935c45f5e0.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a755f72ee37cb59346ca2cf173127710bf55c86e.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-14T14:07:00-04:00",
+        "effective": "2026-09-14T19:34:00-04:00",
         "onset": "2026-09-15T06:00:00-04:00",
         "expires": "2026-09-15T04:00:00-04:00",
         "ends": "2026-09-17T20:00:00-04:00",
-        "headline": "Small Craft Advisory issued September 14 at 2:07PM EDT until September 17 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...Northeast winds 20 to 25 kt with gusts up to 30 kt and\nseas 3 to 6 ft expected.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...From 6 AM Tuesday to 8 PM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued September 14 at 7:34PM EDT until September 17 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...Northeast winds 15 to 25 kt with gusts up to 30 kt and\nseas 3 to 6 ft expected.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...From 6 AM Tuesday to 8 PM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Charleston SC"
       }
