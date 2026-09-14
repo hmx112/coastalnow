@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from activities.paths import activity_data_path
 from activities.rendering.links import activity_location_url
 from build_site import inject_activity_links
 from locations import LOCATIONS
@@ -40,16 +41,24 @@ class TideBodyActivityCtaTests(unittest.TestCase):
         self.assertLess(updated.index("ACTIVITY_PRIMARY_START"), updated.index("Your next tides"))
         self.assertGreater(updated.index("ACTIVITY_PRIMARY_START"), updated.index('</section>'))
 
-    def test_all_generated_tide_pages_have_exactly_one_primary_fishing_cta(self):
-        # Final-output coverage: every public Tide page must expose the visible CTA once.
+    def test_generated_tide_pages_only_link_to_available_fishing_outputs(self):
+        # Final-output coverage: expose a Fishing CTA only when the corresponding
+        # generated Fishing result exists. Tide-only expansion must not create a
+        # visible link to an Activity page that has not been generated yet.
         for slug, location in LOCATIONS.items():
             with self.subTest(location=slug):
                 html = (ROOT / location["page_path"]).read_text(encoding="utf-8")
                 href = activity_location_url(location, "fishing")
-                self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 1)
-                primary = html.split("<!-- ACTIVITY_PRIMARY_START -->", 1)[1].split("<!-- ACTIVITY_PRIMARY_END -->", 1)[0]
-                self.assertIn(f'href="{href}"', primary)
-                self.assertIn(f"Fishing conditions for {location['name']}", primary)
+                fishing_data = ROOT / activity_data_path(location, "fishing")
+
+                if fishing_data.exists():
+                    self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 1)
+                    primary = html.split("<!-- ACTIVITY_PRIMARY_START -->", 1)[1].split("<!-- ACTIVITY_PRIMARY_END -->", 1)[0]
+                    self.assertIn(f'href="{href}"', primary)
+                    self.assertIn(f"Fishing conditions for {location['name']}", primary)
+                else:
+                    self.assertEqual(html.count("ACTIVITY_PRIMARY_START"), 0)
+                    self.assertNotIn(f'href="{href}"', html)
 
 
 if __name__ == "__main__":
