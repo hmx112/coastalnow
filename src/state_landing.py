@@ -5,7 +5,14 @@ from __future__ import annotations
 STATE_LANDING = {
     "california": {
         "featured_title": "Featured California tide locations",
-        "featured": ["oceanside", "huntington-beach", "los-angeles", "san-diego"],
+        "featured": [
+            "oceanside",
+            "huntington-beach",
+            "long-beach",
+            "dana-point",
+            "los-angeles",
+            "san-diego",
+        ],
         "guide_title": "California tides and tide schedules",
         "intro": (
             "California tide times vary along a long coastline. Use these California tides pages "
@@ -48,7 +55,14 @@ STATE_LANDING = {
     },
     "florida": {
         "featured_title": "Featured Florida tide locations",
-        "featured": ["miami-beach", "clearwater-beach"],
+        "featured": [
+            "miami-beach",
+            "clearwater-beach",
+            "key-biscayne",
+            "west-palm-beach",
+            "fort-lauderdale",
+            "key-west",
+        ],
         "guide_title": "Florida tides and tide schedules",
         "intro": (
             "Florida tide times differ between the Atlantic coast, Gulf Coast and Keys. Use these "
