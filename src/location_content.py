@@ -50,7 +50,7 @@ LOCATION_SEARCH_CONTEXT = {
     "key-biscayne": {
         "title": "Key Biscayne tides with nearby Virginia Key coverage",
         "paragraphs": [
-            "For Key Biscayne, CoastalNow leads with the next tide and then provides today’s events, tide chart and 7-day schedule so the page answers both “what is next?” and “what comes later?”.",
+            "For Key Biscayne, CoastalNow leads with the next tide and then provides today’s events, tide chart and 7-day schedule so the page answers both “what is next?” and “what comes later?”",
             "Key Biscayne uses NOAA’s Virginia Key station as nearby coverage, about 2.7 miles away. The nearby-station disclosure stays visible so users know where the prediction originates.",
         ],
     },
