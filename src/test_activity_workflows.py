@@ -13,6 +13,7 @@ TIDE_REFRESH = ROOT / ".github" / "workflows" / "update-san-diego.yml"
 ACTIVITY_REFRESH = ROOT / ".github" / "workflows" / "update-activities.yml"
 ALERT_REFRESH = ROOT / ".github" / "workflows" / "update-activity-alerts.yml"
 WRITE_LOCK = "group: coastalnow-site-writes"
+TRUST_OUTPUTS = ("public/about", "public/privacy", "public/contact")
 
 
 def _assert_rebase_before_push(testcase: unittest.TestCase, text: str) -> None:
@@ -149,6 +150,14 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("public/methodology", text)
         self.assertNotIn("[skip ci]", text.lower())
         _assert_rebase_before_push(self, text)
+
+    def test_site_write_workflows_stage_trust_pages_generated_by_build_site(self):
+        for workflow in (TIDE_REFRESH, ACTIVITY_REFRESH, ALERT_REFRESH):
+            with self.subTest(workflow=workflow.name):
+                text = workflow.read_text(encoding="utf-8")
+                self.assertIn("python src/build_site.py", text)
+                for output in TRUST_OUTPUTS:
+                    self.assertIn(output, text)
 
 
 if __name__ == "__main__":
