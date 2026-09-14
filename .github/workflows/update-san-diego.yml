@@ -43,6 +43,9 @@ jobs:
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Generate current Activity data for Tide links
+        run: python src/generate_activities.py
+
       - name: Render directories, Activity pages, methodology and SEO artifacts
         run: python src/build_site.py
 
@@ -65,6 +68,7 @@ jobs:
           python src/test_activity_rendering.py
           python src/test_activity_attribution.py
           python src/test_activity_seo_navigation.py
+          python src/test_tide_body_activity_cta.py
           python src/test_fishing_24h_forecast.py
           python src/test_fishing_any_alert_policy.py
           python src/test_surfing_explanation.py
