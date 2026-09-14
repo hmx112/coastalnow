@@ -4,6 +4,7 @@ import json
 import math
 from pathlib import Path
 
+from location_content import LOCATION_SEARCH_CONTEXT
 from location_links import nearest_same_state_locations
 
 ROOT = Path(__file__).resolve().parent
@@ -135,6 +136,7 @@ def _load_locations():
             ),
             "hero_copy": coverage or "Today’s tide times and a quick coastal outlook.",
             "local_guide": base_guide + ((" " + coverage) if coverage else ""),
+            "search_context": LOCATION_SEARCH_CONTEXT.get(slug),
             "nearby": [],
             "time_label": _time_label_for(timezone),
             "units_label": "Feet",
