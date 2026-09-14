@@ -6,7 +6,16 @@ from seo import build_sitemap, canonical_url
 from site_generator import build_directory_pages
 from state_landing import state_landing_config
 
-ROOT = Path(__file__).resolve().parents[1] / "public"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+ROOT = REPO_ROOT / "public"
+ADSENSE_ACCOUNT_META = '<meta name="google-adsense-account" content="ca-pub-1296444525711781">'
+ADS_TXT_RECORD = "google.com, pub-1296444525711781, DIRECT, f08c47fec0942fa0"
+SITE_WRITE_WORKFLOWS = (
+    REPO_ROOT / ".github" / "workflows" / "update-san-diego.yml",
+    REPO_ROOT / ".github" / "workflows" / "update-activities.yml",
+    REPO_ROOT / ".github" / "workflows" / "update-activity-alerts.yml",
+    REPO_ROOT / ".github" / "workflows" / "promote-location.yml",
+)
 PRIORITY_LOCATIONS = (
     "oceanside",
     "huntington-beach",
@@ -22,6 +31,30 @@ PRIORITY_LOCATIONS = (
 class AdsenseSeoReadinessTests(unittest.TestCase):
     def _read(self, relative: str) -> str:
         return (ROOT / relative).read_text(encoding="utf-8")
+
+    def test_adsense_account_meta_is_present_once_on_every_public_html(self):
+        html_paths = sorted(ROOT.rglob("*.html"))
+        self.assertTrue(html_paths)
+        for path in html_paths:
+            with self.subTest(page=str(path.relative_to(ROOT))):
+                html = path.read_text(encoding="utf-8")
+                self.assertEqual(html.count(ADSENSE_ACCOUNT_META), 1)
+                head_end = html.lower().find("</head>")
+                self.assertGreaterEqual(head_end, 0)
+                self.assertLess(html.index(ADSENSE_ACCOUNT_META), head_end)
+
+    def test_ads_txt_contains_authorized_publisher_record(self):
+        ads_txt = ROOT / "ads.txt"
+        self.assertTrue(ads_txt.exists())
+        lines = [line.strip() for line in ads_txt.read_text(encoding="utf-8").splitlines() if line.strip()]
+        self.assertIn(ADS_TXT_RECORD, lines)
+
+    def test_site_writing_workflows_stage_ads_txt(self):
+        for workflow in SITE_WRITE_WORKFLOWS:
+            with self.subTest(workflow=workflow.name):
+                text = workflow.read_text(encoding="utf-8")
+                self.assertIn("python src/build_site.py", text)
+                self.assertIn("public/ads.txt", text)
 
     def test_trust_pages_are_production_ready(self):
         blocked_markers = (
