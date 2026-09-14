@@ -49,6 +49,7 @@ class AdsenseSeoReadinessTests(unittest.TestCase):
         html = self._read("privacy/index.html")
         self.assertIn("Google", html)
         self.assertIn("cookies", html.lower())
+        self.assertIn("prior visits", html.lower())
         self.assertIn("Ads Settings", html)
         self.assertIn("https://adssettings.google.com/", html)
         self.assertIn("personalized advertising", html.lower())
@@ -86,7 +87,10 @@ class AdsenseSeoReadinessTests(unittest.TestCase):
             self._read("index.html"),
             self._read(LOCATIONS["oceanside"]["page_path"]),
             self._read("fishing/index.html"),
+            self._read("methodology/index.html"),
         ]
+        if (ROOT / "surfing" / "index.html").exists():
+            pages.append(self._read("surfing/index.html"))
         for html in pages:
             self.assertNotIn("AdSense placement", html)
             self.assertNotIn("Second AdSense placement", html)
