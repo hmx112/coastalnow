@@ -27,6 +27,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Sync latest main before generation
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
