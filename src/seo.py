@@ -9,6 +9,15 @@ from activities.paths import activity_page_path
 from activities.registry import ACTIVITIES, activity_enabled_for_location
 
 SITE_ORIGIN = "https://coastalnowtides.com"
+TRUST_PAGE_PATHS = (
+    "about/index.html",
+    "privacy/index.html",
+    "contact/index.html",
+)
+SEARCH_CONTEXT_PATTERN = re.compile(
+    r"<!-- SEARCH_CONTEXT_START -->.*?<!-- SEARCH_CONTEXT_END -->",
+    re.DOTALL,
+)
 
 
 def canonical_url(path: str) -> str:
@@ -109,6 +118,7 @@ def build_sitemap(
     urls = {
         canonical_url(""),
         canonical_url("methodology/index.html"),
+        *(canonical_url(path) for path in TRUST_PAGE_PATHS),
     }
     for location in locations.values():
         urls.add(canonical_url(f'tides/{location["state_slug"]}/index.html'))
@@ -155,8 +165,69 @@ def location_breadcrumbs(location: dict) -> list[tuple[str, str]]:
     ]
 
 
+def _search_context_html(location: dict) -> str:
+    context = location.get("search_context")
+    if not context:
+        return ""
+    title = escape(context.get("title") or "Local tide context")
+    paragraphs = "".join(
+        f"<p>{escape(paragraph)}</p>"
+        for paragraph in (context.get("paragraphs") or [])
+        if paragraph
+    )
+    if not paragraphs:
+        return ""
+    return (
+        '<!-- SEARCH_CONTEXT_START -->'
+        '<section class="section local-search-context"><article class="info-card">'
+        '<p class="eyebrow">LOCAL TIDE CONTEXT</p>'
+        f"<h2>{title}</h2>{paragraphs}"
+        '</article></section>'
+        '<!-- SEARCH_CONTEXT_END -->'
+    )
+
+
+def _enrich_location_body(html: str, location: dict) -> str:
+    """Keep editorial context and trust navigation stable across Tide refreshes."""
+    html = re.sub(
+        r'\s*<div class="ad-slot">\s*<div><span>ADVERTISEMENT</span>AdSense placement after core tide information</div>\s*</div>',
+        "",
+        html,
+        count=1,
+        flags=re.IGNORECASE,
+    )
+    html = re.sub(
+        r'\s*<div class="ad-slot">\s*<div><span>ADVERTISEMENT</span>Second AdSense placement</div>\s*</div>',
+        "",
+        html,
+        count=1,
+        flags=re.IGNORECASE,
+    )
+
+    context_block = _search_context_html(location)
+    if SEARCH_CONTEXT_PATTERN.search(html):
+        html = SEARCH_CONTEXT_PATTERN.sub(context_block, html, count=1)
+    elif context_block:
+        marker = '<section class="section lower-grid">'
+        if marker in html:
+            html = html.replace(marker, context_block + "\n\n  " + marker, 1)
+        else:
+            raise ValueError(f'Location page has no local-guide insertion point: {location.get("slug", "unknown")}')
+
+    if "Methodology" not in html:
+        footer_marker = '<div class="footer-links">'
+        if footer_marker in html:
+            html = html.replace(
+                footer_marker,
+                footer_marker + '<a href="../../../methodology/index.html">Methodology</a>',
+                1,
+            )
+    return html
+
+
 def normalize_location_html(html: str, location: dict) -> str:
-    """Apply current title, description, indexing, canonical, and breadcrumb policy."""
+    """Apply current content, title, description, indexing, canonical, and breadcrumb policy."""
+    html = _enrich_location_body(html, location)
     canonical = canonical_url(location["page_path"])
     title = escape(location["page_title"])
     description = escape(location["meta_description"], quote=True)

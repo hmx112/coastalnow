@@ -62,8 +62,7 @@ def render_methodology_page() -> str:
 <section class="section activity-panel"><div class="section-head"><div><p class="eyebrow">SAFETY</p><h2>Planning information is not a safety guarantee</h2></div></div>
 <p>Coastal conditions can change quickly. A CoastalNow score is not a statement that conditions are safe. Current official warnings, closures, posted signs, local authorities, lifeguards and first responders always take priority over CoastalNow.</p>
 </section>
-<div class="ad-slot"><span>ADVERTISEMENT</span></div>
 </main>
-<footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div></div></footer>
+<footer><div class="wrap footer-inner"><strong>CoastalNow</strong><div class="footer-links"><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div></div></footer>
 </body>
 </html>'''
