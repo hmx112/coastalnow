@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "cape-hatteras",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-14T15:59:34+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-14T15:59:34+00:00",
+  "generated_at_utc": "2026-09-14T16:10:57+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-14T16:10:57+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,20 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 82.0,
-    "rating": "Good",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-09-14T11:00:00-04:00",
-      "end": "2026-09-14T14:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
       "light-wind",
       "manageable-sea-state",
-      "favorable-tide-movement"
+      "favorable-tide-movement",
+      "small-craft-advisory",
+      "forecast-thunder-cap",
+      "worsening-wind",
+      "wave-exposure-caution"
     ]
   },
   "tomorrow": {
@@ -45,31 +46,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-14T11:00:00-04:00",
-        "components": {
-          "tide": 39.3,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 66.9,
-          "water_temperature": null
-        },
-        "raw_quality_score": 76.1,
-        "final_score": 76.1,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-09-14T12:00:00-04:00",
         "components": {
@@ -99,15 +75,15 @@
         "time": "2026-09-14T13:00:00-04:00",
         "components": {
           "tide": 98.4,
-          "wind": 80,
+          "wind": 100,
           "wave": 100,
           "weather": 100,
           "time_of_day": 85,
           "solunar": 66.9,
           "water_temperature": null
         },
-        "raw_quality_score": 89.9,
-        "final_score": 89.9,
+        "raw_quality_score": 93.9,
+        "final_score": 93.9,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
@@ -180,14 +156,14 @@
         "time": "2026-09-14T16:00:00-04:00",
         "components": {
           "tide": 26.1,
-          "wind": 80,
+          "wind": 55,
           "wave": 100,
           "weather": 100,
           "time_of_day": 85,
           "solunar": 66.9,
           "water_temperature": null
         },
-        "raw_quality_score": 68.2,
+        "raw_quality_score": 63.2,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -197,8 +173,8 @@
         "available": true,
         "ranking_eligible": false,
         "reasons": [
-          "light-wind",
           "manageable-sea-state",
+          "worsening-wind",
           "small-craft-advisory"
         ]
       },
@@ -423,14 +399,14 @@
         "time": "2026-09-15T01:00:00-04:00",
         "components": {
           "tide": 97.2,
-          "wind": 80,
+          "wind": 55,
           "wave": 75,
           "weather": 100,
           "time_of_day": 60,
           "solunar": 64.3,
           "water_temperature": null
         },
-        "raw_quality_score": 83.1,
+        "raw_quality_score": 78.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -441,8 +417,8 @@
         "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
-          "light-wind",
           "manageable-sea-state",
+          "worsening-wind",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
