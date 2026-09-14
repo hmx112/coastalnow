@@ -23,6 +23,15 @@ def _assert_rebase_before_push(testcase: unittest.TestCase, text: str) -> None:
     testcase.assertLess(text.index("git rebase origin/main"), text.index("git push"))
 
 
+def _assert_latest_main_before_generation(
+    testcase: unittest.TestCase, text: str, generation_command: str
+) -> None:
+    testcase.assertIn("git fetch origin main", text)
+    testcase.assertIn("git reset --hard origin/main", text)
+    testcase.assertLess(text.index("git fetch origin main"), text.index(generation_command))
+    testcase.assertLess(text.index("git reset --hard origin/main"), text.index(generation_command))
+
+
 class ActivityWorkflowTests(unittest.TestCase):
     def test_every_current_catalog_location_passes_activity_geography_validation(self):
         for slug, location in LOCATIONS.items():
@@ -158,6 +167,18 @@ class ActivityWorkflowTests(unittest.TestCase):
                 self.assertIn("python src/build_site.py", text)
                 for output in TRUST_OUTPUTS:
                     self.assertIn(output, text)
+
+    def test_site_write_workflows_sync_latest_main_before_generating_outputs(self):
+        cases = (
+            (TIDE_REFRESH, "python src/generate_tides.py"),
+            (ACTIVITY_REFRESH, "python src/generate_activities.py"),
+            (ALERT_REFRESH, "python src/generate_activities.py --alerts-only"),
+        )
+        for workflow, generation_command in cases:
+            with self.subTest(workflow=workflow.name):
+                _assert_latest_main_before_generation(
+                    self, workflow.read_text(encoding="utf-8"), generation_command
+                )
 
 
 if __name__ == "__main__":
