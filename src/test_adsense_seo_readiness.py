@@ -73,6 +73,25 @@ class AdsenseSeoReadinessTests(unittest.TestCase):
                 self.assertIn("privacy/index.html", html)
                 self.assertIn("contact/index.html", html)
 
+    def test_tide_and_activity_footers_expose_methodology(self):
+        tide_html = self._read(LOCATIONS["oceanside"]["page_path"])
+        fishing_hub = self._read("fishing/index.html")
+        fishing_location = self._read("tides/california/oceanside/fishing/index.html")
+        self.assertIn("methodology", tide_html.lower())
+        self.assertIn('/methodology/', fishing_hub)
+        self.assertIn('/methodology/', fishing_location)
+
+    def test_preapproval_pages_do_not_expose_empty_ad_placeholders(self):
+        pages = [
+            self._read("index.html"),
+            self._read(LOCATIONS["oceanside"]["page_path"]),
+            self._read("fishing/index.html"),
+        ]
+        for html in pages:
+            self.assertNotIn("AdSense placement", html)
+            self.assertNotIn("Second AdSense placement", html)
+            self.assertNotIn(">ADVERTISEMENT<", html)
+
     def test_priority_locations_have_unique_search_context(self):
         bodies = []
         for slug in PRIORITY_LOCATIONS:
