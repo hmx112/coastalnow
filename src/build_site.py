@@ -29,6 +29,13 @@ from seo import (
 from site_generator import LOGO, build_directory_pages
 
 ROOT = Path(__file__).resolve().parents[1] / "public"
+ADSENSE_ACCOUNT_META = '<meta name="google-adsense-account" content="ca-pub-1296444525711781">'
+ADS_TXT_RECORD = "google.com, pub-1296444525711781, DIRECT, f08c47fec0942fa0"
+ADSENSE_ACCOUNT_META_PATTERN = re.compile(
+    r'<meta\b[^>]*\bname=["\']google-adsense-account["\'][^>]*>',
+    re.IGNORECASE,
+)
+HEAD_CLOSE_PATTERN = re.compile(r"</head\s*>", re.IGNORECASE)
 LOGO_PATTERN = re.compile(
     r'<span class="logo-mark">\s*<svg viewBox="0 0 24 24" aria-hidden="true">.*?</svg>\s*</span>',
     re.DOTALL,
@@ -53,6 +60,32 @@ HERO_SECTION_PATTERN = re.compile(
 
 def read_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def inject_adsense_account_meta(html: str) -> str:
+    """Ensure the confirmed AdSense account tag appears exactly once in <head>."""
+    normalized = ADSENSE_ACCOUNT_META_PATTERN.sub("", html)
+    head_close = HEAD_CLOSE_PATTERN.search(normalized)
+    if not head_close:
+        raise ValueError("HTML page is missing </head> for AdSense verification")
+    return normalized[: head_close.start()] + ADSENSE_ACCOUNT_META + normalized[head_close.start() :]
+
+
+def apply_adsense_account_meta(public_root: Path) -> int:
+    """Apply AdSense site verification to every deployable HTML document."""
+    count = 0
+    for output in sorted(public_root.rglob("*.html")):
+        html = output.read_text(encoding="utf-8")
+        output.write_text(inject_adsense_account_meta(html), encoding="utf-8")
+        count += 1
+    return count
+
+
+def render_ads_txt(public_root: Path) -> Path:
+    """Write Google's authorized seller record at the site root."""
+    output = public_root / "ads.txt"
+    output.write_text(ADS_TXT_RECORD + "\n", encoding="utf-8")
+    return output
 
 
 def normalize_brand_logo(html: str) -> str:
@@ -162,6 +195,8 @@ def _primary_activity_cta(location: dict, configured: dict[str, dict], activity_
         + "".join(cards)
         + '</div></section><!-- ACTIVITY_PRIMARY_END -->'
     )
+
+
 def _inject_primary_activity_cta(html: str, primary_block: str) -> str:
     if ACTIVITY_PRIMARY_PATTERN.search(html):
         return ACTIVITY_PRIMARY_PATTERN.sub(primary_block, html, count=1)
@@ -316,6 +351,12 @@ def main():
         normalized = normalize_brand_logo(normalized)
         output.write_text(normalized, encoding="utf-8")
         print(f"Normalized SEO, branding and Activities {output}")
+
+    verified_pages = apply_adsense_account_meta(ROOT)
+    print(f"Applied AdSense account verification to {verified_pages} HTML pages")
+
+    ads_txt = render_ads_txt(ROOT)
+    print(f"Rendered {ads_txt}")
 
     sitemap = ROOT / "sitemap.xml"
     sitemap.write_text(build_sitemap(LOCATIONS, inventory), encoding="utf-8")
