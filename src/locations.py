@@ -106,6 +106,7 @@ def _load_locations():
             raise ValueError(f"Duplicate location slug: {slug}")
         validate_activity_geography(item)
         live_config = LIVE_NOAA_CONFIG.get(slug, {})
+        search_context = LOCATION_SEARCH_CONTEXT.get(slug)
         station_id = live_config.get("station_id", item.get("station_id"))
         station_name = live_config.get("station_name") or item.get("station_name") or f'{item["name"]}, {item["state_code"]}'
         prediction_mode = live_config.get("prediction_mode", "harmonic")
@@ -119,6 +120,13 @@ def _load_locations():
             "coverage_distance_miles": coverage_distance_miles,
         })
         base_guide = f'{item["name"]} coastal conditions can change throughout the day. Check tide time and height before shoreline walks, fishing, boating and other coastal activities.'
+        meta_description = (
+            (search_context or {}).get("meta_description")
+            or (
+                f'See today’s high tide and low tide times for {item["name"]}, {item["state"]}, '
+                'with a tide chart, 7-day tide schedule, and NOAA source details.'
+            )
+        )
         locations[slug] = {
             **item,
             "station_id": station_id,
@@ -130,13 +138,10 @@ def _load_locations():
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
             "page_title": f'{item["name"]} Tide Times, High & Low Tides Today | CoastalNow',
-            "meta_description": (
-                f'See today’s high tide and low tide times for {item["name"]}, {item["state"]}, '
-                'with a tide chart, 7-day tide schedule, and NOAA source details.'
-            ),
+            "meta_description": meta_description,
             "hero_copy": coverage or "Today’s tide times and a quick coastal outlook.",
             "local_guide": base_guide + ((" " + coverage) if coverage else ""),
-            "search_context": LOCATION_SEARCH_CONTEXT.get(slug),
+            "search_context": search_context,
             "nearby": [],
             "time_label": _time_label_for(timezone),
             "units_label": "Feet",

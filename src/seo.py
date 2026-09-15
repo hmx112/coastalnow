@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import datetime
 from html import escape
 
 from activities.paths import activity_page_path
@@ -165,29 +166,77 @@ def location_breadcrumbs(location: dict) -> list[tuple[str, str]]:
     ]
 
 
-def _search_context_html(location: dict) -> str:
+def _format_tide_time(raw: str) -> str:
+    value = datetime.strptime(raw, "%Y-%m-%d %H:%M").strftime("%I:%M %p")
+    return value[1:] if value.startswith("0") else value
+
+
+def _format_tide_height(value) -> str:
+    return f"{float(value):.2f}".rstrip("0").rstrip(".")
+
+
+def _today_tide_summary(location: dict, tide_data: dict | None) -> str:
+    context = location.get("search_context") or {}
+    if not context.get("today_summary") or not tide_data:
+        return ""
+    generated_at_local = tide_data.get("generated_at_local") or ""
+    local_day = generated_at_local[:10]
+    if not local_day:
+        return ""
+    events = [
+        item
+        for item in (tide_data.get("hilo") or [])
+        if isinstance(item, dict) and str(item.get("t", "")).startswith(local_day)
+    ]
+    highs = [item for item in events if item.get("type") == "H"]
+    lows = [item for item in events if item.get("type") == "L"]
+    if not highs or not lows:
+        return ""
+    high = max(highs, key=lambda item: float(item["v"]))
+    low = min(lows, key=lambda item: float(item["v"]))
+    return (
+        f'{location["name"]} tides today reach a predicted high of {_format_tide_height(high["v"])} ft '
+        f'at {_format_tide_time(high["t"])} and a predicted low of {_format_tide_height(low["v"])} ft '
+        f'at {_format_tide_time(low["t"])}, {location.get("time_label", "local time")}.'
+    )
+
+
+def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     context = location.get("search_context")
     if not context:
         return ""
     title = escape(context.get("title") or "Local tide context")
-    paragraphs = "".join(
-        f"<p>{escape(paragraph)}</p>"
-        for paragraph in (context.get("paragraphs") or [])
-        if paragraph
+    paragraph_values = []
+    today_summary = _today_tide_summary(location, tide_data)
+    if today_summary:
+        paragraph_values.append(today_summary)
+    paragraph_values.extend(
+        paragraph for paragraph in (context.get("paragraphs") or []) if paragraph
     )
+    paragraphs = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraph_values)
     if not paragraphs:
         return ""
+    related_links = context.get("related_links") or []
+    related_html = ""
+    if related_links:
+        links = " · ".join(
+            f'<a href="{escape(link.get("href", ""), quote=True)}"><strong>{escape(link.get("label", "Nearby tides"))}</strong></a>'
+            for link in related_links
+            if link.get("href")
+        )
+        if links:
+            related_html = f'<p class="local-search-links">Compare nearby tides: {links}</p>'
     return (
         '<!-- SEARCH_CONTEXT_START -->'
         '<section class="section local-search-context"><article class="info-card">'
         '<p class="eyebrow">LOCAL TIDE CONTEXT</p>'
-        f"<h2>{title}</h2>{paragraphs}"
+        f"<h2>{title}</h2>{paragraphs}{related_html}"
         '</article></section>'
         '<!-- SEARCH_CONTEXT_END -->'
     )
 
 
-def _enrich_location_body(html: str, location: dict) -> str:
+def _enrich_location_body(html: str, location: dict, tide_data: dict | None = None) -> str:
     """Keep editorial context and trust navigation stable across Tide refreshes."""
     html = re.sub(
         r'\s*<div class="ad-slot">\s*<div><span>ADVERTISEMENT</span>AdSense placement after core tide information</div>\s*</div>',
@@ -204,7 +253,7 @@ def _enrich_location_body(html: str, location: dict) -> str:
         flags=re.IGNORECASE,
     )
 
-    context_block = _search_context_html(location)
+    context_block = _search_context_html(location, tide_data)
     if SEARCH_CONTEXT_PATTERN.search(html):
         html = SEARCH_CONTEXT_PATTERN.sub(context_block, html, count=1)
     elif context_block:
@@ -225,9 +274,9 @@ def _enrich_location_body(html: str, location: dict) -> str:
     return html
 
 
-def normalize_location_html(html: str, location: dict) -> str:
+def normalize_location_html(html: str, location: dict, tide_data: dict | None = None) -> str:
     """Apply current content, title, description, indexing, canonical, and breadcrumb policy."""
-    html = _enrich_location_body(html, location)
+    html = _enrich_location_body(html, location, tide_data)
     canonical = canonical_url(location["page_path"])
     title = escape(location["page_title"])
     description = escape(location["meta_description"], quote=True)

@@ -19,6 +19,19 @@ LOCATION_SEARCH_CONTEXT = {
             "Huntington Beach uses NOAA’s Newport Beach, Newport Bay Entrance station as nearby coverage, about 8 miles away. The page keeps that source visible because local tide timing and height can differ from the reference station.",
         ],
     },
+    "malibu": {
+        "title": "Malibu tides today and nearby Santa Monica NOAA coverage",
+        "paragraphs": [
+            "The Malibu tide page pairs today’s high and low tide timing with the tide chart and 7-day Malibu tide schedule so search visitors can move from today’s answer to the weekly pattern without changing pages.",
+            "Malibu uses NOAA’s Santa Monica station as nearby coverage, about 10 miles away. CoastalNow keeps that source relationship visible because local tide timing and height around Malibu may differ from the reference station.",
+        ],
+        "today_summary": True,
+        "meta_description": "Check Malibu tides today, including high and low tide times, today’s tide chart, a 7-day Malibu tide schedule, and nearby NOAA Santa Monica source details.",
+        "related_links": [
+            {"label": "Santa Monica tides", "href": "/tides/california/santa-monica/"},
+            {"label": "Los Angeles tides", "href": "/tides/california/los-angeles/"},
+        ],
+    },
     "miami-beach": {
         "title": "Miami Beach tides and the Government Cut NOAA source",
         "paragraphs": [
