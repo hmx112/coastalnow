@@ -8,6 +8,7 @@ STATE_LANDING = {
         "featured": [
             "oceanside",
             "huntington-beach",
+            "malibu",
             "long-beach",
             "dana-point",
             "los-angeles",
