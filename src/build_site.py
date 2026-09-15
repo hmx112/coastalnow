@@ -340,6 +340,10 @@ def main():
         output = ROOT / location["page_path"]
         if not output.exists():
             raise FileNotFoundError(f"Missing location page: {output}")
+        tide_data_path = ROOT / location["data_path"]
+        if not tide_data_path.exists():
+            raise FileNotFoundError(f"Missing location tide data: {tide_data_path}")
+        tide_data = read_json(tide_data_path)
         html = output.read_text(encoding="utf-8")
         location_results = {
             activity_slug: results[location["slug"]]
@@ -347,7 +351,7 @@ def main():
             if location["slug"] in results
         }
         normalized = inject_activity_links(html, location, location_results)
-        normalized = normalize_location_html(normalized, location)
+        normalized = normalize_location_html(normalized, location, tide_data)
         normalized = normalize_brand_logo(normalized)
         output.write_text(normalized, encoding="utf-8")
         print(f"Normalized SEO, branding and Activities {output}")
