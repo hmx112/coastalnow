@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "west-palm-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-16T17:15:45+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-16T17:15:45+00:00",
+  "generated_at_utc": "2026-09-16T20:24:21+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-16T20:24:21+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,6 +12,25 @@
     "high_medium_eligible": true
   },
   "today": {
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
+    "reasons": [
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "wet-weather",
+      "forecast-thunder-cap",
+      "small-craft-advisory",
+      "worsening-wind",
+      "rip-current-statement",
+      "wave-exposure-caution"
+    ]
+  },
+  "tomorrow": {
     "status": "NOT RECOMMENDED",
     "score": null,
     "rating": null,
@@ -19,113 +38,19 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "tsunami-warning"
-    ]
-  },
-  "tomorrow": {
-    "status": "normal",
-    "score": 39.0,
-    "rating": "Unfavorable",
-    "confidence": "High",
-    "best_window": {
-      "start": "2026-09-17T21:00:00-04:00",
-      "end": "2026-09-18T00:00:00-04:00"
-    },
-    "ranking_eligible": true,
-    "reasons": [
-      "light-wind",
       "manageable-sea-state",
+      "worsening-wind",
       "wet-weather",
+      "rip-current-statement",
+      "small-craft-advisory",
       "wave-exposure-caution",
       "forecast-thunder-cap",
-      "favorable-tide-movement"
+      "favorable-tide-movement",
+      "light-wind"
     ]
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-16T13:00:00-04:00",
-        "components": {
-          "tide": 24.1,
-          "wind": 80,
-          "wave": 90,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 61.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 58.3,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "tsunami-warning",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-16T14:00:00-04:00",
-        "components": {
-          "tide": 68.0,
-          "wind": 80,
-          "wave": 90,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 61.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 71.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-16T15:00:00-04:00",
-        "components": {
-          "tide": 94.9,
-          "wind": 80,
-          "wave": 90,
-          "weather": 30,
-          "time_of_day": 85,
-          "solunar": 61.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 76.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-09-16T16:00:00-04:00",
         "components": {
@@ -987,18 +912,19 @@
           "water_temperature": 50
         },
         "raw_quality_score": 66.2,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -1015,19 +941,20 @@
           "water_temperature": 50
         },
         "raw_quality_score": 74.9,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -1044,19 +971,20 @@
           "water_temperature": 50
         },
         "raw_quality_score": 79.1,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
