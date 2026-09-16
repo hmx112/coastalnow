@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "wrightsville-beach",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-09-15T22:25:24+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-15T22:25:24+00:00",
+  "generated_at_utc": "2026-09-16T00:45:13+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-16T00:45:13+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,24 +13,28 @@
     "marine": "fresh"
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 69.1,
+    "rating": "Fair",
     "confidence": "High",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-09-15T20:00:00-04:00",
+      "end": "2026-09-15T23:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "beach-hazards-statement"
+      "moderate-wave-height",
+      "stronger-wind"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 79.1,
-    "rating": "Good",
+    "score": 74.8,
+    "rating": "Fair",
     "confidence": "High",
     "best_window": {
-      "start": "2026-09-16T06:00:00-04:00",
-      "end": "2026-09-16T09:00:00-04:00"
+      "start": "2026-09-16T01:00:00-04:00",
+      "end": "2026-09-16T04:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
@@ -41,54 +45,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-15T18:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 75.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "beach-hazards-statement"
-        ]
-      },
-      {
-        "time": "2026-09-15T19:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 75.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "beach-hazards-statement"
-        ]
-      },
-      {
         "time": "2026-09-15T20:00:00-04:00",
         "components": {
           "wave_height": 100,
@@ -98,18 +54,17 @@
           "daylight": 60
         },
         "raw_quality_score": 71.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 71.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind",
-          "beach-hazards-statement"
+          "stronger-wind"
         ]
       },
       {
@@ -331,17 +286,18 @@
           "daylight": 60
         },
         "raw_quality_score": 77.2,
-        "final_score": 77.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -354,17 +310,18 @@
           "daylight": 100
         },
         "raw_quality_score": 81.2,
-        "final_score": 81.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -377,17 +334,18 @@
           "daylight": 100
         },
         "raw_quality_score": 81.2,
-        "final_score": 81.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -400,17 +358,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -423,17 +382,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -446,17 +406,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -469,17 +430,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -492,17 +454,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -515,17 +478,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -538,17 +502,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -561,17 +526,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -584,17 +550,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -607,17 +574,18 @@
           "daylight": 100
         },
         "raw_quality_score": 75.0,
-        "final_score": 75.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -630,17 +598,18 @@
           "daylight": 100
         },
         "raw_quality_score": 81.2,
-        "final_score": 81.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -653,17 +622,18 @@
           "daylight": 60
         },
         "raw_quality_score": 77.2,
-        "final_score": 77.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "beach-hazards-statement"
         ]
       },
       {
