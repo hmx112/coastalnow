@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "north-myrtle-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-16T23:13:26+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-16T23:13:26+00:00",
+  "generated_at_utc": "2026-09-17T01:39:58+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-17T01:39:58+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,18 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 68.6,
+    "rating": "Fair",
     "confidence": "Medium",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-09-16T21:00:00-04:00",
+      "end": "2026-09-17T00:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "beach-hazards-statement"
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
@@ -40,59 +44,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-16T19:00:00-04:00",
-        "components": {
-          "tide": 96.3,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 61.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 92.9,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "beach-hazards-statement"
-        ]
-      },
-      {
-        "time": "2026-09-16T20:00:00-04:00",
-        "components": {
-          "tide": 76.0,
-          "wind": 100,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 61.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 86.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "beach-hazards-statement"
-        ]
-      },
       {
         "time": "2026-09-16T21:00:00-04:00",
         "components": {
