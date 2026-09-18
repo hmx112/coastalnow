@@ -12,6 +12,7 @@ from seo import (
     SITE_ORIGIN,
     breadcrumb_json_ld,
     build_robots_txt,
+    activity_robots_directive,
     build_sitemap,
     canonical_url,
     normalize_preview_html,
@@ -37,6 +38,20 @@ class SeoGenerationTests(unittest.TestCase):
         live = next(x for x in LOCATIONS.values() if x["status"] == "Live NOAA")
         self.assertEqual(robots_directive(live), "index,follow")
         self.assertEqual(robots_directive({"status": "Preview"}), "noindex,follow")
+
+    def test_activity_indexing_is_stable_for_generated_pages(self):
+        self.assertEqual(activity_robots_directive(None), "noindex,follow")
+        self.assertEqual(activity_robots_directive({}), "noindex,follow")
+        limited = {
+            "today": {"status": "Limited", "confidence": "Limited"},
+            "tomorrow": {"status": "Limited", "confidence": "Limited"},
+        }
+        unavailable = {
+            "today": {"status": "Unavailable", "confidence": "Unavailable"},
+            "tomorrow": {"status": "Limited", "confidence": "Limited"},
+        }
+        self.assertEqual(activity_robots_directive(limited), "index,follow")
+        self.assertEqual(activity_robots_directive(unavailable), "index,follow")
 
     def test_sitemap_includes_directories_and_only_live_detail_pages(self):
         xml = build_sitemap(LOCATIONS)
