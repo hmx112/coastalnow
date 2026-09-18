@@ -36,28 +36,14 @@ def robots_directive(location: dict) -> str:
     return "index,follow" if location.get("status") == "Live NOAA" else "noindex,follow"
 
 
-def _activity_day_has_usable_data(day: dict | None) -> bool:
-    day = day or {}
-    return (
-        day.get("confidence") in {"High", "Medium"}
-        and day.get("status") not in {"Limited", "Unavailable"}
-    )
-
-
 def activity_robots_directive(result: dict | None) -> str:
-    """Index an Activity page when Today or Tomorrow has usable critical data.
+    """Keep generated Activity pages indexable even when today's score is limited.
 
-    This deliberately avoids toggling a healthy page to noindex late in the local
-    evening merely because fewer than three hours remain for today's best window.
+    Indexability reflects whether the Activity page exists as a useful, canonical
+    resource. Daily confidence and Limited/Unavailable states remain visible in the
+    page content, but they no longer toggle the URL between index and noindex.
     """
-    if not result:
-        return "noindex,follow"
-    if any(
-        _activity_day_has_usable_data(result.get(day_key))
-        for day_key in ("today", "tomorrow")
-    ):
-        return "index,follow"
-    return "noindex,follow"
+    return "index,follow" if result else "noindex,follow"
 
 
 def breadcrumb_json_ld(items: list[tuple[str, str]]) -> str:
