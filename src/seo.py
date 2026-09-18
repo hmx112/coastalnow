@@ -37,13 +37,19 @@ def robots_directive(location: dict) -> str:
 
 
 def activity_robots_directive(result: dict | None) -> str:
-    """Keep generated Activity pages indexable even when today's score is limited.
+    """Keep useful generated Activity pages indexable without masking true data failure.
 
-    Indexability reflects whether the Activity page exists as a useful, canonical
-    resource. Daily confidence and Limited/Unavailable states remain visible in the
-    page content, but they no longer toggle the URL between index and noindex.
+    Limited days remain indexable because the page still carries useful tide, wind,
+    wave, weather, attribution and methodology content. A page stays noindex only
+    when no Activity result exists or both Today and Tomorrow are unavailable.
     """
-    return "index,follow" if result else "noindex,follow"
+    if not result:
+        return "noindex,follow"
+    for day_key in ("today", "tomorrow"):
+        day = result.get(day_key)
+        if isinstance(day, dict) and day.get("status") not in {None, "", "Unavailable"}:
+            return "index,follow"
+    return "noindex,follow"
 
 
 def breadcrumb_json_ld(items: list[tuple[str, str]]) -> str:
