@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "clearwater-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-18T21:02:21+00:00",
+  "generated_at_utc": "2026-09-18T21:49:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-18T21:02:21+00:00"
+      "fetched_at_utc": "2026-09-18T21:49:09+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5bb5c0d9b64801c5783e48f30cf2d1c8d14f486.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-18T17:03:00-04:00",
+        "onset": "2026-09-18T17:03:00-04:00",
+        "expires": "2026-09-18T18:00:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 18 at 5:03PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "The areas affected include...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\nAt 503 PM EDT, Doppler radar indicated a gust front, capable of\nproducing winds to around 30 knots. This gust front was located along\na line extending from 15 nm east of Hillsborough Bay to near Sarasota\nBay to near Siesta Key, moving northwest at 20 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2516,5 +2532,5 @@
       "grid_y": 97
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
