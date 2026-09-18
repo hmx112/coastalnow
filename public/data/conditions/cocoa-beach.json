@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-18T04:55:16+00:00",
+  "generated_at_utc": "2026-09-18T06:35:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-18T04:55:16+00:00"
+      "fetched_at_utc": "2026-09-18T06:35:32+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.04fe3ee633d9d0ffe915d63f28a23f02f24ae0a6.001.1",
-        "event": "Marine Weather Statement",
-        "severity": "Minor",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-09-17T23:46:00-04:00",
-        "onset": "2026-09-17T23:46:00-04:00",
-        "expires": "2026-09-18T01:15:00-04:00",
-        "ends": null,
-        "headline": "Marine Weather Statement issued September 17 at 11:46PM EDT by NWS Melbourne FL",
-        "description": "A Marine Weather Statement has been issued for the following areas...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 20-60 nm...\n\nAt 1145 PM EDT, Doppler radar indicated clusters of strong\nthunderstorms, capable of producing winds to around 30 knots, moving\nsouthwest at 20 knots toward Cape Canaveral and the north and\ncentral Brevard coast.",
-        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until this storm passes.",
-        "sender_name": "NWS Melbourne FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
