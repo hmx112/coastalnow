@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-18T16:42:21+00:00",
+  "generated_at_utc": "2026-09-18T19:11:40+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-18T16:42:21+00:00"
+      "fetched_at_utc": "2026-09-18T19:11:40+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,38 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.602f1ea925608ad5994abf3d1c674385ac5cbb1a.001.1",
+        "event": "Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-18T14:25:00-04:00",
+        "onset": "2026-09-18T14:25:00-04:00",
+        "expires": "2026-09-18T17:30:00-04:00",
+        "ends": "2026-09-18T17:30:00-04:00",
+        "headline": "Flood Advisory issued September 18 at 2:25PM EDT until September 18 at 5:30PM EDT by NWS Miami FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Central Broward County in southeastern Florida...\n\n* WHEN...Until 530 PM EDT.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\nOverflowing poor drainage areas.\n\n* ADDITIONAL DETAILS...\n- At 225 PM EDT, Doppler radar and automated rain gauges indicated\nheavy rain due to thunderstorms. Minor flooding is ongoing or\nexpected to begin shortly in the advisory area. Between 1.5 and\n2.5 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 2 inches are expected over\nthe area. This additional rain will result in minor flooding.\n- Some locations that will experience flooding include...\nFort Lauderdale, Pompano Beach, Lighthouse Point, Lauderdale-\nBy-The-Sea, Oakland Park, Lauderdale Lakes, Wilton Manors, Sea\nRanch Lakes, Lazy Lake, Twin Lakes and Golden Heights.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa497163762ca8c0516b0fa6eef595fa04f8a5ce.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-18T14:37:00-04:00",
+        "onset": "2026-09-18T14:37:00-04:00",
+        "expires": "2026-09-18T15:15:00-04:00",
+        "ends": "2026-09-18T15:15:00-04:00",
+        "headline": "Special Marine Warning issued September 18 at 2:37PM EDT until September 18 at 3:15PM EDT by NWS Miami FL",
+        "description": "SMWMFL\n\nThe National Weather Service in Miami has issued a\n\n* Special Marine Warning for...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\n\n* Until 315 PM EDT.\n\n* At 237 PM EDT, a severe thunderstorm producing waterspouts was\nlocated over Lauderdale-By-The-Sea, moving east at 5 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Marine weather spotter.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nHollywood.",
+        "instruction": "Move to safe harbor until hazardous weather passes.\n\nReport severe weather to the Coast Guard or the National Weather\nService. You can also share your report with NWS Miami on Facebook\nand Twitter.",
+        "sender_name": "NWS Miami FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",

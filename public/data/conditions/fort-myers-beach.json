@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "fort-myers-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-18T16:42:20+00:00",
+  "generated_at_utc": "2026-09-18T19:11:39+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-18T16:42:20+00:00"
+      "fetched_at_utc": "2026-09-18T19:11:39+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8273ab4c6385d859927d09f3369c2c2a3f658dad.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-18T15:11:00-04:00",
+        "onset": "2026-09-18T15:11:00-04:00",
+        "expires": "2026-09-18T16:00:00-04:00",
+        "ends": "2026-09-18T16:00:00-04:00",
+        "headline": "Special Marine Warning issued September 18 at 3:11PM EDT until September 18 at 4:00PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nCharlotte Harbor and Pine Island Sound...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\n\n* Until 400 PM EDT.\n\n* At 310 PM EDT, strong thunderstorms were located along a line\nextending from near Sanibel to near Lovers Key State Park, moving\nsouthwest at 5 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, frequent lightning, and heavy downpours. Make sure\nall on board are wearing life jackets.\n\n* Locations impacted include...\nLovers Key State Park, Captiva, Sanibel, Fort Myers Beach, and\nBonita Beach.",
+        "instruction": "Move to safe harbor until hazardous weather passes.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
