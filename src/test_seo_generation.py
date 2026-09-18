@@ -50,8 +50,13 @@ class SeoGenerationTests(unittest.TestCase):
             "today": {"status": "Unavailable", "confidence": "Unavailable"},
             "tomorrow": {"status": "Limited", "confidence": "Limited"},
         }
+        all_unavailable = {
+            "today": {"status": "Unavailable", "confidence": "Unavailable"},
+            "tomorrow": {"status": "Unavailable", "confidence": "Unavailable"},
+        }
         self.assertEqual(activity_robots_directive(limited), "index,follow")
         self.assertEqual(activity_robots_directive(unavailable), "index,follow")
+        self.assertEqual(activity_robots_directive(all_unavailable), "noindex,follow")
 
     def test_sitemap_includes_directories_and_only_live_detail_pages(self):
         xml = build_sitemap(LOCATIONS)
