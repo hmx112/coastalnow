@@ -62,10 +62,10 @@ class ActivitySeoNavigationTests(unittest.TestCase):
         self.assertIn("Fishing", home)
         self.assertIn('href="fishing/index.html"', home)
 
-    def test_activity_indexability_depends_on_real_data_confidence(self):
+    def test_activity_indexability_separates_page_quality_from_daily_confidence(self):
         self.assertEqual(activity_robots_directive(result("High")), "index,follow")
         self.assertEqual(activity_robots_directive(result("Medium")), "index,follow")
-        self.assertEqual(activity_robots_directive(result("Limited", "Limited", None, False)), "noindex,follow")
+        self.assertEqual(activity_robots_directive(result("Limited", "Limited", None, False)), "index,follow")
         self.assertEqual(activity_robots_directive(result("Unavailable", "Unavailable", None, False)), "noindex,follow")
         # A high-confidence hard stop is useful real data and remains indexable, while still not rankable.
         self.assertEqual(activity_robots_directive(result("High", "NOT RECOMMENDED", None, False)), "index,follow")
@@ -84,15 +84,24 @@ class ActivitySeoNavigationTests(unittest.TestCase):
     def test_sitemap_keeps_existing_urls_and_adds_hub_and_only_indexable_activity_pages(self):
         high = result("High")
         limited = result("Limited", "Limited", None, False)
+        unavailable = result("Unavailable", "Unavailable", None, False)
         high["location"] = "san-diego"
         limited["location"] = "monterey"
-        inventory = {"fishing": {"san-diego": high, "monterey": limited}}
+        unavailable["location"] = "santa-cruz"
+        inventory = {
+            "fishing": {
+                "san-diego": high,
+                "monterey": limited,
+                "santa-cruz": unavailable,
+            }
+        }
         xml = build_sitemap(LOCATIONS, inventory)
         for location in LOCATIONS.values():
             self.assertIn(f'<loc>{canonical_url(location["page_path"])}</loc>', xml)
         self.assertIn("<loc>https://coastalnowtides.com/fishing/</loc>", xml)
         self.assertIn("<loc>https://coastalnowtides.com/tides/california/san-diego/fishing/</loc>", xml)
-        self.assertNotIn("<loc>https://coastalnowtides.com/tides/california/monterey/fishing/</loc>", xml)
+        self.assertIn("<loc>https://coastalnowtides.com/tides/california/monterey/fishing/</loc>", xml)
+        self.assertNotIn("<loc>https://coastalnowtides.com/tides/california/santa-cruz/fishing/</loc>", xml)
 
     def test_parent_tide_page_gets_fishing_link_without_changing_parent_url(self):
         location = LOCATIONS["san-diego"]
