@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-19T09:42:15+00:00",
+  "generated_at_utc": "2026-09-19T11:02:38+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:42:15+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:38+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:42:15+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:38+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:42:15+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:38+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T04:39:40+00:00"
+      "fetched_at_utc": "2026-09-19T11:01:21+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:42:15+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:38+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-19T05:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 51.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": 56.7,
-      "condition_text": "Clear"
-    },
-    {
-      "time": "2026-09-19T06:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": 56.7,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-09-19T07:00:00-04:00",
       "wind_mph": 9.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": 56.7,
       "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-25T17:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 27.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 56.7,
+      "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-25T18:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 27.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 56.7,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-09-19",
       "end": "2026-09-25"
     },
-    "generated_at_utc": "2026-09-19T04:39:40+00:00",
-    "generated_at_local": "2026-09-19T00:39:40-04:00",
+    "generated_at_utc": "2026-09-19T11:01:21+00:00",
+    "generated_at_local": "2026-09-19T07:01:21-04:00",
     "hilo": [
       {
         "t": "2026-09-19 05:30",
@@ -2536,5 +2536,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

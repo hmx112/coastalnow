@@ -2,66 +2,42 @@
   "schema_version": 1,
   "location": "carolina-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-19T09:41:58+00:00",
+  "generated_at_utc": "2026-09-19T11:02:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:41:58+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:16+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:41:58+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:16+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T09:41:58+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:16+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T04:39:37+00:00"
+      "fetched_at_utc": "2026-09-19T11:01:20+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-19T09:41:58+00:00"
+      "fetched_at_utc": "2026-09-19T11:02:16+00:00"
     }
   },
   "hourly": [
     {
-      "time": "2026-09-19T05:00:00-04:00",
-      "wind_mph": 3.0,
-      "gust_mph": 8.055,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-09-19T06:00:00-04:00",
-      "wind_mph": 3.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 9.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
       "time": "2026-09-19T07:00:00-04:00",
       "wind_mph": 5.0,
       "gust_mph": 9.206,
-      "wind_direction_deg": 315.0,
+      "wind_direction_deg": 0.0,
       "precip_probability_pct": 11.0,
-      "air_temperature_f": 75.0,
+      "air_temperature_f": 74.0,
       "wave_height_ft": 2.0,
       "wave_period_s": 8.0,
       "water_temperature_f": null,
@@ -70,14 +46,14 @@
     {
       "time": "2026-09-19T08:00:00-04:00",
       "wind_mph": 5.0,
-      "gust_mph": 9.206,
+      "gust_mph": 10.357,
       "wind_direction_deg": 0.0,
       "precip_probability_pct": 9.0,
       "air_temperature_f": 75.0,
       "wave_height_ft": 2.0,
       "wave_period_s": 8.0,
       "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
+      "condition_text": "Partly Sunny"
     },
     {
       "time": "2026-09-19T09:00:00-04:00",
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-25T17:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 17.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-09-25T18:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 17.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-09-19",
       "end": "2026-09-25"
     },
-    "generated_at_utc": "2026-09-19T04:39:37+00:00",
-    "generated_at_local": "2026-09-19T00:39:37-04:00",
+    "generated_at_utc": "2026-09-19T11:01:20+00:00",
+    "generated_at_local": "2026-09-19T07:01:20-04:00",
     "hilo": [
       {
         "t": "2026-09-18 01:04",
@@ -2556,5 +2556,5 @@
       "grid_y": 65
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
