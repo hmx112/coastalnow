@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "sarasota",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-19T21:42:41+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-19T21:42:41+00:00",
+  "generated_at_utc": "2026-09-19T23:16:40+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-19T23:16:40+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -19,8 +19,7 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "special-weather-statement",
-      "special-marine-warning"
+      "marine-weather-statement"
     ]
   },
   "tomorrow": {
@@ -42,43 +41,17 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-19T17:00:00-04:00",
+        "time": "2026-09-19T19:00:00-04:00",
         "components": {
-          "tide": 31.2,
-          "wind": 100,
-          "wave": 85,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 51.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 66.9,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-19T18:00:00-04:00",
-        "components": {
-          "tide": 49.6,
+          "tide": 66.0,
           "wind": 100,
           "wave": 75,
           "weather": 50,
-          "time_of_day": 85,
+          "time_of_day": 100,
           "solunar": 51.1,
           "water_temperature": null
         },
-        "raw_quality_score": 67.2,
+        "raw_quality_score": 73.6,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -91,35 +64,7 @@
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "special-weather-statement",
-          "special-marine-warning",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-19T19:00:00-04:00",
-        "components": {
-          "tide": 66.0,
-          "wind": 100,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 100,
-          "solunar": 51.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 73.6,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
+          "marine-weather-statement",
           "forecast-thunder-cap"
         ]
       },
@@ -135,18 +80,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 80.0,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "marine-weather-statement",
           "forecast-thunder-cap"
         ]
       },
