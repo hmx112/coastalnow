@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "topsail-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-18T23:23:39+00:00",
+  "generated_at_utc": "2026-09-19T00:35:19+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-18T23:23:39+00:00"
+      "fetched_at_utc": "2026-09-19T00:35:19+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.adf2eb262edf5ff84c4af535dcd1f1f8f9eef339.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-18T19:50:00-04:00",
+        "onset": "2026-09-18T19:50:00-04:00",
+        "expires": "2026-09-18T20:45:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 18 at 7:50PM EDT by NWS Wilmington NC",
+        "description": "The areas affected include...\nCoastal waters from Surf City to Cape Fear NC out 20 nm...\n\nAt 749 PM EDT, Doppler radar indicated a gust front and\nthunderstorms, capable of producing winds to around 30 knots. This\ngust front was located along a line extending from Surf City to near\nRich Inlet to 13 nm northwest of Figure Eight Island, moving south\nat 20 knots.\n\nLocations impacted include...\n10 Mile Boxcars, Liberty Ship, Dallas Rock, Billy Murrell Reef,\nMasonboro Sea Buoy, Harris Reef, 10 Mile Rocks, Topsail Boxcars,\nTopsail Tire Reef, 5 Mile Boxcars, Johnny Mercer Pier, North\nMasonboro Island, and Surf City.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass. If caught on the open water,\nprepare for deteriorating conditions. Make sure you and your crew are\nwearing properly fitted life jackets.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2551,5 +2567,5 @@
       "grid_y": 82
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
