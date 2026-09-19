@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "sarasota",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-19T20:52:20+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-19T20:52:20+00:00",
+  "generated_at_utc": "2026-09-19T21:42:41+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-19T21:42:41+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,15 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 50.8,
-    "rating": "Poor",
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
     "confidence": "Medium",
-    "best_window": {
-      "start": "2026-09-19T21:00:00-04:00",
-      "end": "2026-09-20T00:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
-      "light-wind",
-      "manageable-sea-state",
-      "forecast-thunder-cap"
+      "special-weather-statement",
+      "special-marine-warning"
     ]
   },
   "tomorrow": {
@@ -46,32 +41,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-19T16:00:00-04:00",
-        "components": {
-          "tide": 11.4,
-          "wind": 100,
-          "wave": 85,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 51.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 64.7,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-09-19T17:00:00-04:00",
         "components": {
@@ -110,18 +79,20 @@
           "water_temperature": null
         },
         "raw_quality_score": 67.2,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "special-weather-statement",
+          "special-marine-warning",
           "forecast-thunder-cap"
         ]
       },

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sarasota",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-19T20:52:20+00:00",
+  "generated_at_utc": "2026-09-19T21:42:41+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T20:52:20+00:00"
+      "fetched_at_utc": "2026-09-19T21:42:41+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,38 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a78c3fea83ec28722b33057443c6b836c8de4236.001.1",
+        "event": "Special Weather Statement",
+        "severity": "Moderate",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-19T17:33:00-04:00",
+        "onset": "2026-09-19T17:33:00-04:00",
+        "expires": "2026-09-19T18:15:00-04:00",
+        "ends": null,
+        "headline": "Special Weather Statement issued September 19 at 5:33PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "At 533 PM EDT, Doppler radar was tracking a strong thunderstorm near\nParrish, or 10 miles east of Palmetto, moving southwest at 20 mph.\n\nHAZARD...Wind gusts up to 50 mph.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects.\n\nLocations impacted include...\nSarasota, Bradenton, Palmetto, Longboat Key, Siesta Key, Lakewood\nRanch, Ellenton, Sarasota Springs, South Gate Ridge, Lake Sarasota,\nSaint Armands Key, North Sarasota, Memphis, Sarasota Bradenton\nAirport, West Samoset, Southgate, Gulf Gate Estates, Myakka River\nState Park, The Meadows, and Ridge Wood Heights.",
+        "instruction": "If outdoors, consider seeking shelter inside a building.\n\nTorrential rainfall is also occurring with this storm and may lead to\nlocalized flooding. Do not drive your vehicle through flooded\nroadways.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7a99564b0f743bc818c8c9ac29097faa8eeb9c99.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-19T17:30:00-04:00",
+        "onset": "2026-09-19T17:30:00-04:00",
+        "expires": "2026-09-19T18:30:00-04:00",
+        "ends": "2026-09-19T18:30:00-04:00",
+        "headline": "Special Marine Warning issued September 19 at 5:30PM EDT until September 19 at 6:30PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\n* Until 630 PM EDT.\n\n* At 529 PM EDT, a severe thunderstorm capable of producing\nwaterspouts was located near Sarasota Bay, moving south at 15\nknots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can quickly form and capsize boats, damage\nvessels, and create suddenly higher waves. Make sure all\non board are in a secure location and wearing life\njackets. Expect wind gusts in excess of 34 knots,\nsuddenly higher waves, frequent lightning, and heavy\ndownpours. Make sure all on board are wearing life\njackets.\n\n* Locations impacted include...\nTerra Ceia Bay, Manatee Nearshore Reef, Longboat Key, Venice Inlet,\nM4 Reef, Siesta Key, M7 Reef, Saint Armands Key, M8 Reef, M17 Reef,\nBig Sarasota Pass, M5 Reef, M1 Reef, Holmes Beach, Port Manatee\nReef, Manatee 1 Mile Reef, Manatee 3 Mile South Reef, Bradenton\nBeach, Sarasota Bay Hart Reef, and Longboat Pass.",
+        "instruction": "Move to safe harbor until hazardous weather passes.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2531,5 +2562,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

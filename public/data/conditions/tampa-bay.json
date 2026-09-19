@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "tampa-bay",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-19T20:51:31+00:00",
+  "generated_at_utc": "2026-09-19T21:42:29+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-19T20:51:31+00:00"
+      "fetched_at_utc": "2026-09-19T21:42:29+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.073d6ad706a6278d263298c0dd43d057be98306a.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-19T16:25:00-04:00",
-        "onset": "2026-09-19T16:25:00-04:00",
-        "expires": "2026-09-19T17:30:00-04:00",
-        "ends": "2026-09-19T17:30:00-04:00",
-        "headline": "Special Marine Warning issued September 19 at 4:25PM EDT until September 19 at 5:30PM EDT by NWS Tampa Bay Ruskin FL",
-        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\n* Until 530 PM EDT.\n\n* At 425 PM EDT, a severe thunderstorm capable of producing\nwaterspouts was located over Howard Frankland Bridge, moving\nsouthwest at 15 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can quickly form and capsize boats, damage\nvessels, and create suddenly higher waves. Make sure all\non board are in a secure location and wearing life\njackets. Expect wind gusts in excess of 34 knots,\nsuddenly higher waves, frequent lightning, and heavy\ndownpours. Make sure all on board are wearing life\njackets.\n\n* Locations impacted include...\nTerra Ceia Bay, Manatee Nearshore Reef, Howard Frankland Bridge,\nMadeira Beach Reef, Tierra Verde, Belleair Beach, Cockroach Bay,\nAnna Maria Island, Pass-A-Grille Channel, Southwest Channel, Tampa\nBay, St. Pete Beach, Hillsborough Bay, Bradenton Beach, Honeymoon\nIsland, Redington Beach, Whitney Beach, Courtney Campbell Causeway,\nClearwater Pass, and Passage Key Inlet.",
-        "instruction": "Move to safe harbor until hazardous weather passes.",
-        "sender_name": "NWS Tampa Bay Ruskin FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2537,5 +2521,5 @@
       "grid_y": 88
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
