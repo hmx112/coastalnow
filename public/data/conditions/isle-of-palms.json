@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "isle-of-palms",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-20T10:04:41+00:00",
+  "generated_at_utc": "2026-09-20T11:27:48+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T10:04:41+00:00"
+      "fetched_at_utc": "2026-09-20T11:27:48+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T10:04:41+00:00"
+      "fetched_at_utc": "2026-09-20T11:27:48+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T10:04:41+00:00"
+      "fetched_at_utc": "2026-09-20T11:27:48+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T04:55:35+00:00"
+      "fetched_at_utc": "2026-09-20T11:26:41+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-20T10:04:41+00:00"
+      "fetched_at_utc": "2026-09-20T11:27:48+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-20T06:00:00-04:00",
-      "wind_mph": 3.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 21.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-20T07:00:00-04:00",
       "wind_mph": 3.0,
@@ -1902,11 +1890,39 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-09-26T18:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8409bd5319a1cf7c4f7d3049e9517c6e25bda758.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-20T06:13:00-04:00",
+        "onset": "2026-09-20T06:13:00-04:00",
+        "expires": "2026-09-20T08:15:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 20 at 6:13AM EDT by NWS Charleston SC",
+        "description": "The areas affected include...\nWaters from South Santee River SC to Savannah GA out 60 NM...\nWaters from Savannah GA to Altamaha Sound GA out 60 NM...\n\n* At 613 AM EDT, Conditions will be favorable for the development of\nwaterspouts across the nearshore waters of South Carolina this\nmorning. The risk will be highest along lines of towering clouds\nand near showers and thunderstorms. Conditions will become less\nfavorable for waterspout development by late morning as the sea\nbreeze begins to form along the beaches.\n\nLocations impacted include...\nEdisto Offshore Reef, Edisto Sixty Reef, Kiawah Reef, Edisto Forty\nReef, N. Edisto Nearshore Reef, Lowcountry Anglers, Hunting Island\nReef, Charleston Sixty, R7 Tower, Joe Shuford Reef, Fripp Island\nReef, Deveaux Bank, Betsy Ross Reef, Fripp Island Wreck and\nBeaufort 45 Feet Reef.",
+        "instruction": "Report severe weather to the Coast Guard or nearest law enforcement\nagency. They will relay your report to the National Weather Service\noffice.",
+        "sender_name": "NWS Charleston SC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1940,8 +1956,8 @@
       "start": "2026-09-20",
       "end": "2026-09-26"
     },
-    "generated_at_utc": "2026-09-20T04:55:35+00:00",
-    "generated_at_local": "2026-09-20T00:55:35-04:00",
+    "generated_at_utc": "2026-09-20T11:26:41+00:00",
+    "generated_at_local": "2026-09-20T07:26:41-04:00",
     "hilo": [
       {
         "t": "2026-09-19 01:51",
@@ -2556,5 +2572,5 @@
       "grid_y": 76
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

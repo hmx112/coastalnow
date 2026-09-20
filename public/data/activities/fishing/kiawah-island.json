@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "kiawah-island",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-20T10:04:43+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-20T10:04:43+00:00",
+  "generated_at_utc": "2026-09-20T11:27:52+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-20T11:27:52+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,14 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "Limited",
-    "score": 91.2,
-    "rating": "Excellent",
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
     "confidence": "Limited",
-    "best_window": {
-      "start": "2026-09-20T18:00:00-04:00",
-      "end": "2026-09-20T21:00:00-04:00"
-    },
+    "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "light-wind",
-      "manageable-sea-state",
-      "favorable-tide-movement"
+      "marine-weather-statement"
     ]
   },
   "tomorrow": {
@@ -46,33 +41,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-20T06:00:00-04:00",
-        "components": {
-          "tide": 97.9,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 55.3,
-          "water_temperature": null
-        },
-        "raw_quality_score": 94.6,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-09-20T07:00:00-04:00",
         "components": {
           "tide": 94.7,
@@ -84,9 +52,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 93.7,
-        "final_score": 93.7,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -95,7 +63,8 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "marine-weather-statement"
         ]
       },
       {
@@ -110,9 +79,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 84.9,
-        "final_score": 84.9,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -120,7 +89,8 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "marine-weather-statement"
         ]
       },
       {
