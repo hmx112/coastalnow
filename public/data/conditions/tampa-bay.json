@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "tampa-bay",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-20T20:56:32+00:00",
+  "generated_at_utc": "2026-09-20T22:41:01+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T20:56:32+00:00"
+      "fetched_at_utc": "2026-09-20T22:41:01+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.357304fb645300e20b66ab50443898c4993a1405.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-09-20T16:37:00-04:00",
-        "onset": "2026-09-20T16:37:00-04:00",
-        "expires": "2026-09-20T17:15:00-04:00",
-        "ends": "2026-09-20T17:15:00-04:00",
-        "headline": "Special Marine Warning issued September 20 at 4:37PM EDT until September 20 at 5:15PM EDT by NWS Tampa Bay Ruskin FL",
-        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nTampa Bay waters...\n\n* Until 515 PM EDT.\n\n* At 437 PM EDT, a severe thunderstorm capable of producing\nwaterspouts was located near Hillsborough Bay, moving south at 20\nknots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can quickly form and capsize boats, damage\nvessels, and create suddenly higher waves. Make sure all\non board are in a secure location and wearing life\njackets. Expect wind gusts in excess of 34 knots,\nsuddenly higher waves, frequent lightning, and heavy\ndownpours. Make sure all on board are wearing life\njackets.\n\n* Locations impacted include...\nGandy Bridge, Old Tampa Bay, Howard Frankland Bridge, Tampa Bay,\nCockroach Bay, Hillsborough Bay, Courtney Campbell Causeway, and\nClearwater.",
-        "instruction": "Move to safe harbor until hazardous weather passes.",
-        "sender_name": "NWS Tampa Bay Ruskin FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2547,5 +2531,5 @@
       "grid_y": 88
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
