@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-20T11:37:00+00:00",
+  "generated_at_utc": "2026-09-20T14:20:42+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T11:37:00+00:00"
+      "fetched_at_utc": "2026-09-20T14:20:42+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7636b0b7483f10aca704bec9ea80a3f0389a8461.001.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-20T09:49:00-04:00",
+        "onset": "2026-09-20T09:49:00-04:00",
+        "expires": "2026-09-20T20:00:00-04:00",
+        "ends": "2026-09-20T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued September 20 at 9:49AM EDT until September 20 at 8:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT....Dangerous rip currents.\n\n* WHERE...The beaches of Currituck County.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
+        "instruction": "Remain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
