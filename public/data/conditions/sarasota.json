@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sarasota",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-20T23:20:31+00:00",
+  "generated_at_utc": "2026-09-21T00:29:43+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T23:20:31+00:00"
+      "fetched_at_utc": "2026-09-21T00:29:43+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bdfd6c0f5cf1477a30a58282461e111ee77be81e.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-20T19:47:00-04:00",
+        "onset": "2026-09-20T19:47:00-04:00",
+        "expires": "2026-09-20T20:45:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 20 at 7:47PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "The areas affected include...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\nAt 747 PM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from near Longboat Pass to near Siesta\nKey to near Venice, moving west at 15 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.\n\nIntense lightning is occurring with these storms. If caught on the\nopen water stay below deck if possible, keep away from ungrounded\nmetal objects.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2541,5 +2557,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sanibel-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-20T23:19:34+00:00",
+  "generated_at_utc": "2026-09-21T00:29:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-20T23:19:34+00:00"
+      "fetched_at_utc": "2026-09-21T00:29:27+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.947b287a0f6cb2f9608b2f98b2e67fe8dfe4fad1.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-20T19:52:00-04:00",
+        "onset": "2026-09-20T19:52:00-04:00",
+        "expires": "2026-09-20T21:30:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 20 at 7:52PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "The areas affected include...\nCharlotte Harbor and Pine Island Sound...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nWaters from Englewood to Tarpon Springs FL out 20 to 60 NM...\n\nAt 752 PM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from near Don Pedro Island to 6 nm\neast of North Captiva Island to 7 nm northeast of Bonita Shores,\nmoving southwest at 15 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 32
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
