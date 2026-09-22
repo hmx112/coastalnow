@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "nags-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-22T17:04:07+00:00",
+  "generated_at_utc": "2026-09-22T19:05:14+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-22T17:04:07+00:00"
+      "fetched_at_utc": "2026-09-22T19:05:14+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.193430a4e81346ba8cb3ad503c37c993fc6c1d22.001.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-22T13:39:00-04:00",
+        "onset": "2026-09-23T14:00:00-04:00",
+        "expires": "2026-09-23T05:00:00-04:00",
+        "ends": "2026-09-24T20:00:00-04:00",
+        "headline": "Wind Advisory issued September 22 at 1:39PM EDT until September 24 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Northeast winds 25 to 35 mph with gusts up to 45 mph\nexpected.\n\n* WHERE...East Carteret and Mainland Dare Counties, and Hatteras\nIsland, Northern Outer Banks, and Ocracoke Island. The strongest\nwinds are expected for areas adjacent to bodies of water.\n\n* WHEN...From 2 PM Wednesday to 8 PM EDT Thursday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...A strong coastal low will develop offshore\neast of the Carolinas and move north towards the New England coast\nby this weekend. A period of moderate to strong winds is expected\nto impact portions of the coast Wednesday into Thursday. These\nstrong winds may last longer depending on the track of the low.",
+        "instruction": "Secure outdoor objects.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5be8fd0ad2d8eba271f6d558055b629a8d4af96.001.1",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
@@ -1938,17 +1953,17 @@
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf63c6fb6024c5155958c1bba1c5eeed4fc0d39f.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bcfd206785581a656ba8ed4bd6817c7f2bf98ca7.002.1",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-22T05:46:00-04:00",
+        "effective": "2026-09-22T14:33:00-04:00",
         "onset": "2026-09-23T07:00:00-04:00",
-        "expires": "2026-09-22T19:00:00-04:00",
+        "expires": "2026-09-23T04:00:00-04:00",
         "ends": "2026-09-25T18:00:00-04:00",
-        "headline": "Gale Warning issued September 22 at 5:46AM EDT until September 25 at 6:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Northeast winds 25 to 35 kt with gusts up to 45 kt and\nseas 14 to 19 ft expected.\n\n* WHERE...The coastal waters from Duck to Cape Hatteras, and the\noffshore waters from Duck to Cape Hatteras.\n\n* WHEN...From 7 AM Wednesday to 6 PM EDT Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "headline": "Gale Warning issued September 22 at 2:33PM EDT until September 25 at 6:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Northeast winds 25 to 30 kt with gusts up to 45 kt and\nseas 15 to 20 ft expected.\n\n* WHERE...The coastal waters from Duck to Cape Hatteras, and the\noffshore waters from Duck to Cape Hatteras.\n\n* WHEN...From 7 AM Wednesday to 6 PM EDT Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.\n\n* ADDITIONAL DETAILS...A strong coastal low will develop offshore\neast of North Carolina by Wednesday, then move north towards the\ncoast of New England by the end of the week. This low is\nexpected to produce an extended period of hazardous marine\nconditions for much of the ENC waters.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       }
@@ -2602,5 +2617,5 @@
       "grid_y": 119
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
