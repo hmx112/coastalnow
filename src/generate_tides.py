@@ -17,6 +17,7 @@ between official NOAA high/low predictions and label that curve as estimated.
 from __future__ import annotations
 
 import argparse
+import os
 import json
 import math
 import sys
@@ -771,6 +772,25 @@ def generate_one(location: dict, preview: bool = False) -> int:
         return 2
 
 
+def finalize_cloudflare_pages_build(environ=None, build_runner=None) -> bool:
+    """Run the final static-site normalizer only inside Cloudflare Pages builds.
+
+    GitHub Actions already runs build_site.py as its own explicit step, so this
+    hook stays inactive there. Cloudflare Pages historically invokes the Tide
+    generator as its build command; finalizing here prevents that build from
+    publishing pre-normalized Tide HTML.
+    """
+    env = os.environ if environ is None else environ
+    if env.get("CF_PAGES") != "1":
+        return False
+    if build_runner is None:
+        from build_site import main as build_site_main
+
+        build_runner = build_site_main
+    build_runner()
+    return True
+
+
 def selected_locations(slug: str | None) -> list[dict]:
     if slug:
         if slug not in LOCATIONS:
@@ -788,6 +808,9 @@ def main() -> int:
     exit_code = 0
     for location in selected_locations(args.location):
         exit_code = max(exit_code, generate_one(location, preview=args.preview))
+
+    if not args.preview and args.location is None:
+        finalize_cloudflare_pages_build()
     return exit_code
 
 
