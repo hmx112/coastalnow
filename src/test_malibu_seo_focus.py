@@ -70,15 +70,16 @@ class MalibuSeoFocusTests(unittest.TestCase):
         self.assertTrue(css.exists())
         self.assertTrue(hero.exists())
         hero_assets = {
-            "malibu": "hero-malibu.webp",
-            "los-angeles": "hero-los-angeles.webp",
-            "oceanside": "hero-oceanside.webp",
-            "miami-beach": "hero-miami-beach.webp",
+            "malibu": "hero-malibu.avif",
+            "los-angeles": "hero-los-angeles.avif",
+            "oceanside": "hero-oceanside.avif",
+            "miami-beach": "hero-miami-beach.avif",
         }
         for slug, filename in hero_assets.items():
             asset = ROOT / "assets" / filename
             self.assertTrue(asset.exists(), filename)
-            self.assertGreater(asset.stat().st_size, 30000, filename)
+            self.assertGreater(asset.stat().st_size, 3000, filename)
+            self.assertEqual(asset.read_bytes()[4:12], b"ftypavif", filename)
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-tide #overview", css_text)
         self.assertIn("--c2-hero-image:url(\"/assets/malibu-c2-hero.svg\")", css_text)
