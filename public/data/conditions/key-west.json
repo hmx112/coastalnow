@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-23T21:36:44+00:00",
+  "generated_at_utc": "2026-09-23T23:07:38+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T21:36:44+00:00"
+      "fetched_at_utc": "2026-09-23T23:07:38+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.80b259e952e63b98b7fd4f0b327ab2e4c6b86feb.001.1",
-        "event": "Coastal Flood Statement",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-23T02:17:00-04:00",
-        "onset": "2026-09-23T02:17:00-04:00",
-        "expires": "2026-09-23T18:00:00-04:00",
-        "ends": "2026-09-23T18:00:00-04:00",
-        "headline": "Coastal Flood Statement issued September 23 at 2:17AM EDT until September 23 at 6:00PM EDT by NWS Key West FL",
-        "description": "* WHAT...Minor saltwater flooding.\n\n* WHERE...Florida Keys.\n\n* WHEN...Through this afternoon.\n\n* IMPACTS...Minor saltwater flooding of low elevation streets\nand lots is likely. Some storm drains will overflow, and some\nseawalls and docks will be overtopped. Boaters can expect less\nclearance under fixed bridges. Motorists should remember that\npersistent puddles around the times of high tide are almost\ncertain to contain a mix of saltwater.",
-        "instruction": "Do not drive through flooded roadways.",
-        "sender_name": "NWS Key West FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

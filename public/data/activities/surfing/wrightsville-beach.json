@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "wrightsville-beach",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-09-23T21:36:16+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-23T21:36:16+00:00",
+  "generated_at_utc": "2026-09-23T23:07:30+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-23T23:07:30+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,18 +13,17 @@
     "marine": "fresh"
   },
   "today": {
-    "status": "normal",
-    "score": 64.2,
-    "rating": "Fair",
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
     "confidence": "High",
-    "best_window": {
-      "start": "2026-09-23T17:00:00-04:00",
-      "end": "2026-09-23T20:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
       "moderate-wave-height",
-      "stronger-wind"
+      "stronger-wind",
+      "gale-warning",
+      "wave-exposure-caution"
     ]
   },
   "tomorrow": {
@@ -39,6 +38,7 @@
       "stronger-wind",
       "gale-warning",
       "wave-exposure-caution",
+      "rip-current-statement",
       "organized-wave-period",
       "forecast-thunder-cap",
       "wind-cap-59",
@@ -47,52 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-23T17:00:00-04:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 55,
-          "wind": 20,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 64.2,
-        "final_score": 64.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind"
-        ]
-      },
-      {
-        "time": "2026-09-23T18:00:00-04:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 55,
-          "wind": 20,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 64.2,
-        "final_score": 64.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind"
-        ]
-      },
       {
         "time": "2026-09-23T19:00:00-04:00",
         "components": {
@@ -387,6 +341,7 @@
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -412,6 +367,7 @@
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -437,6 +393,7 @@
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -462,6 +419,7 @@
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -487,6 +445,7 @@
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -513,6 +472,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -540,6 +500,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -567,6 +528,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -594,6 +556,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -621,6 +584,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -648,6 +612,7 @@
           "moderate-wave-height",
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -675,6 +640,7 @@
         "reasons": [
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -701,6 +667,7 @@
         "reasons": [
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -727,6 +694,7 @@
         "reasons": [
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -753,6 +721,7 @@
         "reasons": [
           "organized-wave-period",
           "stronger-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69"
         ]

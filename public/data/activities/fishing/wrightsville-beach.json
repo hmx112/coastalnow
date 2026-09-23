@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "wrightsville-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-23T21:36:16+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-23T21:36:16+00:00",
+  "generated_at_utc": "2026-09-23T23:07:30+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-23T23:07:30+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,18 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 53.8,
-    "rating": "Poor",
-    "confidence": "High",
-    "best_window": {
-      "start": "2026-09-23T17:00:00-04:00",
-      "end": "2026-09-23T20:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
       "manageable-sea-state",
       "worsening-wind",
-      "wave-exposure-caution"
+      "wave-exposure-caution",
+      "favorable-tide-movement",
+      "gale-warning"
     ]
   },
   "tomorrow": {
@@ -39,6 +38,7 @@
       "gale-warning",
       "wave-exposure-caution",
       "favorable-tide-movement",
+      "rip-current-statement",
       "wave-exposure-cap-69",
       "forecast-thunder-cap",
       "wind-cap-59",
@@ -47,58 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-23T17:00:00-04:00",
-        "components": {
-          "tide": 40.2,
-          "wind": 55,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 65.8,
-          "water_temperature": 70
-        },
-        "raw_quality_score": 64.6,
-        "final_score": 56.6,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-09-23T18:00:00-04:00",
-        "components": {
-          "tide": 8.5,
-          "wind": 55,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 65.8,
-          "water_temperature": 70
-        },
-        "raw_quality_score": 56.6,
-        "final_score": 48.6,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-09-23T19:00:00-04:00",
         "components": {
@@ -417,6 +365,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -443,6 +392,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -470,6 +420,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution"
         ]
@@ -497,6 +448,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69"
         ]
@@ -524,6 +476,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69"
         ]
@@ -550,6 +503,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -577,6 +531,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -604,6 +559,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -631,6 +587,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -659,6 +616,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -687,6 +645,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-cap-69",
@@ -715,6 +674,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -742,6 +702,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -769,6 +730,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -796,6 +758,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-39"
         ]
