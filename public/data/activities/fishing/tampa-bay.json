@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "tampa-bay",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-23T17:54:01+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-23T17:54:01+00:00",
+  "generated_at_utc": "2026-09-23T20:39:54+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-23T20:39:54+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,14 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 61.4,
-    "rating": "Fair",
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
     "confidence": "Medium",
-    "best_window": {
-      "start": "2026-09-23T21:00:00-04:00",
-      "end": "2026-09-24T00:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "light-wind",
-      "manageable-sea-state",
-      "forecast-thunder-cap",
-      "favorable-tide-movement"
+      "marine-weather-statement"
     ]
   },
   "tomorrow": {
@@ -46,85 +40,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-23T13:00:00-04:00",
-        "components": {
-          "tide": 22.7,
-          "wind": 100,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 63.6,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-23T14:00:00-04:00",
-        "components": {
-          "tide": 62.3,
-          "wind": 100,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 75.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-23T15:00:00-04:00",
-        "components": {
-          "tide": 89.8,
-          "wind": 100,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 83.7,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-09-23T16:00:00-04:00",
         "components": {
@@ -164,19 +79,20 @@
           "water_temperature": null
         },
         "raw_quality_score": 80.3,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
+          "marine-weather-statement",
           "forecast-thunder-cap"
         ]
       },

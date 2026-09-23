@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cannon-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-23T17:54:23+00:00",
+  "generated_at_utc": "2026-09-23T20:39:59+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T17:54:23+00:00"
+      "fetched_at_utc": "2026-09-23T20:39:59+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bb6618c0b4fef9db86b1c30bacbbfd3c525ad612.001.1",
+        "event": "Gale Watch",
+        "severity": "Moderate",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-09-23T13:01:00-07:00",
+        "onset": "2026-09-24T20:00:00-07:00",
+        "expires": "2026-09-24T05:15:00-07:00",
+        "ends": "2026-09-25T11:00:00-07:00",
+        "headline": "Gale Watch issued September 23 at 1:01PM PDT until September 25 at 11:00AM PDT by NWS Portland OR",
+        "description": "* WHAT...Seas 7 to 12 ft at 10 seconds and south winds 25 to 35\nkt with gusts up to 40 kt possible.\n\n* WHERE...Coastal Waters from Cape Shoalwater to Florence out 60\nNM.\n\n* WHEN...From Thursday evening through Friday morning.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.\n\n* ADDITIONAL DETAILS...20-40% chance of wind gusts over 40 kt.",
+        "instruction": "A Gale Watch is issued when the risk of gale force winds of 34 to\n47 knots has significantly increased, but the specific timing\nand/or location is still uncertain. It is intended to provide\nadditional lead time for mariners who may wish to consider\naltering their plans.",
+        "sender_name": "NWS Portland OR"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 130
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
