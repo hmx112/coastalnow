@@ -42,36 +42,44 @@ class MalibuSeoFocusTests(unittest.TestCase):
         featured = state_landing_config("california")["featured"]
         self.assertIn("malibu", featured[:4])
 
-    def test_malibu_c2_design_pilot_is_scoped_and_preserves_seo(self):
-        html = (ROOT / MALIBU["page_path"]).read_text(encoding="utf-8")
-        self.assertIn('class="c2-malibu"', html)
-        self.assertEqual(html.count('data-coastalnow-design="malibu-c2"'), 1)
-        self.assertIn('href="/assets/malibu-c2.css?v=20260923-mobile-1"', html)
-        self.assertIn('class="c2-section-tabs"', html)
-        self.assertIn('id="overview"', html)
-        self.assertIn('id="tide-chart"', html)
-        self.assertIn(
-            '<link rel="canonical" href="https://coastalnowtides.com/tides/california/malibu/">',
-            html,
-        )
-        self.assertIn('<meta name="robots" content="index,follow">', html)
-        self.assertIn("<title>Malibu Tide Times, High &amp; Low Tides Today | CoastalNow</title>", html)
+    def test_c2_design_pilot_is_scoped_to_selected_locations_and_preserves_seo(self):
+        pilot_slugs = ("malibu", "los-angeles", "oceanside", "miami-beach")
+        for slug in pilot_slugs:
+            location = LOCATIONS[slug]
+            html = (ROOT / location["page_path"]).read_text(encoding="utf-8")
+            self.assertIn(f'class="c2-tide c2-{slug}"', html)
+            self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1)
+            self.assertIn('href="/assets/malibu-c2.css?v=20260923-pilot-2"', html)
+            self.assertIn('class="c2-section-tabs"', html)
+            self.assertIn('id="overview"', html)
+            self.assertIn('id="tide-chart"', html)
+            self.assertIn(
+                f'<link rel="canonical" href="https://coastalnowtides.com/tides/{location["state_slug"]}/{slug}/">',
+                html,
+            )
+            self.assertIn('<meta name="robots" content="index,follow">', html)
+            self.assertIn(f'/tides/{location["state_slug"]}/{slug}/fishing/', html)
+
+            if slug == "malibu":
+                self.assertIn(f'/tides/{location["state_slug"]}/{slug}/surfing/', html)
+            else:
+                self.assertNotIn(f'/tides/{location["state_slug"]}/{slug}/surfing/', html)
 
         css = ROOT / "assets" / "malibu-c2.css"
         hero = ROOT / "assets" / "malibu-c2-hero.svg"
         self.assertTrue(css.exists())
         self.assertTrue(hero.exists())
         css_text = css.read_text(encoding="utf-8")
-        self.assertIn(".c2-malibu #overview", css_text)
-        self.assertIn("/assets/malibu-c2-hero.svg", css_text)
+        self.assertIn(".c2-tide #overview", css_text)
+        self.assertIn("--c2-hero-image:url(\"/assets/malibu-c2-hero.svg\")", css_text)
         self.assertIn("overflow-x:visible;", css_text)
         self.assertIn("flex:1 1 20%;", css_text)
         self.assertIn("padding-inline:5px;", css_text)
-        self.assertIn(".c2-malibu .chart .point-label{font-size:22px;", css_text)
-        self.assertIn(".c2-malibu .chart .axis-label{font-size:18px;", css_text)
+        self.assertIn(".c2-tide .chart .point-label{font-size:22px;", css_text)
+        self.assertIn(".c2-tide .chart .axis-label{font-size:18px;", css_text)
 
         santa_monica = (ROOT / LOCATIONS["santa-monica"]["page_path"]).read_text(encoding="utf-8")
-        self.assertNotIn("c2-malibu", santa_monica)
+        self.assertNotIn("c2-tide", santa_monica)
         self.assertNotIn("malibu-c2.css", santa_monica)
 
     def test_malibu_local_context_renders_dynamic_today_summary_and_links(self):
