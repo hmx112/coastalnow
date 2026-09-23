@@ -228,6 +228,62 @@ def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     )
 
 
+MALIBU_C2_STYLESHEET = (
+    '<link rel="stylesheet" href="/assets/malibu-c2.css" '
+    'data-coastalnow-design="malibu-c2">\n'
+)
+MALIBU_C2_TABS = (
+    '<nav class="c2-section-tabs" aria-label="Malibu page sections">'
+    '<a href="#overview">Overview</a>'
+    '<a href="#tide-chart">Tide chart</a>'
+    '<a href="/tides/california/malibu/fishing/">Fishing</a>'
+    '<a href="/tides/california/malibu/surfing/">Surfing</a>'
+    '<a href="#data">Data</a>'
+    '</nav>'
+)
+
+
+def _apply_location_design_pilot(html: str, location: dict) -> str:
+    """Apply the opt-in C2 visual pilot without changing shared Tide markup."""
+    if location.get("slug") != "malibu":
+        return html
+
+    if 'data-coastalnow-design="malibu-c2"' not in html:
+        html = re.sub(
+            r"</head>",
+            MALIBU_C2_STYLESHEET + "</head>",
+            html,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    if 'class="c2-malibu"' not in html:
+        html = re.sub(r"<body>", '<body class="c2-malibu">', html, count=1, flags=re.IGNORECASE)
+
+    if 'class="c2-section-tabs"' not in html:
+        hero = re.search(r'<section class="hero">.*?</section>', html, flags=re.IGNORECASE | re.DOTALL)
+        if not hero:
+            raise ValueError("Malibu C2 pilot requires the Tide hero section")
+        html = html[: hero.end()] + "\n" + MALIBU_C2_TABS + html[hero.end() :]
+
+    if 'id="overview"' not in html:
+        html = re.sub(
+            r'<section class="section">\s*<div class="section-head">',
+            '<section class="section" id="overview"><div class="section-head">',
+            html,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    if 'id="tide-chart"' not in html:
+        html = html.replace(
+            '<section class="section chart-card">',
+            '<section class="section chart-card" id="tide-chart">',
+            1,
+        )
+    return html
+
+
 def _enrich_location_body(html: str, location: dict, tide_data: dict | None = None) -> str:
     """Keep editorial context and trust navigation stable across Tide refreshes."""
     html = re.sub(
@@ -269,6 +325,7 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
 def normalize_location_html(html: str, location: dict, tide_data: dict | None = None) -> str:
     """Apply current content, title, description, indexing, canonical, and breadcrumb policy."""
     html = _enrich_location_body(html, location, tide_data)
+    html = _apply_location_design_pilot(html, location)
     canonical = canonical_url(location["page_path"])
     title = escape(location["page_title"])
     description = escape(location["meta_description"], quote=True)
