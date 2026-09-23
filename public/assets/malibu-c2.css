@@ -304,7 +304,7 @@
   .c2-malibu .lower-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
-  .c2-malibu .wrap{width:min(100% - 20px,1180px)}
+  .c2-malibu .wrap{width:min(100% - 24px,1180px)}
   .c2-malibu .header-inner{height:58px}
   .c2-malibu .brand{font-size:1.13rem}
   .c2-malibu .hero{min-height:256px;border-radius:15px}
@@ -313,14 +313,27 @@
   .c2-malibu .hero-copy{font-size:.83rem;line-height:1.45}
   .c2-malibu .hero-date{display:none}
   .c2-malibu .c2-section-tabs{
-    width:calc(100% - 8px);
+    width:100%;
     margin:-13px auto 0;
-    justify-content:flex-start;
-    overflow-x:auto;
-    scrollbar-width:none;
+    padding:5px;
+    gap:1px;
+    justify-content:stretch;
+    overflow-x:visible;
+    border-radius:18px;
   }
-  .c2-malibu .c2-section-tabs::-webkit-scrollbar{display:none}
-  .c2-malibu .c2-section-tabs a{flex:0 0 auto;padding:8px 13px}
+  .c2-malibu .c2-section-tabs a{
+    flex:1 1 20%;
+    min-width:0;
+    padding:8px 2px;
+    font-size:.66rem;
+    white-space:nowrap;
+  }
+  .c2-malibu #overview>.section-head,
+  .c2-malibu .activity-parent-section>.section-head{
+    padding-inline:5px;
+  }
+  .c2-malibu .chart .point-label{font-size:22px;font-weight:850}
+  .c2-malibu .chart .axis-label{font-size:18px;font-weight:700}
   .c2-malibu #overview{grid-template-columns:1fr;gap:9px}
   .c2-malibu #overview .tide-answer,
   .c2-malibu #overview .tide-grid,
