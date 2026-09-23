@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "st-pete-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-23T20:39:56+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-23T20:39:56+00:00",
+  "generated_at_utc": "2026-09-23T21:32:33+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-23T21:32:33+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,25 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 59.5,
+    "rating": "Poor",
     "confidence": "Medium",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-09-23T21:00:00-04:00",
+      "end": "2026-09-24T00:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "marine-weather-statement"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "forecast-thunder-cap"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 87.0,
+    "score": 88.0,
     "rating": "Good",
     "confidence": "Medium",
     "best_window": {
@@ -41,33 +47,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-23T16:00:00-04:00",
-        "components": {
-          "tide": 91.8,
-          "wind": 100,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 84.3,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-09-23T17:00:00-04:00",
         "components": {
           "tide": 68.4,
@@ -79,19 +58,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 75.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 39.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "marine-weather-statement",
           "forecast-thunder-cap"
         ]
       },
@@ -664,15 +642,15 @@
         "time": "2026-09-24T16:00:00-04:00",
         "components": {
           "tide": 98.7,
-          "wind": 80,
+          "wind": 100,
           "wave": 90,
           "weather": 100,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 88.5,
-        "final_score": 88.5,
+        "raw_quality_score": 92.5,
+        "final_score": 92.5,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
@@ -749,18 +727,17 @@
           "water_temperature": null
         },
         "raw_quality_score": 64.0,
-        "final_score": 39.0,
+        "final_score": 64.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 39.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
+          "manageable-sea-state"
         ]
       },
       {
