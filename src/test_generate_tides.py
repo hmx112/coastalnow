@@ -31,6 +31,24 @@ class GenerationTargetTests(unittest.TestCase):
         self.assertEqual([location["slug"] for location in selected], [slug])
         self.assertEqual(selected[0]["status"], LOCATIONS[slug]["status"])
 
+    def test_cloudflare_pages_runs_final_site_build_only_on_pages(self):
+        calls = []
+        self.assertFalse(
+            generate_tides.finalize_cloudflare_pages_build(
+                environ={},
+                build_runner=lambda: calls.append("build"),
+            )
+        )
+        self.assertEqual(calls, [])
+
+        self.assertTrue(
+            generate_tides.finalize_cloudflare_pages_build(
+                environ={"CF_PAGES": "1"},
+                build_runner=lambda: calls.append("build"),
+            )
+        )
+        self.assertEqual(calls, ["build"])
+
     def test_subordinate_hilo_can_generate_half_cosine_curve(self):
         self.assertTrue(
             hasattr(generate_tides, "derive_curve_from_hilo"),
