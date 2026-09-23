@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cape-may",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-23T04:54:32+00:00",
+  "generated_at_utc": "2026-09-23T06:36:45+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T04:54:32+00:00"
+      "fetched_at_utc": "2026-09-23T06:36:45+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bca88a9e062af5d478b5dad26c0d4ee259caa109.001.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T02:33:00-04:00",
+        "onset": "2026-09-23T06:00:00-04:00",
+        "expires": "2026-09-23T16:00:00-04:00",
+        "ends": "2026-09-24T20:00:00-04:00",
+        "headline": "Wind Advisory issued September 23 at 2:33AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+        "description": "* WHAT...Northeast winds 25 to 35 mph with gusts up to 50 mph\nexpected.\n\n* WHERE...In Delaware, Delaware Beaches County. In New Jersey,\nEastern Monmouth, Atlantic Coastal Cape May, Coastal Atlantic, and\nCoastal Ocean Counties.\n\n* WHEN...From 6 AM this morning to 8 PM EDT Thursday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
+        "sender_name": "NWS Mount Holly NJ"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.41913522096e36d41c89ead922c8fd1f2567fdf9.002.2",
         "event": "Coastal Flood Warning",
         "severity": "Severe",
@@ -1950,21 +1965,6 @@
         "headline": "High Surf Advisory issued September 22 at 9:53PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
         "description": "* WHAT...For the High Surf Advisory, large breaking waves of 6 to\n12 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Warning, one to\ntwo feet of inundation above ground level expected in low- lying\nareas near shorelines and tidal waterways.\n\n* WHERE...Atlantic Coastal Cape May, Coastal Atlantic and\nCoastal Ocean.\n\n* WHEN...For the High Surf Advisory, until 6 PM EDT Friday. For\nthe High Rip Current Risk, through Friday afternoon. For the\nCoastal Flood Warning, from 4 PM Wednesday to 1 AM EDT Friday.\n\n* IMPACTS...At this level, widespread roadway flooding occurs in\ncoastal and bayside communities and along inland tidal\nwaterways. Many roads become impassable. Some damage to\nvulnerable structures may begin to occur. Dangerous swimming\nand surfing conditions and localized beach erosion. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.\n\n* ADDITIONAL DETAILS...Significant beach erosion is expected.\nModerate tidal flooding could continue into the weekend. Cannot\nrule out major tidal flooding, especially within the back bays.",
         "instruction": "A Coastal Flood Warning means that moderate or major tidal\nflooding is occurring or imminent. Be prepared for rising water\nlevels and take appropriate action to protect life and property.\nFollow the recommendations of local emergency management\nofficials.\n\nDo not drive your vehicle through flood waters. The water may be\ndeeper than you think it is. You will be putting yourself in\ndanger and your vehicle may be damaged, leading to costly\nrepairs.\n\nVisit the National Water Prediction Service at\nhttps://water.noaa.gov/wfo/phi for additional water level and\nflood impact information for your local tide gauge.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nAlways obey posted Beach Flags. If you enter the surf zone,\nalways have a floatation device with you and swim near a\nlifeguard if possible. If caught in a rip current, relax and\nfloat and do not swim against the current. If able, swim parallel\nto the shoreline. If unable to escape, face the shore and call or\nwave for help.",
-        "sender_name": "NWS Mount Holly NJ"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-22T14:22:00-04:00",
-        "onset": "2026-09-23T06:00:00-04:00",
-        "expires": "2026-09-23T03:30:00-04:00",
-        "ends": "2026-09-24T00:00:00-04:00",
-        "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-        "description": "* WHAT...Northeast winds 25 to 35 mph with gusts up to 45 mph\nexpected.\n\n* WHERE...In Delaware, Delaware Beaches County. In New Jersey,\nEastern Monmouth, Atlantic Coastal Cape May, Coastal Atlantic, and\nCoastal Ocean Counties.\n\n* WHEN...From 6 AM Wednesday to midnight EDT Wednesday Night.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
         "sender_name": "NWS Mount Holly NJ"
       },
       {
@@ -2647,5 +2647,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
