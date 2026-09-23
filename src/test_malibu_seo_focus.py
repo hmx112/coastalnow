@@ -64,6 +64,11 @@ class MalibuSeoFocusTests(unittest.TestCase):
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-malibu #overview", css_text)
         self.assertIn("/assets/malibu-c2-hero.svg", css_text)
+        self.assertIn("overflow-x:visible;", css_text)
+        self.assertIn("flex:1 1 20%;", css_text)
+        self.assertIn("padding-inline:5px;", css_text)
+        self.assertIn(".c2-malibu .chart .point-label{font-size:22px;", css_text)
+        self.assertIn(".c2-malibu .chart .axis-label{font-size:18px;", css_text)
 
         santa_monica = (ROOT / LOCATIONS["santa-monica"]["page_path"]).read_text(encoding="utf-8")
         self.assertNotIn("c2-malibu", santa_monica)
