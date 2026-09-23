@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "cape-hatteras",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-23T07:27:42+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-23T07:27:42+00:00",
+  "generated_at_utc": "2026-09-23T09:48:39+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-23T09:48:39+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,20 +13,20 @@
   },
   "today": {
     "status": "normal",
-    "score": 55.4,
-    "rating": "Poor",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "Medium",
     "best_window": {
-      "start": "2026-09-23T08:00:00-04:00",
-      "end": "2026-09-23T11:00:00-04:00"
+      "start": "2026-09-23T06:00:00-04:00",
+      "end": "2026-09-23T09:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
-      "favorable-tide-movement",
       "worsening-wind",
-      "wet-weather",
-      "wind-cap-59",
-      "wave-exposure-cap-69"
+      "wave-exposure-cap-69",
+      "forecast-thunder-cap",
+      "favorable-tide-movement",
+      "wet-weather"
     ]
   },
   "tomorrow": {
@@ -40,69 +40,15 @@
       "worsening-wind",
       "wet-weather",
       "gale-warning",
-      "wind-cap-59",
-      "wave-exposure-cap-39",
-      "wave-exposure-hard-stop",
-      "favorable-tide-movement",
       "wind-cap-39",
-      "forecast-thunder-cap"
+      "wave-exposure-hard-stop",
+      "forecast-thunder-cap",
+      "wind-cap-59",
+      "favorable-tide-movement"
     ]
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-23T03:00:00-04:00",
-        "components": {
-          "tide": null,
-          "wind": 55,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 56.5,
-        "final_score": 48.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Unavailable",
-        "available": false,
-        "ranking_eligible": false,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-09-23T04:00:00-04:00",
-        "components": {
-          "tide": null,
-          "wind": 55,
-          "wave": 45,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 52.0,
-        "final_score": 44.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Unavailable",
-        "available": false,
-        "ranking_eligible": false,
-        "reasons": [
-          "worsening-wind",
-          "wet-weather",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-09-23T05:00:00-04:00",
         "components": {
@@ -115,90 +61,89 @@
           "water_temperature": null
         },
         "raw_quality_score": 52.0,
-        "final_score": 44.0,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
         "confidence": "Unavailable",
         "available": false,
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
           "wet-weather",
-          "wave-exposure-caution"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
         "time": "2026-09-23T06:00:00-04:00",
         "components": {
           "tide": 23.3,
-          "wind": 25,
+          "wind": 55,
           "wave": 45,
-          "weather": 50,
+          "weather": 75,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 42.0,
-        "final_score": 34.0,
+        "raw_quality_score": 51.8,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
-        "safety_penalty": 8.0,
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
-          "wind-cap-59",
-          "wave-exposure-caution"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
         "time": "2026-09-23T07:00:00-04:00",
         "components": {
           "tide": 68.8,
-          "wind": 25,
+          "wind": 55,
           "wave": 45,
-          "weather": 30,
+          "weather": 75,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 52.7,
-        "final_score": 44.7,
+        "raw_quality_score": 65.4,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
-        "safety_penalty": 8.0,
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
-          "wind-cap-59",
-          "wave-exposure-caution"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
         "time": "2026-09-23T08:00:00-04:00",
         "components": {
           "tide": 95.9,
-          "wind": 25,
+          "wind": 55,
           "wave": 45,
           "weather": 50,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 63.8,
-        "final_score": 59.0,
+        "raw_quality_score": 69.8,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -207,26 +152,26 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
-          "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
         "time": "2026-09-23T09:00:00-04:00",
         "components": {
           "tide": 97.2,
-          "wind": 25,
+          "wind": 55,
           "wave": 45,
-          "weather": 30,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 59.7,
-        "final_score": 59.0,
+        "raw_quality_score": 68.7,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -235,8 +180,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
-          "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -251,10 +196,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 52.3,
-        "final_score": 52.3,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -263,7 +208,8 @@
           "worsening-wind",
           "wet-weather",
           "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-69",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -271,17 +217,17 @@
         "components": {
           "tide": 28.4,
           "wind": 25,
-          "wave": 45,
+          "wave": 20,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 39.1,
-        "final_score": 39.1,
+        "raw_quality_score": 35.3,
+        "final_score": 35.3,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -290,7 +236,8 @@
           "worsening-wind",
           "wet-weather",
           "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -298,17 +245,17 @@
         "components": {
           "tide": 21.9,
           "wind": 25,
-          "wave": 45,
-          "weather": 30,
+          "wave": 20,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 37.1,
-        "final_score": 37.1,
+        "raw_quality_score": 36.4,
+        "final_score": 36.4,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -317,7 +264,8 @@
           "worsening-wind",
           "wet-weather",
           "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -325,17 +273,17 @@
         "components": {
           "tide": 65.2,
           "wind": 25,
-          "wave": 45,
+          "wave": 20,
           "weather": 50,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 53.1,
-        "final_score": 53.1,
+        "raw_quality_score": 49.4,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -344,7 +292,8 @@
           "worsening-wind",
           "wet-weather",
           "wind-cap-59",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -352,8 +301,8 @@
         "components": {
           "tide": 93.2,
           "wind": 25,
-          "wave": 45,
-          "weather": 50,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
@@ -370,10 +319,10 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -381,13 +330,13 @@
         "components": {
           "tide": 99.3,
           "wind": 25,
-          "wave": 45,
-          "weather": 30,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 60.3,
+        "raw_quality_score": 63.3,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -399,10 +348,10 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -410,8 +359,8 @@
         "components": {
           "tide": 82.1,
           "wind": 25,
-          "wave": 45,
-          "weather": 50,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
@@ -428,10 +377,10 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -439,8 +388,8 @@
         "components": {
           "tide": 45.6,
           "wind": 25,
-          "wave": 45,
-          "weather": 50,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 65.8,
           "water_temperature": null
@@ -456,10 +405,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -467,8 +416,8 @@
         "components": {
           "tide": 1.7,
           "wind": 25,
-          "wave": 45,
-          "weather": 50,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
@@ -484,10 +433,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-cap-39",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -495,8 +444,8 @@
         "components": {
           "tide": 49.3,
           "wind": 25,
-          "wave": 45,
-          "weather": 50,
+          "wave": 20,
+          "weather": 75,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
@@ -512,10 +461,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -523,41 +472,13 @@
         "components": {
           "tide": 84.9,
           "wind": 25,
-          "wave": 45,
-          "weather": 75,
+          "wave": 20,
+          "weather": 50,
           "time_of_day": 100,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 64.3,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "worsening-wind",
-          "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
-        ]
-      },
-      {
-        "time": "2026-09-23T21:00:00-04:00",
-        "components": {
-          "tide": 99.8,
-          "wind": 25,
-          "wave": 45,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 65.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 61.0,
+        "raw_quality_score": 56.8,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -571,8 +492,39 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
+        ]
+      },
+      {
+        "time": "2026-09-23T21:00:00-04:00",
+        "components": {
+          "tide": 99.8,
+          "wind": 25,
+          "wave": 20,
+          "weather": 50,
+          "time_of_day": 60,
+          "solunar": 65.8,
+          "water_temperature": null
+        },
+        "raw_quality_score": 57.2,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
+        "confidence": "Medium",
+        "available": true,
+        "ranking_eligible": false,
+        "reasons": [
+          "favorable-tide-movement",
+          "worsening-wind",
+          "wet-weather",
+          "gale-warning",
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -581,12 +533,12 @@
           "tide": 90.5,
           "wind": 25,
           "wave": 20,
-          "weather": 30,
+          "weather": 50,
           "time_of_day": 60,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 51.4,
+        "raw_quality_score": 54.4,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -600,8 +552,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -609,13 +562,13 @@
         "components": {
           "tide": 59.0,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 60,
           "solunar": 65.8,
           "water_temperature": null
         },
-        "raw_quality_score": 45.0,
+        "raw_quality_score": 42.0,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -628,8 +581,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       }
     ],
@@ -639,13 +593,13 @@
         "components": {
           "tide": 13.3,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 31.4,
+        "raw_quality_score": 28.4,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -658,8 +612,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -667,8 +622,8 @@
         "components": {
           "tide": 37.7,
           "wind": 25,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
@@ -687,7 +642,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-cap-39"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -695,8 +651,37 @@
         "components": {
           "tide": 79.1,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
+          "time_of_day": 60,
+          "solunar": 68.0,
+          "water_temperature": null
+        },
+        "raw_quality_score": 48.1,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
+        "confidence": "Medium",
+        "available": true,
+        "ranking_eligible": false,
+        "reasons": [
+          "worsening-wind",
+          "wet-weather",
+          "gale-warning",
+          "wind-cap-59",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
+        ]
+      },
+      {
+        "time": "2026-09-24T03:00:00-04:00",
+        "components": {
+          "tide": 99.1,
+          "wind": 25,
+          "wave": 0,
+          "weather": 30,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
@@ -705,35 +690,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "worsening-wind",
-          "wet-weather",
-          "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-hard-stop"
-        ]
-      },
-      {
-        "time": "2026-09-24T03:00:00-04:00",
-        "components": {
-          "tide": 99.1,
-          "wind": 25,
-          "wave": 20,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 57.1,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -744,7 +701,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-59",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -752,17 +710,17 @@
         "components": {
           "tide": 92.3,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 30,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 52.1,
+        "raw_quality_score": 49.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -772,8 +730,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-hard-stop"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -781,17 +740,17 @@
         "components": {
           "tide": 60.5,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 30,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 42.5,
+        "raw_quality_score": 39.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -800,8 +759,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-hard-stop"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -809,8 +769,8 @@
         "components": {
           "tide": 12.3,
           "wind": 25,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
@@ -819,7 +779,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -828,8 +788,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-hard-stop"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -837,8 +798,8 @@
         "components": {
           "tide": 38.6,
           "wind": 25,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
@@ -847,7 +808,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -856,8 +817,9 @@
           "worsening-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-hard-stop"
+          "wind-cap-39",
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -865,13 +827,13 @@
         "components": {
           "tide": 79.1,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 55.1,
+        "raw_quality_score": 52.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -885,7 +847,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -893,13 +856,13 @@
         "components": {
           "tide": 99.0,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 59.6,
+        "raw_quality_score": 56.6,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -914,7 +877,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -922,13 +886,13 @@
         "components": {
           "tide": 93.1,
           "wind": 25,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 57.8,
+        "raw_quality_score": 54.8,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -943,7 +907,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -951,13 +916,13 @@
         "components": {
           "tide": 62.9,
           "wind": 25,
-          "wave": 20,
-          "weather": 50,
+          "wave": 0,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 48.8,
+        "raw_quality_score": 49.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -968,10 +933,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -979,13 +944,13 @@
         "components": {
           "tide": 16.3,
           "wind": 25,
-          "wave": 20,
-          "weather": 50,
+          "wave": 0,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 34.8,
+        "raw_quality_score": 35.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -996,10 +961,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1007,13 +972,13 @@
         "components": {
           "tide": 33.4,
           "wind": 25,
-          "wave": 20,
-          "weather": 50,
+          "wave": 0,
+          "weather": 75,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 39.9,
+        "raw_quality_score": 40.7,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1024,10 +989,10 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
-          "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1035,8 +1000,8 @@
         "components": {
           "tide": 74.4,
           "wind": 25,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
@@ -1055,21 +1020,22 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
         "time": "2026-09-24T15:00:00-04:00",
         "components": {
           "tide": 97.3,
-          "wind": 0,
-          "wave": 20,
-          "weather": 30,
+          "wind": 25,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 51.1,
+        "raw_quality_score": 56.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1084,7 +1050,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1092,8 +1059,8 @@
         "components": {
           "tide": 96.5,
           "wind": 0,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
@@ -1113,7 +1080,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1121,8 +1089,8 @@
         "components": {
           "tide": 72.2,
           "wind": 0,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 85,
           "solunar": 68.0,
           "water_temperature": null
@@ -1141,7 +1109,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1149,13 +1118,13 @@
         "components": {
           "tide": 30.3,
           "wind": 0,
-          "wave": 20,
+          "wave": 0,
           "weather": 30,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 32.5,
+        "raw_quality_score": 29.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1169,7 +1138,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1177,8 +1147,8 @@
         "components": {
           "tide": 19.3,
           "wind": 0,
-          "wave": 20,
-          "weather": 30,
+          "wave": 0,
+          "weather": 50,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
@@ -1197,7 +1167,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -1205,13 +1176,13 @@
         "components": {
           "tide": 64.5,
           "wind": 0,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 100,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 45.7,
+        "raw_quality_score": 42.7,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1234,13 +1205,13 @@
         "components": {
           "tide": 93.5,
           "wind": 0,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 50.4,
+        "raw_quality_score": 47.4,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1264,13 +1235,13 @@
         "components": {
           "tide": 99.0,
           "wind": 0,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 52.1,
+        "raw_quality_score": 49.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1294,13 +1265,13 @@
         "components": {
           "tide": 79.6,
           "wind": 0,
-          "wave": 20,
+          "wave": 0,
           "weather": 50,
           "time_of_day": 60,
           "solunar": 68.0,
           "water_temperature": null
         },
-        "raw_quality_score": 46.3,
+        "raw_quality_score": 43.3,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -1314,7 +1285,8 @@
           "wet-weather",
           "gale-warning",
           "wind-cap-39",
-          "wave-exposure-hard-stop"
+          "wave-exposure-hard-stop",
+          "forecast-thunder-cap"
         ]
       }
     ]
