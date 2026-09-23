@@ -228,8 +228,9 @@ def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     )
 
 
+MALIBU_C2_ASSET_VERSION = "20260923-mobile-1"
 MALIBU_C2_STYLESHEET = (
-    '<link rel="stylesheet" href="/assets/malibu-c2.css" '
+    f'<link rel="stylesheet" href="/assets/malibu-c2.css?v={MALIBU_C2_ASSET_VERSION}" '
     'data-coastalnow-design="malibu-c2">\n'
 )
 MALIBU_C2_TABS = (
