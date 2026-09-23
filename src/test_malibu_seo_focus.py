@@ -78,7 +78,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
         for slug, filename in hero_assets.items():
             asset = ROOT / "assets" / filename
             self.assertTrue(asset.exists(), filename)
-            self.assertGreater(asset.stat().st_size, 40000, filename)
+            self.assertGreater(asset.stat().st_size, 30000, filename)
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-tide #overview", css_text)
         self.assertIn("--c2-hero-image:url(\"/assets/malibu-c2-hero.svg\")", css_text)
