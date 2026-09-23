@@ -2,32 +2,32 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-23T07:11:43+00:00",
+  "generated_at_utc": "2026-09-23T07:27:42+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T07:11:43+00:00"
+      "fetched_at_utc": "2026-09-23T07:27:42+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T07:11:43+00:00"
+      "fetched_at_utc": "2026-09-23T07:27:42+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T07:11:43+00:00"
+      "fetched_at_utc": "2026-09-23T07:27:42+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T07:10:58+00:00"
+      "fetched_at_utc": "2026-09-23T07:27:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-23T07:11:43+00:00"
+      "fetched_at_utc": "2026-09-23T07:27:42+00:00"
     }
   },
   "hourly": [
@@ -1908,6 +1908,36 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d3e3c839690debe21ae4c18ac1031d1ad43d868.002.1",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T03:11:00-04:00",
+        "onset": "2026-09-23T14:00:00-04:00",
+        "expires": "2026-09-23T15:15:00-04:00",
+        "ends": "2026-09-25T23:00:00-04:00",
+        "headline": "Coastal Flood Warning issued September 23 at 3:11AM EDT until September 25 at 11:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand strong longshore currents in the surf zone. For the\nCoastal Flood Warning, 2 to 4 feet of inundation above ground\nlevel expected in low-lying areas near shorelines and tidal\nwaterways. Up to 1 foot of inundation is possible for sound-\nside flooding when winds become more northerly late Thursday\nand Friday.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the Coastal Flood Warning,\nfrom 2 PM this afternoon to 11 PM EDT Friday.\n\n* IMPACTS...Numerous roads may be closed. Portions of Highway 12\nwill be inundated. Low lying property including homes,\nbusinesses, and some critical infrastructure will be\ninundated. Some shoreline erosion will occur. Rip currents can\nsweep even the best swimmers away from shore into deeper\nwater. Strong longshore currents will create dangerous\nswimming conditions.\n\n* ADDITIONAL DETAILS...Prolonged nature of the event will\ncontinue to erode dune structures. Winds and waves are\nforecast to peak latter half of Thursday.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d3e3c839690debe21ae4c18ac1031d1ad43d868.002.2",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T03:11:00-04:00",
+        "onset": "2026-09-23T08:00:00-04:00",
+        "expires": "2026-09-23T15:15:00-04:00",
+        "ends": "2026-09-23T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued September 23 at 3:11AM EDT until September 23 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand strong longshore currents in the surf zone. For the\nCoastal Flood Warning, 2 to 4 feet of inundation above ground\nlevel expected in low-lying areas near shorelines and tidal\nwaterways. Up to 1 foot of inundation is possible for sound-\nside flooding when winds become more northerly late Thursday\nand Friday.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the Coastal Flood Warning,\nfrom 2 PM this afternoon to 11 PM EDT Friday.\n\n* IMPACTS...Numerous roads may be closed. Portions of Highway 12\nwill be inundated. Low lying property including homes,\nbusinesses, and some critical infrastructure will be\ninundated. Some shoreline erosion will occur. Rip currents can\nsweep even the best swimmers away from shore into deeper\nwater. Strong longshore currents will create dangerous\nswimming conditions.\n\n* ADDITIONAL DETAILS...Prolonged nature of the event will\ncontinue to erode dune structures. Winds and waves are\nforecast to peak latter half of Thursday.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.602142961c5e4db490f6839188bc1b01a00046e0.001.1",
         "event": "Wind Advisory",
         "severity": "Moderate",
@@ -1920,36 +1950,6 @@
         "headline": "Wind Advisory issued September 23 at 3:08AM EDT until September 25 at 2:00AM EDT by NWS Newport/Morehead City NC",
         "description": "* WHAT...Northeast winds 25 to 35 mph with gusts up to 45 mph\nexpected.\n\n* WHERE...East Carteret and Mainland Dare Counties, and Hatteras\nIsland, Northern Outer Banks, and Ocracoke Island. The strongest\nwinds are expected for areas adjacent to bodies of water.\n\n* WHEN...From 2 PM this afternoon to 2 AM EDT Friday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...A strong coastal low will develop offshore\neast of the Carolinas and move north towards the New England coast\nby this weekend. A period of moderate to strong winds is expected\nto impact portions of the coast Wednesday into Thursday. These\nstrong winds may last longer depending on the track of the low.",
         "instruction": "Secure outdoor objects.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cb6863eecca1480d200925ab7677336abe68afe6.002.3",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-22T16:42:00-04:00",
-        "onset": "2026-09-23T08:00:00-04:00",
-        "expires": "2026-09-23T04:45:00-04:00",
-        "ends": "2026-09-23T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued September 22 at 4:42PM EDT until September 23 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand strong longshore currents in the surf zone. For the Coastal\nFlood Warning, 2 to 4 feet of inundation above ground level\nexpected in low-lying areas near shorelines and tidal waterways.\nUp to 1 foot of inundation is possible for sound-side flooding\nwhen winds become more northerly late Thursday and Friday.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from Wednesday morning\nthrough Wednesday evening. For the Coastal Flood Warning, from\n2 PM Wednesday to 11 PM EDT Friday.\n\n* IMPACTS...Numerous roads may be closed. Portions of Highway 12\nwill be inundated. Low lying property including homes,\nbusinesses, and some critical infrastructure will be inundated.\nSome shoreline erosion will occur. Rip currents can sweep even\nthe best swimmers away from shore into deeper water. Strong\nlongshore currents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Prolonged nature of the event will continue\nto erode dune structures. Winds and waves are forecast to peak\nlatter half of Thursday.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cb6863eecca1480d200925ab7677336abe68afe6.002.2",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-22T16:42:00-04:00",
-        "onset": "2026-09-23T14:00:00-04:00",
-        "expires": "2026-09-23T04:45:00-04:00",
-        "ends": "2026-09-25T23:00:00-04:00",
-        "headline": "Coastal Flood Warning issued September 22 at 4:42PM EDT until September 25 at 11:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand strong longshore currents in the surf zone. For the Coastal\nFlood Warning, 2 to 4 feet of inundation above ground level\nexpected in low-lying areas near shorelines and tidal waterways.\nUp to 1 foot of inundation is possible for sound-side flooding\nwhen winds become more northerly late Thursday and Friday.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from Wednesday morning\nthrough Wednesday evening. For the Coastal Flood Warning, from\n2 PM Wednesday to 11 PM EDT Friday.\n\n* IMPACTS...Numerous roads may be closed. Portions of Highway 12\nwill be inundated. Low lying property including homes,\nbusinesses, and some critical infrastructure will be inundated.\nSome shoreline erosion will occur. Rip currents can sweep even\nthe best swimmers away from shore into deeper water. Strong\nlongshore currents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Prolonged nature of the event will continue\nto erode dune structures. Winds and waves are forecast to peak\nlatter half of Thursday.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -2001,8 +2001,8 @@
       "start": "2026-09-23",
       "end": "2026-09-29"
     },
-    "generated_at_utc": "2026-09-23T07:10:58+00:00",
-    "generated_at_local": "2026-09-23T03:10:57-04:00",
+    "generated_at_utc": "2026-09-23T07:27:26+00:00",
+    "generated_at_local": "2026-09-23T03:27:26-04:00",
     "hilo": [
       {
         "t": "2026-09-23 00:39",
