@@ -46,7 +46,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
         html = (ROOT / MALIBU["page_path"]).read_text(encoding="utf-8")
         self.assertIn('class="c2-malibu"', html)
         self.assertEqual(html.count('data-coastalnow-design="malibu-c2"'), 1)
-        self.assertIn('href="/assets/malibu-c2.css"', html)
+        self.assertIn('href="/assets/malibu-c2.css?v=20260923-mobile-1"', html)
         self.assertIn('class="c2-section-tabs"', html)
         self.assertIn('id="overview"', html)
         self.assertIn('id="tide-chart"', html)
