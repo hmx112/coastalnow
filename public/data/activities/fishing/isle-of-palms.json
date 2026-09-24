@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "isle-of-palms",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-24T11:58:56+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-24T11:58:56+00:00",
+  "generated_at_utc": "2026-09-24T12:52:41+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-24T12:52:41+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -15,10 +15,11 @@
     "status": "NOT RECOMMENDED",
     "score": null,
     "rating": null,
-    "confidence": "Limited",
+    "confidence": "Unavailable",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
+      "rip-current-statement",
       "small-craft-advisory"
     ]
   },
@@ -41,33 +42,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-09-24T07:00:00-04:00",
-        "components": {
-          "tide": 37.8,
-          "wind": 80,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 69.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-09-24T08:00:00-04:00",
         "components": {
           "tide": 78.6,
@@ -79,9 +53,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 78.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 39.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -90,8 +64,6 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
-          "rip-current-statement",
-          "small-craft-advisory",
           "forecast-thunder-cap"
         ]
       },
@@ -348,6 +320,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "rip-current-statement",
           "small-craft-advisory",
           "forecast-thunder-cap"
@@ -376,6 +349,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "rip-current-statement",
           "small-craft-advisory",
           "forecast-thunder-cap"
@@ -404,6 +378,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "rip-current-statement",
           "small-craft-advisory",
           "forecast-thunder-cap"
@@ -432,6 +407,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "rip-current-statement",
           "small-craft-advisory"
         ]
@@ -460,6 +436,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -487,6 +464,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
