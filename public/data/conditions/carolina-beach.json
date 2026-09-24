@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "carolina-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-24T01:37:51+00:00",
+  "generated_at_utc": "2026-09-24T04:54:23+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:37:51+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:23+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:37:51+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:23+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:37:51+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:23+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T21:31:14+00:00"
+      "fetched_at_utc": "2026-09-24T04:53:53+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-24T01:37:51+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:23+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-23T21:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 11.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-09-23T22:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-09-23T23:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-09-24T00:00:00-04:00",
       "wind_mph": 18.0,
@@ -1902,24 +1866,90 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-09-30T09:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-09-30T10:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-09-30T11:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5991049c3aca84635f2f7b162cf23cbeba51f50.003.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46a00022588cd6c1aa403b6f4d7647b785a238f.001.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-24T00:45:00-04:00",
+        "onset": "2026-09-24T05:00:00-04:00",
+        "expires": "2026-09-24T08:45:00-04:00",
+        "ends": "2026-09-24T08:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued September 24 at 12:45AM EDT until September 24 at 8:00AM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, several inches of\ninundation above ground level is expected in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 5 to 7 feet expected in the surf zone.\nFor the High Rip Current Risk, dangerous rip currents are expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, from 5 AM to 8 AM EDT\nthis morning. For the High Surf Advisory, from 6 AM this\nmorning to 8 PM EDT this evening. For the High Rip Current\nRisk, from 6 AM EDT this morning through this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "Take the necessary actions to protect flood-prone property.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Wilmington NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46a00022588cd6c1aa403b6f4d7647b785a238f.001.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-24T00:45:00-04:00",
+        "onset": "2026-09-24T06:00:00-04:00",
+        "expires": "2026-09-24T08:45:00-04:00",
+        "ends": "2026-09-24T20:00:00-04:00",
+        "headline": "High Surf Advisory issued September 24 at 12:45AM EDT until September 24 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, several inches of\ninundation above ground level is expected in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 5 to 7 feet expected in the surf zone.\nFor the High Rip Current Risk, dangerous rip currents are expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, from 5 AM to 8 AM EDT\nthis morning. For the High Surf Advisory, from 6 AM this\nmorning to 8 PM EDT this evening. For the High Rip Current\nRisk, from 6 AM EDT this morning through this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "Take the necessary actions to protect flood-prone property.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Wilmington NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46a00022588cd6c1aa403b6f4d7647b785a238f.001.3",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-23T21:34:00-04:00",
+        "effective": "2026-09-24T00:45:00-04:00",
         "onset": "2026-09-24T06:00:00-04:00",
-        "expires": "2026-09-24T04:00:00-04:00",
+        "expires": "2026-09-24T08:45:00-04:00",
         "ends": "2026-09-24T20:00:00-04:00",
-        "headline": "Rip Current Statement issued September 23 at 9:34PM EDT until September 24 at 8:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Dangerous rip currents expected. Strong north to south\nlongshore current also expected.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...From 6 AM EDT Thursday through Thursday evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
-        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "Rip Current Statement issued September 24 at 12:45AM EDT until September 24 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, several inches of\ninundation above ground level is expected in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 5 to 7 feet expected in the surf zone.\nFor the High Rip Current Risk, dangerous rip currents are expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, from 5 AM to 8 AM EDT\nthis morning. For the High Surf Advisory, from 6 AM this\nmorning to 8 PM EDT this evening. For the High Rip Current\nRisk, from 6 AM EDT this morning through this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "Take the necessary actions to protect flood-prone property.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Wilmington NC"
       },
       {
@@ -1968,32 +1998,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-09-23",
-      "end": "2026-09-29"
+      "start": "2026-09-24",
+      "end": "2026-09-30"
     },
-    "generated_at_utc": "2026-09-23T21:31:14+00:00",
-    "generated_at_local": "2026-09-23T17:31:14-04:00",
+    "generated_at_utc": "2026-09-24T04:53:53+00:00",
+    "generated_at_local": "2026-09-24T00:53:53-04:00",
     "hilo": [
-      {
-        "t": "2026-09-22 05:05",
-        "v": 3.667,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-22 10:54",
-        "v": 0.877,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-22 17:35",
-        "v": 4.705,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-22 23:51",
-        "v": 0.94,
-        "type": "L"
-      },
       {
         "t": "2026-09-23 05:51",
         "v": 4.006,
@@ -2148,201 +2158,29 @@
         "t": "2026-09-30 23:03",
         "v": 4.215,
         "type": "H"
+      },
+      {
+        "t": "2026-10-01 04:53",
+        "v": 0.18,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-01 11:40",
+        "v": 5.689,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-01 18:05",
+        "v": 0.606,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-01 23:57",
+        "v": 3.984,
+        "type": "H"
       }
     ],
     "curve": [
-      {
-        "t": "2026-09-23 00:00",
-        "v": 0.945
-      },
-      {
-        "t": "2026-09-23 00:30",
-        "v": 1.028
-      },
-      {
-        "t": "2026-09-23 01:00",
-        "v": 1.21
-      },
-      {
-        "t": "2026-09-23 01:30",
-        "v": 1.477
-      },
-      {
-        "t": "2026-09-23 02:00",
-        "v": 1.813
-      },
-      {
-        "t": "2026-09-23 02:30",
-        "v": 2.194
-      },
-      {
-        "t": "2026-09-23 03:00",
-        "v": 2.593
-      },
-      {
-        "t": "2026-09-23 03:30",
-        "v": 2.985
-      },
-      {
-        "t": "2026-09-23 04:00",
-        "v": 3.341
-      },
-      {
-        "t": "2026-09-23 04:30",
-        "v": 3.639
-      },
-      {
-        "t": "2026-09-23 05:00",
-        "v": 3.857
-      },
-      {
-        "t": "2026-09-23 05:30",
-        "v": 3.98
-      },
-      {
-        "t": "2026-09-23 06:00",
-        "v": 4.001
-      },
-      {
-        "t": "2026-09-23 06:30",
-        "v": 3.906
-      },
-      {
-        "t": "2026-09-23 07:00",
-        "v": 3.7
-      },
-      {
-        "t": "2026-09-23 07:30",
-        "v": 3.397
-      },
-      {
-        "t": "2026-09-23 08:00",
-        "v": 3.018
-      },
-      {
-        "t": "2026-09-23 08:30",
-        "v": 2.591
-      },
-      {
-        "t": "2026-09-23 09:00",
-        "v": 2.147
-      },
-      {
-        "t": "2026-09-23 09:30",
-        "v": 1.716
-      },
-      {
-        "t": "2026-09-23 10:00",
-        "v": 1.329
-      },
-      {
-        "t": "2026-09-23 10:30",
-        "v": 1.014
-      },
-      {
-        "t": "2026-09-23 11:00",
-        "v": 0.794
-      },
-      {
-        "t": "2026-09-23 11:30",
-        "v": 0.684
-      },
-      {
-        "t": "2026-09-23 12:00",
-        "v": 0.692
-      },
-      {
-        "t": "2026-09-23 12:30",
-        "v": 0.819
-      },
-      {
-        "t": "2026-09-23 13:00",
-        "v": 1.057
-      },
-      {
-        "t": "2026-09-23 13:30",
-        "v": 1.392
-      },
-      {
-        "t": "2026-09-23 14:00",
-        "v": 1.807
-      },
-      {
-        "t": "2026-09-23 14:30",
-        "v": 2.275
-      },
-      {
-        "t": "2026-09-23 15:00",
-        "v": 2.772
-      },
-      {
-        "t": "2026-09-23 15:30",
-        "v": 3.269
-      },
-      {
-        "t": "2026-09-23 16:00",
-        "v": 3.736
-      },
-      {
-        "t": "2026-09-23 16:30",
-        "v": 4.148
-      },
-      {
-        "t": "2026-09-23 17:00",
-        "v": 4.481
-      },
-      {
-        "t": "2026-09-23 17:30",
-        "v": 4.715
-      },
-      {
-        "t": "2026-09-23 18:00",
-        "v": 4.838
-      },
-      {
-        "t": "2026-09-23 18:30",
-        "v": 4.84
-      },
-      {
-        "t": "2026-09-23 19:00",
-        "v": 4.712
-      },
-      {
-        "t": "2026-09-23 19:30",
-        "v": 4.459
-      },
-      {
-        "t": "2026-09-23 20:00",
-        "v": 4.099
-      },
-      {
-        "t": "2026-09-23 20:30",
-        "v": 3.653
-      },
-      {
-        "t": "2026-09-23 21:00",
-        "v": 3.151
-      },
-      {
-        "t": "2026-09-23 21:30",
-        "v": 2.626
-      },
-      {
-        "t": "2026-09-23 22:00",
-        "v": 2.111
-      },
-      {
-        "t": "2026-09-23 22:30",
-        "v": 1.639
-      },
-      {
-        "t": "2026-09-23 23:00",
-        "v": 1.241
-      },
-      {
-        "t": "2026-09-23 23:30",
-        "v": 0.943
-      },
       {
         "t": "2026-09-24 00:00",
         "v": 0.763
@@ -2534,20 +2372,203 @@
       {
         "t": "2026-09-24 23:30",
         "v": 1.117
+      },
+      {
+        "t": "2026-09-25 00:00",
+        "v": 0.773
+      },
+      {
+        "t": "2026-09-25 00:30",
+        "v": 0.559
+      },
+      {
+        "t": "2026-09-25 01:00",
+        "v": 0.489
+      },
+      {
+        "t": "2026-09-25 01:30",
+        "v": 0.562
+      },
+      {
+        "t": "2026-09-25 02:00",
+        "v": 0.766
+      },
+      {
+        "t": "2026-09-25 02:30",
+        "v": 1.089
+      },
+      {
+        "t": "2026-09-25 03:00",
+        "v": 1.51
+      },
+      {
+        "t": "2026-09-25 03:30",
+        "v": 2.003
+      },
+      {
+        "t": "2026-09-25 04:00",
+        "v": 2.536
+      },
+      {
+        "t": "2026-09-25 04:30",
+        "v": 3.075
+      },
+      {
+        "t": "2026-09-25 05:00",
+        "v": 3.587
+      },
+      {
+        "t": "2026-09-25 05:30",
+        "v": 4.037
+      },
+      {
+        "t": "2026-09-25 06:00",
+        "v": 4.399
+      },
+      {
+        "t": "2026-09-25 06:30",
+        "v": 4.649
+      },
+      {
+        "t": "2026-09-25 07:00",
+        "v": 4.771
+      },
+      {
+        "t": "2026-09-25 07:30",
+        "v": 4.754
+      },
+      {
+        "t": "2026-09-25 08:00",
+        "v": 4.588
+      },
+      {
+        "t": "2026-09-25 08:30",
+        "v": 4.282
+      },
+      {
+        "t": "2026-09-25 09:00",
+        "v": 3.857
+      },
+      {
+        "t": "2026-09-25 09:30",
+        "v": 3.342
+      },
+      {
+        "t": "2026-09-25 10:00",
+        "v": 2.773
+      },
+      {
+        "t": "2026-09-25 10:30",
+        "v": 2.188
+      },
+      {
+        "t": "2026-09-25 11:00",
+        "v": 1.626
+      },
+      {
+        "t": "2026-09-25 11:30",
+        "v": 1.127
+      },
+      {
+        "t": "2026-09-25 12:00",
+        "v": 0.723
+      },
+      {
+        "t": "2026-09-25 12:30",
+        "v": 0.444
+      },
+      {
+        "t": "2026-09-25 13:00",
+        "v": 0.307
+      },
+      {
+        "t": "2026-09-25 13:30",
+        "v": 0.321
+      },
+      {
+        "t": "2026-09-25 14:00",
+        "v": 0.478
+      },
+      {
+        "t": "2026-09-25 14:30",
+        "v": 0.769
+      },
+      {
+        "t": "2026-09-25 15:00",
+        "v": 1.174
+      },
+      {
+        "t": "2026-09-25 15:30",
+        "v": 1.671
+      },
+      {
+        "t": "2026-09-25 16:00",
+        "v": 2.227
+      },
+      {
+        "t": "2026-09-25 16:30",
+        "v": 2.81
+      },
+      {
+        "t": "2026-09-25 17:00",
+        "v": 3.383
+      },
+      {
+        "t": "2026-09-25 17:30",
+        "v": 3.911
+      },
+      {
+        "t": "2026-09-25 18:00",
+        "v": 4.363
+      },
+      {
+        "t": "2026-09-25 18:30",
+        "v": 4.71
+      },
+      {
+        "t": "2026-09-25 19:00",
+        "v": 4.931
+      },
+      {
+        "t": "2026-09-25 19:30",
+        "v": 5.013
+      },
+      {
+        "t": "2026-09-25 20:00",
+        "v": 4.943
+      },
+      {
+        "t": "2026-09-25 20:30",
+        "v": 4.719
+      },
+      {
+        "t": "2026-09-25 21:00",
+        "v": 4.354
+      },
+      {
+        "t": "2026-09-25 21:30",
+        "v": 3.874
+      },
+      {
+        "t": "2026-09-25 22:00",
+        "v": 3.311
+      },
+      {
+        "t": "2026-09-25 22:30",
+        "v": 2.704
+      },
+      {
+        "t": "2026-09-25 23:00",
+        "v": 2.093
+      },
+      {
+        "t": "2026-09-25 23:30",
+        "v": 1.52
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-09-23T06:35:09.934497-04:00",
-      "civil_dawn": "2026-09-23T06:35:09.934497-04:00",
-      "sunrise": "2026-09-23T07:00:07.727449-04:00",
-      "sunset": "2026-09-23T19:07:15.463406-04:00",
-      "dusk": "2026-09-23T19:32:13.024982-04:00",
-      "civil_dusk": "2026-09-23T19:32:13.024982-04:00",
-      "moon_phase_fraction": 0.394371
-    },
-    "tomorrow": {
       "dawn": "2026-09-24T06:35:52.591959-04:00",
       "civil_dawn": "2026-09-24T06:35:52.591959-04:00",
       "sunrise": "2026-09-24T07:00:49.947576-04:00",
@@ -2555,6 +2576,15 @@
       "dusk": "2026-09-24T19:30:48.655966-04:00",
       "civil_dusk": "2026-09-24T19:30:48.655966-04:00",
       "moon_phase_fraction": 0.428234
+    },
+    "tomorrow": {
+      "dawn": "2026-09-25T06:36:35.301125-04:00",
+      "civil_dawn": "2026-09-25T06:36:35.301125-04:00",
+      "sunrise": "2026-09-25T07:01:32.321057-04:00",
+      "sunset": "2026-09-25T19:04:27.645940-04:00",
+      "dusk": "2026-09-25T19:29:24.536124-04:00",
+      "civil_dusk": "2026-09-25T19:29:24.536124-04:00",
+      "moon_phase_fraction": 0.462098
     }
   },
   "points": {
@@ -2587,5 +2617,5 @@
       "grid_y": 65
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

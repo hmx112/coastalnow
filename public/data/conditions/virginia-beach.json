@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "virginia-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-24T01:38:43+00:00",
+  "generated_at_utc": "2026-09-24T04:55:23+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:43+00:00"
+      "fetched_at_utc": "2026-09-24T04:55:23+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:43+00:00"
+      "fetched_at_utc": "2026-09-24T04:55:23+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:43+00:00"
+      "fetched_at_utc": "2026-09-24T04:55:23+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T21:31:21+00:00"
+      "fetched_at_utc": "2026-09-24T04:53:57+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-24T01:38:43+00:00"
+      "fetched_at_utc": "2026-09-24T04:55:23+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-23T21:00:00-04:00",
-      "wind_mph": 31.0,
-      "gust_mph": 47.182,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 19.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Light Rain"
-    },
-    {
-      "time": "2026-09-23T22:00:00-04:00",
-      "wind_mph": 31.0,
-      "gust_mph": 47.182,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 10.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-09-23T23:00:00-04:00",
-      "wind_mph": 30.0,
-      "gust_mph": 47.182,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 8.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-09-24T00:00:00-04:00",
       "wind_mph": 30.0,
@@ -1902,69 +1866,105 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T09:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T10:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 71.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T11:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 74.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fd420ee29f3be4b5f39b089c9a16bbbada32aabf.003.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-23T20:08:00-04:00",
-        "onset": "2026-09-23T20:08:00-04:00",
-        "expires": "2026-09-24T04:15:00-04:00",
-        "ends": "2026-09-24T18:00:00-04:00",
-        "headline": "High Surf Advisory issued September 23 at 8:08PM EDT until September 24 at 6:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fd420ee29f3be4b5f39b089c9a16bbbada32aabf.003.3",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-23T20:08:00-04:00",
-        "onset": "2026-09-23T20:08:00-04:00",
-        "expires": "2026-09-24T04:15:00-04:00",
-        "ends": "2026-09-24T21:00:00-04:00",
-        "headline": "Beach Hazards Statement issued September 23 at 8:08PM EDT until September 24 at 9:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fd420ee29f3be4b5f39b089c9a16bbbada32aabf.003.1",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-23T20:08:00-04:00",
-        "onset": "2026-09-23T20:08:00-04:00",
-        "expires": "2026-09-24T04:15:00-04:00",
-        "ends": "2026-09-25T04:00:00-04:00",
-        "headline": "Coastal Flood Warning issued September 23 at 8:08PM EDT until September 25 at 4:00AM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4bb96fb4147e587863ab23ec9bc571a451296481.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d33ae95ff31157b24456254f953b4b9dce589592.002.1",
         "event": "Wind Advisory",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-23T13:51:00-04:00",
-        "onset": "2026-09-23T14:00:00-04:00",
-        "expires": "2026-09-24T02:00:00-04:00",
+        "effective": "2026-09-23T23:17:00-04:00",
+        "onset": "2026-09-23T23:17:00-04:00",
+        "expires": "2026-09-24T07:00:00-04:00",
         "ends": "2026-09-24T20:00:00-04:00",
-        "headline": "Wind Advisory issued September 23 at 1:51PM EDT until September 24 at 8:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...Northeast winds 30 to 40 mph with gusts up to 50 mph\nexpected.\n\n* WHERE...In Maryland, Maryland Beaches. In North Carolina, Currituck\nCounty. In Virginia, Northampton and Accomack Counties, and the\ncity of Virginia Beach.\n\n* WHEN...Until 8 PM EDT Thursday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "headline": "Wind Advisory issued September 23 at 11:17PM EDT until September 24 at 8:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Northeast winds 30 to 40 mph with gusts up to 50 mph.\n\n* WHERE...In Maryland, Maryland Beaches. In North Carolina, Currituck\nCounty. In Virginia, Northampton and Accomack Counties, and the\ncity of Virginia Beach.\n\n* WHEN...Until 8 PM EDT Thursday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
         "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.be4b706560d5fd7917cd146ba97fa06915da1fc2.003.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T21:54:00-04:00",
+        "onset": "2026-09-23T21:54:00-04:00",
+        "expires": "2026-09-24T06:00:00-04:00",
+        "ends": "2026-09-24T18:00:00-04:00",
+        "headline": "High Surf Advisory issued September 23 at 9:54PM EDT until September 24 at 6:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.be4b706560d5fd7917cd146ba97fa06915da1fc2.003.3",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T21:54:00-04:00",
+        "onset": "2026-09-23T21:54:00-04:00",
+        "expires": "2026-09-24T06:00:00-04:00",
+        "ends": "2026-09-24T21:00:00-04:00",
+        "headline": "Beach Hazards Statement issued September 23 at 9:54PM EDT until September 24 at 9:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.be4b706560d5fd7917cd146ba97fa06915da1fc2.003.1",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-23T21:54:00-04:00",
+        "onset": "2026-09-23T21:54:00-04:00",
+        "expires": "2026-09-24T06:00:00-04:00",
+        "ends": "2026-09-25T04:00:00-04:00",
+        "headline": "Coastal Flood Warning issued September 23 at 9:54PM EDT until September 25 at 4:00AM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Virginia Beach.\n\n* WHEN...For the Coastal Flood Warning, until 4 AM EDT Friday.\nFor the High Surf Advisory, until 6 PM EDT Thursday. For the\nBeach Hazards Statement, through Thursday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
         "sender_name": "NWS Wakefield VA"
       },
       {
@@ -2013,32 +2013,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-09-23",
-      "end": "2026-09-29"
+      "start": "2026-09-24",
+      "end": "2026-09-30"
     },
-    "generated_at_utc": "2026-09-23T21:31:21+00:00",
-    "generated_at_local": "2026-09-23T17:31:21-04:00",
+    "generated_at_utc": "2026-09-24T04:53:57+00:00",
+    "generated_at_local": "2026-09-24T00:53:57-04:00",
     "hilo": [
-      {
-        "t": "2026-09-22 05:08",
-        "v": 3.196,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-22 10:55",
-        "v": 1.164,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-22 17:26",
-        "v": 3.89,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-22 23:45",
-        "v": 0.975,
-        "type": "L"
-      },
       {
         "t": "2026-09-23 05:54",
         "v": 3.455,
@@ -2193,201 +2173,24 @@
         "t": "2026-09-30 23:10",
         "v": 3.663,
         "type": "H"
+      },
+      {
+        "t": "2026-10-01 05:12",
+        "v": 0.427,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-01 11:41",
+        "v": 4.717,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-01 18:18",
+        "v": 0.703,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-09-23 00:00",
-        "v": 0.985
-      },
-      {
-        "t": "2026-09-23 00:30",
-        "v": 1.065
-      },
-      {
-        "t": "2026-09-23 01:00",
-        "v": 1.219
-      },
-      {
-        "t": "2026-09-23 01:30",
-        "v": 1.438
-      },
-      {
-        "t": "2026-09-23 02:00",
-        "v": 1.708
-      },
-      {
-        "t": "2026-09-23 02:30",
-        "v": 2.01
-      },
-      {
-        "t": "2026-09-23 03:00",
-        "v": 2.326
-      },
-      {
-        "t": "2026-09-23 03:30",
-        "v": 2.634
-      },
-      {
-        "t": "2026-09-23 04:00",
-        "v": 2.915
-      },
-      {
-        "t": "2026-09-23 04:30",
-        "v": 3.151
-      },
-      {
-        "t": "2026-09-23 05:00",
-        "v": 3.326
-      },
-      {
-        "t": "2026-09-23 05:30",
-        "v": 3.429
-      },
-      {
-        "t": "2026-09-23 06:00",
-        "v": 3.453
-      },
-      {
-        "t": "2026-09-23 06:30",
-        "v": 3.392
-      },
-      {
-        "t": "2026-09-23 07:00",
-        "v": 3.249
-      },
-      {
-        "t": "2026-09-23 07:30",
-        "v": 3.033
-      },
-      {
-        "t": "2026-09-23 08:00",
-        "v": 2.76
-      },
-      {
-        "t": "2026-09-23 08:30",
-        "v": 2.449
-      },
-      {
-        "t": "2026-09-23 09:00",
-        "v": 2.122
-      },
-      {
-        "t": "2026-09-23 09:30",
-        "v": 1.802
-      },
-      {
-        "t": "2026-09-23 10:00",
-        "v": 1.513
-      },
-      {
-        "t": "2026-09-23 10:30",
-        "v": 1.274
-      },
-      {
-        "t": "2026-09-23 11:00",
-        "v": 1.102
-      },
-      {
-        "t": "2026-09-23 11:30",
-        "v": 1.01
-      },
-      {
-        "t": "2026-09-23 12:00",
-        "v": 1.005
-      },
-      {
-        "t": "2026-09-23 12:30",
-        "v": 1.089
-      },
-      {
-        "t": "2026-09-23 13:00",
-        "v": 1.259
-      },
-      {
-        "t": "2026-09-23 13:30",
-        "v": 1.504
-      },
-      {
-        "t": "2026-09-23 14:00",
-        "v": 1.81
-      },
-      {
-        "t": "2026-09-23 14:30",
-        "v": 2.157
-      },
-      {
-        "t": "2026-09-23 15:00",
-        "v": 2.525
-      },
-      {
-        "t": "2026-09-23 15:30",
-        "v": 2.892
-      },
-      {
-        "t": "2026-09-23 16:00",
-        "v": 3.235
-      },
-      {
-        "t": "2026-09-23 16:30",
-        "v": 3.533
-      },
-      {
-        "t": "2026-09-23 17:00",
-        "v": 3.769
-      },
-      {
-        "t": "2026-09-23 17:30",
-        "v": 3.928
-      },
-      {
-        "t": "2026-09-23 18:00",
-        "v": 4.001
-      },
-      {
-        "t": "2026-09-23 18:30",
-        "v": 3.98
-      },
-      {
-        "t": "2026-09-23 19:00",
-        "v": 3.861
-      },
-      {
-        "t": "2026-09-23 19:30",
-        "v": 3.65
-      },
-      {
-        "t": "2026-09-23 20:00",
-        "v": 3.36
-      },
-      {
-        "t": "2026-09-23 20:30",
-        "v": 3.01
-      },
-      {
-        "t": "2026-09-23 21:00",
-        "v": 2.621
-      },
-      {
-        "t": "2026-09-23 21:30",
-        "v": 2.217
-      },
-      {
-        "t": "2026-09-23 22:00",
-        "v": 1.824
-      },
-      {
-        "t": "2026-09-23 22:30",
-        "v": 1.466
-      },
-      {
-        "t": "2026-09-23 23:00",
-        "v": 1.164
-      },
-      {
-        "t": "2026-09-23 23:30",
-        "v": 0.939
-      },
       {
         "t": "2026-09-24 00:00",
         "v": 0.804
@@ -2579,20 +2382,203 @@
       {
         "t": "2026-09-24 23:30",
         "v": 1.078
+      },
+      {
+        "t": "2026-09-25 00:00",
+        "v": 0.802
+      },
+      {
+        "t": "2026-09-25 00:30",
+        "v": 0.623
+      },
+      {
+        "t": "2026-09-25 01:00",
+        "v": 0.552
+      },
+      {
+        "t": "2026-09-25 01:30",
+        "v": 0.593
+      },
+      {
+        "t": "2026-09-25 02:00",
+        "v": 0.745
+      },
+      {
+        "t": "2026-09-25 02:30",
+        "v": 0.996
+      },
+      {
+        "t": "2026-09-25 03:00",
+        "v": 1.332
+      },
+      {
+        "t": "2026-09-25 03:30",
+        "v": 1.73
+      },
+      {
+        "t": "2026-09-25 04:00",
+        "v": 2.166
+      },
+      {
+        "t": "2026-09-25 04:30",
+        "v": 2.611
+      },
+      {
+        "t": "2026-09-25 05:00",
+        "v": 3.037
+      },
+      {
+        "t": "2026-09-25 05:30",
+        "v": 3.417
+      },
+      {
+        "t": "2026-09-25 06:00",
+        "v": 3.727
+      },
+      {
+        "t": "2026-09-25 06:30",
+        "v": 3.947
+      },
+      {
+        "t": "2026-09-25 07:00",
+        "v": 4.062
+      },
+      {
+        "t": "2026-09-25 07:30",
+        "v": 4.066
+      },
+      {
+        "t": "2026-09-25 08:00",
+        "v": 3.957
+      },
+      {
+        "t": "2026-09-25 08:30",
+        "v": 3.743
+      },
+      {
+        "t": "2026-09-25 09:00",
+        "v": 3.437
+      },
+      {
+        "t": "2026-09-25 09:30",
+        "v": 3.06
+      },
+      {
+        "t": "2026-09-25 10:00",
+        "v": 2.637
+      },
+      {
+        "t": "2026-09-25 10:30",
+        "v": 2.193
+      },
+      {
+        "t": "2026-09-25 11:00",
+        "v": 1.76
+      },
+      {
+        "t": "2026-09-25 11:30",
+        "v": 1.364
+      },
+      {
+        "t": "2026-09-25 12:00",
+        "v": 1.033
+      },
+      {
+        "t": "2026-09-25 12:30",
+        "v": 0.786
+      },
+      {
+        "t": "2026-09-25 13:00",
+        "v": 0.641
+      },
+      {
+        "t": "2026-09-25 13:30",
+        "v": 0.607
+      },
+      {
+        "t": "2026-09-25 14:00",
+        "v": 0.688
+      },
+      {
+        "t": "2026-09-25 14:30",
+        "v": 0.88
+      },
+      {
+        "t": "2026-09-25 15:00",
+        "v": 1.17
+      },
+      {
+        "t": "2026-09-25 15:30",
+        "v": 1.539
+      },
+      {
+        "t": "2026-09-25 16:00",
+        "v": 1.963
+      },
+      {
+        "t": "2026-09-25 16:30",
+        "v": 2.414
+      },
+      {
+        "t": "2026-09-25 17:00",
+        "v": 2.862
+      },
+      {
+        "t": "2026-09-25 17:30",
+        "v": 3.279
+      },
+      {
+        "t": "2026-09-25 18:00",
+        "v": 3.636
+      },
+      {
+        "t": "2026-09-25 18:30",
+        "v": 3.911
+      },
+      {
+        "t": "2026-09-25 19:00",
+        "v": 4.085
+      },
+      {
+        "t": "2026-09-25 19:30",
+        "v": 4.147
+      },
+      {
+        "t": "2026-09-25 20:00",
+        "v": 4.09
+      },
+      {
+        "t": "2026-09-25 20:30",
+        "v": 3.913
+      },
+      {
+        "t": "2026-09-25 21:00",
+        "v": 3.629
+      },
+      {
+        "t": "2026-09-25 21:30",
+        "v": 3.256
+      },
+      {
+        "t": "2026-09-25 22:00",
+        "v": 2.817
+      },
+      {
+        "t": "2026-09-25 22:30",
+        "v": 2.342
+      },
+      {
+        "t": "2026-09-25 23:00",
+        "v": 1.861
+      },
+      {
+        "t": "2026-09-25 23:30",
+        "v": 1.406
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-09-23T06:26:27.846291-04:00",
-      "civil_dawn": "2026-09-23T06:26:27.846291-04:00",
-      "sunrise": "2026-09-23T06:52:19.260710-04:00",
-      "sunset": "2026-09-23T18:59:40.054264-04:00",
-      "dusk": "2026-09-23T19:25:31.191418-04:00",
-      "civil_dusk": "2026-09-23T19:25:31.191418-04:00",
-      "moon_phase_fraction": 0.394371
-    },
-    "tomorrow": {
       "dawn": "2026-09-24T06:27:17.510555-04:00",
       "civil_dawn": "2026-09-24T06:27:17.510555-04:00",
       "sunrise": "2026-09-24T06:53:08.398719-04:00",
@@ -2600,6 +2586,15 @@
       "dusk": "2026-09-24T19:23:59.819010-04:00",
       "civil_dusk": "2026-09-24T19:23:59.819010-04:00",
       "moon_phase_fraction": 0.428234
+    },
+    "tomorrow": {
+      "dawn": "2026-09-25T06:28:07.216521-04:00",
+      "civil_dawn": "2026-09-25T06:28:07.216521-04:00",
+      "sunrise": "2026-09-25T06:53:57.691484-04:00",
+      "sunset": "2026-09-25T18:56:38.395100-04:00",
+      "dusk": "2026-09-25T19:22:28.705823-04:00",
+      "civil_dusk": "2026-09-25T19:22:28.705823-04:00",
+      "moon_phase_fraction": 0.462098
     }
   },
   "points": {
@@ -2632,5 +2627,5 @@
       "grid_y": 54
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

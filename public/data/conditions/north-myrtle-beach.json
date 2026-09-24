@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "north-myrtle-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-24T01:38:04+00:00",
+  "generated_at_utc": "2026-09-24T04:54:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:04+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:32+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:04+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:32+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T01:38:04+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:32+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-23T21:31:16+00:00"
+      "fetched_at_utc": "2026-09-24T04:53:54+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-24T01:38:04+00:00"
+      "fetched_at_utc": "2026-09-24T04:54:32+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-23T21:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 5.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-09-23T22:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 6.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-09-23T23:00:00-04:00",
-      "wind_mph": 16.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 6.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-09-24T00:00:00-04:00",
       "wind_mph": 16.0,
@@ -1902,23 +1866,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T09:00:00-04:00",
+      "wind_mph": 3.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 71.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T10:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-09-30T11:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 79.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5991049c3aca84635f2f7b162cf23cbeba51f50.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46a00022588cd6c1aa403b6f4d7647b785a238f.004.1",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-23T21:34:00-04:00",
+        "effective": "2026-09-24T00:45:00-04:00",
         "onset": "2026-09-24T06:00:00-04:00",
-        "expires": "2026-09-24T04:00:00-04:00",
+        "expires": "2026-09-24T08:45:00-04:00",
         "ends": "2026-09-24T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued September 23 at 9:34PM EDT until September 24 at 8:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Strong north to south longshore current. There is also a\nModerate Risk of rip currents expected.\n\n* WHERE...Coastal Horry and Coastal Georgetown Counties.\n\n* WHEN...From 6 AM EDT Thursday through Thursday evening.\n\n* IMPACTS...Longshore currents can sweep swimmers and surfers\ninto rip currents, piers, jetties, and other hazardous areas.\nIt may sweep swimmers off their feet, making it difficult to\nreturn to shore.",
+        "headline": "Beach Hazards Statement issued September 24 at 12:45AM EDT until September 24 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Strong north to south longshore current. There is also a\nModerate Risk of rip currents expected.\n\n* WHERE...Coastal Horry and Coastal Georgetown Counties.\n\n* WHEN...Today.\n\n* IMPACTS...Longshore currents can sweep swimmers and surfers\ninto rip currents, piers, jetties, and other hazardous areas.\nIt may sweep swimmers off their feet, making it difficult to\nreturn to shore.",
         "instruction": "Caution should be used when in or near the water. Check with\nlifeguards before entering the ocean for possible hazards you may\nbe swept into.",
         "sender_name": "NWS Wilmington NC"
       },
@@ -1968,32 +1968,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-09-23",
-      "end": "2026-09-29"
+      "start": "2026-09-24",
+      "end": "2026-09-30"
     },
-    "generated_at_utc": "2026-09-23T21:31:16+00:00",
-    "generated_at_local": "2026-09-23T17:31:16-04:00",
+    "generated_at_utc": "2026-09-24T04:53:54+00:00",
+    "generated_at_local": "2026-09-24T00:53:54-04:00",
     "hilo": [
-      {
-        "t": "2026-09-22 02:23",
-        "v": 1.281,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-22 07:18",
-        "v": 1.791,
-        "type": "H"
-      },
-      {
-        "t": "2026-09-22 14:19",
-        "v": 1.038,
-        "type": "L"
-      },
-      {
-        "t": "2026-09-22 19:59",
-        "v": 2.079,
-        "type": "H"
-      },
       {
         "t": "2026-09-23 03:08",
         "v": 1.085,
@@ -2148,201 +2128,29 @@
         "t": "2026-09-30 20:49",
         "v": 0.698,
         "type": "L"
+      },
+      {
+        "t": "2026-10-01 01:41",
+        "v": 1.945,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-01 08:50",
+        "v": 0.291,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-01 14:13",
+        "v": 2.32,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-01 21:46",
+        "v": 0.878,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-09-23 00:00",
-        "v": 1.486
-      },
-      {
-        "t": "2026-09-23 00:30",
-        "v": 1.382
-      },
-      {
-        "t": "2026-09-23 01:00",
-        "v": 1.288
-      },
-      {
-        "t": "2026-09-23 01:30",
-        "v": 1.208
-      },
-      {
-        "t": "2026-09-23 02:00",
-        "v": 1.145
-      },
-      {
-        "t": "2026-09-23 02:30",
-        "v": 1.104
-      },
-      {
-        "t": "2026-09-23 03:00",
-        "v": 1.086
-      },
-      {
-        "t": "2026-09-23 03:30",
-        "v": 1.095
-      },
-      {
-        "t": "2026-09-23 04:00",
-        "v": 1.142
-      },
-      {
-        "t": "2026-09-23 04:30",
-        "v": 1.222
-      },
-      {
-        "t": "2026-09-23 05:00",
-        "v": 1.328
-      },
-      {
-        "t": "2026-09-23 05:30",
-        "v": 1.449
-      },
-      {
-        "t": "2026-09-23 06:00",
-        "v": 1.573
-      },
-      {
-        "t": "2026-09-23 06:30",
-        "v": 1.688
-      },
-      {
-        "t": "2026-09-23 07:00",
-        "v": 1.784
-      },
-      {
-        "t": "2026-09-23 07:30",
-        "v": 1.85
-      },
-      {
-        "t": "2026-09-23 08:00",
-        "v": 1.881
-      },
-      {
-        "t": "2026-09-23 08:30",
-        "v": 1.877
-      },
-      {
-        "t": "2026-09-23 09:00",
-        "v": 1.847
-      },
-      {
-        "t": "2026-09-23 09:30",
-        "v": 1.794
-      },
-      {
-        "t": "2026-09-23 10:00",
-        "v": 1.72
-      },
-      {
-        "t": "2026-09-23 10:30",
-        "v": 1.628
-      },
-      {
-        "t": "2026-09-23 11:00",
-        "v": 1.525
-      },
-      {
-        "t": "2026-09-23 11:30",
-        "v": 1.414
-      },
-      {
-        "t": "2026-09-23 12:00",
-        "v": 1.301
-      },
-      {
-        "t": "2026-09-23 12:30",
-        "v": 1.192
-      },
-      {
-        "t": "2026-09-23 13:00",
-        "v": 1.092
-      },
-      {
-        "t": "2026-09-23 13:30",
-        "v": 1.006
-      },
-      {
-        "t": "2026-09-23 14:00",
-        "v": 0.938
-      },
-      {
-        "t": "2026-09-23 14:30",
-        "v": 0.892
-      },
-      {
-        "t": "2026-09-23 15:00",
-        "v": 0.871
-      },
-      {
-        "t": "2026-09-23 15:30",
-        "v": 0.879
-      },
-      {
-        "t": "2026-09-23 16:00",
-        "v": 0.935
-      },
-      {
-        "t": "2026-09-23 16:30",
-        "v": 1.037
-      },
-      {
-        "t": "2026-09-23 17:00",
-        "v": 1.175
-      },
-      {
-        "t": "2026-09-23 17:30",
-        "v": 1.339
-      },
-      {
-        "t": "2026-09-23 18:00",
-        "v": 1.516
-      },
-      {
-        "t": "2026-09-23 18:30",
-        "v": 1.692
-      },
-      {
-        "t": "2026-09-23 19:00",
-        "v": 1.853
-      },
-      {
-        "t": "2026-09-23 19:30",
-        "v": 1.986
-      },
-      {
-        "t": "2026-09-23 20:00",
-        "v": 2.08
-      },
-      {
-        "t": "2026-09-23 20:30",
-        "v": 2.128
-      },
-      {
-        "t": "2026-09-23 21:00",
-        "v": 2.13
-      },
-      {
-        "t": "2026-09-23 21:30",
-        "v": 2.098
-      },
-      {
-        "t": "2026-09-23 22:00",
-        "v": 2.037
-      },
-      {
-        "t": "2026-09-23 22:30",
-        "v": 1.95
-      },
-      {
-        "t": "2026-09-23 23:00",
-        "v": 1.841
-      },
-      {
-        "t": "2026-09-23 23:30",
-        "v": 1.715
-      },
       {
         "t": "2026-09-24 00:00",
         "v": 1.578
@@ -2534,20 +2342,203 @@
       {
         "t": "2026-09-24 23:30",
         "v": 1.869
+      },
+      {
+        "t": "2026-09-25 00:00",
+        "v": 1.723
+      },
+      {
+        "t": "2026-09-25 00:30",
+        "v": 1.561
+      },
+      {
+        "t": "2026-09-25 01:00",
+        "v": 1.391
+      },
+      {
+        "t": "2026-09-25 01:30",
+        "v": 1.222
+      },
+      {
+        "t": "2026-09-25 02:00",
+        "v": 1.061
+      },
+      {
+        "t": "2026-09-25 02:30",
+        "v": 0.918
+      },
+      {
+        "t": "2026-09-25 03:00",
+        "v": 0.798
+      },
+      {
+        "t": "2026-09-25 03:30",
+        "v": 0.707
+      },
+      {
+        "t": "2026-09-25 04:00",
+        "v": 0.65
+      },
+      {
+        "t": "2026-09-25 04:30",
+        "v": 0.63
+      },
+      {
+        "t": "2026-09-25 05:00",
+        "v": 0.662
+      },
+      {
+        "t": "2026-09-25 05:30",
+        "v": 0.76
+      },
+      {
+        "t": "2026-09-25 06:00",
+        "v": 0.915
+      },
+      {
+        "t": "2026-09-25 06:30",
+        "v": 1.112
+      },
+      {
+        "t": "2026-09-25 07:00",
+        "v": 1.332
+      },
+      {
+        "t": "2026-09-25 07:30",
+        "v": 1.556
+      },
+      {
+        "t": "2026-09-25 08:00",
+        "v": 1.762
+      },
+      {
+        "t": "2026-09-25 08:30",
+        "v": 1.931
+      },
+      {
+        "t": "2026-09-25 09:00",
+        "v": 2.047
+      },
+      {
+        "t": "2026-09-25 09:30",
+        "v": 2.1
+      },
+      {
+        "t": "2026-09-25 10:00",
+        "v": 2.092
+      },
+      {
+        "t": "2026-09-25 10:30",
+        "v": 2.046
+      },
+      {
+        "t": "2026-09-25 11:00",
+        "v": 1.966
+      },
+      {
+        "t": "2026-09-25 11:30",
+        "v": 1.855
+      },
+      {
+        "t": "2026-09-25 12:00",
+        "v": 1.719
+      },
+      {
+        "t": "2026-09-25 12:30",
+        "v": 1.564
+      },
+      {
+        "t": "2026-09-25 13:00",
+        "v": 1.397
+      },
+      {
+        "t": "2026-09-25 13:30",
+        "v": 1.227
+      },
+      {
+        "t": "2026-09-25 14:00",
+        "v": 1.062
+      },
+      {
+        "t": "2026-09-25 14:30",
+        "v": 0.91
+      },
+      {
+        "t": "2026-09-25 15:00",
+        "v": 0.777
+      },
+      {
+        "t": "2026-09-25 15:30",
+        "v": 0.671
+      },
+      {
+        "t": "2026-09-25 16:00",
+        "v": 0.596
+      },
+      {
+        "t": "2026-09-25 16:30",
+        "v": 0.557
+      },
+      {
+        "t": "2026-09-25 17:00",
+        "v": 0.558
+      },
+      {
+        "t": "2026-09-25 17:30",
+        "v": 0.625
+      },
+      {
+        "t": "2026-09-25 18:00",
+        "v": 0.758
+      },
+      {
+        "t": "2026-09-25 18:30",
+        "v": 0.945
+      },
+      {
+        "t": "2026-09-25 19:00",
+        "v": 1.169
+      },
+      {
+        "t": "2026-09-25 19:30",
+        "v": 1.412
+      },
+      {
+        "t": "2026-09-25 20:00",
+        "v": 1.651
+      },
+      {
+        "t": "2026-09-25 20:30",
+        "v": 1.865
+      },
+      {
+        "t": "2026-09-25 21:00",
+        "v": 2.035
+      },
+      {
+        "t": "2026-09-25 21:30",
+        "v": 2.147
+      },
+      {
+        "t": "2026-09-25 22:00",
+        "v": 2.191
+      },
+      {
+        "t": "2026-09-25 22:30",
+        "v": 2.174
+      },
+      {
+        "t": "2026-09-25 23:00",
+        "v": 2.115
+      },
+      {
+        "t": "2026-09-25 23:30",
+        "v": 2.017
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-09-23T06:38:23.302206-04:00",
-      "civil_dawn": "2026-09-23T06:38:23.302206-04:00",
-      "sunrise": "2026-09-23T07:03:17.260491-04:00",
-      "sunset": "2026-09-23T19:10:23.855889-04:00",
-      "dusk": "2026-09-23T19:35:17.586073-04:00",
-      "civil_dusk": "2026-09-23T19:35:17.586073-04:00",
-      "moon_phase_fraction": 0.394371
-    },
-    "tomorrow": {
       "dawn": "2026-09-24T06:39:05.439361-04:00",
       "civil_dawn": "2026-09-24T06:39:05.439361-04:00",
       "sunrise": "2026-09-24T07:03:58.966664-04:00",
@@ -2555,6 +2546,15 @@
       "dusk": "2026-09-24T19:33:53.737646-04:00",
       "civil_dusk": "2026-09-24T19:33:53.737646-04:00",
       "moon_phase_fraction": 0.428234
+    },
+    "tomorrow": {
+      "dawn": "2026-09-25T06:39:47.628918-04:00",
+      "civil_dawn": "2026-09-25T06:39:47.628918-04:00",
+      "sunrise": "2026-09-25T07:04:40.826101-04:00",
+      "sunset": "2026-09-25T19:07:37.067840-04:00",
+      "dusk": "2026-09-25T19:32:30.137766-04:00",
+      "civil_dusk": "2026-09-25T19:32:30.137766-04:00",
+      "moon_phase_fraction": 0.462098
     }
   },
   "points": {
@@ -2587,5 +2587,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
