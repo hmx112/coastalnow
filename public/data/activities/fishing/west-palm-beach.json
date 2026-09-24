@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "west-palm-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-24T12:53:12+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-24T12:53:12+00:00",
+  "generated_at_utc": "2026-09-24T17:15:52+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-24T17:15:52+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,18 +13,20 @@
   },
   "today": {
     "status": "normal",
-    "score": 85.3,
-    "rating": "Good",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "High",
     "best_window": {
-      "start": "2026-09-24T10:00:00-04:00",
-      "end": "2026-09-24T13:00:00-04:00"
+      "start": "2026-09-24T13:00:00-04:00",
+      "end": "2026-09-24T16:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
-      "manageable-sea-state"
+      "manageable-sea-state",
+      "forecast-thunder-cap",
+      "wet-weather",
+      "favorable-tide-movement"
     ]
   },
   "tomorrow": {
@@ -40,6 +42,7 @@
       "wave-exposure-caution",
       "forecast-thunder-cap",
       "rip-current-statement",
+      "high-surf-advisory",
       "small-craft-advisory",
       "wave-exposure-cap-69",
       "favorable-tide-movement",
@@ -50,136 +53,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-24T08:00:00-04:00",
-        "components": {
-          "tide": 55.3,
-          "wind": 100,
-          "wave": 100,
-          "weather": 75,
-          "time_of_day": 100,
-          "solunar": 68.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 78.7,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-24T09:00:00-04:00",
-        "components": {
-          "tide": 88.9,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 91.1,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-09-24T10:00:00-04:00",
-        "components": {
-          "tide": 99.9,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 94.4,
-        "final_score": 94.4,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-24T11:00:00-04:00",
-        "components": {
-          "tide": 85.6,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 90.1,
-        "final_score": 90.1,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-24T12:00:00-04:00",
-        "components": {
-          "tide": 49.5,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": 50
-        },
-        "raw_quality_score": 79.2,
-        "final_score": 79.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-09-24T13:00:00-04:00",
         "components": {
@@ -557,6 +430,7 @@
           "light-wind",
           "manageable-sea-state",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -586,6 +460,7 @@
           "light-wind",
           "manageable-sea-state",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -616,6 +491,7 @@
           "light-wind",
           "manageable-sea-state",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69"
         ]
@@ -644,6 +520,7 @@
           "favorable-tide-movement",
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69"
         ]
@@ -671,6 +548,7 @@
         "reasons": [
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69"
         ]
@@ -698,6 +576,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-69"
         ]
@@ -725,6 +604,7 @@
         "reasons": [
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39"
         ]
@@ -752,6 +632,7 @@
         "reasons": [
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39"
         ]
@@ -780,6 +661,7 @@
           "favorable-tide-movement",
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39"
         ]
@@ -808,6 +690,7 @@
           "favorable-tide-movement",
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -836,6 +719,7 @@
         "reasons": [
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -864,6 +748,7 @@
         "reasons": [
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -892,6 +777,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-cap-39",
           "forecast-thunder-cap"
@@ -920,6 +806,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop",
           "forecast-thunder-cap"
@@ -949,6 +836,7 @@
           "favorable-tide-movement",
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop",
           "forecast-thunder-cap"
@@ -978,6 +866,7 @@
           "favorable-tide-movement",
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop",
           "forecast-thunder-cap"
@@ -1007,6 +896,7 @@
           "favorable-tide-movement",
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop",
           "forecast-thunder-cap"
@@ -1035,6 +925,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop",
           "forecast-thunder-cap"
@@ -1063,6 +954,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop"
         ]
@@ -1090,6 +982,7 @@
         "reasons": [
           "worsening-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop"
         ]
@@ -1118,6 +1011,7 @@
           "favorable-tide-movement",
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop"
         ]
@@ -1146,6 +1040,7 @@
           "favorable-tide-movement",
           "light-wind",
           "rip-current-statement",
+          "high-surf-advisory",
           "small-craft-advisory",
           "wave-exposure-hard-stop"
         ]
