@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "sarasota",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-24T17:56:49+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-24T17:56:49+00:00",
+  "generated_at_utc": "2026-09-24T21:34:12+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-24T21:34:12+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,17 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 86.0,
-    "rating": "Good",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-09-24T14:00:00-04:00",
-      "end": "2026-09-24T17:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
-      "manageable-sea-state"
+      "manageable-sea-state",
+      "small-craft-advisory",
+      "favorable-tide-movement"
     ]
   },
   "tomorrow": {
@@ -45,109 +43,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-24T13:00:00-04:00",
-        "components": {
-          "tide": 55.2,
-          "wind": 80,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 75.5,
-        "final_score": 75.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-24T14:00:00-04:00",
-        "components": {
-          "tide": 84.5,
-          "wind": 80,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 84.2,
-        "final_score": 84.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-24T15:00:00-04:00",
-        "components": {
-          "tide": 99.0,
-          "wind": 80,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 88.6,
-        "final_score": 88.6,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-09-24T16:00:00-04:00",
-        "components": {
-          "tide": 96.1,
-          "wind": 80,
-          "wave": 90,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.7,
-        "final_score": 87.7,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-09-24T17:00:00-04:00",
         "components": {
@@ -705,14 +600,14 @@
         "time": "2026-09-25T14:00:00-04:00",
         "components": {
           "tide": 66.7,
-          "wind": 80,
+          "wind": 100,
           "wave": 90,
           "weather": 100,
           "time_of_day": 85,
           "solunar": 69.4,
           "water_temperature": null
         },
-        "raw_quality_score": 79.0,
+        "raw_quality_score": 83.0,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
