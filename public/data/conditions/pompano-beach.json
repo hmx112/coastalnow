@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-24T05:04:30+00:00",
+  "generated_at_utc": "2026-09-24T06:42:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T05:04:30+00:00"
+      "fetched_at_utc": "2026-09-24T06:42:27+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,38 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.189832a9a26fa345ac4c741dbb71fcf79ce348d6.002.1",
+        "event": "Rip Current Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-24T01:47:00-04:00",
+        "onset": "2026-09-25T13:00:00-04:00",
+        "expires": "2026-09-24T19:00:00-04:00",
+        "ends": "2026-09-26T08:00:00-04:00",
+        "headline": "Rip Current Statement issued September 24 at 1:47AM EDT until September 26 at 8:00AM EDT by NWS Miami FL",
+        "description": "* WHAT...Dangerous rip currents expected.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...From Friday afternoon through Saturday morning.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
+        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.15258e817043524927994f898a2930404b29671f.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-24T01:50:00-04:00",
+        "onset": "2026-09-25T13:00:00-04:00",
+        "expires": "2026-09-24T19:00:00-04:00",
+        "ends": "2026-09-26T08:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 24 at 1:50AM EDT until September 26 at 8:00AM EDT by NWS Miami FL",
+        "description": "* WHAT...North winds 10 to 15 kt with gusts up to 20 kt and seas\n5 to 8 ft expected.\n\n* WHERE...Coastal waters from Deerfield Beach to Ocean Reef FL\nout 20 NM and Waters from Deerfield Beach to Ocean Reef FL\nfrom 20 to 60 NM excluding the territorial waters of Bahamas.\n\n* WHEN...From 1 PM Friday to 8 AM EDT Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Miami FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2587,5 @@
       "grid_y": 71
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

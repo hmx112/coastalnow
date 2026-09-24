@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-09-24T05:04:10+00:00",
+  "generated_at_utc": "2026-09-24T06:42:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-24T05:04:10+00:00"
+      "fetched_at_utc": "2026-09-24T06:42:21+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.90f90b824cd5bc996dec528eaa8c95b94a299ffb.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-24T01:16:00-04:00",
+        "onset": "2026-09-24T20:00:00-04:00",
+        "expires": "2026-09-24T16:00:00-04:00",
+        "ends": "2026-09-25T14:00:00-04:00",
+        "headline": "Small Craft Advisory issued September 24 at 1:16AM EDT until September 25 at 2:00PM EDT by NWS Tallahassee FL",
+        "description": "* WHAT...Northeast winds 10 to 20 kt expected.\n\n* WHERE...Offshore Gulf waters from the Walton-Okaloosa County\nline to the Ochlockonee River from 20 to 60 nautical miles\nout, Nearshore Gulf waters from the Ochlockonee River to the\nSuwannee River out 20 nautical miles, Coastal waters from\nMexico Beach to Okaloosa Walton County Line FL out 20 NM,\nCoastal waters from Mexico Beach to Apalachicola FL out 20 NM,\nand Coastal Waters From Ochlockonee River to Apalachicola Fl\nout to 20 Nm.\n\n* WHEN...From 8 PM EDT /7 PM CDT/ this evening to 2 PM EDT /1 PM\nCDT/ Friday.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20 to\n33 knots, or seas of 7 feet or greater, are expected to produce\nhazardous conditions for small craft. These hazardous conditions\nmay result in poor vessel handling and steering response,\nbroaching, overturned dinghies and kayaks, slips and falls on\nslippery decks, rub damage along docks and seawalls, and\ndragging anchors.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Tallahassee FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2496,5 +2512,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
