@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-25T17:30:47+00:00",
+  "generated_at_utc": "2026-09-25T20:44:03+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T17:30:47+00:00"
+      "fetched_at_utc": "2026-09-25T20:44:03+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2a6c91dc906763bb535d9611ef537423dba40b64.002.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-25T11:20:00-07:00",
+        "onset": "2026-09-25T11:20:00-07:00",
+        "expires": "2026-09-25T21:00:00-07:00",
+        "ends": "2026-09-30T16:00:00-07:00",
+        "headline": "Beach Hazards Statement issued September 25 at 11:20AM PDT until September 30 at 4:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Dangerous rip currents and breaking waves due to elevated\nsurf. Minor tidal overflows possible especially Monday and\nTuesday.\n\n* WHERE...Santa Barbara County Southwestern Coast, Santa Barbara\nCounty Southeastern Coast and Ventura County Beaches.\n\n* WHEN...Through Wednesday afternoon.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Pooling of sea water is possible around high tide at\nbeach and harbor areas (including Santa Barbara Harbor).\nEnhanced beach erosion is also possible. No significant damage\nis expected.",
+        "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",

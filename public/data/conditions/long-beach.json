@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "long-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-09-25T17:30:47+00:00",
+  "generated_at_utc": "2026-09-25T20:44:02+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T17:30:47+00:00"
+      "fetched_at_utc": "2026-09-25T20:44:02+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2a6c91dc906763bb535d9611ef537423dba40b64.001.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-25T11:20:00-07:00",
+        "onset": "2026-09-25T11:20:00-07:00",
+        "expires": "2026-09-25T21:00:00-07:00",
+        "ends": "2026-09-30T16:00:00-07:00",
+        "headline": "Beach Hazards Statement issued September 25 at 11:20AM PDT until September 30 at 4:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Dangerous rip currents and breaking waves due to\nelevated surf. There is a risk of moderate coastal flooding\nespecially Monday and Tuesday.\n\n* WHERE...Catalina and Santa Barbara Islands, Malibu Coast and\nLos Angeles County Beaches. Primarily south-facing beaches.\n\n* WHEN...Through Wednesday afternoon.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Moderate flooding of sea water is possibly over\nsome vulnerable low-lying coastal areas, especially around the\nlate morning high tide, including over beach parking lots,\nbike paths, and harbor walkways. Moderate beach erosion is\nlikely. Isolated damage is possible.\n\n* ADDITIONAL DETAILS...Coastal Flood Advisory products will\nlikely be needed for Monday and Tuesday.",
+        "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
