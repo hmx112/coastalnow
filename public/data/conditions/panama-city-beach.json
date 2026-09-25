@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-09-25T11:54:37+00:00",
+  "generated_at_utc": "2026-09-25T12:02:30+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T11:54:37+00:00"
+      "fetched_at_utc": "2026-09-25T12:02:30+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T11:54:37+00:00"
+      "fetched_at_utc": "2026-09-25T12:02:30+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T11:54:37+00:00"
+      "fetched_at_utc": "2026-09-25T12:02:30+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-25T11:54:37+00:00"
+      "fetched_at_utc": "2026-09-25T12:02:30+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-25T06:00:00-05:00",
-      "wind_mph": 15.0,
-      "gust_mph": 19.563,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 2.0,
-      "water_temperature_f": 82.8,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-09-25T07:00:00-05:00",
       "wind_mph": 15.0,
@@ -1902,27 +1890,23 @@
       "wave_period_s": null,
       "water_temperature_f": 82.8,
       "condition_text": "Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-01T18:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 49.0,
+      "air_temperature_f": 84.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 82.8,
+      "condition_text": "Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa9aaef2f08dfb18ccaf7472bf50de220728b275.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-25T03:19:00-04:00",
-        "onset": "2026-09-25T03:19:00-04:00",
-        "expires": "2026-09-25T08:00:00-04:00",
-        "ends": "2026-09-25T08:00:00-04:00",
-        "headline": "Small Craft Advisory issued September 25 at 3:19AM EDT until September 25 at 8:00AM EDT by NWS Tallahassee FL",
-        "description": "* WHAT...Northeast winds around 20 kt with gusts up to 25 kt\nexpected.\n\n* WHERE...Offshore Gulf waters from the Walton-Okaloosa County\nline to the Ochlockonee River from 20 to 60 nautical miles\nout, Nearshore Gulf waters from the Ochlockonee River to the\nSuwannee River out 20 nautical miles, Coastal waters from\nMexico Beach to Okaloosa Walton County Line FL out 20 NM,\nCoastal waters from Mexico Beach to Apalachicola FL out 20 NM,\nand Coastal Waters From Ochlockonee River to Apalachicola Fl\nout to 20 Nm.\n\n* WHEN...Until 8 AM EDT /7 AM CDT/ this morning.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20\nto 33 knots, or seas of 7 feet or greater, are expected to\nproduce hazardous conditions for small craft. These hazardous\nconditions may result in poor vessel handling and steering\nresponse, broaching, overturned dinghies and kayaks, slips and\nfalls on slippery decks, rub damage along docks and seawalls,\nand dragging anchors.\n\n* ADDITIONAL INFORMATION...Significant wave heights will peak\naround 3 to 4 feet with occasional wave heights around 5 feet.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Tallahassee FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
