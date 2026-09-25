@@ -234,7 +234,7 @@ C2_TIDE_PILOT_SLUGS = {
     "oceanside",
     "miami-beach",
 }
-C2_TIDE_ASSET_VERSION = "20260925-hero-2"
+C2_TIDE_ASSET_VERSION = "20260925-hero-3"
 C2_TIDE_STYLESHEET = (
     f'<link rel="stylesheet" href="/assets/malibu-c2.css?v={C2_TIDE_ASSET_VERSION}" '
     'data-coastalnow-design="tide-c2">\n'
