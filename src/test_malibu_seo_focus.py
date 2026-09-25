@@ -49,7 +49,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
             html = (ROOT / location["page_path"]).read_text(encoding="utf-8")
             self.assertIn(f'class="c2-tide c2-{slug}"', html)
             self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1)
-            self.assertIn('href="/assets/malibu-c2.css?v=20260925-hero-2"', html)
+            self.assertIn('href="/assets/malibu-c2.css?v=20260925-hero-3"', html)
             self.assertIn('class="c2-section-tabs"', html)
             self.assertIn('id="overview"', html)
             self.assertIn('id="tide-chart"', html)
@@ -85,7 +85,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
         self.assertIn("--c2-hero-image:url(\"/assets/malibu-c2-hero.svg\")", css_text)
         for slug, filename in hero_assets.items():
             self.assertIn(
-                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20260925-hero-2\")}}',
+                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20260925-hero-3\")}}',
                 css_text,
             )
         self.assertIn("overflow-x:visible;", css_text)
