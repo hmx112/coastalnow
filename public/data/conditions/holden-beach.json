@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "holden-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-26T11:34:50+00:00",
+  "generated_at_utc": "2026-09-26T14:42:25+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T11:34:50+00:00"
+      "fetched_at_utc": "2026-09-26T14:42:25+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.91721cee9ab0670d83cdf3c1830529c31915ee60.003.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-26T01:45:00-04:00",
-        "onset": "2026-09-26T06:00:00-04:00",
-        "expires": "2026-09-26T10:00:00-04:00",
-        "ends": "2026-09-26T10:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued September 26 at 1:45AM EDT until September 26 at 10:00AM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Up to one foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Brunswick County.\n\n* WHEN...From 6 AM to 10 AM EDT this morning.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts.",
-        "instruction": "Do not drive around barricades or through water of unknown depth.\nTake the necessary actions to protect flood-prone property.",
-        "sender_name": "NWS Wilmington NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

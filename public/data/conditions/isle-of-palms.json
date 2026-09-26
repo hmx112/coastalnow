@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "isle-of-palms",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-26T11:35:13+00:00",
+  "generated_at_utc": "2026-09-26T14:42:31+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T11:35:13+00:00"
+      "fetched_at_utc": "2026-09-26T14:42:31+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.987cc0158dc11f59d645a89c94e23dedd293d2d9.001.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-26T02:09:00-04:00",
-        "onset": "2026-09-26T06:00:00-04:00",
-        "expires": "2026-09-26T10:00:00-04:00",
-        "ends": "2026-09-26T10:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued September 26 at 2:09AM EDT until September 26 at 10:00AM EDT by NWS Charleston SC",
-        "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected along shorelines and tidal waterways (7.3 to 7.5 feet\nMean Lower Low Water at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...From 6 AM to 10 AM EDT this morning.\n\n* IMPACTS...This could result in some roads becoming impassable.\n\n* ADDITIONAL DETAILS...High tide will occur around 8:03 AM today\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.",
-        "sender_name": "NWS Charleston SC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2572,5 +2556,5 @@
       "grid_y": 76
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
