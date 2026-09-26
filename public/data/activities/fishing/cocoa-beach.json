@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "cocoa-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-09-26T14:42:37+00:00",
-  "input_snapshot_generated_at_utc": "2026-09-26T14:42:37+00:00",
+  "generated_at_utc": "2026-09-26T16:26:28+00:00",
+  "input_snapshot_generated_at_utc": "2026-09-26T16:26:28+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,20 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 77.5,
+    "rating": "Good",
     "confidence": "Medium",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-09-26T16:00:00-04:00",
+      "end": "2026-09-26T19:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "small-craft-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "wave-exposure-caution"
     ]
   },
   "tomorrow": {
@@ -41,62 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-09-26T10:00:00-04:00",
-        "components": {
-          "tide": 85.4,
-          "wind": 100,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 70.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 86.4,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-09-26T11:00:00-04:00",
-        "components": {
-          "tide": 99.9,
-          "wind": 100,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 70.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 90.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-09-26T12:00:00-04:00",
         "components": {
