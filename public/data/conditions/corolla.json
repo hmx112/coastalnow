@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-26T22:10:34+00:00",
+  "generated_at_utc": "2026-09-26T23:42:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T22:10:34+00:00"
+      "fetched_at_utc": "2026-09-26T23:42:54+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T21:18:15+00:00"
+      "fetched_at_utc": "2026-09-26T23:42:54+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T21:18:15+00:00"
+      "fetched_at_utc": "2026-09-26T23:42:54+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-26T21:18:15+00:00"
+      "fetched_at_utc": "2026-09-26T23:42:54+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-26T17:00:00-04:00",
-      "wind_mph": 26.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 28.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Chance Light Rain"
-    },
-    {
-      "time": "2026-09-26T18:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 28.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Chance Light Rain"
-    },
     {
       "time": "2026-09-26T19:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,54 +1878,78 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-03T05:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 14.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-03T06:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 14.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a719142315760637b790b2d2a01104004888c899.002.3",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-26T14:06:00-04:00",
-        "onset": "2026-09-26T14:06:00-04:00",
-        "expires": "2026-09-26T22:15:00-04:00",
-        "ends": "2026-09-27T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued September 26 at 2:06PM EDT until September 27 at 8:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a719142315760637b790b2d2a01104004888c899.002.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-09-26T14:06:00-04:00",
-        "onset": "2026-09-26T14:06:00-04:00",
-        "expires": "2026-09-26T22:15:00-04:00",
-        "ends": "2026-09-27T07:00:00-04:00",
-        "headline": "High Surf Advisory issued September 26 at 2:06PM EDT until September 27 at 7:00AM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a719142315760637b790b2d2a01104004888c899.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf6814ed73b06fe4d82a895a6aa825e12842b104.003.1",
         "event": "Coastal Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-26T14:06:00-04:00",
-        "onset": "2026-09-26T14:06:00-04:00",
-        "expires": "2026-09-26T22:15:00-04:00",
+        "effective": "2026-09-26T19:26:00-04:00",
+        "onset": "2026-09-26T19:26:00-04:00",
+        "expires": "2026-09-27T03:30:00-04:00",
         "ends": "2026-09-27T12:00:00-04:00",
-        "headline": "Coastal Flood Warning issued September 26 at 2:06PM EDT until September 27 at 12:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 12 feet in the surf zone. For the\nBeach Hazards Statement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and\nbusinesses near the waterfront and shoreline. Water will be 2\nto 3 feet above ground level in some areas resulting in a\nsufficient depth to close numerous roads and threaten homes\nand businesses. Flooding will extend inland from the\nwaterfront along tidal rivers and bays resulting in some road\nclosures and flooding of vehicles.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "headline": "Coastal Flood Warning issued September 26 at 7:26PM EDT until September 27 at 12:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 8 to 10 feet in the surf zone. For the Beach Hazards\nStatement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and businesses\nnear the waterfront and shoreline. Water will be 2 to 3 feet\nabove ground level in some areas resulting in a sufficient depth\nto close numerous roads and threaten homes and businesses.\nFlooding will extend inland from the waterfront along tidal\nrivers and bays resulting in some road closures and flooding of\nvehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf6814ed73b06fe4d82a895a6aa825e12842b104.003.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-26T19:26:00-04:00",
+        "onset": "2026-09-26T19:26:00-04:00",
+        "expires": "2026-09-27T03:30:00-04:00",
+        "ends": "2026-09-27T07:00:00-04:00",
+        "headline": "High Surf Advisory issued September 26 at 7:26PM EDT until September 27 at 7:00AM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 8 to 10 feet in the surf zone. For the Beach Hazards\nStatement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and businesses\nnear the waterfront and shoreline. Water will be 2 to 3 feet\nabove ground level in some areas resulting in a sufficient depth\nto close numerous roads and threaten homes and businesses.\nFlooding will extend inland from the waterfront along tidal\nrivers and bays resulting in some road closures and flooding of\nvehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf6814ed73b06fe4d82a895a6aa825e12842b104.003.3",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-26T19:26:00-04:00",
+        "onset": "2026-09-26T19:26:00-04:00",
+        "expires": "2026-09-27T03:30:00-04:00",
+        "ends": "2026-09-27T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued September 26 at 7:26PM EDT until September 27 at 8:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...For the Coastal Flood Warning, two to three feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 8 to 10 feet in the surf zone. For the Beach Hazards\nStatement, a high risk of rip currents.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the Coastal Flood Warning, until noon EDT Sunday.\nFor the High Surf Advisory, until 7 AM EDT Sunday. For the\nBeach Hazards Statement, through Sunday evening.\n\n* IMPACTS...Widespread flooding of vulnerable areas will result\nin an elevated threat of property damage to homes and businesses\nnear the waterfront and shoreline. Water will be 2 to 3 feet\nabove ground level in some areas resulting in a sufficient depth\nto close numerous roads and threaten homes and businesses.\nFlooding will extend inland from the waterfront along tidal\nrivers and bays resulting in some road closures and flooding of\nvehicles.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nRemain out of the water to avoid hazardous swimming conditions.",
         "sender_name": "NWS Wakefield VA"
       },
       {
@@ -2597,5 +2597,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
