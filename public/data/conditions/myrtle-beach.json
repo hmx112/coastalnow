@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "myrtle-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-26T16:32:10+00:00",
+  "generated_at_utc": "2026-09-26T18:42:01+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-26T16:32:10+00:00"
+      "fetched_at_utc": "2026-09-26T18:42:01+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29fe8a6d9b805a7961a127bd330650f3a574fbf2.003.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-26T13:27:00-04:00",
+        "onset": "2026-09-26T18:00:00-04:00",
+        "expires": "2026-09-26T20:00:00-04:00",
+        "ends": "2026-09-26T22:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued September 26 at 1:27PM EDT until September 26 at 10:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Horry and Coastal Georgetown Counties.\n\n* WHEN...From 6 PM to 10 PM EDT this evening.\n\n* IMPACTS...Vulnerable causeways to and from local beaches may\nexperience minor coastal flooding. Low-lying roads and\nlocations along the Intracoastal Waterway and adjacent tidal\ncreeks may observe minor coastal flooding. Check with local\nofficials for the latest information regarding coastal flood\nimpacts and closures.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
