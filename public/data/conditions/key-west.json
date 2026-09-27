@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-27T17:05:17+00:00",
+  "generated_at_utc": "2026-09-27T17:55:30+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-27T17:05:17+00:00"
+      "fetched_at_utc": "2026-09-27T17:55:30+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,18 +1908,33 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eb3745a3846c7a08f16f88afab7a0f5af54e2ee1.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1884f9806ffdda13a55f432c459f35ea4938f3a3.001.1",
         "event": "Coastal Flood Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Past",
+        "effective": "2026-09-27T13:22:00-04:00",
+        "onset": "2026-09-27T13:22:00-04:00",
+        "expires": "2026-09-27T13:37:56-04:00",
+        "ends": "2026-09-27T17:00:00-04:00",
+        "headline": "The Coastal Flood Statement has been cancelled.",
+        "description": "The Coastal Flood Statement has been cancelled and is no longer in effect.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
+        "sender_name": "NWS Key West FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1884f9806ffdda13a55f432c459f35ea4938f3a3.001.2",
+        "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-26T22:53:00-04:00",
-        "onset": "2026-09-26T22:53:00-04:00",
-        "expires": "2026-09-27T11:00:00-04:00",
-        "ends": "2026-09-27T17:00:00-04:00",
-        "headline": "Coastal Flood Statement issued September 26 at 10:53PM EDT until September 27 at 5:00PM EDT by NWS Key West FL",
-        "description": "* WHAT...Minor saltwater flooding.\n\n* WHERE...Middle and Lower Florida Keys.\n\n* WHEN...Until 5 PM EDT Sunday.\n\n* IMPACTS...Minor saltwater flooding of low elevation streets\nand lots is likely. Some storm drains will overflow, and some\nseawalls and docks will be overtopped. Boaters can expect less\nclearance under fixed bridges. Motorists should remember that\npersistent puddles around the times of high tide are almost\ncertain to contain a mix of saltwater.",
-        "instruction": "Do not drive through flooded roadways.",
+        "effective": "2026-09-27T13:22:00-04:00",
+        "onset": "2026-09-27T13:22:00-04:00",
+        "expires": "2026-09-27T21:30:00-04:00",
+        "ends": "2026-09-28T06:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued September 27 at 1:22PM EDT until September 28 at 6:00AM EDT by NWS Key West FL",
+        "description": "* WHAT...Saltwater flooding.\n\n* WHERE...Middle and Lower Florida Keys.\n\n* WHEN...Until 6 AM EDT Monday.\n\n* IMPACTS...Saltwater flooding of low elevation streets and lots\nis expected. Some storm drains will overflow, and some\nseawalls and docks will be overtopped. Boaters can expect less\nclearance under fixed bridges. Motorists should remember that\npersistent puddles around the times of high tide are almost\ncertain to contain a mix of saltwater.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS Key West FL"
       }
     ]
@@ -2552,5 +2567,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
