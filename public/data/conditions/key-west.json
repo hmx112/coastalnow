@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-29T22:25:09+00:00",
+  "generated_at_utc": "2026-09-29T23:09:57+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T22:25:09+00:00"
+      "fetched_at_utc": "2026-09-29T23:09:57+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.23c2bfb559f020a3909755178710c54b4fbb6115.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-29T18:54:00-04:00",
+        "onset": "2026-09-29T18:54:00-04:00",
+        "expires": "2026-09-29T19:30:00-04:00",
+        "ends": "2026-09-29T19:30:00-04:00",
+        "headline": "Special Marine Warning issued September 29 at 6:54PM EDT until September 29 at 7:30PM EDT by NWS Key West FL",
+        "description": "For the following areas...\nHawk Channel and Straits of Florida from west end of Seven Mile\nBridge to 20 nm west of Dry Tortugas out 20 nm...\nGulf Waters from East Cape Sable to Chokoloskee 20 to 60 nm out and\nbeyond 5 fathoms...\nGulf of America from west end of Seven Mile Bridge to Halfmoon Shoal\nout to 5 fathoms...\nGulf of America including Dry Tortugas and Rebecca Shoal Channel...\nStraits of Florida from west end of Seven Mile Bridge to south of\nHalfmoon Shoal 20 to 60 nm out...\n\nAt 654 PM EDT, strong thunderstorms were located along a line\nextending from 10 nm northeast of W Tower to 12 nm west of Wood's\nWall West Crack, moving northeast at 20 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...National Weather Service Meteorologist.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, frequent lightning, and heavy downpours.\n\nLocations in the warning include...\nRebecca Shoal Light, Vandenberg, Halfmoon Shoal Light, Joe's Tug,\nWestern Dry Rocks, East Sambo, and Cottrell Key.",
+        "instruction": "Boaters should seek safe harbor now, and remain there until\nthreatening weather has passed.\n\nIntense and continuous lightning is occurring with these storms. If\ncaught on the open water, stay low or go below.",
+        "sender_name": "NWS Key West FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7fdf1aea71ce8ca3f06f55d2976218c79ec7ce08.002.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
@@ -2547,5 +2562,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
