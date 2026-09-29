@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-29T05:48:02+00:00",
+  "generated_at_utc": "2026-09-29T07:28:31+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T05:48:02+00:00"
+      "fetched_at_utc": "2026-09-29T07:28:31+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,17 +1908,32 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.352a8efa83057fcb5feae27909be3962ae50400b.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aca33c88e94cafd488312555ba65952299042769.001.1",
+        "event": "Coastal Flood Statement",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-09-29T02:56:00-04:00",
+        "onset": "2026-09-29T14:00:00-04:00",
+        "expires": "2026-09-29T14:00:00-04:00",
+        "ends": "2026-09-30T14:00:00-04:00",
+        "headline": "Coastal Flood Statement issued September 29 at 2:56AM EDT until September 30 at 2:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the Coastal Flood Statement, isolated minor\ncoastal flooding expected.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County and\nCoastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 2 PM EDT this\nafternoon. For the Coastal Flood Statement, from 2 PM EDT this\nafternoon through Wednesday afternoon.\n\n* IMPACTS...Flooding of lots, parks, and roads with only isolated\nroad closures expected.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aca33c88e94cafd488312555ba65952299042769.001.2",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-09-28T20:00:00-04:00",
-        "onset": "2026-09-28T20:00:00-04:00",
-        "expires": "2026-09-29T04:00:00-04:00",
+        "effective": "2026-09-29T02:56:00-04:00",
+        "onset": "2026-09-29T02:56:00-04:00",
+        "expires": "2026-09-29T14:00:00-04:00",
         "ends": "2026-09-29T14:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued September 28 at 8:00PM EDT until September 29 at 2:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 2 PM EDT Tuesday.\n\n* IMPACTS...Flooding of lots, parks, and roads with only isolated\nroad closures expected.",
+        "headline": "Coastal Flood Advisory issued September 29 at 2:56AM EDT until September 29 at 2:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the Coastal Flood Statement, isolated minor\ncoastal flooding expected.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County and\nCoastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 2 PM EDT this\nafternoon. For the Coastal Flood Statement, from 2 PM EDT this\nafternoon through Wednesday afternoon.\n\n* IMPACTS...Flooding of lots, parks, and roads with only isolated\nroad closures expected.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS Miami FL"
       }
@@ -2567,5 +2582,5 @@
       "grid_y": 71
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
