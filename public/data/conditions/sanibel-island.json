@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sanibel-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-29T12:56:53+00:00",
+  "generated_at_utc": "2026-09-29T14:18:38+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T12:56:53+00:00"
+      "fetched_at_utc": "2026-09-29T14:18:38+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.47d9387696cc56b38b9ddc6b2ee992f82ad25942.001.1",
-        "event": "Marine Weather Statement",
-        "severity": "Minor",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-09-29T08:30:00-04:00",
-        "onset": "2026-09-29T08:30:00-04:00",
-        "expires": "2026-09-29T09:15:00-04:00",
-        "ends": null,
-        "headline": "Marine Weather Statement issued September 29 at 8:30AM EDT by NWS Tampa Bay Ruskin FL",
-        "description": "The areas affected include...\nCharlotte Harbor and Pine Island Sound...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\nWaters from Bonita Beach to Englewood FL out 20 to 60 NM...\n\nAt 830 AM EDT, Doppler radar indicated a strong thunderstorm, capable\nof producing winds to around 30 knots. This thunderstorm was located\n20 nm southwest of Sanibel, moving northeast at 15 knots.",
-        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until this storm passes.",
-        "sender_name": "NWS Tampa Bay Ruskin FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2532,5 +2516,5 @@
       "grid_y": 32
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
