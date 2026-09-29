@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "sanibel-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-29T09:59:54+00:00",
+  "generated_at_utc": "2026-09-29T12:56:53+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T09:59:54+00:00"
+      "fetched_at_utc": "2026-09-29T12:56:53+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T09:59:54+00:00"
+      "fetched_at_utc": "2026-09-29T12:56:53+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T09:59:54+00:00"
+      "fetched_at_utc": "2026-09-29T12:56:53+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-29T05:45:52+00:00"
+      "fetched_at_utc": "2026-09-29T12:55:34+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-09-29T09:59:54+00:00"
+      "fetched_at_utc": "2026-09-29T12:56:53+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-09-29T05:00:00-04:00",
-      "wind_mph": 6.0,
-      "gust_mph": 5.754,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 4.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 1.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-09-29T06:00:00-04:00",
-      "wind_mph": 6.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 17.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 1.0,
-      "water_temperature_f": null,
-      "condition_text": "Isolated Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-09-29T07:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 19.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 1.0,
-      "water_temperature_f": null,
-      "condition_text": "Isolated Showers And Thunderstorms"
-    },
     {
       "time": "2026-09-29T08:00:00-04:00",
       "wind_mph": 8.0,
@@ -1902,11 +1866,63 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-05T17:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 49.0,
+      "air_temperature_f": 86.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-05T18:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 49.0,
+      "air_temperature_f": 85.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-05T19:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 49.0,
+      "air_temperature_f": 83.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.47d9387696cc56b38b9ddc6b2ee992f82ad25942.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-09-29T08:30:00-04:00",
+        "onset": "2026-09-29T08:30:00-04:00",
+        "expires": "2026-09-29T09:15:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued September 29 at 8:30AM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "The areas affected include...\nCharlotte Harbor and Pine Island Sound...\nCoastal waters from Bonita Beach to Englewood FL out 20 NM...\nWaters from Bonita Beach to Englewood FL out 20 to 60 NM...\n\nAt 830 AM EDT, Doppler radar indicated a strong thunderstorm, capable\nof producing winds to around 30 knots. This thunderstorm was located\n20 nm southwest of Sanibel, moving northeast at 15 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until this storm passes.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1940,8 +1956,8 @@
       "start": "2026-09-29",
       "end": "2026-10-05"
     },
-    "generated_at_utc": "2026-09-29T05:45:52+00:00",
-    "generated_at_local": "2026-09-29T01:45:52-04:00",
+    "generated_at_utc": "2026-09-29T12:55:34+00:00",
+    "generated_at_local": "2026-09-29T08:55:34-04:00",
     "hilo": [
       {
         "t": "2026-09-29 02:10",
