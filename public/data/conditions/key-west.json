@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-09-30T12:39:09+00:00",
+  "generated_at_utc": "2026-09-30T12:47:56+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-30T12:39:09+00:00"
+      "fetched_at_utc": "2026-09-30T12:47:56+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-30T12:39:09+00:00"
+      "fetched_at_utc": "2026-09-30T12:47:56+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-09-30T12:39:09+00:00"
+      "fetched_at_utc": "2026-09-30T12:47:56+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,7 +27,7 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-09-30T12:39:09+00:00"
+      "fetched_at_utc": "2026-09-30T12:47:56+00:00"
     }
   },
   "hourly": [
@@ -1907,6 +1907,21 @@
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d904d0c9390a0dc2e726fc34250a26a8195ce30e.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-09-30T08:41:00-04:00",
+        "onset": "2026-09-30T08:41:00-04:00",
+        "expires": "2026-09-30T09:30:00-04:00",
+        "ends": "2026-09-30T09:30:00-04:00",
+        "headline": "Special Marine Warning issued September 30 at 8:41AM EDT until September 30 at 9:30AM EDT by NWS Key West FL",
+        "description": "SMWKEY\n\nThe National Weather Service in Key West has issued a\n\n* Special Marine Warning for...\nHawk Channel and Straits of Florida from west end of Seven Mile\nBridge to Halfmoon Shoal out 20 nm...\nGulf of America from west end of Seven Mile Bridge to Halfmoon\nShoal out to 5 fathoms...\n\n* Until 930 AM EDT.\n\n* At 841 AM EDT, a strong thunderstorm was located over Key West Sea\nBouy, moving northwest at 10 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...National Weather Service Meteorologist.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, frequent lightning, and heavy downpours.\n\n* Locations in the warning include...\nVandenberg, Joe's Tug, Western Dry Rocks, East Sambo, Wood's Wall\nWest Crack, Snipe Point, and Cottrell Key.",
+        "instruction": "Boaters should seek safe harbor as quickly, and as safely as\npossible. When downpours reduce visibility, slow down.",
+        "sender_name": "NWS Key West FL"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.15b9d911bdcf0610d7d9af736cbd7790b54dbdb0.001.1",
         "event": "Coastal Flood Advisory",
