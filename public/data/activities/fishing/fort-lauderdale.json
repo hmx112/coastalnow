@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "fort-lauderdale",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-01T20:28:56+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-01T20:28:56+00:00",
+  "generated_at_utc": "2026-10-01T22:44:10+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-01T22:44:10+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -17,17 +17,15 @@
     "rating": "Unfavorable",
     "confidence": "Medium",
     "best_window": {
-      "start": "2026-10-01T16:00:00-04:00",
-      "end": "2026-10-01T19:00:00-04:00"
+      "start": "2026-10-01T18:00:00-04:00",
+      "end": "2026-10-01T21:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
-      "favorable-tide-movement",
+      "light-wind",
       "manageable-sea-state",
-      "worsening-wind",
-      "wet-weather",
       "forecast-thunder-cap",
-      "light-wind"
+      "wet-weather"
     ]
   },
   "tomorrow": {
@@ -48,60 +46,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-01T16:00:00-04:00",
-        "components": {
-          "tide": 92.3,
-          "wind": 55,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 60.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 71.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-01T17:00:00-04:00",
-        "components": {
-          "tide": 62.3,
-          "wind": 80,
-          "wave": 75,
-          "weather": 75,
-          "time_of_day": 85,
-          "solunar": 60.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 71.2,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-10-01T18:00:00-04:00",
         "components": {
@@ -359,7 +303,7 @@
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 39.0,
-        "safety_penalty": 0,
+        "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
         "ranking_eligible": true,
@@ -367,6 +311,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
       },
@@ -386,7 +331,7 @@
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 39.0,
-        "safety_penalty": 0,
+        "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
         "ranking_eligible": true,
@@ -394,6 +339,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
       },
@@ -639,13 +585,13 @@
         "components": {
           "tide": 43.0,
           "wind": 80,
-          "wave": 75,
+          "wave": 100,
           "weather": 75,
           "time_of_day": 85,
           "solunar": 56.3,
           "water_temperature": null
         },
-        "raw_quality_score": 65.2,
+        "raw_quality_score": 69.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
