@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "fort-lauderdale",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-01T13:20:11+00:00",
+  "generated_at_utc": "2026-10-01T15:38:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T13:20:11+00:00"
+      "fetched_at_utc": "2026-10-01T15:38:21+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,53 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6b965d93830ca422f7dab26f49c17c181981d0f8.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-01T11:34:00-04:00",
+        "onset": "2026-10-01T11:34:00-04:00",
+        "expires": "2026-10-01T12:30:00-04:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued October 1 at 11:34AM EDT by NWS Miami FL",
+        "description": "The areas affected include...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\nCoastal waters from Jupiter Inlet to Deerfield Beach FL out 20\nNM...\nWaters from Deerfield Beach to Ocean Reef FL from 20 to 60 NM\nexcluding the territorial waters of Bahamas...\nWaters from Jupiter Inlet to Deerfield Beach FL from 20 to 60\nNM...\n\nAt 1134 AM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from 7 nm east of Sea Ranch Lakes to\n49 nm east of Hillsboro Beach, moving northwest at 15 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots and locally higher\nwaves. Boaters should seek safe harbor immediately until these storms\npass.\n\nWaterspouts are possible with this activity. Remain on the alert in\ncase warnings are issued for waterspout development.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.08f3ba8620f93b4df8f23100e67405cb9bfd76eb.001.1",
+        "event": "Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-01T11:32:00-04:00",
+        "onset": "2026-10-01T11:32:00-04:00",
+        "expires": "2026-10-01T14:30:00-04:00",
+        "ends": "2026-10-01T14:30:00-04:00",
+        "headline": "Flood Advisory issued October 1 at 11:32AM EDT until October 1 at 2:30PM EDT by NWS Miami FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Broward County in southeastern Florida...\nNorthern Miami-Dade County in southeastern Florida...\n\n* WHEN...Until 230 PM EDT.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\n\n* ADDITIONAL DETAILS...\n- At 1132 AM EDT, Doppler radar indicated heavy rain due to\nthunderstorms. Minor flooding is ongoing or expected to begin\nshortly in the advisory area. Between 1 and 2 inches of rain have\nfallen.\n- Additional rainfall amounts of 1 to 2 inches are expected over\nthe area. This additional rain will result in minor flooding.\n- Some locations that will experience flooding include...\nHialeah, Fort Lauderdale, Pembroke Pines, Hollywood, Miramar,\nCoral Springs, Pompano Beach, Davie, Miami Beach, Plantation,\nSunrise, Deerfield Beach, Tamarac, Margate, Lighthouse Point,\nLauderdale-By-The-Sea, Surfside, Hallandale and Miami Gardens.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.95557ce40d1b6cfcfd95d1fbfbaaf5b7b042e0a6.001.1",
+        "event": "Special Weather Statement",
+        "severity": "Moderate",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-01T11:18:00-04:00",
+        "onset": "2026-10-01T11:18:00-04:00",
+        "expires": "2026-10-01T11:45:00-04:00",
+        "ends": null,
+        "headline": "Special Weather Statement issued October 1 at 11:18AM EDT by NWS Miami FL",
+        "description": "At 1118 AM EDT, National Weather Service meteorologists were tracking\na strong thunderstorm capable of producing a funnel cloud over\nDowntown Fort Lauderdale, or over Fort Lauderdale, moving northwest\nat 45 mph.\n\nHAZARD...Funnel clouds and wind gusts of 45 to 50 mph.\n\nSOURCE...Radar indicated.\n\nIMPACT...Funnel clouds occasionally touch down and produce tornadoes\nor waterspouts. Gusty winds could knock down tree limbs and\nblow around unsecured objects.\n\nLocations impacted include...\nFort Lauderdale, Pembroke Pines, Hollywood, Miramar, Coral Springs,\nPompano Beach, Davie, Plantation, Sunrise, Boca Raton, Deerfield\nBeach, Delray Beach, Tamarac, Margate, Lighthouse Point,\nLauderdale-By-The-Sea, Hallandale, Miami Gardens, Lauderhill, and\nCoconut Creek.",
+        "instruction": "These winds can down small tree limbs and branches, and blow around\nunsecured small objects. Seek shelter in a safe building until the\nstorm passes.\n\nFunnel clouds occasionally touch down and produce tornadoes or\nwaterspouts. Move indoors and stay away from windows.",
+        "sender_name": "NWS Miami FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2531,5 +2577,5 @@
       "grid_y": 68
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-01T13:19:53+00:00",
+  "generated_at_utc": "2026-10-01T15:38:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T13:19:53+00:00"
+      "fetched_at_utc": "2026-10-01T15:38:16+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f6563eabebfa7681e38428c0732bd45354fd490c.001.1",
-        "event": "Special Weather Statement",
-        "severity": "Moderate",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-10-01T05:45:00-04:00",
-        "onset": "2026-10-01T05:45:00-04:00",
-        "expires": "2026-10-01T10:00:00-04:00",
-        "ends": null,
-        "headline": "Special Weather Statement issued October 1 at 5:45AM EDT by NWS Caribou ME",
-        "description": "Patchy dense fog will continue through mid morning. If traveling,\nremain alert for rapid changes in visibility and allow extra\nfollowing distance. In order to make your vehicle more visible to\nother drivers, turn its headlights on, even during the day.",
-        "instruction": "",
-        "sender_name": "NWS Caribou ME"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
