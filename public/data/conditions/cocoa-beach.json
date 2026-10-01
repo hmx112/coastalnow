@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-01T18:30:59+00:00",
+  "generated_at_utc": "2026-10-01T20:28:57+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T18:30:59+00:00"
+      "fetched_at_utc": "2026-10-01T20:28:57+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ad67c7bbe23f9e0f85302cc0471fd0e58ab1679.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-10-01T16:11:00-04:00",
+        "onset": "2026-10-01T16:11:00-04:00",
+        "expires": "2026-10-01T17:15:00-04:00",
+        "ends": "2026-10-01T17:15:00-04:00",
+        "headline": "Special Marine Warning issued October 1 at 4:11PM EDT until October 1 at 5:15PM EDT by NWS Melbourne FL",
+        "description": "SMWMLB\n\nThe National Weather Service in Melbourne has issued a\n\n* Special Marine Warning for...\nFlagler Beach to Volusia-Brevard County Line 0-20 nm...\nFlagler Beach to Volusia-Brevard County Line 20-60 nm...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 20-60 nm...\n\n* Until 515 PM EDT.\n\n* At 410 PM EDT, strong thunderstorms were located along a line\nextending from 56 nm east of Jetty Park to 20 nm east of Port\nCanaveral to near Canaveral Groves, moving north at 20 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, lightning and heavy downpours. Make sure all on\nboard are wearing life jackets. Return to safe harbor if\npossible.\n\n* Locations impacted include...\nPort Saint John, Lagrange, Mims, Bellwood, and Canaveral Groves.",
+        "instruction": "Move to safe harbor immediately as gusty winds and high waves are\nexpected.",
+        "sender_name": "NWS Melbourne FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2531,5 +2547,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
