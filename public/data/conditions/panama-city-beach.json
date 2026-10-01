@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-01T05:58:53+00:00",
+  "generated_at_utc": "2026-10-01T07:44:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T05:58:53+00:00"
+      "fetched_at_utc": "2026-10-01T07:44:08+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f5550fad290770f23915db7ce974593ff5acef4.001.1",
+        "event": "Rip Current Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-01T03:30:00-04:00",
+        "onset": "2026-10-01T14:00:00-04:00",
+        "expires": "2026-10-02T04:00:00-04:00",
+        "ends": "2026-10-03T08:00:00-04:00",
+        "headline": "Rip Current Statement issued October 1 at 3:30AM EDT until October 3 at 8:00AM EDT by NWS Tallahassee FL",
+        "description": "* WHAT...Dangerous rip currents expected.\n\n* WHERE...Walton and Bay County Beaches.\n\n* WHEN...From 1 PM CDT this afternoon through Saturday morning.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...Forecast surf heights up to 3 feet fosters\na high rip current at the Panhandle beaches beginning this\nafternoon and persisting into at least this weekend.",
+        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Tallahassee FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2471,5 +2487,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
