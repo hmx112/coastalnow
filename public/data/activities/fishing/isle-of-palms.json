@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "isle-of-palms",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-01T10:18:38+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-01T10:18:38+00:00",
+  "generated_at_utc": "2026-10-01T13:19:48+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-01T13:19:48+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,19 +12,14 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "Limited",
-    "score": 91.0,
-    "rating": "Excellent",
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
     "confidence": "Limited",
-    "best_window": {
-      "start": "2026-10-01T14:00:00-04:00",
-      "end": "2026-10-01T17:00:00-04:00"
-    },
+    "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
-      "light-wind",
-      "manageable-sea-state"
+      "special-weather-statement"
     ]
   },
   "tomorrow": {
@@ -46,82 +41,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-01T06:00:00-04:00",
-        "components": {
-          "tide": 39.9,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 60.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 74.5,
-        "final_score": 74.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-10-01T07:00:00-04:00",
-        "components": {
-          "tide": 78.5,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 60.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 86.1,
-        "final_score": 86.1,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-10-01T08:00:00-04:00",
-        "components": {
-          "tide": 98.4,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 60.2,
-          "water_temperature": null
-        },
-        "raw_quality_score": 92.0,
-        "final_score": 92.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Limited",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
         "time": "2026-10-01T09:00:00-04:00",
         "components": {
           "tide": 95.1,
@@ -133,9 +52,9 @@
           "water_temperature": null
         },
         "raw_quality_score": 92.5,
-        "final_score": 92.5,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Limited",
@@ -144,7 +63,8 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "special-weather-statement"
         ]
       },
       {

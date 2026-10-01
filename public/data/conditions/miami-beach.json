@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "miami-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-01T10:19:02+00:00",
+  "generated_at_utc": "2026-10-01T13:20:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T10:19:02+00:00"
+      "fetched_at_utc": "2026-10-01T13:20:08+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T10:19:02+00:00"
+      "fetched_at_utc": "2026-10-01T13:20:08+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T10:19:02+00:00"
+      "fetched_at_utc": "2026-10-01T13:20:08+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-01T05:57:30+00:00"
+      "fetched_at_utc": "2026-10-01T13:18:40+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-01T10:19:02+00:00"
+      "fetched_at_utc": "2026-10-01T13:20:08+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-01T06:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 59.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-10-01T07:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 23.016,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 73.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-10-01T08:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 81.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-01T09:00:00-04:00",
       "wind_mph": 17.0,
@@ -1902,11 +1866,62 @@
       "wave_period_s": 11.0,
       "water_temperature_f": null,
       "condition_text": "Showers And Thunderstorms Likely"
+    },
+    {
+      "time": "2026-10-07T18:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 68.0,
+      "air_temperature_f": 84.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 11.0,
+      "water_temperature_f": null,
+      "condition_text": "Showers And Thunderstorms Likely"
+    },
+    {
+      "time": "2026-10-07T19:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 68.0,
+      "air_temperature_f": 83.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Showers And Thunderstorms Likely"
+    },
+    {
+      "time": "2026-10-07T20:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 34.0,
+      "air_temperature_f": 82.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5137cdcb944fef0b01cbd1fa8824c718172156fe.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-10-01T09:01:00-04:00",
+        "onset": "2026-10-01T09:01:00-04:00",
+        "expires": "2026-10-01T09:30:00-04:00",
+        "ends": "2026-10-01T09:30:00-04:00",
+        "headline": "Special Marine Warning issued October 1 at 9:01AM EDT until October 1 at 9:30AM EDT by NWS Miami FL",
+        "description": "SMWMFL\n\nThe National Weather Service in Miami has issued a\n\n* Special Marine Warning for...\nBiscayne Bay...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\nWaters from Deerfield Beach to Ocean Reef FL from 20 to 60 NM\nexcluding the territorial waters of Bahamas...\n\n* Until 930 AM EDT.\n\n* At 901 AM EDT, a severe thunderstorm capable of producing\nwaterspouts was located over Virginia Key, moving northwest at 15\nknots.\n\nHAZARD...Waterspouts and wind gusts to 40 knots.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nCard Sound, Key Biscayne, Hallandale, Biscayne Bay, Black Point,\nBay Harbor Islands, Port Everglades, Elliott Key, Golden Beach,\nTriumph Reef, Surfside, Coral Gables, Indian Creek, Sunny Isles,\nConvoy Point, Turkey Point, Pacific Reef, Cape Florida, Virginia\nKey, and Soldier Key.",
+        "instruction": "Move to safe harbor until hazardous weather passes.\n\nReport severe weather to the Coast Guard or the National Weather\nService. You can also share your report with NWS Miami on Facebook\nand Twitter.",
+        "sender_name": "NWS Miami FL"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3cd52469290744c39ec07048621a6caa9f240d9c.001.1",
         "event": "Rip Current Statement",
@@ -1971,8 +1986,8 @@
       "start": "2026-10-01",
       "end": "2026-10-07"
     },
-    "generated_at_utc": "2026-10-01T05:57:30+00:00",
-    "generated_at_local": "2026-10-01T01:57:29-04:00",
+    "generated_at_utc": "2026-10-01T13:18:40+00:00",
+    "generated_at_local": "2026-10-01T09:18:40-04:00",
     "hilo": [
       {
         "t": "2026-10-01 00:06",
