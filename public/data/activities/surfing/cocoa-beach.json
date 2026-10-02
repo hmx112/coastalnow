@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "cocoa-beach",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-10-02T18:40:28+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-02T18:40:28+00:00",
+  "generated_at_utc": "2026-10-02T22:17:27+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-02T22:17:27+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,24 +13,30 @@
     "marine": "fresh"
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "High",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-10-02T18:00:00-04:00",
+      "end": "2026-10-02T21:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "special-marine-warning"
+      "moderate-wave-height",
+      "lighter-wind",
+      "wet-weather",
+      "forecast-thunder-cap"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 81.2,
-    "rating": "Good",
+    "score": 74.9,
+    "rating": "Fair",
     "confidence": "High",
     "best_window": {
-      "start": "2026-10-03T08:00:00-04:00",
-      "end": "2026-10-03T11:00:00-04:00"
+      "start": "2026-10-03T05:00:00-04:00",
+      "end": "2026-10-03T08:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
@@ -40,105 +46,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-02T14:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 80,
-          "daylight": 100
-        },
-        "raw_quality_score": 73.0,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-02T15:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 80,
-          "daylight": 100
-        },
-        "raw_quality_score": 73.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "special-marine-warning",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-02T16:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 55,
-          "daylight": 100
-        },
-        "raw_quality_score": 70.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-02T17:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 45,
-          "weather": 55,
-          "daylight": 100
-        },
-        "raw_quality_score": 70.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind",
-          "wet-weather",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-10-02T18:00:00-04:00",
         "components": {
@@ -220,10 +127,10 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 70,
-          "weather": 80,
+          "weather": 55,
           "daylight": 35
         },
-        "raw_quality_score": 72.8,
+        "raw_quality_score": 70.2,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -235,6 +142,7 @@
         "reasons": [
           "moderate-wave-height",
           "lighter-wind",
+          "wet-weather",
           "forecast-thunder-cap"
         ]
       },
@@ -320,11 +228,11 @@
         "components": {
           "wave_height": 100,
           "wave_period": 55,
-          "wind": 70,
-          "weather": 80,
+          "wind": 45,
+          "weather": 55,
           "daylight": 35
         },
-        "raw_quality_score": 72.8,
+        "raw_quality_score": 64.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -335,7 +243,8 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
+          "stronger-wind",
+          "wet-weather",
           "forecast-thunder-cap"
         ]
       },
@@ -344,11 +253,11 @@
         "components": {
           "wave_height": 100,
           "wave_period": 55,
-          "wind": 70,
-          "weather": 80,
+          "wind": 45,
+          "weather": 55,
           "daylight": 35
         },
-        "raw_quality_score": 72.8,
+        "raw_quality_score": 64.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -359,7 +268,8 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
+          "stronger-wind",
+          "wet-weather",
           "forecast-thunder-cap"
         ]
       },
@@ -368,11 +278,11 @@
         "components": {
           "wave_height": 100,
           "wave_period": 55,
-          "wind": 70,
-          "weather": 80,
+          "wind": 45,
+          "weather": 55,
           "daylight": 35
         },
-        "raw_quality_score": 72.8,
+        "raw_quality_score": 64.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -383,7 +293,8 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
+          "stronger-wind",
+          "wet-weather",
           "forecast-thunder-cap"
         ]
       },
@@ -392,11 +303,11 @@
         "components": {
           "wave_height": 100,
           "wave_period": 55,
-          "wind": 70,
-          "weather": 80,
+          "wind": 45,
+          "weather": 55,
           "daylight": 35
         },
-        "raw_quality_score": 72.8,
+        "raw_quality_score": 64.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -407,7 +318,8 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
+          "stronger-wind",
+          "wet-weather",
           "forecast-thunder-cap"
         ]
       },
@@ -421,18 +333,17 @@
           "daylight": 35
         },
         "raw_quality_score": 72.8,
-        "final_score": 39.0,
+        "final_score": 72.8,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 39.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
-          "forecast-thunder-cap"
+          "lighter-wind"
         ]
       },
       {
@@ -445,18 +356,17 @@
           "daylight": 60
         },
         "raw_quality_score": 75.2,
-        "final_score": 39.0,
+        "final_score": 75.2,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 39.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind",
-          "forecast-thunder-cap"
+          "lighter-wind"
         ]
       },
       {
@@ -465,10 +375,33 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 70,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 81.2,
+        "raw_quality_score": 79.2,
+        "final_score": 79.2,
+        "hard_stop": false,
+        "safety_status": "normal",
+        "safety_cap": 100.0,
+        "safety_penalty": 0,
+        "confidence": "High",
+        "available": true,
+        "ranking_eligible": true,
+        "reasons": [
+          "moderate-wave-height",
+          "lighter-wind"
+        ]
+      },
+      {
+        "time": "2026-10-03T08:00:00-04:00",
+        "components": {
+          "wave_height": 100,
+          "wave_period": 55,
+          "wind": 70,
+          "weather": 80,
+          "daylight": 100
+        },
+        "raw_quality_score": 79.2,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -484,49 +417,27 @@
         ]
       },
       {
-        "time": "2026-10-03T08:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 55,
-          "wind": 70,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 81.2,
-        "final_score": 81.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "lighter-wind"
-        ]
-      },
-      {
         "time": "2026-10-03T09:00:00-04:00",
         "components": {
           "wave_height": 100,
           "wave_period": 55,
           "wind": 70,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 81.2,
-        "final_score": 81.2,
+        "raw_quality_score": 79.2,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 100.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -535,21 +446,22 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 70,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 81.2,
-        "final_score": 81.2,
+        "raw_quality_score": 79.2,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 100.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "lighter-wind"
+          "lighter-wind",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -558,10 +470,10 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 45,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 75.0,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -582,21 +494,22 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 45,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 75.0,
-        "final_score": 75.0,
+        "raw_quality_score": 73.0,
+        "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 100.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "forecast-thunder-cap"
         ]
       },
       {
@@ -605,10 +518,10 @@
           "wave_height": 100,
           "wave_period": 55,
           "wind": 45,
-          "weather": 100,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 75.0,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -627,12 +540,12 @@
         "time": "2026-10-03T14:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 45,
           "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 84.2,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -643,7 +556,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "stronger-wind",
           "forecast-thunder-cap"
         ]
@@ -652,12 +564,12 @@
         "time": "2026-10-03T15:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 45,
           "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 84.2,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -668,7 +580,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "stronger-wind",
           "forecast-thunder-cap"
         ]
@@ -677,12 +588,12 @@
         "time": "2026-10-03T16:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 45,
           "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 84.2,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -693,7 +604,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "stronger-wind",
           "forecast-thunder-cap"
         ]
@@ -702,12 +612,12 @@
         "time": "2026-10-03T17:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 45,
           "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 84.2,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -718,7 +628,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "stronger-wind",
           "forecast-thunder-cap"
         ]
@@ -727,12 +636,12 @@
         "time": "2026-10-03T18:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 45,
           "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 84.2,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -743,7 +652,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "stronger-wind",
           "forecast-thunder-cap"
         ]
@@ -752,12 +660,12 @@
         "time": "2026-10-03T19:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
-          "wind": 70,
-          "weather": 100,
+          "wave_period": 55,
+          "wind": 45,
+          "weather": 80,
           "daylight": 100
         },
-        "raw_quality_score": 92.5,
+        "raw_quality_score": 73.0,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -768,8 +676,7 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
-          "lighter-wind",
+          "stronger-wind",
           "forecast-thunder-cap"
         ]
       },
@@ -777,12 +684,12 @@
         "time": "2026-10-03T20:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 75,
           "wind": 70,
           "weather": 80,
           "daylight": 60
         },
-        "raw_quality_score": 86.5,
+        "raw_quality_score": 80.2,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -793,7 +700,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "lighter-wind",
           "forecast-thunder-cap"
         ]
@@ -802,12 +708,12 @@
         "time": "2026-10-03T21:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 75,
           "wind": 70,
           "weather": 80,
           "daylight": 35
         },
-        "raw_quality_score": 84.0,
+        "raw_quality_score": 77.8,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -818,7 +724,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "lighter-wind",
           "forecast-thunder-cap"
         ]
@@ -827,12 +732,12 @@
         "time": "2026-10-03T22:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 75,
           "wind": 70,
           "weather": 80,
           "daylight": 35
         },
-        "raw_quality_score": 84.0,
+        "raw_quality_score": 77.8,
         "final_score": 39.0,
         "hard_stop": false,
         "safety_status": "normal",
@@ -843,7 +748,6 @@
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
           "lighter-wind",
           "forecast-thunder-cap"
         ]
@@ -852,25 +756,23 @@
         "time": "2026-10-03T23:00:00-04:00",
         "components": {
           "wave_height": 100,
-          "wave_period": 100,
+          "wave_period": 55,
           "wind": 70,
           "weather": 80,
           "daylight": 35
         },
-        "raw_quality_score": 84.0,
-        "final_score": 39.0,
+        "raw_quality_score": 72.8,
+        "final_score": 72.8,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 39.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
         "ranking_eligible": true,
         "reasons": [
           "moderate-wave-height",
-          "organized-wave-period",
-          "lighter-wind",
-          "forecast-thunder-cap"
+          "lighter-wind"
         ]
       }
     ]
