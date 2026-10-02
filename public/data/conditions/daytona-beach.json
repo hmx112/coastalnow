@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "daytona-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-02T17:56:46+00:00",
+  "generated_at_utc": "2026-10-02T18:40:28+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-02T17:56:46+00:00"
+      "fetched_at_utc": "2026-10-02T18:40:28+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5180a678bbc5c7f5c4ae742bf52a92d6df63a362.001.1",
-        "event": "Marine Weather Statement",
-        "severity": "Minor",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-10-02T12:55:00-04:00",
-        "onset": "2026-10-02T12:55:00-04:00",
-        "expires": "2026-10-02T14:00:00-04:00",
-        "ends": null,
-        "headline": "Marine Weather Statement issued October 2 at 12:55PM EDT by NWS Melbourne FL",
-        "description": "..STRONG THUNDERSTORMS OVER THE WATERS...\n\nThe areas affected include...\nFlagler Beach to Volusia-Brevard County Line 0-20 nm...\n\nAt 1254 PM EDT, Doppler radar indicated a strong thunderstorm,\ncapable of producing winds to around 30 knots. This thunderstorm was\nlocated near Holly Hill, moving northwest at 10 knots. Additional\ndeveloping storms across the near shore Volusia waters will also\nbring gusty winds, potential lightning strikes, and heavy rainfall.",
-        "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.",
-        "sender_name": "NWS Melbourne FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2567,5 +2551,5 @@
       "grid_y": 100
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
