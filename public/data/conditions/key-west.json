@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-02T12:39:43+00:00",
+  "generated_at_utc": "2026-10-02T13:06:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-02T12:39:43+00:00"
+      "fetched_at_utc": "2026-10-02T13:06:16+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4af393c1d2405b9289744e22d30c4325b5391dfa.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-10-02T09:00:00-04:00",
+        "onset": "2026-10-02T09:00:00-04:00",
+        "expires": "2026-10-02T10:00:00-04:00",
+        "ends": "2026-10-02T10:00:00-04:00",
+        "headline": "Special Marine Warning issued October 2 at 9:00AM EDT until October 2 at 10:00AM EDT by NWS Key West FL",
+        "description": "SMWKEY\n\nThe National Weather Service in Key West has issued a\n\n* Special Marine Warning for...\nHawk Channel and Straits of Florida from west end of Seven Mile\nBridge to Halfmoon Shoal out 60 nm...\nGulf of America from west end of Seven Mile Bridge to Halfmoon\nShoal out to 5 fathoms...\n\n* Until 1000 AM EDT.\n\n* At 859 AM EDT, a strong thunderstorm was located near Vandenberg,\nmoving northwest at 20 knots.\n\nHAZARD...Wind gusts 40 knots or greater.\n\nSOURCE...National Weather Service Meteorologist.\n\nIMPACT...Expect wind gusts in excess of 40 knots, suddenly higher\nwaves, frequent lightning, and heavy downpours.\n\n* Locations in the warning include...\nVandenberg, Joe's Tug, Western Dry Rocks, East Sambo, Wood's Wall\nEast Crack, Cottrell Key, and Eastern Dry Rocks.",
+        "instruction": "Prepare for wind gusts in excess of 40 knots, steep and fast-\nbuilding seas, and blinding downpours. Make sure all on board are\nwearing life jackets.\n\nReport severe weather to the National Weather Service in Key West at\n3 0 5...2 9 5...1 3 1 6...extension 3, or to the Coast Guard or\nnearest law enforcement agency. They will relay your report to the\nNational Weather Service.",
+        "sender_name": "NWS Key West FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5c8e09950464b866abb84d62905822c4316f4109.002.1",
         "event": "Coastal Flood Statement",
         "severity": "Minor",
@@ -2567,5 +2582,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

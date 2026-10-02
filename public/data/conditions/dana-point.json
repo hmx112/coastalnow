@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "dana-point",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-02T12:40:19+00:00",
+  "generated_at_utc": "2026-10-02T13:06:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-02T12:40:19+00:00"
+      "fetched_at_utc": "2026-10-02T13:06:27+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1f612adb289cea6e5ceb3d066e145534751213cd.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-02T05:43:00-07:00",
+        "onset": "2026-10-02T05:43:00-07:00",
+        "expires": "2026-10-02T10:00:00-07:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued October 2 at 5:43AM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "Mariners should be prepared for abrupt visibility changes down to\none nautical mile or less. Reduce speeds and be on the lookout for\nexposed rocks and other vessels, including large ships in the\nshipping lanes. Use radar or GPS navigation if available, and\nconsider remaining in harbor if such equipment is unavailable.\nThere is the potential for dense fog to redevelop tonight,\nlasting into Saturday morning.",
+        "instruction": "",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 15
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-02T12:39:15+00:00",
+  "generated_at_utc": "2026-10-02T13:06:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-02T12:39:15+00:00"
+      "fetched_at_utc": "2026-10-02T13:06:09+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.21f46709f51d4c7a56e4378bc3531547a687b2cc.002.1",
-        "event": "Dense Fog Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-02T06:04:00-04:00",
-        "onset": "2026-10-02T06:04:00-04:00",
-        "expires": "2026-10-02T09:00:00-04:00",
-        "ends": "2026-10-02T09:00:00-04:00",
-        "headline": "Dense Fog Advisory issued October 2 at 6:04AM EDT until October 2 at 9:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Visibility one quarter mile or less in dense fog.\n\n* WHERE...A portion of eastern North Carolina.\n\n* WHEN...Until 9 AM EDT this morning.\n\n* IMPACTS...Low visibility could make driving conditions hazardous.",
-        "instruction": "If driving, slow down, use your headlights, do not use your\nhigh-beams, and leave plenty of distance ahead of you.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2567,5 +2551,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
