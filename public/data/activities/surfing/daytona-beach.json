@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "daytona-beach",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-10-03T21:19:09+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-03T21:19:09+00:00",
+  "generated_at_utc": "2026-10-03T21:29:45+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-03T21:29:45+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -20,9 +20,9 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
+      "marine-weather-statement",
       "special-weather-statement",
-      "special-marine-warning",
-      "marine-weather-statement"
+      "special-marine-warning"
     ]
   },
   "tomorrow": {
@@ -80,18 +80,19 @@
           "daylight": 100
         },
         "raw_quality_score": 90.5,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
           "organized-wave-period",
           "lighter-wind",
+          "marine-weather-statement",
           "forecast-thunder-cap"
         ]
       },
