@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "daytona-beach",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-10-03T21:29:45+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-03T21:29:45+00:00",
+  "generated_at_utc": "2026-10-03T23:18:03+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-03T23:18:03+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,16 +13,20 @@
     "marine": "fresh"
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 39.0,
+    "rating": "Unfavorable",
     "confidence": "High",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-10-03T19:00:00-04:00",
+      "end": "2026-10-03T22:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "marine-weather-statement",
-      "special-weather-statement",
-      "special-marine-warning"
+      "moderate-wave-height",
+      "organized-wave-period",
+      "lighter-wind",
+      "forecast-thunder-cap"
     ]
   },
   "tomorrow": {
@@ -43,59 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-03T17:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 100,
-          "wind": 70,
-          "weather": 80,
-          "daylight": 100
-        },
-        "raw_quality_score": 90.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "lighter-wind",
-          "special-marine-warning",
-          "marine-weather-statement",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-03T18:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 100,
-          "wind": 70,
-          "weather": 80,
-          "daylight": 100
-        },
-        "raw_quality_score": 90.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "lighter-wind",
-          "marine-weather-statement",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-10-03T19:00:00-04:00",
         "components": {
