@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "west-palm-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-03T11:51:35+00:00",
+  "generated_at_utc": "2026-10-03T12:42:05+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-03T11:51:35+00:00"
+      "fetched_at_utc": "2026-10-03T12:42:05+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,18 +1908,33 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b7ab2946edcb244d9d4d41b77b944f2751ed6e5d.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6678b2a0d24f754810f5240b7cfa102beafa0d84.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-03T02:39:00-04:00",
-        "onset": "2026-10-03T02:39:00-04:00",
-        "expires": "2026-10-03T10:45:00-04:00",
+        "effective": "2026-10-03T08:31:00-04:00",
+        "onset": "2026-10-03T08:31:00-04:00",
+        "expires": "2026-10-04T20:00:00-04:00",
         "ends": "2026-10-04T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 3 at 2:39AM EDT until October 4 at 8:00PM EDT by NWS Miami FL",
+        "headline": "Rip Current Statement issued October 3 at 8:31AM EDT until October 4 at 8:00PM EDT by NWS Miami FL",
         "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County and\nCoastal Miami Dade County.\n\n* WHEN...Through Sunday evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.020155814e69739049541f47b4fdc74cdfc91259.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-10-03T08:25:00-04:00",
+        "onset": "2026-10-03T08:25:00-04:00",
+        "expires": "2026-10-03T09:00:00-04:00",
+        "ends": "2026-10-03T09:00:00-04:00",
+        "headline": "Special Marine Warning issued October 3 at 8:25AM EDT until October 3 at 9:00AM EDT by NWS Miami FL",
+        "description": "SMWMFL\n\nThe National Weather Service in Miami has issued a\n\n* Special Marine Warning for...\nCoastal waters from Jupiter Inlet to Deerfield Beach FL out 20\nNM...\n\n* Until 900 AM EDT.\n\n* At 825 AM EDT, showers were located along a line extending from\nnear Ocean Ridge to 6 nm southeast of Palm Beach to 12 nm east of\nPalm Beach Shores, moving northwest at 15 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Small craft could be damaged in briefly higher winds and\nsuddenly higher waves.\n\n* Locations impacted include...\nRiviera Beach, Ocean Ridge, Palm Beach, Jupiter Inlet, Hypoluxo,\nJupiter Inlet Colony, Juno Beach, Gulf Stream, Palm Beach Shores,\nJupiter, South Palm Beach, Manalapan, Tequesta, Briny Breezes, and\nNorth Palm Beach.",
+        "instruction": "Move to safe harbor immediately as gusty winds and high waves are\nexpected.\n\nReport severe weather to the Coast Guard or the National Weather\nService. You can also share your report with NWS Miami on Facebook\nand Twitter.",
         "sender_name": "NWS Miami FL"
       }
     ]
@@ -2552,5 +2567,5 @@
       "grid_y": 92
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
