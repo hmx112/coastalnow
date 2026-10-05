@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pawleys-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-05T05:55:41+00:00",
+  "generated_at_utc": "2026-10-05T07:38:46+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-05T05:55:41+00:00"
+      "fetched_at_utc": "2026-10-05T07:38:46+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d3e4f9cc160251cdcfd826e1bd219f12caf3fcc3.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-05T02:01:00-04:00",
+        "onset": "2026-10-06T00:00:00-04:00",
+        "expires": "2026-10-05T15:00:00-04:00",
+        "ends": "2026-10-07T03:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 5 at 2:01AM EDT until October 7 at 3:00AM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Northeast winds 25 to 30 kt and seas 4 to 6 ft expected.\n\n* WHERE...Southeast North Carolina and Northeast South Carolina\ncoastal waters out 20 NM.\n\n* WHEN...From midnight tonight to 3 AM EDT Wednesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
