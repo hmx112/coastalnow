@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "virginia-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-05T14:59:53+00:00",
+  "generated_at_utc": "2026-10-05T16:22:26+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-05T14:59:53+00:00"
+      "fetched_at_utc": "2026-10-05T16:22:26+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.138ec3ed45f0f54f824782d1bfb4a5a32689eabd.001.1",
+        "event": "Coastal Flood Statement",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-05T12:12:00-04:00",
+        "onset": "2026-10-05T14:00:00-04:00",
+        "expires": "2026-10-05T20:00:00-04:00",
+        "ends": "2026-10-05T20:00:00-04:00",
+        "headline": "Coastal Flood Statement issued October 5 at 12:12PM EDT until October 5 at 8:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Virginia Beach, and Norfolk and Portsmouth...mainly in\nthe most flood prone areas.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Shallow flooding is possible in the most vulnerable\nlocations near the waterfront and shoreline.",
+        "instruction": "Do not drive through flooded roadways.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 54
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
