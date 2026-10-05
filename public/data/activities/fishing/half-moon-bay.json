@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "half-moon-bay",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-05T01:13:23+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-05T01:13:23+00:00",
+  "generated_at_utc": "2026-10-05T05:43:44+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-05T05:43:44+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,22 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
+    "status": "No 3-hour window remaining",
     "score": null,
     "rating": null,
-    "confidence": "Unavailable",
+    "confidence": "Medium",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "heat-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 88.9,
-    "rating": "Good",
+    "score": 90.3,
+    "rating": "Excellent",
     "confidence": "Medium",
     "best_window": {
       "start": "2026-10-05T15:00:00-07:00",
@@ -41,112 +43,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-04T18:00:00-07:00",
-        "components": {
-          "tide": 18.6,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 52.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 67.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "heat-advisory"
-        ]
-      },
-      {
-        "time": "2026-10-04T19:00:00-07:00",
-        "components": {
-          "tide": 56.7,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 52.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 79.1,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "heat-advisory"
-        ]
-      },
-      {
-        "time": "2026-10-04T20:00:00-07:00",
-        "components": {
-          "tide": 85.2,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 52.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "heat-advisory"
-        ]
-      },
-      {
-        "time": "2026-10-04T21:00:00-07:00",
-        "components": {
-          "tide": 99.1,
-          "wind": 85,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 52.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "heat-advisory"
-        ]
-      },
-      {
         "time": "2026-10-04T22:00:00-07:00",
         "components": {
           "tide": 96.1,
@@ -158,19 +54,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 86.9,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 86.9,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state",
-          "heat-advisory"
+          "manageable-sea-state"
         ]
       },
       {
@@ -636,15 +531,15 @@
         "time": "2026-10-05T17:00:00-07:00",
         "components": {
           "tide": 86.4,
-          "wind": 85,
+          "wind": 100,
           "wave": 100,
           "weather": 100,
           "time_of_day": 85,
           "solunar": 56.3,
           "water_temperature": null
         },
-        "raw_quality_score": 86.7,
-        "final_score": 86.7,
+        "raw_quality_score": 89.7,
+        "final_score": 89.7,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
