@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "hilton-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-06T17:23:23+00:00",
+  "generated_at_utc": "2026-10-06T18:24:42+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T17:23:23+00:00"
+      "fetched_at_utc": "2026-10-06T18:24:42+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T16:03:15+00:00"
+      "fetched_at_utc": "2026-10-06T18:24:42+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T16:03:15+00:00"
+      "fetched_at_utc": "2026-10-06T18:24:42+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T06:23:29+00:00"
+      "fetched_at_utc": "2026-10-06T18:23:39+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-06T16:03:15+00:00"
+      "fetched_at_utc": "2026-10-06T18:24:42+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-06T12:00:00-04:00",
-      "wind_mph": 23.0,
-      "gust_mph": 28.769,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 42.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-10-06T13:00:00-04:00",
-      "wind_mph": 24.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 33.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-10-06T14:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,53 +1878,92 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-13T00:00:00-04:00",
+      "wind_mph": 6.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 25.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-13T01:00:00-04:00",
+      "wind_mph": 7.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 25.0,
+      "air_temperature_f": 72.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ed8760567a04582a7358863acbf798df943951.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43d1c321f7d3f91c8d569fdb773e4a13a0c6f444.002.2",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-06T09:11:00-04:00",
-        "onset": "2026-10-06T12:00:00-04:00",
-        "expires": "2026-10-06T17:15:00-04:00",
+        "effective": "2026-10-06T14:16:00-04:00",
+        "onset": "2026-10-06T14:16:00-04:00",
+        "expires": "2026-10-07T03:00:00-04:00",
         "ends": "2026-10-07T14:00:00-04:00",
-        "headline": "High Surf Advisory issued October 6 at 9:11AM EDT until October 7 at 2:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the High Surf Advisory, large breaking waves of 4 to 7 feet\nexpected in the surf zone.\n\n* WHERE...Georgia Beaches, Beaufort, and Coastal Jasper.\n\n* WHEN...For the High Rip Current Risk, until 8 PM EDT this\nevening. For the High Surf Advisory, until 2 PM EDT Wednesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Significant beach erosion is also possible,\nespecially around times of high tide.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "High Surf Advisory issued October 6 at 2:16PM EDT until October 7 at 2:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4 to 7 feet in the surf zone. For the High Rip Current Risk, dangerous rip currents. For the Coastal Flood Advisory, up to one half foot of inundation above ground level expected along shorelines and tidal waterways (9.5 to 9.7 feet Mean Lower Low Water at Fort Pulaski).  * WHERE...Beaufort and Coastal Jasper Counties.  * WHEN...For the High Surf Advisory, until 2 PM EDT Wednesday. For the High Rip Current Risk, until 8 PM EDT this evening. For the Coastal Flood Advisory, until 8 PM EDT this evening.  * IMPACTS...Saltwater inundation will impact some roads. Dangerous swimming and surfing conditions and localized beach erosion. Rip currents can sweep even the best swimmers away from shore into deeper water.  * ADDITIONAL DETAILS...High tide will occur around 5:31 PM today at Fort Pulaski. Saltwater inundation will be possible several hours before and after high tide. Significant beach erosion could also occur, especially around times of high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ed8760567a04582a7358863acbf798df943951.002.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43d1c321f7d3f91c8d569fdb773e4a13a0c6f444.002.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-06T14:16:00-04:00",
+        "onset": "2026-10-06T15:00:00-04:00",
+        "expires": "2026-10-07T03:00:00-04:00",
+        "ends": "2026-10-06T20:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 6 at 2:16PM EDT until October 6 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4 to 7 feet in the surf zone. For the High Rip Current Risk, dangerous rip currents. For the Coastal Flood Advisory, up to one half foot of inundation above ground level expected along shorelines and tidal waterways (9.5 to 9.7 feet Mean Lower Low Water at Fort Pulaski).  * WHERE...Beaufort and Coastal Jasper Counties.  * WHEN...For the High Surf Advisory, until 2 PM EDT Wednesday. For the High Rip Current Risk, until 8 PM EDT this evening. For the Coastal Flood Advisory, until 8 PM EDT this evening.  * IMPACTS...Saltwater inundation will impact some roads. Dangerous swimming and surfing conditions and localized beach erosion. Rip currents can sweep even the best swimmers away from shore into deeper water.  * ADDITIONAL DETAILS...High tide will occur around 5:31 PM today at Fort Pulaski. Saltwater inundation will be possible several hours before and after high tide. Significant beach erosion could also occur, especially around times of high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43d1c321f7d3f91c8d569fdb773e4a13a0c6f444.002.3",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-06T09:11:00-04:00",
-        "onset": "2026-10-06T09:11:00-04:00",
-        "expires": "2026-10-06T17:15:00-04:00",
+        "effective": "2026-10-06T14:16:00-04:00",
+        "onset": "2026-10-06T14:16:00-04:00",
+        "expires": "2026-10-07T03:00:00-04:00",
         "ends": "2026-10-06T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 6 at 9:11AM EDT until October 6 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the High Surf Advisory, large breaking waves of 4 to 7 feet\nexpected in the surf zone.\n\n* WHERE...Georgia Beaches, Beaufort, and Coastal Jasper.\n\n* WHEN...For the High Rip Current Risk, until 8 PM EDT this\nevening. For the High Surf Advisory, until 2 PM EDT Wednesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Significant beach erosion is also possible,\nespecially around times of high tide.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "Rip Current Statement issued October 6 at 2:16PM EDT until October 6 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4 to 7 feet in the surf zone. For the High Rip Current Risk, dangerous rip currents. For the Coastal Flood Advisory, up to one half foot of inundation above ground level expected along shorelines and tidal waterways (9.5 to 9.7 feet Mean Lower Low Water at Fort Pulaski).  * WHERE...Beaufort and Coastal Jasper Counties.  * WHEN...For the High Surf Advisory, until 2 PM EDT Wednesday. For the High Rip Current Risk, until 8 PM EDT this evening. For the Coastal Flood Advisory, until 8 PM EDT this evening.  * IMPACTS...Saltwater inundation will impact some roads. Dangerous swimming and surfing conditions and localized beach erosion. Rip currents can sweep even the best swimmers away from shore into deeper water.  * ADDITIONAL DETAILS...High tide will occur around 5:31 PM today at Fort Pulaski. Saltwater inundation will be possible several hours before and after high tide. Significant beach erosion could also occur, especially around times of high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.09cea8b31272d523842e105a63d6a6b5b970f74b.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5001ba8d2a89e856be64275c0774b4957211658d.002.1",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-06T09:58:00-04:00",
-        "onset": "2026-10-06T09:58:00-04:00",
-        "expires": "2026-10-06T18:00:00-04:00",
+        "effective": "2026-10-06T14:21:00-04:00",
+        "onset": "2026-10-06T14:21:00-04:00",
+        "expires": "2026-10-06T20:00:00-04:00",
         "ends": "2026-10-06T20:00:00-04:00",
-        "headline": "Gale Warning issued October 6 at 9:58AM EDT until October 6 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...Northeast winds 25 to 30 kt with gusts up to 35 kt and\nseas 5 to 8 ft.\n\n* WHERE...Edisto Beach to Savannah out 20 NM.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "headline": "Gale Warning issued October 6 at 2:21PM EDT until October 6 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...Northeast winds 25 to 30 kt with gusts up to 35 kt and seas 6 to 9 ft.  * WHERE...Edisto Beach to Savannah out 20 NM.  * WHEN...Until 8 PM EDT this evening.  * IMPACTS...Strong winds will cause hazardous seas which could capsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Charleston SC"
       }
@@ -1986,8 +2001,8 @@
       "start": "2026-10-06",
       "end": "2026-10-12"
     },
-    "generated_at_utc": "2026-10-06T06:23:29+00:00",
-    "generated_at_local": "2026-10-06T02:23:29-04:00",
+    "generated_at_utc": "2026-10-06T18:23:39+00:00",
+    "generated_at_local": "2026-10-06T14:23:39-04:00",
     "hilo": [
       {
         "t": "2026-10-06 05:27",
@@ -2582,5 +2597,5 @@
       "grid_y": 44
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
