@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "fort-myers-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-06T06:34:17+00:00",
+  "generated_at_utc": "2026-10-06T10:46:39+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T06:34:17+00:00"
+      "fetched_at_utc": "2026-10-06T10:46:39+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T06:34:17+00:00"
+      "fetched_at_utc": "2026-10-06T10:46:39+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-06T06:34:17+00:00"
+      "fetched_at_utc": "2026-10-06T10:46:39+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,58 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-06T06:34:17+00:00"
+      "fetched_at_utc": "2026-10-06T10:46:39+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-06T02:00:00-04:00",
-      "wind_mph": 3.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 112.5,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-10-06T03:00:00-04:00",
-      "wind_mph": 3.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 15.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Isolated Rain Showers"
-    },
-    {
-      "time": "2026-10-06T04:00:00-04:00",
-      "wind_mph": 5.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 18.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Isolated Rain Showers"
-    },
-    {
-      "time": "2026-10-06T05:00:00-04:00",
-      "wind_mph": 5.0,
-      "gust_mph": 8.055,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 22.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Isolated Rain Showers"
-    },
     {
       "time": "2026-10-06T06:00:00-04:00",
       "wind_mph": 5.0,
@@ -1902,6 +1854,54 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Isolated Rain Showers"
+    },
+    {
+      "time": "2026-10-12T14:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 84.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": 5.0,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-12T15:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 247.5,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 85.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-12T16:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 85.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-12T17:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 86.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Scattered Showers And Thunderstorms"
     }
   ],
   "alerts": {
@@ -2551,5 +2551,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only-full-refresh"
 }
