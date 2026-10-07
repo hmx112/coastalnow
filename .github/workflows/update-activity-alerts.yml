@@ -74,5 +74,19 @@ jobs:
             git commit -m "Update coastal Activity safety alerts"
             git fetch origin main
             git rebase origin/main
-            git push
+            pushed=false
+            for attempt in 1 2 3; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              echo "git push failed on attempt $attempt"
+              if [ "$attempt" -lt 3 ]; then
+                sleep 5
+              fi
+            done
+            if [ "$pushed" != "true" ]; then
+              echo "git push failed after 3 attempts"
+              exit 1
+            fi
           fi
