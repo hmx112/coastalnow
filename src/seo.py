@@ -228,13 +228,46 @@ def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     )
 
 
-C2_TIDE_PILOT_SLUGS = {
-    "malibu",
-    "los-angeles",
-    "oceanside",
+C2_TIDE_ASSET_VERSION = "20261008-rollout-1"
+
+C2_FLORIDA_ATLANTIC = {
     "miami-beach",
+    "fort-lauderdale",
+    "daytona-beach",
+    "cocoa-beach",
+    "key-biscayne",
+    "west-palm-beach",
+    "pompano-beach",
 }
-C2_TIDE_ASSET_VERSION = "20260925-hero-3"
+C2_FLORIDA_KEYS = {"key-west"}
+C2_OUTER_BANKS = {
+    "nags-head",
+    "kitty-hawk",
+    "kill-devil-hills",
+    "cape-hatteras",
+    "ocracoke",
+    "corolla",
+}
+
+
+def _c2_region_key(location: dict) -> str:
+    state_slug = location["state_slug"]
+    slug = location["slug"]
+    if state_slug == "california":
+        return "california"
+    if state_slug == "florida":
+        if slug in C2_FLORIDA_KEYS:
+            return "florida-keys"
+        if slug in C2_FLORIDA_ATLANTIC:
+            return "florida-atlantic"
+        return "florida-gulf"
+    if state_slug == "north-carolina":
+        return "outer-banks" if slug in C2_OUTER_BANKS else "carolinas"
+    if state_slug == "south-carolina":
+        return "carolinas"
+    if state_slug == "oregon":
+        return "oregon"
+    return "northeast"
 C2_TIDE_STYLESHEET = (
     f'<link rel="stylesheet" href="/assets/malibu-c2.css?v={C2_TIDE_ASSET_VERSION}" '
     'data-coastalnow-design="tide-c2">\n'
@@ -261,11 +294,10 @@ def _c2_section_tabs(location: dict) -> str:
     return f'<nav class="c2-section-tabs" aria-label="{label}">' + "".join(items) + "</nav>"
 
 
-def _apply_location_design_pilot(html: str, location: dict) -> str:
-    """Apply the opt-in C2 visual pilot without changing shared Tide markup."""
-    slug = location.get("slug")
-    if slug not in C2_TIDE_PILOT_SLUGS:
-        return html
+def _apply_tide_c2_design(html: str, location: dict) -> str:
+    """Apply the production C2 visual system to every Tide location."""
+    slug = location["slug"]
+    region = _c2_region_key(location)
 
     if 'data-coastalnow-design="tide-c2"' not in html:
         html = re.sub(
@@ -276,7 +308,7 @@ def _apply_location_design_pilot(html: str, location: dict) -> str:
             flags=re.IGNORECASE,
         )
 
-    body_class = f'c2-tide c2-{slug}'
+    body_class = f'c2-tide c2-region-{region} c2-{slug}'
     if f'class="{body_class}"' not in html:
         html = re.sub(
             r"<body>",
@@ -289,7 +321,7 @@ def _apply_location_design_pilot(html: str, location: dict) -> str:
     if 'class="c2-section-tabs"' not in html:
         hero = re.search(r'<section class="hero">.*?</section>', html, flags=re.IGNORECASE | re.DOTALL)
         if not hero:
-            raise ValueError(f"{slug} C2 pilot requires the Tide hero section")
+            raise ValueError(f"{slug} C2 design requires the Tide hero section")
         html = html[: hero.end()] + "\n" + _c2_section_tabs(location) + html[hero.end() :]
 
     if 'id="overview"' not in html:
@@ -351,7 +383,7 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
 def normalize_location_html(html: str, location: dict, tide_data: dict | None = None) -> str:
     """Apply current content, title, description, indexing, canonical, and breadcrumb policy."""
     html = _enrich_location_body(html, location, tide_data)
-    html = _apply_location_design_pilot(html, location)
+    html = _apply_tide_c2_design(html, location)
     canonical = canonical_url(location["page_path"])
     title = escape(location["page_title"])
     description = escape(location["meta_description"], quote=True)
