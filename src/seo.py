@@ -380,10 +380,17 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
     return html
 
 
-def normalize_location_html(html: str, location: dict, tide_data: dict | None = None) -> str:
+def normalize_location_html(
+    html: str,
+    location: dict,
+    tide_data: dict | None = None,
+    *,
+    apply_c2: bool = True,
+) -> str:
     """Apply current content, title, description, indexing, canonical, and breadcrumb policy."""
     html = _enrich_location_body(html, location, tide_data)
-    html = _apply_tide_c2_design(html, location)
+    if apply_c2:
+        html = _apply_tide_c2_design(html, location)
     canonical = canonical_url(location["page_path"])
     title = escape(location["page_title"])
     description = escape(location["meta_description"], quote=True)
@@ -437,4 +444,4 @@ def normalize_preview_html(html: str, location: dict) -> str:
     """Backward-compatible Preview normalizer used by tests and migration code."""
     if location.get("status") == "Live NOAA":
         raise ValueError("normalize_preview_html requires a Preview location")
-    return normalize_location_html(html, location)
+    return normalize_location_html(html, location, apply_c2=False)
