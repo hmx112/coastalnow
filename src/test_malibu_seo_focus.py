@@ -103,15 +103,20 @@ class MalibuSeoFocusTests(unittest.TestCase):
 
         css = ROOT / "assets" / "malibu-c2.css"
         self.assertTrue(css.exists())
-        regional_assets = {
-            "california": "hero-region-california.avif",
-            "florida-atlantic": "hero-region-florida-atlantic.avif",
-            "florida-gulf": "hero-region-florida-gulf.avif",
-            "florida-keys": "hero-region-florida-keys.avif",
-            "outer-banks": "hero-region-outer-banks.avif",
-            "carolinas": "hero-region-carolinas.avif",
-            "oregon": "hero-region-oregon.avif",
-            "northeast": "hero-region-northeast.avif",
+        regional_sprite = ROOT / "assets" / "hero-regions-sprite.avif"
+        self.assertTrue(regional_sprite.exists())
+        self.assertGreater(regional_sprite.stat().st_size, 3000)
+        self.assertEqual(regional_sprite.read_bytes()[4:12], b"ftypavif")
+
+        regional_positions = {
+            "california": "0% 3%",
+            "florida-atlantic": "33.333% 3%",
+            "florida-gulf": "66.667% 3%",
+            "florida-keys": "100% 3%",
+            "outer-banks": "0% 97%",
+            "carolinas": "33.333% 97%",
+            "oregon": "66.667% 97%",
+            "northeast": "100% 97%",
         }
         specific_assets = {
             "malibu": "hero-malibu.avif",
@@ -119,7 +124,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
             "oceanside": "hero-oceanside.avif",
             "miami-beach": "hero-miami-beach.avif",
         }
-        for filename in (*regional_assets.values(), *specific_assets.values()):
+        for filename in specific_assets.values():
             asset = ROOT / "assets" / filename
             self.assertTrue(asset.exists(), filename)
             self.assertGreater(asset.stat().st_size, 3000, filename)
@@ -127,14 +132,14 @@ class MalibuSeoFocusTests(unittest.TestCase):
 
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-tide #overview", css_text)
-        for region, filename in regional_assets.items():
+        for region, position in regional_positions.items():
             self.assertIn(
-                f'.c2-region-{region}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-1\")}}',
+                f'.c2-region-{region}{{--c2-hero-image:url(\"/assets/hero-regions-sprite.avif?v=20261008-rollout-1\");--c2-hero-position:{position};--c2-hero-size:400% auto}}',
                 css_text,
             )
         for slug, filename in specific_assets.items():
             self.assertIn(
-                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-1\")}}',
+                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-1\");--c2-hero-position:center 48%;--c2-hero-size:cover}}',
                 css_text,
             )
         self.assertIn("overflow-x:visible;", css_text)
