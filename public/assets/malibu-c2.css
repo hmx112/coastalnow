@@ -1,5 +1,5 @@
-/* CoastalNow C2 Tide pilot: Balanced, Data-First.
-   Scoped to body.c2-tide so non-pilot Tide pages remain unchanged. */
+/* CoastalNow C2 Tide design: Balanced, Data-First.
+   Applied to every live Tide location; region classes provide hero fallbacks. */
 .c2-tide{
   --c2-navy:#082d4a;
   --c2-blue:#2e86d6;
@@ -14,10 +14,18 @@
   background:#f6f9fc;
   color:var(--c2-text);
 }
-.c2-malibu{--c2-hero-image:url("/assets/hero-malibu.avif?v=20260925-hero-3")}
-.c2-los-angeles{--c2-hero-image:url("/assets/hero-los-angeles.avif?v=20260925-hero-3")}
-.c2-oceanside{--c2-hero-image:url("/assets/hero-oceanside.avif?v=20260925-hero-3")}
-.c2-miami-beach{--c2-hero-image:url("/assets/hero-miami-beach.avif?v=20260925-hero-3")}
+.c2-region-california{--c2-hero-image:url("/assets/hero-region-california.avif?v=20261008-rollout-1")}
+.c2-region-florida-atlantic{--c2-hero-image:url("/assets/hero-region-florida-atlantic.avif?v=20261008-rollout-1")}
+.c2-region-florida-gulf{--c2-hero-image:url("/assets/hero-region-florida-gulf.avif?v=20261008-rollout-1")}
+.c2-region-florida-keys{--c2-hero-image:url("/assets/hero-region-florida-keys.avif?v=20261008-rollout-1")}
+.c2-region-outer-banks{--c2-hero-image:url("/assets/hero-region-outer-banks.avif?v=20261008-rollout-1")}
+.c2-region-carolinas{--c2-hero-image:url("/assets/hero-region-carolinas.avif?v=20261008-rollout-1")}
+.c2-region-oregon{--c2-hero-image:url("/assets/hero-region-oregon.avif?v=20261008-rollout-1")}
+.c2-region-northeast{--c2-hero-image:url("/assets/hero-region-northeast.avif?v=20261008-rollout-1")}
+.c2-malibu{--c2-hero-image:url("/assets/hero-malibu.avif?v=20261008-rollout-1")}
+.c2-los-angeles{--c2-hero-image:url("/assets/hero-los-angeles.avif?v=20261008-rollout-1")}
+.c2-oceanside{--c2-hero-image:url("/assets/hero-oceanside.avif?v=20261008-rollout-1")}
+.c2-miami-beach{--c2-hero-image:url("/assets/hero-miami-beach.avif?v=20261008-rollout-1")}
 .c2-tide .wrap{width:min(1180px,calc(100% - 36px))}
 .c2-tide .site-header{
   background:rgba(255,255,255,.94);
