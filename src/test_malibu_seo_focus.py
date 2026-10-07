@@ -90,7 +90,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
                 slug,
             )
             self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1, slug)
-            self.assertIn('href="/assets/malibu-c2.css?v=20261008-rollout-1"', html, slug)
+            self.assertIn('href="/assets/malibu-c2.css?v=20261008-rollout-2"', html, slug)
             self.assertIn('class="c2-section-tabs"', html, slug)
             self.assertIn('id="overview"', html, slug)
             self.assertIn('id="tide-chart"', html, slug)
@@ -103,20 +103,15 @@ class MalibuSeoFocusTests(unittest.TestCase):
 
         css = ROOT / "assets" / "malibu-c2.css"
         self.assertTrue(css.exists())
-        regional_sprite = ROOT / "assets" / "hero-regions-sprite.avif"
-        self.assertTrue(regional_sprite.exists())
-        self.assertGreater(regional_sprite.stat().st_size, 3000)
-        self.assertEqual(regional_sprite.read_bytes()[4:12], b"ftypavif")
-
-        regional_positions = {
-            "california": "0% 3%",
-            "florida-atlantic": "33.333% 3%",
-            "florida-gulf": "66.667% 3%",
-            "florida-keys": "100% 3%",
-            "outer-banks": "0% 97%",
-            "carolinas": "33.333% 97%",
-            "oregon": "66.667% 97%",
-            "northeast": "100% 97%",
+        regional_fallbacks = {
+            "california": "hero-los-angeles.avif",
+            "florida-atlantic": "hero-miami-beach.avif",
+            "florida-gulf": "hero-miami-beach.avif",
+            "florida-keys": "hero-miami-beach.avif",
+            "outer-banks": "hero-oceanside.avif",
+            "carolinas": "hero-oceanside.avif",
+            "oregon": "hero-malibu.avif",
+            "northeast": "hero-malibu.avif",
         }
         specific_assets = {
             "malibu": "hero-malibu.avif",
@@ -132,14 +127,15 @@ class MalibuSeoFocusTests(unittest.TestCase):
 
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-tide #overview", css_text)
-        for region, position in regional_positions.items():
+        self.assertNotIn("hero-regions-sprite.avif", css_text)
+        for region, filename in regional_fallbacks.items():
             self.assertIn(
-                f'.c2-region-{region}{{--c2-hero-image:url(\"/assets/hero-regions-sprite.avif?v=20261008-rollout-1\");--c2-hero-position:{position};--c2-hero-size:400% auto}}',
+                f'.c2-region-{region}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-2\");--c2-hero-position:center 48%;--c2-hero-size:cover}}',
                 css_text,
             )
         for slug, filename in specific_assets.items():
             self.assertIn(
-                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-1\");--c2-hero-position:center 48%;--c2-hero-size:cover}}',
+                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-2\");--c2-hero-position:center 48%;--c2-hero-size:cover}}',
                 css_text,
             )
         self.assertIn("overflow-x:visible;", css_text)
