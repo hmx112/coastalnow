@@ -11,21 +11,23 @@
   --c2-text:#153247;
   --c2-muted:#6b8090;
   --c2-hero-image:url("/assets/malibu-c2-hero.svg");
+  --c2-hero-position:center 48%;
+  --c2-hero-size:cover;
   background:#f6f9fc;
   color:var(--c2-text);
 }
-.c2-region-california{--c2-hero-image:url("/assets/hero-region-california.avif?v=20261008-rollout-1")}
-.c2-region-florida-atlantic{--c2-hero-image:url("/assets/hero-region-florida-atlantic.avif?v=20261008-rollout-1")}
-.c2-region-florida-gulf{--c2-hero-image:url("/assets/hero-region-florida-gulf.avif?v=20261008-rollout-1")}
-.c2-region-florida-keys{--c2-hero-image:url("/assets/hero-region-florida-keys.avif?v=20261008-rollout-1")}
-.c2-region-outer-banks{--c2-hero-image:url("/assets/hero-region-outer-banks.avif?v=20261008-rollout-1")}
-.c2-region-carolinas{--c2-hero-image:url("/assets/hero-region-carolinas.avif?v=20261008-rollout-1")}
-.c2-region-oregon{--c2-hero-image:url("/assets/hero-region-oregon.avif?v=20261008-rollout-1")}
-.c2-region-northeast{--c2-hero-image:url("/assets/hero-region-northeast.avif?v=20261008-rollout-1")}
-.c2-malibu{--c2-hero-image:url("/assets/hero-malibu.avif?v=20261008-rollout-1")}
-.c2-los-angeles{--c2-hero-image:url("/assets/hero-los-angeles.avif?v=20261008-rollout-1")}
-.c2-oceanside{--c2-hero-image:url("/assets/hero-oceanside.avif?v=20261008-rollout-1")}
-.c2-miami-beach{--c2-hero-image:url("/assets/hero-miami-beach.avif?v=20261008-rollout-1")}
+.c2-region-california{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:0% 3%;--c2-hero-size:400% auto}
+.c2-region-florida-atlantic{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:33.333% 3%;--c2-hero-size:400% auto}
+.c2-region-florida-gulf{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:66.667% 3%;--c2-hero-size:400% auto}
+.c2-region-florida-keys{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:100% 3%;--c2-hero-size:400% auto}
+.c2-region-outer-banks{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:0% 97%;--c2-hero-size:400% auto}
+.c2-region-carolinas{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:33.333% 97%;--c2-hero-size:400% auto}
+.c2-region-oregon{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:66.667% 97%;--c2-hero-size:400% auto}
+.c2-region-northeast{--c2-hero-image:url("/assets/hero-regions-sprite.avif?v=20261008-rollout-1");--c2-hero-position:100% 97%;--c2-hero-size:400% auto}
+.c2-malibu{--c2-hero-image:url("/assets/hero-malibu.avif?v=20261008-rollout-1");--c2-hero-position:center 48%;--c2-hero-size:cover}
+.c2-los-angeles{--c2-hero-image:url("/assets/hero-los-angeles.avif?v=20261008-rollout-1");--c2-hero-position:center 48%;--c2-hero-size:cover}
+.c2-oceanside{--c2-hero-image:url("/assets/hero-oceanside.avif?v=20261008-rollout-1");--c2-hero-position:center 48%;--c2-hero-size:cover}
+.c2-miami-beach{--c2-hero-image:url("/assets/hero-miami-beach.avif?v=20261008-rollout-1");--c2-hero-position:center 48%;--c2-hero-size:cover}
 .c2-tide .wrap{width:min(1180px,calc(100% - 36px))}
 .c2-tide .site-header{
   background:rgba(255,255,255,.94);
@@ -56,7 +58,7 @@
   box-shadow:0 18px 48px rgba(8,45,74,.13);
   background:
     linear-gradient(90deg,rgba(4,31,51,.76) 0%,rgba(4,31,51,.44) 45%,rgba(4,31,51,.10) 100%),
-    var(--c2-hero-image) center 48%/cover no-repeat;
+    var(--c2-hero-image) var(--c2-hero-position)/var(--c2-hero-size) no-repeat;
 }
 .c2-tide .hero::after{
   content:"";
@@ -317,6 +319,15 @@
   .c2-tide .lower-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
+  .c2-region-california{--c2-hero-position:8.6% 0%;--c2-hero-size:auto 200%}
+  .c2-region-florida-atlantic{--c2-hero-position:36.2% 0%;--c2-hero-size:auto 200%}
+  .c2-region-florida-gulf{--c2-hero-position:63.8% 0%;--c2-hero-size:auto 200%}
+  .c2-region-florida-keys{--c2-hero-position:91.4% 0%;--c2-hero-size:auto 200%}
+  .c2-region-outer-banks{--c2-hero-position:8.6% 100%;--c2-hero-size:auto 200%}
+  .c2-region-carolinas{--c2-hero-position:36.2% 100%;--c2-hero-size:auto 200%}
+  .c2-region-oregon{--c2-hero-position:63.8% 100%;--c2-hero-size:auto 200%}
+  .c2-region-northeast{--c2-hero-position:91.4% 100%;--c2-hero-size:auto 200%}
+  .c2-malibu,.c2-los-angeles,.c2-oceanside,.c2-miami-beach{--c2-hero-position:center 48%;--c2-hero-size:cover}
   .c2-tide .wrap{width:min(100% - 24px,1180px)}
   .c2-tide .header-inner{height:58px}
   .c2-tide .brand{font-size:1.13rem}
