@@ -125,6 +125,16 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertNotIn("[skip ci]", text.lower())
         _assert_rebase_before_push(self, text)
 
+    def test_alert_refresh_retries_transient_git_push_failures(self):
+        text = ALERT_REFRESH.read_text(encoding="utf-8")
+        self.assertIn("for attempt in 1 2 3; do", text)
+        self.assertIn("if git push; then", text)
+        self.assertIn('echo "git push failed on attempt $attempt"', text)
+        self.assertIn("sleep 5", text)
+        self.assertIn('echo "git push failed after 3 attempts"', text)
+        self.assertIn("exit 1", text)
+        self.assertLess(text.index("git rebase origin/main"), text.index("for attempt in 1 2 3; do"))
+
     def test_alert_refresh_runs_after_activity_source_merges_without_self_trigger(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
         self.assertIn("push:", text)
