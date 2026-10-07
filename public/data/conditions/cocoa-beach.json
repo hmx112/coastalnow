@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-07T22:14:05+00:00",
+  "generated_at_utc": "2026-10-07T23:08:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T22:14:05+00:00"
+      "fetched_at_utc": "2026-10-07T23:08:08+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T20:41:39+00:00"
+      "fetched_at_utc": "2026-10-07T23:08:08+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T20:41:39+00:00"
+      "fetched_at_utc": "2026-10-07T23:08:08+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T18:01:25+00:00"
+      "fetched_at_utc": "2026-10-07T23:06:38+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-07T20:41:39+00:00"
+      "fetched_at_utc": "2026-10-07T23:08:08+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-07T16:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 22.5,
-      "precip_probability_pct": 75.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-07T17:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 22.5,
-      "precip_probability_pct": 75.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-07T18:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 90.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-07T19:00:00-04:00",
       "wind_mph": 10.0,
@@ -1902,6 +1866,42 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-14T04:00:00-04:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 292.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-14T05:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 292.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-14T06:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 292.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
@@ -1935,21 +1935,6 @@
         "headline": "Marine Weather Statement issued October 7 at 5:10PM EDT by NWS Melbourne FL",
         "description": "A Marine Weather Statement has been issued for the following areas...\nSebastian Inlet to Jupiter Inlet 0-20 nm...\nSebastian Inlet to Jupiter Inlet 20-60 nm...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 20-60 nm...\n\nAt 510 PM EDT, Doppler radar indicated strong thunderstorms, capable\nof producing winds to around 30 knots. These thunderstorms were\nlocated along a line extending from 22 nm east of Port Canaveral to\n18 nm east of Indian River Shores to 15 nm east of Fort Pierce Inlet,\nmoving east at 20 knots.",
         "instruction": "Mariners can expect gusty winds to around 30 knots, locally higher\nwaves, and lightning strikes. Boaters should seek safe harbor\nimmediately until these storms pass.",
-        "sender_name": "NWS Melbourne FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e526dc2bb3626fcf53eaac8b5d6aad8f5ba46031.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-10-07T16:10:00-04:00",
-        "onset": "2026-10-07T16:10:00-04:00",
-        "expires": "2026-10-07T18:15:00-04:00",
-        "ends": "2026-10-07T18:15:00-04:00",
-        "headline": "Special Marine Warning issued October 7 at 4:10PM EDT until October 7 at 6:15PM EDT by NWS Melbourne FL",
-        "description": "SMWMLB\n\nThe National Weather Service in Melbourne has issued a\n\n* Special Marine Warning for...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\n\n* Until 615 PM EDT.\n\n* At 410 PM EDT, a strong thunderstorm was located near Port\nCanaveral, moving southeast at 15 knots.\n\nHAZARD...Wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Expect wind gusts in excess of 34 knots, suddenly higher\nwaves, lightning and heavy downpours. Make sure all on\nboard are wearing life jackets. Return to safe harbor if\npossible.\n\n* Locations impacted include...\nPort Canaveral, Jetty Park, Cape Canaveral, and Cocoa Beach.",
-        "instruction": "",
         "sender_name": "NWS Melbourne FL"
       }
     ]
@@ -1986,8 +1971,8 @@
       "start": "2026-10-07",
       "end": "2026-10-13"
     },
-    "generated_at_utc": "2026-10-07T18:01:25+00:00",
-    "generated_at_local": "2026-10-07T14:01:25-04:00",
+    "generated_at_utc": "2026-10-07T23:06:38+00:00",
+    "generated_at_local": "2026-10-07T19:06:37-04:00",
     "hilo": [
       {
         "t": "2026-10-07 05:39",
@@ -2582,5 +2567,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
