@@ -42,50 +42,104 @@ class MalibuSeoFocusTests(unittest.TestCase):
         featured = state_landing_config("california")["featured"]
         self.assertIn("malibu", featured[:4])
 
-    def test_c2_design_pilot_is_scoped_to_selected_locations_and_preserves_seo(self):
-        pilot_slugs = ("malibu", "los-angeles", "oceanside", "miami-beach")
-        for slug in pilot_slugs:
-            location = LOCATIONS[slug]
+    def test_c2_design_is_applied_to_every_tide_location_and_preserves_seo(self):
+        region_by_slug = {
+            "sanibel-island": "florida-gulf",
+            "tampa-bay": "florida-gulf",
+            "key-west": "florida-keys",
+            "clearwater-beach": "florida-gulf",
+            "st-pete-beach": "florida-gulf",
+            "naples": "florida-gulf",
+            "miami-beach": "florida-atlantic",
+            "fort-lauderdale": "florida-atlantic",
+            "daytona-beach": "florida-atlantic",
+            "cocoa-beach": "florida-atlantic",
+            "destin": "florida-gulf",
+            "panama-city-beach": "florida-gulf",
+            "key-biscayne": "florida-atlantic",
+            "west-palm-beach": "florida-atlantic",
+            "fort-myers-beach": "florida-gulf",
+            "pompano-beach": "florida-atlantic",
+            "marco-island": "florida-gulf",
+            "sarasota": "florida-gulf",
+            "nags-head": "outer-banks",
+            "kitty-hawk": "outer-banks",
+            "kill-devil-hills": "outer-banks",
+            "cape-hatteras": "outer-banks",
+            "ocracoke": "outer-banks",
+            "corolla": "outer-banks",
+        }
+        for slug, location in LOCATIONS.items():
+            if location["state_slug"] == "california":
+                region = "california"
+            elif location["state_slug"] == "florida":
+                region = region_by_slug[slug]
+            elif location["state_slug"] == "north-carolina":
+                region = region_by_slug.get(slug, "carolinas")
+            elif location["state_slug"] == "south-carolina":
+                region = "carolinas"
+            elif location["state_slug"] == "oregon":
+                region = "oregon"
+            else:
+                region = "northeast"
+
             html = (ROOT / location["page_path"]).read_text(encoding="utf-8")
-            self.assertIn(f'class="c2-tide c2-{slug}"', html)
-            self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1)
-            self.assertIn('href="/assets/malibu-c2.css?v=20260925-hero-3"', html)
-            self.assertIn('class="c2-section-tabs"', html)
-            self.assertIn('id="overview"', html)
-            self.assertIn('id="tide-chart"', html)
+            self.assertIn(
+                f'class="c2-tide c2-region-{region} c2-{slug}"',
+                html,
+                slug,
+            )
+            self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1, slug)
+            self.assertIn('href="/assets/malibu-c2.css?v=20261008-rollout-1"', html, slug)
+            self.assertIn('class="c2-section-tabs"', html, slug)
+            self.assertIn('id="overview"', html, slug)
+            self.assertIn('id="tide-chart"', html, slug)
             self.assertIn(
                 f'<link rel="canonical" href="https://coastalnowtides.com/tides/{location["state_slug"]}/{slug}/">',
                 html,
+                slug,
             )
-            self.assertIn('<meta name="robots" content="index,follow">', html)
-            self.assertIn(f'/tides/{location["state_slug"]}/{slug}/fishing/', html)
-
-            if slug == "malibu":
-                self.assertIn(f'/tides/{location["state_slug"]}/{slug}/surfing/', html)
-            else:
-                self.assertNotIn(f'/tides/{location["state_slug"]}/{slug}/surfing/', html)
+            self.assertIn('<meta name="robots" content="index,follow">', html, slug)
 
         css = ROOT / "assets" / "malibu-c2.css"
-        hero = ROOT / "assets" / "malibu-c2-hero.svg"
         self.assertTrue(css.exists())
-        self.assertTrue(hero.exists())
-        hero_assets = {
+        regional_sprite = ROOT / "assets" / "hero-regions-sprite.avif"
+        self.assertTrue(regional_sprite.exists())
+        self.assertGreater(regional_sprite.stat().st_size, 3000)
+        self.assertEqual(regional_sprite.read_bytes()[4:12], b"ftypavif")
+
+        regional_positions = {
+            "california": "0% 3%",
+            "florida-atlantic": "33.333% 3%",
+            "florida-gulf": "66.667% 3%",
+            "florida-keys": "100% 3%",
+            "outer-banks": "0% 97%",
+            "carolinas": "33.333% 97%",
+            "oregon": "66.667% 97%",
+            "northeast": "100% 97%",
+        }
+        specific_assets = {
             "malibu": "hero-malibu.avif",
             "los-angeles": "hero-los-angeles.avif",
             "oceanside": "hero-oceanside.avif",
             "miami-beach": "hero-miami-beach.avif",
         }
-        for slug, filename in hero_assets.items():
+        for filename in specific_assets.values():
             asset = ROOT / "assets" / filename
             self.assertTrue(asset.exists(), filename)
             self.assertGreater(asset.stat().st_size, 3000, filename)
             self.assertEqual(asset.read_bytes()[4:12], b"ftypavif", filename)
+
         css_text = css.read_text(encoding="utf-8")
         self.assertIn(".c2-tide #overview", css_text)
-        self.assertIn("--c2-hero-image:url(\"/assets/malibu-c2-hero.svg\")", css_text)
-        for slug, filename in hero_assets.items():
+        for region, position in regional_positions.items():
             self.assertIn(
-                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20260925-hero-3\")}}',
+                f'.c2-region-{region}{{--c2-hero-image:url(\"/assets/hero-regions-sprite.avif?v=20261008-rollout-1\");--c2-hero-position:{position};--c2-hero-size:400% auto}}',
+                css_text,
+            )
+        for slug, filename in specific_assets.items():
+            self.assertIn(
+                f'.c2-{slug}{{--c2-hero-image:url(\"/assets/{filename}?v=20261008-rollout-1\");--c2-hero-position:center 48%;--c2-hero-size:cover}}',
                 css_text,
             )
         self.assertIn("overflow-x:visible;", css_text)
@@ -93,10 +147,6 @@ class MalibuSeoFocusTests(unittest.TestCase):
         self.assertIn("padding-inline:5px;", css_text)
         self.assertIn(".c2-tide .chart .point-label{font-size:22px;", css_text)
         self.assertIn(".c2-tide .chart .axis-label{font-size:18px;", css_text)
-
-        santa_monica = (ROOT / LOCATIONS["santa-monica"]["page_path"]).read_text(encoding="utf-8")
-        self.assertNotIn("c2-tide", santa_monica)
-        self.assertNotIn("malibu-c2.css", santa_monica)
 
     def test_malibu_local_context_renders_dynamic_today_summary_and_links(self):
         html = (ROOT / MALIBU["page_path"]).read_text(encoding="utf-8")
