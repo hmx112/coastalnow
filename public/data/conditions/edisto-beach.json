@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "edisto-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-07T13:38:09+00:00",
+  "generated_at_utc": "2026-10-07T17:13:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T13:38:09+00:00"
+      "fetched_at_utc": "2026-10-07T17:13:54+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3e5695abe9b7b984f6351402a3d6a95083e72de6.001.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-07T12:54:00-04:00",
+        "onset": "2026-10-07T16:00:00-04:00",
+        "expires": "2026-10-07T20:00:00-04:00",
+        "ends": "2026-10-07T20:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 7 at 12:54PM EDT until October 7 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...Up to one foot of inundation above ground level\nexpected along shorelines and tidal waterways (7.4 to 7.6 feet\nMean Lower Low Water at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...From 4 PM this afternoon to 8 PM EDT this evening.\n\n* IMPACTS...This will result in some roads becoming impassable\nand minor flooding of properties.\n\n* ADDITIONAL DETAILS...High tide will occur around 6:21 PM today\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a98a64f8a9ab852e4aec157ee86bbfc80d7024b.003.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -2572,5 +2587,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
