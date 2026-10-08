@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "miami-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-07T23:08:03+00:00",
+  "generated_at_utc": "2026-10-08T01:07:05+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T23:08:03+00:00"
+      "fetched_at_utc": "2026-10-08T01:07:05+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T23:08:03+00:00"
+      "fetched_at_utc": "2026-10-08T01:07:05+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-07T23:08:03+00:00"
+      "fetched_at_utc": "2026-10-08T01:07:05+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-07T23:08:03+00:00"
+      "fetched_at_utc": "2026-10-08T01:07:05+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-07T19:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 45.0,
-      "air_temperature_f": 83.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-07T20:00:00-04:00",
-      "wind_mph": 6.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 35.0,
-      "air_temperature_f": 82.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-07T21:00:00-04:00",
       "wind_mph": 5.0,
@@ -1902,23 +1878,47 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-14T07:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 79.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-14T08:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 79.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.10af6cd096aa59d531600eef1f3086bb369bc5a0.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c84a7570060c90de95d1f110801d6f0cec3a2264.001.1",
         "event": "Coastal Flood Statement",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-07T08:26:00-04:00",
-        "onset": "2026-10-07T16:00:00-04:00",
-        "expires": "2026-10-07T20:00:00-04:00",
+        "effective": "2026-10-07T19:59:00-04:00",
+        "onset": "2026-10-07T19:59:00-04:00",
+        "expires": "2026-10-08T02:00:00-04:00",
         "ends": "2026-10-08T10:00:00-04:00",
-        "headline": "Coastal Flood Statement issued October 7 at 8:26AM EDT until October 8 at 10:00AM EDT by NWS Miami FL",
-        "description": "* WHAT...Isolated minor coastal flooding expected.  * WHERE...Coastal Palm Beach County, Coastal Broward County, Coastal Miami Dade County and Far South Miami-Dade County.  * WHEN...From 4 PM EDT this afternoon through Thursday morning.  * IMPACTS...Some water on low lying roads and property.  * ADDITIONAL DETAILS...Minor coastal flooding is expected during the high tide cycle early this evening and again during the high tide cycle early Thursday morning.",
+        "headline": "Coastal Flood Statement issued October 7 at 7:59PM EDT until October 8 at 10:00AM EDT by NWS Miami FL",
+        "description": "* WHAT...Isolated minor coastal flooding.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County,\nCoastal Miami Dade County and Far South Miami-Dade County.\n\n* WHEN...Through Thursday morning.\n\n* IMPACTS...Some water on low lying roads and property.",
         "instruction": "Do not drive through flooded roadways.",
         "sender_name": "NWS Miami FL"
       }
