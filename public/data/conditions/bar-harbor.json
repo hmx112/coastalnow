@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-08T06:08:47+00:00",
+  "generated_at_utc": "2026-10-08T09:25:23+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-08T06:08:47+00:00"
+      "fetched_at_utc": "2026-10-08T09:25:23+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5258fd0a93483b63a9a407a26b5290a7a8d2bdd5.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-08T04:28:00-04:00",
+        "onset": "2026-10-08T04:28:00-04:00",
+        "expires": "2026-10-08T15:00:00-04:00",
+        "ends": "2026-10-08T16:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 8 at 4:28AM EDT until October 8 at 4:00PM EDT by NWS Caribou ME",
+        "description": "* WHAT...Southwest winds 10 to 20 kt with gusts up to 25 kt.\n\n* WHERE...Intra Coastal Waters from Schoodic Point, ME to\nStonington, ME.\n\n* WHEN...Until 4 PM EDT this afternoon.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Caribou ME"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
