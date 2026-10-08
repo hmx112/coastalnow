@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "half-moon-bay",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-08T13:32:57+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-08T13:32:57+00:00",
+  "generated_at_utc": "2026-10-08T16:53:09+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-08T16:53:09+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,20 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 78.8,
+    "rating": "Good",
     "confidence": "Medium",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-10-08T18:00:00-07:00",
+      "end": "2026-10-08T21:00:00-07:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "dense-fog-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "wave-exposure-caution"
     ]
   },
   "tomorrow": {
@@ -42,89 +48,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-08T06:00:00-07:00",
-        "components": {
-          "tide": 94.4,
-          "wind": 85,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 66.3,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.4,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "dense-fog-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-10-08T07:00:00-07:00",
-        "components": {
-          "tide": 98.7,
-          "wind": 85,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 66.3,
-          "water_temperature": null
-        },
-        "raw_quality_score": 88.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "dense-fog-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-10-08T08:00:00-07:00",
-        "components": {
-          "tide": 79.1,
-          "wind": 85,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 66.3,
-          "water_temperature": null
-        },
-        "raw_quality_score": 82.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "dense-fog-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
         "time": "2026-10-08T09:00:00-07:00",
         "components": {
           "tide": 40.3,
@@ -136,18 +59,17 @@
           "water_temperature": null
         },
         "raw_quality_score": 69.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 61.7,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
-          "dense-fog-advisory",
           "wave-exposure-caution"
         ]
       },

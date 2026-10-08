@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sarasota",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-08T13:35:02+00:00",
+  "generated_at_utc": "2026-10-08T16:53:41+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-08T13:35:02+00:00"
+      "fetched_at_utc": "2026-10-08T16:53:41+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6284409e51b42a1987fde7276e57115973283ea7.001.1",
+        "event": "Special Marine Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "effective": "2026-10-08T12:53:00-04:00",
+        "onset": "2026-10-08T12:53:00-04:00",
+        "expires": "2026-10-08T14:30:00-04:00",
+        "ends": "2026-10-08T14:30:00-04:00",
+        "headline": "Special Marine Warning issued October 8 at 12:53PM EDT until October 8 at 2:30PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "SMWTBW\n\nThe National Weather Service in Ruskin has issued a\n\n* Special Marine Warning for...\nCoastal waters from Englewood to Tarpon Springs FL out 20 NM...\nTampa Bay waters...\n\n* Until 230 PM EDT.\n\n* At 1252 PM EDT, severe thunderstorms capable of producing\nwaterspouts were located along a line extending from 8 nm west of\nJohns Pass to near Anna Maria to 8 nm west of Siesta Key, moving\neast at 20 knots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can quickly form and capsize boats, damage\nvessels, and create suddenly higher waves. Make sure all\non board are in a secure location and wearing life\njackets. Expect wind gusts in excess of 34 knots,\nsuddenly higher waves, frequent lightning, and heavy\ndownpours. Make sure all on board are wearing life\njackets.\n\n* Locations impacted include...\nTerra Ceia Bay, Manatee Nearshore Reef, Howard Frankland Bridge,\nMadeira Beach Reef, Longboat Key, Tierra Verde, Belleair Beach,\nCockroach Bay, M7 Reef, Anna Maria Island, Saint Armands Key, M8\nReef, Pass-A-Grille Channel, Southwest Channel, M1 Reef, Tampa Bay,\nSt. Pete Beach, Hillsborough Bay, Bradenton Beach, and Redington\nBeach.",
+        "instruction": "Move to safe harbor immediately as gusty winds and high waves are\nexpected.\n\nThunderstorms can produce sudden waterspouts. Waterspouts can easily\noverturn boats and create locally hazardous seas. Seek safe harbor\nimmediately.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2546,5 +2562,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
