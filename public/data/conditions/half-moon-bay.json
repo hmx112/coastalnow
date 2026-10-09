@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "half-moon-bay",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-09T06:11:47+00:00",
+  "generated_at_utc": "2026-10-09T09:34:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T06:11:47+00:00"
+      "fetched_at_utc": "2026-10-09T09:34:33+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1921,6 +1921,21 @@
         "description": "* WHAT...Increased risk of rip currents and sneaker waves\nexpected with breaking waves up to 16 feet.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore and San Francisco Peninsula Coast Counties.\n\n* WHEN...From Saturday morning through Monday afternoon.\n\n* IMPACTS...Dangerous conditions are forecast along the shoreline.\nHazards include sneaker waves, strong rip currents, and large\nbreaking waves.",
         "instruction": "Stay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.03126dc2edc82fd229dbbedc6fc145bd749a33ca.008.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-09T02:24:00-07:00",
+        "onset": "2026-10-10T03:00:00-07:00",
+        "expires": "2026-10-09T10:30:00-07:00",
+        "ends": "2026-10-11T09:00:00-07:00",
+        "headline": "Small Craft Advisory issued October 9 at 2:24AM PDT until October 11 at 9:00AM PDT by NWS San Francisco CA",
+        "description": "* WHAT...Northwest winds 15 to 25 kt with gusts up to 30 kt and\nseas 6 to 11 ft expected.\n\n* WHERE...Coastal Waters from Point Reyes to Pigeon Point\nCalifornia out to 10 NM.\n\n* WHEN...From 3 AM Saturday to 9 AM PDT Sunday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS San Francisco CA"
       }
     ]
   },
@@ -2552,5 +2567,5 @@
       "grid_y": 94
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
