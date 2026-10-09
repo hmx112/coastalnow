@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "folly-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-08T23:23:35+00:00",
+  "generated_at_utc": "2026-10-09T01:17:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-08T23:23:35+00:00"
+      "fetched_at_utc": "2026-10-09T01:17:32+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-08T23:23:35+00:00"
+      "fetched_at_utc": "2026-10-09T01:17:32+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-08T23:23:35+00:00"
+      "fetched_at_utc": "2026-10-09T01:17:32+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-08T23:23:35+00:00"
+      "fetched_at_utc": "2026-10-09T01:17:32+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-08T19:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-10-08T20:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-10-08T21:00:00-04:00",
       "wind_mph": 8.0,
@@ -1902,22 +1878,46 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-15T07:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-15T08:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a536bfa4fb9f67236a2abe5a43b67bb92f4132c2.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7b2225afa1c90cedf068cdb738bbb001363dd200.002.1",
         "event": "Gale Watch",
         "severity": "Moderate",
         "certainty": "Possible",
         "urgency": "Future",
-        "effective": "2026-10-08T14:39:00-04:00",
+        "effective": "2026-10-08T19:53:00-04:00",
         "onset": "2026-10-09T20:00:00-04:00",
-        "expires": "2026-10-08T22:45:00-04:00",
+        "expires": "2026-10-09T04:00:00-04:00",
         "ends": "2026-10-10T20:00:00-04:00",
-        "headline": "Gale Watch issued October 8 at 2:39PM EDT until October 10 at 8:00PM EDT by NWS Charleston SC",
+        "headline": "Gale Watch issued October 8 at 7:53PM EDT until October 10 at 8:00PM EDT by NWS Charleston SC",
         "description": "* WHAT...East winds 20 to 30 kt with gusts up to 35 kt and seas\n6 to 9 ft possible.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...From Friday evening through Saturday evening.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
         "sender_name": "NWS Charleston SC"
