@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "edisto-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-09T16:31:11+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-09T16:31:11+00:00",
+  "generated_at_utc": "2026-10-09T18:26:25+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-09T18:26:25+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,38 +12,35 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 58.3,
-    "rating": "Poor",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-10-09T14:00:00-04:00",
-      "end": "2026-10-09T17:00:00-04:00"
-    },
-    "ranking_eligible": true,
-    "reasons": [
-      "manageable-sea-state",
-      "worsening-wind",
-      "wave-exposure-caution",
-      "favorable-tide-movement"
-    ]
-  },
-  "tomorrow": {
-    "status": "Unavailable",
+    "status": "NOT RECOMMENDED",
     "score": null,
     "rating": null,
     "confidence": "Unavailable",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
+      "rip-current-statement"
+    ]
+  },
+  "tomorrow": {
+    "status": "NOT RECOMMENDED",
+    "score": null,
+    "rating": null,
+    "confidence": "Medium",
+    "best_window": null,
+    "ranking_eligible": false,
+    "reasons": [
       "favorable-tide-movement",
       "worsening-wind",
       "wet-weather",
+      "flood-watch",
+      "rip-current-statement",
       "gale-warning",
       "wind-cap-39",
       "wave-exposure-caution",
       "forecast-thunder-cap",
       "wind-cap-59",
+      "coastal-flood-watch",
       "manageable-sea-state",
       "wave-exposure-cap-69",
       "light-wind"
@@ -51,57 +48,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-09T12:00:00-04:00",
-        "components": {
-          "tide": 72.9,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 82.3,
-        "final_score": 82.3,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-10-09T13:00:00-04:00",
-        "components": {
-          "tide": 30.2,
-          "wind": 55,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 60.7,
-        "final_score": 52.7,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-10-09T14:00:00-04:00",
         "components": {
@@ -140,17 +86,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 71.6,
-        "final_score": 63.6,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "rip-current-statement",
           "wave-exposure-caution"
         ]
       },
@@ -166,18 +113,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 80.1,
-        "final_score": 72.1,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "rip-current-statement",
           "wave-exposure-caution"
         ]
       },
@@ -193,18 +141,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 77.3,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -221,17 +170,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 72.1,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -259,6 +210,8 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -288,6 +241,9 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-advisory",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -318,6 +274,9 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-advisory",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -348,6 +307,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -378,6 +339,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -410,6 +373,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-caution",
@@ -439,6 +404,8 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-caution",
@@ -468,6 +435,8 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-caution",
@@ -497,6 +466,8 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -527,6 +498,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -557,6 +530,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -587,6 +562,9 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -616,6 +594,9 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution",
@@ -645,6 +626,9 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -673,6 +657,9 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -701,6 +688,9 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -731,6 +721,9 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "coastal-flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -761,6 +754,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -790,6 +785,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -819,6 +816,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -848,6 +847,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -877,6 +878,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -907,6 +910,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
+          "rip-current-statement",
           "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
@@ -936,7 +941,8 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
-          "gale-warning",
+          "flood-watch",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -965,7 +971,8 @@
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "gale-warning",
+          "flood-watch",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -994,7 +1001,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "gale-warning",
+          "flood-watch",
+          "rip-current-statement",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
@@ -1023,7 +1031,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "gale-warning",
+          "flood-watch",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
         ]
@@ -1052,7 +1060,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "gale-warning",
+          "flood-watch",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
         ]
@@ -1069,19 +1077,20 @@
           "water_temperature": null
         },
         "raw_quality_score": 68.0,
-        "final_score": 39.0,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "flood-watch",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
         ]
