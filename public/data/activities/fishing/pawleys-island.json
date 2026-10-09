@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "pawleys-island",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-09T21:12:32+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-09T21:12:32+00:00",
+  "generated_at_utc": "2026-10-09T22:41:35+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-09T22:41:35+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,23 +13,23 @@
   },
   "today": {
     "status": "normal",
-    "score": 79.2,
+    "score": 79.6,
     "rating": "Good",
     "confidence": "Medium",
     "best_window": {
-      "start": "2026-10-09T17:00:00-04:00",
-      "end": "2026-10-09T20:00:00-04:00"
+      "start": "2026-10-09T21:00:00-04:00",
+      "end": "2026-10-10T00:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
-      "manageable-sea-state"
+      "manageable-sea-state",
+      "favorable-tide-movement"
     ]
   },
   "tomorrow": {
     "status": "normal",
-    "score": 69.0,
+    "score": 70.6,
     "rating": "Fair",
     "confidence": "Medium",
     "best_window": {
@@ -47,32 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-09T17:00:00-04:00",
-        "components": {
-          "tide": 94.5,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 68.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 92.8,
-        "final_score": 92.8,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-10-09T18:00:00-04:00",
         "components": {
@@ -153,14 +127,14 @@
         "components": {
           "tide": 71.9,
           "wind": 80,
-          "wave": 65,
+          "wave": 90,
           "weather": 100,
           "time_of_day": 60,
           "solunar": 68.4,
           "water_temperature": null
         },
-        "raw_quality_score": 74.2,
-        "final_score": 74.2,
+        "raw_quality_score": 78.0,
+        "final_score": 78.0,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
@@ -169,7 +143,8 @@
         "available": true,
         "ranking_eligible": true,
         "reasons": [
-          "light-wind"
+          "light-wind",
+          "manageable-sea-state"
         ]
       },
       {
@@ -340,10 +315,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 71.4,
-        "final_score": 69.0,
+        "final_score": 71.4,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 69.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -352,8 +327,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
-          "wet-weather",
-          "wave-exposure-cap-69"
+          "wet-weather"
         ]
       },
       {
@@ -368,10 +342,10 @@
           "water_temperature": null
         },
         "raw_quality_score": 73.5,
-        "final_score": 69.0,
+        "final_score": 73.5,
         "hard_stop": false,
         "safety_status": "normal",
-        "safety_cap": 69.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -380,8 +354,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
-          "wet-weather",
-          "wave-exposure-cap-69"
+          "wet-weather"
         ]
       },
       {
@@ -444,13 +417,13 @@
         "components": {
           "tide": 7.5,
           "wind": 80,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 100,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 45.5,
+        "raw_quality_score": 50.0,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -461,6 +434,7 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
+          "manageable-sea-state",
           "wet-weather",
           "gale-warning",
           "wave-exposure-cap-69"
@@ -471,13 +445,13 @@
         "components": {
           "tide": 54.6,
           "wind": 55,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 53.1,
+        "raw_quality_score": 57.6,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -487,6 +461,7 @@
         "available": true,
         "ranking_eligible": false,
         "reasons": [
+          "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
           "gale-warning",
@@ -499,13 +474,13 @@
         "components": {
           "tide": 88.2,
           "wind": 55,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 63.2,
+        "raw_quality_score": 67.7,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -516,6 +491,7 @@
         "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
+          "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
           "gale-warning",
@@ -670,13 +646,13 @@
         "components": {
           "tide": 83.9,
           "wind": 55,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 61.9,
+        "raw_quality_score": 66.4,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -687,6 +663,7 @@
         "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
+          "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
           "gale-warning",
@@ -699,13 +676,13 @@
         "components": {
           "tide": 99.9,
           "wind": 55,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 66.7,
+        "raw_quality_score": 71.2,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -716,6 +693,7 @@
         "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
+          "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
           "gale-warning",
@@ -728,13 +706,13 @@
         "components": {
           "tide": 89.1,
           "wind": 80,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 100,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 70.0,
+        "raw_quality_score": 74.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -746,6 +724,7 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
+          "manageable-sea-state",
           "wet-weather",
           "gale-warning",
           "wave-exposure-cap-69",
@@ -757,13 +736,13 @@
         "components": {
           "tide": 54.5,
           "wind": 80,
-          "wave": 45,
+          "wave": 75,
           "weather": 30,
           "time_of_day": 100,
           "solunar": 69.6,
           "water_temperature": null
         },
-        "raw_quality_score": 59.6,
+        "raw_quality_score": 64.1,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -774,6 +753,7 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
+          "manageable-sea-state",
           "wet-weather",
           "gale-warning",
           "wave-exposure-cap-69",
