@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-09T22:41:05+00:00",
+  "generated_at_utc": "2026-10-10T01:02:51+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:05+00:00"
+      "fetched_at_utc": "2026-10-10T01:02:51+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:05+00:00"
+      "fetched_at_utc": "2026-10-10T01:02:51+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:05+00:00"
+      "fetched_at_utc": "2026-10-10T01:02:51+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-09T22:41:05+00:00"
+      "fetched_at_utc": "2026-10-10T01:02:51+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-09T18:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-10-09T19:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-10-09T20:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 72.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-10-09T21:00:00-04:00",
       "wind_mph": 13.0,
@@ -1902,11 +1866,77 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-16T06:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T07:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T08:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 8.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.749e60b3e27898b1441074136d1f2ab8391bd618.001.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-09T20:33:00-04:00",
+        "onset": "2026-10-10T08:00:00-04:00",
+        "expires": "2026-10-10T08:45:00-04:00",
+        "ends": "2026-10-10T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 9 at 8:33PM EDT until October 10 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents. For the High Surf Advisory, large breaking waves of\n6 to 8 feet expected in the surf zone.\n\n* WHERE...Hatteras Island beaches, and Ocracoke Island beaches.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT Saturday\nthrough Saturday evening. For the High Surf Advisory, from\nmidnight Saturday night to 8 PM EDT Sunday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...The most likely time for strong rip\ncurrents to occur is a couple hours either side of low tide,\nwhich will occur around 2:00 PM Saturday.",
+        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.749e60b3e27898b1441074136d1f2ab8391bd618.001.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-09T20:33:00-04:00",
+        "onset": "2026-10-11T00:00:00-04:00",
+        "expires": "2026-10-10T08:45:00-04:00",
+        "ends": "2026-10-11T20:00:00-04:00",
+        "headline": "High Surf Advisory issued October 9 at 8:33PM EDT until October 11 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents. For the High Surf Advisory, large breaking waves of\n6 to 8 feet expected in the surf zone.\n\n* WHERE...Hatteras Island beaches, and Ocracoke Island beaches.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT Saturday\nthrough Saturday evening. For the High Surf Advisory, from\nmidnight Saturday night to 8 PM EDT Sunday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...The most likely time for strong rip\ncurrents to occur is a couple hours either side of low tide,\nwhich will occur around 2:00 PM Saturday.",
+        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b5116495ab733a97711d4bdb6bebdeda446e077c.001.1",
         "event": "Flood Watch",
@@ -1920,21 +1950,6 @@
         "headline": "Flood Watch issued October 9 at 2:28PM EDT until October 11 at 2:00PM EDT by NWS Newport/Morehead City NC",
         "description": "* WHAT...Flooding caused by excessive rainfall is possible.\n\n* WHERE...A portion of eastern North Carolina, including the\nfollowing areas, Coastal Onslow, East Carteret, Hatteras Island,\nInland Onslow, Jones, Mainland Dare, Mainland Hyde, Northern Outer\nBanks, Ocracoke Island, Pamlico, Southern Craven and West Carteret.\n\n* WHEN...From Saturday afternoon through Sunday afternoon.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\nFlooding may occur in poor drainage and urban areas.\n\n* ADDITIONAL DETAILS...\n- A plume of tropical moisture will overspread the area and will\ncombine with strong lift and weak to moderate instability to\nsupport areas of intense rainfall rates and an accompanying risk\nof flooding. Total rainfall of 3 to 6 inches are forecast, with\nlocally higher amounts possible. The highest amounts are expected\nto be where bands of thunderstorms are most persistent.\n- http://www.weather.gov/safety/flood",
         "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3948801170e1485b30cc7b31e2b2afe553d5f181.001.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-09T02:54:00-04:00",
-        "onset": "2026-10-11T00:00:00-04:00",
-        "expires": "2026-10-09T15:00:00-04:00",
-        "ends": "2026-10-11T20:00:00-04:00",
-        "headline": "High Surf Advisory issued October 9 at 2:54AM EDT until October 11 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Large breaking waves of 5 to 8 feet expected in the\nsurf zone.\n\n* WHERE...Hatteras Island beaches, and Ocracoke Island beaches.\n\n* WHEN...From midnight Saturday night to 8 PM EDT Sunday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {

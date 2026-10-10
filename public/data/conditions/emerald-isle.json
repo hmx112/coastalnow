@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-09T22:41:13+00:00",
+  "generated_at_utc": "2026-10-10T01:03:05+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:13+00:00"
+      "fetched_at_utc": "2026-10-10T01:03:05+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:13+00:00"
+      "fetched_at_utc": "2026-10-10T01:03:05+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:41:13+00:00"
+      "fetched_at_utc": "2026-10-10T01:03:05+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-09T22:41:13+00:00"
+      "fetched_at_utc": "2026-10-10T01:03:05+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-09T18:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-10-09T19:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-10-09T20:00:00-04:00",
-      "wind_mph": 12.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-10-09T21:00:00-04:00",
       "wind_mph": 13.0,
@@ -1902,11 +1866,62 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-16T06:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T07:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T08:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.749e60b3e27898b1441074136d1f2ab8391bd618.003.1",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-09T20:33:00-04:00",
+        "onset": "2026-10-10T08:00:00-04:00",
+        "expires": "2026-10-10T08:45:00-04:00",
+        "ends": "2026-10-10T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 9 at 8:33PM EDT until October 10 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Dangerous rip currents and strong longshore currents in\nthe surf zone.\n\n* WHERE...Crystal Coast beaches.\n\n* WHEN...From 8 AM EDT Saturday through Saturday evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water. Strong longshore currents will\ncreate dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...The most likely time for strong rip\ncurrents to occur is a couple hours either side of low tide,\nwhich will occur around 2:00 PM Saturday.",
+        "instruction": "Life-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nStrong longshore currents can sweep swimmers and surfers into rip\ncurrents, piers, jetties and other hazardous areas. In many\ncases, the longshore current is strong enough to prevent swimmers\nfrom being able to keep their feet on the bottom making it\ndifficult to return to shore.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b5116495ab733a97711d4bdb6bebdeda446e077c.001.1",
         "event": "Flood Watch",

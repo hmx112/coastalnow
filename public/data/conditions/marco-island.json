@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "marco-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-09T22:42:36+00:00",
+  "generated_at_utc": "2026-10-10T01:04:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:42:36+00:00"
+      "fetched_at_utc": "2026-10-10T01:04:54+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:42:36+00:00"
+      "fetched_at_utc": "2026-10-10T01:04:54+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-09T22:42:36+00:00"
+      "fetched_at_utc": "2026-10-10T01:04:54+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-09T22:42:36+00:00"
+      "fetched_at_utc": "2026-10-10T01:04:54+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-09T18:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 87.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-09T19:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 86.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-09T20:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 13.0,
-      "air_temperature_f": 84.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-10-09T21:00:00-04:00",
       "wind_mph": 13.0,
@@ -1902,53 +1866,89 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Clear"
+    },
+    {
+      "time": "2026-10-16T06:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T07:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 74.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T08:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.daa287eda6ebd9bc6f919cc94d0b7c9a7105d2d2.001.1",
-        "event": "Rip Current Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-09T10:02:00-04:00",
-        "onset": "2026-10-09T10:02:00-04:00",
-        "expires": "2026-10-09T20:00:00-04:00",
-        "ends": "2026-10-10T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 9 at 10:02AM EDT until October 10 at 8:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the Coastal Flood Statement, isolated minor coastal\nflooding.\n\n* WHERE...Coastal Collier County.\n\n* WHEN...For the Coastal Flood Statement, through Saturday\nmorning. For the High Rip Current Risk, from 8 AM EDT this\nmorning through Saturday evening.\n\n* IMPACTS...Some water on low lying roads and property. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.",
-        "instruction": "Do not drive through flooded roadways.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Miami FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.daa287eda6ebd9bc6f919cc94d0b7c9a7105d2d2.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29f79dbd02e2b175b2499a10a8479ed665e042fc.002.1",
         "event": "Coastal Flood Statement",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-09T10:02:00-04:00",
-        "onset": "2026-10-09T10:02:00-04:00",
-        "expires": "2026-10-09T20:00:00-04:00",
+        "effective": "2026-10-09T19:15:00-04:00",
+        "onset": "2026-10-09T19:15:00-04:00",
+        "expires": "2026-10-10T06:00:00-04:00",
         "ends": "2026-10-10T12:00:00-04:00",
-        "headline": "Coastal Flood Statement issued October 9 at 10:02AM EDT until October 10 at 12:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the Coastal Flood Statement, isolated minor coastal\nflooding.\n\n* WHERE...Coastal Collier County.\n\n* WHEN...For the Coastal Flood Statement, through Saturday\nmorning. For the High Rip Current Risk, from 8 AM EDT this\nmorning through Saturday evening.\n\n* IMPACTS...Some water on low lying roads and property. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.",
+        "headline": "Coastal Flood Statement issued October 9 at 7:15PM EDT until October 10 at 12:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Statement, isolated minor coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Collier County.\n\n* WHEN...For the Coastal Flood Statement, through Saturday\nmorning. For the High Rip Current Risk, through Saturday\nevening.\n\n* IMPACTS...Some water on low lying roads and property. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.",
         "instruction": "Do not drive through flooded roadways.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Miami FL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.470c053e2dc814d0c7f1b8d0a04a4d482d47ee24.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29f79dbd02e2b175b2499a10a8479ed665e042fc.002.2",
+        "event": "Rip Current Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-09T19:15:00-04:00",
+        "onset": "2026-10-09T19:15:00-04:00",
+        "expires": "2026-10-10T06:00:00-04:00",
+        "ends": "2026-10-10T20:00:00-04:00",
+        "headline": "Rip Current Statement issued October 9 at 7:15PM EDT until October 10 at 8:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Statement, isolated minor coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Collier County.\n\n* WHEN...For the Coastal Flood Statement, through Saturday\nmorning. For the High Rip Current Risk, through Saturday\nevening.\n\n* IMPACTS...Some water on low lying roads and property. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.",
+        "instruction": "Do not drive through flooded roadways.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.949545c654c643216011bab1966c0ed3e4a22c1e.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-09T10:23:00-04:00",
-        "onset": "2026-10-09T10:23:00-04:00",
-        "expires": "2026-10-09T20:00:00-04:00",
+        "effective": "2026-10-09T19:10:00-04:00",
+        "onset": "2026-10-09T19:10:00-04:00",
+        "expires": "2026-10-10T06:00:00-04:00",
         "ends": "2026-10-10T16:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 9 at 10:23AM EDT until October 10 at 4:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...Southeast winds around 20 kt with gusts up to 25 kt and\nseas 5 to 7 ft expected.\n\n* WHERE...Coastal waters from Chokoloskee to Bonita Beach FL out\n20 NM and Waters from Chokoloskee to Bonita Beach FL from 20\nto 60 NM.\n\n* WHEN...Until 4 PM EDT Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued October 9 at 7:10PM EDT until October 10 at 4:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...South winds 15 to 20 kt with gusts up to 25 kt and seas\n4 to 7 ft.\n\n* WHERE...Coastal waters from Chokoloskee to Bonita Beach FL out\n20 NM, Coastal waters from East Cape Sable to Chokoloskee FL\nout 20 NM and Waters from Chokoloskee to Bonita Beach FL from\n20 to 60 NM.\n\n* WHEN...Until 4 PM EDT Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Miami FL"
       }
