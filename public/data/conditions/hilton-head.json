@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "hilton-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-10T17:23:53+00:00",
+  "generated_at_utc": "2026-10-10T18:50:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T17:23:53+00:00"
+      "fetched_at_utc": "2026-10-10T18:50:16+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ada4caec8ab078582f60d16bc1f273a72ed1fac.001.1",
+        "event": "Tornado Watch",
+        "severity": "Extreme",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-10-10T13:56:00-04:00",
+        "onset": "2026-10-10T13:56:00-04:00",
+        "expires": "2026-10-10T20:00:00-04:00",
+        "ends": "2026-10-10T20:00:00-04:00",
+        "headline": "Tornado Watch issued October 10 at 1:56PM EDT until October 10 at 8:00PM EDT by NWS Charleston SC",
+        "description": "THE NATIONAL WEATHER SERVICE HAS ISSUED TORNADO WATCH 679 IN\nEFFECT UNTIL 8 PM EDT THIS EVENING FOR THE FOLLOWING AREAS\n\nIN GEORGIA THIS WATCH INCLUDES 7 COUNTIES\n\nIN SOUTHEAST GEORGIA\n\nBULLOCH               CANDLER               EFFINGHAM\nEVANS                 JENKINS               SCREVEN\nTATTNALL\n\nIN SOUTH CAROLINA THIS WATCH INCLUDES 8 COUNTIES\n\nIN SOUTHEAST SOUTH CAROLINA\n\nALLENDALE             BEAUFORT              BERKELEY\nCHARLESTON            COLLETON              DORCHESTER\nHAMPTON               JASPER\n\nTHIS INCLUDES THE CITIES OF ALLENDALE, BEAUFORT, BLUFFTON,\nCHARLESTON, CLAXTON, COTTAGEVILLE, DANIEL ISLAND, EDISTO BEACH,\nESTILL, FAIRFAX, GLENNVILLE, GOOSE CREEK, HAMPTON, HARDEEVILLE,\nHILTON HEAD ISLAND, METTER, MILLEN, MONCKS CORNER,\nMOUNT PLEASANT, NORTH CHARLESTON, REIDSVILLE, RIDGELAND,\nRIDGEVILLE, RINCON, SAINT GEORGE, SPRINGFIELD, STATESBORO,\nSUMMERVILLE, SYCAMORE, SYLVANIA, VARNVILLE, WALTERBORO,\nAND YEMASSEE.",
+        "instruction": "",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e869673ddab2d4b4e45a2e0d187902b984eedb31.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
@@ -1935,6 +1950,21 @@
         "headline": "Flood Watch issued October 10 at 10:24AM EDT until October 11 at 2:00AM EDT by NWS Charleston SC",
         "description": "* WHAT...Flash flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...Portions of southeast Georgia, including the following\nareas, Bulloch, Candler, Coastal Bryan, Coastal Chatham, Coastal\nLiberty, Coastal McIntosh, Effingham, Evans, Inland Bryan, Inland\nChatham, Inland Liberty, Inland McIntosh, Jenkins, Long, Screven\nand Tattnall and southeast South Carolina, including the following\nareas, Allendale, Beaufort, Charleston, Coastal Colleton, Coastal\nJasper, Dorchester, Hampton, Inland Berkeley, Inland Colleton,\nInland Jasper and Tidal Berkeley.\n\n* WHEN...Through late tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\nFlooding may occur in poor drainage and urban areas.\n\n* ADDITIONAL DETAILS...\n- Bands of heavy rainfall will spread across Southeast Georgia and\nSoutheast South Carolina throughout the day. Widespread rainfall\ntotals of 1 to 3 inches are expected, with locally higher amounts\nof 3 to 6 inches possible. Rainfall rates of up to 2 inches per\nhour will be possible within the heaviest rain bands.\n- http://www.weather.gov/safety/flood",
         "instruction": "You should monitor later forecasts and be prepared to take action\nshould Flash Flood Warnings be issued.\n\nBe prepared to protect life and property, especially in areas prone\nto flooding. If flooding develops, move to higher ground immediately.\nIf driving, be prepared for flooded roadways and possible road\nclosures.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ada4caec8ab078582f60d16bc1f273a72ed1fac.002.1",
+        "event": "Tornado Watch",
+        "severity": "Extreme",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-10-10T13:56:00-04:00",
+        "onset": "2026-10-10T13:56:00-04:00",
+        "expires": "2026-10-10T20:00:00-04:00",
+        "ends": "2026-10-10T20:00:00-04:00",
+        "headline": "Tornado Watch issued October 10 at 1:56PM EDT until October 10 at 8:00PM EDT by NWS Charleston SC",
+        "description": "THE NATIONAL WEATHER SERVICE HAS ISSUED TORNADO WATCH 679 IN\nEFFECT UNTIL 8 PM EDT THIS EVENING FOR THE FOLLOWING AREAS\n\nTHIS WATCH INCLUDES THE FOLLOWING ADJACENT COASTAL WATERS\n\nCHARLESTON HARBOR\nCOASTAL WATERS FROM SOUTH SANTEE RIVER TO EDISTO BEACH SC OUT\n20 NM\nCOASTAL WATERS FROM EDISTO BEACH SC TO SAVANNAH GA OUT 20 NM",
+        "instruction": "",
         "sender_name": "NWS Charleston SC"
       },
       {
@@ -2582,5 +2612,5 @@
       "grid_y": 44
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

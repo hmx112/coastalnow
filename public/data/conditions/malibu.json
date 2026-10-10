@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "malibu",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-10T17:23:23+00:00",
+  "generated_at_utc": "2026-10-10T18:50:03+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T17:23:23+00:00"
+      "fetched_at_utc": "2026-10-10T18:50:03+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.22196d7d08bc9965b368d67d251a24fb48b8c882.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-10T11:40:00-07:00",
+        "onset": "2026-10-10T11:40:00-07:00",
+        "expires": "2026-10-10T21:00:00-07:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued October 10 at 11:40AM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "A moist and unstable air mass will bring a slight chance of thunderstorms\nto the coastal waters South of the Channel Islands through this\nevening. Any thunderstorm that forms will be capable of producing\nlocally gale force winds and rough seas, dangerous lightning, and\nheavy rainfall with reduced visibility.",
+        "instruction": "",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d60bdbf80db6e2ea2fcdeea65397bb4098b0e8ce.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -2532,5 +2547,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
