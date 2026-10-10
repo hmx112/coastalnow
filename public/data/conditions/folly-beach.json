@@ -2,66 +2,42 @@
   "schema_version": 1,
   "location": "folly-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-10T10:00:29+00:00",
+  "generated_at_utc": "2026-10-10T12:35:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T10:00:29+00:00"
+      "fetched_at_utc": "2026-10-10T12:35:21+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T10:00:29+00:00"
+      "fetched_at_utc": "2026-10-10T12:35:21+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T10:00:29+00:00"
+      "fetched_at_utc": "2026-10-10T12:35:21+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T05:55:03+00:00"
+      "fetched_at_utc": "2026-10-10T12:34:22+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-10T10:00:29+00:00"
+      "fetched_at_utc": "2026-10-10T12:35:21+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-10T06:00:00-04:00",
-      "wind_mph": 23.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 74.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-10-10T07:00:00-04:00",
-      "wind_mph": 22.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 69.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-10-10T08:00:00-04:00",
       "wind_mph": 18.0,
       "gust_mph": 33.373,
       "wind_direction_deg": 90.0,
       "precip_probability_pct": 91.0,
-      "air_temperature_f": 76.0,
+      "air_temperature_f": 77.0,
       "wave_height_ft": 5.0,
       "wave_period_s": 7.0,
       "water_temperature_f": null,
@@ -73,7 +49,7 @@
       "gust_mph": 32.222,
       "wind_direction_deg": 90.0,
       "precip_probability_pct": 90.0,
-      "air_temperature_f": 76.0,
+      "air_temperature_f": 77.0,
       "wave_height_ft": 5.0,
       "wave_period_s": 7.0,
       "water_temperature_f": null,
@@ -1902,24 +1878,48 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-16T18:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-16T19:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fb0ed5ecb0ea3ebcd815b15c14b8a5145c01191a.001.1",
-        "event": "Special Marine Warning",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4d7f872af91a55bc3c9b34f3a02b89ed0184f94.001.1",
+        "event": "Flash Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
         "urgency": "Immediate",
-        "effective": "2026-10-10T05:59:00-04:00",
-        "onset": "2026-10-10T05:59:00-04:00",
-        "expires": "2026-10-10T06:30:00-04:00",
-        "ends": "2026-10-10T06:30:00-04:00",
-        "headline": "Special Marine Warning issued October 10 at 5:59AM EDT until October 10 at 6:30AM EDT by NWS Charleston SC",
-        "description": "SMWCHS\n\nThe National Weather Service in Charleston has issued a\n\n* Special Marine Warning for...\nCharleston Harbor...\nCoastal waters from South Santee River to Edisto Beach SC out 20\nNM...\n\n* Until 630 AM EDT.\n\n* At 559 AM EDT, a severe thunderstorm capable of producing\nwaterspouts was located over Kiawah Reef, moving north at 15 knots.\n\nHAZARD...Waterspouts and wind gusts to 34 knots.\n\nSOURCE...Radar indicated.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nLowcountry Anglers, Kiawah Reef, Charleston Harbor Entrance, Castle\nPinkney, Wappoo Cut, N. Edisto Nearshore Reef and Crab Bank.",
-        "instruction": "Move to safe harbor until hazardous weather passes.\n\nBoaters should seek safe harbor immediately until this storm passes.\nWind gusts 34 knots or greater, high waves, dangerous lightning, and\nheavy rain are possible with this storm.",
+        "effective": "2026-10-10T07:23:00-04:00",
+        "onset": "2026-10-10T07:23:00-04:00",
+        "expires": "2026-10-10T09:30:00-04:00",
+        "ends": "2026-10-10T09:30:00-04:00",
+        "headline": "Flash Flood Warning issued October 10 at 7:23AM EDT until October 10 at 9:30AM EDT by NWS Charleston SC",
+        "description": "At 723 AM EDT, City of Charleston Emergency Management reported heavy\nrain in Downtown Charleston. Flash flooding is already occurring with\nseveral road closures across the city.\n\nHAZARD...Flash flooding caused by thunderstorms.\n\nSOURCE...City of Charleston Emergency Management reported.\n\nIMPACT...Flash flooding of small creeks and streams, urban areas,\nhighways, streets and underpasses as well as other poor\ndrainage and low-lying areas.\n\nSome locations that will experience flash flooding include...\nNorth Charleston, Mount Pleasant, James Island, Johns Island, West\nAshley, Downtown Charleston, Fort Sumter, Daniel Island, Folly\nBeach and Kiawah Island.\n\nAn area of intense rainfall moved through the Folly Beach, James\nIsland, Johns Island, West Ashley, and Downtown Charleston areas and\nproduced 1 to 2 inches of rain. The heaviest rain has now lifted\nnorthward but light to occasionally moderate rain will continue.\nAdditional rounds of heavy rain could develop through mid morning.\nCity of Charleston Emergency Management reported several roads closed\nacross the Downtown Charleston area and flash flooding is ongoing.\nAdditionally, a inundation depth sensor on Ogier Street near Calhoun\nStreet reported an inundation depth of over half of a foot.",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nReport flooding directly to the Charleston National Weather Service\nat 1-888-383-2024 or email your reports to nws.charlestonsc@noaa.gov.",
         "sender_name": "NWS Charleston SC"
       },
       {
@@ -1971,8 +1971,8 @@
       "start": "2026-10-10",
       "end": "2026-10-16"
     },
-    "generated_at_utc": "2026-10-10T05:55:03+00:00",
-    "generated_at_local": "2026-10-10T01:55:03-04:00",
+    "generated_at_utc": "2026-10-10T12:34:22+00:00",
+    "generated_at_local": "2026-10-10T08:34:22-04:00",
     "hilo": [
       {
         "t": "2026-10-09 01:16",
