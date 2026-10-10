@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "folly-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-10T12:35:21+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-10T12:35:21+00:00",
+  "generated_at_utc": "2026-10-10T14:40:44+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-10T14:40:44+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -19,7 +19,6 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "flash-flood-warning",
       "gale-warning"
     ]
   },
@@ -44,66 +43,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-10T08:00:00-04:00",
-        "components": {
-          "tide": 35.4,
-          "wind": 80,
-          "wave": 75,
-          "weather": 30,
-          "time_of_day": 100,
-          "solunar": 69.6,
-          "water_temperature": null
-        },
-        "raw_quality_score": 58.3,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "flash-flood-warning",
-          "gale-warning",
-          "wave-exposure-caution",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-10T09:00:00-04:00",
-        "components": {
-          "tide": 11.9,
-          "wind": 80,
-          "wave": 75,
-          "weather": 30,
-          "time_of_day": 85,
-          "solunar": 69.6,
-          "water_temperature": null
-        },
-        "raw_quality_score": 49.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "flash-flood-warning",
-          "gale-warning",
-          "wave-exposure-caution",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-10-10T10:00:00-04:00",
         "components": {
           "tide": 62.0,
@@ -115,19 +54,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 64.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 39.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 39.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "gale-warning",
           "wave-exposure-caution",
           "forecast-thunder-cap"
         ]
