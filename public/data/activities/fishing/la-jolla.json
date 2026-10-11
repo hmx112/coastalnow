@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "la-jolla",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-11T02:08:27+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-11T02:08:27+00:00",
+  "generated_at_utc": "2026-10-11T05:49:43+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-11T05:49:43+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -19,10 +19,9 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "tropical-cyclone-local-statement",
       "coastal-flood-warning",
-      "tropical-storm-watch",
-      "marine-weather-statement"
+      "tropical-cyclone-local-statement",
+      "tropical-storm-watch"
     ]
   },
   "tomorrow": {
@@ -38,9 +37,12 @@
       "wet-weather",
       "coastal-flood-warning",
       "flood-watch",
+      "tropical-cyclone-local-statement",
+      "tropical-storm-watch",
+      "wave-exposure-cap-39",
       "wave-exposure-cap-69",
       "worsening-wind",
-      "wave-exposure-cap-39",
+      "wind-cap-59",
       "beach-hazards-statement",
       "coastal-flood-advisory",
       "manageable-sea-state",
@@ -49,96 +51,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-10T19:00:00-07:00",
-        "components": {
-          "tide": 99.8,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 100,
-          "solunar": 69.6,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 89.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "tropical-cyclone-local-statement",
-          "coastal-flood-warning",
-          "tropical-storm-watch",
-          "marine-weather-statement"
-        ]
-      },
-      {
-        "time": "2026-10-10T20:00:00-07:00",
-        "components": {
-          "tide": 83.4,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 69.6,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 80.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "tropical-cyclone-local-statement",
-          "coastal-flood-warning",
-          "tropical-storm-watch"
-        ]
-      },
-      {
-        "time": "2026-10-10T21:00:00-07:00",
-        "components": {
-          "tide": 45.5,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 69.6,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 69.4,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "tropical-cyclone-local-statement",
-          "coastal-flood-warning",
-          "tropical-storm-watch"
-        ]
-      },
       {
         "time": "2026-10-10T22:00:00-07:00",
         "components": {
@@ -163,8 +75,8 @@
           "light-wind",
           "manageable-sea-state",
           "wet-weather",
-          "tropical-cyclone-local-statement",
           "coastal-flood-warning",
+          "tropical-cyclone-local-statement",
           "tropical-storm-watch"
         ]
       },
@@ -193,6 +105,8 @@
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
           "wave-exposure-cap-69"
         ]
       }
@@ -213,6 +127,37 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
+        "safety_cap": 39.0,
+        "safety_penalty": 0,
+        "confidence": "High",
+        "available": true,
+        "ranking_eligible": false,
+        "reasons": [
+          "favorable-tide-movement",
+          "light-wind",
+          "wet-weather",
+          "coastal-flood-warning",
+          "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
+          "wave-exposure-cap-39"
+        ]
+      },
+      {
+        "time": "2026-10-11T01:00:00-07:00",
+        "components": {
+          "tide": 98.6,
+          "wind": 80,
+          "wave": 45,
+          "weather": 30,
+          "time_of_day": 60,
+          "solunar": 70.0,
+          "water_temperature": 75
+        },
+        "raw_quality_score": 70.1,
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 69.0,
         "safety_penalty": 0,
         "confidence": "High",
@@ -224,50 +169,23 @@
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
           "wave-exposure-cap-69"
-        ]
-      },
-      {
-        "time": "2026-10-11T01:00:00-07:00",
-        "components": {
-          "tide": 98.6,
-          "wind": 55,
-          "wave": 45,
-          "weather": 30,
-          "time_of_day": 60,
-          "solunar": 70.0,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 65.1,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "worsening-wind",
-          "wet-weather",
-          "coastal-flood-warning",
-          "flood-watch",
-          "wave-exposure-cap-39"
         ]
       },
       {
         "time": "2026-10-11T02:00:00-07:00",
         "components": {
           "tide": 74.3,
-          "wind": 55,
+          "wind": 80,
           "wave": 45,
           "weather": 30,
           "time_of_day": 60,
           "solunar": 70.0,
           "water_temperature": 75
         },
-        "raw_quality_score": 57.8,
+        "raw_quality_score": 62.8,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -277,10 +195,12 @@
         "available": true,
         "ranking_eligible": false,
         "reasons": [
-          "worsening-wind",
+          "light-wind",
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
           "wave-exposure-cap-39"
         ]
       },
@@ -309,6 +229,8 @@
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
           "wave-exposure-cap-39"
         ]
       },
@@ -337,6 +259,8 @@
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-cyclone-local-statement",
+          "tropical-storm-watch",
           "wave-exposure-cap-39"
         ]
       },
@@ -344,14 +268,14 @@
         "time": "2026-10-11T05:00:00-07:00",
         "components": {
           "tide": 69.2,
-          "wind": 55,
+          "wind": 25,
           "wave": 20,
           "weather": 30,
           "time_of_day": 60,
           "solunar": 70.0,
           "water_temperature": 75
         },
-        "raw_quality_score": 52.5,
+        "raw_quality_score": 46.5,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -365,6 +289,8 @@
           "wet-weather",
           "coastal-flood-warning",
           "flood-watch",
+          "tropical-storm-watch",
+          "wind-cap-59",
           "wave-exposure-cap-39"
         ]
       },
@@ -392,9 +318,10 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
+          "tropical-storm-watch",
           "wave-exposure-cap-39"
         ]
       },
@@ -422,8 +349,8 @@
           "favorable-tide-movement",
           "worsening-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-39"
         ]
@@ -451,8 +378,8 @@
         "reasons": [
           "worsening-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-39"
         ]
@@ -461,14 +388,14 @@
         "time": "2026-10-11T09:00:00-07:00",
         "components": {
           "tide": 35.3,
-          "wind": 55,
+          "wind": 80,
           "wave": 20,
           "weather": 30,
           "time_of_day": 85,
           "solunar": 70.0,
           "water_temperature": 75
         },
-        "raw_quality_score": 44.8,
+        "raw_quality_score": 49.8,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -478,10 +405,10 @@
         "available": true,
         "ranking_eligible": false,
         "reasons": [
-          "worsening-wind",
+          "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-39"
         ]
@@ -509,8 +436,8 @@
         "reasons": [
           "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-39"
         ]
@@ -519,14 +446,14 @@
         "time": "2026-10-11T11:00:00-07:00",
         "components": {
           "tide": 56.4,
-          "wind": 55,
+          "wind": 80,
           "wave": 20,
           "weather": 50,
           "time_of_day": 85,
           "solunar": 70.0,
           "water_temperature": 75
         },
-        "raw_quality_score": 54.2,
+        "raw_quality_score": 59.2,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
@@ -536,10 +463,10 @@
         "available": true,
         "ranking_eligible": false,
         "reasons": [
-          "worsening-wind",
+          "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-39"
         ]
@@ -559,7 +486,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 69.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
@@ -568,10 +495,10 @@
           "favorable-tide-movement",
           "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
-          "wave-exposure-cap-69"
+          "wave-exposure-cap-39"
         ]
       },
       {
@@ -598,8 +525,8 @@
           "favorable-tide-movement",
           "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -628,8 +555,8 @@
           "favorable-tide-movement",
           "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
           "beach-hazards-statement",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -657,9 +584,9 @@
         "reasons": [
           "light-wind",
           "wet-weather",
-          "coastal-flood-warning",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
+          "coastal-flood-warning",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -687,8 +614,8 @@
         "reasons": [
           "light-wind",
           "wet-weather",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -715,8 +642,8 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -743,8 +670,8 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -772,8 +699,8 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -801,8 +728,8 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "flood-watch",
           "wave-exposure-cap-69"
         ]
@@ -829,8 +756,8 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "wave-exposure-cap-69"
         ]
       },
@@ -856,8 +783,8 @@
         "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "coastal-flood-advisory",
           "beach-hazards-statement",
+          "coastal-flood-advisory",
           "wave-exposure-cap-69"
         ]
       },

@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "topsail-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-11T02:08:53+00:00",
+  "generated_at_utc": "2026-10-11T05:50:38+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:08:53+00:00"
+      "fetched_at_utc": "2026-10-11T05:50:38+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:08:53+00:00"
+      "fetched_at_utc": "2026-10-11T05:50:38+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:08:53+00:00"
+      "fetched_at_utc": "2026-10-11T05:50:38+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T21:46:08+00:00"
+      "fetched_at_utc": "2026-10-11T05:49:23+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-11T02:08:53+00:00"
+      "fetched_at_utc": "2026-10-11T05:50:38+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-10T22:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 36.825,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 79.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-10T23:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 80.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-11T00:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 78.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-11T01:00:00-04:00",
       "wind_mph": 14.0,
@@ -1902,53 +1866,89 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T10:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 24.166,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 8.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T11:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 24.166,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 8.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T12:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 25.317,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 8.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4faa36bcaf6cbf9d2832c5fe8b37ad3aaad32662.002.4",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-10T20:05:00-04:00",
-        "onset": "2026-10-10T20:05:00-04:00",
-        "expires": "2026-10-10T23:00:00-04:00",
-        "ends": "2026-10-11T08:00:00-04:00",
-        "headline": "High Surf Advisory issued October 10 at 8:05PM EDT until October 11 at 8:00AM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 3 to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents expected. Strong south to north\nlongshore current.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the Coastal Flood Advisory, until 11 PM EDT this\nevening. For the High Surf Advisory, until 8 AM EDT Sunday.\nFor the High Rip Current Risk, from 6 AM EDT Sunday through\nSunday evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Wilmington NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4faa36bcaf6cbf9d2832c5fe8b37ad3aaad32662.002.3",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-10T20:05:00-04:00",
-        "onset": "2026-10-10T20:05:00-04:00",
-        "expires": "2026-10-10T23:00:00-04:00",
-        "ends": "2026-10-10T23:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 10 at 8:05PM EDT until October 10 at 11:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 3 to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents expected. Strong south to north\nlongshore current.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the Coastal Flood Advisory, until 11 PM EDT this\nevening. For the High Surf Advisory, until 8 AM EDT Sunday.\nFor the High Rip Current Risk, from 6 AM EDT Sunday through\nSunday evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Wilmington NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4faa36bcaf6cbf9d2832c5fe8b37ad3aaad32662.002.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94ab24cb8f54ef318fca914d311af15654f8bb2f.002.3",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-10T20:05:00-04:00",
+        "effective": "2026-10-11T01:47:00-04:00",
         "onset": "2026-10-11T06:00:00-04:00",
-        "expires": "2026-10-10T23:00:00-04:00",
+        "expires": "2026-10-11T08:00:00-04:00",
         "ends": "2026-10-11T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 10 at 8:05PM EDT until October 11 at 8:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 3 to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents expected. Strong south to north\nlongshore current.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the Coastal Flood Advisory, until 11 PM EDT this\nevening. For the High Surf Advisory, until 8 AM EDT Sunday.\nFor the High Rip Current Risk, from 6 AM EDT Sunday through\nSunday evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "headline": "Rip Current Statement issued October 11 at 1:47AM EDT until October 11 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 2\nto 5 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents expected. For the Coastal Flood\nAdvisory, up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the High Surf Advisory, until 8 AM EDT this\nmorning. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the Coastal Flood Advisory,\nfrom 7 AM to 10 AM EDT this morning.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Wilmington NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94ab24cb8f54ef318fca914d311af15654f8bb2f.002.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-11T01:47:00-04:00",
+        "onset": "2026-10-11T07:00:00-04:00",
+        "expires": "2026-10-11T08:00:00-04:00",
+        "ends": "2026-10-11T10:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 11 at 1:47AM EDT until October 11 at 10:00AM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 2\nto 5 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents expected. For the Coastal Flood\nAdvisory, up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the High Surf Advisory, until 8 AM EDT this\nmorning. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the Coastal Flood Advisory,\nfrom 7 AM to 10 AM EDT this morning.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Wilmington NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94ab24cb8f54ef318fca914d311af15654f8bb2f.002.1",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-11T01:47:00-04:00",
+        "onset": "2026-10-11T01:47:00-04:00",
+        "expires": "2026-10-11T08:00:00-04:00",
+        "ends": "2026-10-11T08:00:00-04:00",
+        "headline": "High Surf Advisory issued October 11 at 1:47AM EDT until October 11 at 8:00AM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 2\nto 5 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents expected. For the Coastal Flood\nAdvisory, up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Pender and Coastal New Hanover Counties.\n\n* WHEN...For the High Surf Advisory, until 8 AM EDT this\nmorning. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the Coastal Flood Advisory,\nfrom 7 AM to 10 AM EDT this morning.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Wilmington NC"
       },
@@ -1968,18 +1968,18 @@
         "sender_name": "NWS Wilmington NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ed918fef0c55028ed50ddce377da350e8399f714.003.1",
-        "event": "Gale Warning",
-        "severity": "Moderate",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6ed90a111b5a221ebfd83aa0a322e55591862103.001.2",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-10T18:23:00-04:00",
-        "onset": "2026-10-10T18:23:00-04:00",
-        "expires": "2026-10-10T23:00:00-04:00",
-        "ends": "2026-10-10T23:00:00-04:00",
-        "headline": "Gale Warning issued October 10 at 6:23PM EDT until October 10 at 11:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...East winds 15 to 25 kt with gusts up to 35 kt and seas\n6 to 9 ft.\n\n* WHERE...Waters from Surf City NC to Little River Inlet SC out\n60 NM.\n\n* WHEN...Until 11 PM EDT this evening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
+        "effective": "2026-10-10T22:53:00-04:00",
+        "onset": "2026-10-10T23:00:00-04:00",
+        "expires": "2026-10-11T04:00:00-04:00",
+        "ends": "2026-10-12T08:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 10 at 10:53PM EDT until October 12 at 8:00AM EDT by NWS Wilmington NC",
+        "description": "* WHAT...Southwest winds 15 to 25 kt with gusts up to 30 kt and\nseas 4 to 7 ft expected.\n\n* WHERE...Southeast North Carolina coastal waters out 20 NM.\n\n* WHEN...Until 8 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Wilmington NC"
       }
     ]
@@ -2013,32 +2013,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-10-10",
-      "end": "2026-10-16"
+      "start": "2026-10-11",
+      "end": "2026-10-17"
     },
-    "generated_at_utc": "2026-10-10T21:46:08+00:00",
-    "generated_at_local": "2026-10-10T17:46:07-04:00",
+    "generated_at_utc": "2026-10-11T05:49:23+00:00",
+    "generated_at_local": "2026-10-11T01:49:23-04:00",
     "hilo": [
-      {
-        "t": "2026-10-09 00:40",
-        "v": 0.191,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-09 06:58",
-        "v": 5.349,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-09 13:09",
-        "v": 0.141,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-09 19:19",
-        "v": 4.981,
-        "type": "H"
-      },
       {
         "t": "2026-10-10 01:19",
         "v": 0.14,
@@ -2193,201 +2173,29 @@
         "t": "2026-10-17 19:28",
         "v": 1.417,
         "type": "L"
+      },
+      {
+        "t": "2026-10-18 01:11",
+        "v": 3.305,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-18 06:56",
+        "v": 1.333,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-18 13:47",
+        "v": 4.383,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-18 20:27",
+        "v": 1.428,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-10 00:00",
-        "v": 0.693
-      },
-      {
-        "t": "2026-10-10 00:30",
-        "v": 0.358
-      },
-      {
-        "t": "2026-10-10 01:00",
-        "v": 0.173
-      },
-      {
-        "t": "2026-10-10 01:30",
-        "v": 0.151
-      },
-      {
-        "t": "2026-10-10 02:00",
-        "v": 0.292
-      },
-      {
-        "t": "2026-10-10 02:30",
-        "v": 0.588
-      },
-      {
-        "t": "2026-10-10 03:00",
-        "v": 1.02
-      },
-      {
-        "t": "2026-10-10 03:30",
-        "v": 1.563
-      },
-      {
-        "t": "2026-10-10 04:00",
-        "v": 2.183
-      },
-      {
-        "t": "2026-10-10 04:30",
-        "v": 2.843
-      },
-      {
-        "t": "2026-10-10 05:00",
-        "v": 3.504
-      },
-      {
-        "t": "2026-10-10 05:30",
-        "v": 4.124
-      },
-      {
-        "t": "2026-10-10 06:00",
-        "v": 4.667
-      },
-      {
-        "t": "2026-10-10 06:30",
-        "v": 5.099
-      },
-      {
-        "t": "2026-10-10 07:00",
-        "v": 5.395
-      },
-      {
-        "t": "2026-10-10 07:30",
-        "v": 5.536
-      },
-      {
-        "t": "2026-10-10 08:00",
-        "v": 5.513
-      },
-      {
-        "t": "2026-10-10 08:30",
-        "v": 5.323
-      },
-      {
-        "t": "2026-10-10 09:00",
-        "v": 4.978
-      },
-      {
-        "t": "2026-10-10 09:30",
-        "v": 4.499
-      },
-      {
-        "t": "2026-10-10 10:00",
-        "v": 3.916
-      },
-      {
-        "t": "2026-10-10 10:30",
-        "v": 3.266
-      },
-      {
-        "t": "2026-10-10 11:00",
-        "v": 2.591
-      },
-      {
-        "t": "2026-10-10 11:30",
-        "v": 1.931
-      },
-      {
-        "t": "2026-10-10 12:00",
-        "v": 1.329
-      },
-      {
-        "t": "2026-10-10 12:30",
-        "v": 0.823
-      },
-      {
-        "t": "2026-10-10 13:00",
-        "v": 0.444
-      },
-      {
-        "t": "2026-10-10 13:30",
-        "v": 0.217
-      },
-      {
-        "t": "2026-10-10 14:00",
-        "v": 0.154
-      },
-      {
-        "t": "2026-10-10 14:30",
-        "v": 0.252
-      },
-      {
-        "t": "2026-10-10 15:00",
-        "v": 0.497
-      },
-      {
-        "t": "2026-10-10 15:30",
-        "v": 0.874
-      },
-      {
-        "t": "2026-10-10 16:00",
-        "v": 1.358
-      },
-      {
-        "t": "2026-10-10 16:30",
-        "v": 1.915
-      },
-      {
-        "t": "2026-10-10 17:00",
-        "v": 2.509
-      },
-      {
-        "t": "2026-10-10 17:30",
-        "v": 3.101
-      },
-      {
-        "t": "2026-10-10 18:00",
-        "v": 3.651
-      },
-      {
-        "t": "2026-10-10 18:30",
-        "v": 4.122
-      },
-      {
-        "t": "2026-10-10 19:00",
-        "v": 4.482
-      },
-      {
-        "t": "2026-10-10 19:30",
-        "v": 4.709
-      },
-      {
-        "t": "2026-10-10 20:00",
-        "v": 4.786
-      },
-      {
-        "t": "2026-10-10 20:30",
-        "v": 4.706
-      },
-      {
-        "t": "2026-10-10 21:00",
-        "v": 4.47
-      },
-      {
-        "t": "2026-10-10 21:30",
-        "v": 4.096
-      },
-      {
-        "t": "2026-10-10 22:00",
-        "v": 3.609
-      },
-      {
-        "t": "2026-10-10 22:30",
-        "v": 3.044
-      },
-      {
-        "t": "2026-10-10 23:00",
-        "v": 2.439
-      },
-      {
-        "t": "2026-10-10 23:30",
-        "v": 1.837
-      },
       {
         "t": "2026-10-11 00:00",
         "v": 1.28
@@ -2579,20 +2387,203 @@
       {
         "t": "2026-10-11 23:30",
         "v": 2.547
+      },
+      {
+        "t": "2026-10-12 00:00",
+        "v": 1.979
+      },
+      {
+        "t": "2026-10-12 00:30",
+        "v": 1.442
+      },
+      {
+        "t": "2026-10-12 01:00",
+        "v": 0.974
+      },
+      {
+        "t": "2026-10-12 01:30",
+        "v": 0.609
+      },
+      {
+        "t": "2026-10-12 02:00",
+        "v": 0.373
+      },
+      {
+        "t": "2026-10-12 02:30",
+        "v": 0.282
+      },
+      {
+        "t": "2026-10-12 03:00",
+        "v": 0.344
+      },
+      {
+        "t": "2026-10-12 03:30",
+        "v": 0.557
+      },
+      {
+        "t": "2026-10-12 04:00",
+        "v": 0.909
+      },
+      {
+        "t": "2026-10-12 04:30",
+        "v": 1.379
+      },
+      {
+        "t": "2026-10-12 05:00",
+        "v": 1.939
+      },
+      {
+        "t": "2026-10-12 05:30",
+        "v": 2.558
+      },
+      {
+        "t": "2026-10-12 06:00",
+        "v": 3.198
+      },
+      {
+        "t": "2026-10-12 06:30",
+        "v": 3.823
+      },
+      {
+        "t": "2026-10-12 07:00",
+        "v": 4.395
+      },
+      {
+        "t": "2026-10-12 07:30",
+        "v": 4.883
+      },
+      {
+        "t": "2026-10-12 08:00",
+        "v": 5.256
+      },
+      {
+        "t": "2026-10-12 08:30",
+        "v": 5.493
+      },
+      {
+        "t": "2026-10-12 09:00",
+        "v": 5.581
+      },
+      {
+        "t": "2026-10-12 09:30",
+        "v": 5.513
+      },
+      {
+        "t": "2026-10-12 10:00",
+        "v": 5.292
+      },
+      {
+        "t": "2026-10-12 10:30",
+        "v": 4.931
+      },
+      {
+        "t": "2026-10-12 11:00",
+        "v": 4.453
+      },
+      {
+        "t": "2026-10-12 11:30",
+        "v": 3.887
+      },
+      {
+        "t": "2026-10-12 12:00",
+        "v": 3.266
+      },
+      {
+        "t": "2026-10-12 12:30",
+        "v": 2.628
+      },
+      {
+        "t": "2026-10-12 13:00",
+        "v": 2.012
+      },
+      {
+        "t": "2026-10-12 13:30",
+        "v": 1.455
+      },
+      {
+        "t": "2026-10-12 14:00",
+        "v": 0.991
+      },
+      {
+        "t": "2026-10-12 14:30",
+        "v": 0.648
+      },
+      {
+        "t": "2026-10-12 15:00",
+        "v": 0.447
+      },
+      {
+        "t": "2026-10-12 15:30",
+        "v": 0.4
+      },
+      {
+        "t": "2026-10-12 16:00",
+        "v": 0.494
+      },
+      {
+        "t": "2026-10-12 16:30",
+        "v": 0.717
+      },
+      {
+        "t": "2026-10-12 17:00",
+        "v": 1.053
+      },
+      {
+        "t": "2026-10-12 17:30",
+        "v": 1.479
+      },
+      {
+        "t": "2026-10-12 18:00",
+        "v": 1.965
+      },
+      {
+        "t": "2026-10-12 18:30",
+        "v": 2.477
+      },
+      {
+        "t": "2026-10-12 19:00",
+        "v": 2.979
+      },
+      {
+        "t": "2026-10-12 19:30",
+        "v": 3.436
+      },
+      {
+        "t": "2026-10-12 20:00",
+        "v": 3.818
+      },
+      {
+        "t": "2026-10-12 20:30",
+        "v": 4.096
+      },
+      {
+        "t": "2026-10-12 21:00",
+        "v": 4.252
+      },
+      {
+        "t": "2026-10-12 21:30",
+        "v": 4.274
+      },
+      {
+        "t": "2026-10-12 22:00",
+        "v": 4.158
+      },
+      {
+        "t": "2026-10-12 22:30",
+        "v": 3.912
+      },
+      {
+        "t": "2026-10-12 23:00",
+        "v": 3.552
+      },
+      {
+        "t": "2026-10-12 23:30",
+        "v": 3.106
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-10T06:46:33.780708-04:00",
-      "civil_dawn": "2026-10-10T06:46:33.780708-04:00",
-      "sunrise": "2026-10-10T07:11:43.718699-04:00",
-      "sunset": "2026-10-10T18:42:51.576878-04:00",
-      "dusk": "2026-10-10T19:08:02.128586-04:00",
-      "civil_dusk": "2026-10-10T19:08:02.128586-04:00",
-      "moon_phase_fraction": 0.970046
-    },
-    "tomorrow": {
       "dawn": "2026-10-11T06:47:19.692348-04:00",
       "civil_dawn": "2026-10-11T06:47:19.692348-04:00",
       "sunrise": "2026-10-11T07:12:30.881242-04:00",
@@ -2600,6 +2591,15 @@
       "dusk": "2026-10-11T19:06:45.139925-04:00",
       "civil_dusk": "2026-10-11T19:06:45.139925-04:00",
       "moon_phase_fraction": 0.003909
+    },
+    "tomorrow": {
+      "dawn": "2026-10-12T06:48:05.842304-04:00",
+      "civil_dawn": "2026-10-12T06:48:05.842304-04:00",
+      "sunrise": "2026-10-12T07:13:18.375412-04:00",
+      "sunset": "2026-10-12T18:40:15.654303-04:00",
+      "dusk": "2026-10-12T19:05:28.894150-04:00",
+      "civil_dusk": "2026-10-12T19:05:28.894150-04:00",
+      "moon_phase_fraction": 0.037772
     }
   },
   "points": {
@@ -2632,5 +2632,5 @@
       "grid_y": 82
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

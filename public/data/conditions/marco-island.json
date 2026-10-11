@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "marco-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-11T02:10:00+00:00",
+  "generated_at_utc": "2026-10-11T05:51:57+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:10:00+00:00"
+      "fetched_at_utc": "2026-10-11T05:51:57+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:10:00+00:00"
+      "fetched_at_utc": "2026-10-11T05:51:57+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T02:10:00+00:00"
+      "fetched_at_utc": "2026-10-11T05:51:57+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-10T21:46:20+00:00"
+      "fetched_at_utc": "2026-10-11T05:49:37+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-11T02:10:00+00:00"
+      "fetched_at_utc": "2026-10-11T05:51:57+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-10T22:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 35.0,
-      "air_temperature_f": 82.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-10T23:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 38.0,
-      "air_temperature_f": 82.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-11T00:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 40.0,
-      "air_temperature_f": 81.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-11T01:00:00-04:00",
       "wind_mph": 8.0,
@@ -1902,23 +1866,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T10:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T11:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 81.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-17T12:00:00-04:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 83.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1fd169cf2fd796d7f82405498c6d48173439b294.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.74d8f49ce68603a096f865e4e9b0838c71337fdd.001.1",
         "event": "Coastal Flood Statement",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-10T21:01:00-04:00",
-        "onset": "2026-10-10T21:01:00-04:00",
-        "expires": "2026-10-11T12:00:00-04:00",
-        "ends": "2026-10-11T12:00:00-04:00",
-        "headline": "Coastal Flood Statement issued October 10 at 9:01PM EDT until October 11 at 12:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the Coastal Flood Statement, isolated minor coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Collier County.\n\n* WHEN...For the Coastal Flood Statement, through Sunday\nmorning. For the High Rip Current Risk, through this evening.\n\n* IMPACTS...Some water on low lying roads and property. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.",
+        "effective": "2026-10-11T01:40:00-04:00",
+        "onset": "2026-10-11T01:40:00-04:00",
+        "expires": "2026-10-11T20:00:00-04:00",
+        "ends": "2026-10-12T12:00:00-04:00",
+        "headline": "Coastal Flood Statement issued October 11 at 1:40AM EDT until October 12 at 12:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...Isolated minor coastal flooding during high tide.\n\n* WHERE...Mainland Monroe, Coastal Broward County, Coastal Palm\nBeach County, Coastal Collier County, Coastal Miami Dade County\nand Far South Miami-Dade County.\n\n* WHEN...Through Monday morning.\n\n* IMPACTS...Some water on low lying roads and property.",
         "instruction": "Do not drive through flooded roadways.",
         "sender_name": "NWS Miami FL"
       }
@@ -1953,32 +1953,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-10-10",
-      "end": "2026-10-16"
+      "start": "2026-10-11",
+      "end": "2026-10-17"
     },
-    "generated_at_utc": "2026-10-10T21:46:20+00:00",
-    "generated_at_local": "2026-10-10T17:46:19-04:00",
+    "generated_at_utc": "2026-10-11T05:49:37+00:00",
+    "generated_at_local": "2026-10-11T01:49:37-04:00",
     "hilo": [
-      {
-        "t": "2026-10-10 00:41",
-        "v": 3.386,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-10 07:06",
-        "v": 0.284,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-10 13:30",
-        "v": 3.214,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-10 19:13",
-        "v": 1.136,
-        "type": "L"
-      },
       {
         "t": "2026-10-11 01:09",
         "v": 3.44,
@@ -2118,201 +2098,24 @@
         "t": "2026-10-17 23:18",
         "v": 2.16,
         "type": "L"
+      },
+      {
+        "t": "2026-10-18 04:57",
+        "v": 2.688,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-18 13:16",
+        "v": 0.945,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-18 20:52",
+        "v": 2.326,
+        "type": "H"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-10 00:00",
-        "v": 3.298
-      },
-      {
-        "t": "2026-10-10 00:30",
-        "v": 3.38
-      },
-      {
-        "t": "2026-10-10 01:00",
-        "v": 3.367
-      },
-      {
-        "t": "2026-10-10 01:30",
-        "v": 3.263
-      },
-      {
-        "t": "2026-10-10 02:00",
-        "v": 3.079
-      },
-      {
-        "t": "2026-10-10 02:30",
-        "v": 2.828
-      },
-      {
-        "t": "2026-10-10 03:00",
-        "v": 2.522
-      },
-      {
-        "t": "2026-10-10 03:30",
-        "v": 2.175
-      },
-      {
-        "t": "2026-10-10 04:00",
-        "v": 1.801
-      },
-      {
-        "t": "2026-10-10 04:30",
-        "v": 1.423
-      },
-      {
-        "t": "2026-10-10 05:00",
-        "v": 1.065
-      },
-      {
-        "t": "2026-10-10 05:30",
-        "v": 0.754
-      },
-      {
-        "t": "2026-10-10 06:00",
-        "v": 0.511
-      },
-      {
-        "t": "2026-10-10 06:30",
-        "v": 0.353
-      },
-      {
-        "t": "2026-10-10 07:00",
-        "v": 0.286
-      },
-      {
-        "t": "2026-10-10 07:30",
-        "v": 0.312
-      },
-      {
-        "t": "2026-10-10 08:00",
-        "v": 0.426
-      },
-      {
-        "t": "2026-10-10 08:30",
-        "v": 0.616
-      },
-      {
-        "t": "2026-10-10 09:00",
-        "v": 0.87
-      },
-      {
-        "t": "2026-10-10 09:30",
-        "v": 1.171
-      },
-      {
-        "t": "2026-10-10 10:00",
-        "v": 1.503
-      },
-      {
-        "t": "2026-10-10 10:30",
-        "v": 1.853
-      },
-      {
-        "t": "2026-10-10 11:00",
-        "v": 2.203
-      },
-      {
-        "t": "2026-10-10 11:30",
-        "v": 2.533
-      },
-      {
-        "t": "2026-10-10 12:00",
-        "v": 2.819
-      },
-      {
-        "t": "2026-10-10 12:30",
-        "v": 3.037
-      },
-      {
-        "t": "2026-10-10 13:00",
-        "v": 3.17
-      },
-      {
-        "t": "2026-10-10 13:30",
-        "v": 3.214
-      },
-      {
-        "t": "2026-10-10 14:00",
-        "v": 3.173
-      },
-      {
-        "t": "2026-10-10 14:30",
-        "v": 3.058
-      },
-      {
-        "t": "2026-10-10 15:00",
-        "v": 2.884
-      },
-      {
-        "t": "2026-10-10 15:30",
-        "v": 2.66
-      },
-      {
-        "t": "2026-10-10 16:00",
-        "v": 2.4
-      },
-      {
-        "t": "2026-10-10 16:30",
-        "v": 2.119
-      },
-      {
-        "t": "2026-10-10 17:00",
-        "v": 1.838
-      },
-      {
-        "t": "2026-10-10 17:30",
-        "v": 1.58
-      },
-      {
-        "t": "2026-10-10 18:00",
-        "v": 1.368
-      },
-      {
-        "t": "2026-10-10 18:30",
-        "v": 1.219
-      },
-      {
-        "t": "2026-10-10 19:00",
-        "v": 1.144
-      },
-      {
-        "t": "2026-10-10 19:30",
-        "v": 1.149
-      },
-      {
-        "t": "2026-10-10 20:00",
-        "v": 1.231
-      },
-      {
-        "t": "2026-10-10 20:30",
-        "v": 1.385
-      },
-      {
-        "t": "2026-10-10 21:00",
-        "v": 1.598
-      },
-      {
-        "t": "2026-10-10 21:30",
-        "v": 1.855
-      },
-      {
-        "t": "2026-10-10 22:00",
-        "v": 2.138
-      },
-      {
-        "t": "2026-10-10 22:30",
-        "v": 2.432
-      },
-      {
-        "t": "2026-10-10 23:00",
-        "v": 2.72
-      },
-      {
-        "t": "2026-10-10 23:30",
-        "v": 2.984
-      },
       {
         "t": "2026-10-11 00:00",
         "v": 3.205
@@ -2504,20 +2307,203 @@
       {
         "t": "2026-10-11 23:30",
         "v": 2.799
+      },
+      {
+        "t": "2026-10-12 00:00",
+        "v": 3.038
+      },
+      {
+        "t": "2026-10-12 00:30",
+        "v": 3.234
+      },
+      {
+        "t": "2026-10-12 01:00",
+        "v": 3.37
+      },
+      {
+        "t": "2026-10-12 01:30",
+        "v": 3.431
+      },
+      {
+        "t": "2026-10-12 02:00",
+        "v": 3.405
+      },
+      {
+        "t": "2026-10-12 02:30",
+        "v": 3.288
+      },
+      {
+        "t": "2026-10-12 03:00",
+        "v": 3.086
+      },
+      {
+        "t": "2026-10-12 03:30",
+        "v": 2.815
+      },
+      {
+        "t": "2026-10-12 04:00",
+        "v": 2.493
+      },
+      {
+        "t": "2026-10-12 04:30",
+        "v": 2.137
+      },
+      {
+        "t": "2026-10-12 05:00",
+        "v": 1.764
+      },
+      {
+        "t": "2026-10-12 05:30",
+        "v": 1.388
+      },
+      {
+        "t": "2026-10-12 06:00",
+        "v": 1.028
+      },
+      {
+        "t": "2026-10-12 06:30",
+        "v": 0.704
+      },
+      {
+        "t": "2026-10-12 07:00",
+        "v": 0.434
+      },
+      {
+        "t": "2026-10-12 07:30",
+        "v": 0.235
+      },
+      {
+        "t": "2026-10-12 08:00",
+        "v": 0.121
+      },
+      {
+        "t": "2026-10-12 08:30",
+        "v": 0.098
+      },
+      {
+        "t": "2026-10-12 09:00",
+        "v": 0.169
+      },
+      {
+        "t": "2026-10-12 09:30",
+        "v": 0.33
+      },
+      {
+        "t": "2026-10-12 10:00",
+        "v": 0.568
+      },
+      {
+        "t": "2026-10-12 10:30",
+        "v": 0.866
+      },
+      {
+        "t": "2026-10-12 11:00",
+        "v": 1.199
+      },
+      {
+        "t": "2026-10-12 11:30",
+        "v": 1.545
+      },
+      {
+        "t": "2026-10-12 12:00",
+        "v": 1.887
+      },
+      {
+        "t": "2026-10-12 12:30",
+        "v": 2.209
+      },
+      {
+        "t": "2026-10-12 13:00",
+        "v": 2.497
+      },
+      {
+        "t": "2026-10-12 13:30",
+        "v": 2.735
+      },
+      {
+        "t": "2026-10-12 14:00",
+        "v": 2.908
+      },
+      {
+        "t": "2026-10-12 14:30",
+        "v": 3.004
+      },
+      {
+        "t": "2026-10-12 15:00",
+        "v": 3.02
+      },
+      {
+        "t": "2026-10-12 15:30",
+        "v": 2.962
+      },
+      {
+        "t": "2026-10-12 16:00",
+        "v": 2.845
+      },
+      {
+        "t": "2026-10-12 16:30",
+        "v": 2.685
+      },
+      {
+        "t": "2026-10-12 17:00",
+        "v": 2.496
+      },
+      {
+        "t": "2026-10-12 17:30",
+        "v": 2.292
+      },
+      {
+        "t": "2026-10-12 18:00",
+        "v": 2.084
+      },
+      {
+        "t": "2026-10-12 18:30",
+        "v": 1.886
+      },
+      {
+        "t": "2026-10-12 19:00",
+        "v": 1.712
+      },
+      {
+        "t": "2026-10-12 19:30",
+        "v": 1.579
+      },
+      {
+        "t": "2026-10-12 20:00",
+        "v": 1.5
+      },
+      {
+        "t": "2026-10-12 20:30",
+        "v": 1.486
+      },
+      {
+        "t": "2026-10-12 21:00",
+        "v": 1.542
+      },
+      {
+        "t": "2026-10-12 21:30",
+        "v": 1.667
+      },
+      {
+        "t": "2026-10-12 22:00",
+        "v": 1.855
+      },
+      {
+        "t": "2026-10-12 22:30",
+        "v": 2.088
+      },
+      {
+        "t": "2026-10-12 23:00",
+        "v": 2.346
+      },
+      {
+        "t": "2026-10-12 23:30",
+        "v": 2.606
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-10T07:00:06.688976-04:00",
-      "civil_dawn": "2026-10-10T07:00:06.688976-04:00",
-      "sunrise": "2026-10-10T07:23:12.663639-04:00",
-      "sunset": "2026-10-10T19:04:18.437365-04:00",
-      "dusk": "2026-10-10T19:27:24.930082-04:00",
-      "civil_dusk": "2026-10-10T19:27:24.930082-04:00",
-      "moon_phase_fraction": 0.970046
-    },
-    "tomorrow": {
       "dawn": "2026-10-11T07:00:34.559197-04:00",
       "civil_dawn": "2026-10-11T07:00:34.559197-04:00",
       "sunrise": "2026-10-11T07:23:41.588000-04:00",
@@ -2525,6 +2511,15 @@
       "dusk": "2026-10-11T19:26:25.966006-04:00",
       "civil_dusk": "2026-10-11T19:26:25.966006-04:00",
       "moon_phase_fraction": 0.003909
+    },
+    "tomorrow": {
+      "dawn": "2026-10-12T07:01:02.724106-04:00",
+      "civil_dawn": "2026-10-12T07:01:02.724106-04:00",
+      "sunrise": "2026-10-12T07:24:10.878704-04:00",
+      "sunset": "2026-10-12T19:02:18.943407-04:00",
+      "dusk": "2026-10-12T19:25:27.687469-04:00",
+      "civil_dusk": "2026-10-12T19:25:27.687469-04:00",
+      "moon_phase_fraction": 0.037772
     }
   },
   "points": {
@@ -2557,5 +2552,5 @@
       "grid_y": 50
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
