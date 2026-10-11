@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-11T19:37:33+00:00",
+  "generated_at_utc": "2026-10-11T20:32:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-11T19:37:33+00:00"
+      "fetched_at_utc": "2026-10-11T20:32:09+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aa802d8a98eaf80a1ca4590a6ff4f064e08bd77a.001.1",
-        "event": "Rip Current Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-11T10:38:00-05:00",
-        "onset": "2026-10-11T10:38:00-05:00",
-        "expires": "2026-10-11T18:00:00-05:00",
-        "ends": "2026-10-11T18:00:00-05:00",
-        "headline": "Rip Current Statement issued October 11 at 10:38AM CDT until October 11 at 6:00PM CDT by NWS Mobile AL",
-        "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...Until 6 PM CDT this evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
-        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Mobile AL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2482,5 +2466,5 @@
       "grid_y": 55
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
