@@ -3,7 +3,7 @@
 These regression tests run after production-equivalent generation/build, so
 content must survive every scheduled tide regeneration, not just source config.
 """
-import re
+from html import escape
 import unittest
 from pathlib import Path
 
@@ -68,7 +68,7 @@ class GscQualityPilotTests(unittest.TestCase):
                 context = location["search_context"]
                 self.assertEqual(html.count("<!-- SEARCH_CONTEXT_START -->"), 1)
                 self.assertIn(context["title"], html)
-                self.assertIn(context["paragraphs"][0], html)
+                self.assertIn(escape(context["paragraphs"][0]), html)
                 self.assertIn('<meta name="robots" content="index,follow">', html)
                 self.assertIn(
                     f'<link rel="canonical" href="{canonical_url(location["page_path"])}">',
