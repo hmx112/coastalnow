@@ -51,5 +51,36 @@ class StateLandingTests(unittest.TestCase):
         self.assertTrue({"key-biscayne", "west-palm-beach", "fort-myers-beach", "pompano-beach", "marco-island", "sarasota"} <= slugs)
 
 
+    def test_north_carolina_directory_groups_outer_banks_and_southern_shores(self):
+        html = build_directory_pages()["tides/north-carolina/index.html"]
+        self.assertIn("Outer Banks Tide Times", html)
+        self.assertIn("Crystal Coast and Southern North Carolina Tides", html)
+        self.assertIn("Cape Hatteras", html)
+        self.assertIn("Wrightsville Beach", html)
+        self.assertIn("All tide locations", html)
+
+    def test_south_carolina_and_oregon_have_useful_directory_guides(self):
+        pages = build_directory_pages()
+        self.assertIn("Grand Strand Tide Times", pages["tides/south-carolina/index.html"])
+        self.assertIn("Charleston Area and Lowcountry Tides", pages["tides/south-carolina/index.html"])
+        self.assertIn("Northern Oregon Coast Tides", pages["tides/oregon/index.html"])
+        self.assertIn("Central Oregon Coast Tides", pages["tides/oregon/index.html"])
+        for state in ("south-carolina", "oregon"):
+            self.assertIn("All tide locations", pages[f"tides/{state}/index.html"])
+
+    def test_new_state_regions_cover_each_live_location_once(self):
+        from locations import LOCATIONS
+        for state in ("north-carolina", "south-carolina", "oregon"):
+            config = STATE_LANDING[state]
+            grouped = [slug for region in config["regions"] for slug in region["slugs"]]
+            expected = {
+                loc["slug"] for loc in LOCATIONS.values()
+                if loc["state_slug"] == state and loc["status"] == "Live NOAA"
+            }
+            self.assertEqual(set(grouped), expected, state)
+            self.assertEqual(len(grouped), len(set(grouped)), state)
+
+
+
 if __name__ == "__main__":
     unittest.main()
