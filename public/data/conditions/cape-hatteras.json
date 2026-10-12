@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cape-hatteras",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-12T21:19:53+00:00",
+  "generated_at_utc": "2026-10-12T23:11:10+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-12T21:19:53+00:00"
+      "fetched_at_utc": "2026-10-12T23:11:10+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b93866896f848d3452dd538a777a1e2f516a6940.003.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-12T11:42:00-04:00",
-        "onset": "2026-10-12T11:42:00-04:00",
-        "expires": "2026-10-12T19:00:00-04:00",
-        "ends": "2026-10-12T19:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 12 at 11:42AM EDT until October 12 at 7:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Northwest winds 15 to 25 kt with gusts up to 30 kt and\nseas 4 to 7 ft.\n\n* WHERE...The coastal waters from Oregon Inlet to Ocracoke Inlet.\n\n* WHEN...Until 7 PM EDT this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 85
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
