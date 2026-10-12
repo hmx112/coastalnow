@@ -109,6 +109,93 @@ STATE_LANDING = {
             },
         ],
     },
+    "north-carolina": {
+        "featured_title": "Featured North Carolina tide locations",
+        "featured": ["nags-head", "cape-hatteras", "wrightsville-beach", "emerald-isle"],
+        "guide_title": "North Carolina tides: Outer Banks and southern beaches",
+        "intro": (
+            "Find today's high and low tides on North Carolina's Outer Banks and "
+            "southern beaches. Tidal timing and height differ from place to place, "
+            "especially across inlets and ocean-facing shorelines. Open a location "
+            "for the seven-day NOAA prediction, its reference station and any "
+            "nearby-station limitations before planning a coastal visit."
+        ),
+        "meta_description": (
+            "Compare North Carolina tide times, high and low tides and 7-day "
+            "charts for Outer Banks, Crystal Coast and southern beach locations."
+        ),
+        "regions": [
+            {
+                "key": "outer-banks",
+                "title": "Outer Banks Tide Times",
+                "slugs": ["corolla", "kitty-hawk", "kill-devil-hills", "nags-head",
+                          "cape-hatteras", "ocracoke"],
+            },
+            {
+                "key": "southern-north-carolina",
+                "title": "Crystal Coast and Southern North Carolina Tides",
+                "slugs": ["emerald-isle", "topsail-beach", "wrightsville-beach",
+                          "carolina-beach", "holden-beach"],
+            },
+        ],
+    },
+    "south-carolina": {
+        "featured_title": "Featured South Carolina tide locations",
+        "featured": ["myrtle-beach", "hilton-head", "folly-beach", "isle-of-palms"],
+        "guide_title": "South Carolina tides: Grand Strand and Lowcountry",
+        "intro": (
+            "Compare South Carolina tide times from the Grand Strand near Myrtle "
+            "Beach to the Lowcountry islands. Each local Tide page shows the next "
+            "high and low tide, a seven-day schedule, and the exact NOAA station "
+            "used. Check the source details when comparing communities, because "
+            "predictions at one station do not represent every nearby waterway."
+        ),
+        "meta_description": (
+            "Explore South Carolina tide times and NOAA charts for Myrtle Beach, "
+            "Hilton Head, Folly Beach and nearby Grand Strand and Lowcountry shores."
+        ),
+        "regions": [
+            {
+                "key": "grand-strand",
+                "title": "Grand Strand Tide Times",
+                "slugs": ["north-myrtle-beach", "myrtle-beach", "pawleys-island"],
+            },
+            {
+                "key": "lowcountry",
+                "title": "Charleston Area and Lowcountry Tides",
+                "slugs": ["isle-of-palms", "folly-beach", "kiawah-island",
+                          "edisto-beach", "hilton-head"],
+            },
+        ],
+    },
+    "oregon": {
+        "featured_title": "Featured Oregon tide locations",
+        "featured": ["cannon-beach", "seaside", "lincoln-city"],
+        "guide_title": "Oregon Coast tides and local NOAA source coverage",
+        "intro": (
+            "Find predicted high and low tides for Cannon Beach, Seaside and "
+            "Lincoln City on the Oregon Coast. Compare their seven-day schedules "
+            "and read the NOAA source details for each location. Some coastal "
+            "pages use a nearby reference station rather than a station at the "
+            "beach itself; those limits are disclosed on the Tide page."
+        ),
+        "meta_description": (
+            "See Oregon Coast tide times and seven-day NOAA-based forecasts for "
+            "Cannon Beach, Seaside and Lincoln City, with station source details."
+        ),
+        "regions": [
+            {
+                "key": "northern-oregon",
+                "title": "Northern Oregon Coast Tides",
+                "slugs": ["cannon-beach", "seaside"],
+            },
+            {
+                "key": "central-oregon",
+                "title": "Central Oregon Coast Tides",
+                "slugs": ["lincoln-city"],
+            },
+        ],
+    },
 }
 
 
