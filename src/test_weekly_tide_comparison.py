@@ -65,6 +65,15 @@ class WeeklyTideComparisonTests(unittest.TestCase):
         wide["range"]["end"] = "2026-11-18"
         self.assertEqual(render_weekly_tide_comparison(wide), "")
 
+    def test_comparison_links_to_a_public_explanation(self):
+        from activities.rendering.methodology_page import render_methodology_page
+        comparison = render_weekly_tide_comparison(fixture())
+        self.assertIn('href="/methodology/#reading-tides"', comparison)
+        guide = render_methodology_page()
+        self.assertIn('id="reading-tides"', guide)
+        self.assertIn("Mean Lower Low Water", guide)
+        self.assertIn("5.2 ft daily high-to-low difference", guide)
+
     def test_repeated_normalization_replaces_one_block(self):
         html = '<main><section class="section lower-grid"></section></main>'
         location = LOCATIONS["bar-harbor"]
