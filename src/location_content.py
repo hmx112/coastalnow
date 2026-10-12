@@ -8,15 +8,15 @@ LOCATION_SEARCH_CONTEXT = {
     "oceanside": {
         "title": "Oceanside tide timing and nearby NOAA coverage",
         "paragraphs": [
-            "For Oceanside, CoastalNow puts today’s next high and low tides ahead of the 7-day schedule so visitors can compare the immediate tide window with the rest of the week before planning time near the water.",
-            "Oceanside uses NOAA’s La Jolla station as nearby coverage, about 24 miles away. Treat the prediction as a regional reference and allow for local differences in tide timing and height around Oceanside.",
+            "Use the Oceanside seven-day tide table to compare the predicted time of each low tide across possible visit dates. For beach access or an exposed shoreline visit, the height at a reference station is planning context, not a guarantee of dry or safe ground.",
+            "Oceanside uses NOAA station 9410230 at La Jolla, about 24 miles away, rather than an Oceanside-specific gauge. Because the La Jolla tide page also uses that reference, their displayed station predictions may match; neither should be mistaken for an independent on-site measurement at Oceanside.",
         ],
     },
     "huntington-beach": {
         "title": "Huntington Beach tide timing and Newport Beach source",
         "paragraphs": [
-            "The Huntington Beach page brings today’s next high and low tides, tide chart and 7-day schedule together so the current tide window is easy to compare with later events.",
-            "Huntington Beach uses NOAA’s Newport Beach, Newport Bay Entrance station as nearby coverage, about 8 miles away. The page keeps that source visible because local tide timing and height can differ from the reference station.",
+            "For a Huntington Beach outing, compare the next predicted low tide with the later lows in the seven-day table, rather than treating a single low-tide time as a fixed daily schedule. Actual shoreline exposure depends on conditions not measured by a tide prediction alone.",
+            "Huntington Beach uses Newport Beach, Newport Bay Entrance NOAA station 9410580, roughly 8 miles away. Dana Point also references this station, so identical forecasts across those pages represent the same NOAA source, not two separate local measurements. The ocean beach and the station entrance may differ.",
         ],
     },
     "malibu": {
@@ -74,4 +74,72 @@ LOCATION_SEARCH_CONTEXT = {
             "West Palm Beach uses NOAA’s Lake Worth Pier, Atlantic Ocean station as nearby coverage, about 7.2 miles away. CoastalNow identifies that source because local tide timing and height may differ from the reference point.",
         ],
     },
+    "corolla": {
+        "title": "Corolla tide times and the nearby Duck NOAA station",
+        "paragraphs": [
+            "Corolla's high and low tide predictions on this page come from NOAA station 8651370 at Duck, North Carolina. This is nearby reference coverage, not a water-level reading taken on Corolla's beach. Check the station name and datum before using the figures for a specific access point.",
+            "For a Corolla low-tide visit, compare the local-time lows in the seven-day schedule and note how their predicted heights differ. The lowest predicted event at Duck is not a promise that a particular ocean access, sound-side shoreline or inlet crossing will be passable or safe.",
+            "Nearby Outer Banks communities have separate Tide pages so visitors can compare station provenance and the timings shown there instead of assuming one prediction applies identically across the whole coast.",
+        ],
+        "meta_description": "Corolla, NC tide times today, 7-day high and low tide chart, and nearby NOAA Duck station source details for Outer Banks planning.",
+        "related_links": [
+            {"label": "Kitty Hawk tides", "href": "/tides/north-carolina/kitty-hawk/"},
+            {"label": "Nags Head tides", "href": "/tides/north-carolina/nags-head/"},
+        ],
+    },
+    "half-moon-bay": {
+        "title": "Half Moon Bay low tides and Pillar Point Harbor predictions",
+        "paragraphs": [
+            "The Half Moon Bay tide table is sourced from NOAA station 9414131 at Pillar Point Harbor. It gives predicted high and low tide times in local Pacific time, with heights referenced to the station's tidal datum; those heights are not a measurement of water depth on every beach.",
+            "If you are comparing possible dates for observing the shoreline or tide pools, find the predicted low events in the seven-day schedule and compare their times and heights. A lower predicted tide can help with timing, but it does not establish safe tide-pool access: breaking waves, swell, closures and the return of rising water require separate checks.",
+            "The seven-day high-to-low comparison summarizes how much the station's predicted levels vary on each date. It does not identify which particular tide pool or walking route is accessible.",
+        ],
+        "page_title": "Half Moon Bay High & Low Tide Times | CoastalNow",
+        "meta_description": "Half Moon Bay tide times, 7-day high and low tide chart, and NOAA Pillar Point Harbor data for planning shoreline and tide-pool visits.",
+        "related_links": [
+            {"label": "Santa Cruz tides", "href": "/tides/california/santa-cruz/"},
+            {"label": "San Francisco tides", "href": "/tides/california/san-francisco/"},
+        ],
+    },
+    "fort-lauderdale": {
+        "title": "Fort Lauderdale tides and Anglin Fishing Pier station coverage",
+        "paragraphs": [
+            "Fort Lauderdale tide predictions here use NOAA station 8722899 at Anglin Fishing Pier in Lauderdale-by-the-Sea. The station name is important when comparing a predicted high or low with conditions elsewhere along the Fort Lauderdale coastline or near an inlet.",
+            "For beach or shore-fishing plans, read the next high or low tide first, then check the seven-day sequence for a later window. These are astronomical predictions for the NOAA reference site; wind, waves and current conditions must be considered separately and may change the actual water level.",
+            "The daily high-to-low differences on this page compare predicted heights within each date at that station. They do not indicate surf safety, rip-current risk or whether an inlet is suitable for boating.",
+        ],
+        "page_title": "Fort Lauderdale High & Low Tide Times | CoastalNow",
+        "meta_description": "Fort Lauderdale high and low tide times, 7-day NOAA chart, and Anglin Fishing Pier station details for local coastal planning.",
+        "related_links": [
+            {"label": "Pompano Beach tides", "href": "/tides/florida/pompano-beach/"},
+            {"label": "Miami Beach tides", "href": "/tides/florida/miami-beach/"},
+        ],
+    },
+    "holden-beach": {
+        "title": "Holden Beach tides and the Shallotte Inlet NOAA reference",
+        "paragraphs": [
+            "Holden Beach tide events shown here are predicted for NOAA station 8659665 at Bowen Point, Shallotte Inlet. Because this is an inlet station, its published times and heights should not be treated as simultaneous observed water levels along every stretch of Holden Beach.",
+            "For a planned low-tide walk or shore visit, compare multiple low-tide events over the next seven days and read their local-time labels. Conditions along a beach, waterway or inlet can differ from the reference prediction, and a predicted low does not establish that an access route is safe.",
+            "The tide curve and daily high-to-low comparison help describe the timing and relative predicted range at the source station; they are not a live water-depth or current-speed measurement.",
+        ],
+        "meta_description": "Holden Beach, NC tide times, high and low tides, 7-day chart, and NOAA Bowen Point at Shallotte Inlet reference details.",
+        "related_links": [
+            {"label": "Carolina Beach tides", "href": "/tides/north-carolina/carolina-beach/"},
+            {"label": "Wrightsville Beach tides", "href": "/tides/north-carolina/wrightsville-beach/"},
+        ],
+    },
+    "los-angeles": {
+        "title": "Los Angeles tides: using the NOAA station's 7-day predictions",
+        "paragraphs": [
+            "The Los Angeles Tide page uses NOAA station 9410660. Its high and low water levels are tied to that station's tidal datum, not to a universal depth or a measurement at every nearby beach, harbor or inlet.",
+            "To compare a morning coastal outing with an afternoon one, read the ordered high/low events in the current day's chart, then check the next few days: tide times move rather than staying fixed at the same hour every day.",
+            "For the adjacent Santa Monica and Long Beach coastlines, compare their Tide pages and NOAA station labels rather than assuming the Los Angeles station prediction is exact for those locations.",
+        ],
+        "meta_description": "Los Angeles tide times today, high and low tides, 7-day tide chart, and NOAA station 9410660 source details.",
+        "related_links": [
+            {"label": "Santa Monica tides", "href": "/tides/california/santa-monica/"},
+            {"label": "Long Beach tides", "href": "/tides/california/long-beach/"},
+        ],
+    },
+
 }
