@@ -8,6 +8,7 @@ from html import escape
 
 from activities.paths import activity_page_path
 from activities.registry import ACTIVITIES, activity_enabled_for_location
+from weekly_tide_comparison import render_weekly_tide_comparison
 
 SITE_ORIGIN = "https://coastalnowtides.com"
 TRUST_PAGE_PATHS = (
@@ -17,6 +18,10 @@ TRUST_PAGE_PATHS = (
 )
 SEARCH_CONTEXT_PATTERN = re.compile(
     r"<!-- SEARCH_CONTEXT_START -->.*?<!-- SEARCH_CONTEXT_END -->",
+    re.DOTALL,
+)
+WEEKLY_TIDE_COMPARE_PATTERN = re.compile(
+    r"<!-- WEEKLY_TIDE_COMPARE_START -->.*?<!-- WEEKLY_TIDE_COMPARE_END -->",
     re.DOTALL,
 )
 
@@ -358,6 +363,15 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
         count=1,
         flags=re.IGNORECASE,
     )
+
+    weekly_comparison = render_weekly_tide_comparison(tide_data)
+    if WEEKLY_TIDE_COMPARE_PATTERN.search(html):
+        html = WEEKLY_TIDE_COMPARE_PATTERN.sub(weekly_comparison, html, count=1)
+    elif weekly_comparison:
+        marker = '<section class="section lower-grid">'
+        if marker not in html:
+            raise ValueError(f'Missing weekly tide comparison insertion point: {location.get("slug", "unknown")}')
+        html = html.replace(marker, weekly_comparison + "\n\n  " + marker, 1)
 
     context_block = _search_context_html(location, tide_data)
     if SEARCH_CONTEXT_PATTERN.search(html):
