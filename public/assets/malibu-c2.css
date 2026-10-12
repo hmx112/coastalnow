@@ -368,3 +368,20 @@
   .c2-tide #overview .tide-grid{grid-template-columns:1fr}
   .c2-tide #overview .tide-card{min-height:132px}
 }
+
+
+/* A source-grounded, accessible seven-day comparison (not another forecast). */
+.c2-tide .c2-weekly-card{padding:22px 25px;border:1px solid #d7e4ed;border-radius:18px;background:#fff}
+.c2-tide .c2-weekly-lead{margin:0 0 18px;color:#153247;line-height:1.65;font-size:.95rem}
+.c2-tide .c2-weekly-bars{padding:0;margin:0;list-style:none;display:grid;gap:11px}
+.c2-tide .c2-weekly-row{display:grid;grid-template-columns:116px minmax(0,1fr) 72px;gap:13px;align-items:center}
+.c2-tide .c2-weekly-day{color:#425d70;font-size:.86rem}
+.c2-tide .c2-weekly-track{height:12px;border-radius:999px;background:#e8f1f7;overflow:hidden}
+.c2-tide .c2-weekly-fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#20ada9,#2779be)}
+.c2-tide .c2-weekly-value{text-align:right;font-size:.86rem;font-variant-numeric:tabular-nums;color:#153247}
+.c2-tide .c2-weekly-note{margin:17px 0 0;font-size:.78rem;line-height:1.6;color:#60788a}
+@media(max-width:600px){
+ .c2-tide .c2-weekly-card{padding:18px 16px}
+ .c2-tide .c2-weekly-row{grid-template-columns:82px minmax(0,1fr) 57px;gap:8px}
+ .c2-tide .c2-weekly-day,.c2-tide .c2-weekly-value{font-size:.75rem}
+}
