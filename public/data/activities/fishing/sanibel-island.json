@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "sanibel-island",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-11T23:55:57+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-11T23:55:57+00:00",
+  "generated_at_utc": "2026-10-12T00:39:12+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-12T00:39:12+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,19 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 80.0,
+    "rating": "Good",
     "confidence": "Medium",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-10-11T21:00:00-04:00",
+      "end": "2026-10-12T00:00:00-04:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "rip-current-statement"
+      "light-wind",
+      "manageable-sea-state",
+      "favorable-tide-movement"
     ]
   },
   "tomorrow": {
@@ -41,33 +46,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-11T19:00:00-04:00",
-        "components": {
-          "tide": 71.0,
-          "wind": 100,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 70.0,
-          "water_temperature": null
-        },
-        "raw_quality_score": 87.3,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "rip-current-statement",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-10-11T20:00:00-04:00",
         "components": {
           "tide": 23.0,
@@ -79,18 +57,17 @@
           "water_temperature": null
         },
         "raw_quality_score": 72.9,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 72.9,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
-          "manageable-sea-state",
-          "rip-current-statement"
+          "manageable-sea-state"
         ]
       },
       {
