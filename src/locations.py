@@ -137,7 +137,7 @@ def _load_locations():
             "timezone": timezone,
             "page_path": f'tides/{item["state_slug"]}/{slug}/index.html',
             "data_path": f"data/{slug}.json",
-            "page_title": f'{item["name"]} Tide Times, High & Low Tides Today | CoastalNow',
+            "page_title": (search_context or {}).get("page_title") or f'{item["name"]} Tide Times, High & Low Tides Today | CoastalNow',
             "meta_description": meta_description,
             "hero_copy": coverage or "Today’s tide times and a quick coastal outlook.",
             "local_guide": base_guide + ((" " + coverage) if coverage else ""),
