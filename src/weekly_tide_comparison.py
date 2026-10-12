@@ -113,7 +113,8 @@ def render_weekly_tide_comparison(data: dict | None) -> str:
         'predicted low on each date in the NOAA CO-OPS seven-day tide data. Those '
         'events may not be consecutive. Differences do not indicate current '
         'speed, surf conditions, flooding risk, or safe access. Predictions are '
-        'not observations and local conditions may differ.</p>'
+        'not observations and local conditions may differ. '
+        '<a href="/methodology/#reading-tides">How to interpret this comparison</a>.</p>'
         '</div></section>'
         '<!-- WEEKLY_TIDE_COMPARE_END -->'
     )
