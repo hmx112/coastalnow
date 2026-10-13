@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "bar-harbor",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-13T09:25:06+00:00",
+  "generated_at_utc": "2026-10-13T10:11:51+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-13T09:25:06+00:00"
+      "fetched_at_utc": "2026-10-13T10:11:51+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-13T09:25:06+00:00"
+      "fetched_at_utc": "2026-10-13T10:11:51+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-13T09:25:06+00:00"
+      "fetched_at_utc": "2026-10-13T10:11:51+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-13T09:23:53+00:00"
+      "fetched_at_utc": "2026-10-13T10:10:41+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-13T09:25:06+00:00"
+      "fetched_at_utc": "2026-10-13T10:11:51+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-13T04:00:00-04:00",
-      "wind_mph": 13.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 43.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": 54.7,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-10-13T05:00:00-04:00",
-      "wind_mph": 12.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 4.0,
-      "air_temperature_f": 42.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": 54.7,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-10-13T06:00:00-04:00",
       "wind_mph": 12.0,
@@ -1902,23 +1878,47 @@
       "wave_period_s": null,
       "water_temperature_f": 54.7,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-19T16:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": 54.7,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-19T17:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": 54.7,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a89d5f5cafd82e857d6cf9f90756ee0d7267e87d.003.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ba823e4b8d8878a75b21f983a68ec03398451f8.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-13T02:23:00-04:00",
-        "onset": "2026-10-13T02:23:00-04:00",
-        "expires": "2026-10-13T10:30:00-04:00",
+        "effective": "2026-10-13T05:35:00-04:00",
+        "onset": "2026-10-13T05:35:00-04:00",
+        "expires": "2026-10-13T13:45:00-04:00",
         "ends": "2026-10-14T14:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 13 at 2:23AM EDT until October 14 at 2:00PM EDT by NWS Caribou ME",
-        "description": "* WHAT...East winds 10 to 20 kt with gusts up to 30 kt and seas\n3 to 6 ft.\n\n* WHERE...Intra Coastal Waters from Schoodic Point, ME to\nStonington, ME.\n\n* WHEN...Until 2 PM EDT Wednesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued October 13 at 5:35AM EDT until October 14 at 2:00PM EDT by NWS Caribou ME",
+        "description": "* WHAT...Southeast winds 10 to 20 kt with gusts up to 30 kt and\nseas 3 to 6 ft.\n\n* WHERE...Intra Coastal Waters from Schoodic Point, ME to\nStonington, ME.\n\n* WHEN...Until 2 PM EDT Wednesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Caribou ME"
       }
@@ -1956,8 +1956,8 @@
       "start": "2026-10-13",
       "end": "2026-10-19"
     },
-    "generated_at_utc": "2026-10-13T09:23:53+00:00",
-    "generated_at_local": "2026-10-13T05:23:53-04:00",
+    "generated_at_utc": "2026-10-13T10:10:41+00:00",
+    "generated_at_local": "2026-10-13T06:10:41-04:00",
     "hilo": [
       {
         "t": "2026-10-13 00:56",
