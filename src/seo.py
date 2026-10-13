@@ -238,7 +238,7 @@ def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     )
 
 
-C2_TIDE_ASSET_VERSION = "20261012-value-1"
+C2_TIDE_ASSET_VERSION = "20261013-low-finder-1"
 
 C2_FLORIDA_ATLANTIC = {
     "miami-beach",
