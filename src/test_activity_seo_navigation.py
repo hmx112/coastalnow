@@ -54,7 +54,18 @@ class ActivitySeoNavigationTests(unittest.TestCase):
         expected = set(json.loads(BASELINE.read_text(encoding="utf-8")))
         actual = {location["page_path"] for location in LOCATIONS.values()}
         self.assertEqual(len(expected), 63)
-        self.assertEqual(actual, expected)
+        # Freeze *old* Tide URLs. Controlled additions must not rewrite them.
+        self.assertTrue(expected <= actual)
+        added = actual - expected
+        self.assertEqual(
+            added,
+            {
+                "tides/florida/jacksonville-beach/index.html",
+                "tides/florida/sebastian-inlet/index.html",
+                "tides/texas/galveston/index.html",
+                "tides/texas/port-aransas/index.html",
+            },
+        )
 
     def test_homepage_has_registry_driven_explore_by_activity_link(self):
         home = build_directory_pages()["index.html"]

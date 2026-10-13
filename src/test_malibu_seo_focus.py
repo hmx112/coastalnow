@@ -60,6 +60,8 @@ class MalibuSeoFocusTests(unittest.TestCase):
             "west-palm-beach": "florida-atlantic",
             "fort-myers-beach": "florida-gulf",
             "pompano-beach": "florida-atlantic",
+            "jacksonville-beach": "florida-atlantic",
+            "sebastian-inlet": "florida-atlantic",
             "marco-island": "florida-gulf",
             "sarasota": "florida-gulf",
             "nags-head": "outer-banks",
@@ -80,6 +82,8 @@ class MalibuSeoFocusTests(unittest.TestCase):
                 region = "carolinas"
             elif location["state_slug"] == "oregon":
                 region = "oregon"
+            elif location["state_slug"] == "texas":
+                region = "florida-gulf"
             else:
                 region = "northeast"
 
