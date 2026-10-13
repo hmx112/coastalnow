@@ -1,5 +1,8 @@
 name: Update live NOAA tide data
 
+# The only on-main-push site writer: regenerate Tide first, then Activities and SEO.
+# Activity and safety-alert writers retain their regular schedules and manual triggers.
+# This avoids three simultaneous main-push jobs racing for one shared concurrency slot.
 on:
   workflow_dispatch:
   push:
