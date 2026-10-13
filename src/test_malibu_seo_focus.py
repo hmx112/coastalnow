@@ -80,6 +80,8 @@ class MalibuSeoFocusTests(unittest.TestCase):
                 region = "carolinas"
             elif location["state_slug"] == "oregon":
                 region = "oregon"
+            elif location["state_slug"] == "texas":
+                region = "florida-gulf"
             else:
                 region = "northeast"
 
