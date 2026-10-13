@@ -94,7 +94,7 @@ def fishing_location_guide_html(location: dict) -> str:
         f'<p>{escape(guide["caution"])}</p>'
         '<p><strong>Planning data:</strong> NOAA tide predictions and NWS forecast and '
         'alert information. The numerical Fishing Score is a CoastalNow '
-        'rule-based indicator, not a fish-bite forecast or a safety guarantee.</p>'
+        'rule-based indicator, not a fish-bite forecast and not a safety guarantee.</p>'
         '<p><strong>Local access reference:</strong> '
         f'<a href="{escape(guide["url"], quote=True)}" target="_blank" '
         'rel="noopener noreferrer">'
