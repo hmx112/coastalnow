@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "marco-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-12T23:12:09+00:00",
+  "generated_at_utc": "2026-10-13T00:44:53+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-12T23:12:09+00:00"
+      "fetched_at_utc": "2026-10-13T00:44:53+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-12T21:22:04+00:00"
+      "fetched_at_utc": "2026-10-13T00:44:53+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-12T21:22:04+00:00"
+      "fetched_at_utc": "2026-10-13T00:44:53+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-12T15:29:16+00:00"
+      "fetched_at_utc": "2026-10-13T00:42:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-12T21:22:04+00:00"
+      "fetched_at_utc": "2026-10-13T00:44:53+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-12T17:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 19.563,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 87.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-12T18:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 87.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-12T19:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 85.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-10-12T20:00:00-04:00",
       "wind_mph": 8.0,
@@ -1902,27 +1866,47 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-19T05:00:00-04:00",
+      "wind_mph": 18.0,
+      "gust_mph": 27.619,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-19T06:00:00-04:00",
+      "wind_mph": 18.0,
+      "gust_mph": 27.619,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-19T07:00:00-04:00",
+      "wind_mph": 18.0,
+      "gust_mph": 26.468,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.742191f5c07719ed5474cb035e731355e12b1953.002.1",
-        "event": "Coastal Flood Statement",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-11T23:02:00-04:00",
-        "onset": "2026-10-11T23:02:00-04:00",
-        "expires": "2026-10-12T20:00:00-04:00",
-        "ends": "2026-10-12T20:00:00-04:00",
-        "headline": "Coastal Flood Statement issued October 11 at 11:02PM EDT until October 12 at 8:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...Isolated minor coastal flooding during high tide.\n\n* WHERE...Coastal Collier County, Mainland Monroe, and Far South\nMiami-Dade County.\n\n* WHEN...Through Monday evening.\n\n* IMPACTS...Some water on low lying roads and property.",
-        "instruction": "Do not drive through flooded roadways.",
-        "sender_name": "NWS Miami FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1956,8 +1940,8 @@
       "start": "2026-10-12",
       "end": "2026-10-18"
     },
-    "generated_at_utc": "2026-10-12T15:29:16+00:00",
-    "generated_at_local": "2026-10-12T11:29:16-04:00",
+    "generated_at_utc": "2026-10-13T00:42:26+00:00",
+    "generated_at_local": "2026-10-12T20:42:26-04:00",
     "hilo": [
       {
         "t": "2026-10-12 01:36",
@@ -2552,5 +2536,5 @@
       "grid_y": 50
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
