@@ -63,6 +63,8 @@ STATE_LANDING = {
             "west-palm-beach",
             "fort-lauderdale",
             "key-west",
+            "jacksonville-beach",
+            "sebastian-inlet",
         ],
         "guide_title": "Florida tides and tide schedules",
         "intro": (
@@ -105,7 +107,36 @@ STATE_LANDING = {
             {
                 "key": "atlantic-keys",
                 "title": "Atlantic Coast & Keys Tides",
-                "slugs": ["key-west", "cocoa-beach", "daytona-beach"],
+                "slugs": ["jacksonville-beach", "daytona-beach", "cocoa-beach", "sebastian-inlet", "key-west"],
+            },
+        ],
+    },
+    "texas": {
+        "featured_title": "Featured Texas Gulf Coast tide locations",
+        "featured": ["galveston", "port-aransas"],
+        "guide_title": "Texas Gulf Coast tides and fishing planning",
+        "intro": (
+            "Check Texas Gulf Coast tide times for Galveston and Port Aransas. "
+            "CoastalNow publishes NOAA high and low predictions for each named "
+            "station, with the next event, seven-day chart and explicit source "
+            "details. Galveston Pleasure Pier and Port Aransas are separate "
+            "Gulf-facing station references. The predicted heights do not "
+            "represent inland bays or tidal current speed at jetties."
+        ),
+        "meta_description": (
+            "Texas Gulf Coast tide times, high and low charts and seven-day "
+            "NOAA predictions for Galveston and Port Aransas fishing areas."
+        ),
+        "regions": [
+            {
+                "key": "upper-texas-coast",
+                "title": "Upper Texas Coast Tides",
+                "slugs": ["galveston"],
+            },
+            {
+                "key": "south-texas-coast",
+                "title": "South Texas Coast Tides",
+                "slugs": ["port-aransas"],
             },
         ],
     },
