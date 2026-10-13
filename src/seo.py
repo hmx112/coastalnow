@@ -9,7 +9,7 @@ from html import escape
 from activities.paths import activity_page_path
 from activities.registry import ACTIVITIES, activity_enabled_for_location
 from weekly_tide_comparison import render_weekly_tide_comparison
-from low_tide_finder import render_low_tide_finder
+from low_tide_finder import ASSET_VERSION as LOW_TIDE_FINDER_VERSION, render_low_tide_finder
 
 SITE_ORIGIN = "https://coastalnowtides.com"
 TRUST_PAGE_PATHS = (
@@ -238,7 +238,7 @@ def _search_context_html(location: dict, tide_data: dict | None = None) -> str:
     )
 
 
-C2_TIDE_ASSET_VERSION = "20261013-low-finder-1"
+C2_TIDE_ASSET_VERSION = "20261012-value-1"
 
 C2_FLORIDA_ATLANTIC = {
     "miami-beach",
@@ -392,6 +392,18 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
         if insert_before not in html:
             raise ValueError(f'Missing Tide tool insertion point: {location.get("slug", "unknown")}')
         html = html.replace(insert_before, low_tide_finder + "\n\n  " + insert_before, 1)
+
+    # Feature assets are scoped to pilot pages so the other 58 Tide pages
+    # retain their existing stylesheet URL and HTML structure.
+    pilot_style = (
+        f'<link rel="stylesheet" href="/assets/low-tide-finder.css?v={LOW_TIDE_FINDER_VERSION}" '
+        'data-coastalnow-low-tide-finder="style">\n'
+    )
+    if low_tide_finder:
+        if pilot_style not in html and "</head>" in html.lower():
+            html = re.sub(r"</head>", pilot_style + "</head>", html, count=1, flags=re.IGNORECASE)
+    else:
+        html = html.replace(pilot_style, "")
 
     context_block = _search_context_html(location, tide_data)
     if SEARCH_CONTEXT_PATTERN.search(html):
