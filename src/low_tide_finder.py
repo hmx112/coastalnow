@@ -41,7 +41,8 @@ def _time_band(hour: int) -> str:
 def _valid_window(data: dict, location: dict) -> tuple[date, date] | None:
     if data.get("mode") != "live" or data.get("source") != "NOAA/NOS/CO-OPS":
         return None
-    if data.get("units") != "feet" or data.get("time_zone_mode") != "LST/LDT":
+    if (data.get("units") != "feet" or data.get("datum") != "MLLW"
+            or data.get("time_zone_mode") != "LST/LDT"):
         return None
     station = data.get("station")
     if not isinstance(station, dict):
@@ -69,7 +70,11 @@ def render_low_tide_finder(data: dict | None, location: dict) -> str:
     No invented values: empty, stale-structure or misattributed predictions
     render no feature at all. All listed heights remain relative to NOAA MLLW.
     """
-    if location.get("slug") not in PILOT_LOCATIONS or not isinstance(data, dict):
+    if (
+        location.get("slug") not in PILOT_LOCATIONS
+        or location.get("status") != "Live NOAA"
+        or not isinstance(data, dict)
+    ):
         return ""
     window = _valid_window(data, location)
     if window is None:
