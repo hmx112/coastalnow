@@ -276,7 +276,11 @@ def render_surfing_location(location: dict, result: dict, snapshot: dict, *, hea
     if "not break-specific" not in disclaimer.lower():
         disclaimer += " Conditions are not break-specific."
     html = _fill(template, {
-        "TITLE": escape(f'{location["name"]} Surf Conditions & Best Times | CoastalNow'),
+        "TITLE": escape(
+            "Ocean City, Maryland Surf Conditions | CoastalNow"
+            if location["slug"] == "ocean-city"
+            else f'{location["name"]} Surf Conditions & Best Times | CoastalNow'
+        ),
         "DESCRIPTION": escape(surfing_meta_description(location), quote=True),
         "HEAD_EXTRA": head_extra,
         "LOGO": LOGO,
