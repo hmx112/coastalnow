@@ -277,6 +277,10 @@ def _c2_region_key(location: dict) -> str:
         return "carolinas"
     if state_slug == "oregon":
         return "oregon"
+    if state_slug == "texas":
+        # Reuse the established Gulf shoreline illustration without changing
+        # shared CSS or its cache URL for any existing indexed Tide page.
+        return "florida-gulf"
     return "northeast"
 C2_TIDE_STYLESHEET = (
     f'<link rel="stylesheet" href="/assets/malibu-c2.css?v={C2_TIDE_ASSET_VERSION}" '
