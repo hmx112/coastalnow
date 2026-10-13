@@ -40,7 +40,7 @@ def _write(root: Path, slug: str, snapshot: dict):
 
 
 class SurfingPilotValidationTests(unittest.TestCase):
-    def test_ten_configured_pilot_locations_pass_with_wave_coverage(self):
+    def test_sixteen_configured_locations_pass_with_wave_coverage(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             for slug in PILOT:
