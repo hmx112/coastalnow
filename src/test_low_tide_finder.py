@@ -102,7 +102,8 @@ class LowTideFinderTests(unittest.TestCase):
                 self.assertIn('class="c2-low-finder-daypart"', html)
                 self.assertIn('class="c2-low-finder-row"', html)
                 self.assertIn('src="/assets/low-tide-finder.js?v=20261013-pilot-1"', html)
-                self.assertIn('href="/assets/malibu-c2.css?v=20261013-low-finder-1"', html)
+                self.assertIn('href="/assets/malibu-c2.css?v=20261012-value-1"', html)
+                self.assertIn('href="/assets/low-tide-finder.css?v=20261013-pilot-1"', html)
                 self.assertEqual(html.count("<!-- WEEKLY_TIDE_COMPARE_START -->"), 1)
                 self.assertIn(f'<link rel="canonical" href="{canonical_url(loc["page_path"])}">', html)
                 self.assertIn('<meta name="robots" content="index,follow">', html)
@@ -113,9 +114,10 @@ class LowTideFinderTests(unittest.TestCase):
         unmodified = (PUBLIC / normal["page_path"]).read_text(encoding="utf-8")
         self.assertNotIn("<!-- LOW_TIDE_FINDER_START -->", unmodified)
         self.assertNotIn('src="/assets/low-tide-finder.js', unmodified)
+        self.assertNotIn('href="/assets/low-tide-finder.css', unmodified)
 
     def test_browser_filter_assets_have_fallback_and_accessibility(self):
-        css = (PUBLIC / "assets" / "malibu-c2.css").read_text(encoding="utf-8")
+        css = (PUBLIC / "assets" / "low-tide-finder.css").read_text(encoding="utf-8")
         script = (PUBLIC / "assets" / "low-tide-finder.js").read_text(encoding="utf-8")
         self.assertIn(".c2-low-finder-row[hidden]{display:none!important}", css)
         self.assertIn('picker.addEventListener("change", update)', script)
