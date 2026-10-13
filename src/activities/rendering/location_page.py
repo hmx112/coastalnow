@@ -6,6 +6,7 @@ from html import escape
 from pathlib import Path
 
 from activities.explanations import summarize_fishing_result
+from activities.rendering.fishing_local_guides import fishing_location_guide_html, fishing_meta_description
 from activities.registry import enabled_activities_for_location
 from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
 from activities.rendering.surfing_alert_details import build_nws_alert_details
@@ -328,9 +329,9 @@ def render_fishing_location(location: dict, result: dict, snapshot: dict, *, hea
         + "".join(sibling_links)
         + f'<a href="{escape(activity_hub_url("fishing"))}"><span>Compare fishing conditions nationwide</span><b>Fishing hub →</b></a>'
     )
-    return _fill(template, {
+    html = _fill(template, {
         "TITLE": escape(f'{location["name"]} Fishing Conditions Today | CoastalNow'),
-        "DESCRIPTION": escape(f'Fishing conditions today for {location["name"]}, {location["state"]}, including tide, wind, waves, best fishing time and safety context.', quote=True),
+        "DESCRIPTION": escape(fishing_meta_description(location), quote=True),
         "HEAD_EXTRA": head_extra,
         "LOGO": LOGO,
         "BREADCRUMBS": breadcrumbs,
@@ -346,3 +347,10 @@ def render_fishing_location(location: dict, result: dict, snapshot: dict, *, hea
         "LINKS": links,
         "DISCLAIMER": escape(result.get("safety_disclaimer") or "Fishing Score is a planning metric, not a safety guarantee. Official warnings and local guidance always take priority."),
     })
+    guide = fishing_location_guide_html(location)
+    if guide:
+        marker = '<section class="activity-links-panel">'
+        if html.count(marker) != 1:
+            raise ValueError("Fishing page missing local guide insertion point")
+        html = html.replace(marker, guide + marker, 1)
+    return html
