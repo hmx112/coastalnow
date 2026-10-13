@@ -60,6 +60,8 @@ class MalibuSeoFocusTests(unittest.TestCase):
             "west-palm-beach": "florida-atlantic",
             "fort-myers-beach": "florida-gulf",
             "pompano-beach": "florida-atlantic",
+            "jacksonville-beach": "florida-atlantic",
+            "sebastian-inlet": "florida-atlantic",
             "marco-island": "florida-gulf",
             "sarasota": "florida-gulf",
             "nags-head": "outer-banks",
