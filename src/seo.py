@@ -9,6 +9,7 @@ from html import escape
 from activities.paths import activity_page_path
 from activities.registry import ACTIVITIES, activity_enabled_for_location
 from weekly_tide_comparison import render_weekly_tide_comparison
+from low_tide_finder import ASSET_VERSION as LOW_TIDE_FINDER_VERSION, render_low_tide_finder
 
 SITE_ORIGIN = "https://coastalnowtides.com"
 TRUST_PAGE_PATHS = (
@@ -22,6 +23,10 @@ SEARCH_CONTEXT_PATTERN = re.compile(
 )
 WEEKLY_TIDE_COMPARE_PATTERN = re.compile(
     r"<!-- WEEKLY_TIDE_COMPARE_START -->.*?<!-- WEEKLY_TIDE_COMPARE_END -->",
+    re.DOTALL,
+)
+LOW_TIDE_FINDER_PATTERN = re.compile(
+    r"<!-- LOW_TIDE_FINDER_START -->.*?<!-- LOW_TIDE_FINDER_END -->",
     re.DOTALL,
 )
 
@@ -372,6 +377,33 @@ def _enrich_location_body(html: str, location: dict, tide_data: dict | None = No
         if marker not in html:
             raise ValueError(f'Missing weekly tide comparison insertion point: {location.get("slug", "unknown")}')
         html = html.replace(marker, weekly_comparison + "\n\n  " + marker, 1)
+
+    # Optional visitor tool: use existing verified NOAA data without changing SEO
+    # metadata, Tide values, URLs or the published forecast data.
+    low_tide_finder = render_low_tide_finder(tide_data, location)
+    if LOW_TIDE_FINDER_PATTERN.search(html):
+        html = LOW_TIDE_FINDER_PATTERN.sub(low_tide_finder, html, count=1)
+    elif low_tide_finder:
+        insert_before = (
+            "<!-- WEEKLY_TIDE_COMPARE_START -->"
+            if "<!-- WEEKLY_TIDE_COMPARE_START -->" in html
+            else '<section class="section lower-grid">'
+        )
+        if insert_before not in html:
+            raise ValueError(f'Missing Tide tool insertion point: {location.get("slug", "unknown")}')
+        html = html.replace(insert_before, low_tide_finder + "\n\n  " + insert_before, 1)
+
+    # Feature assets are scoped to pilot pages so the other 58 Tide pages
+    # retain their existing stylesheet URL and HTML structure.
+    pilot_style = (
+        f'<link rel="stylesheet" href="/assets/low-tide-finder.css?v={LOW_TIDE_FINDER_VERSION}" '
+        'data-coastalnow-low-tide-finder="style">\n'
+    )
+    if low_tide_finder:
+        if pilot_style not in html and "</head>" in html.lower():
+            html = re.sub(r"</head>", pilot_style + "</head>", html, count=1, flags=re.IGNORECASE)
+    else:
+        html = html.replace(pilot_style, "")
 
     context_block = _search_context_html(location, tide_data)
     if SEARCH_CONTEXT_PATTERN.search(html):
