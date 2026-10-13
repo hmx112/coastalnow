@@ -4,17 +4,14 @@ import unittest
 from pathlib import Path
 
 from activities.paths import activity_data_path
+from activities.registry import ACTIVITIES
 from build_site import load_activity_inventory
 from locations import LOCATIONS
 from seo import build_robots_txt, build_sitemap
 from site_generator import _groups, _home
 
 
-PILOT = {
-    "san-diego", "la-jolla", "huntington-beach", "santa-cruz", "malibu",
-    "half-moon-bay", "cocoa-beach", "daytona-beach", "wrightsville-beach",
-    "nags-head",
-}
+PILOT = set(ACTIVITIES["surfing"]["location_allowlist"])
 
 
 def usable_result(slug: str) -> dict:
@@ -59,7 +56,7 @@ class SurfingPublicationTests(unittest.TestCase):
         results["key-west"] = usable_result("key-west")
         xml = build_sitemap(LOCATIONS, {"surfing": results})
         surfing_urls = [line for line in xml.splitlines() if "/surfing/" in line]
-        self.assertEqual(len(surfing_urls), 11)
+        self.assertEqual(len(surfing_urls), 17)
         self.assertIn("https://coastalnowtides.com/surfing/", xml)
         self.assertNotIn("https://coastalnowtides.com/tides/florida/key-west/surfing/", xml)
 

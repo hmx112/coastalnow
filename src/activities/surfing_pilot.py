@@ -40,8 +40,8 @@ def validate_surfing_pilot(locations: dict, public_root: Path) -> list[str]:
     pilot = list(surfing.get("location_allowlist") or ())
     failures: list[str] = []
 
-    if len(pilot) != 10:
-        failures.append(f"pilot configuration: expected 10 locations, found {len(pilot)}")
+    if len(pilot) != 16 or len(set(pilot)) != 16:
+        failures.append(f"pilot configuration: expected 16 unique locations, found {len(pilot)} entries")
 
     for slug in pilot:
         if slug not in locations:

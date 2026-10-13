@@ -45,7 +45,9 @@ class SurfingNavigationTests(unittest.TestCase):
         surfing = "/tides/california/san-diego/surfing/"
         self.assertIn(f'href="{fishing}"', html)
         self.assertIn(f'href="{surfing}"', html)
-        self.assertLess(html.index(surfing), html.index("Your next tides"))
+        # Current C2 layout answers the Tide question before Activity CTAs.
+        self.assertIn("Today’s High and Low Tides", html)
+        self.assertLess(html.index("Today’s High and Low Tides"), html.index("ACTIVITY_PRIMARY_START"))
         primary = html.split("ACTIVITY_PRIMARY_START", 1)[1].split("ACTIVITY_PRIMARY_END", 1)[0]
         self.assertEqual(primary.count(fishing), 1)
         self.assertEqual(primary.count(surfing), 1)

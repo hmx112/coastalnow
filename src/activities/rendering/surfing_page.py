@@ -6,6 +6,7 @@ from html import escape
 from pathlib import Path
 
 from activities.rendering.links import activity_hub_url, activity_location_url, tide_parent_url
+from activities.rendering.surf_spot_guides import surf_spot_guide_html, surfing_meta_description
 from activities.rendering.surfing_alert_details import (
     build_detailed_surfing_explanation as build_surfing_explanation,
     build_nws_alert_details,
@@ -274,9 +275,13 @@ def render_surfing_location(location: dict, result: dict, snapshot: dict, *, hea
     )
     if "not break-specific" not in disclaimer.lower():
         disclaimer += " Conditions are not break-specific."
-    return _fill(template, {
-        "TITLE": escape(f'{location["name"]} Surf Conditions & Best Times | CoastalNow'),
-        "DESCRIPTION": escape(f'Surf conditions planning for {location["name"]}, {location["state"]}, with wave, wind, weather and tide context.', quote=True),
+    html = _fill(template, {
+        "TITLE": escape(
+            "Ocean City, Maryland Surf Conditions | CoastalNow"
+            if location["slug"] == "ocean-city"
+            else f'{location["name"]} Surf Conditions & Best Times | CoastalNow'
+        ),
+        "DESCRIPTION": escape(surfing_meta_description(location), quote=True),
         "HEAD_EXTRA": head_extra,
         "LOGO": LOGO,
         "BREADCRUMBS": breadcrumbs,
@@ -292,6 +297,13 @@ def render_surfing_location(location: dict, result: dict, snapshot: dict, *, hea
         "LINKS": links,
         "DISCLAIMER": escape(disclaimer),
     })
+    guide = surf_spot_guide_html(location)
+    if guide:
+        insertion = '<section class="activity-links-panel">'
+        if html.count(insertion) != 1:
+            raise ValueError("Surfing page is missing the unique local guide insertion point")
+        html = html.replace(insertion, guide + insertion, 1)
+    return html
 
 
 def _ranking(locations: dict[str, dict], results: dict[str, dict], day_key: str) -> list[tuple[dict, dict]]:

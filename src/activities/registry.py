@@ -26,6 +26,13 @@ ACTIVITIES = {
             "daytona-beach",
             "wrightsville-beach",
             "nags-head",
+            # Six proven coastal surf destinations with verified NWS marine snapshots.
+            "oceanside",
+            "newport-beach",
+            "ventura",
+            "virginia-beach",
+            "folly-beach",
+            "ocean-city",
         ),
     },
     "beach": {

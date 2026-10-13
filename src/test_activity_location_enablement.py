@@ -16,6 +16,12 @@ PILOT = {
     "daytona-beach",
     "wrightsville-beach",
     "nags-head",
+    "oceanside",
+    "newport-beach",
+    "ventura",
+    "virginia-beach",
+    "folly-beach",
+    "ocean-city",
 }
 
 
