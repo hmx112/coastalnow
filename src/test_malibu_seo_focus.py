@@ -90,7 +90,7 @@ class MalibuSeoFocusTests(unittest.TestCase):
                 slug,
             )
             self.assertEqual(html.count('data-coastalnow-design="tide-c2"'), 1, slug)
-            self.assertIn('href="/assets/malibu-c2.css?v=20261013-low-finder-1"', html, slug)
+            self.assertIn('href="/assets/malibu-c2.css?v=20261012-value-1"', html, slug)
             self.assertIn('class="c2-section-tabs"', html, slug)
             self.assertIn('id="overview"', html, slug)
             self.assertIn('id="tide-chart"', html, slug)
