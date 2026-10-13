@@ -248,6 +248,8 @@ C2_FLORIDA_ATLANTIC = {
     "key-biscayne",
     "west-palm-beach",
     "pompano-beach",
+    "jacksonville-beach",
+    "sebastian-inlet",
 }
 C2_FLORIDA_KEYS = {"key-west"}
 C2_OUTER_BANKS = {
