@@ -142,4 +142,55 @@ LOCATION_SEARCH_CONTEXT = {
         ],
     },
 
+    "jacksonville-beach": {
+        "title": "Jacksonville Beach tides: Mayport NOAA reference and pier planning",
+        "paragraphs": [
+            "Jacksonville Beach does not use an on-beach tide station in CoastalNow. Its predicted high and low tides come from NOAA station 8720218 at Mayport (Bar Pilots Dock), roughly 8.1 miles north. Mayport sits inside the St. Johns River entrance, so timing and water levels at the Atlantic beach and fishing pier can differ from the reference.",
+            "Use the NOAA-based seven-day tide schedule for broad timing, and check wind, waves and official warnings independently before a beach or pier trip. Predictions are not observed water depth or measurements of conditions immediately next to the Jacksonville Beach Fishing Pier.",
+            "The City of Jacksonville Beach publishes current beach-access and safety rules. Verify pier access, posted notices and any restrictions before setting out."
+        ],
+        "meta_description": "Jacksonville Beach, FL tide times, 7-day tide chart and nearby Mayport NOAA station details, with local fishing and beach-access context.",
+        "related_links": [
+            {"label": "Daytona Beach tides", "href": "/tides/florida/daytona-beach/"},
+            {"label": "Sebastian Inlet tides", "href": "/tides/florida/sebastian-inlet/"},
+        ],
+    },
+    "sebastian-inlet": {
+        "title": "Sebastian Inlet tides: bridge station, jetties and NOAA high/low events",
+        "paragraphs": [
+            "Sebastian Inlet uses NOAA station 8722004 at the inlet bridge. The station provides official predicted high and low tide events, but not NOAA 30-minute interval predictions. CoastalNow labels any chart curve between high/low events as a derived visual estimate, not an official continuously sampled forecast.",
+            "Fishing occurs on both jetties at Sebastian Inlet State Park, but tidal height at the bridge is not the same as water speed through the inlet. Strong tidal currents, waves, slick rock and changing official alerts must be evaluated separately. The fishing conditions score cannot predict catches or guarantee access.",
+            "Check current State Park rules and closures before visiting. The inlet bridge prediction and the open Atlantic shore are different physical environments."
+        ],
+        "meta_description": "Sebastian Inlet tide times and 7-day NOAA bridge high/low predictions, with inlet-jetty fishing context and source limitations.",
+        "related_links": [
+            {"label": "Cocoa Beach tides", "href": "/tides/florida/cocoa-beach/"},
+            {"label": "Jacksonville Beach tides", "href": "/tides/florida/jacksonville-beach/"},
+        ],
+    },
+    "galveston": {
+        "title": "Galveston tide times at NOAA Pleasure Pier and Gulf Coast fishing context",
+        "paragraphs": [
+            "Galveston tides on CoastalNow use official high and low forecasts at NOAA station 8771510, Galveston Pleasure Pier on the Gulf side of the island. This reference is suitable for understanding the predicted local Gulf-facing tidal pattern, but it does not describe water levels throughout West Bay or every shoreline.",
+            "Galveston Island State Park offers beachside and bayside fishing. Those locations have different exposure, and a tide prediction at Pleasure Pier cannot be treated as an on-site observation for the entire park. Check separate wind, wave, weather and safety alerts before planning.",
+            "Texas Parks and Wildlife provides park fishing details and state-wide licensing rules. A CoastalNow Fishing Score is a rule-based conditions indicator, not a real-time catch report or a statement that wading is safe."
+        ],
+        "meta_description": "Galveston, TX tide times, NOAA Pleasure Pier high and low tide chart and 7-day forecast, with Gulf Coast fishing context.",
+        "related_links": [
+            {"label": "Port Aransas tides", "href": "/tides/texas/port-aransas/"},
+        ],
+    },
+    "port-aransas": {
+        "title": "Port Aransas tides and NOAA station context for Gulf jetty fishing",
+        "paragraphs": [
+            "Port Aransas uses NOAA station 8775237 for predicted high and low tides. The station's local Texas times and MLLW-based heights are provided with the seven-day forecast. They are not a direct measurement of water depth, current strength or wave conditions beside every jetty.",
+            "Port Aransas's Gulf-side jetty is a known coastal landmark. Fishing conditions along the jetty can differ from nearby bays and channels, especially when marine warnings are active. Use tide events together with the NWS forecast and official local access guidance rather than assuming a favorable numerical score means safe conditions.",
+            "The Texas Parks and Wildlife Department explains the rocky habitat and safety context of Gulf jetties. CoastalNow does not provide fish-catch estimates or species-specific bite forecasts."
+        ],
+        "meta_description": "Port Aransas, TX tide times, NOAA station 8775237 high and low chart and 7-day forecast with Gulf jetty fishing context.",
+        "related_links": [
+            {"label": "Galveston tides", "href": "/tides/texas/galveston/"},
+        ],
+    },
+
 }
