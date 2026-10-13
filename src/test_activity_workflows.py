@@ -99,18 +99,16 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertNotIn("[skip ci]", text.lower())
         _assert_rebase_before_push(self, text)
 
-    def test_full_activity_refresh_runs_after_catalog_or_live_noaa_changes_without_public_loop(self):
+    def test_activity_refresh_runs_on_schedule_or_manual_trigger_only(self):
         text = ACTIVITY_REFRESH.read_text(encoding="utf-8")
-        self.assertIn("push:", text)
-        self.assertIn("branches:", text)
-        self.assertIn("- main", text)
-        for path in (
-            '"src/data/locations.json"',
-            '"src/data/live_noaa.json"',
-            '".github/workflows/update-activities.yml"',
-        ):
-            self.assertIn(path, text)
-        self.assertNotIn('"public/**"', text)
+        self.assertIn("  workflow_dispatch:", text)
+        self.assertIn("  schedule:", text)
+        self.assertIn('cron: "23 */3 * * *"', text)
+        self.assertNotIn("\n  push:\n", text)
+        # The Tide writer already regenerates all Activity data on a main source merge.
+        tide = TIDE_REFRESH.read_text(encoding="utf-8")
+        self.assertIn("\n  push:\n", tide)
+        self.assertIn('      - "src/**"', tide)
 
     def test_alert_refresh_runs_hourly_and_reuses_site_write_lock(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
@@ -135,19 +133,26 @@ class ActivityWorkflowTests(unittest.TestCase):
         self.assertIn("exit 1", text)
         self.assertLess(text.index("git rebase origin/main"), text.index("for attempt in 1 2 3; do"))
 
-    def test_alert_refresh_runs_after_activity_source_merges_without_self_trigger(self):
+    def test_alert_refresh_runs_hourly_or_manually_without_racing_full_site_writer(self):
         text = ALERT_REFRESH.read_text(encoding="utf-8")
-        self.assertIn("push:", text)
-        self.assertIn("branches:", text)
-        self.assertIn("- main", text)
-        for path in (
-            '"src/activities/**"',
-            '"src/build_site.py"',
-            '"src/templates/activity-*.html"',
-            '".github/workflows/update-activity-alerts.yml"',
-        ):
-            self.assertIn(path, text)
-        self.assertNotIn('"public/**"', text)
+        self.assertIn("  workflow_dispatch:", text)
+        self.assertIn("  schedule:", text)
+        self.assertIn('cron: "41 * * * *"', text)
+        self.assertNotIn("\n  push:\n", text)
+        self.assertIn(WRITE_LOCK, text)
+
+    def test_one_main_push_writer_prevents_three_workflow_concurrency_race(self):
+        tide = TIDE_REFRESH.read_text(encoding="utf-8")
+        self.assertIn("\n  push:\n", tide)
+        self.assertIn('      - "src/**"', tide)
+        self.assertIn('      - ".github/workflows/update-san-diego.yml"', tide)
+        for workflow in (ACTIVITY_REFRESH, ALERT_REFRESH):
+            with self.subTest(workflow=workflow.name):
+                text = workflow.read_text(encoding="utf-8")
+                self.assertNotIn("\n  push:\n", text)
+                self.assertIn("  schedule:", text)
+                self.assertIn("  workflow_dispatch:", text)
+                self.assertIn(WRITE_LOCK, text)
 
     def test_tide_refresh_remains_six_hourly_and_uses_the_same_site_write_lock(self):
         text = TIDE_REFRESH.read_text(encoding="utf-8")
