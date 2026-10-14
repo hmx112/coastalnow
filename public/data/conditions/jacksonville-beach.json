@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "jacksonville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-14T04:58:15+00:00",
+  "generated_at_utc": "2026-10-14T07:59:15+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-14T04:58:15+00:00"
+      "fetched_at_utc": "2026-10-14T07:59:15+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.803f5d73d7de21a03f6af6432ecf67fdf3d27e93.001.1",
+        "event": "Special Weather Statement",
+        "severity": "Moderate",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-14T02:31:00-04:00",
+        "onset": "2026-10-14T02:31:00-04:00",
+        "expires": "2026-10-14T07:15:00-04:00",
+        "ends": null,
+        "headline": "Special Weather Statement issued October 14 at 2:31AM EDT by NWS Jacksonville FL",
+        "description": "Locally dense fog developing across southeast Georgia and\nnortheast Florida this morning will impact visibility through\nabout 7 AM. Given the nature of the fog, visibilities on area\nroadways can reduce to one half mile or less over short distances.\n\nPRECAUTIONARY PREPAREDNESS ACTIONS...\n\nThe nature of the fog is such that visibilities will vary greatly\nover short distances. Motorists should be alert for rapidly\nchanging conditions through sunrise.",
+        "instruction": "",
+        "sender_name": "NWS Jacksonville FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 63
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
