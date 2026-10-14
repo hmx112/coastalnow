@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "ocean-city",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-14T17:14:41+00:00",
+  "generated_at_utc": "2026-10-14T18:51:06+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-14T17:14:41+00:00"
+      "fetched_at_utc": "2026-10-14T18:51:06+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39fd343005a8a8f4bef85dc06b0a18967d1a5c9f.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-14T13:30:00-04:00",
+        "onset": "2026-10-15T04:00:00-04:00",
+        "expires": "2026-10-14T21:30:00-04:00",
+        "ends": "2026-10-15T16:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 14 at 1:30PM EDT until October 15 at 4:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Northeast winds 15 to 20 kt with gusts up to 25 kt and\nseas 3 to 5 ft expected.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...From 4 AM to 4 PM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 124
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

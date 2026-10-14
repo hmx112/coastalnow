@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cape-may",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-14T17:14:44+00:00",
+  "generated_at_utc": "2026-10-14T18:51:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-14T17:14:44+00:00"
+      "fetched_at_utc": "2026-10-14T18:51:08+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.477a8502d91700987d1050453b1d75ea8dfd3644.003.1",
+        "event": "Gale Watch",
+        "severity": "Moderate",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-10-14T14:27:00-04:00",
+        "onset": "2026-10-16T18:00:00-04:00",
+        "expires": "2026-10-15T03:30:00-04:00",
+        "ends": "2026-10-17T18:00:00-04:00",
+        "headline": "Gale Watch issued October 14 at 2:27PM EDT until October 17 at 6:00PM EDT by NWS Mount Holly NJ",
+        "description": "* WHAT...Northwest winds 20 to 30 kt with gusts up to 35 kt and\nseas 3 to 6 ft possible.\n\n* WHERE...Coastal waters from Sandy Hook to Manasquan Inlet NJ\nout 20 NM, Coastal waters from Manasquan Inlet to Little Egg\nInlet NJ out 20 NM, Coastal waters from Little Egg Inlet to\nGreat Egg Inlet NJ out 20 NM and Coastal waters from Great Egg\nInlet to Cape May NJ out 20 NM.\n\n* WHEN...From Friday evening through Saturday afternoon.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
+        "sender_name": "NWS Mount Holly NJ"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
