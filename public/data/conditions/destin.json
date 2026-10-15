@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-15T17:18:47+00:00",
+  "generated_at_utc": "2026-10-15T20:31:10+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-15T17:18:47+00:00"
+      "fetched_at_utc": "2026-10-15T20:31:10+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cc4c4d953f100a37218ff268dfdc6fad0e4a3fd9.002.1",
+        "event": "Gale Watch",
+        "severity": "Moderate",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-10-15T13:48:00-05:00",
+        "onset": "2026-10-16T19:00:00-05:00",
+        "expires": "2026-10-15T22:00:00-05:00",
+        "ends": "2026-10-18T13:00:00-05:00",
+        "headline": "Gale Watch issued October 15 at 1:48PM CDT until October 18 at 1:00PM CDT by NWS Mobile AL",
+        "description": "* WHAT...Northeast winds 20 to 30 kt with gusts up to 40 kt and\nseas 6 to 9 ft possible.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM, Coastal waters from Okaloosa Walton County Line FL to\nPensacola FL out 20 NM, Waters from Pensacola FL to Pascagoula\nMS from 20 to 60 NM and Waters from Okaloosa Walton County\nLine FL to Pensacola FL from 20 to 60 NM.\n\n* WHEN...From Friday evening through Sunday afternoon.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
+        "sender_name": "NWS Mobile AL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
