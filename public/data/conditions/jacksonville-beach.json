@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "jacksonville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-16T04:36:34+00:00",
+  "generated_at_utc": "2026-10-16T06:19:13+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-16T04:36:34+00:00"
+      "fetched_at_utc": "2026-10-16T06:19:13+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d9d70cfee985e4f010863fba4211fb2853be9f07.001.1",
+        "event": "Gale Watch",
+        "severity": "Moderate",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-10-16T01:02:00-04:00",
+        "onset": "2026-10-17T11:00:00-04:00",
+        "expires": "2026-10-16T17:00:00-04:00",
+        "ends": "2026-10-20T01:00:00-04:00",
+        "headline": "Gale Watch issued October 16 at 1:02AM EDT until October 20 at 1:00AM EDT by NWS Jacksonville FL",
+        "description": "* WHAT...Northeast winds 25 to 35 kt with gusts up to 45 kt and\nseas 10 to 15 ft possible.\n\n* WHERE...All Southeast Georgia and Northeast Florida coastal\nwaters from Altamaha Sound GA to Flagler Beach FL out to 60 NM.\n\n* WHEN...From Saturday morning through late Monday night.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
+        "sender_name": "NWS Jacksonville FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 63
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
