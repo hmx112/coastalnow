@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "nags-head",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-10-16T22:59:07+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-16T22:59:07+00:00",
+  "generated_at_utc": "2026-10-17T01:30:16+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-17T01:30:16+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -14,12 +14,12 @@
   },
   "today": {
     "status": "normal",
-    "score": 75.6,
-    "rating": "Good",
+    "score": 73.5,
+    "rating": "Fair",
     "confidence": "High",
     "best_window": {
-      "start": "2026-10-16T18:00:00-04:00",
-      "end": "2026-10-16T21:00:00-04:00"
+      "start": "2026-10-16T21:00:00-04:00",
+      "end": "2026-10-17T00:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
@@ -44,75 +44,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-16T18:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 75,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 80.0,
-        "final_score": 80.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind"
-        ]
-      },
-      {
-        "time": "2026-10-16T19:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 75,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 60
-        },
-        "raw_quality_score": 76.0,
-        "final_score": 76.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind"
-        ]
-      },
-      {
-        "time": "2026-10-16T20:00:00-04:00",
-        "components": {
-          "wave_height": 100,
-          "wave_period": 75,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 35
-        },
-        "raw_quality_score": 73.5,
-        "final_score": 73.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "moderate-wave-height",
-          "stronger-wind"
-        ]
-      },
       {
         "time": "2026-10-16T21:00:00-04:00",
         "components": {
@@ -381,17 +312,18 @@
           "daylight": 100
         },
         "raw_quality_score": 62.2,
-        "final_score": 62.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
-          "stronger-wind"
+          "stronger-wind",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -404,18 +336,19 @@
           "daylight": 100
         },
         "raw_quality_score": 59.8,
-        "final_score": 59.8,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
-          "wet-weather"
+          "wet-weather",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -428,18 +361,19 @@
           "daylight": 100
         },
         "raw_quality_score": 57.2,
-        "final_score": 57.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "moderate-wave-height",
           "stronger-wind",
-          "wet-weather"
+          "wet-weather",
+          "beach-hazards-statement"
         ]
       },
       {
@@ -452,17 +386,18 @@
           "daylight": 100
         },
         "raw_quality_score": 48.2,
-        "final_score": 40.2,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 59.0,
         "safety_penalty": 8.0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "stronger-wind",
           "wet-weather",
+          "beach-hazards-statement",
           "wind-cap-59",
           "wave-exposure-caution"
         ]
@@ -488,6 +423,7 @@
         "reasons": [
           "stronger-wind",
           "wet-weather",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution"
@@ -514,6 +450,7 @@
         "reasons": [
           "stronger-wind",
           "wet-weather",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-59",
           "wave-exposure-caution"
@@ -541,6 +478,7 @@
           "stronger-wind",
           "wet-weather",
           "high-surf-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-caution"
@@ -568,6 +506,7 @@
           "stronger-wind",
           "wet-weather",
           "high-surf-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-caution"
@@ -595,6 +534,7 @@
           "stronger-wind",
           "wet-weather",
           "high-surf-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-cap-69"
@@ -623,6 +563,7 @@
           "wet-weather",
           "high-surf-advisory",
           "coastal-flood-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-cap-69"
@@ -651,6 +592,7 @@
           "wet-weather",
           "high-surf-advisory",
           "coastal-flood-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-cap-69"
@@ -679,6 +621,7 @@
           "wet-weather",
           "high-surf-advisory",
           "coastal-flood-advisory",
+          "beach-hazards-statement",
           "gale-warning",
           "wind-cap-39",
           "wave-exposure-cap-69"
@@ -707,6 +650,7 @@
           "wet-weather",
           "high-surf-advisory",
           "coastal-flood-advisory",
+          "beach-hazards-statement",
           "high-wind-watch",
           "gale-warning",
           "wind-cap-39",
