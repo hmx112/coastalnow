@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "galveston",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-17T01:31:50+00:00",
+  "generated_at_utc": "2026-10-17T04:31:29+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:31:50+00:00"
+      "fetched_at_utc": "2026-10-17T04:31:29+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:31:50+00:00"
+      "fetched_at_utc": "2026-10-17T04:31:29+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:31:50+00:00"
+      "fetched_at_utc": "2026-10-17T04:31:29+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-16T21:11:28+00:00"
+      "fetched_at_utc": "2026-10-17T04:29:10+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T01:31:50+00:00"
+      "fetched_at_utc": "2026-10-17T04:31:29+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-16T20:00:00-05:00",
-      "wind_mph": 30.0,
-      "gust_mph": 49.484,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-16T21:00:00-05:00",
-      "wind_mph": 30.0,
-      "gust_mph": 49.484,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-16T22:00:00-05:00",
-      "wind_mph": 30.0,
-      "gust_mph": 49.484,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": null,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-10-16T23:00:00-05:00",
       "wind_mph": 30.0,
@@ -1902,23 +1866,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-23T08:00:00-05:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 74.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-23T09:00:00-05:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-23T10:00:00-05:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9e4f42a70b7b2eb1cae5dbfa8bb4caa128c94757.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0775607bd6812c1bb51b5d6707661097cd0c80d1.003.1",
         "event": "Wind Advisory",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-16T13:31:00-05:00",
-        "onset": "2026-10-16T13:31:00-05:00",
-        "expires": "2026-10-16T21:45:00-05:00",
+        "effective": "2026-10-16T21:57:00-05:00",
+        "onset": "2026-10-16T21:57:00-05:00",
+        "expires": "2026-10-17T06:00:00-05:00",
         "ends": "2026-10-17T13:00:00-05:00",
-        "headline": "Wind Advisory issued October 16 at 1:31PM CDT until October 17 at 1:00PM CDT by NWS Houston/Galveston TX",
-        "description": "* WHAT...North winds 20 to 35 mph with gusts up to 45 mph expected.\n\n* WHERE...Bolivar Peninsula, Brazoria Islands, Galveston Island, and\nMatagorda Islands Counties.\n\n* WHEN...Until 1 PM CDT Saturday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "headline": "Wind Advisory issued October 16 at 9:57PM CDT until October 17 at 1:00PM CDT by NWS Houston/Galveston TX",
+        "description": "* WHAT...North winds 20 to 30 mph with gusts to 35 to 45 mph closer\nto the coast.\n\n* WHERE...Bolivar Peninsula, Brazoria Islands, Galveston Island, and\nMatagorda Islands Counties.\n\n* WHEN...Until 1 PM CDT Saturday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
         "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
         "sender_name": "NWS Houston/Galveston TX"
       },
@@ -1971,8 +1971,8 @@
       "start": "2026-10-16",
       "end": "2026-10-22"
     },
-    "generated_at_utc": "2026-10-16T21:11:28+00:00",
-    "generated_at_local": "2026-10-16T16:11:27-05:00",
+    "generated_at_utc": "2026-10-17T04:29:10+00:00",
+    "generated_at_local": "2026-10-16T23:29:10-05:00",
     "hilo": [
       {
         "t": "2026-10-16 13:36",
@@ -2517,5 +2517,5 @@
       "grid_y": 72
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

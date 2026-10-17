@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T01:30:37+00:00",
+  "generated_at_utc": "2026-10-17T04:30:00+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:30:37+00:00"
+      "fetched_at_utc": "2026-10-17T04:30:00+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:30:37+00:00"
+      "fetched_at_utc": "2026-10-17T04:30:00+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T01:30:37+00:00"
+      "fetched_at_utc": "2026-10-17T04:30:00+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-16T21:11:14+00:00"
+      "fetched_at_utc": "2026-10-17T04:29:01+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T01:30:37+00:00"
+      "fetched_at_utc": "2026-10-17T04:30:00+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-16T21:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-16T22:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-16T23:00:00-04:00",
-      "wind_mph": 16.0,
-      "gust_mph": 23.016,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-10-17T00:00:00-04:00",
       "wind_mph": 16.0,
@@ -1902,11 +1866,62 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-23T09:00:00-04:00",
+      "wind_mph": 23.0,
+      "gust_mph": 29.92,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 23.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-23T10:00:00-04:00",
+      "wind_mph": 24.0,
+      "gust_mph": 32.222,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 23.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-23T11:00:00-04:00",
+      "wind_mph": 25.0,
+      "gust_mph": 34.523,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 23.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fdc9d0e8c68586811bc77219b9d4a4c40cd04f68.002.1",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-16T22:03:00-04:00",
+        "onset": "2026-10-17T12:00:00-04:00",
+        "expires": "2026-10-17T06:15:00-04:00",
+        "ends": "2026-10-19T18:00:00-04:00",
+        "headline": "High Surf Advisory issued October 16 at 10:03PM EDT until October 19 at 6:00PM EDT by NWS Wakefield VA",
+        "description": "* WHAT...Large breaking waves of 10 to 14 feet expected in the\nsurf zone.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...From noon Saturday to 6 PM EDT Monday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion.",
+        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.606c5197e7afd55a40944f115b9edf63ee193626.001.1",
         "event": "Wind Advisory",
@@ -1920,21 +1935,6 @@
         "headline": "Wind Advisory issued October 16 at 9:16PM EDT until October 17 at 8:00PM EDT by NWS Wakefield VA",
         "description": "* WHAT...North winds 25 to 35 mph with gusts up to 50 mph expected.\n\n* WHERE...In North Carolina, Eastern Currituck County. In Virginia,\nVirginia Beach.\n\n* WHEN...From noon to 8 PM EDT Saturday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
         "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3cc367c0efac828aa0bf03db3d1f06622c206c18.002.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-16T15:47:00-04:00",
-        "onset": "2026-10-17T12:00:00-04:00",
-        "expires": "2026-10-17T00:00:00-04:00",
-        "ends": "2026-10-19T18:00:00-04:00",
-        "headline": "High Surf Advisory issued October 16 at 3:47PM EDT until October 19 at 6:00PM EDT by NWS Wakefield VA",
-        "description": "* WHAT...Large breaking waves of 10 to 14 feet expected in the\nsurf zone.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...From noon Saturday to 6 PM EDT Monday. Conditions may\ncontinue into mid week.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
         "sender_name": "NWS Wakefield VA"
       },
       {
@@ -1998,27 +1998,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-10-16",
-      "end": "2026-10-22"
+      "start": "2026-10-17",
+      "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-16T21:11:14+00:00",
-    "generated_at_local": "2026-10-16T17:11:14-04:00",
+    "generated_at_utc": "2026-10-17T04:29:01+00:00",
+    "generated_at_local": "2026-10-17T00:29:01-04:00",
     "hilo": [
-      {
-        "t": "2026-10-16 05:21",
-        "v": 1.084,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-16 11:50",
-        "v": 3.675,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-16 18:25",
-        "v": 1.106,
-        "type": "L"
-      },
       {
         "t": "2026-10-17 00:11",
         "v": 2.854,
@@ -2153,201 +2138,29 @@
         "t": "2026-10-23 17:55",
         "v": 3.584,
         "type": "H"
+      },
+      {
+        "t": "2026-10-24 00:01",
+        "v": 0.378,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-24 06:24",
+        "v": 4.092,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-24 12:43",
+        "v": 0.448,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-24 18:41",
+        "v": 3.628,
+        "type": "H"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-16 00:00",
-        "v": 2.932
-      },
-      {
-        "t": "2026-10-16 00:30",
-        "v": 2.828
-      },
-      {
-        "t": "2026-10-16 01:00",
-        "v": 2.675
-      },
-      {
-        "t": "2026-10-16 01:30",
-        "v": 2.483
-      },
-      {
-        "t": "2026-10-16 02:00",
-        "v": 2.263
-      },
-      {
-        "t": "2026-10-16 02:30",
-        "v": 2.026
-      },
-      {
-        "t": "2026-10-16 03:00",
-        "v": 1.784
-      },
-      {
-        "t": "2026-10-16 03:30",
-        "v": 1.553
-      },
-      {
-        "t": "2026-10-16 04:00",
-        "v": 1.349
-      },
-      {
-        "t": "2026-10-16 04:30",
-        "v": 1.194
-      },
-      {
-        "t": "2026-10-16 05:00",
-        "v": 1.104
-      },
-      {
-        "t": "2026-10-16 05:30",
-        "v": 1.087
-      },
-      {
-        "t": "2026-10-16 06:00",
-        "v": 1.144
-      },
-      {
-        "t": "2026-10-16 06:30",
-        "v": 1.263
-      },
-      {
-        "t": "2026-10-16 07:00",
-        "v": 1.432
-      },
-      {
-        "t": "2026-10-16 07:30",
-        "v": 1.641
-      },
-      {
-        "t": "2026-10-16 08:00",
-        "v": 1.886
-      },
-      {
-        "t": "2026-10-16 08:30",
-        "v": 2.167
-      },
-      {
-        "t": "2026-10-16 09:00",
-        "v": 2.476
-      },
-      {
-        "t": "2026-10-16 09:30",
-        "v": 2.797
-      },
-      {
-        "t": "2026-10-16 10:00",
-        "v": 3.104
-      },
-      {
-        "t": "2026-10-16 10:30",
-        "v": 3.365
-      },
-      {
-        "t": "2026-10-16 11:00",
-        "v": 3.554
-      },
-      {
-        "t": "2026-10-16 11:30",
-        "v": 3.657
-      },
-      {
-        "t": "2026-10-16 12:00",
-        "v": 3.67
-      },
-      {
-        "t": "2026-10-16 12:30",
-        "v": 3.604
-      },
-      {
-        "t": "2026-10-16 13:00",
-        "v": 3.47
-      },
-      {
-        "t": "2026-10-16 13:30",
-        "v": 3.282
-      },
-      {
-        "t": "2026-10-16 14:00",
-        "v": 3.052
-      },
-      {
-        "t": "2026-10-16 14:30",
-        "v": 2.788
-      },
-      {
-        "t": "2026-10-16 15:00",
-        "v": 2.5
-      },
-      {
-        "t": "2026-10-16 15:30",
-        "v": 2.2
-      },
-      {
-        "t": "2026-10-16 16:00",
-        "v": 1.901
-      },
-      {
-        "t": "2026-10-16 16:30",
-        "v": 1.625
-      },
-      {
-        "t": "2026-10-16 17:00",
-        "v": 1.392
-      },
-      {
-        "t": "2026-10-16 17:30",
-        "v": 1.224
-      },
-      {
-        "t": "2026-10-16 18:00",
-        "v": 1.129
-      },
-      {
-        "t": "2026-10-16 18:30",
-        "v": 1.106
-      },
-      {
-        "t": "2026-10-16 19:00",
-        "v": 1.145
-      },
-      {
-        "t": "2026-10-16 19:30",
-        "v": 1.231
-      },
-      {
-        "t": "2026-10-16 20:00",
-        "v": 1.357
-      },
-      {
-        "t": "2026-10-16 20:30",
-        "v": 1.519
-      },
-      {
-        "t": "2026-10-16 21:00",
-        "v": 1.72
-      },
-      {
-        "t": "2026-10-16 21:30",
-        "v": 1.954
-      },
-      {
-        "t": "2026-10-16 22:00",
-        "v": 2.205
-      },
-      {
-        "t": "2026-10-16 22:30",
-        "v": 2.446
-      },
-      {
-        "t": "2026-10-16 23:00",
-        "v": 2.648
-      },
-      {
-        "t": "2026-10-16 23:30",
-        "v": 2.786
-      },
       {
         "t": "2026-10-17 00:00",
         "v": 2.849
@@ -2539,20 +2352,203 @@
       {
         "t": "2026-10-17 23:30",
         "v": 2.464
+      },
+      {
+        "t": "2026-10-18 00:00",
+        "v": 2.634
+      },
+      {
+        "t": "2026-10-18 00:30",
+        "v": 2.737
+      },
+      {
+        "t": "2026-10-18 01:00",
+        "v": 2.771
+      },
+      {
+        "t": "2026-10-18 01:30",
+        "v": 2.746
+      },
+      {
+        "t": "2026-10-18 02:00",
+        "v": 2.68
+      },
+      {
+        "t": "2026-10-18 02:30",
+        "v": 2.586
+      },
+      {
+        "t": "2026-10-18 03:00",
+        "v": 2.471
+      },
+      {
+        "t": "2026-10-18 03:30",
+        "v": 2.335
+      },
+      {
+        "t": "2026-10-18 04:00",
+        "v": 2.175
+      },
+      {
+        "t": "2026-10-18 04:30",
+        "v": 1.993
+      },
+      {
+        "t": "2026-10-18 05:00",
+        "v": 1.799
+      },
+      {
+        "t": "2026-10-18 05:30",
+        "v": 1.61
+      },
+      {
+        "t": "2026-10-18 06:00",
+        "v": 1.449
+      },
+      {
+        "t": "2026-10-18 06:30",
+        "v": 1.339
+      },
+      {
+        "t": "2026-10-18 07:00",
+        "v": 1.295
+      },
+      {
+        "t": "2026-10-18 07:30",
+        "v": 1.318
+      },
+      {
+        "t": "2026-10-18 08:00",
+        "v": 1.396
+      },
+      {
+        "t": "2026-10-18 08:30",
+        "v": 1.516
+      },
+      {
+        "t": "2026-10-18 09:00",
+        "v": 1.667
+      },
+      {
+        "t": "2026-10-18 09:30",
+        "v": 1.848
+      },
+      {
+        "t": "2026-10-18 10:00",
+        "v": 2.064
+      },
+      {
+        "t": "2026-10-18 10:30",
+        "v": 2.316
+      },
+      {
+        "t": "2026-10-18 11:00",
+        "v": 2.591
+      },
+      {
+        "t": "2026-10-18 11:30",
+        "v": 2.865
+      },
+      {
+        "t": "2026-10-18 12:00",
+        "v": 3.105
+      },
+      {
+        "t": "2026-10-18 12:30",
+        "v": 3.284
+      },
+      {
+        "t": "2026-10-18 13:00",
+        "v": 3.387
+      },
+      {
+        "t": "2026-10-18 13:30",
+        "v": 3.416
+      },
+      {
+        "t": "2026-10-18 14:00",
+        "v": 3.383
+      },
+      {
+        "t": "2026-10-18 14:30",
+        "v": 3.302
+      },
+      {
+        "t": "2026-10-18 15:00",
+        "v": 3.183
+      },
+      {
+        "t": "2026-10-18 15:30",
+        "v": 3.03
+      },
+      {
+        "t": "2026-10-18 16:00",
+        "v": 2.839
+      },
+      {
+        "t": "2026-10-18 16:30",
+        "v": 2.61
+      },
+      {
+        "t": "2026-10-18 17:00",
+        "v": 2.348
+      },
+      {
+        "t": "2026-10-18 17:30",
+        "v": 2.069
+      },
+      {
+        "t": "2026-10-18 18:00",
+        "v": 1.794
+      },
+      {
+        "t": "2026-10-18 18:30",
+        "v": 1.55
+      },
+      {
+        "t": "2026-10-18 19:00",
+        "v": 1.361
+      },
+      {
+        "t": "2026-10-18 19:30",
+        "v": 1.239
+      },
+      {
+        "t": "2026-10-18 20:00",
+        "v": 1.185
+      },
+      {
+        "t": "2026-10-18 20:30",
+        "v": 1.188
+      },
+      {
+        "t": "2026-10-18 21:00",
+        "v": 1.236
+      },
+      {
+        "t": "2026-10-18 21:30",
+        "v": 1.323
+      },
+      {
+        "t": "2026-10-18 22:00",
+        "v": 1.448
+      },
+      {
+        "t": "2026-10-18 22:30",
+        "v": 1.616
+      },
+      {
+        "t": "2026-10-18 23:00",
+        "v": 1.824
+      },
+      {
+        "t": "2026-10-18 23:30",
+        "v": 2.058
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-16T06:45:09.390610-04:00",
-      "civil_dawn": "2026-10-16T06:45:09.390610-04:00",
-      "sunrise": "2026-10-16T07:11:06.952160-04:00",
-      "sunset": "2026-10-16T18:26:10.775483-04:00",
-      "dusk": "2026-10-16T18:52:09.278203-04:00",
-      "civil_dusk": "2026-10-16T18:52:09.278203-04:00",
-      "moon_phase_fraction": 0.173225
-    },
-    "tomorrow": {
       "dawn": "2026-10-17T06:46:01.565424-04:00",
       "civil_dawn": "2026-10-17T06:46:01.565424-04:00",
       "sunrise": "2026-10-17T07:12:01.032573-04:00",
@@ -2560,6 +2556,15 @@
       "dusk": "2026-10-17T18:50:52.468538-04:00",
       "civil_dusk": "2026-10-17T18:50:52.468538-04:00",
       "moon_phase_fraction": 0.207088
+    },
+    "tomorrow": {
+      "dawn": "2026-10-18T06:46:53.999667-04:00",
+      "civil_dawn": "2026-10-18T06:46:53.999667-04:00",
+      "sunrise": "2026-10-18T07:12:55.464605-04:00",
+      "sunset": "2026-10-18T18:23:34.099488-04:00",
+      "dusk": "2026-10-18T18:49:36.597350-04:00",
+      "civil_dusk": "2026-10-18T18:49:36.597350-04:00",
+      "moon_phase_fraction": 0.240951
     }
   },
   "points": {
@@ -2592,5 +2597,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
