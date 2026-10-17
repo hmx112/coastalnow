@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-17T15:38:48+00:00",
+  "generated_at_utc": "2026-10-17T17:30:40+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:38:48+00:00"
+      "fetched_at_utc": "2026-10-17T17:30:40+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.16306da04a967c22e78e59aa174798cfad9f2013.002.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T13:27:00-04:00",
+        "onset": "2026-10-17T13:27:00-04:00",
+        "expires": "2026-10-17T20:00:00-04:00",
+        "ends": "2026-10-17T20:00:00-04:00",
+        "headline": "Wind Advisory issued October 17 at 1:27PM EDT until October 17 at 8:00PM EDT by NWS Tallahassee FL",
+        "description": "* WHAT...North winds 15 to 25 mph with gusts up to 35 mph.\n\n* WHERE...Portions of Big Bend and Panhandle Florida.\n\n* WHEN...Until 8 PM EDT /7 PM CDT/ this evening.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...Frequent wind gusts forecast around 30-35 mph\nwill create dangerous conditions outdoors in the vulnerable areas\namidst ongoing hurricane recovery efforts. Elsewhere, winds may\nresult in large tree branches downed and localized power outages.",
+        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
+        "sender_name": "NWS Tallahassee FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6622161b8d7a50ff022f93ce0c909ac5299ab458.001.1",
         "event": "Rip Current Statement",
         "severity": "Minor",
@@ -1920,21 +1935,6 @@
         "headline": "The Rip Current Statement has been cancelled.",
         "description": "The Rip Current Statement has been cancelled and is no longer in effect.",
         "instruction": "",
-        "sender_name": "NWS Tallahassee FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.778e01ad82d5a4dfe3eafc8afcc01c2b60e861b9.001.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T02:23:00-04:00",
-        "onset": "2026-10-17T02:23:00-04:00",
-        "expires": "2026-10-17T20:00:00-04:00",
-        "ends": "2026-10-17T20:00:00-04:00",
-        "headline": "Wind Advisory issued October 17 at 2:23AM EDT until October 17 at 8:00PM EDT by NWS Tallahassee FL",
-        "description": "* WHAT...North winds 15 to 25 mph with gusts up to 35 mph expected.\n\n* WHERE...Portions of southeast Alabama and Big Bend and Panhandle\nFlorida.\n\n* WHEN...Until 8 PM EDT /7 PM CDT/ this evening.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...Frequent wind gusts forecast around 30-35 mph\nwill create dangerous conditions outdoors in the vulnerable areas.\nElsewhere, winds may result in large tree branches downed and\nlocalized power outages.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.\n\nRemain alert for potential falling trees and power lines, blown\ndebris, and additional damage to structures that remain compromised\nfrom the hurricane.",
         "sender_name": "NWS Tallahassee FL"
       },
       {
@@ -2547,5 +2547,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
