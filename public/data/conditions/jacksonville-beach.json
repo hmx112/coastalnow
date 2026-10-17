@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "jacksonville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T19:44:27+00:00",
+  "generated_at_utc": "2026-10-17T20:41:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:08+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:08+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:08+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:05+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:15+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:08+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T15:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": 79.7,
-      "condition_text": "Partly Sunny"
-    },
     {
       "time": "2026-10-17T16:00:00-04:00",
       "wind_mph": 26.0,
@@ -1902,26 +1890,23 @@
       "wave_period_s": null,
       "water_temperature_f": 79.7,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-24T03:00:00-04:00",
+      "wind_mph": 20.0,
+      "gust_mph": 24.166,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 79.7,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4604cb1a70b242ece2d157ad99e59667d04db5c1.001.2",
-        "event": "Rip Current Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T13:04:00-04:00",
-        "onset": "2026-10-17T13:04:00-04:00",
-        "expires": "2026-10-18T01:00:00-04:00",
-        "ends": "2026-10-20T01:00:00-04:00",
-        "headline": "Rip Current Statement issued October 17 at 1:04PM EDT until October 20 at 1:00AM EDT by NWS Jacksonville FL",
-        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the High Surf Advisory, large breaking waves of 7 to 12 feet.\n\n* WHERE...Southeast Georgia and Northeast Florida Beaches.\n\n* WHEN...For the High Rip Current Risk, through late Monday\nnight. For the High Surf Advisory, from 11 PM this evening to\n1 AM EDT Tuesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Jacksonville FL"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4604cb1a70b242ece2d157ad99e59667d04db5c1.001.1",
         "event": "High Surf Advisory",
@@ -1933,6 +1918,21 @@
         "expires": "2026-10-18T01:00:00-04:00",
         "ends": "2026-10-20T01:00:00-04:00",
         "headline": "High Surf Advisory issued October 17 at 1:04PM EDT until October 20 at 1:00AM EDT by NWS Jacksonville FL",
+        "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the High Surf Advisory, large breaking waves of 7 to 12 feet.\n\n* WHERE...Southeast Georgia and Northeast Florida Beaches.\n\n* WHEN...For the High Rip Current Risk, through late Monday\nnight. For the High Surf Advisory, from 11 PM this evening to\n1 AM EDT Tuesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Jacksonville FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4604cb1a70b242ece2d157ad99e59667d04db5c1.001.2",
+        "event": "Rip Current Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T13:04:00-04:00",
+        "onset": "2026-10-17T13:04:00-04:00",
+        "expires": "2026-10-18T01:00:00-04:00",
+        "ends": "2026-10-20T01:00:00-04:00",
+        "headline": "Rip Current Statement issued October 17 at 1:04PM EDT until October 20 at 1:00AM EDT by NWS Jacksonville FL",
         "description": "* WHAT...For the High Rip Current Risk, dangerous rip currents.\nFor the High Surf Advisory, large breaking waves of 7 to 12 feet.\n\n* WHERE...Southeast Georgia and Northeast Florida Beaches.\n\n* WHEN...For the High Rip Current Risk, through late Monday\nnight. For the High Surf Advisory, from 11 PM this evening to\n1 AM EDT Tuesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
         "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Jacksonville FL"
@@ -2001,8 +2001,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:05+00:00",
-    "generated_at_local": "2026-10-17T11:37:05-04:00",
+    "generated_at_utc": "2026-10-17T20:38:15+00:00",
+    "generated_at_local": "2026-10-17T16:38:15-04:00",
     "hilo": [
       {
         "t": "2026-10-17 01:26",
@@ -2597,5 +2597,5 @@
       "grid_y": 63
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

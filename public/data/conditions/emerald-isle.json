@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T19:41:53+00:00",
+  "generated_at_utc": "2026-10-17T20:39:23+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:53+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:23+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:53+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:23+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:53+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:23+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:01+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:06+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:41:53+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:23+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T15:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 99.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Light Rain"
-    },
     {
       "time": "2026-10-17T16:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-24T03:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.006.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.007.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
+        "effective": "2026-10-17T15:46:00-04:00",
         "onset": "2026-10-18T06:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
         "ends": "2026-10-19T11:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 17 at 5:02AM EDT until October 19 at 11:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...1 to 2 feet of inundation above ground level expected\nin low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Areas along Bogue Banks beaches, Bogue Sound, the\nNewport and White Oak Rivers, and adjacent tidal creeks, and\nareas in North Topsail Beach, the lower New River, and\nadjacent tidal creeks.\n\n* WHEN...From 6 AM Sunday to 11 AM EDT Monday.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.",
+        "headline": "Coastal Flood Advisory issued October 17 at 3:46PM EDT until October 19 at 11:00AM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...1 to 2 feet of inundation above ground level expected in\nlow-lying areas near shorelines and tidal waterways.\n\n* WHERE...Areas along Bogue Banks beaches, Bogue Sound, the\nNewport and White Oak Rivers, and adjacent tidal creeks.\n\n* WHEN...From 6 AM Sunday to 11 AM EDT Monday.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and\nlow lying property including parking lots, parks, lawns, and\nhomes adjacent to the waterfront will experience shallow\nflooding.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
@@ -1971,8 +1971,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:01+00:00",
-    "generated_at_local": "2026-10-17T11:37:01-04:00",
+    "generated_at_utc": "2026-10-17T20:38:06+00:00",
+    "generated_at_local": "2026-10-17T16:38:06-04:00",
     "hilo": [
       {
         "t": "2026-10-16 05:23",
@@ -2582,5 +2582,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

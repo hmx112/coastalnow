@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-17T19:43:47+00:00",
+  "generated_at_utc": "2026-10-17T20:40:38+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:47+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:38+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:47+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:38+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:47+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:38+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:04+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:13+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:43:47+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:38+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T12:00:00-07:00",
-      "wind_mph": 25.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 67.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-17T13:00:00-07:00",
       "wind_mph": 25.0,
@@ -1902,11 +1890,53 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-24T00:00:00-07:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 61.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1114c4ec033d2829cbbd8ec95a8d2c17393ba015.001.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T13:37:00-07:00",
+        "onset": "2026-10-17T13:37:00-07:00",
+        "expires": "2026-10-17T20:00:00-07:00",
+        "ends": "2026-10-17T14:00:00-07:00",
+        "headline": "Wind Advisory issued October 17 at 1:37PM PDT until October 17 at 2:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Heat Advisory, temperatures up to 95 expected.\n\n* WHERE...Malibu Coast, Ventura County Beaches, and Ventura County\nInland Coast.\n\n* WHEN...Until 8 PM PDT this evening.\n\n* IMPACTS...Hot temperatures may cause heat illnesses.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1114c4ec033d2829cbbd8ec95a8d2c17393ba015.001.2",
+        "event": "Heat Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T13:37:00-07:00",
+        "onset": "2026-10-17T13:37:00-07:00",
+        "expires": "2026-10-17T20:00:00-07:00",
+        "ends": "2026-10-17T20:00:00-07:00",
+        "headline": "Heat Advisory issued October 17 at 1:37PM PDT until October 17 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Heat Advisory, temperatures up to 95 expected.\n\n* WHERE...Malibu Coast, Ventura County Beaches, and Ventura County\nInland Coast.\n\n* WHEN...Until 8 PM PDT this evening.\n\n* IMPACTS...Hot temperatures may cause heat illnesses.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39187f9c0a05df292cf2ff38729db4ea4631dde8.001.1",
         "event": "Beach Hazards Statement",
@@ -1935,36 +1965,6 @@
         "headline": "Red Flag Warning issued October 17 at 9:11AM PDT until October 17 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
         "description": "...RISK FOR RAPID FIRE GROWTH AND EXTREME FIRE BEHAVIOR WITH ANY\nNEW FIRE STARTS TODAY, DUE TO GUSTY SANTA ANA WINDS WITH VERY WARM\nAND DRY CONDITIONS...\n\nOffshore winds are not as strong or widespread as the past couple\nof days, but will still create a risk for new fires to have rapid\ngrowth in wind prone areas of LA/Ventura counties due to the very\nwarm and dry conditions. By this afternoon, offshore winds may\nweaken sufficiently to allow some Red Flag Warning areas to be\ncancelled early.\n\n* AFFECTED AREA...Santa Clarita Valley, Ventura County Beaches,\nVentura County Inland Coast, Lake Casitas, Ojai Valley,\nCentral Ventura County Valleys, Malibu Coast, Calabasas and\nAgoura Hills, Western San Fernando Valley, Eastern San\nFernando Valley, Southeastern Ventura County Valleys and Los\nAngeles County San Gabriel Valley.\n\n* TIMING...Until 8 PM PDT this evening.\n\n* WINDS...Northeast to east 15 to 25 mph with gusts of 30 to 40\nmph, gradually diminishing in the afternoon. Strongest winds\nin Ventura county and eastern San Gabriel Valley foothills.\n\n* RELATIVE HUMIDITY...Minimums of 10 to 20 percent common.\n\n* IMPACTS...If fire ignition occurs, conditions are favorable\nfor extreme fire behavior which would threaten life and\nproperty.",
         "instruction": "A Red Flag Warning means that critical fire weather conditions\nare either occurring now, or will shortly. Use extreme caution\nwith anything that can spark a wildfire. Residents near wildland\ninterfaces should be prepared to evacuate if a wildfire breaks\nout. See readyforwildfire.org and wildfirerisk.org for\ninformation.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39e81f5937b7ddafb5cff7a982a82190ebf0ed5a.001.2",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T09:08:00-07:00",
-        "onset": "2026-10-17T09:08:00-07:00",
-        "expires": "2026-10-17T14:00:00-07:00",
-        "ends": "2026-10-17T14:00:00-07:00",
-        "headline": "Wind Advisory issued October 17 at 9:08AM PDT until October 17 at 2:00PM PDT by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Wind Advisory, northeast winds 20 to 30 mph with\ngusts of 35 to 55 mph expected. For the Heat Advisory, temperatures\nup to 95 expected.\n\n* WHERE...Malibu Coast, Ventura County Beaches, and Ventura County\nInland Coast.\n\n* WHEN...For the Heat Advisory, until 8 PM PDT this evening. For the\nWind Advisory, until 2 PM PDT this afternoon.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result. Hot\ntemperatures may cause heat illnesses.",
-        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nWinds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nIn the event of a nearby wildfire, smoke may increase heat and\nphysical stress. If smoke impacts your area; 1) Have a cooling plan\nin place as smoke could limit your ability to cool your home through\nopen windows and 2) If you have air conditioning, set on air\nrecirculation within the home to avoid smoke exposure. Local\nofficials may have additional guidance.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39e81f5937b7ddafb5cff7a982a82190ebf0ed5a.001.1",
-        "event": "Heat Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T09:08:00-07:00",
-        "onset": "2026-10-17T09:08:00-07:00",
-        "expires": "2026-10-17T14:00:00-07:00",
-        "ends": "2026-10-17T20:00:00-07:00",
-        "headline": "Heat Advisory issued October 17 at 9:08AM PDT until October 17 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Wind Advisory, northeast winds 20 to 30 mph with\ngusts of 35 to 55 mph expected. For the Heat Advisory, temperatures\nup to 95 expected.\n\n* WHERE...Malibu Coast, Ventura County Beaches, and Ventura County\nInland Coast.\n\n* WHEN...For the Heat Advisory, until 8 PM PDT this evening. For the\nWind Advisory, until 2 PM PDT this afternoon.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result. Hot\ntemperatures may cause heat illnesses.",
-        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nWinds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nIn the event of a nearby wildfire, smoke may increase heat and\nphysical stress. If smoke impacts your area; 1) Have a cooling plan\nin place as smoke could limit your ability to cool your home through\nopen windows and 2) If you have air conditioning, set on air\nrecirculation within the home to avoid smoke exposure. Local\nofficials may have additional guidance.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
       {
@@ -2016,8 +2016,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:04+00:00",
-    "generated_at_local": "2026-10-17T08:37:04-07:00",
+    "generated_at_utc": "2026-10-17T20:38:13+00:00",
+    "generated_at_local": "2026-10-17T13:38:13-07:00",
     "hilo": [
       {
         "t": "2026-10-16 12:23",
@@ -2612,5 +2612,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

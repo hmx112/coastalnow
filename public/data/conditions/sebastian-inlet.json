@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "sebastian-inlet",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T19:44:31+00:00",
+  "generated_at_utc": "2026-10-17T20:41:10+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:31+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:10+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:31+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:10+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:44:31+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:10+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:05+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:15+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:44:31+00:00"
+      "fetched_at_utc": "2026-10-17T20:41:10+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T15:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 59.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-10-17T16:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-24T03:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 17.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
@@ -1986,8 +1986,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:05+00:00",
-    "generated_at_local": "2026-10-17T11:37:05-04:00",
+    "generated_at_utc": "2026-10-17T20:38:15+00:00",
+    "generated_at_local": "2026-10-17T16:38:15-04:00",
     "hilo": [
       {
         "t": "2026-10-16 06:03",
@@ -2597,5 +2597,5 @@
       "grid_y": 41
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

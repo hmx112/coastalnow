@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "seaside",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-17T19:43:30+00:00",
+  "generated_at_utc": "2026-10-17T20:40:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:30+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:27+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:30+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:27+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:30+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:27+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:04+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:12+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:43:30+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:27+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T12:00:00-07:00",
-      "wind_mph": 7.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 337.5,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 58.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-17T13:00:00-07:00",
       "wind_mph": 8.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": 12.0,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-10-24T00:00:00-07:00",
+      "wind_mph": 3.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 19.0,
+      "air_temperature_f": 46.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": 12.0,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:04+00:00",
-    "generated_at_local": "2026-10-17T08:37:04-07:00",
+    "generated_at_utc": "2026-10-17T20:38:12+00:00",
+    "generated_at_local": "2026-10-17T13:38:12-07:00",
     "hilo": [
       {
         "t": "2026-10-16 05:36",
@@ -2551,5 +2551,5 @@
       "grid_y": 134
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

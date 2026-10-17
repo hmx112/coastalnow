@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "long-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-17T19:43:44+00:00",
+  "generated_at_utc": "2026-10-17T20:40:35+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:44+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:35+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:44+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:35+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:43:44+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:35+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:04+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:13+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:43:44+00:00"
+      "fetched_at_utc": "2026-10-17T20:40:35+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T12:00:00-07:00",
-      "wind_mph": 5.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 67.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 89.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-17T13:00:00-07:00",
       "wind_mph": 5.0,
@@ -1902,11 +1890,38 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-24T00:00:00-07:00",
+      "wind_mph": 5.0,
+      "gust_mph": 4.603,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1114c4ec033d2829cbbd8ec95a8d2c17393ba015.003.1",
+        "event": "Heat Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T13:37:00-07:00",
+        "onset": "2026-10-17T13:37:00-07:00",
+        "expires": "2026-10-17T20:00:00-07:00",
+        "ends": "2026-10-17T20:00:00-07:00",
+        "headline": "Heat Advisory issued October 17 at 1:37PM PDT until October 17 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Temperatures up to 95 expected.\n\n* WHERE...Los Angeles County Beaches, Los Angeles County Inland Coast\nincluding Downtown Los Angeles, Palos Verdes Hills, San Luis Obispo\nCounty Beaches, San Luis Obispo County Inland Central Coast, Santa\nBarbara County Central Coast Beaches, Santa Barbara County Inland\nCentral Coast, Santa Barbara County Southeastern Coast, and Santa\nBarbara County Southwestern Coast.\n\n* WHEN...Until 8 PM PDT this evening.\n\n* IMPACTS...Hot temperatures may cause heat illnesses.",
+        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nIn the event of a nearby wildfire, smoke may increase heat and\nphysical stress. If smoke impacts your area; 1) Have a cooling plan\nin place as smoke could limit your ability to cool your home through\nopen windows and 2) If you have air conditioning, set on air\nrecirculation within the home to avoid smoke exposure. Local\nofficials may have additional guidance.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39187f9c0a05df292cf2ff38729db4ea4631dde8.001.1",
         "event": "Beach Hazards Statement",
@@ -1920,21 +1935,6 @@
         "headline": "Beach Hazards Statement issued October 17 at 12:05PM PDT until October 20 at 9:00AM PDT by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Dangerous rip currents and breaking waves due to\nelevated surf expected.\n\n* WHERE...Ventura County Beaches, Malibu Coast and Los Angeles\nCounty Beaches.\n\n* WHEN...From Sunday morning through Tuesday morning.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore.\n\n* ADDITIONAL DETAILS...Minor beach erosion and tidal overflows may\noccur across south-facing beaches especially in the Long Beach\narea.",
         "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.39e81f5937b7ddafb5cff7a982a82190ebf0ed5a.002.1",
-        "event": "Heat Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T09:08:00-07:00",
-        "onset": "2026-10-17T09:08:00-07:00",
-        "expires": "2026-10-17T14:00:00-07:00",
-        "ends": "2026-10-17T20:00:00-07:00",
-        "headline": "Heat Advisory issued October 17 at 9:08AM PDT until October 17 at 8:00PM PDT by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Temperatures up to 95 expected.\n\n* WHERE...Los Angeles County Beaches, Los Angeles County Inland Coast\nincluding Downtown Los Angeles, Palos Verdes Hills, San Luis Obispo\nCounty Beaches, San Luis Obispo County Inland Central Coast, Santa\nBarbara County Central Coast Beaches, Santa Barbara County Inland\nCentral Coast, Santa Barbara County Southeastern Coast, and Santa\nBarbara County Southwestern Coast.\n\n* WHEN...Until 8 PM PDT this evening.\n\n* IMPACTS...Hot temperatures may cause heat illnesses.",
-        "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -1971,8 +1971,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:04+00:00",
-    "generated_at_local": "2026-10-17T08:37:04-07:00",
+    "generated_at_utc": "2026-10-17T20:38:13+00:00",
+    "generated_at_local": "2026-10-17T13:38:12-07:00",
     "hilo": [
       {
         "t": "2026-10-17 13:28",
@@ -2547,5 +2547,5 @@
       "grid_y": 31
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

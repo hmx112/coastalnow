@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "nags-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T19:41:27+00:00",
+  "generated_at_utc": "2026-10-17T20:38:55+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:55+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:55+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:55+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:01+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:05+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:41:27+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:55+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T15:00:00-04:00",
-      "wind_mph": 38.0,
-      "gust_mph": 49.484,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 97.0,
-      "air_temperature_f": 62.0,
-      "wave_height_ft": 9.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain"
-    },
     {
       "time": "2026-10-17T16:00:00-04:00",
       "wind_mph": 38.0,
@@ -1902,11 +1890,68 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-24T03:00:00-04:00",
+      "wind_mph": 20.0,
+      "gust_mph": 31.071,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 8.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.004.1",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-17T15:46:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-20T17:00:00-04:00",
+        "headline": "High Surf Advisory issued October 17 at 3:46PM EDT until October 20 at 5:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents,\nlarge breaking waves expected, and strong longshore currents in\nthe surf zone. For the High Surf Advisory, large breaking waves\nof 8 to 15 feet expected in the surf zone. For the Coastal\nFlood Advisory, 1 to 3 feet inundation above ground level\nexpected in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Tuesday. For\nthe Beach Hazards Statement, until 8 PM EDT this evening. For\nthe Coastal Flood Advisory, until 5 PM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away from\nshore into deeper water. Dangerous shore break can throw a\nswimmer or surfer head first into the bottom causing neck and\nback injuries. Strong longshore currents will create dangerous\nswimming conditions.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.004.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-17T17:00:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-20T17:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 17 at 3:46PM EDT until October 20 at 5:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents,\nlarge breaking waves expected, and strong longshore currents in\nthe surf zone. For the High Surf Advisory, large breaking waves\nof 8 to 15 feet expected in the surf zone. For the Coastal\nFlood Advisory, 1 to 3 feet inundation above ground level\nexpected in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Tuesday. For\nthe Beach Hazards Statement, until 8 PM EDT this evening. For\nthe Coastal Flood Advisory, until 5 PM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away from\nshore into deeper water. Dangerous shore break can throw a\nswimmer or surfer head first into the bottom causing neck and\nback injuries. Strong longshore currents will create dangerous\nswimming conditions.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.004.3",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-17T15:46:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-17T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 17 at 3:46PM EDT until October 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents,\nlarge breaking waves expected, and strong longshore currents in\nthe surf zone. For the High Surf Advisory, large breaking waves\nof 8 to 15 feet expected in the surf zone. For the Coastal\nFlood Advisory, 1 to 3 feet inundation above ground level\nexpected in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Tuesday. For\nthe Beach Hazards Statement, until 8 PM EDT this evening. For\nthe Coastal Flood Advisory, until 5 PM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away from\nshore into deeper water. Dangerous shore break can throw a\nswimmer or surfer head first into the bottom causing neck and\nback injuries. Strong longshore currents will create dangerous\nswimming conditions.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63364f387940b1a884141ebe5f1ff2b1102ac72c.003.1",
         "event": "Wind Advisory",
@@ -1920,51 +1965,6 @@
         "headline": "Wind Advisory issued October 17 at 2:14PM EDT until October 19 at 8:00PM EDT by NWS Newport/Morehead City NC",
         "description": "* WHAT...North winds 30 to 40 mph with gusts up to 55 mph.\n\n* WHERE...Hatteras Island, Northern Outer Banks, and Ocracoke Island.\n\n* WHEN...Until 8 PM EDT Monday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
         "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.003.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-17T14:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-20T08:00:00-04:00",
-        "headline": "High Surf Advisory issued October 17 at 5:02AM EDT until October 20 at 8:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves expected, and strong longshore\ncurrents in the surf zone. For the High Surf Advisory, large\nbreaking waves of 8 to 15 feet expected in the surf zone. For\nthe Coastal Flood Advisory, 1 to 3 feet inundation above\nground level expected in low-lying areas near shorelines and\ntidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n2 PM this afternoon to 8 AM EDT Tuesday. For the Coastal Flood\nAdvisory, from 5 PM this afternoon to 8 AM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries. Strong longshore\ncurrents will create dangerous swimming conditions.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.003.3",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-17T08:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-17T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued October 17 at 5:02AM EDT until October 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves expected, and strong longshore\ncurrents in the surf zone. For the High Surf Advisory, large\nbreaking waves of 8 to 15 feet expected in the surf zone. For\nthe Coastal Flood Advisory, 1 to 3 feet inundation above\nground level expected in low-lying areas near shorelines and\ntidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n2 PM this afternoon to 8 AM EDT Tuesday. For the Coastal Flood\nAdvisory, from 5 PM this afternoon to 8 AM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries. Strong longshore\ncurrents will create dangerous swimming conditions.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.003.2",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-17T17:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-20T08:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 17 at 5:02AM EDT until October 20 at 8:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves expected, and strong longshore\ncurrents in the surf zone. For the High Surf Advisory, large\nbreaking waves of 8 to 15 feet expected in the surf zone. For\nthe Coastal Flood Advisory, 1 to 3 feet inundation above\nground level expected in low-lying areas near shorelines and\ntidal waterways.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n2 PM this afternoon to 8 AM EDT Tuesday. For the Coastal Flood\nAdvisory, from 5 PM this afternoon to 8 AM EDT Tuesday.\n\n* IMPACTS...1 to 3 feet of inundation above ground level is\nexpected in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries. Strong longshore\ncurrents will create dangerous swimming conditions.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -2031,8 +2031,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:01+00:00",
-    "generated_at_local": "2026-10-17T11:37:01-04:00",
+    "generated_at_utc": "2026-10-17T20:38:05+00:00",
+    "generated_at_local": "2026-10-17T16:38:05-04:00",
     "hilo": [
       {
         "t": "2026-10-16 05:22",
@@ -2642,5 +2642,5 @@
       "grid_y": 119
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

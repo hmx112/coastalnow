@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-17T19:41:39+00:00",
+  "generated_at_utc": "2026-10-17T20:39:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:39+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:16+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:39+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:16+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T19:41:39+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:16+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-17T15:37:01+00:00"
+      "fetched_at_utc": "2026-10-17T20:38:06+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-17T19:41:39+00:00"
+      "fetched_at_utc": "2026-10-17T20:39:16+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-17T15:00:00-04:00",
-      "wind_mph": 37.0,
-      "gust_mph": 47.182,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 99.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain"
-    },
     {
       "time": "2026-10-17T16:00:00-04:00",
       "wind_mph": 38.0,
@@ -1902,11 +1890,68 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-24T03:00:00-04:00",
+      "wind_mph": 16.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.003.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-18T00:00:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-19T20:00:00-04:00",
+        "headline": "High Surf Advisory issued October 17 at 3:46PM EDT until October 19 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to 4\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, until 8 PM EDT this\nevening. For the Coastal Flood Warning, until 5 PM EDT\nTuesday. For the High Surf Advisory, from midnight tonight to\n8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash impacts\nto vulnerable oceanside areas through multiple high tide cycles\ninto next week. Minor soundside water level rises will also be\npossible.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.003.3",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-17T15:46:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-17T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 17 at 3:46PM EDT until October 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to 4\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, until 8 PM EDT this\nevening. For the Coastal Flood Warning, until 5 PM EDT\nTuesday. For the High Surf Advisory, from midnight tonight to\n8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash impacts\nto vulnerable oceanside areas through multiple high tide cycles\ninto next week. Minor soundside water level rises will also be\npossible.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0ace643ad96eb8e139c9106400a2f229ef03ece.003.1",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-17T15:46:00-04:00",
+        "onset": "2026-10-17T17:00:00-04:00",
+        "expires": "2026-10-18T06:00:00-04:00",
+        "ends": "2026-10-20T17:00:00-04:00",
+        "headline": "Coastal Flood Warning issued October 17 at 3:46PM EDT until October 20 at 5:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to 4\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, until 8 PM EDT this\nevening. For the Coastal Flood Warning, until 5 PM EDT\nTuesday. For the High Surf Advisory, from midnight tonight to\n8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash impacts\nto vulnerable oceanside areas through multiple high tide cycles\ninto next week. Minor soundside water level rises will also be\npossible.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of unknown\ndepth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63364f387940b1a884141ebe5f1ff2b1102ac72c.003.1",
         "event": "Wind Advisory",
@@ -1920,51 +1965,6 @@
         "headline": "Wind Advisory issued October 17 at 2:14PM EDT until October 19 at 8:00PM EDT by NWS Newport/Morehead City NC",
         "description": "* WHAT...North winds 30 to 40 mph with gusts up to 55 mph.\n\n* WHERE...Hatteras Island, Northern Outer Banks, and Ocracoke Island.\n\n* WHEN...Until 8 PM EDT Monday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
         "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.002.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-18T00:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-19T20:00:00-04:00",
-        "headline": "High Surf Advisory issued October 17 at 5:02AM EDT until October 19 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to\n4 feet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the Coastal Flood Warning,\nfrom 5 PM this afternoon to 8 AM EDT Tuesday. For the High\nSurf Advisory, from midnight tonight to 8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash\nimpacts to vulnerable oceanside areas through multiple high\ntide cycles into next week. Minor soundside water level rises\nwill also be possible.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.002.1",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-17T17:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-20T08:00:00-04:00",
-        "headline": "Coastal Flood Warning issued October 17 at 5:02AM EDT until October 20 at 8:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to\n4 feet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the Coastal Flood Warning,\nfrom 5 PM this afternoon to 8 AM EDT Tuesday. For the High\nSurf Advisory, from midnight tonight to 8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash\nimpacts to vulnerable oceanside areas through multiple high\ntide cycles into next week. Minor soundside water level rises\nwill also be possible.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f462365b1bb348e8cba6bfb4b4def2f6f738643a.002.3",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-17T05:02:00-04:00",
-        "onset": "2026-10-17T08:00:00-04:00",
-        "expires": "2026-10-17T17:15:00-04:00",
-        "ends": "2026-10-17T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued October 17 at 5:02AM EDT until October 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Beach Hazards Statement, strong longshore\ncurrents in the surf zone. For the Coastal Flood Warning, 2 to\n4 feet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways. For the High Surf\nAdvisory, large breaking waves of 6 to 12 feet expected in the\nsurf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening. For the Coastal Flood Warning,\nfrom 5 PM this afternoon to 8 AM EDT Tuesday. For the High\nSurf Advisory, from midnight tonight to 8 PM EDT Monday.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. There is a possibility of being\nstranded on Ocracoke for multiple days. This could be life\nthreatening if you have an emergency. Dangerous swimming and\nsurfing conditions and localized beach erosion. Strong longshore\ncurrents will create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...This has the potential to be a long\nduration event bringing more significant ocean overwash\nimpacts to vulnerable oceanside areas through multiple high\ntide cycles into next week. Minor soundside water level rises\nwill also be possible.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty. Prepare for being stranded on Ocracoke for multiple\ndays. Prepare for disruptions to ferries by this evening and\nlasting into at least part of next week.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -2031,8 +2031,8 @@
       "start": "2026-10-17",
       "end": "2026-10-23"
     },
-    "generated_at_utc": "2026-10-17T15:37:01+00:00",
-    "generated_at_local": "2026-10-17T11:37:01-04:00",
+    "generated_at_utc": "2026-10-17T20:38:06+00:00",
+    "generated_at_local": "2026-10-17T16:38:05-04:00",
     "hilo": [
       {
         "t": "2026-10-17 06:13",
@@ -2622,5 +2622,5 @@
       "grid_y": 78
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
