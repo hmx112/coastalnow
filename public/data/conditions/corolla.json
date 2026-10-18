@@ -2,83 +2,35 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-18T14:07:55+00:00",
+  "generated_at_utc": "2026-10-18T15:53:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-18T14:07:55+00:00"
+      "fetched_at_utc": "2026-10-18T15:53:50+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-18T11:09:17+00:00"
+      "fetched_at_utc": "2026-10-18T15:53:50+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-18T11:09:17+00:00"
+      "fetched_at_utc": "2026-10-18T15:53:50+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-18T11:08:12+00:00"
+      "fetched_at_utc": "2026-10-18T15:53:06+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-18T11:09:17+00:00"
+      "fetched_at_utc": "2026-10-18T15:53:50+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-18T07:00:00-04:00",
-      "wind_mph": 32.0,
-      "gust_mph": 44.88,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 56.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-10-18T08:00:00-04:00",
-      "wind_mph": 32.0,
-      "gust_mph": 44.88,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-10-18T09:00:00-04:00",
-      "wind_mph": 32.0,
-      "gust_mph": 44.88,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-10-18T10:00:00-04:00",
-      "wind_mph": 31.0,
-      "gust_mph": 43.73,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
     {
       "time": "2026-10-18T11:00:00-04:00",
       "wind_mph": 31.0,
@@ -1902,11 +1854,74 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-24T19:00:00-04:00",
+      "wind_mph": 32.0,
+      "gust_mph": 44.88,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 11.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-24T20:00:00-04:00",
+      "wind_mph": 31.0,
+      "gust_mph": 43.73,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-24T21:00:00-04:00",
+      "wind_mph": 31.0,
+      "gust_mph": 42.579,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-24T22:00:00-04:00",
+      "wind_mph": 30.0,
+      "gust_mph": 41.428,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8d9ee8d0cdd45aae6243b8bdb9da865a5d3612ce.001.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-18T10:07:00-04:00",
+        "onset": "2026-10-18T10:07:00-04:00",
+        "expires": "2026-10-18T18:00:00-04:00",
+        "ends": "2026-10-20T01:00:00-04:00",
+        "headline": "Wind Advisory issued October 18 at 10:07AM EDT until October 20 at 1:00AM EDT by NWS Wakefield VA",
+        "description": "* WHAT...North to northeast winds 25 to 35 mph with gusts up to 50\nmph.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...Until 1 AM EDT Tuesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
+        "sender_name": "NWS Wakefield VA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f52645bc1c9b03513c4cdc7e133cdb9ec038ade9.001.3",
         "event": "High Surf Advisory",
@@ -1950,21 +1965,6 @@
         "headline": "Coastal Flood Advisory issued October 18 at 5:36AM EDT until October 18 at 4:00PM EDT by NWS Wakefield VA",
         "description": "* WHAT...For the High Surf Advisory, large breaking waves of 8 to\n14 feet in the surf zone. For the Coastal Flood Advisory, up to\none foot of inundation above ground level expected in low- lying\nareas near shorelines and tidal waterways. For the Coastal Flood\nWatch, one to two feet of inundation above ground level\npossible in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...For the High Surf Advisory, until 7 AM EDT Wednesday.\nFor the Coastal Flood Advisory, from noon today to 4 PM EDT\nthis afternoon. For the Coastal Flood Watch, from Monday\nafternoon through Wednesday morning.\n\n* IMPACTS...Numerous roads may be closed. Low lying property\nincluding homes, businesses, and some critical infrastructure\nmay be inundated. Some shoreline erosion may occur. Dangerous\nswimming and surfing conditions and localized beach erosion.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.89c8875c19a8fcdfa559785b9835989ae34cc7fd.002.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-18T02:56:00-04:00",
-        "onset": "2026-10-18T02:56:00-04:00",
-        "expires": "2026-10-18T11:00:00-04:00",
-        "ends": "2026-10-20T01:00:00-04:00",
-        "headline": "Wind Advisory issued October 18 at 2:56AM EDT until October 20 at 1:00AM EDT by NWS Wakefield VA",
-        "description": "* WHAT...North to northeast winds 25 to 35 mph with gusts up to 50\nmph.\n\n* WHERE...Eastern Currituck County.\n\n* WHEN...Until 1 AM EDT Tuesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
         "sender_name": "NWS Wakefield VA"
       },
       {
@@ -2016,8 +2016,8 @@
       "start": "2026-10-18",
       "end": "2026-10-24"
     },
-    "generated_at_utc": "2026-10-18T11:08:12+00:00",
-    "generated_at_local": "2026-10-18T07:08:12-04:00",
+    "generated_at_utc": "2026-10-18T15:53:06+00:00",
+    "generated_at_local": "2026-10-18T11:53:06-04:00",
     "hilo": [
       {
         "t": "2026-10-18 01:01",
@@ -2612,5 +2612,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
