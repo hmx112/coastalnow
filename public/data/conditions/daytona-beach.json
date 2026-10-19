@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "daytona-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-19T11:12:18+00:00",
+  "generated_at_utc": "2026-10-19T13:21:53+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:12:18+00:00"
+      "fetched_at_utc": "2026-10-19T13:21:53+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:12:18+00:00"
+      "fetched_at_utc": "2026-10-19T13:21:53+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:12:18+00:00"
+      "fetched_at_utc": "2026-10-19T13:21:53+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T04:43:01+00:00"
+      "fetched_at_utc": "2026-10-19T13:19:59+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-19T11:12:18+00:00"
+      "fetched_at_utc": "2026-10-19T13:21:53+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-19T07:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 36.825,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 28.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-10-19T08:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 27.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-10-19T09:00:00-04:00",
       "wind_mph": 20.0,
@@ -1902,39 +1878,48 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Rain Showers Likely"
+    },
+    {
+      "time": "2026-10-25T19:00:00-04:00",
+      "wind_mph": 30.0,
+      "gust_mph": 42.579,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 56.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Rain Showers Likely"
+    },
+    {
+      "time": "2026-10-25T20:00:00-04:00",
+      "wind_mph": 30.0,
+      "gust_mph": 41.428,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 35.0,
+      "air_temperature_f": 74.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c61b09220f4ec9cca561868cb562a1999d82f2e9.001.1",
-        "event": "Gale Warning",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-19T02:37:00-04:00",
-        "onset": "2026-10-19T02:37:00-04:00",
-        "expires": "2026-10-22T04:00:00-04:00",
-        "ends": "2026-10-19T08:00:00-04:00",
-        "headline": "Gale Warning issued October 19 at 2:37AM EDT until October 19 at 8:00AM EDT by NWS Melbourne FL",
-        "description": "* WHAT...For the Gale Warning, northeast winds around 25 knots\nwith gusts up to 35 knots and seas 11 to 14 feet. For the Small\nCraft Advisory, north winds 15 to 25 knots with gusts up to 30\nknots and seas 7 to 13 feet expected.\n\n* WHERE...Flagler Beach to Volusia-Brevard County Line 0-20 nm\nand Flagler Beach to Volusia-Brevard County Line 20-60 nm.\n\n* WHEN...For the Gale Warning, until 8 AM EDT this morning. For\nthe Small Craft Advisory, from 8 AM this morning to 4 AM EDT\nThursday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
-        "sender_name": "NWS Melbourne FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c61b09220f4ec9cca561868cb562a1999d82f2e9.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b39617b87c3148a6b8a748acf0b9835a70761918.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-19T02:37:00-04:00",
-        "onset": "2026-10-19T08:00:00-04:00",
-        "expires": "2026-10-22T04:00:00-04:00",
+        "effective": "2026-10-19T08:50:00-04:00",
+        "onset": "2026-10-19T08:50:00-04:00",
+        "expires": "2026-10-19T16:15:00-04:00",
         "ends": "2026-10-22T04:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 19 at 2:37AM EDT until October 22 at 4:00AM EDT by NWS Melbourne FL",
-        "description": "* WHAT...For the Gale Warning, northeast winds around 25 knots\nwith gusts up to 35 knots and seas 11 to 14 feet. For the Small\nCraft Advisory, north winds 15 to 25 knots with gusts up to 30\nknots and seas 7 to 13 feet expected.\n\n* WHERE...Flagler Beach to Volusia-Brevard County Line 0-20 nm\nand Flagler Beach to Volusia-Brevard County Line 20-60 nm.\n\n* WHEN...For the Gale Warning, until 8 AM EDT this morning. For\nthe Small Craft Advisory, from 8 AM this morning to 4 AM EDT\nThursday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
+        "headline": "Small Craft Advisory issued October 19 at 8:50AM EDT until October 22 at 4:00AM EDT by NWS Melbourne FL",
+        "description": "* WHAT...Northeast winds 20 to 25 knots with gusts up to 30 knots\ntoday, decreasing 15 to 20 knots tonight and Tuesday. Seas 9 to\n14 feet.\n\n* WHERE...Flagler Beach to Jupiter Inlet out to 60 nm.\n\n* WHEN...Until 4 AM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Melbourne FL"
       }
     ]
@@ -1971,8 +1956,8 @@
       "start": "2026-10-19",
       "end": "2026-10-25"
     },
-    "generated_at_utc": "2026-10-19T04:43:01+00:00",
-    "generated_at_local": "2026-10-19T00:43:00-04:00",
+    "generated_at_utc": "2026-10-19T13:19:59+00:00",
+    "generated_at_local": "2026-10-19T09:19:59-04:00",
     "hilo": [
       {
         "t": "2026-10-18 01:32",
@@ -2587,5 +2572,5 @@
       "grid_y": 100
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

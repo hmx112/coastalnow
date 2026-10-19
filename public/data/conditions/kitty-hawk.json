@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "kitty-hawk",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-19T11:11:38+00:00",
+  "generated_at_utc": "2026-10-19T13:20:41+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:11:38+00:00"
+      "fetched_at_utc": "2026-10-19T13:20:41+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:11:38+00:00"
+      "fetched_at_utc": "2026-10-19T13:20:41+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T11:11:38+00:00"
+      "fetched_at_utc": "2026-10-19T13:20:41+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-19T04:42:52+00:00"
+      "fetched_at_utc": "2026-10-19T13:19:49+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-19T11:11:38+00:00"
+      "fetched_at_utc": "2026-10-19T13:20:41+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-19T07:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 40.277,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 6.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 9.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-10-19T08:00:00-04:00",
-      "wind_mph": 26.0,
-      "gust_mph": 41.428,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 7.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 9.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-10-19T09:00:00-04:00",
       "wind_mph": 26.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-25T19:00:00-04:00",
+      "wind_mph": 16.0,
+      "gust_mph": 25.317,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-10-25T20:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
@@ -2016,8 +2016,8 @@
       "start": "2026-10-19",
       "end": "2026-10-25"
     },
-    "generated_at_utc": "2026-10-19T04:42:52+00:00",
-    "generated_at_local": "2026-10-19T00:42:52-04:00",
+    "generated_at_utc": "2026-10-19T13:19:49+00:00",
+    "generated_at_local": "2026-10-19T09:19:48-04:00",
     "hilo": [
       {
         "t": "2026-10-18 01:00",
@@ -2632,5 +2632,5 @@
       "grid_y": 123
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
