@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "jacksonville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-21T17:16:38+00:00",
+  "generated_at_utc": "2026-10-21T19:33:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T17:16:38+00:00"
+      "fetched_at_utc": "2026-10-21T19:33:27+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,18 +1908,33 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2363ade2e314a69b6073ef0f44e4e883e213658c.001.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a02b330215b7b81d1bf055215a2e760571407b2e.001.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-21T13:31:00-04:00",
+        "onset": "2026-10-21T13:31:00-04:00",
+        "expires": "2026-10-22T02:00:00-04:00",
+        "ends": "2026-10-22T16:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 21 at 1:31PM EDT until October 22 at 4:00PM EDT by NWS Jacksonville FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor coastal flooding.\nFor the High Rip Current Risk, dangerous rip currents.\n\n* WHERE...Coastal Duval County.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM EDT\nThursday. For the High Rip Current Risk, through late Thursday\nnight.\n\n* IMPACTS...Flooding of lots, parks, and roads with only isolated\nroad closures expected. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Jacksonville FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a02b330215b7b81d1bf055215a2e760571407b2e.001.2",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-21T02:24:00-04:00",
-        "onset": "2026-10-21T02:24:00-04:00",
-        "expires": "2026-10-21T16:00:00-04:00",
+        "effective": "2026-10-21T13:31:00-04:00",
+        "onset": "2026-10-21T13:31:00-04:00",
+        "expires": "2026-10-22T02:00:00-04:00",
         "ends": "2026-10-23T02:00:00-04:00",
-        "headline": "Rip Current Statement issued October 21 at 2:24AM EDT until October 23 at 2:00AM EDT by NWS Jacksonville FL",
-        "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...Coastal Duval and Northeast Coastal St. Johns Counties.\n\n* WHEN...Through late Thursday night.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
-        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "Rip Current Statement issued October 21 at 1:31PM EDT until October 23 at 2:00AM EDT by NWS Jacksonville FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor coastal flooding.\nFor the High Rip Current Risk, dangerous rip currents.\n\n* WHERE...Coastal Duval County.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM EDT\nThursday. For the High Rip Current Risk, through late Thursday\nnight.\n\n* IMPACTS...Flooding of lots, parks, and roads with only isolated\nroad closures expected. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Jacksonville FL"
       },
       {
@@ -2567,5 +2582,5 @@
       "grid_y": 63
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
