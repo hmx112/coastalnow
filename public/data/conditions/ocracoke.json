@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-21T10:32:23+00:00",
+  "generated_at_utc": "2026-10-21T11:52:24+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:23+00:00"
+      "fetched_at_utc": "2026-10-21T11:52:24+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:23+00:00"
+      "fetched_at_utc": "2026-10-21T11:52:24+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:23+00:00"
+      "fetched_at_utc": "2026-10-21T11:52:24+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T04:51:04+00:00"
+      "fetched_at_utc": "2026-10-21T11:51:43+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-21T10:32:23+00:00"
+      "fetched_at_utc": "2026-10-21T11:52:24+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-21T06:00:00-04:00",
-      "wind_mph": 22.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-10-21T07:00:00-04:00",
       "wind_mph": 22.0,
@@ -1902,39 +1890,51 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-27T18:00:00-04:00",
+      "wind_mph": 16.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa77b28ed3e2aa6fb8610924ce8ea82285f24aff.001.2",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.38551406288b44df20943087e02ffbbba6b34de6.001.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-21T04:11:00-04:00",
-        "onset": "2026-10-21T04:11:00-04:00",
-        "expires": "2026-10-21T16:15:00-04:00",
-        "ends": "2026-10-21T20:00:00-04:00",
-        "headline": "Coastal Flood Warning issued October 21 at 4:11AM EDT until October 21 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, up to 2 to 4 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves expected, and strong\nlongshore currents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Warning, until 8 PM EDT this\nevening. For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. This could be life threatening if\nyou have an emergency. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous shore\nbreak can throw a swimmer or surfer head first into the bottom\ncausing neck and back injuries. Strong longshore currents will\ncreate dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Significant ocean overwash impacts are\nexpected at vulnerable oceanside areas through multiple high\ntide cycles into mid week. Minor soundside water level rises\nwill also be possible today.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "effective": "2026-10-21T07:37:00-04:00",
+        "onset": "2026-10-21T07:37:00-04:00",
+        "expires": "2026-10-21T19:45:00-04:00",
+        "ends": "2026-10-22T08:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 21 at 7:37AM EDT until October 22 at 8:00AM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 3 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves expected, and strong\nlongshore currents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, through this\nevening.\n\n* IMPACTS...Up to 1 to 3 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries. Strong longshore currents\nwill create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time\nfor strong rip currents to occur is a couple hours either side\nof low tide, which will occur around 10 AM.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.\n\nStrong longshore currents can sweep swimmers and surfers into rip\ncurrents, piers, jetties and other hazardous areas. In many\ncases, the longshore current is strong enough to prevent swimmers\nfrom being able to keep their feet on the bottom making it\ndifficult to return to shore.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa77b28ed3e2aa6fb8610924ce8ea82285f24aff.001.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.38551406288b44df20943087e02ffbbba6b34de6.001.3",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-21T04:11:00-04:00",
+        "effective": "2026-10-21T07:37:00-04:00",
         "onset": "2026-10-21T08:00:00-04:00",
-        "expires": "2026-10-21T16:15:00-04:00",
+        "expires": "2026-10-21T19:45:00-04:00",
         "ends": "2026-10-21T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued October 21 at 4:11AM EDT until October 21 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, up to 2 to 4 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves expected, and strong\nlongshore currents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Warning, until 8 PM EDT this\nevening. For the Beach Hazards Statement, from 8 AM EDT this\nmorning through this evening.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level is\nexpected in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Vulnerable portions of NC-12 may be inundated,\nespecially around high tide. This could be life threatening if\nyou have an emergency. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous shore\nbreak can throw a swimmer or surfer head first into the bottom\ncausing neck and back injuries. Strong longshore currents will\ncreate dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Significant ocean overwash impacts are\nexpected at vulnerable oceanside areas through multiple high\ntide cycles into mid week. Minor soundside water level rises\nwill also be possible today.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "headline": "Beach Hazards Statement issued October 21 at 7:37AM EDT until October 21 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 3 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves expected, and strong\nlongshore currents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, through this\nevening.\n\n* IMPACTS...Up to 1 to 3 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries. Strong longshore currents\nwill create dangerous swimming conditions.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time\nfor strong rip currents to occur is a couple hours either side\nof low tide, which will occur around 10 AM.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.\n\nStrong longshore currents can sweep swimmers and surfers into rip\ncurrents, piers, jetties and other hazardous areas. In many\ncases, the longshore current is strong enough to prevent swimmers\nfrom being able to keep their feet on the bottom making it\ndifficult to return to shore.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -1986,8 +1986,8 @@
       "start": "2026-10-21",
       "end": "2026-10-27"
     },
-    "generated_at_utc": "2026-10-21T04:51:04+00:00",
-    "generated_at_local": "2026-10-21T00:51:03-04:00",
+    "generated_at_utc": "2026-10-21T11:51:43+00:00",
+    "generated_at_local": "2026-10-21T07:51:43-04:00",
     "hilo": [
       {
         "t": "2026-10-21 04:27",
@@ -2582,5 +2582,5 @@
       "grid_y": 78
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

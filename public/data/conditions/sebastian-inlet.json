@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "sebastian-inlet",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-21T10:33:43+00:00",
+  "generated_at_utc": "2026-10-21T11:54:01+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:33:43+00:00"
+      "fetched_at_utc": "2026-10-21T11:54:01+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:33:43+00:00"
+      "fetched_at_utc": "2026-10-21T11:54:01+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:33:43+00:00"
+      "fetched_at_utc": "2026-10-21T11:54:01+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T04:51:21+00:00"
+      "fetched_at_utc": "2026-10-21T11:51:47+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-21T10:33:43+00:00"
+      "fetched_at_utc": "2026-10-21T11:54:01+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-21T06:00:00-04:00",
-      "wind_mph": 10.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 22.5,
-      "precip_probability_pct": 7.0,
-      "air_temperature_f": 72.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-21T07:00:00-04:00",
       "wind_mph": 10.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-27T18:00:00-04:00",
+      "wind_mph": 25.0,
+      "gust_mph": 33.373,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
@@ -1971,8 +1971,8 @@
       "start": "2026-10-21",
       "end": "2026-10-27"
     },
-    "generated_at_utc": "2026-10-21T04:51:21+00:00",
-    "generated_at_local": "2026-10-21T00:51:21-04:00",
+    "generated_at_utc": "2026-10-21T11:51:47+00:00",
+    "generated_at_local": "2026-10-21T07:51:47-04:00",
     "hilo": [
       {
         "t": "2026-10-20 03:25",
@@ -2587,5 +2587,5 @@
       "grid_y": 41
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

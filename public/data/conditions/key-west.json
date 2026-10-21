@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-21T10:32:53+00:00",
+  "generated_at_utc": "2026-10-21T11:53:13+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:53+00:00"
+      "fetched_at_utc": "2026-10-21T11:53:13+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:53+00:00"
+      "fetched_at_utc": "2026-10-21T11:53:13+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:53+00:00"
+      "fetched_at_utc": "2026-10-21T11:53:13+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T04:51:10+00:00"
+      "fetched_at_utc": "2026-10-21T11:51:45+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T10:32:53+00:00"
+      "fetched_at_utc": "2026-10-21T11:53:13+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-21T06:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 16.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": null,
-      "water_temperature_f": 82.2,
-      "condition_text": "Slight Chance Rain Showers"
-    },
     {
       "time": "2026-10-21T07:00:00-04:00",
       "wind_mph": 15.0,
@@ -1902,11 +1890,39 @@
       "wave_period_s": null,
       "water_temperature_f": 82.2,
       "condition_text": "Chance Showers And Thunderstorms"
+    },
+    {
+      "time": "2026-10-27T18:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 36.0,
+      "air_temperature_f": 82.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": 82.2,
+      "condition_text": "Chance Showers And Thunderstorms"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.95dd3acdb792c5cafe31a0b937d7d70ffbe1f4dc.002.1",
+        "event": "Coastal Flood Statement",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-21T07:22:00-04:00",
+        "onset": "2026-10-21T07:22:00-04:00",
+        "expires": "2026-10-21T15:30:00-04:00",
+        "ends": "2026-10-22T05:00:00-04:00",
+        "headline": "Coastal Flood Statement issued October 21 at 7:22AM EDT until October 22 at 5:00AM EDT by NWS Key West FL",
+        "description": "* WHAT...Minor saltwater flooding.\n\n* WHERE...Lower Florida Keys.\n\n* WHEN...Through early Thursday morning.\n\n* IMPACTS...Minor saltwater flooding of low elevation streets\nand lots is likely. Some storm drains will overflow, and some\nseawalls and docks will be overtopped. Boaters can expect less\nclearance under fixed bridges. Motorists should remember that\npersistent puddles around the times of high tide are almost\ncertain to contain a mix of saltwater.",
+        "instruction": "Do not drive through flooded roadways.",
+        "sender_name": "NWS Key West FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1940,8 +1956,8 @@
       "start": "2026-10-21",
       "end": "2026-10-27"
     },
-    "generated_at_utc": "2026-10-21T04:51:10+00:00",
-    "generated_at_local": "2026-10-21T00:51:10-04:00",
+    "generated_at_utc": "2026-10-21T11:51:45+00:00",
+    "generated_at_local": "2026-10-21T07:51:44-04:00",
     "hilo": [
       {
         "t": "2026-10-21 00:19",
@@ -2541,5 +2557,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
