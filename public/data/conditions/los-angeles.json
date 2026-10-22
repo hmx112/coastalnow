@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "los-angeles",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-22T17:13:05+00:00",
+  "generated_at_utc": "2026-10-22T18:45:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T17:13:05+00:00"
+      "fetched_at_utc": "2026-10-22T18:45:33+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,36 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d5288dedd8d0c000aaaf0fc4a668a6e76fe5fc87.001.1",
+        "event": "Special Weather Statement",
+        "severity": "Moderate",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-22T11:00:00-07:00",
+        "onset": "2026-10-22T11:00:00-07:00",
+        "expires": "2026-10-22T12:00:00-07:00",
+        "ends": null,
+        "headline": "Special Weather Statement issued October 22 at 11:00AM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "At 1058 AM PDT, strong showers and thunderstorms will continue\nacross southeastern Ventura and central Los Angeles Counties.\n\nHAZARD...Wind gusts up to 50 mph and penny size hail. A brief weak\ntornado is possible.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects. Minor hail damage to vegetation is\npossible.\n\nLocations impacted include...\nLong Beach...\nOxnard...\nThousand Oaks...\nSimi Valley...\nCamarillo...\nFillmore...\nActon...\nEncino...\nInglewood...\nManhattan Beach...\nAgoura Hills...\nVenice...\nRancho Palos Verdes...\nHollywood...\nVan Nuys...\nAlhambra...\nMount Wilson...\nCulver City...\nTorrance...\nand Universal City.",
+        "instruction": "If outdoors, consider seeking shelter inside a building.\n\nTorrential rainfall is also occurring with this storm and may lead to\nlocalized flooding. Do not drive your vehicle through flooded\nroadways.\n\nFrequent cloud to ground lightning is occurring with this storm.\nLightning can strike 10 miles away from a thunderstorm. Seek a safe\nshelter inside a building or vehicle.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.25d217c7d46e0d41cef13598deed08a78eb137b3.001.1",
+        "event": "Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-22T10:57:00-07:00",
+        "onset": "2026-10-22T10:57:00-07:00",
+        "expires": "2026-10-22T14:00:00-07:00",
+        "ends": "2026-10-22T14:00:00-07:00",
+        "headline": "Flood Advisory issued October 22 at 10:57AM PDT until October 22 at 2:00PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Urban area and small stream flooding caused by excessive\nrainfall continues. Canyon rock and mudslides possible.\n\n* WHERE...Southern and Eastern Los Angeles County in southwestern\nCalifornia...\n\n* WHEN...Until 200 PM PDT.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\nWater over roadways. Canyon rock and mud slides possible. Minor\ndebris flows possible.\n\n* ADDITIONAL DETAILS...\n- At 1056 AM PDT, Doppler radar indicated heavy rain due to\nthunderstorms. This  will cause urban and small stream flooding\nand potential rock and canyon mud slides, and minor debris flows.\n- Some locations that will experience flooding include...\nLong Beach, Wrightwood, Whittier, West Covina, Glendora, San\nDimas, Pomona, Torrance, Redondo Beach, Rancho Palos Verdes, La\nVerne, Carson, Port of Los Angeles, Rolling Hills, Hacienda\nHeights, Santa Fe Springs and Norwalk.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles. Campers and hikers should avoid streams or\ncreeks.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.79a63b8a90432155d7930309e18fd616b10c95cb.001.1",
         "event": "Marine Weather Statement",
         "severity": "Minor",
@@ -2552,5 +2582,5 @@
       "grid_y": 29
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
