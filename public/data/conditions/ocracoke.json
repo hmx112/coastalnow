@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-21T22:41:18+00:00",
+  "generated_at_utc": "2026-10-22T01:47:11+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T22:41:18+00:00"
+      "fetched_at_utc": "2026-10-22T01:47:11+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T21:45:25+00:00"
+      "fetched_at_utc": "2026-10-22T01:47:11+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T21:45:25+00:00"
+      "fetched_at_utc": "2026-10-22T01:47:11+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,58 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-21T21:45:25+00:00"
+      "fetched_at_utc": "2026-10-22T01:47:11+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-21T17:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-21T18:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-21T19:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-21T20:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-10-21T21:00:00-04:00",
       "wind_mph": 17.0,
@@ -1902,53 +1854,101 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-10-28T05:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-10-28T06:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-10-28T07:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-10-28T08:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.658dc58a8bf19f6ce39c85b77a34e62a9471dbdd.003.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-21T15:37:00-04:00",
-        "onset": "2026-10-21T15:37:00-04:00",
-        "expires": "2026-10-22T03:45:00-04:00",
-        "ends": "2026-10-22T08:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 21 at 3:37PM EDT until October 22 at 8:00AM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves, and strong longshore\ncurrents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, until 8 PM EDT this\nevening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and\nlow lying property including parking lots, parks, lawns, and\nhomes adjacent to the waterfront will experience shallow\nflooding. Dangerous shore break can throw a swimmer or surfer\nhead first into the bottom causing neck and back injuries.\nStrong longshore currents will create dangerous swimming\nconditions.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time for\nstrong rip currents to occur is a couple hours either side of\nlow tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.\n\nStrong longshore currents can sweep swimmers and surfers into rip\ncurrents, piers, jetties and other hazardous areas. In many\ncases, the longshore current is strong enough to prevent swimmers\nfrom being able to keep their feet on the bottom making it\ndifficult to return to shore.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.658dc58a8bf19f6ce39c85b77a34e62a9471dbdd.003.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.68b53ffc5cb9b47e004915f4ddbb117ffc1e0f5f.003.2",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-21T15:37:00-04:00",
-        "onset": "2026-10-21T15:37:00-04:00",
-        "expires": "2026-10-22T03:45:00-04:00",
-        "ends": "2026-10-21T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued October 21 at 3:37PM EDT until October 21 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, dangerous\nrip currents, large breaking waves, and strong longshore\ncurrents in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, until 8 PM EDT this\nevening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways\nresulting in a low threat of property damage. Some roads and\nlow lying property including parking lots, parks, lawns, and\nhomes adjacent to the waterfront will experience shallow\nflooding. Dangerous shore break can throw a swimmer or surfer\nhead first into the bottom causing neck and back injuries.\nStrong longshore currents will create dangerous swimming\nconditions.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time for\nstrong rip currents to occur is a couple hours either side of\nlow tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.\n\nStrong longshore currents can sweep swimmers and surfers into rip\ncurrents, piers, jetties and other hazardous areas. In many\ncases, the longshore current is strong enough to prevent swimmers\nfrom being able to keep their feet on the bottom making it\ndifficult to return to shore.",
+        "effective": "2026-10-21T20:28:00-04:00",
+        "onset": "2026-10-22T08:00:00-04:00",
+        "expires": "2026-10-22T08:30:00-04:00",
+        "ends": "2026-10-22T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 21 at 8:28PM EDT until October 22 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, large\nbreaking waves expected in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, from 8 AM EDT\nThursday through Thursday evening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Dangerous shore break can\nthrow a swimmer or surfer head first into the bottom causing\nneck and back injuries.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time for\nstrong rip currents to occur is a couple hours either side of\nlow tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bcbe786c21a128a841df004f8ff9b20016ea71db.002.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.68b53ffc5cb9b47e004915f4ddbb117ffc1e0f5f.003.3",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-21T20:28:00-04:00",
+        "onset": "2026-10-21T20:28:00-04:00",
+        "expires": "2026-10-22T08:30:00-04:00",
+        "ends": "2026-10-22T08:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 21 at 8:28PM EDT until October 22 at 8:00AM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the Beach Hazards Statement, large\nbreaking waves expected in the surf zone.\n\n* WHERE...Ocracoke Island.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM EDT\nThursday. For the Beach Hazards Statement, from 8 AM EDT\nThursday through Thursday evening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Dangerous shore break can\nthrow a swimmer or surfer head first into the bottom causing\nneck and back injuries.\n\n* ADDITIONAL DETAILS...Minor ocean overwash impacts are possible\nat vulnerable oceanside areas into Thursday morning. Portions of\nNC-12 may be impacted around high tide. The most likely time for\nstrong rip currents to occur is a couple hours either side of\nlow tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fffbd14b7291f1463ff5f5dbe2e1d1696bfb1079.005.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-21T14:36:00-04:00",
-        "onset": "2026-10-21T14:36:00-04:00",
-        "expires": "2026-10-22T02:45:00-04:00",
+        "effective": "2026-10-21T21:41:00-04:00",
+        "onset": "2026-10-21T21:41:00-04:00",
+        "expires": "2026-10-22T09:45:00-04:00",
         "ends": "2026-10-26T20:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 21 at 2:36PM EDT until October 26 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Northeast winds 15 to 25 kt with gusts up to 30 kt and\nseas 9 to 15 ft.\n\n* WHERE...The coastal waters from Oregon Inlet to Ocracoke Inlet.\n\n* WHEN...Until 8 PM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued October 21 at 9:41PM EDT until October 26 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Northeast winds 15 to 20 kt with gusts up to 25 kt and\nseas 9 to 15 ft.\n\n* WHERE...The coastal waters from Oregon Inlet to Ocracoke Inlet.\n\n* WHEN...Until 8 PM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       }
@@ -2582,5 +2582,5 @@
       "grid_y": 78
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "alerts-only-full-refresh"
 }
