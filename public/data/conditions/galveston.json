@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "galveston",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-22T21:40:17+00:00",
+  "generated_at_utc": "2026-10-22T22:43:35+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T21:40:17+00:00"
+      "fetched_at_utc": "2026-10-22T22:43:35+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.709e74a3696c407f637d7c77fb82c08b00d825ec.001.1",
+        "event": "Air Quality Alert",
+        "severity": "Unknown",
+        "certainty": "Unknown",
+        "urgency": "Unknown",
+        "effective": "2026-10-22T17:16:00-05:00",
+        "onset": "2026-10-22T17:16:00-05:00",
+        "expires": "2026-10-23T21:30:00-05:00",
+        "ends": null,
+        "headline": "Air Quality Alert issued October 22 at 5:16PM CDT by NWS Houston/Galveston TX",
+        "description": "AQAHGX\n\nThe Texas Commission on Environmental Quality (TCEQ) has issued an\nOzone Action Day for the Houston, Galveston, and Brazoria area for\nFriday, October 23, 2026.\n\nAtmospheric conditions are expected to be favorable for producing\nhigh levels of ozone pollution in the Houston, Galveston, and\nsurrounding areas on Friday. You can help prevent ozone pollution by\nsharing a ride, walking, riding a bicycle, taking your lunch to work,\navoiding drive through lanes, conserving energy and keeping your vehicle\nproperly tuned.\n\nFor more information on ozone:\nOzone: The Facts www.tceq.texas.gov/airquality/monops/ozonefacts.html\nEPA AirNow: www.airnow.gov/?city=Houston&state=TX&country=USA\nTake Care of Texas:\nwww.takecareoftexas.org/conservation-tips/keep-our-air-clean",
+        "instruction": "",
+        "sender_name": "NWS Houston/Galveston TX"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ae9ef44f53926623e8e9ecf1c522bbb4ffa5f3da.001.1",
         "event": "Air Quality Alert",
         "severity": "Unknown",
@@ -2532,5 +2547,5 @@
       "grid_y": 72
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
