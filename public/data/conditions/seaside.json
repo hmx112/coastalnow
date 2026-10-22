@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "seaside",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-22T01:48:27+00:00",
+  "generated_at_utc": "2026-10-22T04:52:01+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T01:48:27+00:00"
+      "fetched_at_utc": "2026-10-22T04:52:01+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T01:48:27+00:00"
+      "fetched_at_utc": "2026-10-22T04:52:01+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T01:48:27+00:00"
+      "fetched_at_utc": "2026-10-22T04:52:01+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-21T21:44:37+00:00"
+      "fetched_at_utc": "2026-10-22T04:50:12+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-22T01:48:27+00:00"
+      "fetched_at_utc": "2026-10-22T04:52:01+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-21T18:00:00-07:00",
-      "wind_mph": 3.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 337.5,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 54.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-10-21T19:00:00-07:00",
-      "wind_mph": 3.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 52.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-10-21T20:00:00-07:00",
-      "wind_mph": 3.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-10-21T21:00:00-07:00",
       "wind_mph": 3.0,
@@ -1902,11 +1866,62 @@
       "wave_period_s": 10.0,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-10-28T06:00:00-07:00",
+      "wind_mph": 3.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 26.0,
+      "air_temperature_f": 44.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-10-28T07:00:00-07:00",
+      "wind_mph": 3.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 26.0,
+      "air_temperature_f": 44.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-10-28T08:00:00-07:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 26.0,
+      "air_temperature_f": 45.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.96bc767e82829035ea5911c4dbfea20079de71fe.003.1",
+        "event": "Frost Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-21T18:55:00-07:00",
+        "onset": "2026-10-23T23:00:00-07:00",
+        "expires": "2026-10-22T12:00:00-07:00",
+        "ends": "2026-10-24T09:00:00-07:00",
+        "headline": "Frost Advisory issued October 21 at 6:55PM PDT until October 24 at 9:00AM PDT by NWS Portland OR",
+        "description": "* WHAT...Temperatures as low as 34 to 36 degrees will result in frost\nformation.\n\n* WHERE...Portions of northwest and west central Oregon and southwest\nWashington.\n\n* WHEN...From 11 PM Friday to 9 AM PDT Saturday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
+        "instruction": "Take steps now to protect tender outdoor plants from the cold.\nConsider temporarily moving outdoor potted plants indoors if they are\nsensitive to cold temperatures.\n\nConsider temporarily covering sensitive plants with a lightweight\ncotton fabric (i.e., bedsheets, thin blankets), as this will help\nretain heat and provide frost protection for your plants.",
+        "sender_name": "NWS Portland OR"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.094daef2372460dc787c535e24f20410148fca49.001.1",
         "event": "Small Craft Advisory",
@@ -1971,8 +1986,8 @@
       "start": "2026-10-21",
       "end": "2026-10-27"
     },
-    "generated_at_utc": "2026-10-21T21:44:37+00:00",
-    "generated_at_local": "2026-10-21T14:44:37-07:00",
+    "generated_at_utc": "2026-10-22T04:50:12+00:00",
+    "generated_at_local": "2026-10-21T21:50:12-07:00",
     "hilo": [
       {
         "t": "2026-10-20 02:28",
@@ -2587,5 +2602,5 @@
       "grid_y": 134
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
