@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "fort-myers-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-23T04:55:34+00:00",
+  "generated_at_utc": "2026-10-23T07:54:31+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-23T04:55:34+00:00"
+      "fetched_at_utc": "2026-10-23T07:54:31+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3e75747ad12f0bccfe934a4d2edea64c6c75c6ad.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-23T01:08:00-04:00",
+        "onset": "2026-10-23T17:00:00-04:00",
+        "expires": "2026-10-23T09:15:00-04:00",
+        "ends": "2026-10-28T20:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 23 at 1:08AM EDT until October 28 at 8:00PM EDT by NWS Tampa Bay Ruskin FL",
+        "description": "* WHAT...Northeast winds 20 to 30 knots with gusts up to 35 knots\nand seas 6 to 10 feet expected.\n\n* WHERE...Portions of Gulf of America.\n\n* WHEN...From 5 PM this afternoon to 8 PM EDT Wednesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Tampa Bay Ruskin FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2526,5 +2542,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
