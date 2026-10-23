@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-23T01:54:07+00:00",
+  "generated_at_utc": "2026-10-23T04:55:36+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-23T01:54:07+00:00"
+      "fetched_at_utc": "2026-10-23T04:55:36+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-23T01:54:07+00:00"
+      "fetched_at_utc": "2026-10-23T04:55:36+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-23T01:54:07+00:00"
+      "fetched_at_utc": "2026-10-23T04:55:36+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T21:37:33+00:00"
+      "fetched_at_utc": "2026-10-23T04:52:42+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-23T01:54:07+00:00"
+      "fetched_at_utc": "2026-10-23T04:55:36+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-22T21:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 27.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-22T22:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 29.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-10-22T23:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 19.563,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 31.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-10-23T00:00:00-04:00",
       "wind_mph": 18.0,
@@ -1902,53 +1866,89 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-29T09:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 41.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-29T10:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 41.0,
+      "air_temperature_f": 79.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-10-29T11:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 41.0,
+      "air_temperature_f": 81.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f5a6e7c84ac5ba1f2b78beccde5d2bb6d2c6a25.002.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ec9c08f8ca732aefe6a3814470969ef4b7c9657.002.2",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-22T15:54:00-04:00",
-        "onset": "2026-10-22T15:54:00-04:00",
-        "expires": "2026-10-23T05:00:00-04:00",
+        "effective": "2026-10-23T00:36:00-04:00",
+        "onset": "2026-10-23T00:36:00-04:00",
+        "expires": "2026-10-23T16:00:00-04:00",
         "ends": "2026-10-24T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 22 at 3:54PM EDT until October 24 at 8:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 8 PM EDT Saturday.\nFor the Coastal Flood Advisory, until 8 PM EDT Saturday. The\nadvisory will either need to be extended into next week or\nupgraded to a warning Sunday into Monday when King Tides peak\nand rain chances and onshore winds are highest. For the High\nRip Current Risk, through Saturday evening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Rip currents can sweep even\nthe best swimmers away from shore into deeper water.",
+        "headline": "Rip Current Statement issued October 23 at 12:36AM EDT until October 24 at 8:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 8 PM EDT\nSaturday. For the Coastal Flood Advisory, until 8 PM EDT\nSaturday. The advisory will either need to be extended into\nnext week or upgraded to a warning Sunday into Monday when\nKing Tides peak and rain chances and onshore winds are\nhighest. For the High Rip Current Risk, through Saturday\nevening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Rip currents can sweep even\nthe best swimmers away from shore into deeper water.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Miami FL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f5a6e7c84ac5ba1f2b78beccde5d2bb6d2c6a25.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ec9c08f8ca732aefe6a3814470969ef4b7c9657.002.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-22T15:54:00-04:00",
-        "onset": "2026-10-22T15:54:00-04:00",
-        "expires": "2026-10-23T05:00:00-04:00",
+        "effective": "2026-10-23T00:36:00-04:00",
+        "onset": "2026-10-23T00:36:00-04:00",
+        "expires": "2026-10-23T16:00:00-04:00",
         "ends": "2026-10-24T20:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 22 at 3:54PM EDT until October 24 at 8:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 8 PM EDT Saturday.\nFor the Coastal Flood Advisory, until 8 PM EDT Saturday. The\nadvisory will either need to be extended into next week or\nupgraded to a warning Sunday into Monday when King Tides peak\nand rain chances and onshore winds are highest. For the High\nRip Current Risk, through Saturday evening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Rip currents can sweep even\nthe best swimmers away from shore into deeper water.",
+        "headline": "Coastal Flood Advisory issued October 23 at 12:36AM EDT until October 24 at 8:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding. For the High Rip Current Risk, dangerous rip\ncurrents.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...For the Coastal Flood Advisory, until 8 PM EDT\nSaturday. For the Coastal Flood Advisory, until 8 PM EDT\nSaturday. The advisory will either need to be extended into\nnext week or upgraded to a warning Sunday into Monday when\nKing Tides peak and rain chances and onshore winds are\nhighest. For the High Rip Current Risk, through Saturday\nevening.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Rip currents can sweep even\nthe best swimmers away from shore into deeper water.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Miami FL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5cba525b379f30f01ce95b4420a1eca03f148f31.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bbc8ec1da30c390d8f1cf134f15d887f5da3b749.003.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-22T15:55:00-04:00",
-        "onset": "2026-10-22T15:55:00-04:00",
-        "expires": "2026-10-23T05:00:00-04:00",
-        "ends": "2026-10-24T20:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 22 at 3:55PM EDT until October 24 at 8:00PM EDT by NWS Miami FL",
-        "description": "* WHAT...Northeast winds 15 to 20 kt and seas 4 to 7 ft.\n\n* WHERE...Coastal waters from Jupiter Inlet to Deerfield Beach\nFL out 20 NM, Coastal waters from Deerfield Beach to Ocean\nReef FL out 20 NM, Waters from Jupiter Inlet to Deerfield\nBeach FL from 20 to 60 NM and Waters from Deerfield Beach to\nOcean Reef FL from 20 to 60 NM excluding the territorial\nwaters of Bahamas.\n\n* WHEN...Through at least early next week.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "effective": "2026-10-23T00:39:00-04:00",
+        "onset": "2026-10-23T00:39:00-04:00",
+        "expires": "2026-10-23T16:00:00-04:00",
+        "ends": "2026-10-25T20:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 23 at 12:39AM EDT until October 25 at 8:00PM EDT by NWS Miami FL",
+        "description": "* WHAT...Northeast winds 15 to 25 kt and seas 4 to 7 ft building\nto 10 to 15 ft on Sunday.\n\n* WHERE...Coastal waters from Jupiter Inlet to Deerfield Beach\nFL out 20 NM, Coastal waters from Deerfield Beach to Ocean\nReef FL out 20 NM, Waters from Jupiter Inlet to Deerfield\nBeach FL from 20 to 60 NM and Waters from Deerfield Beach to\nOcean Reef FL from 20 to 60 NM excluding the territorial\nwaters of Bahamas.\n\n* WHEN...Until 8 PM EDT Sunday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Miami FL"
       }
@@ -1983,32 +1983,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-10-22",
-      "end": "2026-10-28"
+      "start": "2026-10-23",
+      "end": "2026-10-29"
     },
-    "generated_at_utc": "2026-10-22T21:37:33+00:00",
-    "generated_at_local": "2026-10-22T17:37:33-04:00",
+    "generated_at_utc": "2026-10-23T04:52:42+00:00",
+    "generated_at_local": "2026-10-23T00:52:42-04:00",
     "hilo": [
-      {
-        "t": "2026-10-21 04:58",
-        "v": 2.719,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-21 11:18",
-        "v": 1.008,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-21 17:25",
-        "v": 2.84,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-21 23:44",
-        "v": 0.918,
-        "type": "L"
-      },
       {
         "t": "2026-10-22 05:53",
         "v": 2.902,
@@ -2163,201 +2143,24 @@
         "t": "2026-10-29 23:38",
         "v": 3.155,
         "type": "H"
+      },
+      {
+        "t": "2026-10-30 05:51",
+        "v": 0.199,
+        "type": "L"
+      },
+      {
+        "t": "2026-10-30 12:28",
+        "v": 3.294,
+        "type": "H"
+      },
+      {
+        "t": "2026-10-30 18:27",
+        "v": 0.823,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-22 00:00",
-        "v": 0.927
-      },
-      {
-        "t": "2026-10-22 00:30",
-        "v": 0.993
-      },
-      {
-        "t": "2026-10-22 01:00",
-        "v": 1.119
-      },
-      {
-        "t": "2026-10-22 01:30",
-        "v": 1.295
-      },
-      {
-        "t": "2026-10-22 02:00",
-        "v": 1.512
-      },
-      {
-        "t": "2026-10-22 02:30",
-        "v": 1.754
-      },
-      {
-        "t": "2026-10-22 03:00",
-        "v": 2.007
-      },
-      {
-        "t": "2026-10-22 03:30",
-        "v": 2.253
-      },
-      {
-        "t": "2026-10-22 04:00",
-        "v": 2.477
-      },
-      {
-        "t": "2026-10-22 04:30",
-        "v": 2.664
-      },
-      {
-        "t": "2026-10-22 05:00",
-        "v": 2.803
-      },
-      {
-        "t": "2026-10-22 05:30",
-        "v": 2.883
-      },
-      {
-        "t": "2026-10-22 06:00",
-        "v": 2.9
-      },
-      {
-        "t": "2026-10-22 06:30",
-        "v": 2.854
-      },
-      {
-        "t": "2026-10-22 07:00",
-        "v": 2.746
-      },
-      {
-        "t": "2026-10-22 07:30",
-        "v": 2.585
-      },
-      {
-        "t": "2026-10-22 08:00",
-        "v": 2.38
-      },
-      {
-        "t": "2026-10-22 08:30",
-        "v": 2.144
-      },
-      {
-        "t": "2026-10-22 09:00",
-        "v": 1.892
-      },
-      {
-        "t": "2026-10-22 09:30",
-        "v": 1.641
-      },
-      {
-        "t": "2026-10-22 10:00",
-        "v": 1.406
-      },
-      {
-        "t": "2026-10-22 10:30",
-        "v": 1.202
-      },
-      {
-        "t": "2026-10-22 11:00",
-        "v": 1.042
-      },
-      {
-        "t": "2026-10-22 11:30",
-        "v": 0.937
-      },
-      {
-        "t": "2026-10-22 12:00",
-        "v": 0.892
-      },
-      {
-        "t": "2026-10-22 12:30",
-        "v": 0.913
-      },
-      {
-        "t": "2026-10-22 13:00",
-        "v": 0.999
-      },
-      {
-        "t": "2026-10-22 13:30",
-        "v": 1.147
-      },
-      {
-        "t": "2026-10-22 14:00",
-        "v": 1.345
-      },
-      {
-        "t": "2026-10-22 14:30",
-        "v": 1.581
-      },
-      {
-        "t": "2026-10-22 15:00",
-        "v": 1.84
-      },
-      {
-        "t": "2026-10-22 15:30",
-        "v": 2.104
-      },
-      {
-        "t": "2026-10-22 16:00",
-        "v": 2.357
-      },
-      {
-        "t": "2026-10-22 16:30",
-        "v": 2.581
-      },
-      {
-        "t": "2026-10-22 17:00",
-        "v": 2.762
-      },
-      {
-        "t": "2026-10-22 17:30",
-        "v": 2.888
-      },
-      {
-        "t": "2026-10-22 18:00",
-        "v": 2.951
-      },
-      {
-        "t": "2026-10-22 18:30",
-        "v": 2.945
-      },
-      {
-        "t": "2026-10-22 19:00",
-        "v": 2.869
-      },
-      {
-        "t": "2026-10-22 19:30",
-        "v": 2.727
-      },
-      {
-        "t": "2026-10-22 20:00",
-        "v": 2.527
-      },
-      {
-        "t": "2026-10-22 20:30",
-        "v": 2.282
-      },
-      {
-        "t": "2026-10-22 21:00",
-        "v": 2.007
-      },
-      {
-        "t": "2026-10-22 21:30",
-        "v": 1.721
-      },
-      {
-        "t": "2026-10-22 22:00",
-        "v": 1.44
-      },
-      {
-        "t": "2026-10-22 22:30",
-        "v": 1.184
-      },
-      {
-        "t": "2026-10-22 23:00",
-        "v": 0.967
-      },
-      {
-        "t": "2026-10-22 23:30",
-        "v": 0.804
-      },
       {
         "t": "2026-10-23 00:00",
         "v": 0.705
@@ -2549,20 +2352,203 @@
       {
         "t": "2026-10-23 23:30",
         "v": 0.864
+      },
+      {
+        "t": "2026-10-24 00:00",
+        "v": 0.648
+      },
+      {
+        "t": "2026-10-24 00:30",
+        "v": 0.504
+      },
+      {
+        "t": "2026-10-24 01:00",
+        "v": 0.439
+      },
+      {
+        "t": "2026-10-24 01:30",
+        "v": 0.459
+      },
+      {
+        "t": "2026-10-24 02:00",
+        "v": 0.564
+      },
+      {
+        "t": "2026-10-24 02:30",
+        "v": 0.748
+      },
+      {
+        "t": "2026-10-24 03:00",
+        "v": 1.0
+      },
+      {
+        "t": "2026-10-24 03:30",
+        "v": 1.304
+      },
+      {
+        "t": "2026-10-24 04:00",
+        "v": 1.642
+      },
+      {
+        "t": "2026-10-24 04:30",
+        "v": 1.993
+      },
+      {
+        "t": "2026-10-24 05:00",
+        "v": 2.338
+      },
+      {
+        "t": "2026-10-24 05:30",
+        "v": 2.654
+      },
+      {
+        "t": "2026-10-24 06:00",
+        "v": 2.923
+      },
+      {
+        "t": "2026-10-24 06:30",
+        "v": 3.128
+      },
+      {
+        "t": "2026-10-24 07:00",
+        "v": 3.258
+      },
+      {
+        "t": "2026-10-24 07:30",
+        "v": 3.304
+      },
+      {
+        "t": "2026-10-24 08:00",
+        "v": 3.263
+      },
+      {
+        "t": "2026-10-24 08:30",
+        "v": 3.136
+      },
+      {
+        "t": "2026-10-24 09:00",
+        "v": 2.932
+      },
+      {
+        "t": "2026-10-24 09:30",
+        "v": 2.665
+      },
+      {
+        "t": "2026-10-24 10:00",
+        "v": 2.352
+      },
+      {
+        "t": "2026-10-24 10:30",
+        "v": 2.015
+      },
+      {
+        "t": "2026-10-24 11:00",
+        "v": 1.675
+      },
+      {
+        "t": "2026-10-24 11:30",
+        "v": 1.355
+      },
+      {
+        "t": "2026-10-24 12:00",
+        "v": 1.078
+      },
+      {
+        "t": "2026-10-24 12:30",
+        "v": 0.86
+      },
+      {
+        "t": "2026-10-24 13:00",
+        "v": 0.717
+      },
+      {
+        "t": "2026-10-24 13:30",
+        "v": 0.658
+      },
+      {
+        "t": "2026-10-24 14:00",
+        "v": 0.686
+      },
+      {
+        "t": "2026-10-24 14:30",
+        "v": 0.795
+      },
+      {
+        "t": "2026-10-24 15:00",
+        "v": 0.978
+      },
+      {
+        "t": "2026-10-24 15:30",
+        "v": 1.223
+      },
+      {
+        "t": "2026-10-24 16:00",
+        "v": 1.514
+      },
+      {
+        "t": "2026-10-24 16:30",
+        "v": 1.832
+      },
+      {
+        "t": "2026-10-24 17:00",
+        "v": 2.154
+      },
+      {
+        "t": "2026-10-24 17:30",
+        "v": 2.461
+      },
+      {
+        "t": "2026-10-24 18:00",
+        "v": 2.731
+      },
+      {
+        "t": "2026-10-24 18:30",
+        "v": 2.947
+      },
+      {
+        "t": "2026-10-24 19:00",
+        "v": 3.094
+      },
+      {
+        "t": "2026-10-24 19:30",
+        "v": 3.163
+      },
+      {
+        "t": "2026-10-24 20:00",
+        "v": 3.147
+      },
+      {
+        "t": "2026-10-24 20:30",
+        "v": 3.037
+      },
+      {
+        "t": "2026-10-24 21:00",
+        "v": 2.84
+      },
+      {
+        "t": "2026-10-24 21:30",
+        "v": 2.568
+      },
+      {
+        "t": "2026-10-24 22:00",
+        "v": 2.24
+      },
+      {
+        "t": "2026-10-24 22:30",
+        "v": 1.877
+      },
+      {
+        "t": "2026-10-24 23:00",
+        "v": 1.502
+      },
+      {
+        "t": "2026-10-24 23:30",
+        "v": 1.14
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-22T06:59:42.349101-04:00",
-      "civil_dawn": "2026-10-22T06:59:42.349101-04:00",
-      "sunrise": "2026-10-22T07:23:09.056472-04:00",
-      "sunset": "2026-10-22T18:46:14.244049-04:00",
-      "dusk": "2026-10-22T19:09:41.866874-04:00",
-      "civil_dusk": "2026-10-22T19:09:41.866874-04:00",
-      "moon_phase_fraction": 0.376404
-    },
-    "tomorrow": {
       "dawn": "2026-10-23T07:00:14.933728-04:00",
       "civil_dawn": "2026-10-23T07:00:14.933728-04:00",
       "sunrise": "2026-10-23T07:23:43.486169-04:00",
@@ -2570,6 +2556,15 @@
       "dusk": "2026-10-23T19:08:52.284544-04:00",
       "civil_dusk": "2026-10-23T19:08:52.284544-04:00",
       "moon_phase_fraction": 0.410267
+    },
+    "tomorrow": {
+      "dawn": "2026-10-24T07:00:47.908234-04:00",
+      "civil_dawn": "2026-10-24T07:00:47.908234-04:00",
+      "sunrise": "2026-10-24T07:24:18.361487-04:00",
+      "sunset": "2026-10-24T18:44:32.275246-04:00",
+      "dusk": "2026-10-24T19:08:03.699227-04:00",
+      "civil_dusk": "2026-10-24T19:08:03.699227-04:00",
+      "moon_phase_fraction": 0.44413
     }
   },
   "points": {
@@ -2602,5 +2597,5 @@
       "grid_y": 71
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
