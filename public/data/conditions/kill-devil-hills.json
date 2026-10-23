@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "kill-devil-hills",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-22T22:42:47+00:00",
+  "generated_at_utc": "2026-10-23T01:52:40+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T22:42:47+00:00"
+      "fetched_at_utc": "2026-10-23T01:52:40+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T21:38:31+00:00"
+      "fetched_at_utc": "2026-10-23T01:52:40+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-22T21:38:31+00:00"
+      "fetched_at_utc": "2026-10-23T01:52:40+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,58 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-22T21:38:31+00:00"
+      "fetched_at_utc": "2026-10-23T01:52:40+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-22T17:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-22T18:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Clear"
-    },
-    {
-      "time": "2026-10-22T19:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Clear"
-    },
-    {
-      "time": "2026-10-22T20:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Clear"
-    },
     {
       "time": "2026-10-22T21:00:00-04:00",
       "wind_mph": 13.0,
@@ -1902,54 +1854,72 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-10-29T05:00:00-04:00",
+      "wind_mph": 12.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-10-29T06:00:00-04:00",
+      "wind_mph": 12.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-10-29T07:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-10-29T08:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9e0d89314d69c600d70eb638a94db53b6e1d6287.002.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-22T15:11:00-04:00",
-        "onset": "2026-10-22T15:11:00-04:00",
-        "expires": "2026-10-22T20:00:00-04:00",
-        "ends": "2026-10-22T20:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 22 at 3:11PM EDT until October 22 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to 1 to 2 feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 10 feet in the surf zone. For the\nBeach Hazards Statement, dangerous rip currents and large\nbreaking waves expected in the surf zone.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9e0d89314d69c600d70eb638a94db53b6e1d6287.002.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.555520a7262a7593a2821d4fbcdfdc1e5d02912d.002.4",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-22T15:11:00-04:00",
-        "onset": "2026-10-22T15:11:00-04:00",
-        "expires": "2026-10-22T20:00:00-04:00",
-        "ends": "2026-10-22T20:00:00-04:00",
-        "headline": "Beach Hazards Statement issued October 22 at 3:11PM EDT until October 22 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to 1 to 2 feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 10 feet in the surf zone. For the\nBeach Hazards Statement, dangerous rip currents and large\nbreaking waves expected in the surf zone.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9e0d89314d69c600d70eb638a94db53b6e1d6287.002.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-22T15:11:00-04:00",
-        "onset": "2026-10-22T15:11:00-04:00",
-        "expires": "2026-10-22T20:00:00-04:00",
-        "ends": "2026-10-22T20:00:00-04:00",
-        "headline": "High Surf Advisory issued October 22 at 3:11PM EDT until October 22 at 8:00PM EDT by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to 1 to 2 feet of\ninundation above ground level in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 8 to 10 feet in the surf zone. For the\nBeach Hazards Statement, dangerous rip currents and large\nbreaking waves expected in the surf zone.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways resulting in a low threat of property damage. Some\nroads and low lying property including parking lots, parks,\nlawns, and homes adjacent to the waterfront will experience\nshallow flooding. Dangerous swimming and surfing conditions\nand localized beach erosion. Rip currents can sweep even the\nbest swimmers away from shore into deeper water. Dangerous\nshore break can throw a swimmer or surfer head first into the\nbottom causing neck and back injuries.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nLife-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
+        "effective": "2026-10-22T20:09:00-04:00",
+        "onset": "2026-10-23T08:00:00-04:00",
+        "expires": "2026-10-23T08:15:00-04:00",
+        "ends": "2026-10-23T20:00:00-04:00",
+        "headline": "Beach Hazards Statement issued October 22 at 8:09PM EDT until October 23 at 8:00PM EDT by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Dangerous rip currents and large breaking waves\nexpected in the surf zone.\n\n* WHERE...Northern Outer Banks beaches.\n\n* WHEN...From 8 AM EDT Friday through Friday evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water. Dangerous shore break can throw\na swimmer or surfer head first into the bottom causing neck\nand back injuries.\n\n* ADDITIONAL DETAILS...The most likely time for strong rip\ncurrents to occur is a couple hours either side of low tide,\nwhich will occur around noon Friday.",
+        "instruction": "Life-threatening rip currents. If caught in a rip current, remain\ncalm. Swim in a direction following the shoreline. If tired,\nfloat or tread water until out of the rip current. If unable to\nescape, face the shore and call or wave for help.\n\nShore break occurs when waves break directly on the beach. It is\nextremely important to protect your head and neck whenever you\nare in breaking waves by keeping your hands in front of you at\nall times.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -2617,5 +2587,5 @@
       "grid_y": 122
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "alerts-only-full-refresh"
 }
