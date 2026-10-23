@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "edisto-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-23T17:11:26+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-23T17:11:26+00:00",
+  "generated_at_utc": "2026-10-23T18:41:04+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-23T18:41:04+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -48,31 +48,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-23T13:00:00-04:00",
-        "components": {
-          "tide": 43.4,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 66.9,
-          "water_temperature": null
-        },
-        "raw_quality_score": 73.4,
-        "final_score": 73.4,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-10-23T14:00:00-04:00",
         "components": {
@@ -163,17 +138,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 78.8,
-        "final_score": 78.8,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "coastal-flood-advisory"
         ]
       },
       {
@@ -199,6 +175,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -225,6 +202,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -251,6 +229,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -278,6 +257,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },

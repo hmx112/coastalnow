@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "kiawah-island",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-23T17:11:22+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-23T17:11:22+00:00",
+  "generated_at_utc": "2026-10-23T18:41:03+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-23T18:41:03+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,18 +13,19 @@
   },
   "today": {
     "status": "normal",
-    "score": 86.0,
+    "score": 81.0,
     "rating": "Good",
     "confidence": "Medium",
     "best_window": {
-      "start": "2026-10-23T15:00:00-04:00",
-      "end": "2026-10-23T18:00:00-04:00"
+      "start": "2026-10-23T14:00:00-04:00",
+      "end": "2026-10-23T17:00:00-04:00"
     },
     "ranking_eligible": true,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
-      "manageable-sea-state"
+      "manageable-sea-state",
+      "wave-exposure-caution",
+      "favorable-tide-movement"
     ]
   },
   "tomorrow": {
@@ -48,32 +49,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-23T13:00:00-04:00",
-        "components": {
-          "tide": 28.6,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 66.9,
-          "water_temperature": null
-        },
-        "raw_quality_score": 68.9,
-        "final_score": 60.9,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-10-23T14:00:00-04:00",
         "components": {
@@ -164,17 +139,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 83.1,
-        "final_score": 83.1,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "coastal-flood-advisory"
         ]
       },
       {
@@ -200,6 +176,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -226,6 +203,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -252,6 +230,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -279,6 +258,7 @@
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -519,8 +499,8 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
-          "small-craft-advisory",
-          "gale-watch"
+          "gale-watch",
+          "small-craft-advisory"
         ]
       },
       {

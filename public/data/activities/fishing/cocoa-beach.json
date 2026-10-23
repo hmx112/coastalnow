@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "cocoa-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-23T17:11:56+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-23T17:11:56+00:00",
+  "generated_at_utc": "2026-10-23T18:41:19+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-23T18:41:19+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,14 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "Unavailable",
+    "status": "NOT RECOMMENDED",
     "score": null,
     "rating": null,
     "confidence": "Unavailable",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "light-wind",
-      "manageable-sea-state",
-      "wave-exposure-caution",
-      "favorable-tide-movement",
-      "small-craft-advisory",
-      "worsening-wind",
-      "wave-exposure-cap-69"
+      "small-craft-advisory"
     ]
   },
   "tomorrow": {
@@ -52,32 +46,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-23T13:00:00-04:00",
-        "components": {
-          "tide": 42.9,
-          "wind": 80,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 66.9,
-          "water_temperature": null
-        },
-        "raw_quality_score": 69.5,
-        "final_score": 61.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wave-exposure-caution"
-        ]
-      },
-      {
         "time": "2026-10-23T14:00:00-04:00",
         "components": {
           "tide": 81.7,
@@ -89,19 +57,18 @@
           "water_temperature": null
         },
         "raw_quality_score": 81.1,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 73.1,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 8.0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
-          "small-craft-advisory",
           "wave-exposure-caution"
         ]
       },
@@ -929,8 +896,8 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
-          "small-craft-advisory",
           "gale-watch",
+          "small-craft-advisory",
           "wind-cap-59",
           "wave-exposure-caution",
           "forecast-thunder-cap"

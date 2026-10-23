@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "wrightsville-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-23T17:10:52+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-23T17:10:52+00:00",
+  "generated_at_utc": "2026-10-23T18:40:53+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-23T18:40:53+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,20 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 82.7,
-    "rating": "Good",
-    "confidence": "High",
-    "best_window": {
-      "start": "2026-10-23T14:00:00-04:00",
-      "end": "2026-10-23T17:00:00-04:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
       "favorable-tide-movement",
       "light-wind",
       "manageable-sea-state",
-      "wave-exposure-caution"
+      "wave-exposure-caution",
+      "small-craft-advisory",
+      "coastal-flood-advisory",
+      "worsening-wind"
     ]
   },
   "tomorrow": {
@@ -38,6 +38,7 @@
     "reasons": [
       "manageable-sea-state",
       "worsening-wind",
+      "coastal-flood-advisory",
       "small-craft-advisory",
       "wave-exposure-caution",
       "favorable-tide-movement",
@@ -47,32 +48,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-10-23T13:00:00-04:00",
-        "components": {
-          "tide": 57.7,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 66.9,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 78.9,
-        "final_score": 70.9,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-10-23T14:00:00-04:00",
         "components": {
@@ -112,18 +87,19 @@
           "water_temperature": 75
         },
         "raw_quality_score": 91.5,
-        "final_score": 83.5,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 8.0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
           "manageable-sea-state",
+          "small-craft-advisory",
           "wave-exposure-caution"
         ]
       },
@@ -139,18 +115,19 @@
           "water_temperature": 75
         },
         "raw_quality_score": 86.3,
-        "final_score": 86.3,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "small-craft-advisory"
         ]
       },
       {
@@ -165,17 +142,19 @@
           "water_temperature": 75
         },
         "raw_quality_score": 76.1,
-        "final_score": 76.1,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "light-wind",
-          "manageable-sea-state"
+          "manageable-sea-state",
+          "coastal-flood-advisory",
+          "small-craft-advisory"
         ]
       },
       {
@@ -201,6 +180,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -227,6 +207,7 @@
         "reasons": [
           "light-wind",
           "manageable-sea-state",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -254,6 +235,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -281,6 +263,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory"
         ]
       },
@@ -308,6 +291,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -335,6 +319,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -364,6 +349,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -391,6 +377,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -419,6 +406,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -447,6 +435,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -475,6 +464,7 @@
           "favorable-tide-movement",
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -502,6 +492,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -529,6 +520,7 @@
         "reasons": [
           "manageable-sea-state",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -555,6 +547,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -581,6 +574,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
@@ -608,6 +602,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "coastal-flood-advisory",
           "small-craft-advisory",
           "wave-exposure-caution"
         ]
