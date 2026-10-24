@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "isle-of-palms",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-24T09:46:08+00:00",
+  "generated_at_utc": "2026-10-24T11:05:07+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T09:46:08+00:00"
+      "fetched_at_utc": "2026-10-24T11:05:07+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T09:46:08+00:00"
+      "fetched_at_utc": "2026-10-24T11:05:07+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T09:46:08+00:00"
+      "fetched_at_utc": "2026-10-24T11:05:07+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T04:39:09+00:00"
+      "fetched_at_utc": "2026-10-24T11:03:54+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-24T09:46:08+00:00"
+      "fetched_at_utc": "2026-10-24T11:05:07+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-24T05:00:00-04:00",
-      "wind_mph": 14.0,
-      "gust_mph": 29.92,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 57.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-24T06:00:00-04:00",
-      "wind_mph": 15.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 56.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-24T07:00:00-04:00",
       "wind_mph": 15.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-30T17:00:00-04:00",
+      "wind_mph": 13.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-10-30T18:00:00-04:00",
+      "wind_mph": 12.0,
+      "gust_mph": 21.865,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 71.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
@@ -1953,32 +1953,17 @@
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56e7557bb138da04aef058c3f4718af20e6c33d2.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-24T02:22:00-04:00",
-        "onset": "2026-10-24T02:22:00-04:00",
-        "expires": "2026-10-24T10:30:00-04:00",
-        "ends": "2026-10-24T06:00:00-04:00",
-        "headline": "Small Craft Advisory issued October 24 at 2:22AM EDT until October 24 at 6:00AM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 4 to 7 ft. For the Gale\nWarning, northeast winds 25 to 35 kt with gusts up to 40 kt\nand seas 7 to 10 ft expected.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 6 AM EDT early this\nmorning. For the Gale Warning, from 6 AM this morning to 5 AM\nEDT Monday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
-        "sender_name": "NWS Charleston SC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56e7557bb138da04aef058c3f4718af20e6c33d2.001.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d26d4715057937478c267d1af151e5a40d5e5a39.001.1",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T02:22:00-04:00",
-        "onset": "2026-10-24T06:00:00-04:00",
-        "expires": "2026-10-24T10:30:00-04:00",
+        "effective": "2026-10-24T06:53:00-04:00",
+        "onset": "2026-10-24T06:53:00-04:00",
+        "expires": "2026-10-24T15:00:00-04:00",
         "ends": "2026-10-26T05:00:00-04:00",
-        "headline": "Gale Warning issued October 24 at 2:22AM EDT until October 26 at 5:00AM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 4 to 7 ft. For the Gale\nWarning, northeast winds 25 to 35 kt with gusts up to 40 kt\nand seas 7 to 10 ft expected.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 6 AM EDT early this\nmorning. For the Gale Warning, from 6 AM this morning to 5 AM\nEDT Monday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "headline": "Gale Warning issued October 24 at 6:53AM EDT until October 26 at 5:00AM EDT by NWS Charleston SC",
+        "description": "* WHAT...Northeast winds 25 to 35 kt with gusts up to 40 kt and\nseas 7 to 10 ft.\n\n* WHERE...South Santee River to Edisto Beach out 20 NM.\n\n* WHEN...Until 5 AM EDT Monday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Charleston SC"
       }
@@ -2016,8 +2001,8 @@
       "start": "2026-10-24",
       "end": "2026-10-30"
     },
-    "generated_at_utc": "2026-10-24T04:39:09+00:00",
-    "generated_at_local": "2026-10-24T00:39:09-04:00",
+    "generated_at_utc": "2026-10-24T11:03:54+00:00",
+    "generated_at_local": "2026-10-24T07:03:54-04:00",
     "hilo": [
       {
         "t": "2026-10-23 05:39",
@@ -2627,5 +2612,5 @@
       "grid_y": 76
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
