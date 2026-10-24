@@ -2,83 +2,35 @@
   "schema_version": 1,
   "location": "carolina-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-24T14:06:26+00:00",
+  "generated_at_utc": "2026-10-24T15:59:49+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T14:06:26+00:00"
+      "fetched_at_utc": "2026-10-24T15:59:49+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T11:04:29+00:00"
+      "fetched_at_utc": "2026-10-24T15:59:49+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T11:04:29+00:00"
+      "fetched_at_utc": "2026-10-24T15:59:49+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T11:03:53+00:00"
+      "fetched_at_utc": "2026-10-24T15:58:25+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-24T11:04:29+00:00"
+      "fetched_at_utc": "2026-10-24T15:59:49+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-24T07:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
-      "time": "2026-10-24T08:00:00-04:00",
-      "wind_mph": 17.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-24T09:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-24T10:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 65.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-10-24T11:00:00-04:00",
       "wind_mph": 20.0,
@@ -1902,53 +1854,101 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-30T19:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-30T20:00:00-04:00",
+      "wind_mph": 9.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 67.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-30T21:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-10-30T22:00:00-04:00",
+      "wind_mph": 8.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.44fa393496b63b3b699fc22a026fd28a4fcd4bf0.001.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-24T02:51:00-04:00",
-        "onset": "2026-10-24T08:00:00-04:00",
-        "expires": "2026-10-24T15:00:00-04:00",
-        "ends": "2026-10-26T20:00:00-04:00",
-        "headline": "High Surf Advisory issued October 24 at 2:51AM EDT until October 26 at 8:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Rip Current Risk, dangerous\nrip currents expected. For the High Surf Advisory, large\nbreaking waves of 4 to 7 feet expected in the surf zone. Strong\nnorth to south longshore current expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n8 AM this morning to 8 PM EDT Monday.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Wilmington NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.44fa393496b63b3b699fc22a026fd28a4fcd4bf0.001.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00bfcb13e05d7eac7771406fc1d0542789a5d390.001.3",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T02:51:00-04:00",
-        "onset": "2026-10-24T06:00:00-04:00",
-        "expires": "2026-10-24T15:00:00-04:00",
+        "effective": "2026-10-24T11:25:00-04:00",
+        "onset": "2026-10-24T11:25:00-04:00",
+        "expires": "2026-10-24T20:00:00-04:00",
         "ends": "2026-10-24T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 24 at 2:51AM EDT until October 24 at 8:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Rip Current Risk, dangerous\nrip currents expected. For the High Surf Advisory, large\nbreaking waves of 4 to 7 feet expected in the surf zone. Strong\nnorth to south longshore current expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n8 AM this morning to 8 PM EDT Monday.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "headline": "Rip Current Statement issued October 24 at 11:25AM EDT until October 24 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, up to one half foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves up to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Surf Advisory, until 8 PM EDT Monday.\nFor the High Rip Current Risk, until 8 PM EDT this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Wilmington NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.44fa393496b63b3b699fc22a026fd28a4fcd4bf0.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00bfcb13e05d7eac7771406fc1d0542789a5d390.001.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-24T11:25:00-04:00",
+        "onset": "2026-10-24T11:25:00-04:00",
+        "expires": "2026-10-24T20:00:00-04:00",
+        "ends": "2026-10-26T20:00:00-04:00",
+        "headline": "High Surf Advisory issued October 24 at 11:25AM EDT until October 26 at 8:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, up to one half foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves up to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Surf Advisory, until 8 PM EDT Monday.\nFor the High Rip Current Risk, until 8 PM EDT this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Wilmington NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00bfcb13e05d7eac7771406fc1d0542789a5d390.001.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T02:51:00-04:00",
-        "onset": "2026-10-24T02:51:00-04:00",
-        "expires": "2026-10-24T15:00:00-04:00",
+        "effective": "2026-10-24T11:25:00-04:00",
+        "onset": "2026-10-24T11:25:00-04:00",
+        "expires": "2026-10-24T20:00:00-04:00",
         "ends": "2026-10-24T21:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 24 at 2:51AM EDT until October 24 at 9:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...For the Coastal Flood Advisory, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Rip Current Risk, dangerous\nrip currents expected. For the High Surf Advisory, large\nbreaking waves of 4 to 7 feet expected in the surf zone. Strong\nnorth to south longshore current expected.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Rip Current Risk, from 6 AM EDT this\nmorning through this evening. For the High Surf Advisory, from\n8 AM this morning to 8 PM EDT Monday.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+        "headline": "Coastal Flood Advisory issued October 24 at 11:25AM EDT until October 24 at 9:00PM EDT by NWS Wilmington NC",
+        "description": "* WHAT...For the Coastal Flood Advisory, up to one half foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves up to 6 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents.\n\n* WHERE...Coastal New Hanover County.\n\n* WHEN...For the Coastal Flood Advisory, until 9 PM EDT this\nevening. For the High Surf Advisory, until 8 PM EDT Monday.\nFor the High Rip Current Risk, until 8 PM EDT this evening.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts. Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Wilmington NC"
       },
@@ -2001,8 +2001,8 @@
       "start": "2026-10-24",
       "end": "2026-10-30"
     },
-    "generated_at_utc": "2026-10-24T11:03:53+00:00",
-    "generated_at_local": "2026-10-24T07:03:53-04:00",
+    "generated_at_utc": "2026-10-24T15:58:25+00:00",
+    "generated_at_local": "2026-10-24T11:58:25-04:00",
     "hilo": [
       {
         "t": "2026-10-23 05:56",
@@ -2612,5 +2612,5 @@
       "grid_y": 65
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
