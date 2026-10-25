@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "edisto-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-25T01:33:06+00:00",
+  "generated_at_utc": "2026-10-25T04:45:06+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:33:06+00:00"
+      "fetched_at_utc": "2026-10-25T04:45:06+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:33:06+00:00"
+      "fetched_at_utc": "2026-10-25T04:45:06+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:33:06+00:00"
+      "fetched_at_utc": "2026-10-25T04:45:06+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T20:51:56+00:00"
+      "fetched_at_utc": "2026-10-25T04:43:39+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-25T01:33:06+00:00"
+      "fetched_at_utc": "2026-10-25T04:45:06+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-24T21:00:00-04:00",
-      "wind_mph": 28.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-24T22:00:00-04:00",
-      "wind_mph": 26.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-24T23:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 66.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-10-25T00:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,54 +1866,90 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T09:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 21.865,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T10:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T11:00:00-04:00",
+      "wind_mph": 16.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.67370ac0f3bcd9ce2e886e7c1c42062945cf3b55.001.3",
-        "event": "Coastal Flood Watch",
-        "severity": "Moderate",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-10-24T21:23:00-04:00",
-        "onset": "2026-10-25T04:00:00-04:00",
-        "expires": "2026-10-25T05:30:00-04:00",
-        "ends": "2026-10-25T11:00:00-04:00",
-        "headline": "Coastal Flood Watch issued October 24 at 9:23PM EDT until October 25 at 11:00AM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Watch, one to\ntwo feet of inundation above ground level possible along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Watch, from 4 AM EDT Sunday through Sunday\nmorning.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday at\nCharleston. Saltwater inundation will be possible 1 to 2 hours\nbefore and after high tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Charleston SC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.67370ac0f3bcd9ce2e886e7c1c42062945cf3b55.001.4",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.001.4",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T21:23:00-04:00",
-        "onset": "2026-10-24T21:23:00-04:00",
-        "expires": "2026-10-25T05:30:00-04:00",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-24T21:42:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
         "ends": "2026-10-25T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 24 at 9:23PM EDT until October 25 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Watch, one to\ntwo feet of inundation above ground level possible along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Watch, from 4 AM EDT Sunday through Sunday\nmorning.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday at\nCharleston. Saltwater inundation will be possible 1 to 2 hours\nbefore and after high tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "Rip Current Statement issued October 24 at 9:42PM EDT until October 25 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Warning, one to\ntwo feet of inundation above ground level expected along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Warning, from 4 AM to 11 AM EDT Sunday.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.67370ac0f3bcd9ce2e886e7c1c42062945cf3b55.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.001.2",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-25T04:00:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
+        "ends": "2026-10-25T11:00:00-04:00",
+        "headline": "Coastal Flood Warning issued October 24 at 9:42PM EDT until October 25 at 11:00AM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Warning, one to\ntwo feet of inundation above ground level expected along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Warning, from 4 AM to 11 AM EDT Sunday.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.001.3",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T21:23:00-04:00",
-        "onset": "2026-10-24T21:23:00-04:00",
-        "expires": "2026-10-25T05:30:00-04:00",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-24T21:42:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
         "ends": "2026-10-26T17:00:00-04:00",
-        "headline": "High Surf Advisory issued October 24 at 9:23PM EDT until October 26 at 5:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Watch, one to\ntwo feet of inundation above ground level possible along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Watch, from 4 AM EDT Sunday through Sunday\nmorning.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday at\nCharleston. Saltwater inundation will be possible 1 to 2 hours\nbefore and after high tide.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "High Surf Advisory issued October 24 at 9:42PM EDT until October 26 at 5:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Warning, one to\ntwo feet of inundation above ground level expected along\nshorelines and tidal waterways (7.9 to 8.1 feet Mean Lower Low\nWater at Charleston).\n\n* WHERE...Coastal Colleton and Charleston Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Warning, from 4 AM to 11 AM EDT Sunday.\n\n* IMPACTS...Significant saltwater inundation will render\nnumerous roads impassable. Properties may also flood.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:34 AM Sunday\nat Charleston. Saltwater inundation will be possible 1 to 2\nhours before and after high tide.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
       {
@@ -1998,27 +1998,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-10-24",
-      "end": "2026-10-30"
+      "start": "2026-10-25",
+      "end": "2026-10-31"
     },
-    "generated_at_utc": "2026-10-24T20:51:56+00:00",
-    "generated_at_local": "2026-10-24T16:51:56-04:00",
+    "generated_at_utc": "2026-10-25T04:43:39+00:00",
+    "generated_at_local": "2026-10-25T00:43:39-04:00",
     "hilo": [
-      {
-        "t": "2026-10-23 05:51",
-        "v": 6.37,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-23 12:07",
-        "v": 1.001,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-23 18:18",
-        "v": 6.32,
-        "type": "H"
-      },
       {
         "t": "2026-10-24 00:29",
         "v": 0.574,
@@ -2173,201 +2158,29 @@
         "t": "2026-10-31 19:05",
         "v": 0.993,
         "type": "L"
+      },
+      {
+        "t": "2026-11-01 01:24",
+        "v": 5.761,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-01 06:20",
+        "v": 0.7,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-01 12:50",
+        "v": 6.641,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-01 19:09",
+        "v": 1.072,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-24 00:00",
-        "v": 0.66
-      },
-      {
-        "t": "2026-10-24 00:30",
-        "v": 0.574
-      },
-      {
-        "t": "2026-10-24 01:00",
-        "v": 0.681
-      },
-      {
-        "t": "2026-10-24 01:30",
-        "v": 0.982
-      },
-      {
-        "t": "2026-10-24 02:00",
-        "v": 1.457
-      },
-      {
-        "t": "2026-10-24 02:30",
-        "v": 2.076
-      },
-      {
-        "t": "2026-10-24 03:00",
-        "v": 2.798
-      },
-      {
-        "t": "2026-10-24 03:30",
-        "v": 3.577
-      },
-      {
-        "t": "2026-10-24 04:00",
-        "v": 4.361
-      },
-      {
-        "t": "2026-10-24 04:30",
-        "v": 5.101
-      },
-      {
-        "t": "2026-10-24 05:00",
-        "v": 5.748
-      },
-      {
-        "t": "2026-10-24 05:30",
-        "v": 6.26
-      },
-      {
-        "t": "2026-10-24 06:00",
-        "v": 6.603
-      },
-      {
-        "t": "2026-10-24 06:30",
-        "v": 6.757
-      },
-      {
-        "t": "2026-10-24 07:00",
-        "v": 6.714
-      },
-      {
-        "t": "2026-10-24 07:30",
-        "v": 6.487
-      },
-      {
-        "t": "2026-10-24 08:00",
-        "v": 6.09
-      },
-      {
-        "t": "2026-10-24 08:30",
-        "v": 5.549
-      },
-      {
-        "t": "2026-10-24 09:00",
-        "v": 4.896
-      },
-      {
-        "t": "2026-10-24 09:30",
-        "v": 4.171
-      },
-      {
-        "t": "2026-10-24 10:00",
-        "v": 3.42
-      },
-      {
-        "t": "2026-10-24 10:30",
-        "v": 2.687
-      },
-      {
-        "t": "2026-10-24 11:00",
-        "v": 2.019
-      },
-      {
-        "t": "2026-10-24 11:30",
-        "v": 1.457
-      },
-      {
-        "t": "2026-10-24 12:00",
-        "v": 1.034
-      },
-      {
-        "t": "2026-10-24 12:30",
-        "v": 0.778
-      },
-      {
-        "t": "2026-10-24 13:00",
-        "v": 0.703
-      },
-      {
-        "t": "2026-10-24 13:30",
-        "v": 0.815
-      },
-      {
-        "t": "2026-10-24 14:00",
-        "v": 1.108
-      },
-      {
-        "t": "2026-10-24 14:30",
-        "v": 1.562
-      },
-      {
-        "t": "2026-10-24 15:00",
-        "v": 2.148
-      },
-      {
-        "t": "2026-10-24 15:30",
-        "v": 2.826
-      },
-      {
-        "t": "2026-10-24 16:00",
-        "v": 3.553
-      },
-      {
-        "t": "2026-10-24 16:30",
-        "v": 4.28
-      },
-      {
-        "t": "2026-10-24 17:00",
-        "v": 4.961
-      },
-      {
-        "t": "2026-10-24 17:30",
-        "v": 5.55
-      },
-      {
-        "t": "2026-10-24 18:00",
-        "v": 6.009
-      },
-      {
-        "t": "2026-10-24 18:30",
-        "v": 6.308
-      },
-      {
-        "t": "2026-10-24 19:00",
-        "v": 6.426
-      },
-      {
-        "t": "2026-10-24 19:30",
-        "v": 6.353
-      },
-      {
-        "t": "2026-10-24 20:00",
-        "v": 6.085
-      },
-      {
-        "t": "2026-10-24 20:30",
-        "v": 5.64
-      },
-      {
-        "t": "2026-10-24 21:00",
-        "v": 5.046
-      },
-      {
-        "t": "2026-10-24 21:30",
-        "v": 4.341
-      },
-      {
-        "t": "2026-10-24 22:00",
-        "v": 3.572
-      },
-      {
-        "t": "2026-10-24 22:30",
-        "v": 2.788
-      },
-      {
-        "t": "2026-10-24 23:00",
-        "v": 2.039
-      },
-      {
-        "t": "2026-10-24 23:30",
-        "v": 1.373
-      },
       {
         "t": "2026-10-25 00:00",
         "v": 0.835
@@ -2559,20 +2372,203 @@
       {
         "t": "2026-10-25 23:30",
         "v": 2.269
+      },
+      {
+        "t": "2026-10-26 00:00",
+        "v": 1.526
+      },
+      {
+        "t": "2026-10-26 00:30",
+        "v": 0.892
+      },
+      {
+        "t": "2026-10-26 01:00",
+        "v": 0.408
+      },
+      {
+        "t": "2026-10-26 01:30",
+        "v": 0.104
+      },
+      {
+        "t": "2026-10-26 02:00",
+        "v": 0.001
+      },
+      {
+        "t": "2026-10-26 02:30",
+        "v": 0.121
+      },
+      {
+        "t": "2026-10-26 03:00",
+        "v": 0.473
+      },
+      {
+        "t": "2026-10-26 03:30",
+        "v": 1.035
+      },
+      {
+        "t": "2026-10-26 04:00",
+        "v": 1.769
+      },
+      {
+        "t": "2026-10-26 04:30",
+        "v": 2.629
+      },
+      {
+        "t": "2026-10-26 05:00",
+        "v": 3.556
+      },
+      {
+        "t": "2026-10-26 05:30",
+        "v": 4.492
+      },
+      {
+        "t": "2026-10-26 06:00",
+        "v": 5.375
+      },
+      {
+        "t": "2026-10-26 06:30",
+        "v": 6.148
+      },
+      {
+        "t": "2026-10-26 07:00",
+        "v": 6.76
+      },
+      {
+        "t": "2026-10-26 07:30",
+        "v": 7.171
+      },
+      {
+        "t": "2026-10-26 08:00",
+        "v": 7.354
+      },
+      {
+        "t": "2026-10-26 08:30",
+        "v": 7.308
+      },
+      {
+        "t": "2026-10-26 09:00",
+        "v": 7.057
+      },
+      {
+        "t": "2026-10-26 09:30",
+        "v": 6.618
+      },
+      {
+        "t": "2026-10-26 10:00",
+        "v": 6.017
+      },
+      {
+        "t": "2026-10-26 10:30",
+        "v": 5.288
+      },
+      {
+        "t": "2026-10-26 11:00",
+        "v": 4.475
+      },
+      {
+        "t": "2026-10-26 11:30",
+        "v": 3.625
+      },
+      {
+        "t": "2026-10-26 12:00",
+        "v": 2.787
+      },
+      {
+        "t": "2026-10-26 12:30",
+        "v": 2.01
+      },
+      {
+        "t": "2026-10-26 13:00",
+        "v": 1.34
+      },
+      {
+        "t": "2026-10-26 13:30",
+        "v": 0.817
+      },
+      {
+        "t": "2026-10-26 14:00",
+        "v": 0.469
+      },
+      {
+        "t": "2026-10-26 14:30",
+        "v": 0.319
+      },
+      {
+        "t": "2026-10-26 15:00",
+        "v": 0.376
+      },
+      {
+        "t": "2026-10-26 15:30",
+        "v": 0.642
+      },
+      {
+        "t": "2026-10-26 16:00",
+        "v": 1.099
+      },
+      {
+        "t": "2026-10-26 16:30",
+        "v": 1.715
+      },
+      {
+        "t": "2026-10-26 17:00",
+        "v": 2.447
+      },
+      {
+        "t": "2026-10-26 17:30",
+        "v": 3.243
+      },
+      {
+        "t": "2026-10-26 18:00",
+        "v": 4.049
+      },
+      {
+        "t": "2026-10-26 18:30",
+        "v": 4.809
+      },
+      {
+        "t": "2026-10-26 19:00",
+        "v": 5.468
+      },
+      {
+        "t": "2026-10-26 19:30",
+        "v": 5.982
+      },
+      {
+        "t": "2026-10-26 20:00",
+        "v": 6.315
+      },
+      {
+        "t": "2026-10-26 20:30",
+        "v": 6.443
+      },
+      {
+        "t": "2026-10-26 21:00",
+        "v": 6.36
+      },
+      {
+        "t": "2026-10-26 21:30",
+        "v": 6.076
+      },
+      {
+        "t": "2026-10-26 22:00",
+        "v": 5.608
+      },
+      {
+        "t": "2026-10-26 22:30",
+        "v": 4.986
+      },
+      {
+        "t": "2026-10-26 23:00",
+        "v": 4.249
+      },
+      {
+        "t": "2026-10-26 23:30",
+        "v": 3.443
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-24T07:06:52.131781-04:00",
-      "civil_dawn": "2026-10-24T07:06:52.131781-04:00",
-      "sunrise": "2026-10-24T07:31:53.770655-04:00",
-      "sunset": "2026-10-24T18:38:45.709349-04:00",
-      "dusk": "2026-10-24T19:03:48.482995-04:00",
-      "civil_dusk": "2026-10-24T19:03:48.482995-04:00",
-      "moon_phase_fraction": 0.44413
-    },
-    "tomorrow": {
       "dawn": "2026-10-25T07:07:37.846795-04:00",
       "civil_dawn": "2026-10-25T07:07:37.846795-04:00",
       "sunrise": "2026-10-25T07:32:41.771529-04:00",
@@ -2580,6 +2576,15 @@
       "dusk": "2026-10-25T19:02:48.612350-04:00",
       "civil_dusk": "2026-10-25T19:02:48.612350-04:00",
       "moon_phase_fraction": 0.477993
+    },
+    "tomorrow": {
+      "dawn": "2026-10-26T07:08:23.880706-04:00",
+      "civil_dawn": "2026-10-26T07:08:23.880706-04:00",
+      "sunrise": "2026-10-26T07:33:30.155429-04:00",
+      "sunset": "2026-10-26T18:36:42.394590-04:00",
+      "dusk": "2026-10-26T19:01:49.867632-04:00",
+      "civil_dusk": "2026-10-26T19:01:49.867632-04:00",
+      "moon_phase_fraction": 0.511857
     }
   },
   "points": {
@@ -2612,5 +2617,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

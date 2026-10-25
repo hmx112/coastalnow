@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "hilton-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-25T01:32:53+00:00",
+  "generated_at_utc": "2026-10-25T04:44:55+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:32:53+00:00"
+      "fetched_at_utc": "2026-10-25T04:44:55+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:32:53+00:00"
+      "fetched_at_utc": "2026-10-25T04:44:55+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-25T01:32:53+00:00"
+      "fetched_at_utc": "2026-10-25T04:44:55+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-24T20:51:55+00:00"
+      "fetched_at_utc": "2026-10-25T04:43:38+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-25T01:32:53+00:00"
+      "fetched_at_utc": "2026-10-25T04:44:55+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-24T21:00:00-04:00",
-      "wind_mph": 28.0,
-      "gust_mph": 33.373,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-10-24T22:00:00-04:00",
-      "wind_mph": 28.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
-    {
-      "time": "2026-10-24T23:00:00-04:00",
-      "wind_mph": 25.0,
-      "gust_mph": 31.071,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-10-25T00:00:00-04:00",
       "wind_mph": 25.0,
@@ -1902,39 +1866,90 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T09:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 21.865,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 67.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T10:00:00-04:00",
+      "wind_mph": 14.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-10-31T11:00:00-04:00",
+      "wind_mph": 15.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.67370ac0f3bcd9ce2e886e7c1c42062945cf3b55.002.2",
-        "event": "Rip Current Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-24T21:23:00-04:00",
-        "onset": "2026-10-24T21:23:00-04:00",
-        "expires": "2026-10-25T05:30:00-04:00",
-        "ends": "2026-10-25T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 24 at 9:23PM EDT until October 25 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 7 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents.\n\n* WHERE...Georgia Beaches, Beaufort, and Coastal Jasper.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Charleston SC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.67370ac0f3bcd9ce2e886e7c1c42062945cf3b55.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.002.2",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-24T21:23:00-04:00",
-        "onset": "2026-10-24T21:23:00-04:00",
-        "expires": "2026-10-25T05:30:00-04:00",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-24T21:42:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
         "ends": "2026-10-26T17:00:00-04:00",
-        "headline": "High Surf Advisory issued October 24 at 9:23PM EDT until October 26 at 5:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 7 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents.\n\n* WHERE...Georgia Beaches, Beaufort, and Coastal Jasper.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "headline": "High Surf Advisory issued October 24 at 9:42PM EDT until October 26 at 5:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 7 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Advisory, up to\none foot of inundation above ground level expected along\nshorelines and tidal waterways (10.0 to 10.2 feet Mean Lower\nLow Water at Fort Pulaski).\n\n* WHERE...In Georgia, Coastal Bryan, Coastal Chatham, Coastal\nLiberty and Coastal McIntosh Counties. In South Carolina,\nBeaufort and Coastal Jasper Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Advisory, from 5 AM to 10 AM EDT Sunday.\n\n* IMPACTS...Saltwater inundation will impact some roads.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:44 AM\nSunday at Fort Pulaski. Saltwater inundation will be possible\n1 to 2 hours before and after high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.002.3",
+        "event": "Rip Current Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-24T21:42:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
+        "ends": "2026-10-25T20:00:00-04:00",
+        "headline": "Rip Current Statement issued October 24 at 9:42PM EDT until October 25 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 7 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Advisory, up to\none foot of inundation above ground level expected along\nshorelines and tidal waterways (10.0 to 10.2 feet Mean Lower\nLow Water at Fort Pulaski).\n\n* WHERE...In Georgia, Coastal Bryan, Coastal Chatham, Coastal\nLiberty and Coastal McIntosh Counties. In South Carolina,\nBeaufort and Coastal Jasper Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Advisory, from 5 AM to 10 AM EDT Sunday.\n\n* IMPACTS...Saltwater inundation will impact some roads.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:44 AM\nSunday at Fort Pulaski. Saltwater inundation will be possible\n1 to 2 hours before and after high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Charleston SC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ccc22c277ed2f4d8e5ed85900fe08753be4e38e.002.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-24T21:42:00-04:00",
+        "onset": "2026-10-25T05:00:00-04:00",
+        "expires": "2026-10-25T06:00:00-04:00",
+        "ends": "2026-10-25T10:00:00-04:00",
+        "headline": "Coastal Flood Advisory issued October 24 at 9:42PM EDT until October 25 at 10:00AM EDT by NWS Charleston SC",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 4\nto 7 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents. For the Coastal Flood Advisory, up to\none foot of inundation above ground level expected along\nshorelines and tidal waterways (10.0 to 10.2 feet Mean Lower\nLow Water at Fort Pulaski).\n\n* WHERE...In Georgia, Coastal Bryan, Coastal Chatham, Coastal\nLiberty and Coastal McIntosh Counties. In South Carolina,\nBeaufort and Coastal Jasper Counties.\n\n* WHEN...For the High Surf Advisory, until 5 PM EDT Monday. For\nthe High Rip Current Risk, through Sunday evening. For the\nCoastal Flood Advisory, from 5 AM to 10 AM EDT Sunday.\n\n* IMPACTS...Saltwater inundation will impact some roads.\nDangerous swimming and surfing conditions and localized beach\nerosion. Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.\n\n* ADDITIONAL DETAILS...High tide will occur around 7:44 AM\nSunday at Fort Pulaski. Saltwater inundation will be possible\n1 to 2 hours before and after high tide.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nVisit water.weather.gov for additional water level and flood\nimpact information.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
       {
@@ -1983,32 +1998,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-10-24",
-      "end": "2026-10-30"
+      "start": "2026-10-25",
+      "end": "2026-10-31"
     },
-    "generated_at_utc": "2026-10-24T20:51:55+00:00",
-    "generated_at_local": "2026-10-24T16:51:55-04:00",
+    "generated_at_utc": "2026-10-25T04:43:38+00:00",
+    "generated_at_local": "2026-10-25T00:43:38-04:00",
     "hilo": [
-      {
-        "t": "2026-10-24 01:21",
-        "v": 0.579,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-24 07:27",
-        "v": 7.905,
-        "type": "H"
-      },
-      {
-        "t": "2026-10-24 13:49",
-        "v": 0.488,
-        "type": "L"
-      },
-      {
-        "t": "2026-10-24 19:46",
-        "v": 7.623,
-        "type": "H"
-      },
       {
         "t": "2026-10-25 02:04",
         "v": 0.243,
@@ -2143,201 +2138,29 @@
         "t": "2026-10-31 19:49",
         "v": 0.921,
         "type": "L"
+      },
+      {
+        "t": "2026-11-01 01:46",
+        "v": 6.746,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-01 07:06",
+        "v": 0.867,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-01 13:25",
+        "v": 7.625,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-01 19:52",
+        "v": 1.078,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-10-24 00:00",
-        "v": 1.523
-      },
-      {
-        "t": "2026-10-24 00:30",
-        "v": 0.981
-      },
-      {
-        "t": "2026-10-24 01:00",
-        "v": 0.651
-      },
-      {
-        "t": "2026-10-24 01:30",
-        "v": 0.591
-      },
-      {
-        "t": "2026-10-24 02:00",
-        "v": 0.831
-      },
-      {
-        "t": "2026-10-24 02:30",
-        "v": 1.356
-      },
-      {
-        "t": "2026-10-24 03:00",
-        "v": 2.11
-      },
-      {
-        "t": "2026-10-24 03:30",
-        "v": 3.007
-      },
-      {
-        "t": "2026-10-24 04:00",
-        "v": 3.958
-      },
-      {
-        "t": "2026-10-24 04:30",
-        "v": 4.886
-      },
-      {
-        "t": "2026-10-24 05:00",
-        "v": 5.74
-      },
-      {
-        "t": "2026-10-24 05:30",
-        "v": 6.485
-      },
-      {
-        "t": "2026-10-24 06:00",
-        "v": 7.096
-      },
-      {
-        "t": "2026-10-24 06:30",
-        "v": 7.55
-      },
-      {
-        "t": "2026-10-24 07:00",
-        "v": 7.825
-      },
-      {
-        "t": "2026-10-24 07:30",
-        "v": 7.904
-      },
-      {
-        "t": "2026-10-24 08:00",
-        "v": 7.782
-      },
-      {
-        "t": "2026-10-24 08:30",
-        "v": 7.463
-      },
-      {
-        "t": "2026-10-24 09:00",
-        "v": 6.965
-      },
-      {
-        "t": "2026-10-24 09:30",
-        "v": 6.314
-      },
-      {
-        "t": "2026-10-24 10:00",
-        "v": 5.547
-      },
-      {
-        "t": "2026-10-24 10:30",
-        "v": 4.704
-      },
-      {
-        "t": "2026-10-24 11:00",
-        "v": 3.828
-      },
-      {
-        "t": "2026-10-24 11:30",
-        "v": 2.958
-      },
-      {
-        "t": "2026-10-24 12:00",
-        "v": 2.138
-      },
-      {
-        "t": "2026-10-24 12:30",
-        "v": 1.421
-      },
-      {
-        "t": "2026-10-24 13:00",
-        "v": 0.868
-      },
-      {
-        "t": "2026-10-24 13:30",
-        "v": 0.546
-      },
-      {
-        "t": "2026-10-24 14:00",
-        "v": 0.511
-      },
-      {
-        "t": "2026-10-24 14:30",
-        "v": 0.783
-      },
-      {
-        "t": "2026-10-24 15:00",
-        "v": 1.337
-      },
-      {
-        "t": "2026-10-24 15:30",
-        "v": 2.109
-      },
-      {
-        "t": "2026-10-24 16:00",
-        "v": 3.01
-      },
-      {
-        "t": "2026-10-24 16:30",
-        "v": 3.95
-      },
-      {
-        "t": "2026-10-24 17:00",
-        "v": 4.86
-      },
-      {
-        "t": "2026-10-24 17:30",
-        "v": 5.689
-      },
-      {
-        "t": "2026-10-24 18:00",
-        "v": 6.404
-      },
-      {
-        "t": "2026-10-24 18:30",
-        "v": 6.977
-      },
-      {
-        "t": "2026-10-24 19:00",
-        "v": 7.382
-      },
-      {
-        "t": "2026-10-24 19:30",
-        "v": 7.594
-      },
-      {
-        "t": "2026-10-24 20:00",
-        "v": 7.598
-      },
-      {
-        "t": "2026-10-24 20:30",
-        "v": 7.394
-      },
-      {
-        "t": "2026-10-24 21:00",
-        "v": 6.992
-      },
-      {
-        "t": "2026-10-24 21:30",
-        "v": 6.416
-      },
-      {
-        "t": "2026-10-24 22:00",
-        "v": 5.703
-      },
-      {
-        "t": "2026-10-24 22:30",
-        "v": 4.891
-      },
-      {
-        "t": "2026-10-24 23:00",
-        "v": 4.025
-      },
-      {
-        "t": "2026-10-24 23:30",
-        "v": 3.147
-      },
       {
         "t": "2026-10-25 00:00",
         "v": 2.299
@@ -2529,20 +2352,203 @@
       {
         "t": "2026-10-25 23:30",
         "v": 4.333
+      },
+      {
+        "t": "2026-10-26 00:00",
+        "v": 3.409
+      },
+      {
+        "t": "2026-10-26 00:30",
+        "v": 2.504
+      },
+      {
+        "t": "2026-10-26 01:00",
+        "v": 1.664
+      },
+      {
+        "t": "2026-10-26 01:30",
+        "v": 0.938
+      },
+      {
+        "t": "2026-10-26 02:00",
+        "v": 0.384
+      },
+      {
+        "t": "2026-10-26 02:30",
+        "v": 0.063
+      },
+      {
+        "t": "2026-10-26 03:00",
+        "v": 0.03
+      },
+      {
+        "t": "2026-10-26 03:30",
+        "v": 0.318
+      },
+      {
+        "t": "2026-10-26 04:00",
+        "v": 0.916
+      },
+      {
+        "t": "2026-10-26 04:30",
+        "v": 1.777
+      },
+      {
+        "t": "2026-10-26 05:00",
+        "v": 2.817
+      },
+      {
+        "t": "2026-10-26 05:30",
+        "v": 3.943
+      },
+      {
+        "t": "2026-10-26 06:00",
+        "v": 5.068
+      },
+      {
+        "t": "2026-10-26 06:30",
+        "v": 6.123
+      },
+      {
+        "t": "2026-10-26 07:00",
+        "v": 7.053
+      },
+      {
+        "t": "2026-10-26 07:30",
+        "v": 7.814
+      },
+      {
+        "t": "2026-10-26 08:00",
+        "v": 8.368
+      },
+      {
+        "t": "2026-10-26 08:30",
+        "v": 8.686
+      },
+      {
+        "t": "2026-10-26 09:00",
+        "v": 8.753
+      },
+      {
+        "t": "2026-10-26 09:30",
+        "v": 8.569
+      },
+      {
+        "t": "2026-10-26 10:00",
+        "v": 8.153
+      },
+      {
+        "t": "2026-10-26 10:30",
+        "v": 7.533
+      },
+      {
+        "t": "2026-10-26 11:00",
+        "v": 6.747
+      },
+      {
+        "t": "2026-10-26 11:30",
+        "v": 5.84
+      },
+      {
+        "t": "2026-10-26 12:00",
+        "v": 4.858
+      },
+      {
+        "t": "2026-10-26 12:30",
+        "v": 3.85
+      },
+      {
+        "t": "2026-10-26 13:00",
+        "v": 2.864
+      },
+      {
+        "t": "2026-10-26 13:30",
+        "v": 1.948
+      },
+      {
+        "t": "2026-10-26 14:00",
+        "v": 1.153
+      },
+      {
+        "t": "2026-10-26 14:30",
+        "v": 0.538
+      },
+      {
+        "t": "2026-10-26 15:00",
+        "v": 0.162
+      },
+      {
+        "t": "2026-10-26 15:30",
+        "v": 0.079
+      },
+      {
+        "t": "2026-10-26 16:00",
+        "v": 0.316
+      },
+      {
+        "t": "2026-10-26 16:30",
+        "v": 0.861
+      },
+      {
+        "t": "2026-10-26 17:00",
+        "v": 1.661
+      },
+      {
+        "t": "2026-10-26 17:30",
+        "v": 2.631
+      },
+      {
+        "t": "2026-10-26 18:00",
+        "v": 3.679
+      },
+      {
+        "t": "2026-10-26 18:30",
+        "v": 4.719
+      },
+      {
+        "t": "2026-10-26 19:00",
+        "v": 5.681
+      },
+      {
+        "t": "2026-10-26 19:30",
+        "v": 6.51
+      },
+      {
+        "t": "2026-10-26 20:00",
+        "v": 7.163
+      },
+      {
+        "t": "2026-10-26 20:30",
+        "v": 7.607
+      },
+      {
+        "t": "2026-10-26 21:00",
+        "v": 7.818
+      },
+      {
+        "t": "2026-10-26 21:30",
+        "v": 7.788
+      },
+      {
+        "t": "2026-10-26 22:00",
+        "v": 7.525
+      },
+      {
+        "t": "2026-10-26 22:30",
+        "v": 7.051
+      },
+      {
+        "t": "2026-10-26 23:00",
+        "v": 6.397
+      },
+      {
+        "t": "2026-10-26 23:30",
+        "v": 5.604
       }
     ]
   },
   "astronomy": {
     "today": {
-      "dawn": "2026-10-24T07:08:16.233902-04:00",
-      "civil_dawn": "2026-10-24T07:08:16.233902-04:00",
-      "sunrise": "2026-10-24T07:33:12.182044-04:00",
-      "sunset": "2026-10-24T18:40:49.724694-04:00",
-      "dusk": "2026-10-24T19:05:46.796675-04:00",
-      "civil_dusk": "2026-10-24T19:05:46.796675-04:00",
-      "moon_phase_fraction": 0.44413
-    },
-    "tomorrow": {
       "dawn": "2026-10-25T07:09:01.243988-04:00",
       "civil_dawn": "2026-10-25T07:09:01.243988-04:00",
       "sunrise": "2026-10-25T07:33:59.455917-04:00",
@@ -2550,6 +2556,15 @@
       "dusk": "2026-10-25T19:04:47.630461-04:00",
       "civil_dusk": "2026-10-25T19:04:47.630461-04:00",
       "moon_phase_fraction": 0.477993
+    },
+    "tomorrow": {
+      "dawn": "2026-10-26T07:09:46.577358-04:00",
+      "civil_dawn": "2026-10-26T07:09:46.577358-04:00",
+      "sunrise": "2026-10-26T07:34:47.116388-04:00",
+      "sunset": "2026-10-26T18:38:47.860119-04:00",
+      "dusk": "2026-10-26T19:03:49.585723-04:00",
+      "civil_dusk": "2026-10-26T19:03:49.585723-04:00",
+      "moon_phase_fraction": 0.511857
     }
   },
   "points": {
@@ -2582,5 +2597,5 @@
       "grid_y": 44
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
