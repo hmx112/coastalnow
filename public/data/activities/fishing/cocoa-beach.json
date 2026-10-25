@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "cocoa-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-25T04:45:29+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-25T04:45:29+00:00",
+  "generated_at_utc": "2026-10-25T06:45:52+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-25T06:45:52+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -19,7 +19,6 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "special-marine-warning",
       "gale-warning"
     ]
   },
@@ -43,67 +42,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-25T00:00:00-04:00",
-        "components": {
-          "tide": null,
-          "wind": 25,
-          "wave": 75,
-          "weather": 30,
-          "time_of_day": 60,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 47.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Unavailable",
-        "available": false,
-        "ranking_eligible": false,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-69",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-10-25T01:00:00-04:00",
-        "components": {
-          "tide": null,
-          "wind": 25,
-          "wave": 75,
-          "weather": 30,
-          "time_of_day": 60,
-          "solunar": 69.8,
-          "water_temperature": null
-        },
-        "raw_quality_score": 47.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 0,
-        "confidence": "Unavailable",
-        "available": false,
-        "ranking_eligible": false,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "special-marine-warning",
-          "gale-warning",
-          "wind-cap-59",
-          "wave-exposure-cap-69",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
         "time": "2026-10-25T02:00:00-04:00",
         "components": {
           "tide": 44.4,
@@ -115,19 +53,17 @@
           "water_temperature": null
         },
         "raw_quality_score": 44.6,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 39.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "worsening-wind",
           "wet-weather",
-          "special-marine-warning",
-          "gale-warning",
           "wind-cap-59",
           "wave-exposure-cap-69",
           "forecast-thunder-cap"
@@ -1350,6 +1286,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "gale-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
@@ -1376,6 +1313,7 @@
         "ranking_eligible": false,
         "reasons": [
           "worsening-wind",
+          "gale-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
@@ -1403,6 +1341,7 @@
         "reasons": [
           "favorable-tide-movement",
           "worsening-wind",
+          "gale-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
