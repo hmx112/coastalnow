@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "holden-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-30T16:48:30+00:00",
+  "generated_at_utc": "2026-10-30T18:05:48+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T16:48:30+00:00"
+      "fetched_at_utc": "2026-10-30T18:05:48+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T14:33:58+00:00"
+      "fetched_at_utc": "2026-10-30T18:05:48+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T14:33:58+00:00"
+      "fetched_at_utc": "2026-10-30T18:05:48+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,58 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-30T14:33:58+00:00"
+      "fetched_at_utc": "2026-10-30T18:05:48+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-30T10:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 66.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-30T11:00:00-04:00",
-      "wind_mph": 9.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-30T12:00:00-04:00",
-      "wind_mph": 8.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-10-30T13:00:00-04:00",
-      "wind_mph": 7.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 72.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-10-30T14:00:00-04:00",
       "wind_mph": 6.0,
@@ -1902,27 +1854,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-05T21:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-05T22:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 67.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-05T23:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 66.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-06T00:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c6174c5f4850f21dbf7c288c1161ba3e58408e0d.003.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-30T03:27:00-04:00",
-        "onset": "2026-10-30T10:00:00-04:00",
-        "expires": "2026-10-30T14:00:00-04:00",
-        "ends": "2026-10-30T14:00:00-04:00",
-        "headline": "Coastal Flood Advisory issued October 30 at 3:27AM EDT until October 30 at 2:00PM EDT by NWS Wilmington NC",
-        "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Coastal Pender and Coastal Brunswick Counties.\n\n* WHEN...From 10 AM this morning to 2 PM EDT this afternoon.\n\n* IMPACTS...Low-lying roads and locations along the Intracoastal\nWaterway and adjacent tidal creeks may observe minor coastal\nflooding. Check with local officials for any road closures or\nimpacts.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
-        "sender_name": "NWS Wilmington NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 58
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
