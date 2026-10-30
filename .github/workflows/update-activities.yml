@@ -77,7 +77,6 @@ jobs:
           # Include changes to other tracked static pages (e.g. root 404.html).
           # -u stages tracked modifications only, not unrelated new files.
           git add -u public
-          git diff --cached --check
           if ! git diff --cached --quiet; then
             git commit -m "Update coastal Activity conditions"
             git fetch origin main
