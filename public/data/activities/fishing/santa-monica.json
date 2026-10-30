@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "santa-monica",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-10-30T18:05:38+00:00",
-  "input_snapshot_generated_at_utc": "2026-10-30T18:05:38+00:00",
+  "generated_at_utc": "2026-10-30T21:40:42+00:00",
+  "input_snapshot_generated_at_utc": "2026-10-30T21:40:42+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,20 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 86.0,
+    "rating": "Good",
     "confidence": "High",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-10-30T15:00:00-07:00",
+      "end": "2026-10-30T18:00:00-07:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "coastal-flood-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "wet-weather"
     ]
   },
   "tomorrow": {
@@ -42,87 +48,6 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-10-30T11:00:00-07:00",
-        "components": {
-          "tide": 55.6,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 62.0,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 74.5,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "coastal-flood-advisory"
-        ]
-      },
-      {
-        "time": "2026-10-30T12:00:00-07:00",
-        "components": {
-          "tide": 11.8,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 62.0,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 61.4,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "coastal-flood-advisory"
-        ]
-      },
-      {
-        "time": "2026-10-30T13:00:00-07:00",
-        "components": {
-          "tide": 29.2,
-          "wind": 100,
-          "wave": 100,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 62.0,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 66.6,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "coastal-flood-advisory"
-        ]
-      },
-      {
         "time": "2026-10-30T14:00:00-07:00",
         "components": {
           "tide": 63.8,
@@ -134,19 +59,18 @@
           "water_temperature": 75
         },
         "raw_quality_score": 77.0,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
+        "final_score": 77.0,
+        "hard_stop": false,
+        "safety_status": "normal",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "High",
         "available": true,
-        "ranking_eligible": false,
+        "ranking_eligible": true,
         "reasons": [
           "light-wind",
           "manageable-sea-state",
-          "wet-weather",
-          "coastal-flood-advisory"
+          "wet-weather"
         ]
       },
       {

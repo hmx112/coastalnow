@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-30T18:06:55+00:00",
+  "generated_at_utc": "2026-10-30T21:41:14+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T18:06:55+00:00"
+      "fetched_at_utc": "2026-10-30T21:41:14+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.560cb508e86166128a67ba6ef09c86b709f95d49.001.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-10-29T13:29:00-07:00",
-        "onset": "2026-10-29T13:29:00-07:00",
-        "expires": "2026-10-30T14:00:00-07:00",
-        "ends": "2026-10-30T14:00:00-07:00",
-        "headline": "Coastal Flood Advisory issued October 29 at 1:29PM PDT until October 30 at 2:00PM PDT by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Minor to moderate coastal flooding expected due to very\nhigh tides.\n\n* WHERE...San Luis Obispo County Beaches, Santa Barbara County\nCentral Coast Beaches, Santa Barbara County Southwestern\nCoast, Santa Barbara County Southeastern Coast, Ventura County\nBeaches, Malibu Coast and Los Angeles County Beaches.\n\n* WHEN...Until 2 PM PDT Friday.\n\n* IMPACTS...Minor to moderate flooding of sea water is likely\nover vulnerable low-lying coastal areas, especially around the\ntime of high tide, including over beach parking lots, bike\npaths, and harbor walkways. Moderate to significant beach\nerosion is likely. Isolated damage of structures due to sea\nwater inundation is possible to the most vulnerable areas.\n\n* ADDITIONAL DETAILS...High tides will reach 7.5 ft (MLLW) noon\nFriday, which is about 1.5 feet above astronomical projections.",
-        "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2572,5 +2556,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
