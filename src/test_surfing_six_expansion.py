@@ -77,7 +77,21 @@ class SurfingSixLocationExpansionTests(unittest.TestCase):
                     float(row["wave_height_ft"]) >= 0 and
                     float(row["wave_period_s"]) > 0
                 )
-                self.assertGreaterEqual(good, 12)
+                if good < 12:
+                    # NWS can omit wave values temporarily. Never invent them:
+                    # missing waves must mean limited confidence and no ranking.
+                    result_path = PUBLIC / "data" / "activities" / "surfing" / (slug + ".json")
+                    result = json.loads(result_path.read_text(encoding="utf-8"))
+                    raw_by_time = {row["time"]: row for row in snap.get("hourly") or []}
+                    checked = 0
+                    for day_rows in (result.get("hourly") or {}).values():
+                        for scored in day_rows:
+                            raw = raw_by_time.get(scored.get("time"))
+                            if raw is not None and (raw.get("wave_height_ft") is None or raw.get("wave_period_s") is None):
+                                checked += 1
+                                self.assertIn(scored["confidence"], {"Limited", "Unavailable"})
+                                self.assertFalse(scored["ranking_eligible"])
+                    self.assertGreater(checked, 0)
 
     def test_generated_surfing_pages_and_seo_are_consistent(self):
         for slug in NEW:
