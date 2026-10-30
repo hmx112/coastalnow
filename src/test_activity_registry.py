@@ -33,7 +33,13 @@ class ActivityRegistryTests(unittest.TestCase):
         self.assertEqual(surfing["label"], "Surfing")
         self.assertTrue(surfing["enabled"])
         self.assertEqual(surfing["scorer_version"], "surfing-v1")
-        self.assertEqual(len(surfing["location_allowlist"]), 10)
+        # Surfing expanded from its original 10-location pilot to 16 in PR #95.
+        self.assertEqual(len(surfing["location_allowlist"]), 16)
+        self.assertEqual(len(set(surfing["location_allowlist"])), 16)
+        self.assertTrue({
+            "oceanside", "newport-beach", "ventura",
+            "virginia-beach", "folly-beach", "ocean-city",
+        } <= set(surfing["location_allowlist"]))
 
     def test_activity_paths_follow_the_existing_tide_hierarchy(self):
         self.assertEqual(
