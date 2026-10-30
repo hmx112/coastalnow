@@ -64,6 +64,18 @@ def read_json(path: Path) -> dict:
 
 def inject_adsense_account_meta(html: str) -> str:
     """Ensure the confirmed AdSense account tag appears exactly once in <head>."""
+    # Do not rewrite correctly verified static documents, especially public/404.html.
+    # Moving its existing tag to the end of <head> dirties a tracked file that
+    # the Tide/Activity publication workflows do not otherwise regenerate.
+    head_end = HEAD_CLOSE_PATTERN.search(html)
+    existing = list(ADSENSE_ACCOUNT_META_PATTERN.finditer(html))
+    if (
+        head_end
+        and len(existing) == 1
+        and existing[0].group(0) == ADSENSE_ACCOUNT_META
+        and existing[0].end() <= head_end.start()
+    ):
+        return html
     normalized = ADSENSE_ACCOUNT_META_PATTERN.sub("", html)
     head_close = HEAD_CLOSE_PATTERN.search(normalized)
     if not head_close:

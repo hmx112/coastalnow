@@ -85,6 +85,7 @@ jobs:
           python src/test_surfing_alert_details.py
           python src/test_surfing_alert_policy.py
           python src/test_surfing_24h_forecast.py
+          python src/test_activity_registry.py
           python src/test_activity_workflows.py
           python src/test_surfing_hub_sync.py
           python src/test_tide_refresh_on_main_merge.py
@@ -94,6 +95,9 @@ jobs:
           git config user.name "coastalnow-bot"
           git config user.email "coastalnow-bot@users.noreply.github.com"
           git add public/data public/tides public/fishing public/surfing public/methodology public/about public/privacy public/contact public/ads.txt public/index.html public/sitemap.xml public/robots.txt
+          # Include changes to other tracked static pages (e.g. root 404.html).
+          # -u stages tracked modifications only, not unrelated new files.
+          git add -u public
           if ! git diff --cached --quiet; then
             git commit -m "Update live NOAA tide data"
             git fetch origin main

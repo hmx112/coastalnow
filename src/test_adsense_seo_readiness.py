@@ -43,6 +43,28 @@ class AdsenseSeoReadinessTests(unittest.TestCase):
                 self.assertGreaterEqual(head_end, 0)
                 self.assertLess(html.index(ADSENSE_ACCOUNT_META), head_end)
 
+    def test_existing_adsense_verification_is_byte_stable_on_root_404(self):
+        # Previously, build_site.py moved the verification tag on every run.
+        # The tracked 404.html was not in the publisher's explicit git-add list,
+        # so its unstaged rewrite caused all NOAA/alert commits to fail on rebase.
+        from build_site import inject_adsense_account_meta
+        source = self._read("404.html")
+        self.assertEqual(source.count(ADSENSE_ACCOUNT_META), 1)
+        self.assertEqual(inject_adsense_account_meta(source), source)
+        self.assertEqual(inject_adsense_account_meta(inject_adsense_account_meta(source)), source)
+        self.assertIn('<meta name="robots" content="noindex,follow">', source)
+
+    def test_adsense_verification_repairs_missing_and_duplicate_tags(self):
+        from build_site import inject_adsense_account_meta
+        base = '<html><head><title>Test</title></head><body></body></html>'
+        repaired = inject_adsense_account_meta(base)
+        self.assertEqual(repaired.count(ADSENSE_ACCOUNT_META), 1)
+        self.assertEqual(inject_adsense_account_meta(repaired), repaired)
+        duplicated = repaired.replace('</head>', ADSENSE_ACCOUNT_META + '</head>')
+        fixed = inject_adsense_account_meta(duplicated)
+        self.assertEqual(fixed.count(ADSENSE_ACCOUNT_META), 1)
+        self.assertEqual(inject_adsense_account_meta(fixed), fixed)
+
     def test_ads_txt_contains_authorized_publisher_record(self):
         ads_txt = ROOT / "ads.txt"
         self.assertTrue(ads_txt.exists())
