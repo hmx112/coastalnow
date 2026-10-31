@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "kiawah-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-31T18:44:11+00:00",
+  "generated_at_utc": "2026-10-31T19:24:23+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:11+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:23+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:11+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:23+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:11+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:23+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-31T18:44:11+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:23+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-31T14:00:00-04:00",
-      "wind_mph": 18.0,
-      "gust_mph": 29.92,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 73.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-10-31T15:00:00-04:00",
       "wind_mph": 20.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-07T01:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 64.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bfc4a2163473cea0a313c2d76d9910f0eb116512.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.49783a6b65f4afbcc6e524dcb9f6b0d65769c0e4.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-31T06:51:00-04:00",
-        "onset": "2026-10-31T08:00:00-04:00",
-        "expires": "2026-10-31T15:00:00-04:00",
+        "effective": "2026-10-31T15:10:00-04:00",
+        "onset": "2026-10-31T15:10:00-04:00",
+        "expires": "2026-10-31T20:00:00-04:00",
         "ends": "2026-10-31T20:00:00-04:00",
-        "headline": "Rip Current Statement issued October 31 at 6:51AM EDT until October 31 at 8:00PM EDT by NWS Charleston SC",
-        "description": "* WHAT...Dangerous rip currents expected.\n\n* WHERE...South Carolina Beaches.\n\n* WHEN...Through this evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
+        "headline": "Rip Current Statement issued October 31 at 3:10PM EDT until October 31 at 8:00PM EDT by NWS Charleston SC",
+        "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...South Carolina Beaches.\n\n* WHEN...Until 8 PM EDT this evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Charleston SC"
       },
@@ -2582,5 +2582,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

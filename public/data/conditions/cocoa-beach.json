@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-10-31T18:44:37+00:00",
+  "generated_at_utc": "2026-10-31T19:24:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:37+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:50+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:37+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:50+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-10-31T18:44:37+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:50+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-10-31T18:44:37+00:00"
+      "fetched_at_utc": "2026-10-31T19:24:50+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-10-31T14:00:00-04:00",
-      "wind_mph": 20.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 67.5,
-      "precip_probability_pct": 21.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-10-31T15:00:00-04:00",
       "wind_mph": 20.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-07T01:00:00-05:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.efc853e67f2eeebe77429c724978d19df0c7d0ba.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bb97c6bf379ca123f99224f2f1035c1028e37568.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-10-31T00:35:00-05:00",
-        "onset": "2026-10-31T00:35:00-05:00",
-        "expires": "2026-11-01T01:00:00-05:00",
+        "effective": "2026-10-31T14:05:00-05:00",
+        "onset": "2026-10-31T14:05:00-05:00",
+        "expires": "2026-11-02T07:00:00-05:00",
         "ends": "2026-11-02T07:00:00-05:00",
-        "headline": "Small Craft Advisory issued October 31 at 1:35AM EDT until November 2 at 7:00AM EST by NWS Melbourne FL",
-        "description": "* WHAT...East winds 15 to 20 knots with gusts up to 25 knots and\nseas 5 to 8 feet.\n\n* WHERE...Volusia-Brevard County Line to Jupiter Inlet 0-20 nm.\n\n* WHEN...Until 7 AM EST Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued October 31 at 3:05PM EDT until November 2 at 7:00AM EST by NWS Melbourne FL",
+        "description": "* WHAT...East winds 15 to 20 knots with gusts up to 30 knots and\nseas 5 to 8 feet.\n\n* WHERE...Volusia-Brevard County Line to Sebastian Inlet 0-20 nm\nand Sebastian Inlet to Jupiter Inlet 0-20 nm.\n\n* WHEN...Until 7 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Melbourne FL"
       }
@@ -2552,5 +2552,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
