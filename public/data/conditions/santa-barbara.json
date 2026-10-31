@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-barbara",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-10-30T22:31:43+00:00",
+  "generated_at_utc": "2026-10-31T01:02:47+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T22:31:43+00:00"
+      "fetched_at_utc": "2026-10-31T01:02:47+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8e00b0571d0ec17ea9f6c73f38b9f4f445deb67f.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-10-30T17:35:00-07:00",
+        "onset": "2026-10-30T17:35:00-07:00",
+        "expires": "2026-10-31T10:00:00-07:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued October 30 at 5:35PM PDT by NWS Los Angeles/Oxnard CA",
+        "description": "Isolated to scattered showers are expected across the coastal\nwaters through Sunday morning. Late tonight through Saturday\nmorning, there is a very low but present risk of waterspouts\nacross the inner waters south of Point Conception including\nnearshore. Waterspouts are dangerous and can capsize boats.\nNever move closer to investigate or take photos. The best\nway to avoid a waterspout is to move at a 90 degree angle\nto its apparent movement.",
+        "instruction": "",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

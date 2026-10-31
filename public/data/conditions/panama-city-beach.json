@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-10-30T22:31:21+00:00",
+  "generated_at_utc": "2026-10-31T01:02:39+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-10-30T22:31:21+00:00"
+      "fetched_at_utc": "2026-10-31T01:02:39+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.93038f821819ef40a838da14cde4f2b1bb220af0.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-10-30T19:45:00-04:00",
+        "onset": "2026-10-31T21:00:00-04:00",
+        "expires": "2026-10-31T21:00:00-04:00",
+        "ends": "2026-11-02T20:00:00-04:00",
+        "headline": "Small Craft Advisory issued October 30 at 7:45PM EDT until November 2 at 7:00PM EST by NWS Tallahassee FL",
+        "description": "* WHAT...East winds 15 to 25 kt with gusts up to 30 kt expected.\n\n* WHERE...Coastal waters from Mexico Beach to Okaloosa Walton\nCounty Line FL out 20 NM, Coastal waters from Mexico Beach to\nApalachicola FL out 20 NM and Coastal Waters From Ochlockonee\nRiver to Apalachicola Fl out to 20 Nm.\n\n* WHEN...From 9 PM EDT /8 PM CDT/ Saturday to 7 PM EDT /6 PM\nCDT/ Monday.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20\nto 33 knots, or seas of 7 feet or greater, are expected to\nproduce hazardous conditions for small craft. These hazardous\nconditions may result in poor vessel handling and steering\nresponse, broaching, overturned dinghies and kayaks, slips and\nfalls on slippery decks, rub damage along docks and seawalls,\nand dragging anchors.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Tallahassee FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2481,5 +2497,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
