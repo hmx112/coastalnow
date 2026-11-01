@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-01T13:30:37+00:00",
+  "generated_at_utc": "2026-11-01T16:10:05+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-01T13:30:37+00:00"
+      "fetched_at_utc": "2026-11-01T16:10:05+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-01T13:30:37+00:00"
+      "fetched_at_utc": "2026-11-01T16:10:05+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-01T13:30:37+00:00"
+      "fetched_at_utc": "2026-11-01T16:10:05+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-01T13:30:37+00:00"
+      "fetched_at_utc": "2026-11-01T16:10:05+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-01T08:00:00-05:00",
-      "wind_mph": 25.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 63.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-11-01T09:00:00-05:00",
-      "wind_mph": 24.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 62.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-11-01T10:00:00-05:00",
-      "wind_mph": 24.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 54.0,
-      "air_temperature_f": 80.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-11-01T11:00:00-05:00",
       "wind_mph": 23.0,
@@ -1902,11 +1866,62 @@
       "wave_period_s": 10.0,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-07T20:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-07T21:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 78.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-07T22:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa6e4ea64f2f08c8407b8dc34e0a04b285fd21b7.001.1",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-01T00:57:00-05:00",
+        "onset": "2026-11-01T00:57:00-05:00",
+        "expires": "2026-11-01T16:00:00-05:00",
+        "ends": "2026-11-02T19:00:00-05:00",
+        "headline": "Coastal Flood Advisory issued November 1 at 1:57AM EDT until November 2 at 7:00PM EST by NWS Miami FL",
+        "description": "* WHAT...Minor to moderate coastal flooding, large breaking waves\nof 5 to 8 feet, and dangerous rip currents.\n\n* WHERE...Coastal Palm Beach County and Coastal Broward County.\n\n* WHEN...Through this evening for the High Surf Advisory and\nthrough Monday for the Coastal Flood Advisory and High Rip\nCurrent Risk.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Dangerous swimming and\nsurfing conditions and localized beach erosion. Rip currents\ncan sweep even the best swimmers away from shore into deeper\nwater.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Miami FL"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa6e4ea64f2f08c8407b8dc34e0a04b285fd21b7.001.2",
         "event": "High Surf Advisory",
@@ -1933,21 +1948,6 @@
         "expires": "2026-11-01T16:00:00-05:00",
         "ends": "2026-11-02T19:00:00-05:00",
         "headline": "Rip Current Statement issued November 1 at 1:57AM EDT until November 2 at 7:00PM EST by NWS Miami FL",
-        "description": "* WHAT...Minor to moderate coastal flooding, large breaking waves\nof 5 to 8 feet, and dangerous rip currents.\n\n* WHERE...Coastal Palm Beach County and Coastal Broward County.\n\n* WHEN...Through this evening for the High Surf Advisory and\nthrough Monday for the Coastal Flood Advisory and High Rip\nCurrent Risk.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Dangerous swimming and\nsurfing conditions and localized beach erosion. Rip currents\ncan sweep even the best swimmers away from shore into deeper\nwater.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Miami FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa6e4ea64f2f08c8407b8dc34e0a04b285fd21b7.001.1",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-01T00:57:00-05:00",
-        "onset": "2026-11-01T00:57:00-05:00",
-        "expires": "2026-11-01T16:00:00-05:00",
-        "ends": "2026-11-02T19:00:00-05:00",
-        "headline": "Coastal Flood Advisory issued November 1 at 1:57AM EDT until November 2 at 7:00PM EST by NWS Miami FL",
         "description": "* WHAT...Minor to moderate coastal flooding, large breaking waves\nof 5 to 8 feet, and dangerous rip currents.\n\n* WHERE...Coastal Palm Beach County and Coastal Broward County.\n\n* WHEN...Through this evening for the High Surf Advisory and\nthrough Monday for the Coastal Flood Advisory and High Rip\nCurrent Risk.\n\n* IMPACTS...Flooding of lots, parks, and roads with only\nisolated road closures expected. Dangerous swimming and\nsurfing conditions and localized beach erosion. Rip currents\ncan sweep even the best swimmers away from shore into deeper\nwater.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Miami FL"
