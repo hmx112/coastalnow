@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "sebastian-inlet",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-02T19:38:30+00:00",
+  "generated_at_utc": "2026-11-02T21:24:46+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-02T19:38:30+00:00"
+      "fetched_at_utc": "2026-11-02T21:24:46+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-02T19:38:30+00:00"
+      "fetched_at_utc": "2026-11-02T21:24:46+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-02T19:38:30+00:00"
+      "fetched_at_utc": "2026-11-02T21:24:46+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-02T15:57:26+00:00"
+      "fetched_at_utc": "2026-11-02T21:22:43+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-02T19:38:30+00:00"
+      "fetched_at_utc": "2026-11-02T21:24:46+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-02T14:00:00-05:00",
-      "wind_mph": 15.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 60.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-11-02T15:00:00-05:00",
-      "wind_mph": 15.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 57.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-11-02T16:00:00-05:00",
       "wind_mph": 15.0,
@@ -1902,24 +1878,48 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-09T02:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 292.5,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-09T03:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 292.5,
+      "precip_probability_pct": 12.0,
+      "air_temperature_f": 73.0,
+      "wave_height_ft": 0.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94bb6ea8f43c0f4391a2ee66021b8b48e4f43fe0.001.1",
-        "event": "Special Marine Warning",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.07a5bd5894a0d4236767e748ab3eb463987e987c.001.1",
+        "event": "Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-11-02T14:27:00-05:00",
-        "onset": "2026-11-02T14:27:00-05:00",
-        "expires": "2026-11-02T15:00:00-05:00",
-        "ends": "2026-11-02T15:00:00-05:00",
-        "headline": "Special Marine Warning issued November 2 at 2:27PM EST until November 2 at 3:00PM EST by NWS Melbourne FL",
-        "description": "SMWMLB\n\nThe National Weather Service in Melbourne has issued a\n\n* Special Marine Warning for...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\nSebastian Inlet to Jupiter Inlet 0-20 nm...\n\n* Until 300 PM EST.\n\n* At 227 PM EST, a severe thunderstorm capable of producing\nwaterspouts was located 7 NM northeast of Indian River Shores,\nmoving west at 10 knots.\n\nHAZARD...Waterspouts and wind gusts to 40 knots.\n\nSOURCE...Radar indicated.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nDisneys Vero Beach Resort, Wabasso Beach, Orchid, North Beach,\nIndian River Shores, Wabasso, Winter Beach, Sebastian Inlet State\nPark, Sebastian Inlet, Gifford, Sebastian, Roseland, Micco and\nBarefoot Bay.",
-        "instruction": "Move to safe harbor until hazardous weather passes.\n\nBoaters should seek safe harbor immediately until this storm passes.\nWind gusts 34 knots or greater, high waves, dangerous lightning, and\nheavy rain are possible with this storm.\n\nThunderstorms can produce sudden waterspouts. Waterspouts can easily\noverturn boats and create locally hazardous seas. Seek safe harbor\nimmediately.",
+        "urgency": "Expected",
+        "effective": "2026-11-02T15:36:00-05:00",
+        "onset": "2026-11-02T15:36:00-05:00",
+        "expires": "2026-11-02T21:30:00-05:00",
+        "ends": "2026-11-02T21:30:00-05:00",
+        "headline": "Flood Warning issued November 2 at 3:36PM EST until November 2 at 9:30PM EST by NWS Melbourne FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Southeastern Brevard County in east central Florida...\nNortheastern Indian River County in east central Florida...\n\n* WHEN...Until 930 PM EST.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is imminent or occurring. Expect many\nareas of slow moving or standing water.\n\n* ADDITIONAL DETAILS...\n- At 335 PM EST, Doppler radar and automated rain gauges indicated\nheavy rain due to thunderstorms. Flooding is already occurring in\nthe warned area. Between 16 and 22 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 2 inches are possible in the\nwarned area.\n- Some locations that will experience flooding include...\nPalm Bay, Melbourne, Sebastian, Indian River Shores, Malabar,\nIndialantic, Barefoot Bay, Roseland, Sebastian Inlet, Sebastian\nHighlands, Camp Holly Fish Camp, Wabasso, West Melbourne,\nMelbourne Beach, Grant-Valkaria, Micco, Sebastian Inlet State\nPark, Melbourne Village and Orchid.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown. Be aware of your surroundings and do not\ndrive on flooded roads. Most flood deaths occur in vehicles.\n\nBe especially cautious at night when it is harder to recognize the\ndangers of flooding.",
         "sender_name": "NWS Melbourne FL"
       },
       {
@@ -1935,21 +1935,6 @@
         "headline": "Small Craft Advisory issued November 2 at 1:46PM EST until November 3 at 7:00PM EST by NWS Melbourne FL",
         "description": "* WHAT...East winds 15 to 20 knots with gusts up to 25 knots and seas\n5 to 8 feet.\n\n* WHERE...Volusia-Brevard County Line to Sebastian Inlet 0-20 nm\nand Sebastian Inlet to Jupiter Inlet 0-20 nm.\n\n* WHEN...Until 7 PM EST Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Melbourne FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.942cd81a31811fa71509464ab040e82e5c6c53fb.001.1",
-        "event": "Flash Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-11-02T13:40:00-05:00",
-        "onset": "2026-11-02T13:40:00-05:00",
-        "expires": "2026-11-02T15:45:00-05:00",
-        "ends": "2026-11-02T15:45:00-05:00",
-        "headline": "Flash Flood Warning issued November 2 at 1:40PM EST until November 2 at 3:45PM EST by NWS Melbourne FL",
-        "description": "FFWMLB\n\nThe National Weather Service in Melbourne has extended the\n\n* Flash Flood Warning for...\nSoutheastern Brevard County in east central Florida...\nNortheastern Indian River County in east central Florida...\n\n* Until 345 PM EST.\n\n* At 140 PM EST, Doppler radar and automated rain gauges indicated\nthunderstorms producing heavy rain across the warned area. Between\n8 and 12 inches of rain have fallen. Additional rainfall amounts of\n2 to 3 inches are possible in the warned area. Flash flooding is\nalready occurring.\n\nHAZARD...Flash flooding caused by thunderstorms.\n\nSOURCE...Radar and automated gauges.\n\nIMPACT...Flash flooding of small creeks and streams, urban areas,\nhighways, streets and underpasses as well as other poor\ndrainage and low-lying areas.\n\n* Some locations that will experience flash flooding include...\nSebastian, Indian River Shores, Roseland, Sebastian Highlands,\nSebastian Inlet, Barefoot Bay, Wabasso, Sebastian Inlet State Park,\nMicco, Orchid, North Beach, Wabasso Beach and Disneys Vero Beach\nResort.",
-        "instruction": "Turn around, don't drown. Be aware of your surroundings and do not\ndrive on flooded roads. Most flood deaths occur in vehicles.\n\nPlease report observed flooding to local emergency services or law\nenforcement and request they pass this information to the National\nWeather Service when you can do so safely.",
         "sender_name": "NWS Melbourne FL"
       }
     ]
@@ -1986,8 +1971,8 @@
       "start": "2026-11-02",
       "end": "2026-11-08"
     },
-    "generated_at_utc": "2026-11-02T15:57:26+00:00",
-    "generated_at_local": "2026-11-02T10:57:25-05:00",
+    "generated_at_utc": "2026-11-02T21:22:43+00:00",
+    "generated_at_local": "2026-11-02T16:22:42-05:00",
     "hilo": [
       {
         "t": "2026-11-01 01:11",
