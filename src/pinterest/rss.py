@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, time, timezone
 from email.utils import format_datetime
+from urllib.parse import urlencode
 import xml.etree.ElementTree as ET
 
 BASE_URL = "https://coastalnowtides.com"
@@ -47,13 +48,34 @@ def pin_record(item: dict, kind: str) -> dict:
         link = f"{BASE_URL}/tides/{state_slug}/{slug}/surfing/"
         image_url = f"{BASE_URL}/pinterest/images/{slug}-surfing.png"
 
+    version = item.get("creative_version", "v1")
+    if version == "v2":
+        # Alternative creative, same useful canonical destination. Analytics
+        # attribution makes the pilot's outbound clicks distinguishable.
+        theme = {
+            "tides": ("Low Tide Guide", "Plan a beach visit with NOAA high/low tide timing and a local seven-day chart."),
+            "fishing": ("Shore Fishing Planner", "Check NOAA tides and NWS wind, wave and alert context before a shore or pier visit."),
+            "surfing": ("Surf Conditions Guide", "Compare forecast wave height, period, wind and official marine alerts before visiting."),
+        }[kind]
+        title = f"{name}, {state} | {theme[0]}"
+        description = f"{theme[1]} Open CoastalNow for the updated forecast and source limitations."
+        image_url = f"{BASE_URL}/pinterest/images/{slug}-{kind}-v2.png"
+        link += "?" + urlencode({
+            "utm_source": "pinterest",
+            "utm_medium": "organic",
+            "utm_campaign": "coastalnow_creative_v2",
+            "utm_content": f"{kind}_{slug}",
+        })
+    elif version != "v1":
+        raise ValueError(f"Unknown Pinterest creative version: {version}")
+
     return {
         "kind": kind,
         "title": title,
         "description": description,
         "link": link,
         "image_url": image_url,
-        "guid": f"coastalnow:pinterest:{kind}:{slug}:v1",
+        "guid": f"coastalnow:pinterest:{kind}:{slug}:{version}",
         "release_date": item["release_date"],
     }
 
@@ -101,7 +123,9 @@ def build_rss(kind: str, released: list[dict]) -> str:
     seen_links: set[str] = set()
     seen_images: set[str] = set()
 
-    for location in released:
+    # Feed readers often inspect the newest items first. Preserve existing
+    # item GUIDs/URLs; only change the ordering in the RSS document.
+    for location in sorted(released, key=lambda x: (x["release_date"], x["slug"], x.get("creative_version", "v1")), reverse=True):
         if not _enabled_for_kind(location, kind):
             continue
         record = pin_record(location, kind)

@@ -23,6 +23,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Pinterest test dependencies
+        run: pip install -r requirements-pinterest.txt
+
+      - name: Run fast Pinterest creative and rollout checks before NOAA collection
+        run: python src/test_pinterest_v2_rollout.py
+
       - name: Validate Live NOAA configuration
         run: python src/promote_location.py --validate-config
 
