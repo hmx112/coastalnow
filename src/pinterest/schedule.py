@@ -51,13 +51,16 @@ def released_surfing_locations(catalog: list[dict], config: dict, as_of: date) -
 
 
 def released_creative_v2_pilots(catalog: list[dict], config: dict, as_of: date) -> list[dict]:
-    """Release one genuinely new creative per day; never duplicate legacy pins."""
+    """Release v2 test designs in the configured batch or daily cadence."""
     if not config.get("enabled"):
         return []
     start_text = config.get("creative_v2_start_date")
     if not start_text:
         return []
     start = date.fromisoformat(start_text)
+    batch_release = config.get("creative_v2_batch_release", False)
+    if not isinstance(batch_release, bool):
+        raise ValueError("Pinterest creative_v2_batch_release must be a boolean")
     by_slug = {item["slug"]: item for item in catalog}
     pilots = config.get("creative_v2_pilots") or []
     seen = set()
@@ -74,7 +77,9 @@ def released_creative_v2_pilots(catalog: list[dict], config: dict, as_of: date) 
         item = by_slug[slug]
         if kind in {"fishing", "surfing"} and not item.get(f"{kind}_enabled"):
             raise ValueError(f"Disabled Pinterest v2 activity: {kind}/{slug}")
-        release_date = release_date_for_index(start, index, config["locations_per_day"])
+        # Six alternative pilot creatives are intentionally released together;
+        # ordinary location and Surfing backfill remain daily.
+        release_date = start if batch_release else release_date_for_index(start, index, config["locations_per_day"])
         if release_date <= as_of:
             output.append({**item, "creative_version": "v2", "kind": kind, "release_date": release_date})
     return output

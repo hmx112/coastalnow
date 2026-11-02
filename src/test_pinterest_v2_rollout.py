@@ -78,25 +78,31 @@ class PinterestCreativeRolloutTests(unittest.TestCase):
         self.assertEqual(surf_day1[-1]["slug"], "oceanside")
         self.assertEqual(surf_before[0]["release_date"], date(2026, 9, 3))
 
-    def test_six_v2_pilots_are_evergreen_staggered_and_on_previously_published_destinations(self):
+    def test_six_v2_pilots_release_together_and_preserve_legacy_pins(self):
         config, catalog = config_and_catalog()
-        p0 = released_creative_v2_pilots(catalog, config, date(2026, 11, 3))
-        p1 = released_creative_v2_pilots(catalog, config, date(2026, 11, 4))
-        p6 = released_creative_v2_pilots(catalog, config, date(2026, 11, 9))
-        self.assertEqual(p0, [])
-        self.assertEqual(len(p1), 1)
-        self.assertEqual(len(p6), 6)
-        self.assertEqual(len({(p["kind"], p["slug"]) for p in p6}), 6)
-        for pilot in p6:
+        before = released_creative_v2_pilots(catalog, config, date(2026, 11, 1))
+        batch = released_creative_v2_pilots(catalog, config, date(2026, 11, 2))
+        later = released_creative_v2_pilots(catalog, config, date(2026, 11, 9))
+        self.assertTrue(config["creative_v2_batch_release"])
+        self.assertEqual(config["creative_v2_start_date"], "2026-11-02")
+        self.assertEqual(before, [])
+        self.assertEqual(len(batch), 6)
+        self.assertEqual(batch, later)
+        self.assertEqual(len({(p["kind"], p["slug"]) for p in batch}), 6)
+        for pilot in batch:
             slug, kind = pilot["slug"], pilot["kind"]
             path = PUBLIC / "pinterest" / "images" / f"{slug}-{kind}.png"
             self.assertTrue(path.exists(), str(path))
             self.assertEqual(pilot["creative_version"], "v2")
-        self.assertEqual({p["kind"] for p in p6}, set(PALETTES))
+            self.assertEqual(pilot["release_date"], date(2026, 11, 2))
+        self.assertEqual({p["kind"] for p in batch}, set(PALETTES))
+        # Daily release of new locations remains independent and starts Nov 11.
+        self.assertEqual(len(released_locations(catalog, config, date(2026, 11, 3))), 13)
+        self.assertEqual(len(released_surfing_locations(catalog, config, date(2026, 11, 3))), 10)
 
     def test_v2_metadata_is_new_identified_image_with_utm_not_a_rewritten_legacy_guid(self):
         config, catalog = config_and_catalog()
-        pilot = released_creative_v2_pilots(catalog, config, date(2026, 11, 4))[0]
+        pilot = released_creative_v2_pilots(catalog, config, date(2026, 11, 2))[0]
         new = pin_record(pilot, "tides")
         legacy = pin_record({**pilot, "creative_version": "v1"}, "tides")
         self.assertEqual(legacy["guid"], "coastalnow:pinterest:tides:huntington-beach:v1")
@@ -111,21 +117,27 @@ class PinterestCreativeRolloutTests(unittest.TestCase):
         self.assertNotIn("2026", new["description"])
         self.assertNotIn("ft", new["description"])
 
-    def test_first_v2_pin_is_one_new_image_and_preserves_old_files_and_feeds(self):
+    def test_all_six_v2_pins_render_in_one_batch_with_unchanged_legacy_feeds(self):
         config, _ = config_and_catalog()
         with tempfile.TemporaryDirectory() as tmp, patch("generate_pinterest.render_pin_v2", side_effect=fake_render):
             root = Path(tmp)
             existing = root / "pinterest" / "images" / "huntington-beach-tides.png"
             existing.parent.mkdir(parents=True)
             existing.write_bytes(b"published-immutable-original")
-            result = generate(date(2026, 11, 4), root, CONFIG)
+            result = generate(date(2026, 11, 2), root, CONFIG)
             self.assertEqual(len(result["released_slugs"]), 13)
             self.assertEqual(len(result["surfing_released_slugs"]), 10)
-            self.assertEqual(result["creative_v2_pilots_released"], ["tides:huntington-beach"])
+            pilots = result["creative_v2_pilots_released"]
+            self.assertEqual(len(pilots), 6)
+            self.assertEqual(set(pilots), {
+                "tides:huntington-beach", "fishing:cape-hatteras", "surfing:malibu",
+                "tides:san-diego", "fishing:miami-beach", "surfing:nags-head",
+            })
             self.assertEqual(existing.read_bytes(), b"published-immutable-original")
-            self.assertTrue((root / "pinterest" / "images" / "huntington-beach-tides-v2.png").is_file())
+            for item in config["creative_v2_pilots"]:
+                self.assertTrue((root / "pinterest" / "images" / f'{item["slug"]}-{item["kind"]}-v2.png').is_file())
             self.assertFalse((root / "pinterest" / "images" / "galveston-tides.png").exists())
-            for kind, expected in (("tides", 14), ("fishing", 13), ("surfing", 10)):
+            for kind, expected in (("tides", 15), ("fishing", 15), ("surfing", 12)):
                 feed = root / "pinterest" / "rss" / f"{kind}.xml"
                 xml = ET.parse(feed)
                 items = xml.findall("./channel/item")
@@ -133,9 +145,10 @@ class PinterestCreativeRolloutTests(unittest.TestCase):
                 identities = [item.findtext("guid") for item in items]
                 self.assertEqual(len(identities), len(set(identities)))
                 self.assertTrue(all(len(item.findall(f"{{{MEDIA_NS}}}content")) == 1 for item in items))
-            tide_items = ET.parse(root / "pinterest" / "rss" / "tides.xml").findall("./channel/item")
-            self.assertEqual(tide_items[0].findtext("guid"), "coastalnow:pinterest:tides:huntington-beach:v2")
-            self.assertIn("2026", tide_items[0].findtext("pubDate") or "")
+                self.assertEqual(sum(":v2" in uid for uid in identities), 2)
+                self.assertTrue(all(":v2" in uid for uid in identities[:2]))
+                for item in items[:2]:
+                    self.assertIn("Nov 2026", item.findtext("pubDate") or "")
 
     def test_v2_photo_first_creatives_are_1000x1500_and_three_formats_are_distinct(self):
         from pinterest import creative_v2
