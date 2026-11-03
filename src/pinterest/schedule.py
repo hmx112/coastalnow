@@ -87,7 +87,9 @@ def released_creative_v2_pilots(catalog: list[dict], config: dict, as_of: date) 
 
 def released_creative_v3_pilots(catalog: list[dict], config: dict, as_of: date) -> list[dict]:
     """Publish six HTML-cover pilot Pins once; preserve v1/v2 release history."""
-    if not config.get("enabled") or not config.get("creative_v3_start_date"):
+    # Draft v3 image assets may exist but stay out of live RSS until approved.
+    if (not config.get("enabled") or not config.get("creative_v3_publish_enabled", True)
+            or not config.get("creative_v3_start_date")):
         return []
     v3 = dict(config)
     v3["creative_v2_start_date"] = config["creative_v3_start_date"]
