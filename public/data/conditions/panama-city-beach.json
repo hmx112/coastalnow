@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "panama-city-beach",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-03T13:18:25+00:00",
+  "generated_at_utc": "2026-11-03T14:19:56+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:25+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:56+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:25+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:56+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:25+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:56+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:16:51+00:00"
+      "fetched_at_utc": "2026-11-03T14:18:04+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:25+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:56+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-03T07:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 18.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": 73.8,
-      "condition_text": "Slight Chance Rain Showers"
-    },
     {
       "time": "2026-11-03T08:00:00-06:00",
       "wind_mph": 15.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": 73.8,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-09T19:00:00-06:00",
+      "wind_mph": 15.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 73.8,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.543e094514e36b10160bf3e59e828601a928a09a.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.972b57f3a7a7f34f1b0e9b830e7347e0f07d3072.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-02T10:02:00-05:00",
-        "onset": "2026-11-02T10:02:00-05:00",
-        "expires": "2026-11-02T18:15:00-05:00",
-        "ends": "2026-11-03T13:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 2 at 10:02AM EST until November 3 at 1:00PM EST by NWS Tallahassee FL",
-        "description": "* WHAT...East winds 20 to 25 kt with gusts up to 30 kt.\n\n* WHERE...Coastal waters from Mexico Beach to Okaloosa Walton\nCounty Line FL out 20 NM, Coastal waters from Mexico Beach to\nApalachicola FL out 20 NM and Coastal Waters From Ochlockonee\nRiver to Apalachicola Fl out to 20 Nm.\n\n* WHEN...Until 1 PM EST /noon CST/ Tuesday.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20\nto 33 knots, or seas of 7 feet or greater, are expected to\nproduce hazardous conditions for small craft. These hazardous\nconditions may result in poor vessel handling and steering\nresponse, broaching, overturned dinghies and kayaks, slips and\nfalls on slippery decks, rub damage along docks and seawalls,\nand dragging anchors.",
+        "effective": "2026-11-03T08:21:00-05:00",
+        "onset": "2026-11-03T08:21:00-05:00",
+        "expires": "2026-11-03T16:30:00-05:00",
+        "ends": "2026-11-03T19:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 3 at 8:21AM EST until November 3 at 7:00PM EST by NWS Tallahassee FL",
+        "description": "* WHAT...East winds 15 to 20 kt with gusts up to 25 kt.\n\n* WHERE...Coastal waters from Mexico Beach to Okaloosa Walton\nCounty Line FL out 20 NM, Coastal waters from Mexico Beach to\nApalachicola FL out 20 NM and Coastal Waters From Ochlockonee\nRiver to Apalachicola Fl out to 20 Nm.\n\n* WHEN...Until 7 PM EST /6 PM CST/ this evening.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20\nto 33 knots, or seas of 7 feet or greater, are expected to\nproduce hazardous conditions for small craft. These hazardous\nconditions may result in poor vessel handling and steering\nresponse, broaching, overturned dinghies and kayaks, slips and\nfalls on slippery decks, rub damage along docks and seawalls,\nand dragging anchors.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Tallahassee FL"
       }
@@ -1956,8 +1956,8 @@
       "start": "2026-11-03",
       "end": "2026-11-09"
     },
-    "generated_at_utc": "2026-11-03T13:16:51+00:00",
-    "generated_at_local": "2026-11-03T07:16:50-06:00",
+    "generated_at_utc": "2026-11-03T14:18:04+00:00",
+    "generated_at_local": "2026-11-03T08:18:03-06:00",
     "hilo": [
       {
         "t": "2026-11-03 01:49",

@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-03T13:18:24+00:00",
+  "generated_at_utc": "2026-11-03T14:19:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:24+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:54+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:24+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:54+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:18:24+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:54+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T13:16:50+00:00"
+      "fetched_at_utc": "2026-11-03T14:18:03+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-03T13:18:24+00:00"
+      "fetched_at_utc": "2026-11-03T14:19:54+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-03T07:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 14.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-03T08:00:00-06:00",
       "wind_mph": 15.0,
@@ -1902,38 +1890,50 @@
       "wave_period_s": 5.0,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-09T19:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": 4.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5b6480f01a9d19da560dca43538bb4cf290d6c6.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4529b43ff3a3506a7d4133c8f7bdc769aebad88.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-02T16:02:00-06:00",
-        "onset": "2026-11-02T16:02:00-06:00",
-        "expires": "2026-11-03T09:00:00-06:00",
+        "effective": "2026-11-03T08:03:00-06:00",
+        "onset": "2026-11-03T08:03:00-06:00",
+        "expires": "2026-11-03T16:00:00-06:00",
         "ends": "2026-11-04T18:00:00-06:00",
-        "headline": "Rip Current Statement issued November 2 at 4:02PM CST until November 4 at 6:00PM CST by NWS Mobile AL",
+        "headline": "Rip Current Statement issued November 3 at 8:03AM CST until November 4 at 6:00PM CST by NWS Mobile AL",
         "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...Through Wednesday afternoon.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Mobile AL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d78954d70a399f1043be63da6a77c0cb397c6bc9.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.797c05f0a64b5730c99ee8a637da0a438f85fbb8.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-02T16:03:00-06:00",
-        "onset": "2026-11-02T16:03:00-06:00",
-        "expires": "2026-11-03T09:00:00-06:00",
+        "effective": "2026-11-03T08:03:00-06:00",
+        "onset": "2026-11-03T08:03:00-06:00",
+        "expires": "2026-11-03T16:15:00-06:00",
         "ends": "2026-11-03T18:00:00-06:00",
-        "headline": "Small Craft Advisory issued November 2 at 4:03PM CST until November 3 at 6:00PM CST by NWS Mobile AL",
-        "description": "* WHAT...East winds 15 to 25 kt and seas 4 to 6 ft.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM, Coastal waters from Okaloosa Walton County Line FL to\nPensacola FL out 20 NM, Waters from Pensacola FL to Pascagoula\nMS from 20 to 60 NM and Waters from Okaloosa Walton County\nLine FL to Pensacola FL from 20 to 60 NM.\n\n* WHEN...Until 6 PM CST Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued November 3 at 8:03AM CST until November 3 at 6:00PM CST by NWS Mobile AL",
+        "description": "* WHAT...East winds 15 to 20 kt with gusts up to 25 kt and seas\n4 to 6 ft.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM, Coastal waters from Okaloosa Walton County Line FL to\nPensacola FL out 20 NM, Waters from Pensacola FL to Pascagoula\nMS from 20 to 60 NM and Waters from Okaloosa Walton County\nLine FL to Pensacola FL from 20 to 60 NM.\n\n* WHEN...Until 6 PM CST this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Mobile AL"
       }
@@ -1971,8 +1971,8 @@
       "start": "2026-11-03",
       "end": "2026-11-09"
     },
-    "generated_at_utc": "2026-11-03T13:16:50+00:00",
-    "generated_at_local": "2026-11-03T07:16:50-06:00",
+    "generated_at_utc": "2026-11-03T14:18:03+00:00",
+    "generated_at_local": "2026-11-03T08:18:03-06:00",
     "hilo": [
       {
         "t": "2026-11-02 03:40",
