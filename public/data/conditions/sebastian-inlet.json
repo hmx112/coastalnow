@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sebastian-inlet",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-03T14:20:34+00:00",
+  "generated_at_utc": "2026-11-03T18:02:30+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T14:20:34+00:00"
+      "fetched_at_utc": "2026-11-03T18:02:30+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57b09679b0ffae10e5940def5bb8564a1e56824b.001.1",
+        "event": "Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-03T09:30:00-05:00",
+        "onset": "2026-11-03T09:30:00-05:00",
+        "expires": "2026-11-04T09:30:00-05:00",
+        "ends": "2026-11-04T09:30:00-05:00",
+        "headline": "Flood Warning issued November 3 at 9:30AM EST until November 4 at 9:30AM EST by NWS Melbourne FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is occurring.\n\n* WHERE...Southeastern Brevard County in east central Florida...\nEastern Indian River County in east central Florida...\nNortheastern Martin County in east central Florida...\nSt. Lucie County in east central Florida...\n\n* WHEN...Until 930 AM EST Wednesday.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is occurring. It will take several hours\nfor all the water from these storms to work through local drainage\nsystems in urban areas.\n\n* ADDITIONAL DETAILS...\n- At 925 AM EST, flooding continues across the warned area and\nemergency management has reported numerous road closures across\nportions of southern Brevard County and the Treasure Coast.\n- Some locations that will experience flooding include...\nPort Saint Lucie, Palm Bay, Melbourne, Walton, Fort Pierce,\nSebastian, Stuart, Vero Beach, Fellsmere, Indian River Shores,\nMalabar, Indialantic, Vero Beach South, Gifford, Winter Beach,\nIndrio, Wabasso, Sebastian Highlands, Fort Pierce Inlet and\nRoseland.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
+        "sender_name": "NWS Melbourne FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ac29923cfd949d1f1f23a6d93ad90f04fac25bc2.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -1920,21 +1935,6 @@
         "headline": "Small Craft Advisory issued November 3 at 1:20AM EST until November 3 at 2:00PM EST by NWS Melbourne FL",
         "description": "* WHAT...Seas 5 to 7 feet.\n\n* WHERE...Volusia-Brevard County Line to Jupiter Inlet 0-20 nm.\n\n* WHEN...Until 2 PM EST this afternoon.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Melbourne FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d5ec6e3e784e6ff98f3e5e84286ac912f718d375.001.1",
-        "event": "Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-02T21:15:00-05:00",
-        "onset": "2026-11-02T21:15:00-05:00",
-        "expires": "2026-11-03T09:30:00-05:00",
-        "ends": "2026-11-03T09:30:00-05:00",
-        "headline": "Flood Warning issued November 2 at 9:15PM EST until November 3 at 9:30AM EST by NWS Melbourne FL",
-        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Southeastern Brevard County in east central Florida...\nEastern Indian River County in east central Florida...\nNortheastern Martin County in east central Florida...\nSt. Lucie County in east central Florida...\n\n* WHEN...Until 930 AM EST Tuesday.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is imminent or occurring. It will take\nseveral hours for all the water from the heavy rain that has\nalready fallen to work through local drainage systems in urban\nareas.\n\n* ADDITIONAL DETAILS...\n- At 914 PM EST, Flooding is already occurring in the warned area.\nDoppler radar and automated rain gauges indicated additional\ndownpours developing and moving over already saturated ground.\n- This replaces the existing Flood Warning. If heavy rain persists,\nadditional Flash Flood Warnings may be required overnight.\n- Some locations that will experience flooding include...\nPort Saint Lucie, Palm Bay, Melbourne, Walton, Fort Pierce,\nSebastian, Stuart, Vero Beach, Satellite Beach, Fellsmere, Indian\nRiver Shores, Malabar, Indialantic, Vero Beach South, Gifford,\nWinter Beach, Wabasso, Sebastian Highlands and Roseland.\n- http://www.weather.gov/safety/flood",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe especially cautious at night when it is harder to recognize the\ndangers of flooding.",
         "sender_name": "NWS Melbourne FL"
       }
     ]
@@ -2587,5 +2587,5 @@
       "grid_y": 41
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

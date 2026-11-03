@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-cruz",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-03T14:18:15+00:00",
+  "generated_at_utc": "2026-11-03T18:00:34+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T14:18:15+00:00"
+      "fetched_at_utc": "2026-11-03T18:00:34+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5d99520cbbf330cb8c3a09eab3f9f6a33e36125d.003.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-03T08:29:00-08:00",
+        "onset": "2026-11-03T09:00:00-08:00",
+        "expires": "2026-11-03T15:00:00-08:00",
+        "ends": "2026-11-03T15:00:00-08:00",
+        "headline": "Small Craft Advisory issued November 3 at 8:29AM PST until November 3 at 3:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...South winds 10 to 20 kt with gusts up to 30 kt expected.\n\n* WHERE...Monterey Bay.\n\n* WHEN...Until 3 PM PST this afternoon.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS San Francisco CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5ad8393bf4de5560e3c2cb85ff40c11c1f3a5f81.001.1",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
@@ -2567,5 +2582,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
