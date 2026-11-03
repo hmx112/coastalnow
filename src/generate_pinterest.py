@@ -59,14 +59,14 @@ def _validate_feed_images(feed_path: Path, public_root: Path) -> None:
             raise FileNotFoundError(f"{feed_path}: referenced Pinterest image does not exist: {local_path}")
 
 
-def _render_once(item: dict, kind: str, path: Path) -> bool:
+def _render_once(item: dict, kind: str, path: Path, *, html_cutover_enabled: bool = True, html_cutover_date: date = date(2026, 11, 11)) -> bool:
     if path.exists():
         return False
     version = item.get("creative_version", "v1")
     release_date = item.get("release_date")
     # Retain all already published PNG assets (early-return above).
     # Use the new HTML renderer for v3, then for all *new* backfill pins.
-    if version == "v3" or (version == "v1" and release_date is not None and release_date >= date(2026, 11, 11)):
+    if version == "v3" or (html_cutover_enabled and version == "v1" and release_date is not None and release_date >= html_cutover_date):
         render_pin_html(item, kind, path)
     else:
         render_pin_v2(item, kind, path)
@@ -82,6 +82,10 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
     surfing_released = released_surfing_locations(catalog, config, as_of)
     v2_pilots = released_creative_v2_pilots(catalog, config, as_of)
     v3_pilots = released_creative_v3_pilots(catalog, config, as_of)
+    html_renderer_options = {
+        "html_cutover_enabled": config.get("html_cutover_enabled", True),
+        "html_cutover_date": date.fromisoformat(config.get("html_cutover_start_date", "2026-11-11")),
+    }
 
     image_root = public_root / "pinterest" / "images"
     rss_root = public_root / "pinterest" / "rss"
@@ -92,25 +96,25 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
     new_images: list[Path] = []
     for item in released:
         tide_path = image_root / f'{item["slug"]}-tides.png'
-        if _render_once(item, "tides", tide_path):
+        if _render_once(item, "tides", tide_path, **html_renderer_options):
             new_images.append(tide_path)
         images.append(tide_path)
         if item.get("fishing_enabled"):
             fishing_path = image_root / f'{item["slug"]}-fishing.png'
-            if _render_once(item, "fishing", fishing_path):
+            if _render_once(item, "fishing", fishing_path, **html_renderer_options):
                 new_images.append(fishing_path)
             images.append(fishing_path)
 
     for item in surfing_released:
         surfing_path = image_root / f'{item["slug"]}-surfing.png'
-        if _render_once(item, "surfing", surfing_path):
+        if _render_once(item, "surfing", surfing_path, **html_renderer_options):
             new_images.append(surfing_path)
         images.append(surfing_path)
 
     for pilot in v2_pilots + v3_pilots:
         version = pilot["creative_version"]
         image = image_root / f'{pilot["slug"]}-{pilot["kind"]}-{version}.png'
-        if _render_once(pilot, pilot["kind"], image):
+        if _render_once(pilot, pilot["kind"], image, **html_renderer_options):
             new_images.append(image)
         images.append(image)
 
