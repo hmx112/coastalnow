@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-03T08:53:18+00:00",
+  "generated_at_utc": "2026-11-03T09:58:52+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T08:53:18+00:00"
+      "fetched_at_utc": "2026-11-03T09:58:52+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.922aca6d1054a34f6807b907924c77f0326920a4.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-11-03T04:37:00-05:00",
+        "onset": "2026-11-03T04:37:00-05:00",
+        "expires": "2026-11-03T05:15:00-05:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued November 3 at 4:37AM EST by NWS Miami FL",
+        "description": "The areas affected include...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\nCoastal waters from Jupiter Inlet to Deerfield Beach FL out 20\nNM...\nWaters from Jupiter Inlet to Deerfield Beach FL from 20 to 60\nNM...\n\nAt 437 AM EST, Doppler radar indicated a strong thunderstorm, capable\nof producing winds to around 30 knots. This thunderstorm was located\n7 nm east of Hillsboro Beach, or 7 nm southeast of Highland Beach,\nmoving northwest at 10 knots.",
+        "instruction": "Mariners can expect gusty winds to around 30 knots and locally higher\nwaves. Boaters should seek safe harbor immediately until this storm\npasses.\n\nWaterspouts are possible with this activity. Remain on the alert in\ncase warnings are issued for waterspout development.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7188a125f796ac3cf83d1a113054cc908fc602d.002.2",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
@@ -2602,5 +2617,5 @@
       "grid_y": 71
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
