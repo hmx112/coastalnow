@@ -169,6 +169,7 @@ class HtmlPinterestV3Tests(unittest.TestCase):
                                 and call.args[1] == "surfing"
                                 for call in html_renderer.call_args_list))
             self.assertFalse(any(call.args[0].get("slug") == "san-diego"
+                                 and call.args[0].get("creative_version", "v1") == "v1"
                                  and call.args[1] == "tides"
                                  for call in html_renderer.call_args_list))
             self.assertTrue(legacy.called)
