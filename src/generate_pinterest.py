@@ -9,8 +9,9 @@ from pathlib import Path
 from locations import LOCATIONS
 from pinterest.catalog import build_catalog, load_pinterest_config
 from pinterest.creative_v2 import render_pin_v2
+from pinterest.capture_pin import render_pin_html
 from pinterest.rss import BASE_URL, build_rss
-from pinterest.schedule import released_locations, released_surfing_locations, released_creative_v2_pilots
+from pinterest.schedule import released_locations, released_surfing_locations, released_creative_v2_pilots, released_creative_v3_pilots
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PUBLIC_ROOT = REPO_ROOT / "public"
@@ -61,7 +62,14 @@ def _validate_feed_images(feed_path: Path, public_root: Path) -> None:
 def _render_once(item: dict, kind: str, path: Path) -> bool:
     if path.exists():
         return False
-    render_pin_v2(item, kind, path)
+    version = item.get("creative_version", "v1")
+    release_date = item.get("release_date")
+    # Retain all already published PNG assets (early-return above).
+    # Use the new HTML renderer for v3, then for all *new* backfill pins.
+    if version == "v3" or (version == "v1" and release_date is not None and release_date >= date(2026, 11, 11)):
+        render_pin_html(item, kind, path)
+    else:
+        render_pin_v2(item, kind, path)
     return True
 
 
@@ -73,6 +81,7 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
     released = released_locations(catalog, config, as_of)
     surfing_released = released_surfing_locations(catalog, config, as_of)
     v2_pilots = released_creative_v2_pilots(catalog, config, as_of)
+    v3_pilots = released_creative_v3_pilots(catalog, config, as_of)
 
     image_root = public_root / "pinterest" / "images"
     rss_root = public_root / "pinterest" / "rss"
@@ -98,8 +107,9 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
             new_images.append(surfing_path)
         images.append(surfing_path)
 
-    for pilot in v2_pilots:
-        image = image_root / f'{pilot["slug"]}-{pilot["kind"]}-v2.png'
+    for pilot in v2_pilots + v3_pilots:
+        version = pilot["creative_version"]
+        image = image_root / f'{pilot["slug"]}-{pilot["kind"]}-{version}.png'
         if _render_once(pilot, pilot["kind"], image):
             new_images.append(image)
         images.append(image)
@@ -111,9 +121,10 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
     ]
     # Existing RSS feed paths/GUIDs stay unchanged. A new pin version has
     # its own image, GUID, release date and analytics-attributed destination.
-    _atomic_write_text(feeds[0], build_rss("tides", released + [x for x in v2_pilots if x["kind"] == "tides"]))
-    _atomic_write_text(feeds[1], build_rss("fishing", released + [x for x in v2_pilots if x["kind"] == "fishing"]))
-    _atomic_write_text(feeds[2], build_rss("surfing", surfing_released + [x for x in v2_pilots if x["kind"] == "surfing"]))
+    creative_pilots = v2_pilots + v3_pilots
+    _atomic_write_text(feeds[0], build_rss("tides", released + [x for x in creative_pilots if x["kind"] == "tides"]))
+    _atomic_write_text(feeds[1], build_rss("fishing", released + [x for x in creative_pilots if x["kind"] == "fishing"]))
+    _atomic_write_text(feeds[2], build_rss("surfing", surfing_released + [x for x in creative_pilots if x["kind"] == "surfing"]))
     for feed in feeds:
         _validate_feed_images(feed, public_root)
 
@@ -121,6 +132,7 @@ def generate(as_of: date, public_root: Path = DEFAULT_PUBLIC_ROOT, config_path: 
         "released_slugs": [item["slug"] for item in released],
         "surfing_released_slugs": [item["slug"] for item in surfing_released],
         "creative_v2_pilots_released": [f'{item["kind"]}:{item["slug"]}' for item in v2_pilots],
+        "creative_v3_pilots_released": [f'{item["kind"]}:{item["slug"]}' for item in v3_pilots],
         "images": images,
         "new_images": new_images,
         "feeds": feeds,

@@ -27,7 +27,9 @@ jobs:
         run: pip install -r requirements-pinterest.txt
 
       - name: Run fast Pinterest creative and rollout checks before NOAA collection
-        run: python src/test_pinterest_v2_rollout.py
+        run: |
+          python src/test_pinterest_v2_rollout.py
+          python src/test_pinterest_html_v3.py
 
       - name: Validate Live NOAA configuration
         run: python src/promote_location.py --validate-config
