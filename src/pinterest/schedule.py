@@ -99,3 +99,18 @@ def released_creative_v3_pilots(catalog: list[dict], config: dict, as_of: date) 
         {**item, "creative_version": "v3"}
         for item in released_creative_v2_pilots(catalog, v3, as_of)
     ]
+
+
+def released_creative_v4_pilots(catalog: list[dict], config: dict, as_of: date) -> list[dict]:
+    """Explicit six-Pin information-first release. Never unpause old V3 GUIDs."""
+    if (not config.get("enabled") or not config.get("creative_v4_publish_enabled", False)
+            or not config.get("creative_v4_start_date")):
+        return []
+    adapted = dict(config)
+    adapted["creative_v2_start_date"] = config["creative_v4_start_date"]
+    adapted["creative_v2_batch_release"] = config.get("creative_v4_batch_release", True)
+    adapted["creative_v2_pilots"] = config.get("creative_v4_pilots") or []
+    return [
+        {**item, "creative_version": "v4"}
+        for item in released_creative_v2_pilots(catalog, adapted, as_of)
+    ]

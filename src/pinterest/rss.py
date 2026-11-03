@@ -90,6 +90,30 @@ def pin_record(item: dict, kind: str) -> dict:
             "utm_campaign": "coastalnow_html_v3",
             "utm_content": f"{kind}_{slug}",
         })
+    elif version == "v4":
+        copy = {
+            "tides": (
+                "Tide Times & Chart | 7-Day NOAA Guide",
+                "Understand high and low tides with an illustrative chart, then check updated NOAA tide times and the seven-day local outlook on CoastalNow.",
+            ),
+            "fishing": (
+                "Shore Fishing Conditions | Tide, Wind & Alerts",
+                "Before shore fishing, review NOAA tides, NWS wind and waves, and official marine alerts. See current local planning information on CoastalNow.",
+            ),
+            "surfing": (
+                "Surf Forecast | Height, Period & Wind",
+                "Explore regional wave height, swell period and wind forecasts, with official marine alerts and limitations. Not a break-specific safety forecast.",
+            ),
+        }[kind]
+        title = f"{name}, {state} | {copy[0]}"
+        description = copy[1]
+        image_url = f"{BASE_URL}/pinterest/images/{slug}-{kind}-v4.png"
+        link += "?" + urlencode({
+            "utm_source": "pinterest",
+            "utm_medium": "organic",
+            "utm_campaign": "coastalnow_info_v4",
+            "utm_content": f"{kind}_{slug}",
+        })
     elif version != "v1":
         raise ValueError(f"Unknown Pinterest creative version: {version}")
 

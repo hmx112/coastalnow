@@ -123,10 +123,14 @@ class HtmlPinterestV3Tests(unittest.TestCase):
             "generate_pinterest.render_pin_v2", side_effect=_mock_image
         ), patch("generate_pinterest.render_pin_html", side_effect=_mock_image):
             root = Path(tmp)
+            isolated_config = root / "v3_held.json"
+            isolated_config.write_text(json.dumps({
+                **cfg, "creative_v4_publish_enabled": False,
+            }), encoding="utf-8")
             prior = root / "pinterest" / "images" / "san-diego-tides.png"
             prior.parent.mkdir(parents=True)
             prior.write_bytes(b"old published image")
-            held = generate(date(2026, 11, 3), root, CONFIG_PATH)
+            held = generate(date(2026, 11, 3), root, isolated_config)
             self.assertEqual(held["creative_v3_pilots_released"], [])
             self.assertEqual(len(held["released_slugs"]), 13)
             self.assertEqual(len(held["surfing_released_slugs"]), 10)
@@ -146,6 +150,7 @@ class HtmlPinterestV3Tests(unittest.TestCase):
             approved_config = root / "approved.json"
             approved_config.write_text(json.dumps({
                 **cfg, "creative_v3_publish_enabled": True,
+                "creative_v4_publish_enabled": False,
             }), encoding="utf-8")
             approved = generate(date(2026, 11, 3), root, approved_config)
             self.assertEqual(len(approved["creative_v3_pilots_released"]), 6)
@@ -184,7 +189,11 @@ class HtmlPinterestV3Tests(unittest.TestCase):
         ) as legacy, patch("generate_pinterest.render_pin_html",
                            side_effect=_mock_image) as html_renderer:
             root = Path(tmp)
-            generate(date(2026, 11, 11), root, CONFIG_PATH)
+            isolated_config = root / "v3_held.json"
+            isolated_config.write_text(json.dumps({
+                **cfg, "creative_v4_publish_enabled": False,
+            }), encoding="utf-8")
+            generate(date(2026, 11, 11), root, isolated_config)
             self.assertFalse(html_renderer.called)
             self.assertTrue(any(call.args[0].get("slug") == "galveston"
                                 for call in legacy.call_args_list))
@@ -194,6 +203,7 @@ class HtmlPinterestV3Tests(unittest.TestCase):
             approved_config = root / "approved.json"
             approved_config.write_text(json.dumps({
                 **cfg, "html_cutover_enabled": True,
+                "creative_v4_publish_enabled": False,
             }), encoding="utf-8")
             with tempfile.TemporaryDirectory() as approved_tmp:
                 generate(date(2026, 11, 11), Path(approved_tmp), approved_config)
