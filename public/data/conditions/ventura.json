@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-03T01:45:33+00:00",
+  "generated_at_utc": "2026-11-03T02:58:29+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T01:45:33+00:00"
+      "fetched_at_utc": "2026-11-03T02:58:29+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T01:02:33+00:00"
+      "fetched_at_utc": "2026-11-03T02:58:29+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T01:02:33+00:00"
+      "fetched_at_utc": "2026-11-03T02:58:29+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-03T01:02:33+00:00"
+      "fetched_at_utc": "2026-11-03T02:58:29+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-02T17:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 65.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-02T18:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,26 +1890,23 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-11-09T05:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9d8b745140e92fb41e325e6b66aa568aef98ada5.001.1",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-01T10:29:00-08:00",
-        "onset": "2026-11-01T12:00:00-08:00",
-        "expires": "2026-11-02T18:00:00-08:00",
-        "ends": "2026-11-02T18:00:00-08:00",
-        "headline": "Beach Hazards Statement issued November 1 at 10:29AM PST until November 2 at 6:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Dangerous rip currents and breaking waves due to elevated\nsurf expected. Minor tidal overflow during high tides.\n\n* WHERE...Ventura County Beaches, Malibu Coast and Los Angeles\nCounty Beaches.\n\n* WHEN...Through Monday afternoon.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Minor flood impacts are possible during high tides\nwith water flowing over normally dry sand and to lower parking\nlots or paths. Moderate beach erosion is possible.\n\n* ADDITIONAL DETAILS...Additional flood impacts are likely into\nnext weekend with tides reaching 7 ft as early as Friday. Tides\nwill peak over the weekend into early next week 7.0-7.8 ft.\nElevated surf may increase flood impacts during this time,\nespecially across west to northwest facing beaches. Reminder,\ntides mentioned have been corrected to reflect the most recent\ntrends in actual tide observations.",
-        "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7fdd6470f087558f338c5d367d69d0fb1a121765.001.1",
         "event": "Small Craft Advisory",
@@ -2587,5 +2572,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
