@@ -22,6 +22,18 @@ KINDS = frozenset(("tides", "fishing", "surfing"))
 WIDTH = 1000
 HEIGHT = 1500
 
+# U.S. states represented in the coast catalog; location label must remain compact.
+STATE_CODES = {
+    "alabama": "AL", "alaska": "AK", "california": "CA",
+    "connecticut": "CT", "delaware": "DE", "florida": "FL",
+    "georgia": "GA", "hawaii": "HI", "louisiana": "LA",
+    "maine": "ME", "maryland": "MD", "massachusetts": "MA",
+    "mississippi": "MS", "new hampshire": "NH", "new jersey": "NJ",
+    "new york": "NY", "north carolina": "NC", "oregon": "OR",
+    "rhode island": "RI", "south carolina": "SC", "texas": "TX",
+    "virginia": "VA", "washington": "WA",
+}
+
 LOGO_SVG = (
     '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" '
     'stroke="white" stroke-width="1.8" stroke-linecap="round">'
@@ -55,15 +67,18 @@ def render_html_document(item: dict, kind: str, *, background: Image.Image | Non
     if kind not in KINDS:
         raise ValueError(f"Unknown Pinterest category: {kind}")
     city, size_class = _safe_title(item["name"])
-    state = escape(str(item["state"]).strip().upper(), quote=True)
-    if not state:
+    raw_state = str(item["state"]).strip()
+    if not raw_state:
         raise ValueError("State name must not be empty")
+    state = escape(raw_state.upper(), quote=True)
+    state_code = escape(STATE_CODES.get(raw_state.casefold(), raw_state.upper()), quote=True)
     template = (TEMPLATES / f"pin_{kind}.html").read_text(encoding="utf-8")
     styles = (TEMPLATES / "pin.css").read_text(encoding="utf-8")
     values = {
         "STYLES": styles,
         "CITY": city,
         "STATE": state,
+        "STATE_CODE": state_code,
         "CITY_CLASS": size_class,
         "PHOTO_DATA": _photo_data_uri(kind, background),
         "LOGO": LOGO_SVG,
