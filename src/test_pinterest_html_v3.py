@@ -164,7 +164,7 @@ class HtmlPinterestV3Tests(unittest.TestCase):
                                  13 if kind != "surfing" else 10)
                 for entry in items[:2]:
                     self.assertTrue(entry.findtext("guid").endswith(":v3"))
-                    self.assertEqual(len(entry.findall(f"{{MEDIA_NS}}content")), 1)
+                    self.assertEqual(len(entry.findall("{" + MEDIA_NS + "}content")), 1)
 
     def test_v3_links_and_identity_dont_mutate_prior_published_pins(self):
         cfg, catalog = _config()
