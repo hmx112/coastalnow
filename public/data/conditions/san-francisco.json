@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "san-francisco",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-03T23:37:56+00:00",
+  "generated_at_utc": "2026-11-04T01:29:29+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:37:56+00:00"
+      "fetched_at_utc": "2026-11-04T01:29:29+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:25:04+00:00"
+      "fetched_at_utc": "2026-11-04T01:29:29+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:25:04+00:00"
+      "fetched_at_utc": "2026-11-04T01:29:29+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-03T23:25:04+00:00"
+      "fetched_at_utc": "2026-11-04T01:29:29+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-03T15:00:00-08:00",
-      "wind_mph": 9.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 202.5,
-      "precip_probability_pct": 86.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Light Rain"
-    },
-    {
-      "time": "2026-11-03T16:00:00-08:00",
-      "wind_mph": 6.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 202.5,
-      "precip_probability_pct": 65.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Light Rain Likely"
-    },
     {
       "time": "2026-11-03T17:00:00-08:00",
       "wind_mph": 6.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-11-10T03:00:00-08:00",
+      "wind_mph": 7.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Cloudy"
+    },
+    {
+      "time": "2026-11-10T04:00:00-08:00",
+      "wind_mph": 6.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Cloudy"
     }
   ],
   "alerts": {
@@ -1935,21 +1935,6 @@
         "headline": "Beach Hazards Statement issued November 3 at 11:25AM PST until November 3 at 8:00PM PST by NWS San Francisco CA",
         "description": "* WHAT...For the Beach Hazards Statement, An increased risk for\nsneaker waves and strong rip currents. For the Coastal Flood\nAdvisory, Up to 1.6 ft of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Beach Hazards Statement, until 8 PM PST this\nevening. For the Coastal Flood Advisory, from 6 AM Wednesday\nto 1 PM PST Monday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tidal gauge, high tide\nis expected to be 1.0 ft above normal (6.8 ft MLLW) at 8:00 AM\nWednesday 11/4, 1.3 ft above normal (7.1 ft MLLW) at 8:35 AM\nThursday 11/5, 1.4 ft above normal (7.2 ft MLLW) at 9:08 AM\nFriday 11/6, 1.6 ft above normal (7.4 ft MLLW) at 9:38 AM\nSaturday 11/7, 1.6 ft above normal (7.4 ft MLLW) at 10:06 AM\nSunday 11/8, 1.6 ft above normal (7.4 ft MLLW) at 10:35 AM\nMonday 11/9. These predictions include up to 1.2 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a1b6a85b49e0bfeb78ea5bbf4683dfc33a6bfc18.001.1",
-        "event": "Marine Weather Statement",
-        "severity": "Minor",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-11-03T01:19:00-08:00",
-        "onset": "2026-11-03T01:19:00-08:00",
-        "expires": "2026-11-03T16:00:00-08:00",
-        "ends": null,
-        "headline": "Marine Weather Statement issued November 3 at 1:19AM PST by NWS San Francisco CA",
-        "description": "A storm system will sweep through the coastal waters Tuesday morning\nthrough the evening resulting in hazardous weather for the\ncoastal waters north of Pigeon Point. Peak threat for\nthunderstorms will be late Tuesday morning through Tuesday\nafternoon. Developed storms will be capable of producing local\ngale force wind gusts, rough seas, lightning, heavy rainfall with\nreduced visibility, and waterspouts.",
-        "instruction": "",
         "sender_name": "NWS San Francisco CA"
       }
     ]
@@ -2582,5 +2567,5 @@
       "grid_y": 106
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

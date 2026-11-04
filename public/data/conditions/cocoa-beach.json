@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-03T23:38:11+00:00",
+  "generated_at_utc": "2026-11-04T01:31:15+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:38:11+00:00"
+      "fetched_at_utc": "2026-11-04T01:31:15+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:26:17+00:00"
+      "fetched_at_utc": "2026-11-04T01:31:15+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-03T23:26:17+00:00"
+      "fetched_at_utc": "2026-11-04T01:31:15+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-03T23:26:17+00:00"
+      "fetched_at_utc": "2026-11-04T01:31:15+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-03T18:00:00-05:00",
-      "wind_mph": 15.0,
-      "gust_mph": 19.563,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 17.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Rain Showers"
-    },
-    {
-      "time": "2026-11-03T19:00:00-05:00",
-      "wind_mph": 15.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 17.0,
-      "air_temperature_f": 78.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Rain Showers"
-    },
     {
       "time": "2026-11-03T20:00:00-05:00",
       "wind_mph": 10.0,
@@ -1902,27 +1878,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-10T06:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": 7.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-10T07:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 16.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ae27fa5d3cbbbae1f0250c8ebb27a3a45bac81bd.002.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-03T13:32:00-05:00",
-        "onset": "2026-11-03T13:32:00-05:00",
-        "expires": "2026-11-03T19:00:00-05:00",
-        "ends": "2026-11-03T19:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 3 at 1:32PM EST until November 3 at 7:00PM EST by NWS Melbourne FL",
-        "description": "* WHAT...Seas 5 to 7 feet.\n\n* WHERE...Volusia-Brevard County Line to Sebastian Inlet 0-20 nm\nand Sebastian Inlet to Jupiter Inlet 0-20 nm.\n\n* WHEN...Until 7 PM EST this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Melbourne FL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2552,5 +2536,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
