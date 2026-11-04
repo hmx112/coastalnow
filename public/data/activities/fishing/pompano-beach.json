@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "pompano-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-04T01:32:01+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-04T01:32:01+00:00",
+  "generated_at_utc": "2026-11-04T03:12:35+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-04T03:12:35+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -19,6 +19,7 @@
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
+      "special-marine-warning",
       "coastal-flood-statement",
       "rip-current-statement"
     ]
@@ -41,67 +42,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-11-03T20:00:00-05:00",
-        "components": {
-          "tide": 80.7,
-          "wind": 55,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 54.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 65.2,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "favorable-tide-movement",
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "coastal-flood-statement",
-          "rip-current-statement",
-          "wave-exposure-caution",
-          "forecast-thunder-cap"
-        ]
-      },
-      {
-        "time": "2026-11-03T21:00:00-05:00",
-        "components": {
-          "tide": 42.6,
-          "wind": 55,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 60,
-          "solunar": 54.1,
-          "water_temperature": null
-        },
-        "raw_quality_score": 53.7,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "manageable-sea-state",
-          "worsening-wind",
-          "wet-weather",
-          "coastal-flood-statement",
-          "rip-current-statement",
-          "wave-exposure-caution",
-          "forecast-thunder-cap"
-        ]
-      },
       {
         "time": "2026-11-03T22:00:00-05:00",
         "components": {
@@ -126,6 +66,7 @@
           "manageable-sea-state",
           "worsening-wind",
           "wet-weather",
+          "special-marine-warning",
           "coastal-flood-statement",
           "rip-current-statement",
           "wave-exposure-caution",
