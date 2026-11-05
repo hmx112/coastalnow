@@ -3,8 +3,8 @@
   "activity": "surfing",
   "location": "half-moon-bay",
   "scorer_version": "surfing-v1",
-  "generated_at_utc": "2026-11-05T01:31:21+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-05T01:31:21+00:00",
+  "generated_at_utc": "2026-11-05T06:50:19+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-05T06:50:19+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -13,14 +13,17 @@
     "marine": "fresh"
   },
   "today": {
-    "status": "NOT RECOMMENDED",
+    "status": "Unavailable",
     "score": null,
     "rating": null,
-    "confidence": "High",
+    "confidence": "Unavailable",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
-      "small-craft-advisory"
+      "moderate-wave-height",
+      "organized-wave-period",
+      "lighter-wind",
+      "wave-exposure-caution"
     ]
   },
   "tomorrow": {
@@ -29,8 +32,8 @@
     "rating": "Good",
     "confidence": "High",
     "best_window": {
-      "start": "2026-11-05T01:00:00-08:00",
-      "end": "2026-11-05T04:00:00-08:00"
+      "start": "2026-11-05T00:00:00-08:00",
+      "end": "2026-11-05T03:00:00-08:00"
     },
     "ranking_eligible": true,
     "reasons": [
@@ -43,146 +46,16 @@
   "hourly": {
     "today": [
       {
-        "time": "2026-11-04T17:00:00-08:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 100,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 100
-        },
-        "raw_quality_score": 81.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "stronger-wind",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-04T18:00:00-08:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 100,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 60
-        },
-        "raw_quality_score": 77.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "stronger-wind",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-04T19:00:00-08:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 100,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 35
-        },
-        "raw_quality_score": 75.2,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "stronger-wind",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-04T20:00:00-08:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 100,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 35
-        },
-        "raw_quality_score": 75.2,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "stronger-wind",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-04T21:00:00-08:00",
-        "components": {
-          "wave_height": 85,
-          "wave_period": 100,
-          "wind": 45,
-          "weather": 100,
-          "daylight": 35
-        },
-        "raw_quality_score": 75.2,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "moderate-wave-height",
-          "organized-wave-period",
-          "stronger-wind",
-          "small-craft-advisory",
-          "wave-exposure-caution"
-        ]
-      },
-      {
         "time": "2026-11-04T22:00:00-08:00",
         "components": {
           "wave_height": 85,
           "wave_period": 100,
-          "wind": 45,
+          "wind": 70,
           "weather": 100,
           "daylight": 35
         },
-        "raw_quality_score": 75.2,
-        "final_score": 67.2,
+        "raw_quality_score": 81.5,
+        "final_score": 73.5,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
@@ -193,7 +66,7 @@
         "reasons": [
           "moderate-wave-height",
           "organized-wave-period",
-          "stronger-wind",
+          "lighter-wind",
           "wave-exposure-caution"
         ]
       },
@@ -229,12 +102,12 @@
         "components": {
           "wave_height": 85,
           "wave_period": 100,
-          "wind": 70,
+          "wind": 90,
           "weather": 100,
           "daylight": 35
         },
-        "raw_quality_score": 81.5,
-        "final_score": 73.5,
+        "raw_quality_score": 86.5,
+        "final_score": 78.5,
         "hard_stop": false,
         "safety_status": "normal",
         "safety_cap": 100.0,
@@ -614,11 +487,11 @@
         "components": {
           "wave_height": 85,
           "wave_period": 100,
-          "wind": 70,
+          "wind": 90,
           "weather": 100,
           "daylight": 100
         },
-        "raw_quality_score": 88.0,
+        "raw_quality_score": 93.0,
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
