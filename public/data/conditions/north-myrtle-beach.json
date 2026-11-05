@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "north-myrtle-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-05T11:13:03+00:00",
+  "generated_at_utc": "2026-11-05T15:46:52+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-05T11:13:03+00:00"
+      "fetched_at_utc": "2026-11-05T15:46:52+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-05T11:13:03+00:00"
+      "fetched_at_utc": "2026-11-05T15:46:52+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-05T11:13:03+00:00"
+      "fetched_at_utc": "2026-11-05T15:46:52+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,58 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-05T11:13:03+00:00"
+      "fetched_at_utc": "2026-11-05T15:46:52+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-05T06:00:00-05:00",
-      "wind_mph": 1.0,
-      "gust_mph": 4.603,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-05T07:00:00-05:00",
-      "wind_mph": 1.0,
-      "gust_mph": 4.603,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-05T08:00:00-05:00",
-      "wind_mph": 2.0,
-      "gust_mph": 5.754,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Patchy Fog"
-    },
-    {
-      "time": "2026-11-05T09:00:00-05:00",
-      "wind_mph": 3.0,
-      "gust_mph": 6.905,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 72.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-05T10:00:00-05:00",
       "wind_mph": 5.0,
@@ -1902,27 +1854,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-11T18:00:00-05:00",
+      "wind_mph": 2.0,
+      "gust_mph": 5.754,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-11T19:00:00-05:00",
+      "wind_mph": 2.0,
+      "gust_mph": 4.603,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-11T20:00:00-05:00",
+      "wind_mph": 1.0,
+      "gust_mph": 4.603,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 57.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-11T21:00:00-05:00",
+      "wind_mph": 1.0,
+      "gust_mph": 4.603,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 56.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bed24388d125e00b959777c4d267bd4b4df7892f.001.1",
-        "event": "Special Weather Statement",
-        "severity": "Moderate",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-11-05T04:58:00-05:00",
-        "onset": "2026-11-05T04:58:00-05:00",
-        "expires": "2026-11-05T08:00:00-05:00",
-        "ends": null,
-        "headline": "Special Weather Statement issued November 5 at 4:58AM EST by NWS Wilmington NC",
-        "description": "Patchy fog will develop across the area this morning. The fog may\nbecome locally dense, reducing visibilities to less than a quarter\nmile on area roadways.",
-        "instruction": "If driving, slow down and leave extra distance ahead of you in\ncase a sudden stop is needed.",
-        "sender_name": "NWS Wilmington NC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2577,5 +2561,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only-full-refresh"
 }
