@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "pawleys-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-06T19:34:04+00:00",
+  "generated_at_utc": "2026-11-06T23:28:40+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-06T19:34:04+00:00"
+      "fetched_at_utc": "2026-11-06T23:28:40+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e7ef3edecb991dd1d8228cfc4462370f32fe3dc7.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-11-06T23:00:00+00:00",
+        "onset": "2026-11-06T23:00:00+00:00",
+        "expires": "2026-11-07T00:00:00+00:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued November 6 at 11:00PM UTC by NWS Wilmington NC",
+        "description": "A Marine Weather Statement has been issued for the following areas...\nCoastal waters from Murrells Inlet to South Santee River SC out 20\nNM...\n\n* At 1100 PM UTC, Doppler radar indicated strong thunderstorms,\ncapable of producing winds to around 30 knots. These strong\nthunderstorms were located along a line from near North Inlet Reef\nto 6 NM west of South Santee River Entrance, moving east at 15\nknots.\n\nLocations impacted include...\nGeorgetown Reef, Georgetown Nearshore Wreck, Winyah Bay Sea Buoy,\nNorth Inlet Reef and East Bank Buoy.",
+        "instruction": "Move to safe harbor until hazardous weather passes. If caught on the\nopen water, prepare for deteriorating conditions.",
+        "sender_name": "NWS Wilmington NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 33
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
