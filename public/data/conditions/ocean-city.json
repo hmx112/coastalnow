@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ocean-city",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-06T18:23:30+00:00",
+  "generated_at_utc": "2026-11-06T19:27:27+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-06T18:23:30+00:00"
+      "fetched_at_utc": "2026-11-06T19:27:27+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-06T18:23:30+00:00"
+      "fetched_at_utc": "2026-11-06T19:27:27+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-06T18:23:30+00:00"
+      "fetched_at_utc": "2026-11-06T19:27:27+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-06T06:49:45+00:00"
+      "fetched_at_utc": "2026-11-06T19:25:52+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-06T18:23:30+00:00"
+      "fetched_at_utc": "2026-11-06T19:27:27+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-06T13:00:00-05:00",
-      "wind_mph": 13.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 99.0,
-      "air_temperature_f": 66.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-11-06T14:00:00-05:00",
       "wind_mph": 12.0,
@@ -1902,11 +1890,39 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-13T01:00:00-05:00",
+      "wind_mph": 8.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 28.0,
+      "air_temperature_f": 49.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1961af5e4781bb5272aa228caeaf815bf0c3ab86.001.2",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-06T13:29:00-05:00",
+        "onset": "2026-11-07T06:00:00-05:00",
+        "expires": "2026-11-06T21:30:00-05:00",
+        "ends": "2026-11-07T16:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 6 at 1:29PM EST until November 7 at 4:00PM EST by NWS Wakefield VA",
+        "description": "* WHAT...Northwest winds 15 to 20 kt with gusts up to 30 kt and\nseas 4 to 5 ft expected.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...From 6 AM to 4 PM EST Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Wakefield VA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1940,8 +1956,8 @@
       "start": "2026-11-06",
       "end": "2026-11-12"
     },
-    "generated_at_utc": "2026-11-06T06:49:45+00:00",
-    "generated_at_local": "2026-11-06T01:49:45-05:00",
+    "generated_at_utc": "2026-11-06T19:25:52+00:00",
+    "generated_at_local": "2026-11-06T14:25:52-05:00",
     "hilo": [
       {
         "t": "2026-11-06 04:58",
@@ -2536,5 +2552,5 @@
       "grid_y": 124
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
