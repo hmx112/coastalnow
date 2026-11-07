@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "galveston",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-07T10:38:31+00:00",
+  "generated_at_utc": "2026-11-07T13:06:51+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:38:31+00:00"
+      "fetched_at_utc": "2026-11-07T13:06:51+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:29:31+00:00"
+      "fetched_at_utc": "2026-11-07T13:06:51+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:29:31+00:00"
+      "fetched_at_utc": "2026-11-07T13:06:51+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T06:00:28+00:00"
+      "fetched_at_utc": "2026-11-07T13:04:29+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-07T10:29:31+00:00"
+      "fetched_at_utc": "2026-11-07T13:06:51+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-07T04:00:00-06:00",
-      "wind_mph": 10.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 3.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-11-07T05:00:00-06:00",
-      "wind_mph": 10.0,
-      "gust_mph": 18.412,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 3.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-07T06:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 69.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
     {
       "time": "2026-11-07T07:00:00-06:00",
       "wind_mph": 15.0,
@@ -1902,6 +1866,42 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-13T16:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-13T17:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-13T18:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-11-07",
       "end": "2026-11-13"
     },
-    "generated_at_utc": "2026-11-07T06:00:28+00:00",
-    "generated_at_local": "2026-11-07T00:00:27-06:00",
+    "generated_at_utc": "2026-11-07T13:04:29+00:00",
+    "generated_at_local": "2026-11-07T07:04:29-06:00",
     "hilo": [
       {
         "t": "2026-11-07 00:48",
@@ -2476,5 +2476,5 @@
       "grid_y": 72
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

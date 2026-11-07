@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "kiawah-island",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-07T10:38:18+00:00",
+  "generated_at_utc": "2026-11-07T13:05:56+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:38:18+00:00"
+      "fetched_at_utc": "2026-11-07T13:05:56+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:28:41+00:00"
+      "fetched_at_utc": "2026-11-07T13:05:56+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T10:28:41+00:00"
+      "fetched_at_utc": "2026-11-07T13:05:56+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T06:00:05+00:00"
+      "fetched_at_utc": "2026-11-07T13:04:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-07T10:28:41+00:00"
+      "fetched_at_utc": "2026-11-07T13:05:56+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-07T05:00:00-05:00",
-      "wind_mph": 6.0,
-      "gust_mph": 13.809,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 62.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Patchy Fog"
-    },
-    {
-      "time": "2026-11-07T06:00:00-05:00",
-      "wind_mph": 7.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Patchy Fog"
-    },
-    {
-      "time": "2026-11-07T07:00:00-05:00",
-      "wind_mph": 8.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Patchy Fog"
-    },
     {
       "time": "2026-11-07T08:00:00-05:00",
       "wind_mph": 8.0,
@@ -1902,27 +1866,47 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-13T17:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 26.468,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-13T18:00:00-05:00",
+      "wind_mph": 14.0,
+      "gust_mph": 25.317,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-13T19:00:00-05:00",
+      "wind_mph": 13.0,
+      "gust_mph": 24.166,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 57.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf40f3f11d245bc3128f53b47fee135a70e622d0.001.1",
-        "event": "Special Weather Statement",
-        "severity": "Moderate",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-11-07T04:42:00-05:00",
-        "onset": "2026-11-07T04:42:00-05:00",
-        "expires": "2026-11-07T08:00:00-05:00",
-        "ends": null,
-        "headline": "Special Weather Statement issued November 7 at 4:42AM EST by NWS Charleston SC",
-        "description": "Patchy to areas of fog will continue to develop across parts of\nthe Tri-County Area and Colleton County this morning. Fog could\nbecome locally dense in spots, reducing visibilities to less than\n1 mile on roadways at times. Fog should dissipate within an hour\nor two after sunrise this morning.",
-        "instruction": "If driving, slow down and leave extra distance ahead of you in\ncase a sudden stop is needed.",
-        "sender_name": "NWS Charleston SC"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1956,8 +1940,8 @@
       "start": "2026-11-07",
       "end": "2026-11-13"
     },
-    "generated_at_utc": "2026-11-07T06:00:05+00:00",
-    "generated_at_local": "2026-11-07T01:00:04-05:00",
+    "generated_at_utc": "2026-11-07T13:04:26+00:00",
+    "generated_at_local": "2026-11-07T08:04:26-05:00",
     "hilo": [
       {
         "t": "2026-11-06 05:47",
@@ -2572,5 +2556,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
