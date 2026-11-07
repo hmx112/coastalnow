@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "kill-devil-hills",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-07T17:47:09+00:00",
+  "generated_at_utc": "2026-11-07T20:27:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T17:47:09+00:00"
+      "fetched_at_utc": "2026-11-07T20:27:33+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eec7bca72f5d98b7d913616d1732e880c17610d4.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-07T12:49:00-05:00",
+        "onset": "2026-11-07T12:49:00-05:00",
+        "expires": "2026-11-07T22:00:00-05:00",
+        "ends": "2026-11-07T22:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 7 at 12:49PM EST until November 7 at 10:00PM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Seas 4 to 7 ft.\n\n* WHERE...The coastal waters from Duck to Ocracoke Inlet.\n\n* WHEN...Until 10 PM EST this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2556,5 +2572,5 @@
       "grid_y": 122
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

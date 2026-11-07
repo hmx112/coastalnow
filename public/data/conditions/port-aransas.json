@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "port-aransas",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-07T17:48:10+00:00",
+  "generated_at_utc": "2026-11-07T20:27:55+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T17:48:10+00:00"
+      "fetched_at_utc": "2026-11-07T20:27:55+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,38 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b519afbf8e6b863da701deac2b09273dbc3e69f2.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-07T12:52:00-06:00",
+        "onset": "2026-11-08T06:00:00-06:00",
+        "expires": "2026-11-08T09:00:00-06:00",
+        "ends": "2026-11-09T00:00:00-06:00",
+        "headline": "Small Craft Advisory issued November 7 at 12:52PM CST until November 9 at 12:00AM CST by NWS Corpus Christi TX",
+        "description": "* WHAT...East winds 20 to 25 knots with gusts up to 30 knots and\nrough waters expected.\n\n* WHERE...Baffin Bay and Upper Laguna Madre, Corpus Christi and\nNueces Bays, Copano, Aransas, and Redfish Bays and San\nAntonio, Mesquite, and Espiritu Santo Bays.\n\n* WHEN...From 6 AM Sunday to midnight CST Sunday night.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Corpus Christi TX"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b519afbf8e6b863da701deac2b09273dbc3e69f2.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-07T12:52:00-06:00",
+        "onset": "2026-11-08T00:00:00-06:00",
+        "expires": "2026-11-08T09:00:00-06:00",
+        "ends": "2026-11-09T00:00:00-06:00",
+        "headline": "Small Craft Advisory issued November 7 at 12:52PM CST until November 9 at 12:00AM CST by NWS Corpus Christi TX",
+        "description": "* WHAT...East winds 20 to 25 knots with gusts up to 30 knots and\nseas 5 to 7 feet expected.\n\n* WHERE...Coastal waters from Baffin Bay to Port Aransas out 20\nNM, Coastal waters from Port Aransas to Matagorda Ship Channel\nout 20 NM, Waters from Baffin Bay to Port Aransas from 20 to\n60 NM and Waters from Port Aransas to Matagorda Ship Channel\nfrom 20 to 60 NM.\n\n* WHEN...From midnight tonight to midnight CST Sunday night.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Corpus Christi TX"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2466,5 +2497,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
