@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cannon-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-07T13:06:24+00:00",
+  "generated_at_utc": "2026-11-07T16:37:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-07T13:06:24+00:00"
+      "fetched_at_utc": "2026-11-07T16:37:08+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2f8cdf6d60ae602260f548bc0dd66950d1392445.001.1",
+        "event": "High Wind Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-07T06:07:00-08:00",
+        "onset": "2026-11-07T15:00:00-08:00",
+        "expires": "2026-11-07T18:15:00-08:00",
+        "ends": "2026-11-07T23:00:00-08:00",
+        "headline": "High Wind Warning issued November 7 at 6:07AM PST until November 7 at 11:00PM PST by NWS Portland OR",
+        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 60 mph expected.\n\n* WHERE...In Oregon, Clatsop County Coast and Tillamook County Coast.\nIn Washington, South Washington Coast.\n\n* WHEN...From 3 PM this afternoon to 11 PM PST this evening.\n\n* IMPACTS...Strong winds will result in widely scattered tree damage\nand power outages. Travel will be difficult, especially for high\nprofile vehicles.",
+        "instruction": "Fasten loose objects or shelter objects in a safe location prior to\nthe onset of winds.\n\nPrepare for potential downed trees and power outages. If you have a\ngas-powered generator, ensure you have enough fuel. Ensure you have\nbatteries, flashlights, and a way to maintain a safe body temperature\nif you were to lose heating and cooling.\n\nMonitor the latest forecasts and warnings for updates.",
+        "sender_name": "NWS Portland OR"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34152a97e432212f5bf023a783a0ede13ab7c511.001.2",
         "event": "Beach Hazards Statement",
         "severity": "Moderate",
@@ -1935,21 +1950,6 @@
         "headline": "High Surf Warning issued November 6 at 11:59PM PST until November 8 at 10:00PM PST by NWS Portland OR",
         "description": "* WHAT...For the Beach Hazards Statement on the beaches, sneaker\nwaves possible. For the High Surf Warning, large sneaker waves\nand dangerous surf conditions. Breakers up to 33 feet.\n\n* WHERE...Clatsop and Tillamook Coast, and South Washington\nCoast.\n\n* WHEN...For the Beach Hazards Statement, through late Saturday\nnight. For the High Surf Warning, from 4 AM to 10 PM PST\nSunday.\n\n* IMPACTS...Destructive waves may wash over beaches, jetties,\nand other structures unexpectedly. People can be swept off\nrocks and jetties and drown while observing high surf. Severe\nbeach erosion may destroy coastal properties and buildings.\nHigher than normal water run-up is expected on beaches and low-\nlying shoreline. Sneaker waves can suddenly knock people off\nof their feet and quickly pull them into the frigid ocean\nwhich may lead to serious injury or drowning.\n\n* ADDITIONAL DETAILS...Caution should be used when in or near\nthe water, especially those who will be razor clamming. Keep\nchildren and pets away from the surf zone. Keep off of\njetties, rocks and logs near the surf zone. If you see someone\nswept into the sea do not swim in after them. Call 911 and\nkeep an eye on them until help arrives.",
         "instruction": "A High Surf Warning means that high surf will affect beaches,\nproducing rip currents, sneaker waves and beach erosion. Stay\nwell back from the water's edge and be alert for exceptionally\nhigh waves.\n\nKeep away from large logs on the beach. Water running up on the\nbeach can lift or roll logs which can injure or kill someone\ncaught in their path.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Portland OR"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ddf36544eab518ffcbc30bc21c3a8c888392e880.001.1",
-        "event": "High Wind Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-06T23:57:00-08:00",
-        "onset": "2026-11-07T15:00:00-08:00",
-        "expires": "2026-11-07T16:00:00-08:00",
-        "ends": "2026-11-07T23:00:00-08:00",
-        "headline": "High Wind Warning issued November 6 at 11:57PM PST until November 7 at 11:00PM PST by NWS Portland OR",
-        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 60 mph expected.\n\n* WHERE...In Oregon, Clatsop County Coast and Tillamook County Coast.\nIn Washington, South Washington Coast.\n\n* WHEN...From 3 PM to 11 PM PST Saturday.\n\n* IMPACTS...Strong winds will result in widely scattered tree damage\nand power outages. Travel will be difficult, especially for high\nprofile vehicles.",
-        "instruction": "Fasten loose objects or shelter objects in a safe location prior to\nthe onset of winds.\n\nPrepare for potential downed trees and power outages. If you have a\ngas-powered generator, ensure you have enough fuel. Ensure you have\nbatteries, flashlights, and a way to maintain a safe body temperature\nif you were to lose heating and cooling.\n\nMonitor the latest forecasts and warnings for updates.",
         "sender_name": "NWS Portland OR"
       },
       {
@@ -2632,5 +2632,5 @@
       "grid_y": 130
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
