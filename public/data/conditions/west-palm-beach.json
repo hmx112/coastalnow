@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "west-palm-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-08T06:06:23+00:00",
+  "generated_at_utc": "2026-11-08T06:20:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T06:06:23+00:00"
+      "fetched_at_utc": "2026-11-08T06:20:50+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T06:06:23+00:00"
+      "fetched_at_utc": "2026-11-08T06:20:50+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T06:06:23+00:00"
+      "fetched_at_utc": "2026-11-08T06:20:50+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T06:06:23+00:00"
+      "fetched_at_utc": "2026-11-08T06:20:50+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-08T00:00:00-05:00",
-      "wind_mph": 10.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 79.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": 82.6,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-11-08T01:00:00-05:00",
       "wind_mph": 10.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": 82.6,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-14T12:00:00-05:00",
+      "wind_mph": 16.0,
+      "gust_mph": 21.865,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 82.6,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.494f29f6038424fbd3835b06b65a730d3e9a8e0b.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bea047f28fb40f8a0e767482d8cb55790e8b42e5.001.1",
         "event": "Coastal Flood Statement",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-07T15:25:00-05:00",
-        "onset": "2026-11-07T15:25:00-05:00",
-        "expires": "2026-11-08T05:00:00-05:00",
-        "ends": "2026-11-08T19:00:00-05:00",
-        "headline": "Coastal Flood Statement issued November 7 at 3:25PM EST until November 8 at 7:00PM EST by NWS Miami FL",
-        "description": "* WHAT...Isolated minor coastal flooding.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County and\nCoastal Miami Dade County.\n\n* WHEN...Through Sunday evening.\n\n* IMPACTS...Some water on low lying roads and property.",
+        "effective": "2026-11-08T01:19:00-05:00",
+        "onset": "2026-11-08T01:19:00-05:00",
+        "expires": "2026-11-08T16:00:00-05:00",
+        "ends": "2026-11-09T09:00:00-05:00",
+        "headline": "Coastal Flood Statement issued November 8 at 1:19AM EST until November 9 at 9:00AM EST by NWS Miami FL",
+        "description": "* WHAT...Isolated minor coastal flooding.\n\n* WHERE...Coastal Palm Beach County, Coastal Broward County and\nCoastal Miami Dade County.\n\n* WHEN...Through Monday morning.\n\n* IMPACTS...Some water on low lying roads and property.",
         "instruction": "Do not drive through flooded roadways.",
         "sender_name": "NWS Miami FL"
       }
