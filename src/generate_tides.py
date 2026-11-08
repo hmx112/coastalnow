@@ -799,15 +799,46 @@ def selected_locations(slug: str | None) -> list[dict]:
     return [location for location in LOCATIONS.values() if location.get("status") == "Live NOAA"]
 
 
+def generate_locations_with_retry(locations: list[dict], *, preview: bool = False) -> int:
+    """Retry only failed stations after other stations have refreshed.
+
+    NOAA sometimes sends a temporary 'No Predictions data was found' for an
+    otherwise valid station/datum. Keep all authoritative NOAA validation,
+    stale-cache safeguards, and the nonzero exit code for persistent failures.
+    Do not re-fetch successful stations or silently pass genuine outages.
+    """
+    failed = [location for location in locations
+              if generate_one(location, preview=preview) != 0]
+    if not failed:
+        return 0
+    if preview:
+        return 2
+
+    names = ", ".join(location["slug"] for location in failed)
+    print(f"NOAA: initial refresh failed for {names}. Retrying only failed "
+          "locations after the full pass.", file=sys.stderr)
+    # Spread retries out instead of repeating the same request burst
+    # immediately. This is a small delay, not a change in datum/station.
+    time.sleep(8)
+    remaining = [location for location in failed if generate_one(location) != 0]
+    if remaining:
+        print("NOAA: refresh still failed after the delayed retry for: "
+              + ", ".join(location["slug"] for location in remaining),
+              file=sys.stderr)
+        return 2
+    print(f"NOAA: all initially failed locations recovered on retry: {names}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--preview", action="store_true", help="render offline mock-data integration previews")
     parser.add_argument("--location", choices=sorted(LOCATIONS), help="generate only one configured location")
     args = parser.parse_args()
 
-    exit_code = 0
-    for location in selected_locations(args.location):
-        exit_code = max(exit_code, generate_one(location, preview=args.preview))
+    exit_code = generate_locations_with_retry(
+        selected_locations(args.location), preview=args.preview
+    )
 
     if not args.preview and args.location is None:
         finalize_cloudflare_pages_build()
