@@ -154,9 +154,9 @@ class ActivityWorkflowTests(unittest.TestCase):
                 self.assertIn("  workflow_dispatch:", text)
                 self.assertIn(WRITE_LOCK, text)
 
-    def test_tide_refresh_remains_six_hourly_and_uses_the_same_site_write_lock(self):
+    def test_tide_refresh_remains_four_times_daily_and_uses_the_same_site_write_lock(self):
         text = TIDE_REFRESH.read_text(encoding="utf-8")
-        self.assertIn('cron: "17 */6 * * *"', text)
+        self.assertIn('cron: "17 5,8,14,20 * * *"', text)
         self.assertIn(WRITE_LOCK, text)
         self.assertIn("python src/build_site.py", text)
         self.assertIn("src/test_activity_attribution.py", text)
