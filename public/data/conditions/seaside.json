@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "seaside",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-08T11:06:57+00:00",
+  "generated_at_utc": "2026-11-08T13:41:39+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T11:06:57+00:00"
+      "fetched_at_utc": "2026-11-08T13:41:39+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T11:06:57+00:00"
+      "fetched_at_utc": "2026-11-08T13:41:39+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T11:06:57+00:00"
+      "fetched_at_utc": "2026-11-08T13:41:39+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-08T11:06:57+00:00"
+      "fetched_at_utc": "2026-11-08T13:41:39+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-08T03:00:00-08:00",
-      "wind_mph": 18.0,
-      "gust_mph": 39.127,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 33.0,
-      "air_temperature_f": 54.0,
-      "wave_height_ft": 16.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-11-08T04:00:00-08:00",
-      "wind_mph": 17.0,
-      "gust_mph": 36.825,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 25.0,
-      "air_temperature_f": 53.0,
-      "wave_height_ft": 17.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-11-08T05:00:00-08:00",
       "wind_mph": 15.0,
@@ -1902,84 +1878,78 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-11-14T15:00:00-08:00",
+      "wind_mph": 18.0,
+      "gust_mph": 39.127,
+      "wind_direction_deg": 202.5,
+      "precip_probability_pct": 87.0,
+      "air_temperature_f": 55.0,
+      "wave_height_ft": 15.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-11-14T16:00:00-08:00",
+      "wind_mph": 14.0,
+      "gust_mph": 34.523,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 83.0,
+      "air_temperature_f": 54.0,
+      "wave_height_ft": 16.0,
+      "wave_period_s": 18.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.696701c73e884843829913e1c900cf4f2248dec2.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.41764d6c3f28b1a91a7ef4de6555b0c0cd958021.001.2",
         "event": "High Surf Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-07T12:35:00-08:00",
+        "effective": "2026-11-08T03:58:00-08:00",
         "onset": "2026-11-08T04:00:00-08:00",
         "expires": "2026-11-08T16:00:00-08:00",
         "ends": "2026-11-08T22:00:00-08:00",
-        "headline": "High Surf Warning issued November 7 at 12:35PM PST until November 8 at 10:00PM PST by NWS Portland OR",
-        "description": "* WHAT...For the Beach Hazards Statement on the beaches, sneaker\nwaves possible. For the High Surf Warning, large sneaker waves\nand dangerous surf conditions. Breakers up to 33 feet.\n\n* WHERE...Clatsop and Tillamook Coast, and South Washington\nCoast.\n\n* WHEN...For the Beach Hazards Statement, through late tonight.\nFor the High Surf Warning, from 4 AM to 10 PM PST Sunday.\n\n* IMPACTS...Destructive waves may wash over beaches, jetties,\nand other structures unexpectedly. People can be swept off\nrocks and jetties and drown while observing high surf. Severe\nbeach erosion may destroy coastal properties and buildings.\nHigher than normal water run-up is expected on beaches and low-\nlying shoreline. Sneaker waves can suddenly knock people off\nof their feet and quickly pull them into the frigid ocean\nwhich may lead to serious injury or drowning.\n\n* ADDITIONAL DETAILS...Caution should be used when in or near\nthe water, especially those who will be razor clamming. Keep\nchildren and pets away from the surf zone. Keep off of\njetties, rocks and logs near the surf zone. If you see someone\nswept into the sea do not swim in after them. Call 911 and\nkeep an eye on them until help arrives.",
-        "instruction": "A High Surf Warning means that high surf will affect beaches,\nproducing rip currents, sneaker waves and beach erosion. Stay\nwell back from the water's edge and be alert for exceptionally\nhigh waves.\n\nKeep away from large logs on the beach. Water running up on the\nbeach can lift or roll logs which can injure or kill someone\ncaught in their path.\n\nRemain out of the water to avoid hazardous swimming conditions.",
+        "headline": "High Surf Warning issued November 8 at 3:58AM PST until November 8 at 10:00PM PST by NWS Portland OR",
+        "description": "* WHAT...Large waves and dangerous surf conditions. Breakers up to\n33 feet.\n\n* WHERE...Clatsop and Tillamook Coast, and South Washington\nCoast.\n\n* WHEN...Until 10 PM PST this evening.\n\n* IMPACTS...Destructive waves may wash over beaches, jetties,\nand other structures unexpectedly. People can be swept off\nrocks and jetties and drown while observing high surf. Severe\nbeach erosion may destroy coastal properties and buildings.\nHigher than normal water run-up is expected on beaches and low-\nlying shoreline.\n\n* ADDITIONAL DETAILS...Caution should be used when in or near\nthe water, especially those who will be razor clamming. Keep\nchildren and pets away from the surf zone. Keep off of\njetties, rocks and logs near the surf zone. If you see someone\nswept into the sea do not swim in after them. Call 911 and\nkeep an eye on them until help arrives.",
+        "instruction": "A High Surf Warning means that high surf will affect beaches,\nproducing rip currents, sneaker waves and beach erosion. Stay\nwell back from the water's edge and be alert for exceptionally\nhigh waves.\n\nKeep away from large logs on the beach. Water running up on the\nbeach can lift or roll logs which can injure or kill someone\ncaught in their path.",
         "sender_name": "NWS Portland OR"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.696701c73e884843829913e1c900cf4f2248dec2.001.2",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-07T12:35:00-08:00",
-        "onset": "2026-11-07T12:35:00-08:00",
-        "expires": "2026-11-08T16:00:00-08:00",
-        "ends": "2026-11-08T04:00:00-08:00",
-        "headline": "Beach Hazards Statement issued November 7 at 12:35PM PST until November 8 at 4:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Beach Hazards Statement on the beaches, sneaker\nwaves possible. For the High Surf Warning, large sneaker waves\nand dangerous surf conditions. Breakers up to 33 feet.\n\n* WHERE...Clatsop and Tillamook Coast, and South Washington\nCoast.\n\n* WHEN...For the Beach Hazards Statement, through late tonight.\nFor the High Surf Warning, from 4 AM to 10 PM PST Sunday.\n\n* IMPACTS...Destructive waves may wash over beaches, jetties,\nand other structures unexpectedly. People can be swept off\nrocks and jetties and drown while observing high surf. Severe\nbeach erosion may destroy coastal properties and buildings.\nHigher than normal water run-up is expected on beaches and low-\nlying shoreline. Sneaker waves can suddenly knock people off\nof their feet and quickly pull them into the frigid ocean\nwhich may lead to serious injury or drowning.\n\n* ADDITIONAL DETAILS...Caution should be used when in or near\nthe water, especially those who will be razor clamming. Keep\nchildren and pets away from the surf zone. Keep off of\njetties, rocks and logs near the surf zone. If you see someone\nswept into the sea do not swim in after them. Call 911 and\nkeep an eye on them until help arrives.",
-        "instruction": "A High Surf Warning means that high surf will affect beaches,\nproducing rip currents, sneaker waves and beach erosion. Stay\nwell back from the water's edge and be alert for exceptionally\nhigh waves.\n\nKeep away from large logs on the beach. Water running up on the\nbeach can lift or roll logs which can injure or kill someone\ncaught in their path.\n\nRemain out of the water to avoid hazardous swimming conditions.",
-        "sender_name": "NWS Portland OR"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f93eed6fa9877a58ec714d8dffbd92b3a31425b3.002.4",
-        "event": "Gale Watch",
-        "severity": "Moderate",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-08T00:15:00-08:00",
-        "onset": "2026-11-09T04:00:00-08:00",
-        "expires": "2026-11-08T04:00:00-08:00",
-        "ends": "2026-11-09T19:00:00-08:00",
-        "headline": "Gale Watch issued November 8 at 12:15AM PST until November 9 at 7:00PM PST by NWS Portland OR",
-        "description": "* WHAT...For the Gale Warning, seas 17 to 22 ft at 13 seconds\nand southwest winds 25 to 35 kt with gusts up to 45 kt. For\nthe Hazardous Seas Warning, very steep and hazardous seas 17\nto 22 ft at 16 seconds and south winds 15 to 25 kt with gusts\nup to 30 kt expected. For the Gale Watch, seas 10 to 15 ft at\n13 seconds and south winds 20 to 30 kt with gusts up to 40 kt\npossible.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Gale Warning, until 4 AM PST early this morning.\nHazardous Seas Warning, from 4 AM early this morning to 4 AM\nPST Monday. Gale Watch, from late tonight through Monday\nevening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
-        "sender_name": "NWS Portland OR"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f93eed6fa9877a58ec714d8dffbd92b3a31425b3.002.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.152e7f8e08a596fa229807059dc15cefe90aaec7.001.2",
         "event": "Hazardous Seas Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-08T00:15:00-08:00",
+        "effective": "2026-11-08T03:56:00-08:00",
         "onset": "2026-11-08T04:00:00-08:00",
-        "expires": "2026-11-08T04:00:00-08:00",
+        "expires": "2026-11-08T16:00:00-08:00",
         "ends": "2026-11-09T04:00:00-08:00",
-        "headline": "Hazardous Seas Warning issued November 8 at 12:15AM PST until November 9 at 4:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Gale Warning, seas 17 to 22 ft at 13 seconds\nand southwest winds 25 to 35 kt with gusts up to 45 kt. For\nthe Hazardous Seas Warning, very steep and hazardous seas 17\nto 22 ft at 16 seconds and south winds 15 to 25 kt with gusts\nup to 30 kt expected. For the Gale Watch, seas 10 to 15 ft at\n13 seconds and south winds 20 to 30 kt with gusts up to 40 kt\npossible.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Gale Warning, until 4 AM PST early this morning.\nHazardous Seas Warning, from 4 AM early this morning to 4 AM\nPST Monday. Gale Watch, from late tonight through Monday\nevening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
+        "headline": "Hazardous Seas Warning issued November 8 at 3:56AM PST until November 9 at 4:00AM PST by NWS Portland OR",
+        "description": "* WHAT...For the Hazardous Seas Warning, very steep and\nhazardous seas 17 to 22 ft at 16 seconds and south winds 15 to\n25 kt with gusts up to 30 kt expected. For the Gale Watch,\nseas 10 to 15 ft at 13 seconds and south winds 20 to 30 kt\nwith gusts up to 40 kt possible.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Hazardous Seas Warning, until 4 AM PST Monday. Gale\nWatch, from late tonight through Monday evening.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "A Gale Watch is issued when the risk of gale force winds of 34 to\n47 knots has significantly increased, but the specific timing\nand/or location is still uncertain. It is intended to provide\nadditional lead time for mariners who may wish to consider\naltering their plans.",
         "sender_name": "NWS Portland OR"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f93eed6fa9877a58ec714d8dffbd92b3a31425b3.002.2",
-        "event": "Gale Warning",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.152e7f8e08a596fa229807059dc15cefe90aaec7.001.3",
+        "event": "Gale Watch",
         "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-08T00:15:00-08:00",
-        "onset": "2026-11-08T00:15:00-08:00",
-        "expires": "2026-11-08T04:00:00-08:00",
-        "ends": "2026-11-08T04:00:00-08:00",
-        "headline": "Gale Warning issued November 8 at 12:15AM PST until November 8 at 4:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Gale Warning, seas 17 to 22 ft at 13 seconds\nand southwest winds 25 to 35 kt with gusts up to 45 kt. For\nthe Hazardous Seas Warning, very steep and hazardous seas 17\nto 22 ft at 16 seconds and south winds 15 to 25 kt with gusts\nup to 30 kt expected. For the Gale Watch, seas 10 to 15 ft at\n13 seconds and south winds 20 to 30 kt with gusts up to 40 kt\npossible.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Gale Warning, until 4 AM PST early this morning.\nHazardous Seas Warning, from 4 AM early this morning to 4 AM\nPST Monday. Gale Watch, from late tonight through Monday\nevening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-08T03:56:00-08:00",
+        "onset": "2026-11-09T04:00:00-08:00",
+        "expires": "2026-11-08T16:00:00-08:00",
+        "ends": "2026-11-09T19:00:00-08:00",
+        "headline": "Gale Watch issued November 8 at 3:56AM PST until November 9 at 7:00PM PST by NWS Portland OR",
+        "description": "* WHAT...For the Hazardous Seas Warning, very steep and\nhazardous seas 17 to 22 ft at 16 seconds and south winds 15 to\n25 kt with gusts up to 30 kt expected. For the Gale Watch,\nseas 10 to 15 ft at 13 seconds and south winds 20 to 30 kt\nwith gusts up to 40 kt possible.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Hazardous Seas Warning, until 4 AM PST Monday. Gale\nWatch, from late tonight through Monday evening.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "A Gale Watch is issued when the risk of gale force winds of 34 to\n47 knots has significantly increased, but the specific timing\nand/or location is still uncertain. It is intended to provide\nadditional lead time for mariners who may wish to consider\naltering their plans.",
         "sender_name": "NWS Portland OR"
       }
     ]
