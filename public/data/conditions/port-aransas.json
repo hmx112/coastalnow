@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "port-aransas",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-08T19:03:52+00:00",
+  "generated_at_utc": "2026-11-08T19:48:46+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T19:03:52+00:00"
+      "fetched_at_utc": "2026-11-08T19:48:46+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T18:54:11+00:00"
+      "fetched_at_utc": "2026-11-08T19:48:46+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T18:54:11+00:00"
+      "fetched_at_utc": "2026-11-08T19:48:46+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T18:54:11+00:00"
+      "fetched_at_utc": "2026-11-08T19:48:46+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-08T12:00:00-06:00",
-      "wind_mph": 18.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 86.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 6.0,
-      "water_temperature_f": 75.7,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-11-08T13:00:00-06:00",
       "wind_mph": 20.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": 75.7,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-15T00:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 16.0,
+      "air_temperature_f": 70.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": 75.7,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
@@ -2487,5 +2487,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
