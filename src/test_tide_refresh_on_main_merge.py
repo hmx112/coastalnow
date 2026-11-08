@@ -19,6 +19,11 @@ class TideRefreshOnMainMergeTests(unittest.TestCase):
         self.assertIn(site_build, text)
         self.assertLess(text.index(activity_generation), text.index(site_build))
 
+    def test_schedule_targets_both_us_eastern_and_pacific_midnights_without_extra_runs(self):
+        text = TIDE_REFRESH.read_text(encoding="utf-8")
+        # Four daily runs, not six-hourly plus additional API-costly jobs.
+        self.assertIn('cron: "17 5,8,14,20 * * *"', text)
+
     def test_tide_refresh_checks_primary_activity_cta(self):
         text = TIDE_REFRESH.read_text(encoding="utf-8")
         self.assertIn("python src/test_tide_body_activity_cta.py", text)
