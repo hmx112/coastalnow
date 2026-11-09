@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "cannon-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-09T12:02:39+00:00",
+  "generated_at_utc": "2026-11-09T13:58:53+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T12:02:39+00:00"
+      "fetched_at_utc": "2026-11-09T13:58:53+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T11:52:05+00:00"
+      "fetched_at_utc": "2026-11-09T13:58:53+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T11:52:05+00:00"
+      "fetched_at_utc": "2026-11-09T13:58:53+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T23:45:41+00:00"
+      "fetched_at_utc": "2026-11-09T13:56:59+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-09T11:52:05+00:00"
+      "fetched_at_utc": "2026-11-09T13:58:53+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-09T03:00:00-08:00",
-      "wind_mph": 5.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 112.5,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 49.0,
-      "wave_height_ft": 14.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
-    {
-      "time": "2026-11-09T04:00:00-08:00",
-      "wind_mph": 5.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 135.0,
-      "precip_probability_pct": 5.0,
-      "air_temperature_f": 47.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-11-09T05:00:00-08:00",
       "wind_mph": 6.0,
@@ -1902,23 +1878,47 @@
       "wave_period_s": 15.0,
       "water_temperature_f": null,
       "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-11-15T15:00:00-08:00",
+      "wind_mph": 12.0,
+      "gust_mph": 28.769,
+      "wind_direction_deg": 202.5,
+      "precip_probability_pct": 78.0,
+      "air_temperature_f": 52.0,
+      "wave_height_ft": 16.0,
+      "wave_period_s": 15.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-11-15T16:00:00-08:00",
+      "wind_mph": 8.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 202.5,
+      "precip_probability_pct": 70.0,
+      "air_temperature_f": 51.0,
+      "wave_height_ft": 15.0,
+      "wave_period_s": 15.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9608ea42234e961a24c33aeb5845fc2c4a79eb4.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3bc022604fd2f4ba50afb057da6a04141541f775.002.2",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-09T00:52:00-08:00",
-        "onset": "2026-11-09T04:00:00-08:00",
-        "expires": "2026-11-09T17:00:00-08:00",
+        "effective": "2026-11-09T04:02:00-08:00",
+        "onset": "2026-11-09T04:02:00-08:00",
+        "expires": "2026-11-09T20:15:00-08:00",
         "ends": "2026-11-10T10:00:00-08:00",
-        "headline": "Gale Warning issued November 9 at 12:52AM PST until November 10 at 10:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Hazardous Seas Warning, very steep and\nhazardous seas 12 to 16 ft at 15 seconds and southeast winds\n10 to 15 kt. For the Gale Warning, seas 11 to 16 ft at 15\nseconds and south winds 20 to 30 kt with gusts up to 40 kt\nexpected.\n\n* WHERE...Coastal Waters from Cape Shoalwater to Florence out 60\nNM.\n\n* WHEN...Hazardous Seas Warning, until 4 AM PST early this\nmorning. Gale Warning, from 4 AM early this morning to 10 AM\nPST Tuesday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.\n\n* ADDITIONAL DETAILS...There will be a lull in gusty winds Monday\nnight in between weather systems before winds increase quickly\nTuesday morning.",
+        "headline": "Gale Warning issued November 9 at 4:02AM PST until November 10 at 10:00AM PST by NWS Portland OR",
+        "description": "* WHAT...Seas 11 to 16 ft at 15 seconds and south winds 20 to 30\nkt with gusts up to 40 kt.\n\n* WHERE...Coastal Waters from Cape Shoalwater to Florence out 60\nNM.\n\n* WHEN...Until 10 AM PST Tuesday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.\n\n* ADDITIONAL DETAILS...There will be a lull in gusty winds Monday\nnight in between weather systems before winds increase quickly\nTuesday morning.",
         "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
         "sender_name": "NWS Portland OR"
       }
@@ -1953,32 +1953,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-08",
-      "end": "2026-11-14"
+      "start": "2026-11-09",
+      "end": "2026-11-15"
     },
-    "generated_at_utc": "2026-11-08T23:45:41+00:00",
-    "generated_at_local": "2026-11-08T15:45:41-08:00",
+    "generated_at_utc": "2026-11-09T13:56:59+00:00",
+    "generated_at_local": "2026-11-09T05:56:59-08:00",
     "hilo": [
-      {
-        "t": "2026-11-07 04:26",
-        "v": 1.731,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-07 10:48",
-        "v": 8.263,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-07 17:18",
-        "v": -0.499,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-07 23:46",
-        "v": 6.617,
-        "type": "H"
-      },
       {
         "t": "2026-11-08 05:05",
         "v": 2.205,
@@ -2133,201 +2113,29 @@
         "t": "2026-11-15 22:24",
         "v": 0.949,
         "type": "L"
+      },
+      {
+        "t": "2026-11-16 05:48",
+        "v": 5.823,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-16 10:50",
+        "v": 4.049,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-16 16:24",
+        "v": 6.115,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-16 23:16",
+        "v": 1.247,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-08 00:00",
-        "v": 6.596
-      },
-      {
-        "t": "2026-11-08 00:30",
-        "v": 6.413
-      },
-      {
-        "t": "2026-11-08 01:00",
-        "v": 6.057
-      },
-      {
-        "t": "2026-11-08 01:30",
-        "v": 5.558
-      },
-      {
-        "t": "2026-11-08 02:00",
-        "v": 4.959
-      },
-      {
-        "t": "2026-11-08 02:30",
-        "v": 4.313
-      },
-      {
-        "t": "2026-11-08 03:00",
-        "v": 3.676
-      },
-      {
-        "t": "2026-11-08 03:30",
-        "v": 3.102
-      },
-      {
-        "t": "2026-11-08 04:00",
-        "v": 2.642
-      },
-      {
-        "t": "2026-11-08 04:30",
-        "v": 2.335
-      },
-      {
-        "t": "2026-11-08 05:00",
-        "v": 2.208
-      },
-      {
-        "t": "2026-11-08 05:30",
-        "v": 2.272
-      },
-      {
-        "t": "2026-11-08 06:00",
-        "v": 2.523
-      },
-      {
-        "t": "2026-11-08 06:30",
-        "v": 2.947
-      },
-      {
-        "t": "2026-11-08 07:00",
-        "v": 3.516
-      },
-      {
-        "t": "2026-11-08 07:30",
-        "v": 4.194
-      },
-      {
-        "t": "2026-11-08 08:00",
-        "v": 4.94
-      },
-      {
-        "t": "2026-11-08 08:30",
-        "v": 5.707
-      },
-      {
-        "t": "2026-11-08 09:00",
-        "v": 6.447
-      },
-      {
-        "t": "2026-11-08 09:30",
-        "v": 7.113
-      },
-      {
-        "t": "2026-11-08 10:00",
-        "v": 7.665
-      },
-      {
-        "t": "2026-11-08 10:30",
-        "v": 8.067
-      },
-      {
-        "t": "2026-11-08 11:00",
-        "v": 8.294
-      },
-      {
-        "t": "2026-11-08 11:30",
-        "v": 8.33
-      },
-      {
-        "t": "2026-11-08 12:00",
-        "v": 8.128
-      },
-      {
-        "t": "2026-11-08 12:30",
-        "v": 7.685
-      },
-      {
-        "t": "2026-11-08 13:00",
-        "v": 7.026
-      },
-      {
-        "t": "2026-11-08 13:30",
-        "v": 6.188
-      },
-      {
-        "t": "2026-11-08 14:00",
-        "v": 5.217
-      },
-      {
-        "t": "2026-11-08 14:30",
-        "v": 4.167
-      },
-      {
-        "t": "2026-11-08 15:00",
-        "v": 3.097
-      },
-      {
-        "t": "2026-11-08 15:30",
-        "v": 2.067
-      },
-      {
-        "t": "2026-11-08 16:00",
-        "v": 1.134
-      },
-      {
-        "t": "2026-11-08 16:30",
-        "v": 0.351
-      },
-      {
-        "t": "2026-11-08 17:00",
-        "v": -0.239
-      },
-      {
-        "t": "2026-11-08 17:30",
-        "v": -0.604
-      },
-      {
-        "t": "2026-11-08 18:00",
-        "v": -0.722
-      },
-      {
-        "t": "2026-11-08 18:30",
-        "v": -0.61
-      },
-      {
-        "t": "2026-11-08 19:00",
-        "v": -0.294
-      },
-      {
-        "t": "2026-11-08 19:30",
-        "v": 0.207
-      },
-      {
-        "t": "2026-11-08 20:00",
-        "v": 0.865
-      },
-      {
-        "t": "2026-11-08 20:30",
-        "v": 1.643
-      },
-      {
-        "t": "2026-11-08 21:00",
-        "v": 2.497
-      },
-      {
-        "t": "2026-11-08 21:30",
-        "v": 3.377
-      },
-      {
-        "t": "2026-11-08 22:00",
-        "v": 4.234
-      },
-      {
-        "t": "2026-11-08 22:30",
-        "v": 5.018
-      },
-      {
-        "t": "2026-11-08 23:00",
-        "v": 5.686
-      },
-      {
-        "t": "2026-11-08 23:30",
-        "v": 6.198
-      },
       {
         "t": "2026-11-09 00:00",
         "v": 6.527
@@ -2519,6 +2327,198 @@
       {
         "t": "2026-11-09 23:30",
         "v": 5.395
+      },
+      {
+        "t": "2026-11-10 00:00",
+        "v": 5.966
+      },
+      {
+        "t": "2026-11-10 00:30",
+        "v": 6.371
+      },
+      {
+        "t": "2026-11-10 01:00",
+        "v": 6.585
+      },
+      {
+        "t": "2026-11-10 01:30",
+        "v": 6.602
+      },
+      {
+        "t": "2026-11-10 02:00",
+        "v": 6.448
+      },
+      {
+        "t": "2026-11-10 02:30",
+        "v": 6.143
+      },
+      {
+        "t": "2026-11-10 03:00",
+        "v": 5.716
+      },
+      {
+        "t": "2026-11-10 03:30",
+        "v": 5.208
+      },
+      {
+        "t": "2026-11-10 04:00",
+        "v": 4.667
+      },
+      {
+        "t": "2026-11-10 04:30",
+        "v": 4.146
+      },
+      {
+        "t": "2026-11-10 05:00",
+        "v": 3.693
+      },
+      {
+        "t": "2026-11-10 05:30",
+        "v": 3.352
+      },
+      {
+        "t": "2026-11-10 06:00",
+        "v": 3.155
+      },
+      {
+        "t": "2026-11-10 06:30",
+        "v": 3.122
+      },
+      {
+        "t": "2026-11-10 07:00",
+        "v": 3.259
+      },
+      {
+        "t": "2026-11-10 07:30",
+        "v": 3.56
+      },
+      {
+        "t": "2026-11-10 08:00",
+        "v": 4.003
+      },
+      {
+        "t": "2026-11-10 08:30",
+        "v": 4.558
+      },
+      {
+        "t": "2026-11-10 09:00",
+        "v": 5.188
+      },
+      {
+        "t": "2026-11-10 09:30",
+        "v": 5.849
+      },
+      {
+        "t": "2026-11-10 10:00",
+        "v": 6.497
+      },
+      {
+        "t": "2026-11-10 10:30",
+        "v": 7.086
+      },
+      {
+        "t": "2026-11-10 11:00",
+        "v": 7.578
+      },
+      {
+        "t": "2026-11-10 11:30",
+        "v": 7.939
+      },
+      {
+        "t": "2026-11-10 12:00",
+        "v": 8.144
+      },
+      {
+        "t": "2026-11-10 12:30",
+        "v": 8.176
+      },
+      {
+        "t": "2026-11-10 13:00",
+        "v": 7.995
+      },
+      {
+        "t": "2026-11-10 13:30",
+        "v": 7.596
+      },
+      {
+        "t": "2026-11-10 14:00",
+        "v": 7.001
+      },
+      {
+        "t": "2026-11-10 14:30",
+        "v": 6.241
+      },
+      {
+        "t": "2026-11-10 15:00",
+        "v": 5.354
+      },
+      {
+        "t": "2026-11-10 15:30",
+        "v": 4.386
+      },
+      {
+        "t": "2026-11-10 16:00",
+        "v": 3.389
+      },
+      {
+        "t": "2026-11-10 16:30",
+        "v": 2.413
+      },
+      {
+        "t": "2026-11-10 17:00",
+        "v": 1.51
+      },
+      {
+        "t": "2026-11-10 17:30",
+        "v": 0.725
+      },
+      {
+        "t": "2026-11-10 18:00",
+        "v": 0.1
+      },
+      {
+        "t": "2026-11-10 18:30",
+        "v": -0.333
+      },
+      {
+        "t": "2026-11-10 19:00",
+        "v": -0.551
+      },
+      {
+        "t": "2026-11-10 19:30",
+        "v": -0.549
+      },
+      {
+        "t": "2026-11-10 20:00",
+        "v": -0.355
+      },
+      {
+        "t": "2026-11-10 20:30",
+        "v": 0.017
+      },
+      {
+        "t": "2026-11-10 21:00",
+        "v": 0.546
+      },
+      {
+        "t": "2026-11-10 21:30",
+        "v": 1.204
+      },
+      {
+        "t": "2026-11-10 22:00",
+        "v": 1.956
+      },
+      {
+        "t": "2026-11-10 22:30",
+        "v": 2.763
+      },
+      {
+        "t": "2026-11-10 23:00",
+        "v": 3.58
+      },
+      {
+        "t": "2026-11-10 23:30",
+        "v": 4.365
       }
     ]
   },
@@ -2572,5 +2572,5 @@
       "grid_y": 130
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
