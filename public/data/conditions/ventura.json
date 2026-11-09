@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-08T23:47:43+00:00",
+  "generated_at_utc": "2026-11-09T01:03:25+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T23:47:43+00:00"
+      "fetched_at_utc": "2026-11-09T01:03:25+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T23:47:43+00:00"
+      "fetched_at_utc": "2026-11-09T01:03:25+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-08T23:47:43+00:00"
+      "fetched_at_utc": "2026-11-09T01:03:25+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-08T23:47:43+00:00"
+      "fetched_at_utc": "2026-11-09T01:03:25+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-08T15:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
-    {
-      "time": "2026-11-08T16:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-11-08T17:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,26 +1878,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-15T03:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 25.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-15T04:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 9.206,
+      "wind_direction_deg": 67.5,
+      "precip_probability_pct": 34.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ce9d90fc1cc8916b74afa4ecc95afe0e302d2189.002.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-08T12:52:00-08:00",
-        "onset": "2026-11-08T12:52:00-08:00",
-        "expires": "2026-11-09T14:00:00-08:00",
-        "ends": "2026-11-10T12:00:00-08:00",
-        "headline": "High Surf Advisory issued November 8 at 12:52PM PST until November 10 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding during morning high tides expected. For the High Surf\nAdvisory, dangerous rip currents and large breaking waves of 5\nto 7 feet, except peaking at 6 to 9 feet on Monday.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until noon PST Tuesday.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Flooded sandy beach areas and moderate beach\nerosion possible. Localized and shallow flooding of beach\nparking lots, bike paths, and walkways. Isolated damage is\nunlikely, but cannot be discounted.\n\n* ADDITIONAL DETAILS...High tides of 7.2 to 7.6 feet (MLLW) are\nexpected each morning. Surf and coastal flooding impacts peak\non Monday.",
-        "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.\n\nRemain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ce9d90fc1cc8916b74afa4ecc95afe0e302d2189.002.1",
         "event": "Coastal Flood Advisory",
@@ -1933,6 +1918,21 @@
         "expires": "2026-11-09T14:00:00-08:00",
         "ends": "2026-11-10T12:00:00-08:00",
         "headline": "Coastal Flood Advisory issued November 8 at 12:52PM PST until November 10 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding during morning high tides expected. For the High Surf\nAdvisory, dangerous rip currents and large breaking waves of 5\nto 7 feet, except peaking at 6 to 9 feet on Monday.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until noon PST Tuesday.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Flooded sandy beach areas and moderate beach\nerosion possible. Localized and shallow flooding of beach\nparking lots, bike paths, and walkways. Isolated damage is\nunlikely, but cannot be discounted.\n\n* ADDITIONAL DETAILS...High tides of 7.2 to 7.6 feet (MLLW) are\nexpected each morning. Surf and coastal flooding impacts peak\non Monday.",
+        "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.\n\nRemain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ce9d90fc1cc8916b74afa4ecc95afe0e302d2189.002.2",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-08T12:52:00-08:00",
+        "onset": "2026-11-08T12:52:00-08:00",
+        "expires": "2026-11-09T14:00:00-08:00",
+        "ends": "2026-11-10T12:00:00-08:00",
+        "headline": "High Surf Advisory issued November 8 at 12:52PM PST until November 10 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...For the Coastal Flood Advisory, moderate coastal\nflooding during morning high tides expected. For the High Surf\nAdvisory, dangerous rip currents and large breaking waves of 5\nto 7 feet, except peaking at 6 to 9 feet on Monday.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until noon PST Tuesday.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Flooded sandy beach areas and moderate beach\nerosion possible. Localized and shallow flooding of beach\nparking lots, bike paths, and walkways. Isolated damage is\nunlikely, but cannot be discounted.\n\n* ADDITIONAL DETAILS...High tides of 7.2 to 7.6 feet (MLLW) are\nexpected each morning. Surf and coastal flooding impacts peak\non Monday.",
         "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.\n\nRemain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
