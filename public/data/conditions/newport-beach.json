@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "newport-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-09T22:39:32+00:00",
+  "generated_at_utc": "2026-11-09T23:27:49+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T22:39:32+00:00"
+      "fetched_at_utc": "2026-11-09T23:27:49+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T22:31:50+00:00"
+      "fetched_at_utc": "2026-11-09T23:27:49+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T22:31:50+00:00"
+      "fetched_at_utc": "2026-11-09T23:27:49+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-09T13:56:49+00:00"
+      "fetched_at_utc": "2026-11-09T23:27:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-09T22:31:50+00:00"
+      "fetched_at_utc": "2026-11-09T23:27:49+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-09T14:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 77.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-11-09T15:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-16T02:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 44.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d4b34e9013f50997e78191b490a3101183f714d3.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3e88c80385d5996b5f918afa8d64d763e507c12e.002.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-09T05:06:00-08:00",
-        "onset": "2026-11-09T05:06:00-08:00",
-        "expires": "2026-11-09T14:30:00-08:00",
+        "effective": "2026-11-09T14:58:00-08:00",
+        "onset": "2026-11-09T14:58:00-08:00",
+        "expires": "2026-11-09T23:00:00-08:00",
         "ends": "2026-11-10T12:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 9 at 5:06AM PST until November 10 at 12:00PM PST by NWS San Diego CA",
-        "description": "* WHAT...Minor to locally moderate coastal flooding expected.\n\n* WHERE...Orange County Coastal Areas.\n\n* WHEN...Until noon PST Tuesday.\n\n* IMPACTS...Flooding of parking lots and roads with only\nisolated road closures expected.\n\n* ADDITIONAL DETAILS...Highest tides will occur in the morning\neach day, peaking at 7.2-7.4 feet today, which is 1.2 to 1.4\nfeet above astronomical tide predictions. Higher surf today\ncould prolong coastal impacts.",
+        "headline": "Coastal Flood Advisory issued November 9 at 2:58PM PST until November 10 at 12:00PM PST by NWS San Diego CA",
+        "description": "* WHAT...Minor to locally moderate coastal flooding expected.\n\n* WHERE...Orange County Coastal Areas.\n\n* WHEN...Until noon PST Tuesday.\n\n* IMPACTS...Flooding of parking lots and roads with only\nisolated road closures expected.\n\n* ADDITIONAL DETAILS...High tide Tuesday morning is expected to\npeak over 7 feet MLLW, which is 1.2 to 1.4 feet above\nastronomical tide predictions. Higher surf today could prolong\ncoastal impacts.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS San Diego CA"
       }
@@ -1956,8 +1956,8 @@
       "start": "2026-11-09",
       "end": "2026-11-15"
     },
-    "generated_at_utc": "2026-11-09T13:56:49+00:00",
-    "generated_at_local": "2026-11-09T05:56:49-08:00",
+    "generated_at_utc": "2026-11-09T23:27:26+00:00",
+    "generated_at_local": "2026-11-09T15:27:26-08:00",
     "hilo": [
       {
         "t": "2026-11-08 01:30",
@@ -2552,5 +2552,5 @@
       "grid_y": 22
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
