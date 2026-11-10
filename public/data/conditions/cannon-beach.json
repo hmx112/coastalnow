@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "cannon-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-10T20:52:58+00:00",
+  "generated_at_utc": "2026-11-10T23:34:11+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-10T20:52:58+00:00"
+      "fetched_at_utc": "2026-11-10T23:34:11+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-10T20:52:58+00:00"
+      "fetched_at_utc": "2026-11-10T23:34:11+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-10T20:52:58+00:00"
+      "fetched_at_utc": "2026-11-10T23:34:11+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-10T20:52:58+00:00"
+      "fetched_at_utc": "2026-11-10T23:34:11+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-10T12:00:00-08:00",
-      "wind_mph": 21.0,
-      "gust_mph": 46.031,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 79.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 13.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-11-10T13:00:00-08:00",
-      "wind_mph": 21.0,
-      "gust_mph": 46.031,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 71.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 14.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
-    {
-      "time": "2026-11-10T14:00:00-08:00",
-      "wind_mph": 21.0,
-      "gust_mph": 47.182,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 57.0,
-      "air_temperature_f": 60.0,
-      "wave_height_ft": 14.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-11-10T15:00:00-08:00",
       "wind_mph": 21.0,
@@ -1902,23 +1866,74 @@
       "wave_period_s": 17.0,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-11-17T00:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 46.0,
+      "wave_height_ft": 13.0,
+      "wave_period_s": 17.0,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-11-17T01:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 45.0,
+      "wave_height_ft": 13.0,
+      "wave_period_s": 17.0,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-11-17T02:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 24.0,
+      "air_temperature_f": 45.0,
+      "wave_height_ft": 13.0,
+      "wave_period_s": 17.0,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b5ba50117356d0d98c8306c37564363220bc36b5.004.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0fd5121cc4f26670f641bf88a76c50cebf2f9e7e.003.2",
+        "event": "Hazardous Seas Warning",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-10T12:55:00-08:00",
+        "onset": "2026-11-11T16:00:00-08:00",
+        "expires": "2026-11-10T19:00:00-08:00",
+        "ends": "2026-11-12T07:00:00-08:00",
+        "headline": "Hazardous Seas Warning issued November 10 at 12:55PM PST until November 12 at 7:00AM PST by NWS Portland OR",
+        "description": "* WHAT...For the Gale Warning, seas 13 to 17 ft at 15 seconds\nand south winds 25 to 35 kt with gusts up to 45 kt. For the\nHazardous Seas Warning, very steep and hazardous seas 13 to 17\nft at 15 seconds and south winds 20 to 30 kt with gusts up to\n35 kt expected.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM and Waters from Cape Shoalwater WA to Cape Falcon\nOR from 10 to 60 NM.\n\n* WHEN...Gale Warning, until 4 PM PST Wednesday. Hazardous Seas\nWarning, from 4 PM Wednesday to 7 AM PST Thursday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
+        "sender_name": "NWS Portland OR"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0fd5121cc4f26670f641bf88a76c50cebf2f9e7e.003.1",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-10T01:20:00-08:00",
-        "onset": "2026-11-10T10:00:00-08:00",
-        "expires": "2026-11-10T17:30:00-08:00",
+        "effective": "2026-11-10T12:55:00-08:00",
+        "onset": "2026-11-10T12:55:00-08:00",
+        "expires": "2026-11-10T19:00:00-08:00",
         "ends": "2026-11-11T16:00:00-08:00",
-        "headline": "Gale Warning issued November 10 at 1:20AM PST until November 11 at 4:00PM PST by NWS Portland OR",
-        "description": "* WHAT...For the Small Craft Advisory, seas 11 to 16 ft at 13\nseconds and south winds 20 to 30 kt with gusts up to 35 kt.\nFor the Gale Warning, seas 15 to 20 ft at 14 seconds and south\nwinds 25 to 35 kt with gusts up to 45 kt expected.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM and Waters from Cape Shoalwater WA to Cape Falcon\nOR from 10 to 60 NM.\n\n* WHEN...Small Craft Advisory, until 10 AM PST this morning.\nGale Warning, from 10 AM this morning to 4 PM PST Wednesday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "headline": "Gale Warning issued November 10 at 12:55PM PST until November 11 at 4:00PM PST by NWS Portland OR",
+        "description": "* WHAT...For the Gale Warning, seas 13 to 17 ft at 15 seconds\nand south winds 25 to 35 kt with gusts up to 45 kt. For the\nHazardous Seas Warning, very steep and hazardous seas 13 to 17\nft at 15 seconds and south winds 20 to 30 kt with gusts up to\n35 kt expected.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM and Waters from Cape Shoalwater WA to Cape Falcon\nOR from 10 to 60 NM.\n\n* WHEN...Gale Warning, until 4 PM PST Wednesday. Hazardous Seas\nWarning, from 4 PM Wednesday to 7 AM PST Thursday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
         "sender_name": "NWS Portland OR"
       }
