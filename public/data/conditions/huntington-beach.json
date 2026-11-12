@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "huntington-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-12T21:03:21+00:00",
+  "generated_at_utc": "2026-11-12T21:29:13+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T21:03:21+00:00"
+      "fetched_at_utc": "2026-11-12T21:29:13+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T20:08:26+00:00"
+      "fetched_at_utc": "2026-11-12T21:29:13+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T20:08:26+00:00"
+      "fetched_at_utc": "2026-11-12T21:29:13+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T13:48:32+00:00"
+      "fetched_at_utc": "2026-11-12T21:28:59+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-12T20:08:26+00:00"
+      "fetched_at_utc": "2026-11-12T21:29:13+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-12T12:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-12T13:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-19T00:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 41.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
@@ -1940,8 +1940,8 @@
       "start": "2026-11-12",
       "end": "2026-11-18"
     },
-    "generated_at_utc": "2026-11-12T13:48:32+00:00",
-    "generated_at_local": "2026-11-12T05:48:31-08:00",
+    "generated_at_utc": "2026-11-12T21:28:59+00:00",
+    "generated_at_local": "2026-11-12T13:28:59-08:00",
     "hilo": [
       {
         "t": "2026-11-12 03:05",
@@ -2526,5 +2526,5 @@
       "grid_y": 26
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

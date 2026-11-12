@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "lincoln-city",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-12T21:03:46+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-12T21:03:46+00:00",
+  "generated_at_utc": "2026-11-12T21:31:13+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-12T21:31:13+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -38,9 +38,11 @@
       "wet-weather",
       "wind-cap-59",
       "wind-cap-39",
+      "wind-hard-stop",
       "worsening-wind",
       "high-surf-warning",
-      "long-period-swell"
+      "long-period-swell",
+      "hazardous-seas-warning"
     ]
   },
   "hourly": {
@@ -68,7 +70,6 @@
         "reasons": [
           "light-wind",
           "long-period-swell",
-          "small-craft-advisory",
           "wave-exposure-hard-stop"
         ]
       },
@@ -252,7 +253,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
+        "safety_cap": 59.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -261,6 +262,7 @@
           "light-wind",
           "long-period-swell",
           "small-craft-advisory",
+          "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
       },
@@ -279,7 +281,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -288,7 +290,6 @@
           "light-wind",
           "long-period-swell",
           "small-craft-advisory",
-          "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
       },
@@ -307,7 +308,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -315,7 +316,6 @@
         "reasons": [
           "light-wind",
           "small-craft-advisory",
-          "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
       },
@@ -398,8 +398,8 @@
         "reasons": [
           "favorable-tide-movement",
           "light-wind",
-          "gale-warning",
           "small-craft-advisory",
+          "gale-warning",
           "wave-exposure-hard-stop"
         ]
       },
@@ -418,7 +418,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 100.0,
+        "safety_cap": 59.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -427,6 +427,7 @@
           "light-wind",
           "wet-weather",
           "gale-warning",
+          "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
       },
@@ -445,7 +446,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 39.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -454,7 +455,7 @@
           "light-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-59",
+          "wind-cap-39",
           "wave-exposure-hard-stop"
         ]
       },
@@ -501,7 +502,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -511,7 +512,7 @@
           "light-wind",
           "wet-weather",
           "gale-warning",
-          "wind-cap-39",
+          "wind-hard-stop",
           "wave-exposure-hard-stop"
         ]
       },
@@ -615,7 +616,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 39.0,
+        "safety_cap": 59.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -623,7 +624,7 @@
         "reasons": [
           "worsening-wind",
           "gale-warning",
-          "wind-cap-39",
+          "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
       },
@@ -858,6 +859,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
+          "gale-warning",
           "wind-cap-39",
           "wave-exposure-hard-stop"
         ]
@@ -888,6 +890,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
+          "gale-warning",
           "wind-cap-39",
           "wave-exposure-hard-stop"
         ]
@@ -918,6 +921,8 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
+          "gale-warning",
+          "hazardous-seas-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
@@ -947,6 +952,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
+          "hazardous-seas-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
@@ -976,6 +982,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
+          "hazardous-seas-warning",
           "wind-cap-59",
           "wave-exposure-hard-stop"
         ]
@@ -995,7 +1002,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -1005,7 +1012,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
-          "wind-cap-59",
+          "hazardous-seas-warning",
           "wave-exposure-hard-stop"
         ]
       },
@@ -1024,7 +1031,7 @@
         "final_score": null,
         "hard_stop": true,
         "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 59.0,
+        "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
@@ -1034,7 +1041,7 @@
           "wet-weather",
           "long-period-swell",
           "high-surf-warning",
-          "wind-cap-59",
+          "hazardous-seas-warning",
           "wave-exposure-hard-stop"
         ]
       }
