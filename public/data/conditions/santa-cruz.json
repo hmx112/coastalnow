@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "santa-cruz",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-12T13:10:34+00:00",
+  "generated_at_utc": "2026-11-12T13:48:49+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T13:10:34+00:00"
+      "fetched_at_utc": "2026-11-12T13:48:49+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T11:30:16+00:00"
+      "fetched_at_utc": "2026-11-12T13:48:49+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T11:30:16+00:00"
+      "fetched_at_utc": "2026-11-12T13:48:49+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-11T21:27:00+00:00"
+      "fetched_at_utc": "2026-11-12T13:48:31+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-12T11:30:16+00:00"
+      "fetched_at_utc": "2026-11-12T13:48:49+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-12T03:00:00-08:00",
-      "wind_mph": 1.0,
-      "gust_mph": 4.603,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 55.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-12T04:00:00-08:00",
-      "wind_mph": 2.0,
-      "gust_mph": 5.754,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 54.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-12T05:00:00-08:00",
       "wind_mph": 2.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Rain"
+    },
+    {
+      "time": "2026-11-18T15:00:00-08:00",
+      "wind_mph": 15.0,
+      "gust_mph": 39.127,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 76.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Rain"
+    },
+    {
+      "time": "2026-11-18T16:00:00-08:00",
+      "wind_mph": 12.0,
+      "gust_mph": 32.222,
+      "wind_direction_deg": 202.5,
+      "precip_probability_pct": 77.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
     }
   ],
   "alerts": {
@@ -1938,21 +1938,6 @@
         "sender_name": "NWS San Francisco CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f24acdc8bab05264fb6a2dc1481bf8cf8e0da56e.002.2",
-        "event": "High Surf Warning",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-11T22:48:00-08:00",
-        "onset": "2026-11-13T18:00:00-08:00",
-        "expires": "2026-11-12T15:00:00-08:00",
-        "ends": "2026-11-15T04:00:00-08:00",
-        "headline": "High Surf Warning issued November 11 at 10:48PM PST until November 15 at 4:00AM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Beach Hazards Statement, An increased risk for\nsneaker waves and strong rip currents with breaking waves of 15\nto 20 ft expected. For the High Surf Warning, Dangerously large\nbreaking waves of 25 to 35 ft, with occasional sets of 40 to 50\nft at favored breakpoints. For the Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore, San Francisco Peninsula Coast and Northern Monterey\nBay.\n\n* WHEN...For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the Coastal Flood Advisory, from midnight\nFriday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...The Coastal Flood Advisory on Saturday is\nspecifically for the Pacific Coast, where large breaking waves\nwill spill over sea walls and run up beaches onto adjacent\ninfrastructure.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f24acdc8bab05264fb6a2dc1481bf8cf8e0da56e.002.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
@@ -1963,6 +1948,21 @@
         "expires": "2026-11-12T15:00:00-08:00",
         "ends": "2026-11-14T18:00:00-08:00",
         "headline": "Coastal Flood Advisory issued November 11 at 10:48PM PST until November 14 at 6:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the Beach Hazards Statement, An increased risk for\nsneaker waves and strong rip currents with breaking waves of 15\nto 20 ft expected. For the High Surf Warning, Dangerously large\nbreaking waves of 25 to 35 ft, with occasional sets of 40 to 50\nft at favored breakpoints. For the Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore, San Francisco Peninsula Coast and Northern Monterey\nBay.\n\n* WHEN...For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the Coastal Flood Advisory, from midnight\nFriday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...The Coastal Flood Advisory on Saturday is\nspecifically for the Pacific Coast, where large breaking waves\nwill spill over sea walls and run up beaches onto adjacent\ninfrastructure.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
+        "sender_name": "NWS San Francisco CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f24acdc8bab05264fb6a2dc1481bf8cf8e0da56e.002.2",
+        "event": "High Surf Warning",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-11T22:48:00-08:00",
+        "onset": "2026-11-13T18:00:00-08:00",
+        "expires": "2026-11-12T15:00:00-08:00",
+        "ends": "2026-11-15T04:00:00-08:00",
+        "headline": "High Surf Warning issued November 11 at 10:48PM PST until November 15 at 4:00AM PST by NWS San Francisco CA",
         "description": "* WHAT...For the Beach Hazards Statement, An increased risk for\nsneaker waves and strong rip currents with breaking waves of 15\nto 20 ft expected. For the High Surf Warning, Dangerously large\nbreaking waves of 25 to 35 ft, with occasional sets of 40 to 50\nft at favored breakpoints. For the Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore, San Francisco Peninsula Coast and Northern Monterey\nBay.\n\n* WHEN...For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the Coastal Flood Advisory, from midnight\nFriday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...The Coastal Flood Advisory on Saturday is\nspecifically for the Pacific Coast, where large breaking waves\nwill spill over sea walls and run up beaches onto adjacent\ninfrastructure.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
@@ -2013,27 +2013,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-11",
-      "end": "2026-11-17"
+      "start": "2026-11-12",
+      "end": "2026-11-18"
     },
-    "generated_at_utc": "2026-11-11T21:27:00+00:00",
-    "generated_at_local": "2026-11-11T13:27:00-08:00",
+    "generated_at_utc": "2026-11-12T13:48:31+00:00",
+    "generated_at_local": "2026-11-12T05:48:31-08:00",
     "hilo": [
-      {
-        "t": "2026-11-10 03:35",
-        "v": 2.904,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-10 09:46",
-        "v": 5.648,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-10 17:15",
-        "v": -0.406,
-        "type": "L"
-      },
       {
         "t": "2026-11-11 00:22",
         "v": 3.699,
@@ -2193,201 +2178,29 @@
         "t": "2026-11-18 23:17",
         "v": 1.001,
         "type": "L"
+      },
+      {
+        "t": "2026-11-19 06:14",
+        "v": 4.662,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-19 12:35",
+        "v": 1.766,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-19 18:11",
+        "v": 3.558,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-19 23:55",
+        "v": 1.302,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-11 00:00",
-        "v": 3.672
-      },
-      {
-        "t": "2026-11-11 00:30",
-        "v": 3.697
-      },
-      {
-        "t": "2026-11-11 01:00",
-        "v": 3.659
-      },
-      {
-        "t": "2026-11-11 01:30",
-        "v": 3.579
-      },
-      {
-        "t": "2026-11-11 02:00",
-        "v": 3.469
-      },
-      {
-        "t": "2026-11-11 02:30",
-        "v": 3.35
-      },
-      {
-        "t": "2026-11-11 03:00",
-        "v": 3.242
-      },
-      {
-        "t": "2026-11-11 03:30",
-        "v": 3.164
-      },
-      {
-        "t": "2026-11-11 04:00",
-        "v": 3.129
-      },
-      {
-        "t": "2026-11-11 04:30",
-        "v": 3.152
-      },
-      {
-        "t": "2026-11-11 05:00",
-        "v": 3.249
-      },
-      {
-        "t": "2026-11-11 05:30",
-        "v": 3.415
-      },
-      {
-        "t": "2026-11-11 06:00",
-        "v": 3.637
-      },
-      {
-        "t": "2026-11-11 06:30",
-        "v": 3.903
-      },
-      {
-        "t": "2026-11-11 07:00",
-        "v": 4.195
-      },
-      {
-        "t": "2026-11-11 07:30",
-        "v": 4.494
-      },
-      {
-        "t": "2026-11-11 08:00",
-        "v": 4.782
-      },
-      {
-        "t": "2026-11-11 08:30",
-        "v": 5.039
-      },
-      {
-        "t": "2026-11-11 09:00",
-        "v": 5.25
-      },
-      {
-        "t": "2026-11-11 09:30",
-        "v": 5.4
-      },
-      {
-        "t": "2026-11-11 10:00",
-        "v": 5.48
-      },
-      {
-        "t": "2026-11-11 10:30",
-        "v": 5.48
-      },
-      {
-        "t": "2026-11-11 11:00",
-        "v": 5.367
-      },
-      {
-        "t": "2026-11-11 11:30",
-        "v": 5.136
-      },
-      {
-        "t": "2026-11-11 12:00",
-        "v": 4.798
-      },
-      {
-        "t": "2026-11-11 12:30",
-        "v": 4.367
-      },
-      {
-        "t": "2026-11-11 13:00",
-        "v": 3.861
-      },
-      {
-        "t": "2026-11-11 13:30",
-        "v": 3.301
-      },
-      {
-        "t": "2026-11-11 14:00",
-        "v": 2.712
-      },
-      {
-        "t": "2026-11-11 14:30",
-        "v": 2.117
-      },
-      {
-        "t": "2026-11-11 15:00",
-        "v": 1.543
-      },
-      {
-        "t": "2026-11-11 15:30",
-        "v": 1.013
-      },
-      {
-        "t": "2026-11-11 16:00",
-        "v": 0.549
-      },
-      {
-        "t": "2026-11-11 16:30",
-        "v": 0.172
-      },
-      {
-        "t": "2026-11-11 17:00",
-        "v": -0.103
-      },
-      {
-        "t": "2026-11-11 17:30",
-        "v": -0.264
-      },
-      {
-        "t": "2026-11-11 18:00",
-        "v": -0.306
-      },
-      {
-        "t": "2026-11-11 18:30",
-        "v": -0.247
-      },
-      {
-        "t": "2026-11-11 19:00",
-        "v": -0.102
-      },
-      {
-        "t": "2026-11-11 19:30",
-        "v": 0.122
-      },
-      {
-        "t": "2026-11-11 20:00",
-        "v": 0.415
-      },
-      {
-        "t": "2026-11-11 20:30",
-        "v": 0.764
-      },
-      {
-        "t": "2026-11-11 21:00",
-        "v": 1.153
-      },
-      {
-        "t": "2026-11-11 21:30",
-        "v": 1.565
-      },
-      {
-        "t": "2026-11-11 22:00",
-        "v": 1.982
-      },
-      {
-        "t": "2026-11-11 22:30",
-        "v": 2.385
-      },
-      {
-        "t": "2026-11-11 23:00",
-        "v": 2.755
-      },
-      {
-        "t": "2026-11-11 23:30",
-        "v": 3.076
-      },
       {
         "t": "2026-11-12 00:00",
         "v": 3.333
@@ -2579,6 +2392,198 @@
       {
         "t": "2026-11-12 23:30",
         "v": 2.475
+      },
+      {
+        "t": "2026-11-13 00:00",
+        "v": 2.806
+      },
+      {
+        "t": "2026-11-13 00:30",
+        "v": 3.093
+      },
+      {
+        "t": "2026-11-13 01:00",
+        "v": 3.323
+      },
+      {
+        "t": "2026-11-13 01:30",
+        "v": 3.486
+      },
+      {
+        "t": "2026-11-13 02:00",
+        "v": 3.576
+      },
+      {
+        "t": "2026-11-13 02:30",
+        "v": 3.592
+      },
+      {
+        "t": "2026-11-13 03:00",
+        "v": 3.571
+      },
+      {
+        "t": "2026-11-13 03:30",
+        "v": 3.531
+      },
+      {
+        "t": "2026-11-13 04:00",
+        "v": 3.482
+      },
+      {
+        "t": "2026-11-13 04:30",
+        "v": 3.438
+      },
+      {
+        "t": "2026-11-13 05:00",
+        "v": 3.411
+      },
+      {
+        "t": "2026-11-13 05:30",
+        "v": 3.41
+      },
+      {
+        "t": "2026-11-13 06:00",
+        "v": 3.455
+      },
+      {
+        "t": "2026-11-13 06:30",
+        "v": 3.549
+      },
+      {
+        "t": "2026-11-13 07:00",
+        "v": 3.686
+      },
+      {
+        "t": "2026-11-13 07:30",
+        "v": 3.857
+      },
+      {
+        "t": "2026-11-13 08:00",
+        "v": 4.051
+      },
+      {
+        "t": "2026-11-13 08:30",
+        "v": 4.256
+      },
+      {
+        "t": "2026-11-13 09:00",
+        "v": 4.457
+      },
+      {
+        "t": "2026-11-13 09:30",
+        "v": 4.643
+      },
+      {
+        "t": "2026-11-13 10:00",
+        "v": 4.8
+      },
+      {
+        "t": "2026-11-13 10:30",
+        "v": 4.92
+      },
+      {
+        "t": "2026-11-13 11:00",
+        "v": 4.993
+      },
+      {
+        "t": "2026-11-13 11:30",
+        "v": 5.016
+      },
+      {
+        "t": "2026-11-13 12:00",
+        "v": 4.961
+      },
+      {
+        "t": "2026-11-13 12:30",
+        "v": 4.81
+      },
+      {
+        "t": "2026-11-13 13:00",
+        "v": 4.57
+      },
+      {
+        "t": "2026-11-13 13:30",
+        "v": 4.249
+      },
+      {
+        "t": "2026-11-13 14:00",
+        "v": 3.861
+      },
+      {
+        "t": "2026-11-13 14:30",
+        "v": 3.421
+      },
+      {
+        "t": "2026-11-13 15:00",
+        "v": 2.945
+      },
+      {
+        "t": "2026-11-13 15:30",
+        "v": 2.453
+      },
+      {
+        "t": "2026-11-13 16:00",
+        "v": 1.963
+      },
+      {
+        "t": "2026-11-13 16:30",
+        "v": 1.495
+      },
+      {
+        "t": "2026-11-13 17:00",
+        "v": 1.067
+      },
+      {
+        "t": "2026-11-13 17:30",
+        "v": 0.696
+      },
+      {
+        "t": "2026-11-13 18:00",
+        "v": 0.396
+      },
+      {
+        "t": "2026-11-13 18:30",
+        "v": 0.179
+      },
+      {
+        "t": "2026-11-13 19:00",
+        "v": 0.053
+      },
+      {
+        "t": "2026-11-13 19:30",
+        "v": 0.023
+      },
+      {
+        "t": "2026-11-13 20:00",
+        "v": 0.072
+      },
+      {
+        "t": "2026-11-13 20:30",
+        "v": 0.187
+      },
+      {
+        "t": "2026-11-13 21:00",
+        "v": 0.366
+      },
+      {
+        "t": "2026-11-13 21:30",
+        "v": 0.6
+      },
+      {
+        "t": "2026-11-13 22:00",
+        "v": 0.881
+      },
+      {
+        "t": "2026-11-13 22:30",
+        "v": 1.199
+      },
+      {
+        "t": "2026-11-13 23:00",
+        "v": 1.54
+      },
+      {
+        "t": "2026-11-13 23:30",
+        "v": 1.891
       }
     ]
   },
@@ -2632,5 +2637,5 @@
       "grid_y": 66
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
