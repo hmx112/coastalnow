@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "ocracoke",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-13T20:56:08+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-13T20:56:08+00:00",
+  "generated_at_utc": "2026-11-13T23:49:36+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-13T23:49:36+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -28,10 +28,10 @@
     ]
   },
   "tomorrow": {
-    "status": "Unavailable",
+    "status": "NOT RECOMMENDED",
     "score": null,
     "rating": null,
-    "confidence": "Unavailable",
+    "confidence": "Medium",
     "best_window": null,
     "ranking_eligible": false,
     "reasons": [
@@ -44,82 +44,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-11-13T15:00:00-05:00",
-        "components": {
-          "tide": 84.1,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 64.5,
-          "water_temperature": null
-        },
-        "raw_quality_score": 85.5,
-        "final_score": 85.5,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-11-13T16:00:00-05:00",
-        "components": {
-          "tide": 55.0,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 64.5,
-          "water_temperature": null
-        },
-        "raw_quality_score": 78.2,
-        "final_score": 78.2,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
-      {
-        "time": "2026-11-13T17:00:00-05:00",
-        "components": {
-          "tide": 16.6,
-          "wind": 80,
-          "wave": 100,
-          "weather": 100,
-          "time_of_day": 100,
-          "solunar": 64.5,
-          "water_temperature": null
-        },
-        "raw_quality_score": 66.7,
-        "final_score": 66.7,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state"
-        ]
-      },
       {
         "time": "2026-11-13T18:00:00-05:00",
         "components": {
@@ -286,18 +210,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 80.5,
-        "final_score": 80.5,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "manageable-sea-state",
-          "worsening-wind"
+          "worsening-wind",
+          "small-craft-advisory"
         ]
       },
       {
@@ -312,18 +237,19 @@
           "water_temperature": null
         },
         "raw_quality_score": 82.3,
-        "final_score": 82.3,
-        "hard_stop": false,
-        "safety_status": "normal",
+        "final_score": null,
+        "hard_stop": true,
+        "safety_status": "NOT RECOMMENDED",
         "safety_cap": 100.0,
         "safety_penalty": 0,
         "confidence": "Medium",
         "available": true,
-        "ranking_eligible": true,
+        "ranking_eligible": false,
         "reasons": [
           "favorable-tide-movement",
           "manageable-sea-state",
-          "worsening-wind"
+          "worsening-wind",
+          "small-craft-advisory"
         ]
       },
       {
