@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "san-francisco",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-13T11:15:34+00:00",
+  "generated_at_utc": "2026-11-13T13:10:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T11:15:34+00:00"
+      "fetched_at_utc": "2026-11-13T13:10:16+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T11:15:34+00:00"
+      "fetched_at_utc": "2026-11-13T13:10:16+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T11:15:34+00:00"
+      "fetched_at_utc": "2026-11-13T13:10:16+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-12T21:28:59+00:00"
+      "fetched_at_utc": "2026-11-13T13:09:45+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-13T11:15:34+00:00"
+      "fetched_at_utc": "2026-11-13T13:10:16+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-13T03:00:00-08:00",
-      "wind_mph": 22.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 19.0,
-      "air_temperature_f": 62.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Light Rain"
-    },
-    {
-      "time": "2026-11-13T04:00:00-08:00",
-      "wind_mph": 21.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 11.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-13T05:00:00-08:00",
       "wind_mph": 23.0,
@@ -1902,68 +1878,92 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-19T15:00:00-08:00",
+      "wind_mph": 13.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 32.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-19T16:00:00-08:00",
+      "wind_mph": 12.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 22.0,
+      "air_temperature_f": 57.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdad9736fd52c00007a734100826b65a2f4993b4.001.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f44cdf38b306227a23905cf0f5ed5f8d4854fc84.001.3",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-12T14:58:00-08:00",
+        "effective": "2026-11-13T03:44:00-08:00",
         "onset": "2026-11-14T00:00:00-08:00",
-        "expires": "2026-11-13T03:00:00-08:00",
+        "expires": "2026-11-13T16:00:00-08:00",
         "ends": "2026-11-14T18:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 12 at 2:58PM PST until November 14 at 6:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\nFriday. For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the second Coastal Flood Advisory, from\nmidnight Friday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49\nPM Friday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
+        "headline": "Coastal Flood Advisory issued November 13 at 3:44AM PST until November 14 at 6:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\ntoday. For the Beach Hazards Statement, through this afternoon.\nFor the High Surf Warning, from 6 PM today to 4 AM PST Sunday.\nFor the second Coastal Flood Advisory, from midnight tonight to\n6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49 PM\ntoday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdad9736fd52c00007a734100826b65a2f4993b4.001.2",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-12T14:58:00-08:00",
-        "onset": "2026-11-12T14:58:00-08:00",
-        "expires": "2026-11-13T03:00:00-08:00",
-        "ends": "2026-11-13T16:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 12 at 2:58PM PST until November 13 at 4:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\nFriday. For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the second Coastal Flood Advisory, from\nmidnight Friday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49\nPM Friday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdad9736fd52c00007a734100826b65a2f4993b4.001.4",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-12T14:58:00-08:00",
-        "onset": "2026-11-12T14:58:00-08:00",
-        "expires": "2026-11-13T03:00:00-08:00",
-        "ends": "2026-11-13T18:00:00-08:00",
-        "headline": "Beach Hazards Statement issued November 12 at 2:58PM PST until November 13 at 6:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\nFriday. For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the second Coastal Flood Advisory, from\nmidnight Friday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49\nPM Friday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdad9736fd52c00007a734100826b65a2f4993b4.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f44cdf38b306227a23905cf0f5ed5f8d4854fc84.001.1",
         "event": "High Surf Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-12T14:58:00-08:00",
+        "effective": "2026-11-13T03:44:00-08:00",
         "onset": "2026-11-13T18:00:00-08:00",
-        "expires": "2026-11-13T03:00:00-08:00",
+        "expires": "2026-11-13T16:00:00-08:00",
         "ends": "2026-11-15T04:00:00-08:00",
-        "headline": "High Surf Warning issued November 12 at 2:58PM PST until November 15 at 4:00AM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\nFriday. For the Beach Hazards Statement, through Friday\nafternoon. For the High Surf Warning, from 6 PM Friday to 4 AM\nPST Sunday. For the second Coastal Flood Advisory, from\nmidnight Friday night to 6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49\nPM Friday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
+        "headline": "High Surf Warning issued November 13 at 3:44AM PST until November 15 at 4:00AM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\ntoday. For the Beach Hazards Statement, through this afternoon.\nFor the High Surf Warning, from 6 PM today to 4 AM PST Sunday.\nFor the second Coastal Flood Advisory, from midnight tonight to\n6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49 PM\ntoday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
+        "sender_name": "NWS San Francisco CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f44cdf38b306227a23905cf0f5ed5f8d4854fc84.001.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-13T03:44:00-08:00",
+        "onset": "2026-11-13T03:44:00-08:00",
+        "expires": "2026-11-13T16:00:00-08:00",
+        "ends": "2026-11-13T16:00:00-08:00",
+        "headline": "Coastal Flood Advisory issued November 13 at 3:44AM PST until November 13 at 4:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\ntoday. For the Beach Hazards Statement, through this afternoon.\nFor the High Surf Warning, from 6 PM today to 4 AM PST Sunday.\nFor the second Coastal Flood Advisory, from midnight tonight to\n6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49 PM\ntoday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
+        "sender_name": "NWS San Francisco CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f44cdf38b306227a23905cf0f5ed5f8d4854fc84.001.4",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-13T03:44:00-08:00",
+        "onset": "2026-11-13T03:44:00-08:00",
+        "expires": "2026-11-13T16:00:00-08:00",
+        "ends": "2026-11-13T18:00:00-08:00",
+        "headline": "Beach Hazards Statement issued November 13 at 3:44AM PST until November 13 at 6:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the first Coastal Flood Advisory, Up to 1.5 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 15 to 20 ft expected. For the\nHigh Surf Warning, Dangerously large breaking waves of 25 to\n35 ft, with occasional sets of 40 to 50 ft at favored\nbreakpoints. For the second Coastal Flood Advisory, large\nbreaking waves will run up beaches and crash over seawalls,\ninundating adjacent, low-lying infrastructure.\n\n* WHERE...San Francisco and Southern Monterey Bay and Big Sur\nCoast.\n\n* WHEN...For the first Coastal Flood Advisory, until 4 PM PST\ntoday. For the Beach Hazards Statement, through this afternoon.\nFor the High Surf Warning, from 6 PM today to 4 AM PST Sunday.\nFor the second Coastal Flood Advisory, from midnight tonight to\n6 PM PST Saturday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning. Waves can sweep across the\nshoreline without warning, pulling people into the sea from\nbeaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tide gauge, high tide\nis expected to be: 1.5 ft above normal (7.3 ft MLLW) at 12:49 PM\ntoday 11/13. These predictions include up to 1.8 ft of surge\nthat will enhance the astronomical tide and flooding threat.\nHigh tide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.\nThe Coastal Flood Advisory on Saturday is specifically for the\nPacific Coast, where large breaking waves will spill over sea\nwalls and run up beaches onto adjacent infrastructure.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
       },
@@ -2028,32 +2028,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-11-12",
-      "end": "2026-11-18"
+      "start": "2026-11-13",
+      "end": "2026-11-19"
     },
-    "generated_at_utc": "2026-11-12T21:28:59+00:00",
-    "generated_at_local": "2026-11-12T13:28:59-08:00",
+    "generated_at_utc": "2026-11-13T13:09:45+00:00",
+    "generated_at_local": "2026-11-13T05:09:45-08:00",
     "hilo": [
-      {
-        "t": "2026-11-12 02:15",
-        "v": 4.553,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-12 06:21",
-        "v": 3.48,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-12 12:10",
-        "v": 5.736,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-12 19:17",
-        "v": -0.286,
-        "type": "L"
-      },
       {
         "t": "2026-11-13 03:04",
         "v": 4.456,
@@ -2188,201 +2168,29 @@
         "t": "2026-11-19 19:20",
         "v": 4.113,
         "type": "H"
+      },
+      {
+        "t": "2026-11-20 00:57",
+        "v": 1.348,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-20 07:45",
+        "v": 5.639,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-20 14:13",
+        "v": 0.918,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-20 20:31",
+        "v": 4.248,
+        "type": "H"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-12 00:00",
-        "v": 3.605
-      },
-      {
-        "t": "2026-11-12 00:30",
-        "v": 3.965
-      },
-      {
-        "t": "2026-11-12 01:00",
-        "v": 4.25
-      },
-      {
-        "t": "2026-11-12 01:30",
-        "v": 4.445
-      },
-      {
-        "t": "2026-11-12 02:00",
-        "v": 4.541
-      },
-      {
-        "t": "2026-11-12 02:30",
-        "v": 4.542
-      },
-      {
-        "t": "2026-11-12 03:00",
-        "v": 4.458
-      },
-      {
-        "t": "2026-11-12 03:30",
-        "v": 4.309
-      },
-      {
-        "t": "2026-11-12 04:00",
-        "v": 4.119
-      },
-      {
-        "t": "2026-11-12 04:30",
-        "v": 3.916
-      },
-      {
-        "t": "2026-11-12 05:00",
-        "v": 3.729
-      },
-      {
-        "t": "2026-11-12 05:30",
-        "v": 3.583
-      },
-      {
-        "t": "2026-11-12 06:00",
-        "v": 3.498
-      },
-      {
-        "t": "2026-11-12 06:30",
-        "v": 3.483
-      },
-      {
-        "t": "2026-11-12 07:00",
-        "v": 3.541
-      },
-      {
-        "t": "2026-11-12 07:30",
-        "v": 3.666
-      },
-      {
-        "t": "2026-11-12 08:00",
-        "v": 3.853
-      },
-      {
-        "t": "2026-11-12 08:30",
-        "v": 4.094
-      },
-      {
-        "t": "2026-11-12 09:00",
-        "v": 4.375
-      },
-      {
-        "t": "2026-11-12 09:30",
-        "v": 4.678
-      },
-      {
-        "t": "2026-11-12 10:00",
-        "v": 4.98
-      },
-      {
-        "t": "2026-11-12 10:30",
-        "v": 5.257
-      },
-      {
-        "t": "2026-11-12 11:00",
-        "v": 5.486
-      },
-      {
-        "t": "2026-11-12 11:30",
-        "v": 5.65
-      },
-      {
-        "t": "2026-11-12 12:00",
-        "v": 5.731
-      },
-      {
-        "t": "2026-11-12 12:30",
-        "v": 5.712
-      },
-      {
-        "t": "2026-11-12 13:00",
-        "v": 5.579
-      },
-      {
-        "t": "2026-11-12 13:30",
-        "v": 5.318
-      },
-      {
-        "t": "2026-11-12 14:00",
-        "v": 4.927
-      },
-      {
-        "t": "2026-11-12 14:30",
-        "v": 4.415
-      },
-      {
-        "t": "2026-11-12 15:00",
-        "v": 3.805
-      },
-      {
-        "t": "2026-11-12 15:30",
-        "v": 3.13
-      },
-      {
-        "t": "2026-11-12 16:00",
-        "v": 2.428
-      },
-      {
-        "t": "2026-11-12 16:30",
-        "v": 1.74
-      },
-      {
-        "t": "2026-11-12 17:00",
-        "v": 1.109
-      },
-      {
-        "t": "2026-11-12 17:30",
-        "v": 0.571
-      },
-      {
-        "t": "2026-11-12 18:00",
-        "v": 0.154
-      },
-      {
-        "t": "2026-11-12 18:30",
-        "v": -0.126
-      },
-      {
-        "t": "2026-11-12 19:00",
-        "v": -0.266
-      },
-      {
-        "t": "2026-11-12 19:30",
-        "v": -0.273
-      },
-      {
-        "t": "2026-11-12 20:00",
-        "v": -0.161
-      },
-      {
-        "t": "2026-11-12 20:30",
-        "v": 0.055
-      },
-      {
-        "t": "2026-11-12 21:00",
-        "v": 0.36
-      },
-      {
-        "t": "2026-11-12 21:30",
-        "v": 0.736
-      },
-      {
-        "t": "2026-11-12 22:00",
-        "v": 1.162
-      },
-      {
-        "t": "2026-11-12 22:30",
-        "v": 1.616
-      },
-      {
-        "t": "2026-11-12 23:00",
-        "v": 2.078
-      },
-      {
-        "t": "2026-11-12 23:30",
-        "v": 2.532
-      },
       {
         "t": "2026-11-13 00:00",
         "v": 2.968
@@ -2574,6 +2382,198 @@
       {
         "t": "2026-11-13 23:30",
         "v": 1.898
+      },
+      {
+        "t": "2026-11-14 00:00",
+        "v": 2.331
+      },
+      {
+        "t": "2026-11-14 00:30",
+        "v": 2.752
+      },
+      {
+        "t": "2026-11-14 01:00",
+        "v": 3.148
+      },
+      {
+        "t": "2026-11-14 01:30",
+        "v": 3.511
+      },
+      {
+        "t": "2026-11-14 02:00",
+        "v": 3.827
+      },
+      {
+        "t": "2026-11-14 02:30",
+        "v": 4.081
+      },
+      {
+        "t": "2026-11-14 03:00",
+        "v": 4.262
+      },
+      {
+        "t": "2026-11-14 03:30",
+        "v": 4.364
+      },
+      {
+        "t": "2026-11-14 04:00",
+        "v": 4.39
+      },
+      {
+        "t": "2026-11-14 04:30",
+        "v": 4.349
+      },
+      {
+        "t": "2026-11-14 05:00",
+        "v": 4.256
+      },
+      {
+        "t": "2026-11-14 05:30",
+        "v": 4.129
+      },
+      {
+        "t": "2026-11-14 06:00",
+        "v": 3.988
+      },
+      {
+        "t": "2026-11-14 06:30",
+        "v": 3.853
+      },
+      {
+        "t": "2026-11-14 07:00",
+        "v": 3.742
+      },
+      {
+        "t": "2026-11-14 07:30",
+        "v": 3.67
+      },
+      {
+        "t": "2026-11-14 08:00",
+        "v": 3.644
+      },
+      {
+        "t": "2026-11-14 08:30",
+        "v": 3.665
+      },
+      {
+        "t": "2026-11-14 09:00",
+        "v": 3.734
+      },
+      {
+        "t": "2026-11-14 09:30",
+        "v": 3.847
+      },
+      {
+        "t": "2026-11-14 10:00",
+        "v": 4.003
+      },
+      {
+        "t": "2026-11-14 10:30",
+        "v": 4.195
+      },
+      {
+        "t": "2026-11-14 11:00",
+        "v": 4.413
+      },
+      {
+        "t": "2026-11-14 11:30",
+        "v": 4.639
+      },
+      {
+        "t": "2026-11-14 12:00",
+        "v": 4.851
+      },
+      {
+        "t": "2026-11-14 12:30",
+        "v": 5.026
+      },
+      {
+        "t": "2026-11-14 13:00",
+        "v": 5.148
+      },
+      {
+        "t": "2026-11-14 13:30",
+        "v": 5.2
+      },
+      {
+        "t": "2026-11-14 14:00",
+        "v": 5.168
+      },
+      {
+        "t": "2026-11-14 14:30",
+        "v": 5.041
+      },
+      {
+        "t": "2026-11-14 15:00",
+        "v": 4.808
+      },
+      {
+        "t": "2026-11-14 15:30",
+        "v": 4.467
+      },
+      {
+        "t": "2026-11-14 16:00",
+        "v": 4.027
+      },
+      {
+        "t": "2026-11-14 16:30",
+        "v": 3.509
+      },
+      {
+        "t": "2026-11-14 17:00",
+        "v": 2.941
+      },
+      {
+        "t": "2026-11-14 17:30",
+        "v": 2.355
+      },
+      {
+        "t": "2026-11-14 18:00",
+        "v": 1.786
+      },
+      {
+        "t": "2026-11-14 18:30",
+        "v": 1.266
+      },
+      {
+        "t": "2026-11-14 19:00",
+        "v": 0.822
+      },
+      {
+        "t": "2026-11-14 19:30",
+        "v": 0.478
+      },
+      {
+        "t": "2026-11-14 20:00",
+        "v": 0.245
+      },
+      {
+        "t": "2026-11-14 20:30",
+        "v": 0.127
+      },
+      {
+        "t": "2026-11-14 21:00",
+        "v": 0.117
+      },
+      {
+        "t": "2026-11-14 21:30",
+        "v": 0.205
+      },
+      {
+        "t": "2026-11-14 22:00",
+        "v": 0.381
+      },
+      {
+        "t": "2026-11-14 22:30",
+        "v": 0.635
+      },
+      {
+        "t": "2026-11-14 23:00",
+        "v": 0.954
+      },
+      {
+        "t": "2026-11-14 23:30",
+        "v": 1.325
       }
     ]
   },
