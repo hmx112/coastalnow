@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "long-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-13T19:54:17+00:00",
+  "generated_at_utc": "2026-11-13T20:57:13+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T19:54:17+00:00"
+      "fetched_at_utc": "2026-11-13T20:57:13+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T19:54:17+00:00"
+      "fetched_at_utc": "2026-11-13T20:57:13+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T19:54:17+00:00"
+      "fetched_at_utc": "2026-11-13T20:57:13+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-13T13:09:49+00:00"
+      "fetched_at_utc": "2026-11-13T20:55:19+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-13T19:54:17+00:00"
+      "fetched_at_utc": "2026-11-13T20:57:13+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-13T11:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 44.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Light Rain"
-    },
     {
       "time": "2026-11-13T12:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,39 +1890,51 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-11-19T23:00:00-08:00",
+      "wind_mph": 20.0,
+      "gust_mph": 26.468,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 16.0,
+      "air_temperature_f": 56.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.082b3f827ff558b13bbd93ae6bc34fa52dcdb8b2.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.675a494808a43fed225a9a9482bf4a210fafc816.001.3",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-13T08:12:00-08:00",
-        "onset": "2026-11-13T14:00:00-08:00",
-        "expires": "2026-11-13T14:00:00-08:00",
+        "effective": "2026-11-13T12:05:00-08:00",
+        "onset": "2026-11-13T12:05:00-08:00",
+        "expires": "2026-11-13T22:00:00-08:00",
         "ends": "2026-11-17T15:00:00-08:00",
-        "headline": "High Surf Advisory issued November 13 at 8:12AM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand breaking waves due to elevated surf. For the High Surf\nAdvisory, large breaking waves of 4 to 7 feet Friday,\nincreasing to 7 to 12 feet Saturday. Surf heights are expected\nto decrease to 6 to 9 feet Sunday through Tuesday.\n\n* WHERE...Malibu Coast and Los Angeles County Beaches.\n\n* WHEN...For the Beach Hazards Statement, until 2 PM PST this\nafternoon. For the High Surf Advisory, from 2 PM this\nafternoon to 3 PM PST Tuesday.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore.\n\n* ADDITIONAL DETAILS...A series of significant west-\nnorthwesterly swells are expected to produce large surf into\nnext week with highest surf and greatest impacts likely\npeaking Saturday and potentially again Monday. There is\npotential for moderate coastal flooding impacts at times,\nespecially Saturday. Some of these impacts may be moderate to\nsignificant beach erosion and shallow flooding of normal dry\nbeaches and walkways.",
-        "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.\n\nRemain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
+        "headline": "High Surf Advisory issued November 13 at 12:05PM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 5 to\n8 feet today, increasing to 8 to 12 feet Saturday. Surf heights\nare expected to decrease to 5 to 9 feet Sunday through Tuesday.\nDangerous rip currents expected. For the Coastal Flood\nAdvisory, minor to moderate coastal flooding expected.\n\n* WHERE...Malibu Coast and Los Angeles County Beaches. Surf will\nwe highest for west-northwest facing beaches.\n\n* WHEN...For the High Surf Advisory, until 3 PM PST Tuesday. For\nthe Coastal Flood Advisory, from 4 AM to 4 PM PST Saturday.\n\n* IMPACTS...Moderate flooding of sea water is likely over some\nvulnerable low-lying coastal areas that are normally dry,\nespecially around the time of high tide, including over beach\nparking lots, bike paths, and harbor walkways. Moderate to\nsignificant beach erosion is likely. Isolated damage is unlikely\nbut possible. There is an increased risk for ocean drowning.\nRip currents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore.\n\n* ADDITIONAL DETAILS...A series of significant west- northwesterly\nswells are expected to produce large surf into next week with\nhighest surf and greatest impacts likely peaking Saturday and\npotentially again Monday. Minor to moderate coastal flooding\nimpacts are possible, especially when largest surf overlaps\nwith peak high tides. Some of these impacts may be moderate to\nsignificant beach erosion and shallow flooding of normally dry\nbeaches and walkways.",
+        "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.\n\nRemain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.082b3f827ff558b13bbd93ae6bc34fa52dcdb8b2.002.2",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.675a494808a43fed225a9a9482bf4a210fafc816.001.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-13T08:12:00-08:00",
-        "onset": "2026-11-13T08:12:00-08:00",
-        "expires": "2026-11-13T14:00:00-08:00",
-        "ends": "2026-11-13T14:00:00-08:00",
-        "headline": "Beach Hazards Statement issued November 13 at 8:12AM PST until November 13 at 2:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Beach Hazards Statement, dangerous rip currents\nand breaking waves due to elevated surf. For the High Surf\nAdvisory, large breaking waves of 4 to 7 feet Friday,\nincreasing to 7 to 12 feet Saturday. Surf heights are expected\nto decrease to 6 to 9 feet Sunday through Tuesday.\n\n* WHERE...Malibu Coast and Los Angeles County Beaches.\n\n* WHEN...For the Beach Hazards Statement, until 2 PM PST this\nafternoon. For the High Surf Advisory, from 2 PM this\nafternoon to 3 PM PST Tuesday.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore.\n\n* ADDITIONAL DETAILS...A series of significant west-\nnorthwesterly swells are expected to produce large surf into\nnext week with highest surf and greatest impacts likely\npeaking Saturday and potentially again Monday. There is\npotential for moderate coastal flooding impacts at times,\nespecially Saturday. Some of these impacts may be moderate to\nsignificant beach erosion and shallow flooding of normal dry\nbeaches and walkways.",
-        "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.\n\nRemain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
+        "effective": "2026-11-13T12:05:00-08:00",
+        "onset": "2026-11-14T04:00:00-08:00",
+        "expires": "2026-11-13T22:00:00-08:00",
+        "ends": "2026-11-14T16:00:00-08:00",
+        "headline": "Coastal Flood Advisory issued November 13 at 12:05PM PST until November 14 at 4:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 5 to\n8 feet today, increasing to 8 to 12 feet Saturday. Surf heights\nare expected to decrease to 5 to 9 feet Sunday through Tuesday.\nDangerous rip currents expected. For the Coastal Flood\nAdvisory, minor to moderate coastal flooding expected.\n\n* WHERE...Malibu Coast and Los Angeles County Beaches. Surf will\nwe highest for west-northwest facing beaches.\n\n* WHEN...For the High Surf Advisory, until 3 PM PST Tuesday. For\nthe Coastal Flood Advisory, from 4 AM to 4 PM PST Saturday.\n\n* IMPACTS...Moderate flooding of sea water is likely over some\nvulnerable low-lying coastal areas that are normally dry,\nespecially around the time of high tide, including over beach\nparking lots, bike paths, and harbor walkways. Moderate to\nsignificant beach erosion is likely. Isolated damage is unlikely\nbut possible. There is an increased risk for ocean drowning.\nRip currents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore.\n\n* ADDITIONAL DETAILS...A series of significant west- northwesterly\nswells are expected to produce large surf into next week with\nhighest surf and greatest impacts likely peaking Saturday and\npotentially again Monday. Minor to moderate coastal flooding\nimpacts are possible, especially when largest surf overlaps\nwith peak high tides. Some of these impacts may be moderate to\nsignificant beach erosion and shallow flooding of normally dry\nbeaches and walkways.",
+        "instruction": "Take the necessary actions to protect flood-prone property. Do\nNOT drive around barricades or through water of unknown depth.\n\nRemain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -1971,8 +1971,8 @@
       "start": "2026-11-13",
       "end": "2026-11-19"
     },
-    "generated_at_utc": "2026-11-13T13:09:49+00:00",
-    "generated_at_local": "2026-11-13T05:09:49-08:00",
+    "generated_at_utc": "2026-11-13T20:55:19+00:00",
+    "generated_at_local": "2026-11-13T12:55:19-08:00",
     "hilo": [
       {
         "t": "2026-11-13 00:34",
