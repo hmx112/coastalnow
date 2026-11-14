@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "malibu",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-14T19:26:34+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-14T19:26:34+00:00",
+  "generated_at_utc": "2026-11-14T22:35:55+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-14T22:35:55+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,14 +12,21 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "NOT RECOMMENDED",
-    "score": null,
-    "rating": null,
+    "status": "normal",
+    "score": 69.0,
+    "rating": "Fair",
     "confidence": "High",
-    "best_window": null,
-    "ranking_eligible": false,
+    "best_window": {
+      "start": "2026-11-14T14:00:00-08:00",
+      "end": "2026-11-14T17:00:00-08:00"
+    },
+    "ranking_eligible": true,
     "reasons": [
-      "small-craft-advisory"
+      "favorable-tide-movement",
+      "light-wind",
+      "manageable-sea-state",
+      "wave-exposure-cap-69",
+      "long-period-swell"
     ]
   },
   "tomorrow": {
@@ -41,86 +48,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-11-14T11:00:00-08:00",
-        "components": {
-          "tide": 4.4,
-          "wind": 100,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 61.2,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 62.9,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory",
-          "wave-exposure-cap-69"
-        ]
-      },
-      {
-        "time": "2026-11-14T12:00:00-08:00",
-        "components": {
-          "tide": 40.9,
-          "wind": 100,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 61.2,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 73.8,
-        "final_score": null,
-        "hard_stop": true,
-        "safety_status": "NOT RECOMMENDED",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": false,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "small-craft-advisory",
-          "wave-exposure-cap-69"
-        ]
-      },
-      {
-        "time": "2026-11-14T13:00:00-08:00",
-        "components": {
-          "tide": 71.7,
-          "wind": 100,
-          "wave": 75,
-          "weather": 100,
-          "time_of_day": 85,
-          "solunar": 61.2,
-          "water_temperature": 75
-        },
-        "raw_quality_score": 83.1,
-        "final_score": 69.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "High",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wave-exposure-cap-69"
-        ]
-      },
       {
         "time": "2026-11-14T14:00:00-08:00",
         "components": {
