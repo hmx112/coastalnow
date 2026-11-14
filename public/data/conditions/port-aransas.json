@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "port-aransas",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-14T23:19:52+00:00",
+  "generated_at_utc": "2026-11-14T23:59:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-14T23:19:52+00:00"
+      "fetched_at_utc": "2026-11-14T23:59:33+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-14T22:37:41+00:00"
+      "fetched_at_utc": "2026-11-14T23:59:33+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-14T22:37:41+00:00"
+      "fetched_at_utc": "2026-11-14T23:59:33+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-14T19:12:57+00:00"
+      "fetched_at_utc": "2026-11-14T23:56:55+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-14T22:37:41+00:00"
+      "fetched_at_utc": "2026-11-14T23:59:33+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-14T16:00:00-06:00",
-      "wind_mph": 17.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 112.5,
-      "precip_probability_pct": 25.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": 71.8,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-11-14T17:00:00-06:00",
       "wind_mph": 17.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": 71.8,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-21T04:00:00-06:00",
+      "wind_mph": 8.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 72.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 71.8,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
@@ -1971,8 +1971,8 @@
       "start": "2026-11-14",
       "end": "2026-11-20"
     },
-    "generated_at_utc": "2026-11-14T19:12:57+00:00",
-    "generated_at_local": "2026-11-14T13:12:57-06:00",
+    "generated_at_utc": "2026-11-14T23:56:55+00:00",
+    "generated_at_local": "2026-11-14T17:56:55-06:00",
     "hilo": [
       {
         "t": "2026-11-14 11:56",
@@ -2522,5 +2522,5 @@
       "grid_y": 34
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
