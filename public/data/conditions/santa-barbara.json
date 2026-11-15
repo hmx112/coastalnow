@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-barbara",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-15T16:28:49+00:00",
+  "generated_at_utc": "2026-11-15T17:57:31+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T16:28:49+00:00"
+      "fetched_at_utc": "2026-11-15T17:57:31+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.221877d2e421b640073e3ba926f9f4859647ab10.005.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-15T09:17:00-08:00",
+        "onset": "2026-11-15T09:17:00-08:00",
+        "expires": "2026-11-15T17:30:00-08:00",
+        "ends": "2026-11-16T03:00:00-08:00",
+        "headline": "Small Craft Advisory issued November 15 at 9:17AM PST until November 16 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Hazardous sea conditions.\n\n* WHERE...East Santa Barbara Channel from Pt. Conception to Pt.\nMugu CA including Santa Cruz Island.\n\n* WHEN...Until 3 AM PST Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
+        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.32e48699a7d443f5de289b44a803c42b7c106434.001.1",
         "event": "Marine Weather Statement",
         "severity": "Minor",
@@ -1920,21 +1935,6 @@
         "headline": "Marine Weather Statement issued November 15 at 3:26AM PST by NWS Los Angeles/Oxnard CA",
         "description": "A large west to northwesterly swell will continue to produce\nbreaking waves at the Morro Bay and Ventura Harbor entrances\nthrough at least this afternoon. These conditions have a history\nof capsizing vessels of various sizes resulting in serious injury\nor death, even to the most experienced mariners. Mariners are\nurged to stay clear of these harbor entrances. For more\ninformation, contact the local harbor patrol or coast guard\nstation and continue to monitor NOAA Weather Radio for the latest\nweather information.",
         "instruction": "",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6eab8cff8e9048d1de1475c0ecee0ccf14cfba50.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-14T20:19:00-08:00",
-        "onset": "2026-11-14T20:19:00-08:00",
-        "expires": "2026-11-15T04:30:00-08:00",
-        "ends": "2026-11-16T03:00:00-08:00",
-        "headline": "Small Craft Advisory issued November 14 at 8:19PM PST until November 16 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Hazardous sea conditions.\n\n* WHERE...East Santa Barbara Channel from Pt. Conception to Pt.\nMugu CA including Santa Cruz Island.\n\n* WHEN...Until 3 AM PST Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -2557,5 +2557,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
