@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "seal-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-15T23:07:36+00:00",
+  "generated_at_utc": "2026-11-16T00:02:07+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:07:36+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:07+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:01:08+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:07+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:01:08+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:07+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T19:47:57+00:00"
+      "fetched_at_utc": "2026-11-15T23:59:01+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-15T23:01:08+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:07+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-15T15:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-15T16:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-22T03:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 11.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
@@ -1956,8 +1956,8 @@
       "start": "2026-11-15",
       "end": "2026-11-21"
     },
-    "generated_at_utc": "2026-11-15T19:47:57+00:00",
-    "generated_at_local": "2026-11-15T11:47:56-08:00",
+    "generated_at_utc": "2026-11-15T23:59:01+00:00",
+    "generated_at_local": "2026-11-15T15:59:01-08:00",
     "hilo": [
       {
         "t": "2026-11-15 11:41",
@@ -2542,5 +2542,5 @@
       "grid_y": 29
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

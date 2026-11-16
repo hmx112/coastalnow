@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-15T23:07:32+00:00",
+  "generated_at_utc": "2026-11-16T00:02:00+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:07:32+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:00+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:00:55+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:00+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T23:00:55+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:00+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-15T19:47:56+00:00"
+      "fetched_at_utc": "2026-11-15T23:59:00+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-15T23:00:55+00:00"
+      "fetched_at_utc": "2026-11-16T00:02:00+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-15T15:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 16.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
     {
       "time": "2026-11-15T16:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-22T03:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 10.0,
+      "air_temperature_f": 54.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d4174fe930e84d0785b48b165ea6dd46478e740f.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a32cf3713c07638377c4bc50ae0bd5c2fe58b562.002.1",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-15T11:44:00-08:00",
-        "onset": "2026-11-15T11:44:00-08:00",
-        "expires": "2026-11-15T16:00:00-08:00",
+        "effective": "2026-11-15T15:55:00-08:00",
+        "onset": "2026-11-15T15:55:00-08:00",
+        "expires": "2026-11-16T09:00:00-08:00",
         "ends": "2026-11-17T15:00:00-08:00",
-        "headline": "High Surf Advisory issued November 15 at 11:44AM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Large breaking waves of 7 to 12 feet. Occasional larger\nsets may occur near Ventura Harbor. Dangerous rip currents\nexpected.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until 3 PM PST Tuesday.\n\n* IMPACTS...There is an increased risk for ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore. Minor tidal overflow\nduring morning high tides.\n\n* ADDITIONAL DETAILS...A series of significant west-northwesterly\nswells are expected to produce large surf this week with\nhighest surf and greatest impacts potentially peaking again\nMonday, Wednesday and Thursday. Some of these impacts may be\nmoderate to significant beach erosion and shallow flooding of\nnormally dry beaches and walkways.",
+        "headline": "High Surf Advisory issued November 15 at 3:55PM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Large breaking waves of 6 to 8 feet. Occasional larger\nsets may occur near Ventura Harbor. Dangerous rip currents\nexpected.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until 3 PM PST Tuesday.\n\n* IMPACTS...There is an increased risk for ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore. Minor tidal\noverflow during morning high tides.\n\n* ADDITIONAL DETAILS...A series of significant west-\nnorthwesterly swells are expected to produce large surf this\nweek with highest surf and greatest impacts potentially\npeaking again Monday, Wednesday and Thursday. Some of these\nimpacts may be moderate to significant beach erosion and\nshallow flooding of normally dry beaches and walkways.",
         "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
@@ -1935,21 +1935,6 @@
         "headline": "Small Craft Advisory issued November 15 at 1:30PM PST until November 16 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Hazardous sea conditions.\n\n* WHERE...East Santa Barbara Channel from Pt. Conception to Pt.\nMugu CA including Santa Cruz Island.\n\n* WHEN...Until 3 AM PST Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.32e48699a7d443f5de289b44a803c42b7c106434.001.1",
-        "event": "Marine Weather Statement",
-        "severity": "Minor",
-        "certainty": "Observed",
-        "urgency": "Expected",
-        "effective": "2026-11-15T03:26:00-08:00",
-        "onset": "2026-11-15T03:26:00-08:00",
-        "expires": "2026-11-15T16:00:00-08:00",
-        "ends": null,
-        "headline": "Marine Weather Statement issued November 15 at 3:26AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "A large west to northwesterly swell will continue to produce\nbreaking waves at the Morro Bay and Ventura Harbor entrances\nthrough at least this afternoon. These conditions have a history\nof capsizing vessels of various sizes resulting in serious injury\nor death, even to the most experienced mariners. Mariners are\nurged to stay clear of these harbor entrances. For more\ninformation, contact the local harbor patrol or coast guard\nstation and continue to monitor NOAA Weather Radio for the latest\nweather information.",
-        "instruction": "",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -1986,8 +1971,8 @@
       "start": "2026-11-15",
       "end": "2026-11-21"
     },
-    "generated_at_utc": "2026-11-15T19:47:56+00:00",
-    "generated_at_local": "2026-11-15T11:47:55-08:00",
+    "generated_at_utc": "2026-11-15T23:59:00+00:00",
+    "generated_at_local": "2026-11-15T15:59:00-08:00",
     "hilo": [
       {
         "t": "2026-11-14 10:58",
@@ -2582,5 +2567,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
