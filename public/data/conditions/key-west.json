@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-16T19:43:56+00:00",
+  "generated_at_utc": "2026-11-16T22:28:16+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-16T19:43:56+00:00"
+      "fetched_at_utc": "2026-11-16T22:28:16+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8bfff2447a86a12265108bfd16b627ac184846c3.001.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-16T16:42:00-05:00",
+        "onset": "2026-11-16T16:42:00-05:00",
+        "expires": "2026-11-17T00:45:00-05:00",
+        "ends": "2026-11-17T05:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 16 at 4:42PM EST until November 17 at 5:00AM EST by NWS Key West FL",
+        "description": "* WHAT...Northeast to east winds increasing to near 20 knots, and\nseas building to up to 8 feet in the Straits of Florida.\n\n* WHERE...Straits of Florida, Hawk Channel, Florida Bay, and the\nnearshore Gulf waters.\n\n* WHEN...In Effect.\n\n* IMPACTS...A Small Craft Advisory means that wind speeds of 20\nto 33 knots, or seas of 7 feet or greater, are expected to\nproduce hazardous conditions for small craft. These hazardous\nconditions may result in poor vessel handling and steering\nresponse, broaching, overturned dinghies and kayaks, slips and\nfalls on slippery decks, rub damage along docks and seawalls,\nswamped bows at reef tract mooring balls, and dragging anchors.",
+        "instruction": "Inexperienced boaters, especially those with smaller vessels,\nshould avoid operating in these conditions.",
+        "sender_name": "NWS Key West FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

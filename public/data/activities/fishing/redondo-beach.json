@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "redondo-beach",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-16T19:44:28+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-16T19:44:28+00:00",
+  "generated_at_utc": "2026-11-16T22:28:24+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-16T22:28:24+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,21 +12,21 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 55.1,
-    "rating": "Poor",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-11-16T11:00:00-08:00",
-      "end": "2026-11-16T14:00:00-08:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
       "manageable-sea-state",
       "wet-weather",
-      "wave-exposure-caution"
+      "wave-exposure-caution",
+      "gale-warning",
+      "favorable-tide-movement",
+      "worsening-wind",
+      "wave-exposure-cap-69"
     ]
   },
   "tomorrow": {
@@ -47,88 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-11-16T11:00:00-08:00",
-        "components": {
-          "tide": 96.4,
-          "wind": 100,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 53.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 81.3,
-        "final_score": 73.3,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-16T12:00:00-08:00",
-        "components": {
-          "tide": 64.4,
-          "wind": 100,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 53.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 71.7,
-        "final_score": 63.7,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "wave-exposure-caution"
-        ]
-      },
-      {
-        "time": "2026-11-16T13:00:00-08:00",
-        "components": {
-          "tide": 10.0,
-          "wind": 80,
-          "wave": 75,
-          "weather": 50,
-          "time_of_day": 85,
-          "solunar": 53.4,
-          "water_temperature": null
-        },
-        "raw_quality_score": 51.4,
-        "final_score": 43.4,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 100.0,
-        "safety_penalty": 8.0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "manageable-sea-state",
-          "wet-weather",
-          "wave-exposure-caution"
-        ]
-      },
       {
         "time": "2026-11-16T14:00:00-08:00",
         "components": {
