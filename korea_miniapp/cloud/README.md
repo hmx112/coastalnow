@@ -1,0 +1,34 @@
+# 오늘의 바다 — Cloudflare 캐시 프로토타입 (미배포)
+
+기존 CoastalNow 운영 파일과 무관한 별도 Worker입니다. 3개 지역 × 7일 × 2 API = 42회 요청을 **서버 쪽에서 하루 2회** 호출하고, 확인된 7일 묶음만 KV에 저장합니다. 사용자는 공공데이터포털 인증키를 알 필요 없이 `GET /api/tides?station=incheon|busan|jeju`를 조회합니다. 데이터가 없거나 시작 날짜가 오늘과 다르면 503을 반환합니다.
+
+**현재 상태:** 코드는 별도 실험 브랜치에만 추가했습니다. Cloudflare 리소스 생성, Secrets 등록, 배포 및 실제 호환 검증은 아직 하지 않았습니다. 무료 Workers의 요청/CPU/하위요청 및 KV 한도를 확인해야 합니다. 이 구조가 실서비스의 지속 가동을 보장하지는 않습니다.
+
+## 자체 테스트
+
+```powershell
+cd .\korea_miniapp\cloud
+node --test test_worker.mjs
+```
+
+테스트에는 가짜 공개 API 응답만 사용하며 실제 인증키나 네트워크 요청은 없습니다.
+
+## 배포 전 준비 (별도 Cloudflare 계정 설정 필요)
+
+1. Cloudflare에 **새 KV 네임스페이스** `TIDES_KV` 생성
+2. `wrangler.toml`의 `id`를 새 KV ID로 변경 (기존 프로젝트의 KV나 R2를 사용하지 않음)
+3. 로그인 후 `wrangler secret put KHOA_HIGH_LOW_KEY` / `wrangler secret put KHOA_SERIES_KEY`로 각 인증키를 **서버 Secret**에만 입력 (절대로 GitHub 커밋 금지)
+4. `npx wrangler deploy` 후 테스트 Cron 실행 및 결과 확인
+5. 제공 서비스에서 출처, 관측·예보 구분, 갱신 날짜와 데이터 지연 표시 확인
+6. 정식 운영 승인 및 토스 미니앱 콘솔·SDK 연결
+
+서버 로그에는 인증키·URL·원본 응답값이 남지 않도록 작성했습니다.
+
+### API
+
+- `GET /api/tides?station=incheon` — 해당 지점의 KST 오늘부터 7일 예보 (정상 200 / 만료·장애 503)
+- `GET /health` — 서비스 작동 확인 (성공적인 데이터 갱신을 보증하지 않음)
+
+데이터가 최신인지의 판단은 `date_range.start/end` 기준입니다. 조위 cm는 실제 수심이 아닙니다.
+
+**주의:** Worker가 매번 서로 다른 42개 HTTP 요청을 사용하므로 무료 Workers의 단일 이벤트 하위 요청 제한 50개를 초과하지 않도록 변경 시 반드시 재검토해야 합니다. 분산 KV 캐시는 일관성 지연이 있을 수 있으므로 원자적 교체/복구 가능성은 실제 배포 환경에서도 확인해야 합니다.
