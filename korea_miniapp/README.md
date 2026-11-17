@@ -104,3 +104,13 @@ python .\build_week.py --dry-run
 - 운영 단계 활용승인 및 출처 표기, 토스 WebView SDK 적용
 
 **현 상태:** 7일 수집 코드 + 오프라인 테스트만 추가. GitHub 자동 스케줄과 실제 Cloudflare 배포는 아직 설정하지 않았으며 미국 CoastalNow 운영 변경은 없습니다.
+
+### Windows PowerShell 5.1에서 한글 입력 안내가 깨질 때
+
+Windows PowerShell 5.1은 BOM 없는 UTF-8 `.ps1` 파일을 기본 ANSI 문자셋으로 해석하는 경우가 있습니다. v5.1부터 실행 스크립트 3개를 **UTF-8 BOM**으로 저장했습니다. 기존 v5 파일을 이미 받은 경우에는 `Ctrl+C`로 입력을 중단한 후 해당 폴더의 PowerShell에서 다음 한 줄로 복구할 수도 있습니다.
+
+```powershell
+$p='.\run_week_check.ps1'; [System.IO.File]::WriteAllText((Resolve-Path $p).Path,[System.IO.File]::ReadAllText((Resolve-Path $p).Path,[System.Text.Encoding]::UTF8),[System.Text.UTF8Encoding]::new($true))
+```
+
+그다음 `powershell -NoProfile -ExecutionPolicy Bypass -File .\run_week_check.ps1` 로 재실행합니다. 보안상 API 키는 채팅이나 이미지로 공유하지 않습니다.
