@@ -1,9 +1,10 @@
 """Offline synthetic tests. They do NOT establish live KHOA API compatibility."""
 import unittest
+from unittest.mock import patch
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from pipeline import TideDataError, _items, normalize_day
+from pipeline import TideDataError, _items, normalize_day, fetch_one_day
 
 DAY = date(2026, 11, 17)
 
@@ -35,6 +36,32 @@ class TestKhoaAdapter(unittest.TestCase):
         rows = normalize_day(data, DAY, "series")
         self.assertEqual(len(rows), 48)
         self.assertEqual(rows[-1]["t"], "2026-11-17 23:30")
+
+    def test_distinct_keys_are_routed_to_the_correct_services(self):
+        seen = []
+
+        def fake_fetch(kind, station_id, day, key):
+            seen.append((kind, station_id, key))
+            if kind == "high_low":
+                return envelope([
+                    {"predcDt": "2026-11-17 03:00", "predcTdlvVl": "700", "extrSe": "1"},
+                    {"predcDt": "2026-11-17 09:00", "predcTdlvVl": "100", "extrSe": "2"},
+                ])
+            start = datetime(2026, 11, 17, tzinfo=ZoneInfo("Asia/Seoul"))
+            return envelope([
+                {"predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
+                 "predcTdlvVl": str(300 + i)}
+                for i in range(48)
+            ])
+
+        with patch("pipeline._fetch", side_effect=fake_fetch):
+            result = fetch_one_day("incheon", DAY, "KEY_HIGH_LOW", "KEY_TIME_SERIES")
+        self.assertEqual(
+            seen,
+            [("high_low", "DT_0001", "KEY_HIGH_LOW"), ("series", "DT_0001", "KEY_TIME_SERIES")],
+        )
+        self.assertEqual(len(result["hilo"]), 2)
+        self.assertEqual(len(result["curve"]), 48)
 
     def test_provider_failure_is_not_faked(self):
         with self.assertRaises(TideDataError):
