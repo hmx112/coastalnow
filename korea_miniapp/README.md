@@ -78,3 +78,29 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\run_schema_probe.ps1
 
 `type=json`, `numOfRows=300`을 유지합니다. 실제 키는 어떤 저장소에도 업로드하지 마세요.
 오프라인 검증 이후 인천/부산/제주 테스트에서 두 종류의 예보가 모두 성공해야 데이터 연동이 완료됩니다.
+
+## 7일 조석예보 묶음 검증 (v5)
+
+`build_week.py`는 이미 검증된 `pipeline.py`를 사용해 **오늘부터 7일간** 고·저조와 30분 간격 시계열을 수집합니다. 총 **42회**의 API 호출을 계획하며, 고·저조 API와 시계열 API 각각 **21회**입니다(3지점 × 7일). 현재 이 코드는 로컬 개발용으로, 아직 서버나 토스 미니앱에는 배포되지 않았습니다.
+
+```powershell
+# korea_miniapp 폴더에서 실행. 두 인증키는 화면에 표시하지 않습니다.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\run_week_check.ps1
+
+# 네트워크 요청 없이 요청량만 확인
+python .\build_week.py --dry-run
+```
+
+정상 수집 시 `output/weekly/incheon.json`, `busan.json`, `jeju.json`이 만들어집니다. **7일 전체 수집·검증에 성공한 지역만 파일을 원자적으로 교체**하므로, 중간에 한 날짜라도 실패하면 기존 파일을 덮어쓰지 않습니다.
+
+**주의:** 기존 파일 보존은 '최신 예보 보증'이 아닙니다. 실제 앱은 각 파일의 `date_range`와 `generated_at_utc`를 확인하고 오래된 자료는 오류 상태로 표시해야 합니다. 검증 중인 수직기준면(`datum`)을 실제 수심처럼 해석하거나 안전한 해양활동을 단정하지 않습니다.
+
+### PC 없이 클라우드 운영하기 위한 후속 준비
+
+- GitHub Actions 또는 Cloudflare Cron에 **서버 측 수집 작업** 연결
+- Cloudflare KV/R2 등 중앙 캐시에 검증된 JSON 저장하고 HTTPS 데이터 API 제공
+- `KHOA_HIGH_LOW_KEY`, `KHOA_SERIES_KEY`는 서버 Secrets에서만 관리
+- 갱신 실패 모니터링, 기준면과 KST 시각 검증, 공식 예보 대조
+- 운영 단계 활용승인 및 출처 표기, 토스 WebView SDK 적용
+
+**현 상태:** 7일 수집 코드 + 오프라인 테스트만 추가. GitHub 자동 스케줄과 실제 Cloudflare 배포는 아직 설정하지 않았으며 미국 CoastalNow 운영 변경은 없습니다.
