@@ -64,7 +64,7 @@ def describe(kind: str, payload: object) -> str:
         return "\n".join(parts + ["no data rows"])
     parts.append(f"first row fields: {_keys(rows[0])}")
     for expected in (("predcDt", "predcTdlvVl", "extrSe") if kind == "high_low"
-                     else ("predcDt", "predcTdlvVl")):
+                     else ("predcDt", "tdlvHgt")):
         parts.append(f"  {expected}: {'present' if expected in rows[0] else 'MISSING'}")
     return "\n".join(parts)
 
