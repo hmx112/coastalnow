@@ -16,7 +16,7 @@
 
 ## 2. 현재 코드 동작
 
-`pipeline.py`는 지점과 날짜 하루를 지정해 고·저조와 30분 조위 예보를 각각 1회씩 요청하고, 포맷·날짜·중복·단위 범위를 검증한 뒤 독립 JSON으로 저장합니다.
+`pipeline.py`는 지점과 날짜 하루를 지정해 고·저조와 30분 조위 예보를 각각 1회씩 요청합니다. 두 API의 인증키가 다를 수 있으므로 `KHOA_HIGH_LOW_KEY`(고·저조)와 `KHOA_SERIES_KEY`(시계열)를 별도로 읽고,, 포맷·날짜·중복·단위 범위를 검증한 뒤 독립 JSON으로 저장합니다.
 
 - 고·저조 필드: `predcDt`, `predcTdlvVl`, `extrSe` (`1·3 = 만조`, `2·4 = 간조`)
 - 시계열 필드(동일하게 가정): `predcDt`, `predcTdlvVl`
@@ -33,14 +33,18 @@ python -m unittest discover -s korea_miniapp -p 'test_*.py' -v
 # 키 없이 요청 구성만 검사 (외부 호출 0회)
 python korea_miniapp/pipeline.py --station incheon --date 2026-11-17 --dry-run
 
-# 아래는 공공데이터포털에서 활용신청 후 발급받은 키가 있어야 실행됩니다.
-# 키를 채팅, 깃허브, 코드, 커밋, 이슈에 붙여넣지 마세요.
-$env:KHOA_SERVICE_KEY = (Read-Host '공공데이터포털 API 키')
-python korea_miniapp/pipeline.py --station incheon --output .\korea-tide-test-incheon.json
-Remove-Item Env:KHOA_SERVICE_KEY
+# Windows PowerShell: 화면에서 두 서비스의 키를 별도로 입력합니다.
+# 입력한 키는 화면에 표시되지 않으며 두 환경변수도 종료 시 삭제됩니다.
+# 오프라인 테스트를 먼저 수행하고 인천·부산·제주 3곳을 조회합니다.
+.\korea_miniapp\run_live_check.ps1
+
+# 개별 호출도 가능 (키는 환경변수에만 저장해야 함)
+# $env:KHOA_HIGH_LOW_KEY = (Read-Host '고·저조 API 키')
+# $env:KHOA_SERIES_KEY = (Read-Host '시계열 API 키')
+# python korea_miniapp/pipeline.py --station incheon
 ```
 
-출력 JSON은 커밋하지 말고 확인용으로만 사용하세요. 요청 URL과 인증키가 로그에 나오지 않도록 설계했으며, 오류 시 키를 출력하지 않습니다.
+출력 JSON은 `korea_miniapp/output/`에 저장되며 이 디렉터리는 gitignore 처리했습니다. 파일과 키는 커밋하지 마세요. 스크립트는 성공 여부와 건수만 표시하고 키는 로그에 출력하지 않습니다.
 
 ## 4. 통합 검증 완료 조건
 
