@@ -1,4 +1,4 @@
-# Experimental 7-day data validation. Requires 42 total KHOA API calls for 3 stations.
+﻿# Experimental 7-day data validation. Requires 42 total KHOA API calls for 3 stations.
 # On the PC, open a PowerShell window inside korea_miniapp and run this script.
 $ErrorActionPreference = 'Stop'
 $py = Get-Command python -ErrorAction SilentlyContinue
