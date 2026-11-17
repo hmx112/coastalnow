@@ -1,4 +1,4 @@
-# Windows PowerShell 5.1+ / PowerShell 7
+﻿# Windows PowerShell 5.1+ / PowerShell 7
 # Enter both API keys locally. Neither key is printed or written to disk.
 $ErrorActionPreference = 'Stop'
 $PythonCmd = Get-Command python -ErrorAction SilentlyContinue
