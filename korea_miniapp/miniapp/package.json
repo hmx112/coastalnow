@@ -1,0 +1,26 @@
+{
+  "name": "oneul-bada-ait",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3000",
+    "build:web": "vite build",
+    "build": "vite build && ait build",
+    "test": "node --test test/*.test.mjs",
+    "deploy": "ait deploy"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "^3.0.2",
+    "@emotion/react": "^11.14.0",
+    "@toss/tds-mobile": "^2.4.1",
+    "@toss/tds-mobile-ait": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@apps-in-toss/devtools": "^3.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.0"
+  }
+}
