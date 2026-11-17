@@ -1,4 +1,4 @@
-# PowerShell 5.1+; one station x two API requests. No keys are printed or saved.
+﻿# PowerShell 5.1+; one station x two API requests. No keys are printed or saved.
 $ErrorActionPreference = 'Stop'
 $PythonCmd = Get-Command python -ErrorAction SilentlyContinue
 if (-not $PythonCmd) { throw 'Python 3.10+ is required.' }
