@@ -19,6 +19,7 @@ class TestSchemaProbe(unittest.TestCase):
             "items": {"item": [{"predcDt": "SENSITIVE-TIME", "observedLevel": 55}]}}}}
         text = describe("series", raw)
         self.assertIn("observedLevel", text)
+        self.assertIn("tdlvHgt: MISSING", text)
         self.assertNotIn("55", text)
 
 
