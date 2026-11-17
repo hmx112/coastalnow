@@ -17,9 +17,8 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 API_ROOT = "https://apis.data.go.kr/1192136"
 OPERATIONS = {
@@ -33,7 +32,7 @@ STATIONS = {
     "busan": {"id": "DT_0005", "name": "부산"},
     "jeju": {"id": "DT_0004", "name": "제주"},
 }
-KST = ZoneInfo("Asia/Seoul")
+KST = timezone(timedelta(hours=9))  # KST has no DST; avoids Windows tzdata dependency
 _TIMESTAMP_FORMATS = (
     "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M:%S",
     "%Y/%m/%d %H:%M:%S", "%Y/%m/%d %H:%M",
@@ -134,8 +133,13 @@ def normalize_day(payload: object, day: date, kind: str) -> list[dict]:
         raise TideDataError("Duplicate KHOA prediction timestamps")
     if kind == "high_low" and not {"H", "L"}.issubset({r["type"] for r in result}):
         raise TideDataError("High/low response missing at least one tide extreme")
-    if kind == "series" and len(result) < 30:
-        raise TideDataError("Too few hourly/30-minute values for a daily tide graph")
+    if kind == "series":
+        if len(result) < 30:
+            raise TideDataError("Too few 30-minute values for a daily tide graph")
+        start = datetime.strptime(result[0]["t"], "%Y-%m-%d %H:%M")
+        end = datetime.strptime(result[-1]["t"], "%Y-%m-%d %H:%M")
+        if (end - start) < timedelta(hours=20):
+            raise TideDataError("Incomplete daily tide curve: time span below 20 hours")
     return result
 
 
@@ -147,7 +151,7 @@ def _fetch(kind: str, station_id: str, day: date, key: str) -> object:
     if not key.strip():
         raise TideDataError("Required KHOA API key is not set")
     params = {
-        "serviceKey": key.strip(),
+        "serviceKey": urllib.parse.unquote(key.strip()),  # Supports either decoded or URL-encoded portal keys
         "obsCode": station_id,
         "reqDate": day.strftime("%Y%m%d"),
         "type": "json",
