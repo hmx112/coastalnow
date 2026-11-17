@@ -62,11 +62,16 @@ def _parse_kst(value: object) -> datetime:
     return parsed.astimezone(KST)
 
 
-def _value_cm(item: dict) -> float:
-    if "predcTdlvVl" not in item:
-        raise TideDataError("Missing predicted tide height (predcTdlvVl)")
+# The two KHOA API services return different height keys (official 2026-11 guide).
+_HEIGHT_FIELDS = {"high_low": "predcTdlvVl", "series": "tdlvHgt"}
+
+
+def _value_cm(item: dict, kind: str) -> float:
+    field = _HEIGHT_FIELDS[kind]
+    if field not in item:
+        raise TideDataError(f"Missing predicted tide height ({field}) for {kind}")
     try:
-        value = float(item["predcTdlvVl"])
+        value = float(item[field])
     except (ValueError, TypeError) as exc:
         raise TideDataError("Invalid predicted tide height") from exc
     # This is a validation guard, not a claim about a particular sea level datum.
@@ -108,8 +113,8 @@ def _items(payload: object) -> list[dict]:
 def normalize_day(payload: object, day: date, kind: str) -> list[dict]:
     """Normalize provider rows without fabricating missing values.
 
-    Field names follow KHOA's published API / publicly documented integration
-    examples. Their live behavior must be confirmed with an authorized API key.
+    Field names and units follow KHOA official high/low and time-series
+    API guides (2026-11-06). Live responses must still be verified.
     """
     if kind not in OPERATIONS:
         raise ValueError(f"Unsupported prediction kind: {kind}")
@@ -118,7 +123,7 @@ def normalize_day(payload: object, day: date, kind: str) -> list[dict]:
         when = _parse_kst(item.get("predcDt"))
         if when.date() != day:
             raise TideDataError("KHOA prediction outside requested KST date")
-        row = {"t": when.strftime("%Y-%m-%d %H:%M"), "v": _value_cm(item)}
+        row = {"t": when.strftime("%Y-%m-%d %H:%M"), "v": _value_cm(item, kind)}
         if kind == "high_low":
             try:
                 extreme = int(item["extrSe"])
