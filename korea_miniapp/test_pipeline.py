@@ -1,8 +1,7 @@
 """Offline synthetic tests. They do NOT establish live KHOA API compatibility."""
 import unittest
 from unittest.mock import patch
-from datetime import date, datetime, timedelta
-from zoneinfo import ZoneInfo
+from datetime import date, datetime, timedelta, timezone
 
 from pipeline import TideDataError, _items, normalize_day, fetch_one_day
 
@@ -28,7 +27,7 @@ class TestKhoaAdapter(unittest.TestCase):
         self.assertEqual(rows[2]["v"], 750.6)
 
     def test_time_series_daily_count(self):
-        start = datetime(2026, 11, 17, tzinfo=ZoneInfo("Asia/Seoul"))
+        start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
         data = envelope([
             {"predcDt": (start + timedelta(minutes=30*i)).strftime("%Y-%m-%d %H:%M"),
              "predcTdlvVl": str(400 + i)} for i in range(48)
@@ -47,7 +46,7 @@ class TestKhoaAdapter(unittest.TestCase):
                     {"predcDt": "2026-11-17 03:00", "predcTdlvVl": "700", "extrSe": "1"},
                     {"predcDt": "2026-11-17 09:00", "predcTdlvVl": "100", "extrSe": "2"},
                 ])
-            start = datetime(2026, 11, 17, tzinfo=ZoneInfo("Asia/Seoul"))
+            start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
             return envelope([
                 {"predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
                  "predcTdlvVl": str(300 + i)}
@@ -62,6 +61,16 @@ class TestKhoaAdapter(unittest.TestCase):
         )
         self.assertEqual(len(result["hilo"]), 2)
         self.assertEqual(len(result["curve"]), 48)
+
+    def test_truncated_daily_series_is_rejected(self):
+        start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
+        payload = envelope([
+            {"predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
+             "predcTdlvVl": "100"}
+            for i in range(32)  # 16 hours only
+        ])
+        with self.assertRaises(TideDataError):
+            normalize_day(payload, DAY, "series")
 
     def test_provider_failure_is_not_faked(self):
         with self.assertRaises(TideDataError):
