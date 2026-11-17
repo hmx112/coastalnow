@@ -2,7 +2,7 @@
 
 This module is NOT wired into CoastalNow production. It fetches one day's
 high/low events and time-series predictions, validates them, and writes a
-normalized JSON document. The API key is read only from an environment variable.
+normalized JSON document. The separate service keys are read only from environment variables.
 No simulated or stale data is silently substituted for a failed live request.
 """
 
@@ -145,7 +145,7 @@ def _fetch(kind: str, station_id: str, day: date, key: str) -> object:
     if not re.fullmatch(r"DT_\d{4}", station_id):
         raise ValueError("Invalid KHOA station code")
     if not key.strip():
-        raise TideDataError("KHOA_SERVICE_KEY is not set")
+        raise TideDataError("Required KHOA API key is not set")
     params = {
         "serviceKey": key.strip(),
         "obsCode": station_id,
@@ -172,13 +172,13 @@ def _fetch(kind: str, station_id: str, day: date, key: str) -> object:
         raise TideDataError("KHOA did not return valid JSON; check type=json and API status") from None
 
 
-def fetch_one_day(station_slug: str, day: date, key: str) -> dict:
+def fetch_one_day(station_slug: str, day: date, high_low_key: str, series_key: str) -> dict:
     """Make exactly two requests and return validated, provider-originated data."""
     if station_slug not in STATIONS:
         raise ValueError("Station must be one of: incheon, busan, jeju")
     station = STATIONS[station_slug]
-    hilo = normalize_day(_fetch("high_low", station["id"], day, key), day, "high_low")
-    curve = normalize_day(_fetch("series", station["id"], day, key), day, "series")
+    hilo = normalize_day(_fetch("high_low", station["id"], day, high_low_key), day, "high_low")
+    curve = normalize_day(_fetch("series", station["id"], day, series_key), day, "series")
     return {
         "schema_version": 1,
         "mode": "live",
@@ -207,17 +207,23 @@ def main() -> int:
             print(json.dumps({
                 "station": STATIONS[args.station], "date": day.isoformat(),
                 "operations": list(OPERATIONS.values()),
-                "credentials_present": bool(os.getenv("KHOA_SERVICE_KEY")),
+                "credentials_present": {
+                    "high_low": bool(os.getenv("KHOA_HIGH_LOW_KEY") or os.getenv("KHOA_SERVICE_KEY")),
+                    "series": bool(os.getenv("KHOA_SERIES_KEY") or os.getenv("KHOA_HIGH_LOW_KEY") or os.getenv("KHOA_SERVICE_KEY")),
+                },
                 "network_called": False,
             }, ensure_ascii=False, indent=2))
             return 0
-        result = fetch_one_day(args.station, day, os.getenv("KHOA_SERVICE_KEY", ""))
+        high_low_key = os.getenv("KHOA_HIGH_LOW_KEY") or os.getenv("KHOA_SERVICE_KEY", "")
+        series_key = os.getenv("KHOA_SERIES_KEY") or high_low_key
+        result = fetch_one_day(args.station, day, high_low_key, series_key)
         serialized = json.dumps(result, ensure_ascii=False, indent=2)
         if args.output:
             target = Path(args.output)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(serialized + "\n", encoding="utf-8")
-            print(f"Validated one KHOA station/day: {result['station']['name']} {result['date']}; wrote {target}")
+            print(f"Validated KHOA: {result['station']['name']} {result['date']}; "
+                  f"high/low={len(result['hilo'])}, series={len(result['curve'])}; wrote {target}")
         else:
             print(serialized)
         return 0
