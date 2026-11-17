@@ -56,3 +56,15 @@ python korea_miniapp/pipeline.py --station incheon --date 2026-11-17 --dry-run
 6. 이후에만 토스 WebView SDK 3.x, 관심 지역 저장, 실제 UI를 개발하고 토스 검수 신청
 
 **하지 않을 일:** 기존 미국 서비스의 갱신 주기나 배포, 서핑/낚시 추천 점수를 변경하지 않습니다. 국내 조석 데이터를 충분히 검증하기 전 안전한 활동 가능 여부를 단정하지 않습니다.
+
+## 조위값 필드 누락 시 진단 (v3)
+
+실제 API 호출 후 `Missing predicted tide height (predcTdlvVl)`가 발생했다면, 아래 명령으로 **인천 1개 지점의 두 API**가 반환하는 필드 이름만 확인합니다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\run_schema_probe.ps1
+```
+
+두 키를 다시 입력해야 하지만, 화면에 나타나는 것은 구조(`first row fields`)와 필드 존재 여부뿐입니다. **API 키, 호출 URL, 조위 수치, 원본 응답은 출력하거나 파일로 저장하지 않습니다.**
+
+이 결과를 받아 실제 필드 이름과 단위를 확인한 뒤 파서를 수정합니다. 확인되지 않은 필드명을 추측해 조위로 사용하지 않습니다.
