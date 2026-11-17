@@ -30,7 +30,7 @@ class TestKhoaAdapter(unittest.TestCase):
         start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
         data = envelope([
             {"predcDt": (start + timedelta(minutes=30*i)).strftime("%Y-%m-%d %H:%M"),
-             "predcTdlvVl": str(400 + i)} for i in range(48)
+             "tdlvHgt": str(400 + i)} for i in range(48)
         ])
         rows = normalize_day(data, DAY, "series")
         self.assertEqual(len(rows), 48)
@@ -49,7 +49,7 @@ class TestKhoaAdapter(unittest.TestCase):
             start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
             return envelope([
                 {"predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
-                 "predcTdlvVl": str(300 + i)}
+                 "tdlvHgt": str(300 + i)}
                 for i in range(48)
             ])
 
@@ -62,11 +62,40 @@ class TestKhoaAdapter(unittest.TestCase):
         self.assertEqual(len(result["hilo"]), 2)
         self.assertEqual(len(result["curve"]), 48)
 
+    def test_official_guides_use_different_height_fields(self):
+        # 2026-11-06 KHOA API manuals: high/low = predcTdlvVl, series = tdlvHgt.
+        hilo = envelope([
+            {"predcDt": "2026-11-17 03:00", "predcTdlvVl": "812", "extrSe": 1},
+            {"predcDt": "2026-11-17 09:00", "predcTdlvVl": "96", "extrSe": 2},
+        ])
+        self.assertEqual(normalize_day(hilo, DAY, "high_low")[0]["v"], 812.0)
+        start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
+        curve = envelope([{
+            "predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
+            "tdlvHgt": str(202.23 + i),
+        } for i in range(48)])
+        self.assertEqual(normalize_day(curve, DAY, "series")[0]["v"], 202.23)
+
+    def test_wrong_field_for_each_service_is_rejected(self):
+        wrong_hilo = envelope([
+            {"predcDt": "2026-11-17 03:00", "tdlvHgt": "812", "extrSe": 1},
+            {"predcDt": "2026-11-17 09:00", "tdlvHgt": "96", "extrSe": 2},
+        ])
+        with self.assertRaisesRegex(TideDataError, "predcTdlvVl"):
+            normalize_day(wrong_hilo, DAY, "high_low")
+        start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
+        wrong_series = envelope([{
+            "predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
+            "predcTdlvVl": str(i + 100),
+        } for i in range(48)])
+        with self.assertRaisesRegex(TideDataError, "tdlvHgt"):
+            normalize_day(wrong_series, DAY, "series")
+
     def test_truncated_daily_series_is_rejected(self):
         start = datetime(2026, 11, 17, tzinfo=timezone(timedelta(hours=9)))
         payload = envelope([
             {"predcDt": (start + timedelta(minutes=30 * i)).strftime("%Y-%m-%d %H:%M"),
-             "predcTdlvVl": "100"}
+             "tdlvHgt": "100"}
             for i in range(32)  # 16 hours only
         ])
         with self.assertRaises(TideDataError):
@@ -92,7 +121,7 @@ class TestKhoaAdapter(unittest.TestCase):
         with self.assertRaises(TideDataError):
             normalize_day(envelope([{"predcDt": "2026-11-17 00:00", "predcTdlvVl": "100", "extrSe": "7"}]), DAY, "high_low")
         with self.assertRaises(TideDataError):
-            normalize_day(envelope([{"predcDt": "2026-11-17 00:00", "predcTdlvVl": "100"}]), DAY, "series")
+            normalize_day(envelope([{"predcDt": "2026-11-17 00:00", "tdlvHgt": "100"}]), DAY, "series")
 
 
 if __name__ == "__main__":
