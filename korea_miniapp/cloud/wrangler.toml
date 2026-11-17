@@ -1,0 +1,14 @@
+name = "oneul-bada-api"
+main = "worker.mjs"
+compatibility_date = "2026-11-01"
+# The free plan allows 50 provider subrequests; this job uses 42 KHOA calls + 3 KV writes.
+# Twice a day, 00:20 and 12:20 KST (Cron executes in UTC).
+[triggers]
+crons = ["20 15 * * *", "20 3 * * *"]
+
+# Provision a NEW namespace via `npx wrangler kv namespace create TIDES_KV`.
+# Replace the ID below with the NEW namespace ID before deploying; do not
+# bind CoastalNow's existing KV databases or buckets.
+[[kv_namespaces]]
+binding = "TIDES_KV"
+id = "REPLACE_WITH_YOUR_NEW_NAMESPACE_ID"
