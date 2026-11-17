@@ -8,6 +8,10 @@ on:
       - 'korea_miniapp/**'
       - '.github/workflows/oneul-bada-experiment-ci.yml'
 
+concurrency:
+  group: oneul-bada-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -26,3 +30,13 @@ jobs:
         run: python -m unittest discover -s korea_miniapp -p 'test_*.py' -v
       - name: Cloudflare Worker mock API tests (no secrets)
         run: node --test korea_miniapp/cloud/test_worker.mjs
+
+      - name: Install Apps in Toss SDK/TDS frontend
+        working-directory: korea_miniapp/miniapp
+        run: npm install --no-audit --no-fund
+      - name: Frontend domain tests
+        working-directory: korea_miniapp/miniapp
+        run: npm run test
+      - name: Build production Apps in Toss bundle
+        working-directory: korea_miniapp/miniapp
+        run: npm run build
