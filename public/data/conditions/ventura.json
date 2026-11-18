@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-18T11:57:53+00:00",
+  "generated_at_utc": "2026-11-18T13:25:31+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T11:57:53+00:00"
+      "fetched_at_utc": "2026-11-18T13:25:31+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,21 +1908,6 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1b9c57a6b36137b1af35548d90e0e2914c6363d9.002.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-17T20:53:00-08:00",
-        "onset": "2026-11-17T20:53:00-08:00",
-        "expires": "2026-11-18T04:00:00-08:00",
-        "ends": "2026-11-18T04:00:00-08:00",
-        "headline": "High Surf Advisory issued November 17 at 8:53PM PST until November 18 at 4:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Large breaking waves of 4 to 7 feet. Dangerous rip\ncurrents expected.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until 4 AM PST Wednesday.\n\n* IMPACTS...There is an increased risk for ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore. Minor tidal\noverflow during morning high tides with minor beach erosion\nand localized flooding possible.\n\n* ADDITIONAL DETAILS...A High Surf Advisory will likely be\nissued for Thursday.",
-        "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7a9f3535476a8ccb8510480153efb8ca6db19d1.003.1",
         "event": "Flood Watch",
         "severity": "Severe",
@@ -2587,5 +2572,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

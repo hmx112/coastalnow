@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "newport-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-18T11:56:48+00:00",
+  "generated_at_utc": "2026-11-18T13:25:04+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T11:56:48+00:00"
+      "fetched_at_utc": "2026-11-18T13:25:04+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,23 +1906,7 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43fe6e14773ae39760d2b56db4fa6e2338d6568e.001.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-17T18:51:00-08:00",
-        "onset": "2026-11-17T18:51:00-08:00",
-        "expires": "2026-11-18T04:00:00-08:00",
-        "ends": "2026-11-18T04:00:00-08:00",
-        "headline": "High Surf Advisory issued November 17 at 6:51PM PST until November 18 at 4:00AM PST by NWS San Diego CA",
-        "description": "* WHAT...Large breaking waves of of 5 to 8 feet along west-\nfacing beaches and very strong rip currents.\n\n* WHERE...San Diego County Coastal Areas and Orange County\nCoastal Areas.\n\n* WHEN...Until 4 AM PST Wednesday.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion.\n\n* ADDITIONAL DETAILS...Minor coastal flooding during high tides.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS San Diego CA"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2572,5 +2556,5 @@
       "grid_y": 22
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }

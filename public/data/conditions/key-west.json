@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-18T11:57:31+00:00",
+  "generated_at_utc": "2026-11-18T13:25:21+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T11:57:31+00:00"
+      "fetched_at_utc": "2026-11-18T13:25:21+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,18 +1908,33 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cbdf60135960eee797d28b41a7dbf43944f7aa7e.001.1",
-        "event": "Flood Advisory",
-        "severity": "Minor",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1a5b06f689886a6456c8447a0e76311cd67dd16.001.1",
+        "event": "Flood Warning",
+        "severity": "Severe",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-18T06:49:00-05:00",
-        "onset": "2026-11-18T06:49:00-05:00",
-        "expires": "2026-11-18T09:45:00-05:00",
-        "ends": "2026-11-18T09:45:00-05:00",
-        "headline": "Flood Advisory issued November 18 at 6:49AM EST until November 18 at 9:45AM EST by NWS Key West FL",
-        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Lower Keys in Monroe in Florida...\n\n* WHEN...Until 945 AM EST.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\n\n* ADDITIONAL DETAILS...\n- At 649 AM EST, Doppler radar indicated heavy rain due to\nthunderstorms. Minor flooding is ongoing or expected to begin\nshortly in the advisory area. Between 1 and 2 inches of rain have\nfallen.\n- Additional rainfall amounts of 2 to 3 inches are expected over\nthe area. This additional rain will result in minor flooding.\n- Some locations that will experience flooding include...\nKey West, Big Coppitt Key, Boca Chica, Boca Chica Channel Bridge,\nShark Key, Geiger Key, Saddlebunch Keys, Bay Point, Sugarloaf Key\nand Key Haven.\n- This includes US 1 between mile markers 0 and 8.\n- http://www.weather.gov/safety/flood",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe aware of your surroundings and do not drive on flooded roads.",
+        "effective": "2026-11-18T07:36:00-05:00",
+        "onset": "2026-11-18T07:36:00-05:00",
+        "expires": "2026-11-18T10:30:00-05:00",
+        "ends": "2026-11-18T10:30:00-05:00",
+        "headline": "Flood Warning issued November 18 at 7:36AM EST until November 18 at 10:30AM EST by NWS Key West FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Lower Keys in Monroe in Florida...\n\n* WHEN...Until 1030 AM EST.\n\n* IMPACTS...Flooding of low-lying and flood-prone locations is\nimminent or occurring. Expect many areas of slow moving or standing\nwater.\n\n* ADDITIONAL DETAILS...\n- At 735 AM EST, Doppler radar indicated heavy rain due to\nthunderstorms. Flooding is already occurring in the warned area.\nBetween 2 and 4 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 2 inches are possible in the\nwarned area.\n- Some locations that will experience flooding include...\nKey West, Big Coppitt Key, Boca Chica, Boca Chica Channel Bridge,\nShark Key, Geiger Key, Saddlebunch Keys, Bay Point, Sugarloaf Key\nand Key Haven.\n- This includes US 1 between mile markers 0 and 8.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
+        "sender_name": "NWS Key West FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7906389e6ecc7896baa7c6bf95e3747a3c6e044.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-11-18T07:06:00-05:00",
+        "onset": "2026-11-18T07:06:00-05:00",
+        "expires": "2026-11-18T09:15:00-05:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued November 18 at 7:06AM EST by NWS Key West FL",
+        "description": "At 700 am, a cluster of strong showers and thunderstorms is ongoing\nacross the Lower Keys and surrounding nearshore waters. This\nactivity is producing wind gusts of 30 to 35 knots, blinding\ndownpours, and frequent lightning strikes. Some of these cells may\nrapidly intensify and strong waterspouts will be possible, requiring\na Special Marine Warning.\n\nElsewhere, scattered to numerous showers and storms are ongoing in\nthe distant Straits of Florida, southeastern Gulf near the Dry\nTortugas, and Florida Bay. This activity will remain nearly\nstationary but will be capable of producing wind gusts of 25 to 30\nknots, reduced visibility from blinding downpours and occasional\nlightning strikes.",
+        "instruction": "",
         "sender_name": "NWS Key West FL"
       },
       {
@@ -2567,5 +2582,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
