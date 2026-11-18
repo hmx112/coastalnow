@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "monterey",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-18T01:01:42+00:00",
+  "generated_at_utc": "2026-11-18T02:27:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:42+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:50+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:42+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:50+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:42+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:50+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T14:28:45+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:42+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:50+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-17T17:00:00-08:00",
-      "wind_mph": 5.0,
-      "gust_mph": 8.055,
-      "wind_direction_deg": 202.5,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 57.0,
-      "wave_height_ft": 0.0,
-      "wave_period_s": null,
-      "water_temperature_f": 66.6,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-17T18:00:00-08:00",
       "wind_mph": 6.0,
@@ -1902,11 +1890,38 @@
       "wave_period_s": null,
       "water_temperature_f": 66.6,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-24T05:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 40.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": 66.6,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4afae32dad0d3ca429adb302c2b24cf389b34076.002.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-17T17:48:00-08:00",
+        "onset": "2026-11-17T21:00:00-08:00",
+        "expires": "2026-11-18T04:00:00-08:00",
+        "ends": "2026-11-18T13:00:00-08:00",
+        "headline": "Wind Advisory issued November 17 at 5:48PM PST until November 18 at 1:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 50 mph\nexpected.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...From 9 PM this evening to 1 PM PST Wednesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "instruction": "Use extra caution when driving, especially if operating a high\nprofile vehicle. Secure outdoor objects.",
+        "sender_name": "NWS San Francisco CA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5226d77d27eb424ae4b1298bfe533fde9c99bd9.003.1",
         "event": "High Surf Advisory",
@@ -1951,21 +1966,6 @@
         "description": "* WHAT...Flash flooding and debris flows caused by excessive rainfall\nare possible over the Plaskett and Timber burn areas.\n\n* WHERE...For the Timber Scar, portions of CA Highway 1 and the Los\nPadres National Forecast from Andrew Molera State Park to\nPartington Ridge including the town of Big Sur.\n\nFor the Plaskett Scar, areas near CA Highway 1 mile marker 17 to mile\nmarker 11 including Los Burros Road.\n\n* WHEN...From early Wednesday morning to early Thursday morning.\n\n* IMPACTS...Heavy rainfall over the Timber and Plaskett burn areas is\nexpected during the watch period. Residents near the Timber burn\narea should prepare for potential debris flow moving through the\ndrainages within Lafler, Castro, and Graves Canyons, as well as\ndrainages between Grimes and Castro Canyons.\n\nResidents near the Plaskett burn area should prepare for potential\ndebris flow moving through the Alder, Plaskett, and Prewitt Creeks.\n\nBe sure to stay up to date with information from local authorities.\nHeavy rainfall could trigger flash flooding of low-lying areas,\nroadway flooding, and debris flows in and near recent wildfire burn\nscars.\n\n* ADDITIONAL DETAILS...\n- National Weather Service Meteorologists are forecasting heavy\nrainfall over the Timber and Plaskett burn areas, which may lead\nto flash flooding and debris flows.\n- Some locations that may experience flash flooding include...\nBig Sur, Plaskett, and Pfeiffer Big Sur State Park\n- http://www.weather.gov/safety/flood",
         "instruction": "You should monitor later forecasts and be prepared to take action\nshould Flash Flood Warnings be issued.\n\nLocal emergency services are monitoring the situation and will issue\na public statement as conditions warrant. PLAN NOW so you will know\nwhat to do in an emergency. Keep informed by listening to local radio\nand television for statements and possible warnings. Follow the\nadvice of public safety officials.",
         "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.24c3a594510b8bb29f21090744feb80233bff9c1.004.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-17T07:45:00-08:00",
-        "onset": "2026-11-17T21:00:00-08:00",
-        "expires": "2026-11-17T15:45:00-08:00",
-        "ends": "2026-11-18T13:00:00-08:00",
-        "headline": "Wind Advisory issued November 17 at 7:45AM PST until November 18 at 1:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 50 mph expected.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...From 9 PM this evening to 1 PM PST Wednesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
-        "sender_name": "NWS San Francisco CA"
       }
     ]
   },
@@ -2001,8 +2001,8 @@
       "start": "2026-11-17",
       "end": "2026-11-23"
     },
-    "generated_at_utc": "2026-11-17T14:28:45+00:00",
-    "generated_at_local": "2026-11-17T06:28:45-08:00",
+    "generated_at_utc": "2026-11-18T02:27:26+00:00",
+    "generated_at_local": "2026-11-17T18:27:25-08:00",
     "hilo": [
       {
         "t": "2026-11-17 05:33",

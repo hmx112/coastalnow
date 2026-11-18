@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "santa-cruz",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-18T01:01:44+00:00",
+  "generated_at_utc": "2026-11-18T02:27:51+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:44+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:51+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:44+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:51+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T01:01:44+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:51+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T14:28:45+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-18T01:01:44+00:00"
+      "fetched_at_utc": "2026-11-18T02:27:51+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-17T17:00:00-08:00",
-      "wind_mph": 1.0,
-      "gust_mph": 8.055,
-      "wind_direction_deg": 247.5,
-      "precip_probability_pct": 5.0,
-      "air_temperature_f": 56.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-11-17T18:00:00-08:00",
       "wind_mph": 1.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-24T05:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 49.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
@@ -1938,6 +1938,21 @@
         "sender_name": "NWS San Francisco CA"
       },
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4afae32dad0d3ca429adb302c2b24cf389b34076.002.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-17T17:48:00-08:00",
+        "onset": "2026-11-17T21:00:00-08:00",
+        "expires": "2026-11-18T04:00:00-08:00",
+        "ends": "2026-11-18T13:00:00-08:00",
+        "headline": "Wind Advisory issued November 17 at 5:48PM PST until November 18 at 1:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 50 mph\nexpected.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...From 9 PM this evening to 1 PM PST Wednesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "instruction": "Use extra caution when driving, especially if operating a high\nprofile vehicle. Secure outdoor objects.",
+        "sender_name": "NWS San Francisco CA"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5226d77d27eb424ae4b1298bfe533fde9c99bd9.003.1",
         "event": "High Surf Advisory",
         "severity": "Minor",
@@ -1965,21 +1980,6 @@
         "headline": "Beach Hazards Statement issued November 17 at 2:27PM PST until November 18 at 4:00PM PST by NWS San Francisco CA",
         "description": "* WHAT...For the Beach Hazards Statement, An increased risk for\nsneaker waves and strong rip currents with breaking waves of\n13 to 17 ft. For the High Surf Advisory, Large breaking waves\nof 15 to 18 ft.\n\n* WHERE...All Pacific Coast Beaches.\n\n* WHEN...For the Beach Hazards Statement, through Wednesday\nafternoon. For the High Surf Advisory, from 4 PM Wednesday to\n4 PM PST Thursday.\n\n* IMPACTS...Large breaking waves can overpower swimmers, pulling\npeople into the sea from beaches, jetties, and rocks resulting\nin significant physical injury and increasing the risk of\ndrowning. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.",
         "instruction": "Swimmers should remain out of the water due to dangerous surf\nconditions.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.24c3a594510b8bb29f21090744feb80233bff9c1.004.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-17T07:45:00-08:00",
-        "onset": "2026-11-17T21:00:00-08:00",
-        "expires": "2026-11-17T15:45:00-08:00",
-        "ends": "2026-11-18T13:00:00-08:00",
-        "headline": "Wind Advisory issued November 17 at 7:45AM PST until November 18 at 1:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...South winds 20 to 30 mph with gusts up to 50 mph expected.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...From 9 PM this evening to 1 PM PST Wednesday.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
         "sender_name": "NWS San Francisco CA"
       }
     ]
@@ -2016,8 +2016,8 @@
       "start": "2026-11-17",
       "end": "2026-11-23"
     },
-    "generated_at_utc": "2026-11-17T14:28:45+00:00",
-    "generated_at_local": "2026-11-17T06:28:45-08:00",
+    "generated_at_utc": "2026-11-18T02:27:26+00:00",
+    "generated_at_local": "2026-11-17T18:27:26-08:00",
     "hilo": [
       {
         "t": "2026-11-16 04:58",
