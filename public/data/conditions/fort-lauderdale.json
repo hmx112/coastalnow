@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "fort-lauderdale",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-18T02:29:14+00:00",
+  "generated_at_utc": "2026-11-18T04:40:54+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T02:29:14+00:00"
+      "fetched_at_utc": "2026-11-18T04:40:54+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2eeac525dd945e885072f771bee56b5d1393f857.001.1",
+        "event": "Severe Thunderstorm Warning",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "effective": "2026-11-17T23:15:00-05:00",
+        "onset": "2026-11-17T23:15:00-05:00",
+        "expires": "2026-11-17T23:45:00-05:00",
+        "ends": "2026-11-17T23:45:00-05:00",
+        "headline": "Severe Thunderstorm Warning issued November 17 at 11:15PM EST until November 17 at 11:45PM EST by NWS Miami FL",
+        "description": "SVRMFL\n\nThe National Weather Service in Miami has issued a\n\n* Severe Thunderstorm Warning for...\nSouthern Broward County in southeastern Florida...\n\n* Until 1145 PM EST.\n\n* At 1115 PM EST, a severe thunderstorm was located over Chambers\nEstates, or near Hollywood, and is nearly stationary.\n\nHAZARD...60 mph wind gusts and quarter size hail.\n\nSOURCE...Radar indicated.\n\nIMPACT...Hail damage to vehicles is expected. Expect wind damage\nto roofs, siding, and trees.\n\n* Locations impacted include...\nFort Lauderdale, Pembroke Pines, Hollywood, Miramar, Davie,\nPlantation, Sunrise, Tamarac, Lauderdale-By-The-Sea, Hallandale,\nLauderhill, Oakland Park, Lauderdale Lakes, Dania Beach, Cooper\nCity, West Park, Wilton Manors, Lazy Lake, Estates Of Fort\nLauderdale, and Fort Lauderdale - Hollywood International Airport.",
+        "instruction": "For your protection move to an interior room on the lowest floor of a\nbuilding.\n\nTorrential rainfall is occurring with this storm, and may lead to\nflash flooding. Do not drive your vehicle through flooded roadways.",
+        "sender_name": "NWS Miami FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05e13adf4e515a33349f15f46d62deecb7f8dfbb.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -2552,5 +2567,5 @@
       "grid_y": 68
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
