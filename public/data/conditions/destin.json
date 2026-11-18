@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-17T23:07:58+00:00",
+  "generated_at_utc": "2026-11-18T01:03:22+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:58+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:22+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:58+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:22+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:58+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:22+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-17T23:07:58+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:22+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-17T17:00:00-06:00",
-      "wind_mph": 20.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-17T18:00:00-06:00",
-      "wind_mph": 20.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-17T19:00:00-06:00",
       "wind_mph": 20.0,
@@ -1902,26 +1878,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-24T05:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-24T06:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 18.412,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5aaf381eca04eb02131ad04afeb7ddbb455ca5b4.001.1",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-17T11:15:00-06:00",
-        "onset": "2026-11-17T11:15:00-06:00",
-        "expires": "2026-11-17T20:00:00-06:00",
-        "ends": "2026-11-20T00:00:00-06:00",
-        "headline": "High Surf Advisory issued November 17 at 11:15AM CST until November 20 at 12:00AM CST by NWS Mobile AL",
-        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 5 to\n6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...For the High Surf Advisory, until midnight CST Thursday\nnight. For the High Rip Current Risk, through late Thursday\nnight.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
-        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Mobile AL"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5aaf381eca04eb02131ad04afeb7ddbb455ca5b4.001.2",
         "event": "Rip Current Statement",
@@ -1933,6 +1918,21 @@
         "expires": "2026-11-17T20:00:00-06:00",
         "ends": "2026-11-20T06:00:00-06:00",
         "headline": "Rip Current Statement issued November 17 at 11:15AM CST until November 20 at 6:00AM CST by NWS Mobile AL",
+        "description": "* WHAT...For the High Surf Advisory, large breaking waves of 5 to\n6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...For the High Surf Advisory, until midnight CST Thursday\nnight. For the High Rip Current Risk, through late Thursday\nnight.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
+        "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
+        "sender_name": "NWS Mobile AL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5aaf381eca04eb02131ad04afeb7ddbb455ca5b4.001.1",
+        "event": "High Surf Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-17T11:15:00-06:00",
+        "onset": "2026-11-17T11:15:00-06:00",
+        "expires": "2026-11-17T20:00:00-06:00",
+        "ends": "2026-11-20T00:00:00-06:00",
+        "headline": "High Surf Advisory issued November 17 at 11:15AM CST until November 20 at 12:00AM CST by NWS Mobile AL",
         "description": "* WHAT...For the High Surf Advisory, large breaking waves of 5 to\n6 feet in the surf zone. For the High Rip Current Risk,\ndangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...For the High Surf Advisory, until midnight CST Thursday\nnight. For the High Rip Current Risk, through late Thursday\nnight.\n\n* IMPACTS...Dangerous swimming and surfing conditions and\nlocalized beach erosion. Rip currents can sweep even the best\nswimmers away from shore into deeper water.",
         "instruction": "Inexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nSwim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Mobile AL"
@@ -2522,5 +2522,5 @@
       "grid_y": 55
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

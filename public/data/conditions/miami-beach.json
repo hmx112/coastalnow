@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "miami-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-17T23:07:52+00:00",
+  "generated_at_utc": "2026-11-18T01:03:15+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:52+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:15+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:52+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:15+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:07:52+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:15+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-17T23:07:52+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:15+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-17T18:00:00-05:00",
-      "wind_mph": 24.0,
-      "gust_mph": 33.373,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 51.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 9.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-11-17T19:00:00-05:00",
-      "wind_mph": 23.0,
-      "gust_mph": 32.222,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 62.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 9.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms Likely"
-    },
     {
       "time": "2026-11-17T20:00:00-05:00",
       "wind_mph": 24.0,
@@ -1902,26 +1878,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-24T06:00:00-05:00",
+      "wind_mph": 9.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-24T07:00:00-05:00",
+      "wind_mph": 9.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 90.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6f69f8bbbdda6b0b9fa1e38af0fcb5be7c6378e4.001.1",
-        "event": "Special Marine Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-11-17T17:45:00-05:00",
-        "onset": "2026-11-17T17:45:00-05:00",
-        "expires": "2026-11-17T19:15:00-05:00",
-        "ends": "2026-11-17T19:15:00-05:00",
-        "headline": "Special Marine Warning issued November 17 at 5:45PM EST until November 17 at 7:15PM EST by NWS Miami FL",
-        "description": "SMWMFL\n\nThe National Weather Service in Miami has issued a\n\n* Special Marine Warning for...\nBiscayne Bay...\nCoastal waters from Deerfield Beach to Ocean Reef FL out 20 NM...\nCoastal waters from Jupiter Inlet to Deerfield Beach FL out 20\nNM...\nWaters from Deerfield Beach to Ocean Reef FL from 20 to 60 NM\nexcluding the territorial waters of Bahamas...\n\n* Until 715 PM EST.\n\n* At 545 PM EST, severe thunderstorms capable of producing\nwaterspouts were located along a line extending from near\nLighthouse Point to 36 nm east of Surfside, moving west at 15\nknots.\n\nHAZARD...Waterspouts and wind gusts 34 knots or greater.\n\nSOURCE...Radar.\n\nIMPACT...Waterspouts can easily overturn boats and create locally\nhazardous seas. Small craft could be damaged in briefly\nhigher winds and suddenly higher waves.\n\n* Locations impacted include...\nSunny Isles, Lauderdale-By-The-Sea, Key Biscayne, Hallandale, Fort\nLauderdale, Lighthouse Point, Pompano Beach, Hillsboro Beach, Cape\nFlorida, Virginia Key, Bay Harbor Islands, Port Everglades, Miami\nBeach, Sea Ranch Lakes, Bal Harbour, Golden Beach, Surfside, Coral\nGables, North Bay Village, and Indian Creek.",
-        "instruction": "Move to safe harbor until hazardous weather passes.\n\nThunderstorms can produce sudden waterspouts. Waterspouts can easily\noverturn boats and create locally hazardous seas. Seek safe harbor\nimmediately.\n\nReport severe weather to the Coast Guard or the National Weather\nService. You can also share your report with NWS Miami on Facebook\nand Twitter.",
-        "sender_name": "NWS Miami FL"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
         "event": "Flood Watch",
@@ -2597,5 +2582,5 @@
       "grid_y": 52
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

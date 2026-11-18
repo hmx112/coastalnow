@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "long-beach",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-17T23:08:09+00:00",
+  "generated_at_utc": "2026-11-18T01:03:34+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:08:09+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:34+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:08:09+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:34+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-17T23:08:09+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:34+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,34 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-17T23:08:09+00:00"
+      "fetched_at_utc": "2026-11-18T01:03:34+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-17T15:00:00-08:00",
-      "wind_mph": 15.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-11-17T16:00:00-08:00",
-      "wind_mph": 15.0,
-      "gust_mph": 23.016,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 66.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
     {
       "time": "2026-11-17T17:00:00-08:00",
       "wind_mph": 15.0,
@@ -1902,11 +1878,50 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-24T03:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 4.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-11-24T04:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 6.905,
+      "wind_direction_deg": 22.5,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 53.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7a9f3535476a8ccb8510480153efb8ca6db19d1.004.1",
+        "event": "Flood Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-17T15:46:00-08:00",
+        "onset": "2026-11-19T06:00:00-08:00",
+        "expires": "2026-11-18T15:00:00-08:00",
+        "ends": "2026-11-19T18:00:00-08:00",
+        "headline": "Flood Watch issued November 17 at 3:46PM PST until November 19 at 6:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...Los Angeles County.\n\n* WHEN...From Thursday morning through Thursday afternoon.\n\n* IMPACTS...Excessive rainfall may result in significant flooding of\nroads and other low-lying areas, heavy flows in creeks and canyons,\nrockslides, mudslides, and debris flows in recent burn scars.\n\n* ADDITIONAL DETAILS...\n- Rain rates up to 1 inch per hour are expected, especially in the\nmountains.\n- http://www.weather.gov/safety/flood",
+        "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.046e90e02cad1bb4397c2951508dcfdf9bdc942d.003.1",
         "event": "High Surf Advisory",
@@ -1920,21 +1935,6 @@
         "headline": "High Surf Advisory issued November 17 at 2:15PM PST until November 17 at 9:00PM PST by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Large breaking waves of 4 to 7 feet. Dangerous rip\ncurrents expected.\n\n* WHERE...Malibu Coast and Los Angeles County Beaches.\n\n* WHEN...Until 9 PM PST this evening.\n\n* IMPACTS...There is an increased risk for ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore. Minor tidal\noverflow during morning high tides.\n\n* ADDITIONAL DETAILS...A High Surf Advisory will likely be issued\nfor Thursday.",
         "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c86e11421f05b06e833013ae6fc7f262a42ed27f.005.1",
-        "event": "Flood Watch",
-        "severity": "Severe",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-17T12:14:00-08:00",
-        "onset": "2026-11-19T08:00:00-08:00",
-        "expires": "2026-11-18T14:00:00-08:00",
-        "ends": "2026-11-19T18:00:00-08:00",
-        "headline": "Flood Watch issued November 17 at 12:14PM PST until November 19 at 6:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Flooding caused by excessive rainfall is possible.\n\n* WHERE...Los Angeles County.\n\n* WHEN...From Thursday morning through Thursday afternoon.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Rain rates up to 1 inch per hour are expected in the mountains,\nand up to 0.75 inches per hour elsewhere.\n- http://www.weather.gov/safety/flood",
-        "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -2567,5 +2567,5 @@
       "grid_y": 31
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
