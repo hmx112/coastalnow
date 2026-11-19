@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { koreaDate, nextTide, plotSeries, isValidBundle, shiftDay } from '../src/tides.mjs';
+import { koreaDate, nextTide, plotSeries, isValidBundle, shiftDay, remainingForecastDays } from '../src/tides.mjs';
 
 const today = '2026-11-18';
 function makeDay(date) {
@@ -25,12 +25,28 @@ test('Korean dates cross UTC boundary correctly',()=>{
  assert.equal(koreaDate(new Date('2026-11-17T19:00:00Z')),today);
  assert.equal(shiftDay('2026-11-30',1),'2026-12-01');
 });
-test('7-day verified bundle accepted; stale and incomplete bundles rejected',()=>{
+test('cached 7-day forecast stays usable while its verified window includes today',()=>{
  assert.equal(isValidBundle(sample,'incheon',today),true);
- assert.equal(isValidBundle(sample,'incheon','2026-11-19'),false);
+ assert.equal(isValidBundle(sample,'incheon','2026-11-20'),true);
+ assert.equal(isValidBundle(sample,'incheon','2026-11-24'),true);
+ assert.equal(isValidBundle(sample,'incheon','2026-11-17'),false);
+ assert.equal(isValidBundle(sample,'incheon','2026-11-25'),false);
  assert.equal(isValidBundle(sample,'busan',today),false);
  assert.equal(isValidBundle({...sample,days:sample.days.slice(0,6)},'incheon',today),false);
 });
+
+test('past forecast dates are hidden; original bundle and source metadata are unchanged',()=>{
+ const visible = remainingForecastDays(sample,'2026-11-20');
+ assert.equal(visible.length,5);
+ assert.deepEqual(visible.map(x=>x.date),[
+  '2026-11-20','2026-11-21','2026-11-22','2026-11-23','2026-11-24',
+ ]);
+ assert.equal(sample.days.length,7);
+ assert.equal(sample.date_range.start,'2026-11-18');
+ assert.equal(remainingForecastDays(sample,'2026-11-24').length,1);
+ assert.equal(remainingForecastDays(sample,'2026-11-25').length,0);
+});
+
 test('a gap in half-hour rows is rejected',()=>{
  const altered=structuredClone(sample);
  altered.days[0].curve[18].t=today+' 09:30';
