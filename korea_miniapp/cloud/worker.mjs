@@ -3,11 +3,15 @@
  * Scheduled collection of KHOA's 7-day Korean tidal forecasts.
  * No API key is sent to the browser. Existing CoastalNow is unchanged.
  */
-const STATIONS = Object.freeze({
-  incheon: { id: "DT_0001", name: "인천" },
-  busan: { id: "DT_0005", name: "부산" },
-  jeju: { id: "DT_0004", name: "제주" },
-});
+import CATALOG from '../stations.json' with { type: 'json' };
+const STATIONS = Object.freeze(Object.fromEntries(
+  CATALOG.map(row => [row.slug, { id: row.id, name: row.name, region: row.region }])
+));
+const STATION_SLUGS = CATALOG.map(row => row.slug);
+const STATIONS_PER_REFRESH = 2;
+const HOUR_MS = 60 * 60 * 1000;
+const MAX_CACHE_AGE_MS = 30 * HOUR_MS;
+
 const SOURCE = "https://apis.data.go.kr/1192136/";
 const ROUTES = {
   high_low: "tideFcstHghLw/GetTideFcstHghLwApiService",
@@ -98,7 +102,7 @@ export function normalize(kind, payload, day) {
   return out;
 }
 
-export async function collectStation(slug, today, env, fetcher = fetch) {
+export async function collectStation(slug, today, env, fetcher = fetch, collectedAt = new Date()) {
   const station = STATIONS[slug];
   if (!station) throw new Error("Unknown station");
   const highKey = env.KHOA_HIGH_LOW_KEY || env.KHOA_SERVICE_KEY;
@@ -124,18 +128,25 @@ export async function collectStation(slug, today, env, fetcher = fetch) {
     units: "cm",
     datum: "Provider reference; do not interpret as actual water depth",
     date_range: { start: today, end: addDays(today, 6) },
-    generated_at_utc: new Date().toISOString(),
+    generated_at_utc: collectedAt.toISOString(),
     days,
   };
 }
 
-export function isFresh(bundle, today) {
+export function isFresh(bundle, today, now = new Date()) {
   if (!bundle || bundle.schema_version !== 1 || !Array.isArray(bundle.days) ||
       bundle.days.length !== 7 || bundle.units !== "cm") return false;
-  if (bundle.date_range?.start !== today || bundle.date_range?.end !== addDays(today, 6)) return false;
+  const start = bundle.date_range?.start;
+  if (typeof start !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(start)) return false;
+  if (bundle.date_range?.end !== addDays(start, 6) || today < start || today > bundle.date_range.end)
+    return false;
+  const generatedAt = Date.parse(bundle.generated_at_utc);
+  const ageMs = now.getTime() - generatedAt;
+  if (!Number.isFinite(generatedAt) || ageMs < -5 * 60_000 || ageMs > MAX_CACHE_AGE_MS)
+    return false;
   for (let i = 0; i < 7; i++) {
     const d = bundle.days[i];
-    if (d?.date !== addDays(today, i) || !Array.isArray(d.hilo) ||
+    if (d?.date !== addDays(start, i) || !Array.isArray(d.hilo) ||
         !Array.isArray(d.curve) || !d.hilo.length || d.curve.length !== 48) return false;
   }
   return true;
@@ -152,25 +163,35 @@ function reply(data, status = 200, cacheSeconds = 0) {
   });
 }
 
-export async function refreshAll(env, now = new Date(), fetcher = fetch) {
+/** Distribute stations across 10 hourly slots: 2 locations/slot, 14 API calls each. */
+export function selectRefreshGroup(now = new Date()) {
+  const groups = Math.ceil(STATION_SLUGS.length / STATIONS_PER_REFRESH);
+  const slot = Math.floor(now.getTime() / HOUR_MS) % groups;
+  const start = slot * STATIONS_PER_REFRESH;
+  return STATION_SLUGS.slice(start, start + STATIONS_PER_REFRESH);
+}
+
+export async function refreshSelected(env, now = new Date(), fetcher = fetch,
+                                      slugs = selectRefreshGroup(now)) {
   if (!env.TIDES_KV) throw new Error("Missing TIDES_KV binding");
+  if (!Array.isArray(slugs) || slugs.length < 1 ||
+      slugs.length > STATIONS_PER_REFRESH || slugs.some(slug => !Object.hasOwn(STATIONS, slug)))
+    throw new Error("Invalid station refresh group");
   const today = koreaDay(now);
-  // Three concurrent station collectors, each making 14 sequential provider calls.
-  const slugs = Object.keys(STATIONS);
   const results = await Promise.allSettled(slugs.map(async slug => {
-    const fresh = await collectStation(slug, today, env, fetcher);
-    if (!isFresh(fresh, today)) throw new Error("Incomplete station forecast");
-    // Only overwrite the verified, complete station bundle.
-    await env.TIDES_KV.put(CACHE_KEY_PREFIX + slug, JSON.stringify(fresh));
+    const bundle = await collectStation(slug, today, env, fetcher, now);
+    if (!isFresh(bundle, today, now)) throw new Error("Incomplete station forecast");
+    // Write only after all 7 dates succeed; a failed station retains its prior entry.
+    await env.TIDES_KV.put(CACHE_KEY_PREFIX + slug, JSON.stringify(bundle));
     return slug;
   }));
   const passed = [], failed = [];
-  results.forEach((result, i) => {
+  results.forEach((result,i) => {
     if (result.status === "fulfilled") passed.push(slugs[i]);
     else failed.push(slugs[i]);
   });
-  // Never print keys, request URLs or raw upstream responses.
-  console.log("KHOA refresh " + today + ": passed=" + passed.join(",") + "; failed=" + failed.join(","));
+  console.log("KHOA refresh " + today + ": passed=" + passed.join(",") +
+              "; failed=" + failed.join(","));
   if (failed.length) throw new Error("Some KHOA stations failed to refresh: " + failed.join(","));
   return passed;
 }
@@ -189,7 +210,7 @@ export async function handleRequest(request, env, now = new Date()) {
   try { bundle = await env.TIDES_KV.get(CACHE_KEY_PREFIX + slug, "json"); }
   catch { return reply({error:"Cache unavailable"}, 503); }
   const today = koreaDay(now);
-  if (!isFresh(bundle, today)) return reply({
+  if (!isFresh(bundle, today, now)) return reply({
     error:"Forecast temporarily unavailable",
     station:slug,
     reason:"not_fresh",
@@ -199,5 +220,5 @@ export async function handleRequest(request, env, now = new Date()) {
 
 export default {
   fetch(request, env) { return handleRequest(request, env); },
-  async scheduled(_controller, env) { await refreshAll(env); },
+  async scheduled(_controller, env) { await refreshSelected(env); },
 };
