@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { addDays, koreaDay, normalize, collectStation, isFresh, refreshAll, handleRequest } from "./worker.mjs";
+import { addDays, koreaDay, normalize, collectStation, isFresh, selectRefreshGroup, refreshSelected, handleRequest } from "./worker.mjs";
+import CATALOG from '../stations.json' with { type: 'json' };
 
 const DAY = "2026-11-18";
 const isoClock = "2026-11-17T16:12:00Z"; // 2026-11-18 01:12 KST
@@ -71,42 +72,77 @@ test("one station collects 7 complete days; separate service keys",async()=>{
   const result=await collectStation("incheon",DAY,{
     KHOA_HIGH_LOW_KEY:"KEY_HIGH",
     KHOA_SERIES_KEY:"KEY_SERIES",
-  },mockFetch);
+  },mockFetch,new Date(isoClock));
   assert.equal(result.days.length,7);
   assert.equal(calls.length,14);
   assert.equal(result.days[6].date,"2026-11-24");
   assert.equal(calls.filter(c=>c.kind==="high_low"&&c.key==="KEY_HIGH").length,7);
   assert.equal(calls.filter(c=>c.kind==="series"&&c.key==="KEY_SERIES"&&c.interval==="30").length,7);
-  assert.equal(isFresh(result,DAY),true);
-  assert.equal(isFresh(result,"2026-11-19"),false);
+  assert.equal(isFresh(result,DAY,new Date(isoClock)),true);
+  assert.equal(isFresh(result,"2026-11-19",new Date(isoClock)),true);
+  assert.equal(isFresh(result,"2026-11-25",new Date(isoClock)),false);
 });
 
-test("42 provider calls and exactly 3 KV writes for 3 stations",async()=>{
+test("20 station catalog has valid distinct codes and region coverage", () => {
+  assert.equal(CATALOG.length,20);
+  assert.equal(new Set(CATALOG.map(row=>row.slug)).size,20);
+  assert.equal(new Set(CATALOG.map(row=>row.id)).size,20);
+  assert.deepEqual(new Set(CATALOG.map(row=>row.region)),new Set(["서해","남해","동해","제주"]));
+});
+
+test("hourly rotation covers every station with batches of two in ten slots", () => {
+  const refreshed = [];
+  for(let slot=0;slot<10;slot++) {
+    const pair=selectRefreshGroup(new Date(slot*60*60*1000));
+    assert.equal(pair.length,2);
+    refreshed.push(...pair);
+  }
+  assert.deepEqual(refreshed,CATALOG.map(row=>row.slug));
+  assert.deepEqual(selectRefreshGroup(new Date(10*60*60*1000)),
+    CATALOG.slice(0,2).map(row=>row.slug));
+});
+
+test("28 provider calls and exactly 2 KV writes for one hourly group",async()=>{
   const kv=makeKV();
   const {mockFetch,calls}=makeFetcher();
-  const names=await refreshAll({
+  const names=await refreshSelected({
     TIDES_KV:kv,KHOA_HIGH_LOW_KEY:"KEY_HIGH",KHOA_SERIES_KEY:"KEY_SERIES"
-  },new Date(isoClock),mockFetch);
-  assert.deepEqual(names,["incheon","busan","jeju"]);
-  assert.equal(calls.length,42);
-  assert.equal(kv.data.size,3);
-  const result=await handleRequest(new Request("https://example.com/api/tides?station=jeju"),
+  },new Date(isoClock),mockFetch,["incheon","busan"]);
+  assert.deepEqual(names,["incheon","busan"]);
+  assert.equal(calls.length,28);
+  assert.equal(kv.data.size,2);
+  const result=await handleRequest(new Request("https://example.com/api/tides?station=busan"),
     {TIDES_KV:kv},new Date(isoClock));
   assert.equal(result.status,200);
   const payload=await result.json();
   assert.equal(payload.days.length,7);
   assert.equal(result.headers.get("cache-control"),"public, max-age=300");
   assert.equal(JSON.stringify(payload).includes("KEY_HIGH"),false);
+  // Tomorrow's query must still work until a new station bundle is collected.
+  const tomorrow=await handleRequest(new Request("https://example.com/api/tides?station=busan"),
+    {TIDES_KV:kv},new Date(new Date(isoClock).getTime()+24*60*60*1000));
+  assert.equal(tomorrow.status,200);
+  // A 31-hour-old cached bundle must not masquerade as fresh data.
+  const tooOld=await handleRequest(new Request("https://example.com/api/tides?station=busan"),
+    {TIDES_KV:kv},new Date(new Date(isoClock).getTime()+31*60*60*1000));
+  assert.equal(tooOld.status,503);
 });
 
 test("a provider outage preserves previous station cache and reports failure",async()=>{
   const kv=makeKV();kv.data.set("tides:v1:incheon",JSON.stringify({marker:"previous"}));
   const {mockFetch}=makeFetcher({fail:({kind,station})=>kind==="series"&&station==="DT_0001"});
-  await assert.rejects(()=>refreshAll({
+  await assert.rejects(()=>refreshSelected({
     TIDES_KV:kv,KHOA_HIGH_LOW_KEY:"A",KHOA_SERIES_KEY:"B",
-  },new Date(isoClock),mockFetch),/stations failed/);
+  },new Date(isoClock),mockFetch,["incheon","busan"]),/stations failed/);
   assert.equal(JSON.parse(kv.data.get("tides:v1:incheon")).marker,"previous");
-  assert.equal(kv.data.size,3); // Other stations should complete independently
+  assert.equal(kv.data.size,2); // The other station can succeed independently.
+});
+
+test("a bad oversized refresh group is rejected before API requests",async()=>{
+ const kv=makeKV(); const {mockFetch,calls}=makeFetcher();
+ await assert.rejects(()=>refreshSelected({TIDES_KV:kv},new Date(isoClock),mockFetch,
+   ["incheon","busan","jeju"]),/Invalid station refresh group/);
+ assert.equal(calls.length,0);
 });
 
 test("stale/missing cached data is not shown as current",async()=>{
