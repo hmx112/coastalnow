@@ -1,10 +1,15 @@
 /** Data-only domain helpers: no UI, no SDK, no provider secrets. */
-export const STATIONS = Object.freeze({
-  incheon: { id: 'DT_0001', name: '인천' },
-  busan: { id: 'DT_0005', name: '부산' },
-  jeju: { id: 'DT_0004', name: '제주' },
-});
-export const STATION_SLUGS = Object.keys(STATIONS);
+import CATALOG from '../../stations.json' with { type: 'json' };
+
+export const STATIONS = Object.freeze(Object.fromEntries(CATALOG.map(row => [row.slug,
+  { id: row.id, name: row.name, region: row.region }
+])));
+export const STATION_SLUGS = CATALOG.map(row => row.slug);
+export const REGIONS = Object.freeze(['서해', '남해', '동해', '제주']);
+export const STATION_GROUPS = Object.freeze(REGIONS.map(region => ({
+  name: region,
+  stations: CATALOG.filter(row => row.region === region),
+})));
 
 export function koreaDate(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-US', {
