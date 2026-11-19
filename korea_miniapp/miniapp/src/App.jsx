@@ -2,6 +2,16 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Button, Badge } from '@toss/tds-mobile';
 import { Storage, User } from '@apps-in-toss/web-framework';
 import { loadForecast } from './api.mjs';
+import { configureAds } from './ads/config.mjs';
+import { BannerAd } from './ads/BannerAd.jsx';
+import { RewardedComparison } from './ads/RewardedComparison.jsx';
+
+const AD_SETTINGS = configureAds({
+  dev: import.meta.env.DEV,
+  mode: import.meta.env.MODE,
+  bannerId: import.meta.env.VITE_BANNER_AD_GROUP_ID,
+  rewardedId: import.meta.env.VITE_REWARDED_AD_GROUP_ID,
+});
 import { STATIONS, STATION_SLUGS, STATION_GROUPS, koreaDate, displayDate, asTime, asHeight, nextTide, plotSeries } from './tides.mjs';
 
 const PREFERENCE_KEY = 'oneul-bada:starting-station-v1';
@@ -70,6 +80,7 @@ export default function App() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [reloadToken, setReloadToken] = useState(0);
+  const [hasLoadedAnyData, setHasLoadedAnyData] = useState(false);
   const today = koreaDate();
 
   useEffect(() => {
@@ -92,7 +103,7 @@ export default function App() {
     setBundle(null);
     setSelectedIndex(0);
     loadForecast(station, new Date(), controller.signal)
-      .then(data => { if (!controller.signal.aborted) setBundle(data); })
+      .then(data => { if (!controller.signal.aborted) { setBundle(data); setHasLoadedAnyData(true); } })
       .catch((err) => { if (!controller.signal.aborted) setError(err instanceof Error ? err.message : '예보를 불러오지 못했어요.'); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
@@ -208,6 +219,8 @@ export default function App() {
             <p className="stale-notice">수집 후 하루가 지난 예보예요. 최근 갱신 자료가 필요하면 다시 수집해 주세요.</p>}
         </section>
       </>}
+      {hasLoadedAnyData && <RewardedComparison adGroupId={AD_SETTINGS.rewarded} days={days} />}
+      {hasLoadedAnyData && <BannerAd adGroupId={AD_SETTINGS.banner} enabled />}
       <div className="bottom-pad" />
     </main>
   );
