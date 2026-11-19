@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { koreaDate, nextTide, plotSeries, isValidBundle, shiftDay, remainingForecastDays } from '../src/tides.mjs';
+import { koreaDate, nextTide, plotSeries, isValidBundle, shiftDay, remainingForecastDays, STATIONS, STATION_SLUGS, STATION_GROUPS } from '../src/tides.mjs';
 
 const today = '2026-11-18';
 function makeDay(date) {
@@ -61,4 +61,14 @@ test('chart represents actual 48 point values without synthetic data',()=>{
  assert.ok(line.line.startsWith('M '));
  assert.ok(line.fill.includes(' Z'));
  assert.equal(plotSeries([]),null);
+});
+
+test('20 official KHOA tide stations cover four coastal zones with unique codes',()=>{
+ assert.equal(STATION_SLUGS.length,20);
+ assert.equal(STATION_GROUPS.length,4);
+ assert.deepEqual(STATION_GROUPS.map(g=>g.name),['서해','남해','동해','제주']);
+ assert.equal(new Set(Object.values(STATIONS).map(s=>s.id)).size,20);
+ assert.equal(STATIONS.incheon.id,'DT_0001');
+ assert.equal(STATIONS.jeju.id,'DT_0004');
+ assert.equal(STATIONS.seogwipo.id,'DT_0010');
 });
