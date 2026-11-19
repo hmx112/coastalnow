@@ -1,10 +1,12 @@
 name = "oneul-bada-api"
 main = "worker.mjs"
 compatibility_date = "2026-11-01"
-# The free plan allows 50 provider subrequests; this job uses 42 KHOA calls + 3 KV writes.
-# Twice a day, 00:20 and 12:20 KST (Cron executes in UTC).
+# Free Workers: 50 subrequests/event; one hourly batch uses 28 KHOA calls + 2 KV writes.
+# The scheduled handler rotates two locations per UTC hour; 20 stations / 2 = 10 slots.
+# Each station is refreshed once per 10 hours, not all 20 in the same invocation.
+# Hourly cron runs in UTC (no timezone adjustment needed for hourly rotation).
 [triggers]
-crons = ["20 15 * * *", "20 3 * * *"]
+crons = ["23 * * * *"]
 
 # Provision a NEW namespace via `npx wrangler kv namespace create TIDES_KV`.
 # Replace the ID below with the NEW namespace ID before deploying; do not
