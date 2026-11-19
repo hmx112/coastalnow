@@ -23,11 +23,16 @@ export const asHeight = (value) => Number.isFinite(Number(value)) ? `${Number(va
 export function isValidBundle(bundle, slug, today = koreaDate()) {
   if (!Object.hasOwn(STATIONS, slug) || !bundle || bundle.schema_version !== 1 || bundle.mode !== 'live') return false;
   if (bundle.station?.id !== STATIONS[slug].id || bundle.units !== 'cm') return false;
-  if (bundle.date_range?.start !== today || bundle.date_range?.end !== shiftDay(today, 6)) return false;
+  const start = bundle.date_range?.start;
+  if (typeof start !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(start)) return false;
+  // A 7-day prediction collected on an earlier day is still usable while
+  // today's date is included. Do not require its start date to equal today.
+  if (bundle.date_range?.end !== shiftDay(start, 6)) return false;
+  if (today < start || today > bundle.date_range.end) return false;
   if (!Array.isArray(bundle.days) || bundle.days.length !== 7 || !bundle.generated_at_utc) return false;
   if (!Number.isFinite(Date.parse(bundle.generated_at_utc))) return false;
   return bundle.days.every((item, i) => {
-    const day = shiftDay(today, i);
+    const day = shiftDay(start, i);
     if (item?.date !== day || !Array.isArray(item.hilo) || !Array.isArray(item.curve)) return false;
     if (item.hilo.length < 2 || item.curve.length !== 48) return false;
     const validRow = (row) => /^\d{4}-\d\d-\d\d \d\d:\d\d$/.test(row?.t) && row.t.startsWith(day) &&
@@ -38,6 +43,11 @@ export function isValidBundle(bundle, slug, today = koreaDate()) {
     return true;
   });
 }
+/** Show only dates remaining in the verified forecast window; never show past tabs. */
+export function remainingForecastDays(bundle, today = koreaDate()) {
+  return Array.isArray(bundle?.days) ? bundle.days.filter(day => day.date >= today) : [];
+}
+
 export function nextTide(bundle, dayIndex, now = new Date()) {
   const day = bundle?.days?.[dayIndex];
   if (!day) return null;
