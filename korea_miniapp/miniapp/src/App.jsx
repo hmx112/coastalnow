@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Button, Badge } from '@toss/tds-mobile';
 import { Storage, User } from '@apps-in-toss/web-framework';
 import { loadForecast } from './api.mjs';
-import { STATIONS, STATION_SLUGS, koreaDate, displayDate, asTime, asHeight, nextTide, plotSeries } from './tides.mjs';
+import { STATIONS, STATION_SLUGS, STATION_GROUPS, koreaDate, displayDate, asTime, asHeight, nextTide, plotSeries } from './tides.mjs';
 
 const PREFERENCE_KEY = 'oneul-bada:starting-station-v1';
 let anonymousKeyTask;
@@ -126,11 +126,13 @@ export default function App() {
       <section className="station-panel" aria-label="지역 선택 및 저장">
         <div className="station-top">
           <div>
-            <label htmlFor="station" className="kicker">보고 싶은 해역</label>
+            <label htmlFor="station" className="kicker">보고 싶은 해역 · 20개 예보지점</label>
             <div className="select-wrap">
               <span className="pin" aria-hidden="true">⌖</span>
               <select value={station} onChange={(e) => setStation(e.target.value)} id="station">
-                {STATION_SLUGS.map(slug => <option value={slug} key={slug}>{STATIONS[slug].name}</option>)}
+                {STATION_GROUPS.map(group => <optgroup label={group.name} key={group.name}>
+                  {group.stations.map(item => <option value={item.slug} key={item.slug}>{item.name}</option>)}
+                </optgroup>)}
               </select>
             </div>
           </div>
