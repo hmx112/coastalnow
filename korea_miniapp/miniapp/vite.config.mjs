@@ -2,9 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import aitDevtools from '@apps-in-toss/devtools/unplugin';
 import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const STATIONS = new Set(['incheon', 'busan', 'jeju']);
+const catalogueFile = resolve(process.cwd(), '..', 'stations.json');
+const STATIONS = new Set(JSON.parse(readFileSync(catalogueFile, 'utf8')).map(item => item.slug));
 
 // Local development ONLY: read the user's previously validated KHOA 7-day JSON.
 // Never package these files into dist/. Never expose API keys to the browser.
@@ -39,6 +41,6 @@ function localKhoaData() {
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), aitDevtools.vite(), ...(command === 'serve' ? [localKhoaData()] : [])],
-  server: { port: 3000, strictPort: true },
+  server: { port: 3000, strictPort: true, fs: { allow: [resolve(process.cwd()), resolve(process.cwd(), '..')] } },
   build: { outDir: 'dist', sourcemap: false },
 }));
