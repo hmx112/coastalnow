@@ -52,3 +52,37 @@ npm run build
 지역 선택에서 **서해 6 · 남해 7 · 동해 5 · 제주 2**개 예보지점을 선택할 수 있습니다. 지점 목록은 바로 위 폴더 `../stations.json`에서 가져옵니다. `miniapp` 폴더만 따로 복사하면 빌드되지 않으므로 **반드시 동일 위치에 `korea_miniapp/stations.json`이 있어야** 합니다.
 
 처음 신규 지점을 조회하기 전에 `korea_miniapp/run_week_check.ps1`로 공식 API에서 7일 자료를 수집하세요. 아직 확인하지 않은 지역의 예보는 보여주지 않으며, API 키는 프런트엔드나 GitHub에 저장하지 않습니다.
+
+## 배너 + 보상형 광고 시스템 v1.3 (미배포)
+
+앱인토스 인앱광고 2.0 ver2 공식 WebView SDK를 연동했습니다.
+
+- **배너 1개**: 만조·간조 및 출처 하단에서만 보입니다. `TossAds.initialize`는 한 번 호출하고 `TossAds.attachBanner`로 부착합니다. 광고 SDK UI를 변조하지 않으며, 컴포넌트가 종료되면 `destroy()` 합니다. No Fill 또는 미지원이면 숨깁니다. 배너를 자체적으로 반복 갱신하지 않습니다.
+- **리워드 1개**: 광고 시청을 자발적으로 선택하고 공식 `userEarnedReward` 이벤트를 실제로 받은 경우에만 **24시간 주간 물때 비교표 이용권**을 부여합니다. 광고 클릭·노출·닫힘은 보상이 아닙니다. 현금, 토스 포인트, 가상화폐를 지급하지 않습니다.
+- **기본 예보는 계속 무료**: 지역 선택, 날짜별 7일 조석 예보, 만조·간조 시간, 조위 그래프는 광고를 보지 않아도 사용할 수 있습니다.
+- **브라우저 개발 모드**: 광고 영역만 '미리보기'로 표시하고 실제 광고를 흉내 내지 않습니다. 리워드 버튼은 토스 앱 SDK 미지원이면 비활성화됩니다.
+- **토스 QR 광고 테스트**: `npm.cmd run build:adtest`로 공식 테스트 광고 그룹 ID를 사용합니다. **이 테스트 빌드를 출시하지 마세요.** SDK와 토스 앱의 광고 지원 버전을 확인하세요.
+- **실제 출시용**: 토스 콘솔에서 배너 광고 그룹 ID와 리워드 광고 그룹 ID를 발급받고, `.env.local`에 아래 두 값을 넣은 뒤 `npm.cmd run build`(production)로 빌드하세요. 설정하지 않은 유형은 광고가 비활성화됩니다. 테스트 ID는 릴리스 모드에서 거절합니다.
+
+```dotenv
+VITE_BANNER_AD_GROUP_ID=콘솔에서_발급한_배너_ID
+VITE_REWARDED_AD_GROUP_ID=콘솔에서_발급한_리워드_ID
+```
+
+`VITE_` 값은 앱 번들에 포함됩니다. 따라서 공식 광고 그룹 ID만 입력할 수 있고 **국립해양조사원 인증키는 절대 입력하면 안 됩니다**. 리워드 광고 그룹의 보상명은 **주간비교권**, 수량은 **1**로 설정하면 화면 안내와 일치합니다. 이 보상은 기기 저장소 기준의 비금전적 24시간 이용권입니다.
+
+```powershell
+# 프로젝트 miniapp 폴더
+npm.cmd install
+npm.cmd run test
+npm.cmd run dev
+# 토스 실기기 광고 테스트 전용: npm.cmd run build:adtest
+# 정식 광고 ID와 Cloudflare 서비스 준비 후: npm.cmd run build
+```
+
+**아직 남은 일:** 토스 콘솔 사업자·정산 정보·광고 그룹 등록, 토스 실제 기기에서 광고 테스트(ID가 실제 노출되는지, No Fill/중간 종료/리워드 지급 여부), Cloudflare 실제 데이터 서버 배포, 공식 앱 심사. 브라우저 화면만으로 실제 광고 운영 성공을 판단하면 안 됩니다.
+
+공식 가이드:
+- https://developers-apps-in-toss.toss.im/guide/monetization/in-app-ad.md
+- https://developers-apps-in-toss.toss.im/documentation/common/monetization/iaa/web-banner.md
+- https://developers-apps-in-toss.toss.im/documentation/common/monetization/iaa/interstitial-rewarded-ad.md
