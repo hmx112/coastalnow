@@ -46,3 +46,9 @@ npm run build
 - 시계열은 30분 간격 48건을 필수 검증해요. 예측 조위(cm)를 실제 수심이나 해양 활동 안전성으로 표현하지 않아요.
 
 공식 문서: https://developers-apps-in-toss.toss.im/ai-vibe-coding/tutorials/webview
+
+## 전국 20개 관측소 등록 (2026-11-20)
+
+지역 선택에서 **서해 6 · 남해 7 · 동해 5 · 제주 2**개 예보지점을 선택할 수 있습니다. 지점 목록은 바로 위 폴더 `../stations.json`에서 가져옵니다. `miniapp` 폴더만 따로 복사하면 빌드되지 않으므로 **반드시 동일 위치에 `korea_miniapp/stations.json`이 있어야** 합니다.
+
+처음 신규 지점을 조회하기 전에 `korea_miniapp/run_week_check.ps1`로 공식 API에서 7일 자료를 수집하세요. 아직 확인하지 않은 지역의 예보는 보여주지 않으며, API 키는 프런트엔드나 GitHub에 저장하지 않습니다.
