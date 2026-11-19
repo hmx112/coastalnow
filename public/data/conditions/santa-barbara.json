@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "santa-barbara",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-19T12:04:35+00:00",
+  "generated_at_utc": "2026-11-19T14:31:05+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-19T12:04:35+00:00"
+      "fetched_at_utc": "2026-11-19T14:31:05+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-19T11:55:35+00:00"
+      "fetched_at_utc": "2026-11-19T14:31:05+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-19T11:55:35+00:00"
+      "fetched_at_utc": "2026-11-19T14:31:05+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-18T21:59:23+00:00"
+      "fetched_at_utc": "2026-11-19T14:27:58+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-19T11:55:35+00:00"
+      "fetched_at_utc": "2026-11-19T14:31:05+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-19T03:00:00-08:00",
-      "wind_mph": 15.0,
-      "gust_mph": 20.714,
-      "wind_direction_deg": 202.5,
-      "precip_probability_pct": 99.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain"
-    },
-    {
-      "time": "2026-11-19T04:00:00-08:00",
-      "wind_mph": 15.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 247.5,
-      "precip_probability_pct": 98.0,
-      "air_temperature_f": 61.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain"
-    },
-    {
-      "time": "2026-11-19T05:00:00-08:00",
-      "wind_mph": 15.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 247.5,
-      "precip_probability_pct": 98.0,
-      "air_temperature_f": 59.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 8.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain"
-    },
     {
       "time": "2026-11-19T06:00:00-08:00",
       "wind_mph": 15.0,
@@ -1902,6 +1866,42 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-25T15:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 20.714,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 27.0,
+      "air_temperature_f": 68.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
+    },
+    {
+      "time": "2026-11-25T16:00:00-08:00",
+      "wind_mph": 15.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 67.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-25T17:00:00-08:00",
+      "wind_mph": 15.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 6.0,
+      "air_temperature_f": 65.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
@@ -1920,21 +1920,6 @@
         "headline": "Small Craft Advisory issued November 19 at 3:08AM PST until November 19 at 9:00PM PST by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Hazardous sea conditions.\n\n* WHERE...East Santa Barbara Channel from Pt. Conception to Pt.\nMugu CA including Santa Cruz Island.\n\n* WHEN...Until 9 PM PST this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ff1f13f734472e0ace5abf5926099f6c64874f66.001.1",
-        "event": "Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-18T21:32:00-08:00",
-        "onset": "2026-11-18T21:32:00-08:00",
-        "expires": "2026-11-19T05:00:00-08:00",
-        "ends": "2026-11-19T05:00:00-08:00",
-        "headline": "Flood Advisory issued November 18 at 9:32PM PST until November 19 at 5:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Southeastern San Luis Obispo County in southwestern\nCalifornia...\nSanta Barbara County in southwestern California...\n\n* WHEN...Until 500 AM PST Thursday.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\n\n* ADDITIONAL DETAILS...\n- At 932 PM PST, Doppler radar indicated heavy rain. Minor flooding\nis ongoing or expected to begin shortly in the advisory area. Up\nto 0.5 inches of rain have fallen.\n- Some locations that will experience flooding include...\nSanta Maria, Santa Barbara, Lompoc, Santa Ynez, Point Conception,\nMontecito, Nipomo, Solvang, Vandenberg Space Force Base, Los\nAlamos, Orcutt, Highway 101 through Gaviota State Park, Refugio\nState Beach, El Capitan State Beach, Isla Vista, Cuyama, Goleta,\nGuadalupe and Buellton.\n- http://www.weather.gov/safety/flood",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
       {
@@ -1983,32 +1968,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-11-18",
-      "end": "2026-11-24"
+      "start": "2026-11-19",
+      "end": "2026-11-25"
     },
-    "generated_at_utc": "2026-11-18T21:59:23+00:00",
-    "generated_at_local": "2026-11-18T13:59:23-08:00",
+    "generated_at_utc": "2026-11-19T14:27:58+00:00",
+    "generated_at_local": "2026-11-19T06:27:58-08:00",
     "hilo": [
-      {
-        "t": "2026-11-18 05:18",
-        "v": 4.345,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-18 11:15",
-        "v": 2.467,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-18 16:26",
-        "v": 3.756,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-18 22:52",
-        "v": 0.987,
-        "type": "L"
-      },
       {
         "t": "2026-11-19 05:39",
         "v": 4.757,
@@ -2143,201 +2108,24 @@
         "t": "2026-11-25 23:09",
         "v": 3.747,
         "type": "H"
+      },
+      {
+        "t": "2026-11-26 03:15",
+        "v": 2.531,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-26 09:40",
+        "v": 6.934,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-26 17:19",
+        "v": -1.418,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-18 00:00",
-        "v": 1.341
-      },
-      {
-        "t": "2026-11-18 00:30",
-        "v": 1.654
-      },
-      {
-        "t": "2026-11-18 01:00",
-        "v": 2.014
-      },
-      {
-        "t": "2026-11-18 01:30",
-        "v": 2.4
-      },
-      {
-        "t": "2026-11-18 02:00",
-        "v": 2.791
-      },
-      {
-        "t": "2026-11-18 02:30",
-        "v": 3.169
-      },
-      {
-        "t": "2026-11-18 03:00",
-        "v": 3.519
-      },
-      {
-        "t": "2026-11-18 03:30",
-        "v": 3.825
-      },
-      {
-        "t": "2026-11-18 04:00",
-        "v": 4.07
-      },
-      {
-        "t": "2026-11-18 04:30",
-        "v": 4.242
-      },
-      {
-        "t": "2026-11-18 05:00",
-        "v": 4.331
-      },
-      {
-        "t": "2026-11-18 05:30",
-        "v": 4.339
-      },
-      {
-        "t": "2026-11-18 06:00",
-        "v": 4.274
-      },
-      {
-        "t": "2026-11-18 06:30",
-        "v": 4.146
-      },
-      {
-        "t": "2026-11-18 07:00",
-        "v": 3.968
-      },
-      {
-        "t": "2026-11-18 07:30",
-        "v": 3.753
-      },
-      {
-        "t": "2026-11-18 08:00",
-        "v": 3.513
-      },
-      {
-        "t": "2026-11-18 08:30",
-        "v": 3.266
-      },
-      {
-        "t": "2026-11-18 09:00",
-        "v": 3.028
-      },
-      {
-        "t": "2026-11-18 09:30",
-        "v": 2.819
-      },
-      {
-        "t": "2026-11-18 10:00",
-        "v": 2.651
-      },
-      {
-        "t": "2026-11-18 10:30",
-        "v": 2.534
-      },
-      {
-        "t": "2026-11-18 11:00",
-        "v": 2.475
-      },
-      {
-        "t": "2026-11-18 11:30",
-        "v": 2.474
-      },
-      {
-        "t": "2026-11-18 12:00",
-        "v": 2.532
-      },
-      {
-        "t": "2026-11-18 12:30",
-        "v": 2.643
-      },
-      {
-        "t": "2026-11-18 13:00",
-        "v": 2.796
-      },
-      {
-        "t": "2026-11-18 13:30",
-        "v": 2.977
-      },
-      {
-        "t": "2026-11-18 14:00",
-        "v": 3.167
-      },
-      {
-        "t": "2026-11-18 14:30",
-        "v": 3.351
-      },
-      {
-        "t": "2026-11-18 15:00",
-        "v": 3.515
-      },
-      {
-        "t": "2026-11-18 15:30",
-        "v": 3.646
-      },
-      {
-        "t": "2026-11-18 16:00",
-        "v": 3.731
-      },
-      {
-        "t": "2026-11-18 16:30",
-        "v": 3.755
-      },
-      {
-        "t": "2026-11-18 17:00",
-        "v": 3.71
-      },
-      {
-        "t": "2026-11-18 17:30",
-        "v": 3.59
-      },
-      {
-        "t": "2026-11-18 18:00",
-        "v": 3.402
-      },
-      {
-        "t": "2026-11-18 18:30",
-        "v": 3.157
-      },
-      {
-        "t": "2026-11-18 19:00",
-        "v": 2.869
-      },
-      {
-        "t": "2026-11-18 19:30",
-        "v": 2.551
-      },
-      {
-        "t": "2026-11-18 20:00",
-        "v": 2.22
-      },
-      {
-        "t": "2026-11-18 20:30",
-        "v": 1.89
-      },
-      {
-        "t": "2026-11-18 21:00",
-        "v": 1.584
-      },
-      {
-        "t": "2026-11-18 21:30",
-        "v": 1.322
-      },
-      {
-        "t": "2026-11-18 22:00",
-        "v": 1.127
-      },
-      {
-        "t": "2026-11-18 22:30",
-        "v": 1.013
-      },
-      {
-        "t": "2026-11-18 23:00",
-        "v": 0.99
-      },
-      {
-        "t": "2026-11-18 23:30",
-        "v": 1.061
-      },
       {
         "t": "2026-11-19 00:00",
         "v": 1.225
@@ -2529,6 +2317,198 @@
       {
         "t": "2026-11-19 23:30",
         "v": 1.194
+      },
+      {
+        "t": "2026-11-20 00:00",
+        "v": 1.259
+      },
+      {
+        "t": "2026-11-20 00:30",
+        "v": 1.425
+      },
+      {
+        "t": "2026-11-20 01:00",
+        "v": 1.685
+      },
+      {
+        "t": "2026-11-20 01:30",
+        "v": 2.032
+      },
+      {
+        "t": "2026-11-20 02:00",
+        "v": 2.449
+      },
+      {
+        "t": "2026-11-20 02:30",
+        "v": 2.914
+      },
+      {
+        "t": "2026-11-20 03:00",
+        "v": 3.398
+      },
+      {
+        "t": "2026-11-20 03:30",
+        "v": 3.874
+      },
+      {
+        "t": "2026-11-20 04:00",
+        "v": 4.312
+      },
+      {
+        "t": "2026-11-20 04:30",
+        "v": 4.687
+      },
+      {
+        "t": "2026-11-20 05:00",
+        "v": 4.976
+      },
+      {
+        "t": "2026-11-20 05:30",
+        "v": 5.163
+      },
+      {
+        "t": "2026-11-20 06:00",
+        "v": 5.233
+      },
+      {
+        "t": "2026-11-20 06:30",
+        "v": 5.182
+      },
+      {
+        "t": "2026-11-20 07:00",
+        "v": 5.012
+      },
+      {
+        "t": "2026-11-20 07:30",
+        "v": 4.735
+      },
+      {
+        "t": "2026-11-20 08:00",
+        "v": 4.369
+      },
+      {
+        "t": "2026-11-20 08:30",
+        "v": 3.933
+      },
+      {
+        "t": "2026-11-20 09:00",
+        "v": 3.451
+      },
+      {
+        "t": "2026-11-20 09:30",
+        "v": 2.946
+      },
+      {
+        "t": "2026-11-20 10:00",
+        "v": 2.449
+      },
+      {
+        "t": "2026-11-20 10:30",
+        "v": 1.989
+      },
+      {
+        "t": "2026-11-20 11:00",
+        "v": 1.596
+      },
+      {
+        "t": "2026-11-20 11:30",
+        "v": 1.291
+      },
+      {
+        "t": "2026-11-20 12:00",
+        "v": 1.086
+      },
+      {
+        "t": "2026-11-20 12:30",
+        "v": 0.985
+      },
+      {
+        "t": "2026-11-20 13:00",
+        "v": 0.99
+      },
+      {
+        "t": "2026-11-20 13:30",
+        "v": 1.096
+      },
+      {
+        "t": "2026-11-20 14:00",
+        "v": 1.296
+      },
+      {
+        "t": "2026-11-20 14:30",
+        "v": 1.576
+      },
+      {
+        "t": "2026-11-20 15:00",
+        "v": 1.914
+      },
+      {
+        "t": "2026-11-20 15:30",
+        "v": 2.285
+      },
+      {
+        "t": "2026-11-20 16:00",
+        "v": 2.658
+      },
+      {
+        "t": "2026-11-20 16:30",
+        "v": 3.01
+      },
+      {
+        "t": "2026-11-20 17:00",
+        "v": 3.315
+      },
+      {
+        "t": "2026-11-20 17:30",
+        "v": 3.556
+      },
+      {
+        "t": "2026-11-20 18:00",
+        "v": 3.716
+      },
+      {
+        "t": "2026-11-20 18:30",
+        "v": 3.784
+      },
+      {
+        "t": "2026-11-20 19:00",
+        "v": 3.754
+      },
+      {
+        "t": "2026-11-20 19:30",
+        "v": 3.631
+      },
+      {
+        "t": "2026-11-20 20:00",
+        "v": 3.427
+      },
+      {
+        "t": "2026-11-20 20:30",
+        "v": 3.158
+      },
+      {
+        "t": "2026-11-20 21:00",
+        "v": 2.845
+      },
+      {
+        "t": "2026-11-20 21:30",
+        "v": 2.509
+      },
+      {
+        "t": "2026-11-20 22:00",
+        "v": 2.177
+      },
+      {
+        "t": "2026-11-20 22:30",
+        "v": 1.878
+      },
+      {
+        "t": "2026-11-20 23:00",
+        "v": 1.64
+      },
+      {
+        "t": "2026-11-20 23:30",
+        "v": 1.488
       }
     ]
   },
@@ -2582,5 +2562,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
