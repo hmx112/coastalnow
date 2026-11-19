@@ -93,7 +93,7 @@ export default function App() {
     setSelectedIndex(0);
     loadForecast(station, new Date(), controller.signal)
       .then(data => { if (!controller.signal.aborted) setBundle(data); })
-      .catch(() => { if (!controller.signal.aborted) setError('예보를 불러오지 못했어요. 데이터를 확인한 뒤 다시 시도해 주세요.'); })
+      .catch((err) => { if (!controller.signal.aborted) setError(err instanceof Error ? err.message : '예보를 불러오지 못했어요.'); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
   }, [station, reloadToken]);
@@ -140,7 +140,7 @@ export default function App() {
         </div>
         <div className="source-status">
           <Badge variant="weak" size="small" color="teal">국립해양조사원 예보</Badge>
-          <span>{dateCaption(today)} 기준</span>
+          <span>{dateCaption(today)} 조회</span>
         </div>
       </section>
 
@@ -156,7 +156,7 @@ export default function App() {
 
       {!loading && !error && selected && <>
         <section className="days-section" aria-label="예보 날짜 선택">
-          <div className="section-heading"><h2>7일 조석예보</h2><span>날짜를 선택해 보세요</span></div>
+          <div className="section-heading"><h2>{days.length}일 조석예보</h2><span>남은 날짜를 선택해 보세요</span></div>
           <div className="days-scroller">
             {days.map((day, i) => {
               const weekday = new Date(day.date + 'T00:00:00Z').toLocaleDateString('ko-KR', { weekday:'short', timeZone:'UTC' });
@@ -201,7 +201,9 @@ export default function App() {
         <section className="disclosure" aria-label="자료와 주의사항">
           <strong>조석예보 안내</strong>
           <p>이 자료는 국립해양조사원에서 제공한 조석예보예요. 실제 관측 수위나 기상특보를 대신하지 않아요.</p>
-          <p>갱신 시각: {Number.isFinite(updated?.getTime()) ? updated.toLocaleString('ko-KR', {timeZone:'Asia/Seoul', dateStyle:'medium', timeStyle:'short'}) : '확인할 수 없어요'}</p>
+          <p>자료 수집 시각: {Number.isFinite(updated?.getTime()) ? updated.toLocaleString('ko-KR', {timeZone:'Asia/Seoul', dateStyle:'medium', timeStyle:'short'}) : '확인할 수 없어요'}</p>
+          {Number.isFinite(updated?.getTime()) && Date.now() - updated.getTime() > 24 * 60 * 60 * 1000 &&
+            <p className="stale-notice">수집 후 하루가 지난 예보예요. 최근 갱신 자료가 필요하면 다시 수집해 주세요.</p>}
         </section>
       </>}
       <div className="bottom-pad" />
