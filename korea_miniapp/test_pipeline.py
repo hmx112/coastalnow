@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 from datetime import date, datetime, timedelta, timezone
 
-from pipeline import TideDataError, _items, normalize_day, fetch_one_day
+from pipeline import TideDataError, _items, normalize_day, fetch_one_day, STATIONS
 
 DAY = date(2026, 11, 17)
 
@@ -13,6 +13,12 @@ def envelope(rows, code="00"):
 
 
 class TestKhoaAdapter(unittest.TestCase):
+    def test_20_station_inventory(self):
+        self.assertEqual(len(STATIONS), 20)
+        self.assertEqual(len({item["id"] for item in STATIONS.values()}), 20)
+        self.assertEqual({r["region"] for r in STATIONS.values()}, {"서해", "남해", "동해", "제주"})
+
+
     def test_hilo_maps_event_types_and_cm_without_unit_conversion(self):
         data = envelope([
             {"predcDt": "2026-11-17 12:12", "predcTdlvVl": "750.6", "extrSe": "3"},
