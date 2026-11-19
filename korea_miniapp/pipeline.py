@@ -27,11 +27,15 @@ OPERATIONS = {
 }
 # KHOA observation codes. Confirmed in public station inventories; the service
 # must validate the response's station identity before expanding this roster.
+# One station catalog for the Python adapter, Cloudflare ingestion and WebView.
+_CATALOG = json.loads((Path(__file__).resolve().parent / "stations.json").read_text(encoding="utf-8"))
 STATIONS = {
-    "incheon": {"id": "DT_0001", "name": "인천"},
-    "busan": {"id": "DT_0005", "name": "부산"},
-    "jeju": {"id": "DT_0004", "name": "제주"},
+    row["slug"]: {"id": row["id"], "name": row["name"], "region": row["region"]}
+    for row in _CATALOG
 }
+if len(STATIONS) != len(_CATALOG) or len({v["id"] for v in STATIONS.values()}) != len(_CATALOG):
+    raise RuntimeError("Duplicate station slug or code in stations.json")
+
 KST = timezone(timedelta(hours=9))  # KST has no DST; avoids Windows tzdata dependency
 _TIMESTAMP_FORMATS = (
     "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M:%S",
@@ -184,7 +188,7 @@ def _fetch(kind: str, station_id: str, day: date, key: str) -> object:
 def fetch_one_day(station_slug: str, day: date, high_low_key: str, series_key: str) -> dict:
     """Make exactly two requests and return validated, provider-originated data."""
     if station_slug not in STATIONS:
-        raise ValueError("Station must be one of: incheon, busan, jeju")
+        raise ValueError("Station must exist in stations.json")
     station = STATIONS[station_slug]
     hilo = normalize_day(_fetch("high_low", station["id"], day, high_low_key), day, "high_low")
     curve = normalize_day(_fetch("series", station["id"], day, series_key), day, "series")
