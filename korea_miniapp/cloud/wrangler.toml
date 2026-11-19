@@ -1,0 +1,16 @@
+name = "oneul-bada-api"
+main = "worker.mjs"
+compatibility_date = "2026-11-01"
+# Free Workers: 50 subrequests/event; one hourly batch uses 28 KHOA calls + 2 KV writes.
+# The scheduled handler rotates two locations per UTC hour; 20 stations / 2 = 10 slots.
+# Each station is refreshed once per 10 hours, not all 20 in the same invocation.
+# Hourly cron runs in UTC (no timezone adjustment needed for hourly rotation).
+[triggers]
+crons = ["23 * * * *"]
+
+# Provision a NEW namespace via `npx wrangler kv namespace create TIDES_KV`.
+# Replace the ID below with the NEW namespace ID before deploying; do not
+# bind CoastalNow's existing KV databases or buckets.
+[[kv_namespaces]]
+binding = "TIDES_KV"
+id = "REPLACE_WITH_YOUR_NEW_NAMESPACE_ID"
