@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-20T10:26:18+00:00",
+  "generated_at_utc": "2026-11-20T11:56:07+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:18+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:07+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:18+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:07+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:18+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:07+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-20T10:26:18+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:07+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-20T05:00:00-05:00",
-      "wind_mph": 20.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 67.5,
-      "precip_probability_pct": 96.0,
-      "air_temperature_f": 74.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Showers And Thunderstorms"
-    },
     {
       "time": "2026-11-20T06:00:00-05:00",
       "wind_mph": 20.0,
@@ -1902,24 +1890,36 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-26T17:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 69.0,
+      "wave_height_ft": 4.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f794b0133832820f5164f28df947e82963603b39.001.1",
-        "event": "Flash Flood Warning",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.83a62461b9773222c1c026b377a9cfa240727ca3.001.1",
+        "event": "Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
-        "urgency": "Immediate",
-        "effective": "2026-11-20T02:58:00-05:00",
-        "onset": "2026-11-20T02:58:00-05:00",
-        "expires": "2026-11-20T06:00:00-05:00",
-        "ends": "2026-11-20T06:00:00-05:00",
-        "headline": "Flash Flood Warning issued November 20 at 2:58AM EST until November 20 at 6:00AM EST by NWS Melbourne FL",
-        "description": "FFWMLB\n\nThe National Weather Service in Melbourne has issued a\n\n* Flash Flood Warning for...\nCentral Brevard County in east central Florida...\n\n* Until 600 AM EST.\n\n* At 258 AM EST, Doppler radar indicated heavy rain across the warned\narea. Up to 1.5 and 2.5 inches of rain have fallen over the past\nfew hours, on top of areas that have already received very heavy\nrainfall over the past 24 hours. Additional rainfall amounts of 1\nto 2 inches are possible in the warned area. Flash flooding is\nongoing or expected to begin shortly.\n\nHAZARD...Flash flooding caused by heavy rain.\n\nSOURCE...Radar indicated.\n\nIMPACT...Flash flooding of small creeks and streams, urban areas,\nhighways, streets and underpasses as well as other poor\ndrainage and low-lying areas.\n\n* Some locations that will experience flash flooding include...\nTitusville, Rockledge, Cocoa, Cocoa Beach, Satellite Beach, Cape\nCanaveral, Sharpes, Port Saint John, Port Canaveral, Merritt\nIsland, Titusville Airport, Patrick Space Force Base, Jetty Park,\nCanaveral Groves, Viera, South Patrick Shores, Palm Shores,\nBellwood and Canaveral Acres.",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe especially cautious at night when it is harder to recognize the\ndangers of flooding.\n\nPlease report observed flooding to local emergency services or law\nenforcement and request they pass this information to the National\nWeather Service when you can do so safely.",
+        "urgency": "Expected",
+        "effective": "2026-11-20T05:40:00-05:00",
+        "onset": "2026-11-20T05:40:00-05:00",
+        "expires": "2026-11-20T08:30:00-05:00",
+        "ends": "2026-11-20T08:30:00-05:00",
+        "headline": "Flood Warning issued November 20 at 5:40AM EST until November 20 at 8:30AM EST by NWS Melbourne FL",
+        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Central Brevard County in east central Florida...\n\n* WHEN...Until 830 AM EST.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is imminent or occurring.\n\n* ADDITIONAL DETAILS...\n- At 540 AM EST, Doppler radar indicated heavy rain. Flooding is\nongoing or expected to begin shortly in the warned area. Between\n1.5 and 2.5 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 2 inches are possible in the\nwarned area.\n- Some locations that will experience flooding include...\nTitusville, Rockledge, Cocoa, Cocoa Beach, Satellite Beach, Cape\nCanaveral, Sharpes, Port Saint John, Port Canaveral, Merritt\nIsland, Titusville Airport, Patrick Space Force Base, Jetty Park,\nCanaveral Groves, Viera, South Patrick Shores, Palm Shores,\nBellwood and Canaveral Acres.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.",
         "sender_name": "NWS Melbourne FL"
       },
       {
@@ -2582,5 +2582,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

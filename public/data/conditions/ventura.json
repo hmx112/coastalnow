@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-20T10:26:35+00:00",
+  "generated_at_utc": "2026-11-20T11:56:22+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:35+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:22+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:35+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:22+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:35+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:22+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-20T10:26:35+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:22+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-20T02:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 337.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 52.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Clear"
-    },
     {
       "time": "2026-11-20T03:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-26T14:00:00-08:00",
+      "wind_mph": 5.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 71.0,
+      "wave_height_ft": 6.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
@@ -1920,21 +1920,6 @@
         "headline": "High Surf Advisory issued November 19 at 7:50PM PST until November 20 at 11:00AM PST by NWS Los Angeles/Oxnard CA",
         "description": "* WHAT...Large breaking waves of 6 to 8 feet lowering to 5 to 7\nfeet Friday morning. Dangerous rip currents. Highest on west-\nfacing beaches.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...Until 11 AM PST Friday.\n\n* IMPACTS...There is an increased risk for ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Large\nbreaking waves can cause injury, wash people off beaches and\nrocks, and capsize small boats near shore. Pooling of sea\nwater is possible around high tide at beach and harbor areas\nthat is uncommon with normal tidal ranges. Enhanced beach\nerosion is also possible. No significant damage is expected.\n\n* ADDITIONAL DETAILS...Minor coastal flooding may occur near\nearly morning high tide. Additional hazardous surf and coastal\nflooding issues are expected next week.",
         "instruction": "Remain out of the water due to dangerous surf conditions, or stay\nnear occupied lifeguard towers. Rock jetties can be deadly in\nsuch conditions, stay off the rocks.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dc2eb49f4bc9e41d4e101642a48d7300e506fa10.002.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-19T20:33:00-08:00",
-        "onset": "2026-11-19T20:33:00-08:00",
-        "expires": "2026-11-20T03:00:00-08:00",
-        "ends": "2026-11-20T03:00:00-08:00",
-        "headline": "Small Craft Advisory issued November 19 at 8:33PM PST until November 20 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...Hazardous sea conditions.\n\n* WHERE...East Santa Barbara Channel from Pt. Conception to Pt.\nMugu CA including Santa Cruz Island.\n\n* WHEN...Until 3 AM PST Friday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       }
     ]
@@ -2587,5 +2572,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

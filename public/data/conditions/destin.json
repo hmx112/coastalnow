@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-20T10:26:20+00:00",
+  "generated_at_utc": "2026-11-20T11:56:09+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:20+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:09+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:20+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:09+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:20+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:09+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-20T10:26:20+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:09+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-20T04:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 9.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-20T05:00:00-06:00",
       "wind_mph": 15.0,
@@ -1902,38 +1890,50 @@
       "wave_period_s": 7.0,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-26T16:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": 6.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1b848c8575a6260e231811e76575b653edd2fe90.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.971452f96c274733cf22fa938bc3e3e28f9309bd.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-19T19:38:00-06:00",
-        "onset": "2026-11-19T19:38:00-06:00",
-        "expires": "2026-11-20T06:00:00-06:00",
+        "effective": "2026-11-20T05:02:00-06:00",
+        "onset": "2026-11-20T05:02:00-06:00",
+        "expires": "2026-11-20T18:00:00-06:00",
         "ends": "2026-11-21T18:00:00-06:00",
-        "headline": "Rip Current Statement issued November 19 at 7:38PM CST until November 21 at 6:00PM CST by NWS Mobile AL",
+        "headline": "Rip Current Statement issued November 20 at 5:02AM CST until November 21 at 6:00PM CST by NWS Mobile AL",
         "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...Through Saturday afternoon.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Mobile AL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1fd8200f31ce83d1866f84fcffef60ff55fe36d1.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2daa02d83143e6b64e418aadf8a8339b3f58273f.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-19T19:38:00-06:00",
-        "onset": "2026-11-19T19:38:00-06:00",
-        "expires": "2026-11-20T06:00:00-06:00",
+        "effective": "2026-11-20T05:03:00-06:00",
+        "onset": "2026-11-20T05:03:00-06:00",
+        "expires": "2026-11-20T18:00:00-06:00",
         "ends": "2026-11-21T06:00:00-06:00",
-        "headline": "Small Craft Advisory issued November 19 at 7:38PM CST until November 21 at 6:00AM CST by NWS Mobile AL",
-        "description": "* WHAT...Northeast winds 15 to 25 kt and seas 3 to 6 ft.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM and Coastal waters from Okaloosa Walton County Line FL\nto Pensacola FL out 20 NM.\n\n* WHEN...Until 6 AM CST Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued November 20 at 5:03AM CST until November 21 at 6:00AM CST by NWS Mobile AL",
+        "description": "* WHAT...Northeast winds around 20 kt with gusts up to 25 kt and\nseas 3 to 6 ft.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM and Coastal waters from Okaloosa Walton County Line FL\nto Pensacola FL out 20 NM.\n\n* WHEN...Until 6 AM CST Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Mobile AL"
       }
@@ -2507,5 +2507,5 @@
       "grid_y": 55
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

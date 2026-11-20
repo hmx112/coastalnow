@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "edisto-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-20T10:25:56+00:00",
+  "generated_at_utc": "2026-11-20T11:55:50+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:25:56+00:00"
+      "fetched_at_utc": "2026-11-20T11:55:50+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:25:56+00:00"
+      "fetched_at_utc": "2026-11-20T11:55:50+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:25:56+00:00"
+      "fetched_at_utc": "2026-11-20T11:55:50+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,64 +27,52 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-20T10:25:56+00:00"
+      "fetched_at_utc": "2026-11-20T11:55:50+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-20T05:00:00-05:00",
-      "wind_mph": 20.0,
-      "gust_mph": 29.92,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-20T06:00:00-05:00",
       "wind_mph": 21.0,
       "gust_mph": 28.769,
       "wind_direction_deg": 45.0,
-      "precip_probability_pct": 11.0,
+      "precip_probability_pct": 34.0,
       "air_temperature_f": 64.0,
       "wave_height_ft": 5.0,
       "wave_period_s": 9.0,
       "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
+      "condition_text": "Chance Rain Showers"
     },
     {
       "time": "2026-11-20T07:00:00-05:00",
       "wind_mph": 21.0,
       "gust_mph": 28.769,
       "wind_direction_deg": 45.0,
-      "precip_probability_pct": 16.0,
+      "precip_probability_pct": 36.0,
       "air_temperature_f": 64.0,
       "wave_height_ft": 5.0,
       "wave_period_s": 10.0,
       "water_temperature_f": null,
-      "condition_text": "Slight Chance Rain Showers"
+      "condition_text": "Chance Rain Showers"
     },
     {
       "time": "2026-11-20T08:00:00-05:00",
       "wind_mph": 21.0,
       "gust_mph": 28.769,
       "wind_direction_deg": 45.0,
-      "precip_probability_pct": 22.0,
+      "precip_probability_pct": 38.0,
       "air_temperature_f": 64.0,
       "wave_height_ft": 4.0,
       "wave_period_s": 10.0,
       "water_temperature_f": null,
-      "condition_text": "Slight Chance Rain Showers"
+      "condition_text": "Chance Rain Showers"
     },
     {
       "time": "2026-11-20T09:00:00-05:00",
       "wind_mph": 20.0,
       "gust_mph": 29.92,
       "wind_direction_deg": 45.0,
-      "precip_probability_pct": 27.0,
+      "precip_probability_pct": 33.0,
       "air_temperature_f": 64.0,
       "wave_height_ft": 4.0,
       "wave_period_s": 10.0,
@@ -96,12 +84,12 @@
       "wind_mph": 20.0,
       "gust_mph": 29.92,
       "wind_direction_deg": 45.0,
-      "precip_probability_pct": 24.0,
+      "precip_probability_pct": 27.0,
       "air_temperature_f": 65.0,
       "wave_height_ft": 4.0,
       "wave_period_s": 10.0,
       "water_temperature_f": null,
-      "condition_text": "Slight Chance Rain Showers"
+      "condition_text": "Chance Rain Showers"
     },
     {
       "time": "2026-11-20T11:00:00-05:00",
@@ -1902,37 +1890,49 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-26T17:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 21.865,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 15.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 6.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8de199ff13cf6c86e1897b44072126ffd0e37137.003.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-20T01:06:00-05:00",
-        "onset": "2026-11-20T01:06:00-05:00",
-        "expires": "2026-11-20T09:15:00-05:00",
-        "ends": "2026-11-20T19:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 20 at 1:06AM EST until November 20 at 7:00PM EST by NWS Charleston SC",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9494a75c8ff2b5ad5ed879133bdb95d145dddee4.002.2",
+        "event": "Gale Watch",
+        "severity": "Moderate",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-20T06:27:00-05:00",
+        "onset": "2026-11-20T19:00:00-05:00",
+        "expires": "2026-11-20T14:30:00-05:00",
+        "ends": "2026-11-22T01:00:00-05:00",
+        "headline": "Gale Watch issued November 20 at 6:27AM EST until November 22 at 1:00AM EST by NWS Charleston SC",
         "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 6 to 9 ft. For the Gale\nWatch, northeast winds 20 to 30 kt with gusts up to 35 kt and\nseas 6 to 11 ft possible.\n\n* WHERE...Edisto Beach to Savannah out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 7 PM EST this\nevening. For the Gale Watch, from this evening through late\nSaturday night.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8de199ff13cf6c86e1897b44072126ffd0e37137.003.2",
-        "event": "Gale Watch",
-        "severity": "Moderate",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-20T01:06:00-05:00",
-        "onset": "2026-11-20T19:00:00-05:00",
-        "expires": "2026-11-20T09:15:00-05:00",
-        "ends": "2026-11-22T01:00:00-05:00",
-        "headline": "Gale Watch issued November 20 at 1:06AM EST until November 22 at 1:00AM EST by NWS Charleston SC",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9494a75c8ff2b5ad5ed879133bdb95d145dddee4.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-20T06:27:00-05:00",
+        "onset": "2026-11-20T06:27:00-05:00",
+        "expires": "2026-11-20T14:30:00-05:00",
+        "ends": "2026-11-20T19:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 20 at 6:27AM EST until November 20 at 7:00PM EST by NWS Charleston SC",
         "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 6 to 9 ft. For the Gale\nWatch, northeast winds 20 to 30 kt with gusts up to 35 kt and\nseas 6 to 11 ft possible.\n\n* WHERE...Edisto Beach to Savannah out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 7 PM EST this\nevening. For the Gale Watch, from this evening through late\nSaturday night.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should consider altering plans to avoid possible\nhazardous conditions.  Remain in port, seek safe harbor, alter\ncourse, and/or secure the vessel for severe wind and seas.",
         "sender_name": "NWS Charleston SC"
@@ -2587,5 +2587,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

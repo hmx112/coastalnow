@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "pompano-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-20T10:26:47+00:00",
+  "generated_at_utc": "2026-11-20T11:56:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:47+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:32+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:47+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:32+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T10:26:47+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:32+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-20T10:26:47+00:00"
+      "fetched_at_utc": "2026-11-20T11:56:32+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-20T05:00:00-05:00",
-      "wind_mph": 8.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 3.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-20T06:00:00-05:00",
       "wind_mph": 8.0,
@@ -1902,11 +1890,38 @@
       "wave_period_s": 10.0,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-26T17:00:00-05:00",
+      "wind_mph": 12.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 9.0,
+      "air_temperature_f": 75.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": 10.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0a6c31144c2d6d35f130ea5692275d345f53941e.001.1",
+        "event": "Flood Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-20T06:40:00-05:00",
+        "onset": "2026-11-20T06:40:00-05:00",
+        "expires": "2026-11-20T07:45:00-05:00",
+        "ends": "2026-11-20T07:00:00-05:00",
+        "headline": "Flood Watch issued November 20 at 6:40AM EST until November 20 at 7:00AM EST by NWS Miami FL",
+        "description": "The Flood Watch will expire for a portion of southeast Florida,\nincluding the following areas, Coastal Broward County, Coastal Miami\nDade County, Coastal Palm Beach County, Far South Miami-Dade County,\nInland Broward County, Inland Miami-Dade County, Inland Palm Beach\nCounty, Metro Broward County, Metro Palm Beach County and\nMetropolitan Miami Dade.\n\nThe flash flooding threat has ended. Therefore, the Flood Watch will\nexpire at 7 AM EST this morning.",
+        "instruction": "",
+        "sender_name": "NWS Miami FL"
+      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ede6dce89d6f4197a74fd5c6cd0722f2918dbce.002.1",
         "event": "Rip Current Statement",
@@ -1920,21 +1935,6 @@
         "headline": "Rip Current Statement issued November 20 at 12:37AM EST until November 20 at 7:00PM EST by NWS Miami FL",
         "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...Coastal Broward County and Coastal Miami Dade County.\n\n* WHEN...Through this evening.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Miami FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1b7044468976ba620b25b82bd61a3e69832af899.001.1",
-        "event": "Flood Watch",
-        "severity": "Severe",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-19T15:18:00-05:00",
-        "onset": "2026-11-19T15:18:00-05:00",
-        "expires": "2026-11-20T07:00:00-05:00",
-        "ends": "2026-11-20T07:00:00-05:00",
-        "headline": "Flood Watch issued November 19 at 3:18PM EST until November 20 at 7:00AM EST by NWS Miami FL",
-        "description": "* WHAT...Flash flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...A portion of southeast Florida, including the following\nareas, Coastal Broward County, Coastal Miami Dade County, Coastal\nPalm Beach County, Far South Miami-Dade County, Inland Broward\nCounty, Inland Miami-Dade County, Inland Palm Beach County, Metro\nBroward County, Metro Palm Beach County and Metropolitan Miami\nDade.\n\n* WHEN...Through Friday morning.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\nFlooding may occur in poor drainage and urban areas.\n\n* ADDITIONAL DETAILS...\n- Widespread 3 to 5 inches of rain have fallen across the east\ncoast of South Florida over the past several days, with pockets\nof 8 to 15 inches. Areas having received these higher end amounts\nare most susceptible to today's forecast rain amounts. Common\nrainfall amounts in locations impacted by showers for the rest of\nthe afternoon and into tonight will be 1 to 2 inches, with the\nisolated high end amounts closer to 3 to 5 inches.\n- http://www.weather.gov/safety/flood",
-        "instruction": "You should monitor later forecasts and be prepared to take action\nshould Flash Flood Warnings be issued.",
         "sender_name": "NWS Miami FL"
       },
       {
@@ -2602,5 +2602,5 @@
       "grid_y": 71
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
