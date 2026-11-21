@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "cocoa-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-20T21:51:59+00:00",
+  "generated_at_utc": "2026-11-21T00:56:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T21:51:59+00:00"
+      "fetched_at_utc": "2026-11-21T00:56:32+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.78fd27ea6cc01362d19f260aec4010367d0edd8a.001.1",
+        "event": "Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-20T18:10:00-05:00",
+        "onset": "2026-11-20T18:10:00-05:00",
+        "expires": "2026-11-21T08:00:00-05:00",
+        "ends": "2026-11-21T08:00:00-05:00",
+        "headline": "Flood Warning issued November 20 at 6:10PM EST until November 21 at 8:00AM EST by NWS Melbourne FL",
+        "description": "* WHAT...Urban and small stream flooding caused by excessive rainfall\nis occurring.\n\n* WHERE...Northern Brevard County in east central Florida...\nEastern Volusia County in east central Florida...\n\n* WHEN...Until 800 AM EST Saturday.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is imminent or occurring. Some roads are\nimpassable or closed.\n\n* ADDITIONAL DETAILS...\n- At 607 PM EST, emergency management reported flooding in the\nwarned area. While heavy rain has ended, flooding will be slow to\nrecede tonight.\n- Some locations that will experience flooding include...\nDaytona Beach, Port Orange, Titusville, Ormond Beach, Rockledge,\nNew Smyrna Beach, Edgewater, Cocoa, South Daytona, Holly Hill,\nCocoa Beach, Satellite Beach, Cape Canaveral, Oak Hill,\nScottsmoor, Mims, Haulover Canal, Titusville Airport and\nPlayalinda Beach.\n- http://www.weather.gov/safety/flood",
+        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe especially cautious at night when it is harder to recognize the\ndangers of flooding.",
+        "sender_name": "NWS Melbourne FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4fac97ef0b60b44efbe17e5dae94f8c0f48a0973.001.2",
         "event": "Small Craft Advisory",
         "severity": "Minor",
@@ -1920,21 +1935,6 @@
         "headline": "Small Craft Advisory issued November 20 at 2:52PM EST until November 21 at 1:00PM EST by NWS Melbourne FL",
         "description": "* WHAT...Seas 7 to 11 feet.\n\n* WHERE...Volusia-Brevard County Line to Sebastian Inlet 0-20 nm.\n\n* WHEN...Until 1 PM EST Saturday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Melbourne FL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a694aedc769f41b261462d4ece8bb99816117f11.001.1",
-        "event": "Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-20T13:32:00-05:00",
-        "onset": "2026-11-20T13:32:00-05:00",
-        "expires": "2026-11-20T18:30:00-05:00",
-        "ends": "2026-11-20T18:30:00-05:00",
-        "headline": "Flood Warning issued November 20 at 1:32PM EST until November 20 at 6:30PM EST by NWS Melbourne FL",
-        "description": "* WHAT...Flooding caused by excessive rainfall is ongoing.\n\n* WHERE...Northern Brevard County in east central Florida...\nSoutheastern Orange County in east central Florida...\n\n* WHEN...Until 630 PM EST.\n\n* IMPACTS...Flooding of rivers, creeks, streams, and other low-lying\nand flood-prone locations is imminent or occurring.\n\n* ADDITIONAL DETAILS...\n- At 131 PM EST, Flooding is ongoing in the warned area. Between 3\nand 4 inches of rain have fallen. Additional heavy rainfall is\nnot expected this aftenroon.\n- Some locations that will experience flooding include...\nTitusville, Rockledge, Cocoa, Cocoa Beach, Satellite Beach, Cape\nCanaveral, Port Saint John, Titusville Airport, Sharpes, Port\nCanaveral, Playalinda Beach, Lone Cabbage Fish Camp, Merritt\nIsland, Mims, Haulover Canal, Scottsmoor, Patrick Space Force\nBase, Indian Harbour Beach and Canaveral Groves.\n- http://www.weather.gov/safety/flood",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe aware of your surroundings and do not drive on flooded roads.",
         "sender_name": "NWS Melbourne FL"
       }
     ]
@@ -2567,5 +2567,5 @@
       "grid_y": 64
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
