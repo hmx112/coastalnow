@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-21T11:27:33+00:00",
+  "generated_at_utc": "2026-11-21T13:31:44+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T11:27:33+00:00"
+      "fetched_at_utc": "2026-11-21T13:31:44+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T11:27:33+00:00"
+      "fetched_at_utc": "2026-11-21T13:31:44+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T11:27:33+00:00"
+      "fetched_at_utc": "2026-11-21T13:31:44+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-20T21:50:13+00:00"
+      "fetched_at_utc": "2026-11-21T13:29:51+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-21T11:27:33+00:00"
+      "fetched_at_utc": "2026-11-21T13:31:44+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-21T05:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 23.016,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 4.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-11-21T06:00:00-06:00",
-      "wind_mph": 15.0,
-      "gust_mph": 21.865,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 2.0,
-      "air_temperature_f": 64.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-21T07:00:00-06:00",
       "wind_mph": 15.0,
@@ -1902,42 +1878,35 @@
       "wave_period_s": 5.0,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-27T17:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": 5.0,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-27T18:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 17.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": 5.0,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.122d064675538b36acaeea991e6bb15ec2f53e26.001.1",
-        "event": "Rip Current Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-20T21:57:00-06:00",
-        "onset": "2026-11-20T21:57:00-06:00",
-        "expires": "2026-11-21T06:00:00-06:00",
-        "ends": "2026-11-21T06:00:00-06:00",
-        "headline": "Rip Current Statement issued November 20 at 9:57PM CST until November 21 at 6:00AM CST by NWS Mobile AL",
-        "description": "* WHAT...Dangerous rip currents.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...Until 6 AM CST Saturday.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
-        "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
-        "sender_name": "NWS Mobile AL"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6a433e7f524263d70c76f3c012c1211264cd3be8.001.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-21T00:53:00-06:00",
-        "onset": "2026-11-21T00:53:00-06:00",
-        "expires": "2026-11-21T06:00:00-06:00",
-        "ends": "2026-11-21T06:00:00-06:00",
-        "headline": "Small Craft Advisory issued November 21 at 12:53AM CST until November 21 at 6:00AM CST by NWS Mobile AL",
-        "description": "* WHAT...Northeast winds around 20 kt and seas 3 to 6 ft.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM and Coastal waters from Okaloosa Walton County Line FL\nto Pensacola FL out 20 NM.\n\n* WHEN...Until 6 AM CST early this morning.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-        "sender_name": "NWS Mobile AL"
-      }
-    ]
+    "items": []
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -1968,22 +1937,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-20",
-      "end": "2026-11-26"
+      "start": "2026-11-21",
+      "end": "2026-11-27"
     },
-    "generated_at_utc": "2026-11-20T21:50:13+00:00",
-    "generated_at_local": "2026-11-20T15:50:13-06:00",
+    "generated_at_utc": "2026-11-21T13:29:51+00:00",
+    "generated_at_local": "2026-11-21T07:29:51-06:00",
     "hilo": [
-      {
-        "t": "2026-11-19 12:19",
-        "v": 0.174,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-19 19:46",
-        "v": 0.45,
-        "type": "H"
-      },
       {
         "t": "2026-11-20 04:34",
         "v": 0.16,
@@ -2058,201 +2017,19 @@
         "t": "2026-11-27 11:16",
         "v": -0.169,
         "type": "L"
+      },
+      {
+        "t": "2026-11-28 00:33",
+        "v": 0.824,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-28 12:06",
+        "v": -0.144,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-20 00:00",
-        "v": 0.314
-      },
-      {
-        "t": "2026-11-20 00:30",
-        "v": 0.288
-      },
-      {
-        "t": "2026-11-20 01:00",
-        "v": 0.262
-      },
-      {
-        "t": "2026-11-20 01:30",
-        "v": 0.239
-      },
-      {
-        "t": "2026-11-20 02:00",
-        "v": 0.217
-      },
-      {
-        "t": "2026-11-20 02:30",
-        "v": 0.198
-      },
-      {
-        "t": "2026-11-20 03:00",
-        "v": 0.182
-      },
-      {
-        "t": "2026-11-20 03:30",
-        "v": 0.17
-      },
-      {
-        "t": "2026-11-20 04:00",
-        "v": 0.163
-      },
-      {
-        "t": "2026-11-20 04:30",
-        "v": 0.16
-      },
-      {
-        "t": "2026-11-20 05:00",
-        "v": 0.161
-      },
-      {
-        "t": "2026-11-20 05:30",
-        "v": 0.164
-      },
-      {
-        "t": "2026-11-20 06:00",
-        "v": 0.168
-      },
-      {
-        "t": "2026-11-20 06:30",
-        "v": 0.175
-      },
-      {
-        "t": "2026-11-20 07:00",
-        "v": 0.184
-      },
-      {
-        "t": "2026-11-20 07:30",
-        "v": 0.195
-      },
-      {
-        "t": "2026-11-20 08:00",
-        "v": 0.207
-      },
-      {
-        "t": "2026-11-20 08:30",
-        "v": 0.221
-      },
-      {
-        "t": "2026-11-20 09:00",
-        "v": 0.236
-      },
-      {
-        "t": "2026-11-20 09:30",
-        "v": 0.252
-      },
-      {
-        "t": "2026-11-20 10:00",
-        "v": 0.27
-      },
-      {
-        "t": "2026-11-20 10:30",
-        "v": 0.288
-      },
-      {
-        "t": "2026-11-20 11:00",
-        "v": 0.307
-      },
-      {
-        "t": "2026-11-20 11:30",
-        "v": 0.327
-      },
-      {
-        "t": "2026-11-20 12:00",
-        "v": 0.347
-      },
-      {
-        "t": "2026-11-20 12:30",
-        "v": 0.366
-      },
-      {
-        "t": "2026-11-20 13:00",
-        "v": 0.386
-      },
-      {
-        "t": "2026-11-20 13:30",
-        "v": 0.405
-      },
-      {
-        "t": "2026-11-20 14:00",
-        "v": 0.423
-      },
-      {
-        "t": "2026-11-20 14:30",
-        "v": 0.441
-      },
-      {
-        "t": "2026-11-20 15:00",
-        "v": 0.457
-      },
-      {
-        "t": "2026-11-20 15:30",
-        "v": 0.473
-      },
-      {
-        "t": "2026-11-20 16:00",
-        "v": 0.487
-      },
-      {
-        "t": "2026-11-20 16:30",
-        "v": 0.499
-      },
-      {
-        "t": "2026-11-20 17:00",
-        "v": 0.51
-      },
-      {
-        "t": "2026-11-20 17:30",
-        "v": 0.519
-      },
-      {
-        "t": "2026-11-20 18:00",
-        "v": 0.526
-      },
-      {
-        "t": "2026-11-20 18:30",
-        "v": 0.531
-      },
-      {
-        "t": "2026-11-20 19:00",
-        "v": 0.534
-      },
-      {
-        "t": "2026-11-20 19:30",
-        "v": 0.535
-      },
-      {
-        "t": "2026-11-20 20:00",
-        "v": 0.532
-      },
-      {
-        "t": "2026-11-20 20:30",
-        "v": 0.522
-      },
-      {
-        "t": "2026-11-20 21:00",
-        "v": 0.507
-      },
-      {
-        "t": "2026-11-20 21:30",
-        "v": 0.487
-      },
-      {
-        "t": "2026-11-20 22:00",
-        "v": 0.462
-      },
-      {
-        "t": "2026-11-20 22:30",
-        "v": 0.432
-      },
-      {
-        "t": "2026-11-20 23:00",
-        "v": 0.399
-      },
-      {
-        "t": "2026-11-20 23:30",
-        "v": 0.364
-      },
       {
         "t": "2026-11-21 00:00",
         "v": 0.327
@@ -2444,6 +2221,198 @@
       {
         "t": "2026-11-21 23:30",
         "v": 0.432
+      },
+      {
+        "t": "2026-11-22 00:00",
+        "v": 0.387
+      },
+      {
+        "t": "2026-11-22 00:30",
+        "v": 0.339
+      },
+      {
+        "t": "2026-11-22 01:00",
+        "v": 0.291
+      },
+      {
+        "t": "2026-11-22 01:30",
+        "v": 0.244
+      },
+      {
+        "t": "2026-11-22 02:00",
+        "v": 0.198
+      },
+      {
+        "t": "2026-11-22 02:30",
+        "v": 0.155
+      },
+      {
+        "t": "2026-11-22 03:00",
+        "v": 0.115
+      },
+      {
+        "t": "2026-11-22 03:30",
+        "v": 0.08
+      },
+      {
+        "t": "2026-11-22 04:00",
+        "v": 0.051
+      },
+      {
+        "t": "2026-11-22 04:30",
+        "v": 0.027
+      },
+      {
+        "t": "2026-11-22 05:00",
+        "v": 0.01
+      },
+      {
+        "t": "2026-11-22 05:30",
+        "v": -0.0
+      },
+      {
+        "t": "2026-11-22 06:00",
+        "v": -0.003
+      },
+      {
+        "t": "2026-11-22 06:30",
+        "v": -0.0
+      },
+      {
+        "t": "2026-11-22 07:00",
+        "v": 0.007
+      },
+      {
+        "t": "2026-11-22 07:30",
+        "v": 0.018
+      },
+      {
+        "t": "2026-11-22 08:00",
+        "v": 0.034
+      },
+      {
+        "t": "2026-11-22 08:30",
+        "v": 0.054
+      },
+      {
+        "t": "2026-11-22 09:00",
+        "v": 0.077
+      },
+      {
+        "t": "2026-11-22 09:30",
+        "v": 0.104
+      },
+      {
+        "t": "2026-11-22 10:00",
+        "v": 0.135
+      },
+      {
+        "t": "2026-11-22 10:30",
+        "v": 0.168
+      },
+      {
+        "t": "2026-11-22 11:00",
+        "v": 0.203
+      },
+      {
+        "t": "2026-11-22 11:30",
+        "v": 0.24
+      },
+      {
+        "t": "2026-11-22 12:00",
+        "v": 0.279
+      },
+      {
+        "t": "2026-11-22 12:30",
+        "v": 0.318
+      },
+      {
+        "t": "2026-11-22 13:00",
+        "v": 0.359
+      },
+      {
+        "t": "2026-11-22 13:30",
+        "v": 0.399
+      },
+      {
+        "t": "2026-11-22 14:00",
+        "v": 0.438
+      },
+      {
+        "t": "2026-11-22 14:30",
+        "v": 0.477
+      },
+      {
+        "t": "2026-11-22 15:00",
+        "v": 0.514
+      },
+      {
+        "t": "2026-11-22 15:30",
+        "v": 0.549
+      },
+      {
+        "t": "2026-11-22 16:00",
+        "v": 0.582
+      },
+      {
+        "t": "2026-11-22 16:30",
+        "v": 0.611
+      },
+      {
+        "t": "2026-11-22 17:00",
+        "v": 0.638
+      },
+      {
+        "t": "2026-11-22 17:30",
+        "v": 0.661
+      },
+      {
+        "t": "2026-11-22 18:00",
+        "v": 0.681
+      },
+      {
+        "t": "2026-11-22 18:30",
+        "v": 0.696
+      },
+      {
+        "t": "2026-11-22 19:00",
+        "v": 0.707
+      },
+      {
+        "t": "2026-11-22 19:30",
+        "v": 0.714
+      },
+      {
+        "t": "2026-11-22 20:00",
+        "v": 0.716
+      },
+      {
+        "t": "2026-11-22 20:30",
+        "v": 0.712
+      },
+      {
+        "t": "2026-11-22 21:00",
+        "v": 0.7
+      },
+      {
+        "t": "2026-11-22 21:30",
+        "v": 0.681
+      },
+      {
+        "t": "2026-11-22 22:00",
+        "v": 0.654
+      },
+      {
+        "t": "2026-11-22 22:30",
+        "v": 0.62
+      },
+      {
+        "t": "2026-11-22 23:00",
+        "v": 0.581
+      },
+      {
+        "t": "2026-11-22 23:30",
+        "v": 0.536
       }
     ]
   },
