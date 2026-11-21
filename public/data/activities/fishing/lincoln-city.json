@@ -3,8 +3,8 @@
   "activity": "fishing",
   "location": "lincoln-city",
   "scorer_version": "fishing-v1",
-  "generated_at_utc": "2026-11-21T08:45:12+00:00",
-  "input_snapshot_generated_at_utc": "2026-11-21T08:45:12+00:00",
+  "generated_at_utc": "2026-11-21T11:27:35+00:00",
+  "input_snapshot_generated_at_utc": "2026-11-21T11:27:35+00:00",
   "freshness": {
     "alerts": "fresh",
     "forecast": "fresh",
@@ -12,20 +12,21 @@
     "high_medium_eligible": true
   },
   "today": {
-    "status": "normal",
-    "score": 69.0,
-    "rating": "Fair",
-    "confidence": "Medium",
-    "best_window": {
-      "start": "2026-11-21T00:00:00-08:00",
-      "end": "2026-11-21T03:00:00-08:00"
-    },
-    "ranking_eligible": true,
+    "status": "Unavailable",
+    "score": null,
+    "rating": null,
+    "confidence": "Unavailable",
+    "best_window": null,
+    "ranking_eligible": false,
     "reasons": [
-      "favorable-tide-movement",
       "light-wind",
       "long-period-swell",
-      "wave-exposure-cap-69"
+      "wave-exposure-cap-69",
+      "small-craft-advisory",
+      "wave-exposure-cap-39",
+      "favorable-tide-movement",
+      "wet-weather",
+      "wave-exposure-hard-stop"
     ]
   },
   "tomorrow": {
@@ -46,86 +47,6 @@
   },
   "hourly": {
     "today": [
-      {
-        "time": "2026-11-21T00:00:00-08:00",
-        "components": {
-          "tide": 99.3,
-          "wind": 100,
-          "wave": 60,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 65.6,
-          "water_temperature": null
-        },
-        "raw_quality_score": 85.6,
-        "final_score": 69.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "long-period-swell",
-          "wave-exposure-cap-69"
-        ]
-      },
-      {
-        "time": "2026-11-21T01:00:00-08:00",
-        "components": {
-          "tide": 91.5,
-          "wind": 100,
-          "wave": 60,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 65.6,
-          "water_temperature": null
-        },
-        "raw_quality_score": 83.2,
-        "final_score": 69.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "favorable-tide-movement",
-          "light-wind",
-          "long-period-swell",
-          "wave-exposure-cap-69"
-        ]
-      },
-      {
-        "time": "2026-11-21T02:00:00-08:00",
-        "components": {
-          "tide": 57.9,
-          "wind": 100,
-          "wave": 60,
-          "weather": 100,
-          "time_of_day": 60,
-          "solunar": 65.6,
-          "water_temperature": null
-        },
-        "raw_quality_score": 73.2,
-        "final_score": 69.0,
-        "hard_stop": false,
-        "safety_status": "normal",
-        "safety_cap": 69.0,
-        "safety_penalty": 0,
-        "confidence": "Medium",
-        "available": true,
-        "ranking_eligible": true,
-        "reasons": [
-          "light-wind",
-          "long-period-swell",
-          "wave-exposure-cap-69"
-        ]
-      },
       {
         "time": "2026-11-21T03:00:00-08:00",
         "components": {

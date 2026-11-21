@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "key-west",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-21T08:44:45+00:00",
+  "generated_at_utc": "2026-11-21T11:27:22+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T08:44:45+00:00"
+      "fetched_at_utc": "2026-11-21T11:27:22+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T08:44:45+00:00"
+      "fetched_at_utc": "2026-11-21T11:27:22+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T08:44:45+00:00"
+      "fetched_at_utc": "2026-11-21T11:27:22+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-21T08:44:45+00:00"
+      "fetched_at_utc": "2026-11-21T11:27:22+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-21T03:00:00-05:00",
-      "wind_mph": 5.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 41.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": 78.1,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-11-21T04:00:00-05:00",
-      "wind_mph": 5.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 41.0,
-      "air_temperature_f": 76.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": 78.1,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
-    {
-      "time": "2026-11-21T05:00:00-05:00",
-      "wind_mph": 5.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 41.0,
-      "air_temperature_f": 75.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": null,
-      "water_temperature_f": 78.1,
-      "condition_text": "Chance Showers And Thunderstorms"
-    },
     {
       "time": "2026-11-21T06:00:00-05:00",
       "wind_mph": 5.0,
@@ -1902,11 +1866,63 @@
       "wave_period_s": null,
       "water_temperature_f": 78.1,
       "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-27T15:00:00-05:00",
+      "wind_mph": 15.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": 78.1,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-27T16:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 77.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": 78.1,
+      "condition_text": "Slight Chance Rain Showers"
+    },
+    {
+      "time": "2026-11-27T17:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 18.0,
+      "air_temperature_f": 76.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": 78.1,
+      "condition_text": "Slight Chance Rain Showers"
     }
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.704462a79671c41c4d3c5c4d1cf734e43996048e.001.1",
+        "event": "Coastal Flood Statement",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-21T04:00:00-05:00",
+        "onset": "2026-11-21T04:00:00-05:00",
+        "expires": "2026-11-21T17:00:00-05:00",
+        "ends": "2026-11-22T05:00:00-05:00",
+        "headline": "Coastal Flood Statement issued November 21 at 4:00AM EST until November 22 at 5:00AM EST by NWS Key West FL",
+        "description": "* WHAT...Minor saltwater flooding.\n\n* WHERE...Lower Florida Keys.\n\n* WHEN...Through late tonight.\n\n* IMPACTS...Minor saltwater flooding of low elevation streets\nand lots is likely. Some storm drains will overflow, and some\nseawalls and docks will be overtopped. Boaters can expect less\nclearance under fixed bridges. Motorists should remember that\npersistent puddles around the times of high tide are almost\ncertain to contain a mix of saltwater.",
+        "instruction": "Do not drive through flooded roadways.",
+        "sender_name": "NWS Key West FL"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 46
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
