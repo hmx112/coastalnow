@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "galveston",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-22T10:14:24+00:00",
+  "generated_at_utc": "2026-11-22T11:43:08+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T10:14:24+00:00"
+      "fetched_at_utc": "2026-11-22T11:43:08+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T10:14:24+00:00"
+      "fetched_at_utc": "2026-11-22T11:43:08+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T10:14:24+00:00"
+      "fetched_at_utc": "2026-11-22T11:43:08+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,22 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-22T10:14:24+00:00"
+      "fetched_at_utc": "2026-11-22T11:43:08+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-22T04:00:00-06:00",
-      "wind_mph": 0.0,
-      "gust_mph": 4.603,
-      "wind_direction_deg": null,
-      "precip_probability_pct": 24.0,
-      "air_temperature_f": 67.0,
-      "wave_height_ft": 2.0,
-      "wave_period_s": 5.0,
-      "water_temperature_f": null,
-      "condition_text": "Areas Of Fog"
-    },
     {
       "time": "2026-11-22T05:00:00-06:00",
       "wind_mph": 0.0,
@@ -1902,22 +1890,34 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-11-28T16:00:00-06:00",
+      "wind_mph": 5.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 61.0,
+      "wave_height_ft": 1.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.01f02ddfee21f289f049a583aa1488fcc787aa42.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.037cb64a32d16018069d1a2cd013f23f036709d4.002.1",
         "event": "Dense Fog Advisory",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-22T02:58:00-06:00",
-        "onset": "2026-11-22T02:58:00-06:00",
+        "effective": "2026-11-22T05:00:00-06:00",
+        "onset": "2026-11-22T05:00:00-06:00",
         "expires": "2026-11-22T09:00:00-06:00",
         "ends": "2026-11-22T09:00:00-06:00",
-        "headline": "Dense Fog Advisory issued November 22 at 2:58AM CST until November 22 at 9:00AM CST by NWS Houston/Galveston TX",
+        "headline": "Dense Fog Advisory issued November 22 at 5:00AM CST until November 22 at 9:00AM CST by NWS Houston/Galveston TX",
         "description": "* WHAT...Visibility one quarter mile or less in dense fog.\n\n* WHERE...Portions of south central and southeast Texas.\n\n* WHEN...Until 9 AM CST this morning.\n\n* IMPACTS...Low visibility could make driving conditions hazardous.\n\n* ADDITIONAL DETAILS...Areas of fog will reduce visibility to below\none quarter mile at times within the advisory area.",
         "instruction": "If driving, slow down, use your headlights, and leave plenty of\ndistance ahead of you.",
         "sender_name": "NWS Houston/Galveston TX"
@@ -2527,5 +2527,5 @@
       "grid_y": 72
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
