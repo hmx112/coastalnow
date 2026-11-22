@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "santa-barbara",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-22T20:46:31+00:00",
+  "generated_at_utc": "2026-11-22T23:46:39+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T20:46:31+00:00"
+      "fetched_at_utc": "2026-11-22T23:46:39+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1906,7 +1906,23 @@
   ],
   "alerts": {
     "status": "ok",
-    "items": []
+    "items": [
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2a51ce99ba5b624e1eee253b04e2540c474a4991.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-11-22T14:21:00-08:00",
+        "onset": "2026-11-22T14:21:00-08:00",
+        "expires": "2026-11-22T22:00:00-08:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued November 22 at 2:21PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "FRONTAL PASSAGE WILL BRING THE POTENTIAL FOR HEAVIER SHOWERS AND\nISOLATED THUNDERSTORMS TO THE COASTAL WATERS NOW THROUGH THIS\nEVENING\n\nA moist and unstable air mass will bring the potential for heavier\nshowers and isolated thunderstorms to the coastal waters. Any\nthunderstorm or stronger shower that form will be capable of\nproducing locally gale force winds and rough seas, dangerous\nlightning, heavy rainfall with reduced visibility, and a remote\nrisk of a waterspout.",
+        "instruction": "",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      }
+    ]
   },
   "provenance": {
     "wind_mph": "NWS hourly forecast",
@@ -2536,5 +2552,5 @@
       "grid_y": 69
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
