@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "sebastian-inlet",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-22T01:27:18+00:00",
+  "generated_at_utc": "2026-11-22T02:37:30+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T01:27:18+00:00"
+      "fetched_at_utc": "2026-11-22T02:37:30+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,17 +1908,32 @@
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2e48559ebe7aaafcb6cd1e3e928432556d0e4227.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8adf6857b5d8997d5e01ad0744ac3b21e741919b.001.1",
+        "event": "Marine Weather Statement",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "effective": "2026-11-21T21:30:00-05:00",
+        "onset": "2026-11-21T21:30:00-05:00",
+        "expires": "2026-11-21T22:30:00-05:00",
+        "ends": null,
+        "headline": "Marine Weather Statement issued November 21 at 9:30PM EST by NWS Melbourne FL",
+        "description": "A Marine Weather Statement has been issued for the following areas...\nVolusia-Brevard County Line to Sebastian Inlet 0-20 nm...\nSebastian Inlet to Jupiter Inlet 0-20 nm...\nVolusia-Brevard County Line to Sebastian Inlet 20-60 nm...\n\n* At 930 PM EST, Doppler radar indicated a strong thunderstorm,\ncapable of producing winds to around 30 knots. This a strong\nthunderstorm was located 7 NM northeast of Indian River Shores,\nmoving northeast at 20 knots.\n\nLocations impacted include...\nNorth Beach and Orchid.",
+        "instruction": "This thunderstorm will likely produce winds to around 30 knots, and\ncould pose a serious hazard for boaters. A Special Marine Warning may\neventually be required when this storm reaches the nearshore waters.\nBoaters should consider heading for shore before the storm arrives.",
+        "sender_name": "NWS Melbourne FL"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5cc9bd6f6815c290e916c10b85e61a52cce9063e.003.1",
         "event": "Tornado Watch",
         "severity": "Extreme",
         "certainty": "Possible",
         "urgency": "Future",
-        "effective": "2026-11-21T18:23:00-05:00",
-        "onset": "2026-11-21T18:25:00-05:00",
+        "effective": "2026-11-21T20:46:00-05:00",
+        "onset": "2026-11-21T20:46:00-05:00",
         "expires": "2026-11-21T22:00:00-05:00",
         "ends": "2026-11-21T22:00:00-05:00",
-        "headline": "Tornado Watch issued November 21 at 6:23PM EST until November 21 at 10:00PM EST by NWS Melbourne FL",
-        "description": "THE NATIONAL WEATHER SERVICE HAS ISSUED TORNADO WATCH 706 IN\nEFFECT UNTIL 10 PM EST THIS EVENING FOR THE FOLLOWING AREAS\n\nTHIS WATCH INCLUDES THE FOLLOWING ADJACENT COASTAL WATERS\n\nSEBASTIAN INLET TO JUPITER INLET 0-20 NM",
+        "headline": "Tornado Watch issued November 21 at 8:46PM EST until November 21 at 10:00PM EST by NWS Melbourne FL",
+        "description": "TORNADO WATCH 706 REMAINS VALID UNTIL 10 PM EST THIS EVENING FOR\nTHE FOLLOWING AREAS\n\nTHIS WATCH INCLUDES THE FOLLOWING ADJACENT COASTAL WATERS\n\nSEBASTIAN INLET TO JUPITER INLET 0-20 NM",
         "instruction": "",
         "sender_name": "NWS Melbourne FL"
       }
@@ -2572,5 +2587,5 @@
       "grid_y": 41
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
