@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "half-moon-bay",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-22T19:52:00+00:00",
+  "generated_at_utc": "2026-11-22T20:44:52+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:52:00+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:52+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:52:00+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:52+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:52:00+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:52+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T13:23:25+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:29+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-22T19:52:00+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:52+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-22T11:00:00-08:00",
-      "wind_mph": 7.0,
-      "gust_mph": 9.206,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 11.0,
-      "air_temperature_f": 54.0,
-      "wave_height_ft": 6.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-11-22T12:00:00-08:00",
       "wind_mph": 6.0,
@@ -1902,23 +1890,35 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-11-28T23:00:00-08:00",
+      "wind_mph": 14.0,
+      "gust_mph": 19.563,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 75.0,
+      "air_temperature_f": 55.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf3ef7b560fc1df45b5251d5d1c411a194d493fe.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.71af992794239339fb3686b0060afa12554c28a0.002.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-21T14:30:00-08:00",
-        "onset": "2026-11-21T14:30:00-08:00",
-        "expires": "2026-11-22T12:00:00-08:00",
+        "effective": "2026-11-22T11:49:00-08:00",
+        "onset": "2026-11-22T11:49:00-08:00",
+        "expires": "2026-11-23T13:00:00-08:00",
         "ends": "2026-11-26T16:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 21 at 2:30PM PST until November 26 at 4:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...Up to 2.8 ft of inundation above ground level is\npossible in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Pacific Ocean Coast.\n\n* WHEN...Through 4 PM PST Thursday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal areas.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.0 ft above normal (7.8 ft MLLW)\nat 8:48 AM Sunday, 2.2 ft above normal (8.0 ft MLLW) at 9:25\nAM Monday, 2.6 ft above normal (8.4 ft MLLW) at 10:05 AM\nTuesday, 2.8 ft above normal (8.6 ft MLLW) at 10:49 AM\nWednesday, and 2.4 ft above normal (8.2 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.6 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the\nPacific Coast and through the San Francisco Bay, respectively.",
+        "headline": "Coastal Flood Advisory issued November 22 at 11:49AM PST until November 26 at 4:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...Up to 2.8 ft of inundation above ground level is\npossible in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Pacific Ocean Coast.\n\n* WHEN...Through 4 PM PST Thursday.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal areas.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW)\nat 9:25 AM Monday, 2.6 ft above normal (8.4 ft MLLW) at 10:05 AM\nTuesday, 2.8 ft above normal (8.6 ft MLLW) at 10:49 AM\nWednesday, and 2.4 ft above normal (8.2 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.6 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS San Francisco CA"
       },
@@ -1971,8 +1971,8 @@
       "start": "2026-11-22",
       "end": "2026-11-28"
     },
-    "generated_at_utc": "2026-11-22T13:23:25+00:00",
-    "generated_at_local": "2026-11-22T05:23:24-08:00",
+    "generated_at_utc": "2026-11-22T20:44:29+00:00",
+    "generated_at_local": "2026-11-22T12:44:29-08:00",
     "hilo": [
       {
         "t": "2026-11-22 01:37",

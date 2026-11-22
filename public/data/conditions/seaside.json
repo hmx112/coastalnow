@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "seaside",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-22T19:53:45+00:00",
+  "generated_at_utc": "2026-11-22T20:46:22+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:53:45+00:00"
+      "fetched_at_utc": "2026-11-22T20:46:22+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:53:45+00:00"
+      "fetched_at_utc": "2026-11-22T20:46:22+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T19:53:45+00:00"
+      "fetched_at_utc": "2026-11-22T20:46:22+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T13:23:34+00:00"
+      "fetched_at_utc": "2026-11-22T20:44:38+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-22T19:53:45+00:00"
+      "fetched_at_utc": "2026-11-22T20:46:22+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-22T11:00:00-08:00",
-      "wind_mph": 13.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 25.0,
-      "air_temperature_f": 48.0,
-      "wave_height_ft": 12.0,
-      "wave_period_s": 13.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Light Rain"
-    },
     {
       "time": "2026-11-22T12:00:00-08:00",
       "wind_mph": 13.0,
@@ -1902,6 +1890,18 @@
       "wave_period_s": 14.0,
       "water_temperature_f": null,
       "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-28T23:00:00-08:00",
+      "wind_mph": 12.0,
+      "gust_mph": 29.92,
+      "wind_direction_deg": 180.0,
+      "precip_probability_pct": 72.0,
+      "air_temperature_f": 52.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": 14.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
     }
   ],
   "alerts": {
@@ -1938,33 +1938,33 @@
         "sender_name": "NWS Portland OR"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d981141a82a1ef00585c2488ead0127fd925b17d.001.2",
-        "event": "Gale Watch",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8eb52b57daecc08aeeb4b1b4a6a867bfb7515b6.002.3",
+        "event": "Gale Warning",
         "severity": "Moderate",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-22T00:46:00-08:00",
-        "onset": "2026-11-23T04:00:00-08:00",
-        "expires": "2026-11-22T17:00:00-08:00",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-22T12:03:00-08:00",
+        "onset": "2026-11-23T22:00:00-08:00",
+        "expires": "2026-11-23T04:15:00-08:00",
         "ends": "2026-11-24T16:00:00-08:00",
-        "headline": "Gale Watch issued November 22 at 12:46AM PST until November 24 at 4:00PM PST by NWS Portland OR",
-        "description": "* WHAT...For the Small Craft Advisory, seas 9 to 14 ft at 14\nseconds and south winds 15 to 25 kt with gusts up to 30 kt. For\nthe Gale Watch, seas 13 to 18 ft at 15 seconds and southeast\nwinds 20 to 30 kt with gusts up to 40 kt possible.\n\n* WHERE...Inner Coastal Waters from Cape Shoalwater to Florence\nout 10 NM.\n\n* WHEN...Small Craft Advisory, until 4 AM PST Monday. Gale\nWatch, from late tonight through Tuesday afternoon.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "A Gale Watch is issued when the risk of gale force winds of 34 to\n47 knots has significantly increased, but the specific timing\nand/or location is still uncertain. It is intended to provide\nadditional lead time for mariners who may wish to consider\naltering their plans.",
+        "headline": "Gale Warning issued November 22 at 12:03PM PST until November 24 at 4:00PM PST by NWS Portland OR",
+        "description": "* WHAT...For the Small Craft Advisory, seas 8 to 13 ft at 13\nseconds and south winds 15 to 25 kt with gusts up to 30 kt.\nFor the Gale Warning, seas 13 to 18 ft at 17 seconds and\nsoutheast winds 20 to 30 kt with gusts up to 40 kt expected.\n\n* WHERE...Inner Coastal Waters from Cape Shoalwater to Florence\nout 10 NM.\n\n* WHEN...Small Craft Advisory, until 10 PM PST Monday. Gale\nWarning, from 10 PM Monday to 4 PM PST Tuesday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
         "sender_name": "NWS Portland OR"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d981141a82a1ef00585c2488ead0127fd925b17d.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8eb52b57daecc08aeeb4b1b4a6a867bfb7515b6.002.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-22T00:46:00-08:00",
-        "onset": "2026-11-22T00:46:00-08:00",
-        "expires": "2026-11-22T17:00:00-08:00",
-        "ends": "2026-11-23T04:00:00-08:00",
-        "headline": "Small Craft Advisory issued November 22 at 12:46AM PST until November 23 at 4:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Small Craft Advisory, seas 9 to 14 ft at 14\nseconds and south winds 15 to 25 kt with gusts up to 30 kt. For\nthe Gale Watch, seas 13 to 18 ft at 15 seconds and southeast\nwinds 20 to 30 kt with gusts up to 40 kt possible.\n\n* WHERE...Inner Coastal Waters from Cape Shoalwater to Florence\nout 10 NM.\n\n* WHEN...Small Craft Advisory, until 4 AM PST Monday. Gale\nWatch, from late tonight through Tuesday afternoon.\n\n* IMPACTS...Strong winds can cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-        "instruction": "A Gale Watch is issued when the risk of gale force winds of 34 to\n47 knots has significantly increased, but the specific timing\nand/or location is still uncertain. It is intended to provide\nadditional lead time for mariners who may wish to consider\naltering their plans.",
+        "effective": "2026-11-22T12:03:00-08:00",
+        "onset": "2026-11-22T12:03:00-08:00",
+        "expires": "2026-11-23T04:15:00-08:00",
+        "ends": "2026-11-23T22:00:00-08:00",
+        "headline": "Small Craft Advisory issued November 22 at 12:03PM PST until November 23 at 10:00PM PST by NWS Portland OR",
+        "description": "* WHAT...For the Small Craft Advisory, seas 8 to 13 ft at 13\nseconds and south winds 15 to 25 kt with gusts up to 30 kt.\nFor the Gale Warning, seas 13 to 18 ft at 17 seconds and\nsoutheast winds 20 to 30 kt with gusts up to 40 kt expected.\n\n* WHERE...Inner Coastal Waters from Cape Shoalwater to Florence\nout 10 NM.\n\n* WHEN...Small Craft Advisory, until 10 PM PST Monday. Gale\nWarning, from 10 PM Monday to 4 PM PST Tuesday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "instruction": "A Gale Warning means winds of 34 to 47 knots are imminent or\noccurring. Operating a vessel in gale conditions requires\nexperience and properly equipped vessels. It is highly\nrecommended that mariners without the proper experience seek safe\nharbor prior to the onset of gale conditions.",
         "sender_name": "NWS Portland OR"
       }
     ]
@@ -2001,8 +2001,8 @@
       "start": "2026-11-22",
       "end": "2026-11-28"
     },
-    "generated_at_utc": "2026-11-22T13:23:34+00:00",
-    "generated_at_local": "2026-11-22T05:23:34-08:00",
+    "generated_at_utc": "2026-11-22T20:44:38+00:00",
+    "generated_at_local": "2026-11-22T12:44:38-08:00",
     "hilo": [
       {
         "t": "2026-11-21 02:52",
