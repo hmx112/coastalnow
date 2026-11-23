@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "seaside",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-23T13:17:02+00:00",
+  "generated_at_utc": "2026-11-23T16:03:41+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:17:02+00:00"
+      "fetched_at_utc": "2026-11-23T16:03:41+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:17:02+00:00"
+      "fetched_at_utc": "2026-11-23T16:03:41+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:17:02+00:00"
+      "fetched_at_utc": "2026-11-23T16:03:41+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T20:44:38+00:00"
+      "fetched_at_utc": "2026-11-23T16:01:51+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-23T13:17:02+00:00"
+      "fetched_at_utc": "2026-11-23T16:03:41+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-23T05:00:00-08:00",
-      "wind_mph": 13.0,
-      "gust_mph": 28.769,
-      "wind_direction_deg": 157.5,
-      "precip_probability_pct": 25.0,
-      "air_temperature_f": 45.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Light Rain"
-    },
-    {
-      "time": "2026-11-23T06:00:00-08:00",
-      "wind_mph": 13.0,
-      "gust_mph": 28.769,
-      "wind_direction_deg": 157.5,
-      "precip_probability_pct": 19.0,
-      "air_temperature_f": 45.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Light Rain"
-    },
-    {
-      "time": "2026-11-23T07:00:00-08:00",
-      "wind_mph": 13.0,
-      "gust_mph": 27.619,
-      "wind_direction_deg": 157.5,
-      "precip_probability_pct": 15.0,
-      "air_temperature_f": 45.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 7.0,
-      "water_temperature_f": null,
-      "condition_text": "Slight Chance Light Rain"
-    },
     {
       "time": "2026-11-23T08:00:00-08:00",
       "wind_mph": 14.0,
@@ -1902,26 +1866,47 @@
       "wave_period_s": 15.0,
       "water_temperature_f": null,
       "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T17:00:00-08:00",
+      "wind_mph": 13.0,
+      "gust_mph": 26.468,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 74.0,
+      "air_temperature_f": 52.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": 15.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T18:00:00-08:00",
+      "wind_mph": 13.0,
+      "gust_mph": 26.468,
+      "wind_direction_deg": 157.5,
+      "precip_probability_pct": 74.0,
+      "air_temperature_f": 51.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": 15.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T19:00:00-08:00",
+      "wind_mph": 14.0,
+      "gust_mph": 28.769,
+      "wind_direction_deg": 135.0,
+      "precip_probability_pct": 74.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": 15.0,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ae582945f1f2353264491f3bf2a438bac9f9854.001.2",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-22T22:48:00-08:00",
-        "onset": "2026-11-22T22:48:00-08:00",
-        "expires": "2026-11-23T13:00:00-08:00",
-        "ends": "2026-11-24T04:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 22 at 10:48PM PST until November 24 at 4:00AM PST by NWS Portland OR",
-        "description": "* WHAT...For the Coastal Flood Advisory, tidal overflow\nflooding. For the Coastal Flood Warning, coastal flooding\nexpected.\n\n* WHERE...North and Central Coast of Oregon, and South\nWashington Coast.\n\n* WHEN...For the Coastal Flood Advisory, until 4 AM PST Tuesday.\nFor the Coastal Flood Warning, from 4 AM Tuesday to 4 AM PST\nFriday.\n\n* IMPACTS...Major flooding, up to two feet above ground level,\nduring high tides is expected along the immediate coast as well\nas low lying areas near bays, sloughs, and the lower reaches of\nthe coastal rivers.\n\n* ADDITIONAL DETAILS... Coastal Flood Advisory means that tidal\noverflow flooding of low-lying areas is expected due to high\ntides. Coastal residents in the warned area should be alert for\nrising water, and take appropriate action to protect life and\nproperty.\n\nA Coastal Flood Warning means that more significant\ncoastal flooding will occur. Shoreline roadways and beaches may\nflood. Significant beach erosion is possible. Coastal residents\nin the warned area should be alert for rising water, and take\nappropriate action to protect life and property.",
-        "instruction": "A Coastal Flood Warning means that flooding is occurring or\nimminent. Coastal residents in the warned area should be alert\nfor rising water, and take appropriate action to protect life and\nproperty.",
-        "sender_name": "NWS Portland OR"
-      },
       {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ae582945f1f2353264491f3bf2a438bac9f9854.001.1",
         "event": "Coastal Flood Warning",
@@ -1933,6 +1918,21 @@
         "expires": "2026-11-23T13:00:00-08:00",
         "ends": "2026-11-27T04:00:00-08:00",
         "headline": "Coastal Flood Warning issued November 22 at 10:48PM PST until November 27 at 4:00AM PST by NWS Portland OR",
+        "description": "* WHAT...For the Coastal Flood Advisory, tidal overflow\nflooding. For the Coastal Flood Warning, coastal flooding\nexpected.\n\n* WHERE...North and Central Coast of Oregon, and South\nWashington Coast.\n\n* WHEN...For the Coastal Flood Advisory, until 4 AM PST Tuesday.\nFor the Coastal Flood Warning, from 4 AM Tuesday to 4 AM PST\nFriday.\n\n* IMPACTS...Major flooding, up to two feet above ground level,\nduring high tides is expected along the immediate coast as well\nas low lying areas near bays, sloughs, and the lower reaches of\nthe coastal rivers.\n\n* ADDITIONAL DETAILS... Coastal Flood Advisory means that tidal\noverflow flooding of low-lying areas is expected due to high\ntides. Coastal residents in the warned area should be alert for\nrising water, and take appropriate action to protect life and\nproperty.\n\nA Coastal Flood Warning means that more significant\ncoastal flooding will occur. Shoreline roadways and beaches may\nflood. Significant beach erosion is possible. Coastal residents\nin the warned area should be alert for rising water, and take\nappropriate action to protect life and property.",
+        "instruction": "A Coastal Flood Warning means that flooding is occurring or\nimminent. Coastal residents in the warned area should be alert\nfor rising water, and take appropriate action to protect life and\nproperty.",
+        "sender_name": "NWS Portland OR"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ae582945f1f2353264491f3bf2a438bac9f9854.001.2",
+        "event": "Coastal Flood Advisory",
+        "severity": "Minor",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-22T22:48:00-08:00",
+        "onset": "2026-11-22T22:48:00-08:00",
+        "expires": "2026-11-23T13:00:00-08:00",
+        "ends": "2026-11-24T04:00:00-08:00",
+        "headline": "Coastal Flood Advisory issued November 22 at 10:48PM PST until November 24 at 4:00AM PST by NWS Portland OR",
         "description": "* WHAT...For the Coastal Flood Advisory, tidal overflow\nflooding. For the Coastal Flood Warning, coastal flooding\nexpected.\n\n* WHERE...North and Central Coast of Oregon, and South\nWashington Coast.\n\n* WHEN...For the Coastal Flood Advisory, until 4 AM PST Tuesday.\nFor the Coastal Flood Warning, from 4 AM Tuesday to 4 AM PST\nFriday.\n\n* IMPACTS...Major flooding, up to two feet above ground level,\nduring high tides is expected along the immediate coast as well\nas low lying areas near bays, sloughs, and the lower reaches of\nthe coastal rivers.\n\n* ADDITIONAL DETAILS... Coastal Flood Advisory means that tidal\noverflow flooding of low-lying areas is expected due to high\ntides. Coastal residents in the warned area should be alert for\nrising water, and take appropriate action to protect life and\nproperty.\n\nA Coastal Flood Warning means that more significant\ncoastal flooding will occur. Shoreline roadways and beaches may\nflood. Significant beach erosion is possible. Coastal residents\nin the warned area should be alert for rising water, and take\nappropriate action to protect life and property.",
         "instruction": "A Coastal Flood Warning means that flooding is occurring or\nimminent. Coastal residents in the warned area should be alert\nfor rising water, and take appropriate action to protect life and\nproperty.",
         "sender_name": "NWS Portland OR"
@@ -1998,32 +1998,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-22",
-      "end": "2026-11-28"
+      "start": "2026-11-23",
+      "end": "2026-11-29"
     },
-    "generated_at_utc": "2026-11-22T20:44:38+00:00",
-    "generated_at_local": "2026-11-22T12:44:38-08:00",
+    "generated_at_utc": "2026-11-23T16:01:51+00:00",
+    "generated_at_local": "2026-11-23T08:01:51-08:00",
     "hilo": [
-      {
-        "t": "2026-11-21 02:52",
-        "v": 2.266,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-21 09:24",
-        "v": 7.91,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-21 16:01",
-        "v": 0.383,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-21 22:29",
-        "v": 6.165,
-        "type": "H"
-      },
       {
         "t": "2026-11-22 03:39",
         "v": 2.582,
@@ -2178,201 +2158,29 @@
         "t": "2026-11-29 22:33",
         "v": -0.001,
         "type": "L"
+      },
+      {
+        "t": "2026-11-30 05:31",
+        "v": 6.989,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-30 10:56",
+        "v": 3.218,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-30 16:51",
+        "v": 6.837,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-30 23:28",
+        "v": 0.628,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-22 00:00",
-        "v": 5.456
-      },
-      {
-        "t": "2026-11-22 00:30",
-        "v": 4.979
-      },
-      {
-        "t": "2026-11-22 01:00",
-        "v": 4.446
-      },
-      {
-        "t": "2026-11-22 01:30",
-        "v": 3.907
-      },
-      {
-        "t": "2026-11-22 02:00",
-        "v": 3.411
-      },
-      {
-        "t": "2026-11-22 02:30",
-        "v": 3.002
-      },
-      {
-        "t": "2026-11-22 03:00",
-        "v": 2.72
-      },
-      {
-        "t": "2026-11-22 03:30",
-        "v": 2.589
-      },
-      {
-        "t": "2026-11-22 04:00",
-        "v": 2.626
-      },
-      {
-        "t": "2026-11-22 04:30",
-        "v": 2.837
-      },
-      {
-        "t": "2026-11-22 05:00",
-        "v": 3.211
-      },
-      {
-        "t": "2026-11-22 05:30",
-        "v": 3.725
-      },
-      {
-        "t": "2026-11-22 06:00",
-        "v": 4.349
-      },
-      {
-        "t": "2026-11-22 06:30",
-        "v": 5.043
-      },
-      {
-        "t": "2026-11-22 07:00",
-        "v": 5.767
-      },
-      {
-        "t": "2026-11-22 07:30",
-        "v": 6.476
-      },
-      {
-        "t": "2026-11-22 08:00",
-        "v": 7.127
-      },
-      {
-        "t": "2026-11-22 08:30",
-        "v": 7.682
-      },
-      {
-        "t": "2026-11-22 09:00",
-        "v": 8.105
-      },
-      {
-        "t": "2026-11-22 09:30",
-        "v": 8.373
-      },
-      {
-        "t": "2026-11-22 10:00",
-        "v": 8.468
-      },
-      {
-        "t": "2026-11-22 10:30",
-        "v": 8.357
-      },
-      {
-        "t": "2026-11-22 11:00",
-        "v": 8.016
-      },
-      {
-        "t": "2026-11-22 11:30",
-        "v": 7.462
-      },
-      {
-        "t": "2026-11-22 12:00",
-        "v": 6.726
-      },
-      {
-        "t": "2026-11-22 12:30",
-        "v": 5.845
-      },
-      {
-        "t": "2026-11-22 13:00",
-        "v": 4.868
-      },
-      {
-        "t": "2026-11-22 13:30",
-        "v": 3.846
-      },
-      {
-        "t": "2026-11-22 14:00",
-        "v": 2.835
-      },
-      {
-        "t": "2026-11-22 14:30",
-        "v": 1.887
-      },
-      {
-        "t": "2026-11-22 15:00",
-        "v": 1.054
-      },
-      {
-        "t": "2026-11-22 15:30",
-        "v": 0.381
-      },
-      {
-        "t": "2026-11-22 16:00",
-        "v": -0.098
-      },
-      {
-        "t": "2026-11-22 16:30",
-        "v": -0.356
-      },
-      {
-        "t": "2026-11-22 17:00",
-        "v": -0.383
-      },
-      {
-        "t": "2026-11-22 17:30",
-        "v": -0.209
-      },
-      {
-        "t": "2026-11-22 18:00",
-        "v": 0.149
-      },
-      {
-        "t": "2026-11-22 18:30",
-        "v": 0.671
-      },
-      {
-        "t": "2026-11-22 19:00",
-        "v": 1.326
-      },
-      {
-        "t": "2026-11-22 19:30",
-        "v": 2.08
-      },
-      {
-        "t": "2026-11-22 20:00",
-        "v": 2.888
-      },
-      {
-        "t": "2026-11-22 20:30",
-        "v": 3.705
-      },
-      {
-        "t": "2026-11-22 21:00",
-        "v": 4.486
-      },
-      {
-        "t": "2026-11-22 21:30",
-        "v": 5.185
-      },
-      {
-        "t": "2026-11-22 22:00",
-        "v": 5.765
-      },
-      {
-        "t": "2026-11-22 22:30",
-        "v": 6.191
-      },
-      {
-        "t": "2026-11-22 23:00",
-        "v": 6.441
-      },
-      {
-        "t": "2026-11-22 23:30",
-        "v": 6.5
-      },
       {
         "t": "2026-11-23 00:00",
         "v": 6.379
@@ -2564,6 +2372,198 @@
       {
         "t": "2026-11-23 23:30",
         "v": 6.493
+      },
+      {
+        "t": "2026-11-24 00:00",
+        "v": 6.718
+      },
+      {
+        "t": "2026-11-24 00:30",
+        "v": 6.735
+      },
+      {
+        "t": "2026-11-24 01:00",
+        "v": 6.571
+      },
+      {
+        "t": "2026-11-24 01:30",
+        "v": 6.248
+      },
+      {
+        "t": "2026-11-24 02:00",
+        "v": 5.797
+      },
+      {
+        "t": "2026-11-24 02:30",
+        "v": 5.263
+      },
+      {
+        "t": "2026-11-24 03:00",
+        "v": 4.7
+      },
+      {
+        "t": "2026-11-24 03:30",
+        "v": 4.163
+      },
+      {
+        "t": "2026-11-24 04:00",
+        "v": 3.705
+      },
+      {
+        "t": "2026-11-24 04:30",
+        "v": 3.372
+      },
+      {
+        "t": "2026-11-24 05:00",
+        "v": 3.196
+      },
+      {
+        "t": "2026-11-24 05:30",
+        "v": 3.199
+      },
+      {
+        "t": "2026-11-24 06:00",
+        "v": 3.397
+      },
+      {
+        "t": "2026-11-24 06:30",
+        "v": 3.781
+      },
+      {
+        "t": "2026-11-24 07:00",
+        "v": 4.325
+      },
+      {
+        "t": "2026-11-24 07:30",
+        "v": 4.993
+      },
+      {
+        "t": "2026-11-24 08:00",
+        "v": 5.743
+      },
+      {
+        "t": "2026-11-24 08:30",
+        "v": 6.523
+      },
+      {
+        "t": "2026-11-24 09:00",
+        "v": 7.284
+      },
+      {
+        "t": "2026-11-24 09:30",
+        "v": 7.976
+      },
+      {
+        "t": "2026-11-24 10:00",
+        "v": 8.552
+      },
+      {
+        "t": "2026-11-24 10:30",
+        "v": 8.976
+      },
+      {
+        "t": "2026-11-24 11:00",
+        "v": 9.219
+      },
+      {
+        "t": "2026-11-24 11:30",
+        "v": 9.264
+      },
+      {
+        "t": "2026-11-24 12:00",
+        "v": 9.061
+      },
+      {
+        "t": "2026-11-24 12:30",
+        "v": 8.605
+      },
+      {
+        "t": "2026-11-24 13:00",
+        "v": 7.917
+      },
+      {
+        "t": "2026-11-24 13:30",
+        "v": 7.032
+      },
+      {
+        "t": "2026-11-24 14:00",
+        "v": 5.994
+      },
+      {
+        "t": "2026-11-24 14:30",
+        "v": 4.855
+      },
+      {
+        "t": "2026-11-24 15:00",
+        "v": 3.671
+      },
+      {
+        "t": "2026-11-24 15:30",
+        "v": 2.503
+      },
+      {
+        "t": "2026-11-24 16:00",
+        "v": 1.407
+      },
+      {
+        "t": "2026-11-24 16:30",
+        "v": 0.44
+      },
+      {
+        "t": "2026-11-24 17:00",
+        "v": -0.352
+      },
+      {
+        "t": "2026-11-24 17:30",
+        "v": -0.927
+      },
+      {
+        "t": "2026-11-24 18:00",
+        "v": -1.259
+      },
+      {
+        "t": "2026-11-24 18:30",
+        "v": -1.331
+      },
+      {
+        "t": "2026-11-24 19:00",
+        "v": -1.17
+      },
+      {
+        "t": "2026-11-24 19:30",
+        "v": -0.796
+      },
+      {
+        "t": "2026-11-24 20:00",
+        "v": -0.231
+      },
+      {
+        "t": "2026-11-24 20:30",
+        "v": 0.495
+      },
+      {
+        "t": "2026-11-24 21:00",
+        "v": 1.344
+      },
+      {
+        "t": "2026-11-24 21:30",
+        "v": 2.269
+      },
+      {
+        "t": "2026-11-24 22:00",
+        "v": 3.222
+      },
+      {
+        "t": "2026-11-24 22:30",
+        "v": 4.151
+      },
+      {
+        "t": "2026-11-24 23:00",
+        "v": 5.007
+      },
+      {
+        "t": "2026-11-24 23:30",
+        "v": 5.743
       }
     ]
   },

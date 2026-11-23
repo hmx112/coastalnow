@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "san-francisco",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-23T13:15:45+00:00",
+  "generated_at_utc": "2026-11-23T16:02:10+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:15:45+00:00"
+      "fetched_at_utc": "2026-11-23T16:02:10+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:15:45+00:00"
+      "fetched_at_utc": "2026-11-23T16:02:10+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T13:15:45+00:00"
+      "fetched_at_utc": "2026-11-23T16:02:10+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-22T20:44:30+00:00"
+      "fetched_at_utc": "2026-11-23T16:01:43+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-23T13:15:45+00:00"
+      "fetched_at_utc": "2026-11-23T16:02:10+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-23T05:00:00-08:00",
-      "wind_mph": 9.0,
-      "gust_mph": 11.508,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-23T06:00:00-08:00",
-      "wind_mph": 9.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 49.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-23T07:00:00-08:00",
-      "wind_mph": 9.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 90.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 49.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 12.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
     {
       "time": "2026-11-23T08:00:00-08:00",
       "wind_mph": 9.0,
@@ -1902,53 +1866,74 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T17:00:00-08:00",
+      "wind_mph": 17.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 247.5,
+      "precip_probability_pct": 65.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T18:00:00-08:00",
+      "wind_mph": 17.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 247.5,
+      "precip_probability_pct": 65.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-11-29T19:00:00-08:00",
+      "wind_mph": 18.0,
+      "gust_mph": 23.016,
+      "wind_direction_deg": 247.5,
+      "precip_probability_pct": 65.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 10.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain Likely"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b84cf11840784f167fb647326eb3bcd853d4cfa1.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60190a38381687c6e1da1cb730d6cc165eba2bc3.001.2",
         "event": "Coastal Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-22T14:23:00-08:00",
-        "onset": "2026-11-23T06:00:00-08:00",
-        "expires": "2026-11-23T12:00:00-08:00",
+        "effective": "2026-11-23T06:10:00-08:00",
+        "onset": "2026-11-23T06:10:00-08:00",
+        "expires": "2026-11-23T13:00:00-08:00",
         "ends": "2026-11-26T16:00:00-08:00",
-        "headline": "Coastal Flood Warning issued November 22 at 2:23PM PST until November 26 at 4:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, Up to 2.0 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Coastal Flood\nWarning, significant coastal flooding with up to 2.8 feet of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Warning,\nDangerously large breaking waves of 20 to 30 feet.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Coastal Flood Advisory, until 6 AM PST Monday.\nFor the Coastal Flood Warning, from 6 AM Monday to 4 PM PST\nThursday. For the High Surf Warning, from midnight Tuesday\nnight to midnight PST Wednesday night.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, numerous road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW)\nat 9:25 AM Monday, 2.6 ft above normal (8.4 ft MLLW) at 10:05 AM\nTuesday, 2.8 ft above normal (8.6 ft MLLW) at 10:49 AM\nWednesday, and 2.4 ft above normal (8.2 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.6 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
+        "headline": "Coastal Flood Warning issued November 23 at 6:10AM PST until November 26 at 4:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the Coastal Flood Warning, Significant coastal\nflooding with up to 2.7 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways.\nFor the High Surf Warning, Dangerously large breaking waves of\n20 to 30 feet.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Coastal Flood Warning, from 6 AM Monday to 4 PM\nPST Thursday. For the High Surf Warning, from midnight Tuesday\nnight to midnight PST Wednesday night.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, numerous road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.0 ft above normal (7.8 ft MLLW) at\n9:25 AM Monday, 2.4 ft above normal (8.2 ft MLLW) at 10:05 AM\nTuesday, 2.7 ft above normal (8.5 ft MLLW) at 10:49 AM\nWednesday, and 2.2 ft above normal (8.0 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.5 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
         "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.",
         "sender_name": "NWS San Francisco CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b84cf11840784f167fb647326eb3bcd853d4cfa1.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60190a38381687c6e1da1cb730d6cc165eba2bc3.001.3",
         "event": "High Surf Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-22T14:23:00-08:00",
+        "effective": "2026-11-23T06:10:00-08:00",
         "onset": "2026-11-25T00:00:00-08:00",
-        "expires": "2026-11-23T12:00:00-08:00",
+        "expires": "2026-11-23T13:00:00-08:00",
         "ends": "2026-11-26T00:00:00-08:00",
-        "headline": "High Surf Warning issued November 22 at 2:23PM PST until November 26 at 12:00AM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, Up to 2.0 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Coastal Flood\nWarning, significant coastal flooding with up to 2.8 feet of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Warning,\nDangerously large breaking waves of 20 to 30 feet.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Coastal Flood Advisory, until 6 AM PST Monday.\nFor the Coastal Flood Warning, from 6 AM Monday to 4 PM PST\nThursday. For the High Surf Warning, from midnight Tuesday\nnight to midnight PST Wednesday night.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, numerous road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW)\nat 9:25 AM Monday, 2.6 ft above normal (8.4 ft MLLW) at 10:05 AM\nTuesday, 2.8 ft above normal (8.6 ft MLLW) at 10:49 AM\nWednesday, and 2.4 ft above normal (8.2 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.6 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b84cf11840784f167fb647326eb3bcd853d4cfa1.001.3",
-        "event": "Coastal Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-22T14:23:00-08:00",
-        "onset": "2026-11-22T14:23:00-08:00",
-        "expires": "2026-11-23T12:00:00-08:00",
-        "ends": "2026-11-23T06:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 22 at 2:23PM PST until November 23 at 6:00AM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, Up to 2.0 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Coastal Flood\nWarning, significant coastal flooding with up to 2.8 feet of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the High Surf Warning,\nDangerously large breaking waves of 20 to 30 feet.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Coastal Flood Advisory, until 6 AM PST Monday.\nFor the Coastal Flood Warning, from 6 AM Monday to 4 PM PST\nThursday. For the High Surf Warning, from midnight Tuesday\nnight to midnight PST Wednesday night.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, numerous road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW)\nat 9:25 AM Monday, 2.6 ft above normal (8.4 ft MLLW) at 10:05 AM\nTuesday, 2.8 ft above normal (8.6 ft MLLW) at 10:49 AM\nWednesday, and 2.4 ft above normal (8.2 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.6 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
+        "headline": "High Surf Warning issued November 23 at 6:10AM PST until November 26 at 12:00AM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the Coastal Flood Warning, Significant coastal\nflooding with up to 2.7 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways.\nFor the High Surf Warning, Dangerously large breaking waves of\n20 to 30 feet.\n\n* WHERE...San Francisco County.\n\n* WHEN...For the Coastal Flood Warning, from 6 AM Monday to 4 PM\nPST Thursday. For the High Surf Warning, from midnight Tuesday\nnight to midnight PST Wednesday night.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, numerous road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Dangerously large breaking waves can overpower\nswimmers, pulling people into the sea from beaches, jetties,\nand rocks resulting in significant physical injury and\nincreasing the risk of drowning.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tide gauge,\nhigh tide is expected to be 2.0 ft above normal (7.8 ft MLLW) at\n9:25 AM Monday, 2.4 ft above normal (8.2 ft MLLW) at 10:05 AM\nTuesday, 2.7 ft above normal (8.5 ft MLLW) at 10:49 AM\nWednesday, and 2.2 ft above normal (8.0 ft MLLW) at 11:38 AM\nThursday. These predictions include up to 1.5 ft of surge that\nwill enhance the astronomical tide and flooding threat. High\ntide varies up to 90 minutes earlier or later along the Pacific\nCoast and through the San Francisco Bay, respectively.",
         "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other waterside\ninfrastructure.",
         "sender_name": "NWS San Francisco CA"
       },
@@ -1998,32 +1983,12 @@
     "prediction_mode": "harmonic",
     "curve_source": "noaa_interval",
     "range": {
-      "start": "2026-11-22",
-      "end": "2026-11-28"
+      "start": "2026-11-23",
+      "end": "2026-11-29"
     },
-    "generated_at_utc": "2026-11-22T20:44:30+00:00",
-    "generated_at_local": "2026-11-22T12:44:30-08:00",
+    "generated_at_utc": "2026-11-23T16:01:43+00:00",
+    "generated_at_local": "2026-11-23T08:01:42-08:00",
     "hilo": [
-      {
-        "t": "2026-11-22 02:23",
-        "v": 2.126,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-22 08:48",
-        "v": 6.397,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-22 15:35",
-        "v": -0.539,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-22 22:34",
-        "v": 4.651,
-        "type": "H"
-      },
       {
         "t": "2026-11-23 03:07",
         "v": 2.501,
@@ -2158,201 +2123,29 @@
         "t": "2026-11-29 21:27",
         "v": -0.497,
         "type": "L"
+      },
+      {
+        "t": "2026-11-30 04:56",
+        "v": 5.174,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-30 10:15",
+        "v": 2.708,
+        "type": "L"
+      },
+      {
+        "t": "2026-11-30 15:45",
+        "v": 5.008,
+        "type": "H"
+      },
+      {
+        "t": "2026-11-30 22:24",
+        "v": 0.057,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-22 00:00",
-        "v": 3.283
-      },
-      {
-        "t": "2026-11-22 00:30",
-        "v": 2.909
-      },
-      {
-        "t": "2026-11-22 01:00",
-        "v": 2.575
-      },
-      {
-        "t": "2026-11-22 01:30",
-        "v": 2.317
-      },
-      {
-        "t": "2026-11-22 02:00",
-        "v": 2.163
-      },
-      {
-        "t": "2026-11-22 02:30",
-        "v": 2.129
-      },
-      {
-        "t": "2026-11-22 03:00",
-        "v": 2.219
-      },
-      {
-        "t": "2026-11-22 03:30",
-        "v": 2.426
-      },
-      {
-        "t": "2026-11-22 04:00",
-        "v": 2.739
-      },
-      {
-        "t": "2026-11-22 04:30",
-        "v": 3.142
-      },
-      {
-        "t": "2026-11-22 05:00",
-        "v": 3.612
-      },
-      {
-        "t": "2026-11-22 05:30",
-        "v": 4.121
-      },
-      {
-        "t": "2026-11-22 06:00",
-        "v": 4.638
-      },
-      {
-        "t": "2026-11-22 06:30",
-        "v": 5.132
-      },
-      {
-        "t": "2026-11-22 07:00",
-        "v": 5.574
-      },
-      {
-        "t": "2026-11-22 07:30",
-        "v": 5.941
-      },
-      {
-        "t": "2026-11-22 08:00",
-        "v": 6.214
-      },
-      {
-        "t": "2026-11-22 08:30",
-        "v": 6.369
-      },
-      {
-        "t": "2026-11-22 09:00",
-        "v": 6.386
-      },
-      {
-        "t": "2026-11-22 09:30",
-        "v": 6.244
-      },
-      {
-        "t": "2026-11-22 10:00",
-        "v": 5.934
-      },
-      {
-        "t": "2026-11-22 10:30",
-        "v": 5.458
-      },
-      {
-        "t": "2026-11-22 11:00",
-        "v": 4.834
-      },
-      {
-        "t": "2026-11-22 11:30",
-        "v": 4.095
-      },
-      {
-        "t": "2026-11-22 12:00",
-        "v": 3.282
-      },
-      {
-        "t": "2026-11-22 12:30",
-        "v": 2.444
-      },
-      {
-        "t": "2026-11-22 13:00",
-        "v": 1.635
-      },
-      {
-        "t": "2026-11-22 13:30",
-        "v": 0.906
-      },
-      {
-        "t": "2026-11-22 14:00",
-        "v": 0.301
-      },
-      {
-        "t": "2026-11-22 14:30",
-        "v": -0.148
-      },
-      {
-        "t": "2026-11-22 15:00",
-        "v": -0.428
-      },
-      {
-        "t": "2026-11-22 15:30",
-        "v": -0.537
-      },
-      {
-        "t": "2026-11-22 16:00",
-        "v": -0.485
-      },
-      {
-        "t": "2026-11-22 16:30",
-        "v": -0.286
-      },
-      {
-        "t": "2026-11-22 17:00",
-        "v": 0.038
-      },
-      {
-        "t": "2026-11-22 17:30",
-        "v": 0.463
-      },
-      {
-        "t": "2026-11-22 18:00",
-        "v": 0.961
-      },
-      {
-        "t": "2026-11-22 18:30",
-        "v": 1.501
-      },
-      {
-        "t": "2026-11-22 19:00",
-        "v": 2.058
-      },
-      {
-        "t": "2026-11-22 19:30",
-        "v": 2.607
-      },
-      {
-        "t": "2026-11-22 20:00",
-        "v": 3.13
-      },
-      {
-        "t": "2026-11-22 20:30",
-        "v": 3.61
-      },
-      {
-        "t": "2026-11-22 21:00",
-        "v": 4.024
-      },
-      {
-        "t": "2026-11-22 21:30",
-        "v": 4.35
-      },
-      {
-        "t": "2026-11-22 22:00",
-        "v": 4.563
-      },
-      {
-        "t": "2026-11-22 22:30",
-        "v": 4.649
-      },
-      {
-        "t": "2026-11-22 23:00",
-        "v": 4.603
-      },
-      {
-        "t": "2026-11-22 23:30",
-        "v": 4.435
-      },
       {
         "t": "2026-11-23 00:00",
         "v": 4.166
@@ -2544,6 +2337,198 @@
       {
         "t": "2026-11-23 23:30",
         "v": 4.809
+      },
+      {
+        "t": "2026-11-24 00:00",
+        "v": 4.747
+      },
+      {
+        "t": "2026-11-24 00:30",
+        "v": 4.561
+      },
+      {
+        "t": "2026-11-24 01:00",
+        "v": 4.279
+      },
+      {
+        "t": "2026-11-24 01:30",
+        "v": 3.938
+      },
+      {
+        "t": "2026-11-24 02:00",
+        "v": 3.581
+      },
+      {
+        "t": "2026-11-24 02:30",
+        "v": 3.253
+      },
+      {
+        "t": "2026-11-24 03:00",
+        "v": 2.997
+      },
+      {
+        "t": "2026-11-24 03:30",
+        "v": 2.846
+      },
+      {
+        "t": "2026-11-24 04:00",
+        "v": 2.818
+      },
+      {
+        "t": "2026-11-24 04:30",
+        "v": 2.917
+      },
+      {
+        "t": "2026-11-24 05:00",
+        "v": 3.137
+      },
+      {
+        "t": "2026-11-24 05:30",
+        "v": 3.461
+      },
+      {
+        "t": "2026-11-24 06:00",
+        "v": 3.872
+      },
+      {
+        "t": "2026-11-24 06:30",
+        "v": 4.345
+      },
+      {
+        "t": "2026-11-24 07:00",
+        "v": 4.854
+      },
+      {
+        "t": "2026-11-24 07:30",
+        "v": 5.365
+      },
+      {
+        "t": "2026-11-24 08:00",
+        "v": 5.846
+      },
+      {
+        "t": "2026-11-24 08:30",
+        "v": 6.269
+      },
+      {
+        "t": "2026-11-24 09:00",
+        "v": 6.607
+      },
+      {
+        "t": "2026-11-24 09:30",
+        "v": 6.838
+      },
+      {
+        "t": "2026-11-24 10:00",
+        "v": 6.937
+      },
+      {
+        "t": "2026-11-24 10:30",
+        "v": 6.882
+      },
+      {
+        "t": "2026-11-24 11:00",
+        "v": 6.651
+      },
+      {
+        "t": "2026-11-24 11:30",
+        "v": 6.232
+      },
+      {
+        "t": "2026-11-24 12:00",
+        "v": 5.627
+      },
+      {
+        "t": "2026-11-24 12:30",
+        "v": 4.857
+      },
+      {
+        "t": "2026-11-24 13:00",
+        "v": 3.959
+      },
+      {
+        "t": "2026-11-24 13:30",
+        "v": 2.982
+      },
+      {
+        "t": "2026-11-24 14:00",
+        "v": 1.984
+      },
+      {
+        "t": "2026-11-24 14:30",
+        "v": 1.028
+      },
+      {
+        "t": "2026-11-24 15:00",
+        "v": 0.173
+      },
+      {
+        "t": "2026-11-24 15:30",
+        "v": -0.531
+      },
+      {
+        "t": "2026-11-24 16:00",
+        "v": -1.049
+      },
+      {
+        "t": "2026-11-24 16:30",
+        "v": -1.366
+      },
+      {
+        "t": "2026-11-24 17:00",
+        "v": -1.483
+      },
+      {
+        "t": "2026-11-24 17:30",
+        "v": -1.415
+      },
+      {
+        "t": "2026-11-24 18:00",
+        "v": -1.184
+      },
+      {
+        "t": "2026-11-24 18:30",
+        "v": -0.813
+      },
+      {
+        "t": "2026-11-24 19:00",
+        "v": -0.331
+      },
+      {
+        "t": "2026-11-24 19:30",
+        "v": 0.233
+      },
+      {
+        "t": "2026-11-24 20:00",
+        "v": 0.85
+      },
+      {
+        "t": "2026-11-24 20:30",
+        "v": 1.492
+      },
+      {
+        "t": "2026-11-24 21:00",
+        "v": 2.135
+      },
+      {
+        "t": "2026-11-24 21:30",
+        "v": 2.76
+      },
+      {
+        "t": "2026-11-24 22:00",
+        "v": 3.348
+      },
+      {
+        "t": "2026-11-24 22:30",
+        "v": 3.876
+      },
+      {
+        "t": "2026-11-24 23:00",
+        "v": 4.319
+      },
+      {
+        "t": "2026-11-24 23:30",
+        "v": 4.649
       }
     ]
   },
