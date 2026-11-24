@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "ocean-city",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-24T02:24:03+00:00",
+  "generated_at_utc": "2026-11-24T04:50:55+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T02:24:03+00:00"
+      "fetched_at_utc": "2026-11-24T04:50:55+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T02:24:03+00:00"
+      "fetched_at_utc": "2026-11-24T04:50:55+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T02:24:03+00:00"
+      "fetched_at_utc": "2026-11-24T04:50:55+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-23T16:01:52+00:00"
+      "fetched_at_utc": "2026-11-24T04:49:20+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-24T02:24:03+00:00"
+      "fetched_at_utc": "2026-11-24T04:50:55+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-23T21:00:00-05:00",
-      "wind_mph": 9.0,
-      "gust_mph": 16.111,
-      "wind_direction_deg": 315.0,
-      "precip_probability_pct": 9.0,
-      "air_temperature_f": 58.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-23T22:00:00-05:00",
-      "wind_mph": 10.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 9.0,
-      "air_temperature_f": 58.0,
-      "wave_height_ft": 4.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Cloudy"
-    },
     {
       "time": "2026-11-23T23:00:00-05:00",
       "wind_mph": 12.0,
@@ -1902,37 +1878,61 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-30T09:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 51.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
+    },
+    {
+      "time": "2026-11-30T10:00:00-05:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 13.0,
+      "air_temperature_f": 54.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.18bb628a3ff0ab9ac8b67c03e0e18217f817d1ae.004.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.180aaaf1dfbaacc7300ba7a0dbd80318ee820a17.004.2",
         "event": "Storm Watch",
         "severity": "Severe",
         "certainty": "Possible",
         "urgency": "Future",
-        "effective": "2026-11-23T19:08:00-05:00",
+        "effective": "2026-11-23T21:53:00-05:00",
         "onset": "2026-11-25T22:00:00-05:00",
-        "expires": "2026-11-24T03:15:00-05:00",
+        "expires": "2026-11-24T06:00:00-05:00",
         "ends": "2026-11-26T22:00:00-05:00",
-        "headline": "Storm Watch issued November 23 at 7:08PM EST until November 26 at 10:00PM EST by NWS Wakefield VA",
+        "headline": "Storm Watch issued November 23 at 9:53PM EST until November 26 at 10:00PM EST by NWS Wakefield VA",
         "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas\n10 to 15 ft possible.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
         "instruction": "Mariners should prepare to remain in port, alter course, and/or\nsecure the vessel before the onset of severe conditions.",
         "sender_name": "NWS Wakefield VA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.18bb628a3ff0ab9ac8b67c03e0e18217f817d1ae.004.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.180aaaf1dfbaacc7300ba7a0dbd80318ee820a17.004.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-23T19:08:00-05:00",
-        "onset": "2026-11-23T19:08:00-05:00",
-        "expires": "2026-11-24T03:15:00-05:00",
+        "effective": "2026-11-23T21:53:00-05:00",
+        "onset": "2026-11-23T21:53:00-05:00",
+        "expires": "2026-11-24T06:00:00-05:00",
         "ends": "2026-11-25T22:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 23 at 7:08PM EST until November 25 at 10:00PM EST by NWS Wakefield VA",
+        "headline": "Small Craft Advisory issued November 23 at 9:53PM EST until November 25 at 10:00PM EST by NWS Wakefield VA",
         "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas\n10 to 15 ft possible.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
         "instruction": "Mariners should prepare to remain in port, alter course, and/or\nsecure the vessel before the onset of severe conditions.",
         "sender_name": "NWS Wakefield VA"
@@ -1971,8 +1971,8 @@
       "start": "2026-11-23",
       "end": "2026-11-29"
     },
-    "generated_at_utc": "2026-11-23T16:01:52+00:00",
-    "generated_at_local": "2026-11-23T11:01:51-05:00",
+    "generated_at_utc": "2026-11-24T04:49:20+00:00",
+    "generated_at_local": "2026-11-23T23:49:20-05:00",
     "hilo": [
       {
         "t": "2026-11-23 05:48",
