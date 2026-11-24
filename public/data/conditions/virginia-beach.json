@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "virginia-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-24T13:59:41+00:00",
+  "generated_at_utc": "2026-11-24T15:57:37+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T13:59:41+00:00"
+      "fetched_at_utc": "2026-11-24T15:57:37+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T13:59:41+00:00"
+      "fetched_at_utc": "2026-11-24T15:57:37+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T13:59:41+00:00"
+      "fetched_at_utc": "2026-11-24T15:57:37+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T04:49:20+00:00"
+      "fetched_at_utc": "2026-11-24T15:55:32+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-24T13:59:41+00:00"
+      "fetched_at_utc": "2026-11-24T15:57:37+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-24T08:00:00-05:00",
-      "wind_mph": 21.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 49.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-24T09:00:00-05:00",
-      "wind_mph": 22.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 4.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-24T10:00:00-05:00",
       "wind_mph": 22.0,
@@ -1902,53 +1878,77 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-30T20:00:00-05:00",
+      "wind_mph": 8.0,
+      "gust_mph": 14.96,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 51.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-11-30T21:00:00-05:00",
+      "wind_mph": 9.0,
+      "gust_mph": 16.111,
+      "wind_direction_deg": 270.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8535a5a0e205874799d7c1696c42fd90fffc3fac.002.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8abb531b1b93966e9b73876d9b2625ef47719d73.002.1",
         "event": "Coastal Flood Watch",
         "severity": "Moderate",
         "certainty": "Possible",
         "urgency": "Future",
-        "effective": "2026-11-24T02:52:00-05:00",
+        "effective": "2026-11-24T10:27:00-05:00",
         "onset": "2026-11-26T05:00:00-05:00",
-        "expires": "2026-11-24T16:00:00-05:00",
+        "expires": "2026-11-24T18:30:00-05:00",
         "ends": "2026-11-26T15:00:00-05:00",
-        "headline": "Coastal Flood Watch issued November 24 at 2:52AM EST until November 26 at 3:00PM EST by NWS Wakefield VA",
-        "description": "* WHAT...Up to 1 to 2 feet of inundation above ground level\npossible in low-lying areas near shorelines and tidal waterways.\n\n* WHERE...Chesapeake, Hampton, Poquoson, Portsmouth, Norfolk,\nSuffolk, and Virginia Beach.\n\n* WHEN...From late Wednesday night through Thursday afternoon.\n\n* IMPACTS...Numerous roads may be closed. Low lying property\nincluding homes, businesses, and some critical infrastructure\nmay be inundated. Some shoreline erosion may occur.",
+        "headline": "Coastal Flood Watch issued November 24 at 10:27AM EST until November 26 at 3:00PM EST by NWS Wakefield VA",
+        "description": "* WHAT...Up to 2 feet of inundation above ground level\npossible in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Chesapeake, Virginia Beach and Suffolk, and\nHampton/Poquoson, Norfolk and Portsmouth Counties.\n\n* WHEN...From late Wednesday night through Thursday afternoon.\n\n* IMPACTS...Numerous roads may be closed. Low lying property\nincluding homes, businesses, and some critical infrastructure\nmay be inundated. Some shoreline erosion may occur.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS Wakefield VA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a18c4c918bb92486186ae7d3a52fbcd4db6facd0.006.2",
-        "event": "Storm Watch",
-        "severity": "Severe",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-24T02:42:00-05:00",
-        "onset": "2026-11-25T22:00:00-05:00",
-        "expires": "2026-11-24T16:00:00-05:00",
-        "ends": "2026-11-26T19:00:00-05:00",
-        "headline": "Storm Watch issued November 24 at 2:42AM EST until November 26 at 7:00PM EST by NWS Wakefield VA",
-        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25 kt\nwith gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas 10\nto 15 ft possible.\n\n* WHERE...Coastal waters from Parramore Island to Cape Charles\nLight VA out 20 NM, Coastal Waters from Cape Charles Light to\nVirginia-North Carolina border out 20 NM and Coastal waters\nfrom NC VA border to Currituck Beach Light NC out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
-        "instruction": "Mariners should prepare to remain in port, alter course, and/or\nsecure the vessel before the onset of severe conditions.",
-        "sender_name": "NWS Wakefield VA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a18c4c918bb92486186ae7d3a52fbcd4db6facd0.006.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.019a8e611411037456fd4dafaf004c80fc2cda3c.005.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-24T02:42:00-05:00",
-        "onset": "2026-11-24T02:42:00-05:00",
-        "expires": "2026-11-24T16:00:00-05:00",
+        "effective": "2026-11-24T09:59:00-05:00",
+        "onset": "2026-11-24T09:59:00-05:00",
+        "expires": "2026-11-24T18:00:00-05:00",
         "ends": "2026-11-25T22:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 24 at 2:42AM EST until November 25 at 10:00PM EST by NWS Wakefield VA",
-        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25 kt\nwith gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas 10\nto 15 ft possible.\n\n* WHERE...Coastal waters from Parramore Island to Cape Charles\nLight VA out 20 NM, Coastal Waters from Cape Charles Light to\nVirginia-North Carolina border out 20 NM and Coastal waters\nfrom NC VA border to Currituck Beach Light NC out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
+        "headline": "Small Craft Advisory issued November 24 at 9:59AM EST until November 25 at 10:00PM EST by NWS Wakefield VA",
+        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas\n10 to 15 ft possible.\n\n* WHERE...Coastal waters from Parramore Island to Cape Charles\nLight VA out 20 NM, Coastal Waters from Cape Charles Light to\nVirginia-North Carolina border out 20 NM and Coastal waters\nfrom NC VA border to Currituck Beach Light NC out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
+        "instruction": "Mariners should prepare to remain in port, alter course, and/or\nsecure the vessel before the onset of severe conditions.",
+        "sender_name": "NWS Wakefield VA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.019a8e611411037456fd4dafaf004c80fc2cda3c.005.2",
+        "event": "Storm Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-24T09:59:00-05:00",
+        "onset": "2026-11-25T22:00:00-05:00",
+        "expires": "2026-11-24T18:00:00-05:00",
+        "ends": "2026-11-26T19:00:00-05:00",
+        "headline": "Storm Watch issued November 24 at 9:59AM EST until November 26 at 7:00PM EST by NWS Wakefield VA",
+        "description": "* WHAT...For the Small Craft Advisory, northeast winds 20 to 25\nkt with gusts up to 30 kt and seas 7 to 10 ft. For the Storm\nWatch, east winds 30 to 40 kt with gusts up to 50 kt and seas\n10 to 15 ft possible.\n\n* WHERE...Coastal waters from Parramore Island to Cape Charles\nLight VA out 20 NM, Coastal Waters from Cape Charles Light to\nVirginia-North Carolina border out 20 NM and Coastal waters\nfrom NC VA border to Currituck Beach Light NC out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 10 PM EST\nWednesday. For the Storm Watch, from Wednesday evening through\nThursday evening.\n\n* IMPACTS...Storm force winds and hazardous seas could capsize\nor damage vessels and reduce visibility.",
         "instruction": "Mariners should prepare to remain in port, alter course, and/or\nsecure the vessel before the onset of severe conditions.",
         "sender_name": "NWS Wakefield VA"
       }
@@ -1983,32 +1983,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-23",
-      "end": "2026-11-29"
+      "start": "2026-11-24",
+      "end": "2026-11-30"
     },
-    "generated_at_utc": "2026-11-24T04:49:20+00:00",
-    "generated_at_local": "2026-11-23T23:49:20-05:00",
+    "generated_at_utc": "2026-11-24T15:55:32+00:00",
+    "generated_at_local": "2026-11-24T10:55:31-05:00",
     "hilo": [
-      {
-        "t": "2026-11-22 05:04",
-        "v": 4.358,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-22 11:33",
-        "v": 0.205,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-22 17:23",
-        "v": 3.405,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-22 23:24",
-        "v": -0.116,
-        "type": "L"
-      },
       {
         "t": "2026-11-23 05:54",
         "v": 4.65,
@@ -2158,201 +2138,29 @@
         "t": "2026-11-30 18:52",
         "v": 0.109,
         "type": "L"
+      },
+      {
+        "t": "2026-12-01 00:59",
+        "v": 3.419,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-01 07:12",
+        "v": 0.435,
+        "type": "L"
+      },
+      {
+        "t": "2026-12-01 13:16",
+        "v": 3.509,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-01 19:50",
+        "v": 0.14,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-23 00:00",
-        "v": -0.016
-      },
-      {
-        "t": "2026-11-23 00:30",
-        "v": 0.213
-      },
-      {
-        "t": "2026-11-23 01:00",
-        "v": 0.562
-      },
-      {
-        "t": "2026-11-23 01:30",
-        "v": 1.01
-      },
-      {
-        "t": "2026-11-23 02:00",
-        "v": 1.531
-      },
-      {
-        "t": "2026-11-23 02:30",
-        "v": 2.094
-      },
-      {
-        "t": "2026-11-23 03:00",
-        "v": 2.668
-      },
-      {
-        "t": "2026-11-23 03:30",
-        "v": 3.219
-      },
-      {
-        "t": "2026-11-23 04:00",
-        "v": 3.714
-      },
-      {
-        "t": "2026-11-23 04:30",
-        "v": 4.125
-      },
-      {
-        "t": "2026-11-23 05:00",
-        "v": 4.428
-      },
-      {
-        "t": "2026-11-23 05:30",
-        "v": 4.606
-      },
-      {
-        "t": "2026-11-23 06:00",
-        "v": 4.647
-      },
-      {
-        "t": "2026-11-23 06:30",
-        "v": 4.553
-      },
-      {
-        "t": "2026-11-23 07:00",
-        "v": 4.33
-      },
-      {
-        "t": "2026-11-23 07:30",
-        "v": 3.991
-      },
-      {
-        "t": "2026-11-23 08:00",
-        "v": 3.554
-      },
-      {
-        "t": "2026-11-23 08:30",
-        "v": 3.046
-      },
-      {
-        "t": "2026-11-23 09:00",
-        "v": 2.496
-      },
-      {
-        "t": "2026-11-23 09:30",
-        "v": 1.935
-      },
-      {
-        "t": "2026-11-23 10:00",
-        "v": 1.395
-      },
-      {
-        "t": "2026-11-23 10:30",
-        "v": 0.908
-      },
-      {
-        "t": "2026-11-23 11:00",
-        "v": 0.501
-      },
-      {
-        "t": "2026-11-23 11:30",
-        "v": 0.199
-      },
-      {
-        "t": "2026-11-23 12:00",
-        "v": 0.018
-      },
-      {
-        "t": "2026-11-23 12:30",
-        "v": -0.032
-      },
-      {
-        "t": "2026-11-23 13:00",
-        "v": 0.048
-      },
-      {
-        "t": "2026-11-23 13:30",
-        "v": 0.25
-      },
-      {
-        "t": "2026-11-23 14:00",
-        "v": 0.557
-      },
-      {
-        "t": "2026-11-23 14:30",
-        "v": 0.949
-      },
-      {
-        "t": "2026-11-23 15:00",
-        "v": 1.396
-      },
-      {
-        "t": "2026-11-23 15:30",
-        "v": 1.867
-      },
-      {
-        "t": "2026-11-23 16:00",
-        "v": 2.327
-      },
-      {
-        "t": "2026-11-23 16:30",
-        "v": 2.743
-      },
-      {
-        "t": "2026-11-23 17:00",
-        "v": 3.084
-      },
-      {
-        "t": "2026-11-23 17:30",
-        "v": 3.326
-      },
-      {
-        "t": "2026-11-23 18:00",
-        "v": 3.452
-      },
-      {
-        "t": "2026-11-23 18:30",
-        "v": 3.452
-      },
-      {
-        "t": "2026-11-23 19:00",
-        "v": 3.326
-      },
-      {
-        "t": "2026-11-23 19:30",
-        "v": 3.081
-      },
-      {
-        "t": "2026-11-23 20:00",
-        "v": 2.736
-      },
-      {
-        "t": "2026-11-23 20:30",
-        "v": 2.312
-      },
-      {
-        "t": "2026-11-23 21:00",
-        "v": 1.84
-      },
-      {
-        "t": "2026-11-23 21:30",
-        "v": 1.352
-      },
-      {
-        "t": "2026-11-23 22:00",
-        "v": 0.88
-      },
-      {
-        "t": "2026-11-23 22:30",
-        "v": 0.456
-      },
-      {
-        "t": "2026-11-23 23:00",
-        "v": 0.111
-      },
-      {
-        "t": "2026-11-23 23:30",
-        "v": -0.134
-      },
       {
         "t": "2026-11-24 00:00",
         "v": -0.26
@@ -2544,6 +2352,198 @@
       {
         "t": "2026-11-24 23:30",
         "v": 0.257
+      },
+      {
+        "t": "2026-11-25 00:00",
+        "v": -0.071
+      },
+      {
+        "t": "2026-11-25 00:30",
+        "v": -0.286
+      },
+      {
+        "t": "2026-11-25 01:00",
+        "v": -0.375
+      },
+      {
+        "t": "2026-11-25 01:30",
+        "v": -0.323
+      },
+      {
+        "t": "2026-11-25 02:00",
+        "v": -0.119
+      },
+      {
+        "t": "2026-11-25 02:30",
+        "v": 0.225
+      },
+      {
+        "t": "2026-11-25 03:00",
+        "v": 0.689
+      },
+      {
+        "t": "2026-11-25 03:30",
+        "v": 1.246
+      },
+      {
+        "t": "2026-11-25 04:00",
+        "v": 1.864
+      },
+      {
+        "t": "2026-11-25 04:30",
+        "v": 2.506
+      },
+      {
+        "t": "2026-11-25 05:00",
+        "v": 3.134
+      },
+      {
+        "t": "2026-11-25 05:30",
+        "v": 3.713
+      },
+      {
+        "t": "2026-11-25 06:00",
+        "v": 4.208
+      },
+      {
+        "t": "2026-11-25 06:30",
+        "v": 4.591
+      },
+      {
+        "t": "2026-11-25 07:00",
+        "v": 4.838
+      },
+      {
+        "t": "2026-11-25 07:30",
+        "v": 4.937
+      },
+      {
+        "t": "2026-11-25 08:00",
+        "v": 4.882
+      },
+      {
+        "t": "2026-11-25 08:30",
+        "v": 4.68
+      },
+      {
+        "t": "2026-11-25 09:00",
+        "v": 4.342
+      },
+      {
+        "t": "2026-11-25 09:30",
+        "v": 3.89
+      },
+      {
+        "t": "2026-11-25 10:00",
+        "v": 3.347
+      },
+      {
+        "t": "2026-11-25 10:30",
+        "v": 2.747
+      },
+      {
+        "t": "2026-11-25 11:00",
+        "v": 2.123
+      },
+      {
+        "t": "2026-11-25 11:30",
+        "v": 1.511
+      },
+      {
+        "t": "2026-11-25 12:00",
+        "v": 0.948
+      },
+      {
+        "t": "2026-11-25 12:30",
+        "v": 0.465
+      },
+      {
+        "t": "2026-11-25 13:00",
+        "v": 0.091
+      },
+      {
+        "t": "2026-11-25 13:30",
+        "v": -0.153
+      },
+      {
+        "t": "2026-11-25 14:00",
+        "v": -0.253
+      },
+      {
+        "t": "2026-11-25 14:30",
+        "v": -0.208
+      },
+      {
+        "t": "2026-11-25 15:00",
+        "v": -0.032
+      },
+      {
+        "t": "2026-11-25 15:30",
+        "v": 0.262
+      },
+      {
+        "t": "2026-11-25 16:00",
+        "v": 0.655
+      },
+      {
+        "t": "2026-11-25 16:30",
+        "v": 1.117
+      },
+      {
+        "t": "2026-11-25 17:00",
+        "v": 1.615
+      },
+      {
+        "t": "2026-11-25 17:30",
+        "v": 2.115
+      },
+      {
+        "t": "2026-11-25 18:00",
+        "v": 2.58
+      },
+      {
+        "t": "2026-11-25 18:30",
+        "v": 2.978
+      },
+      {
+        "t": "2026-11-25 19:00",
+        "v": 3.28
+      },
+      {
+        "t": "2026-11-25 19:30",
+        "v": 3.464
+      },
+      {
+        "t": "2026-11-25 20:00",
+        "v": 3.518
+      },
+      {
+        "t": "2026-11-25 20:30",
+        "v": 3.438
+      },
+      {
+        "t": "2026-11-25 21:00",
+        "v": 3.228
+      },
+      {
+        "t": "2026-11-25 21:30",
+        "v": 2.905
+      },
+      {
+        "t": "2026-11-25 22:00",
+        "v": 2.489
+      },
+      {
+        "t": "2026-11-25 22:30",
+        "v": 2.01
+      },
+      {
+        "t": "2026-11-25 23:00",
+        "v": 1.5
+      },
+      {
+        "t": "2026-11-25 23:30",
+        "v": 0.995
       }
     ]
   },
