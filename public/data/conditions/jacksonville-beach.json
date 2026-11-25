@@ -2,12 +2,12 @@
   "schema_version": 1,
   "location": "jacksonville-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-25T08:53:37+00:00",
+  "generated_at_utc": "2026-11-25T10:24:17+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T08:53:37+00:00"
+      "fetched_at_utc": "2026-11-25T10:24:17+00:00"
     },
     "forecast": {
       "source": "NWS",
@@ -1908,6 +1908,21 @@
     "status": "ok",
     "items": [
       {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fe92dc5dac10a03792d2de5569a87cf81bb4d2c0.001.1",
+        "event": "Wind Advisory",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-25T05:05:00-05:00",
+        "onset": "2026-11-25T05:05:00-05:00",
+        "expires": "2026-11-25T11:00:00-05:00",
+        "ends": "2026-11-25T11:00:00-05:00",
+        "headline": "Wind Advisory issued November 25 at 5:05AM EST until November 25 at 11:00AM EST by NWS Jacksonville FL",
+        "description": "* WHAT...North winds 15 to 25 mph with gusts up to 40 mph. Highest\ngusts along the coast.\n\n* WHERE...Coastal Duval County.\n\n* WHEN...Until 11 AM EST this morning.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
+        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
+        "sender_name": "NWS Jacksonville FL"
+      },
+      {
         "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b17005547ae09739a4b3cdc4432b71d8846f1361.001.4",
         "event": "Rip Current Statement",
         "severity": "Moderate",
@@ -2597,5 +2612,5 @@
       "grid_y": 63
     }
   },
-  "refresh_state": "live"
+  "refresh_state": "alerts-only"
 }
