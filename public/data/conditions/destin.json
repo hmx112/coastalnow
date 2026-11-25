@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "destin",
   "timezone": "America/Chicago",
-  "generated_at_utc": "2026-11-25T01:05:28+00:00",
+  "generated_at_utc": "2026-11-25T03:35:33+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T01:05:28+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:33+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T00:01:05+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:33+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T00:01:05+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:33+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T15:55:31+00:00"
+      "fetched_at_utc": "2026-11-25T03:33:58+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-25T00:01:05+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:33+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-24T18:00:00-06:00",
-      "wind_mph": 5.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 65.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 3.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-11-24T19:00:00-06:00",
-      "wind_mph": 5.0,
-      "gust_mph": 14.96,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 65.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 3.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
-    {
-      "time": "2026-11-24T20:00:00-06:00",
-      "wind_mph": 10.0,
-      "gust_mph": 17.262,
-      "wind_direction_deg": 45.0,
-      "precip_probability_pct": 12.0,
-      "air_temperature_f": 65.0,
-      "wave_height_ft": 1.0,
-      "wave_period_s": 2.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-11-24T21:00:00-06:00",
       "wind_mph": 10.0,
@@ -1902,38 +1866,74 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-12-01T06:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 57.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-12-01T07:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 57.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-12-01T08:00:00-06:00",
+      "wind_mph": 10.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 2.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 3.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.89fd1464aa4f9133de7d8efd372bd5e91bc03def.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.32b4de436f209e37596cbe252dbc671e6ffcd991.001.1",
         "event": "Rip Current Statement",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-24T11:37:00-06:00",
+        "effective": "2026-11-24T20:07:00-06:00",
         "onset": "2026-11-25T06:00:00-06:00",
-        "expires": "2026-11-24T21:00:00-06:00",
+        "expires": "2026-11-25T04:00:00-06:00",
         "ends": "2026-11-26T06:00:00-06:00",
-        "headline": "Rip Current Statement issued November 24 at 11:37AM CST until November 26 at 6:00AM CST by NWS Mobile AL",
-        "description": "* WHAT...Dangerous rip currents expected.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...From Wednesday morning through late Wednesday night.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
+        "headline": "Rip Current Statement issued November 24 at 8:07PM CST until November 26 at 6:00AM CST by NWS Mobile AL",
+        "description": "* WHAT...Dangerous rip currents expected.\n\n* WHERE...In Alabama, Mobile Coastal and Baldwin Coastal\nCounties. In Florida, Escambia Coastal, Santa Rosa Coastal and\nOkaloosa Coastal Counties.\n\n* WHEN...From 6 AM CST Wednesday through late Wednesday night.\n\n* IMPACTS...Rip currents can sweep even the best swimmers away\nfrom shore into deeper water.",
         "instruction": "Swim near a lifeguard. If caught in a rip current, relax and\nfloat. Don't swim against the current. If able, swim in a\ndirection following the shoreline. If unable to escape, face the\nshore and call or wave for help.",
         "sender_name": "NWS Mobile AL"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60c60b39ddbd9dd9a7a5296de81002e8775bd51d.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.74b10127fd599e7488d704114d920f597607b947.001.1",
         "event": "Small Craft Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-24T11:38:00-06:00",
+        "effective": "2026-11-24T20:07:00-06:00",
         "onset": "2026-11-25T00:00:00-06:00",
-        "expires": "2026-11-24T21:00:00-06:00",
+        "expires": "2026-11-25T04:00:00-06:00",
         "ends": "2026-11-26T18:00:00-06:00",
-        "headline": "Small Craft Advisory issued November 24 at 11:38AM CST until November 26 at 6:00PM CST by NWS Mobile AL",
-        "description": "* WHAT...North winds 15 to 25 kt with gusts up to 30 kt and seas\n4 to 7 ft expected.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM, Coastal waters from Okaloosa Walton County Line FL to\nPensacola FL out 20 NM, Waters from Pensacola FL to Pascagoula\nMS from 20 to 60 NM and Waters from Okaloosa Walton County\nLine FL to Pensacola FL from 20 to 60 NM.\n\n* WHEN...From midnight tonight to 6 PM CST Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+        "headline": "Small Craft Advisory issued November 24 at 8:07PM CST until November 26 at 6:00PM CST by NWS Mobile AL",
+        "description": "* WHAT...North winds 20 to 25 kt with gusts up to 30 kt and seas\n4 to 7 ft expected.\n\n* WHERE...Coastal waters from Pensacola FL to Pascagoula MS out\n20 NM, Coastal waters from Okaloosa Walton County Line FL to\nPensacola FL out 20 NM, Waters from Pensacola FL to Pascagoula\nMS from 20 to 60 NM and Waters from Okaloosa Walton County\nLine FL to Pensacola FL from 20 to 60 NM.\n\n* WHEN...From midnight tonight to 6 PM CST Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
         "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
         "sender_name": "NWS Mobile AL"
       }
@@ -1971,8 +1971,8 @@
       "start": "2026-11-24",
       "end": "2026-11-30"
     },
-    "generated_at_utc": "2026-11-24T15:55:31+00:00",
-    "generated_at_local": "2026-11-24T09:55:30-06:00",
+    "generated_at_utc": "2026-11-25T03:33:58+00:00",
+    "generated_at_local": "2026-11-24T21:33:58-06:00",
     "hilo": [
       {
         "t": "2026-11-23 06:59",
@@ -2502,5 +2502,5 @@
       "grid_y": 55
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }

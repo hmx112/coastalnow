@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "ventura",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-25T01:06:07+00:00",
+  "generated_at_utc": "2026-11-25T03:35:46+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T01:06:07+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:46+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T00:02:10+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:46+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-25T00:02:10+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:46+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-24T15:55:32+00:00"
+      "fetched_at_utc": "2026-11-25T03:33:59+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-25T00:02:10+00:00"
+      "fetched_at_utc": "2026-11-25T03:35:46+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-24T16:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 71.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-24T17:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 70.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-24T18:00:00-08:00",
-      "wind_mph": 10.0,
-      "gust_mph": 10.357,
-      "wind_direction_deg": 292.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 9.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-24T19:00:00-08:00",
       "wind_mph": 10.0,
@@ -1902,68 +1866,104 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Light Rain Likely"
+    },
+    {
+      "time": "2026-12-01T04:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 82.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-12-01T05:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 82.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
+    },
+    {
+      "time": "2026-12-01T06:00:00-08:00",
+      "wind_mph": 10.0,
+      "gust_mph": 17.262,
+      "wind_direction_deg": 112.5,
+      "precip_probability_pct": 82.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 5.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.528b0dc1a1328ccaf70933f8872bd3fbab5d0189.002.1",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-24T10:36:00-08:00",
-        "onset": "2026-11-25T08:00:00-08:00",
-        "expires": "2026-11-24T21:00:00-08:00",
-        "ends": "2026-11-26T12:00:00-08:00",
-        "headline": "Coastal Flood Warning issued November 24 at 10:36AM PST until November 26 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches. Highest surf and impacts\nlikely across west facing beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
-        "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.528b0dc1a1328ccaf70933f8872bd3fbab5d0189.002.2",
-        "event": "High Surf Warning",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-24T10:36:00-08:00",
-        "onset": "2026-11-25T08:00:00-08:00",
-        "expires": "2026-11-24T21:00:00-08:00",
-        "ends": "2026-11-26T12:00:00-08:00",
-        "headline": "High Surf Warning issued November 24 at 10:36AM PST until November 26 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches. Highest surf and impacts\nlikely across west facing beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
-        "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
-        "sender_name": "NWS Los Angeles/Oxnard CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.528b0dc1a1328ccaf70933f8872bd3fbab5d0189.002.4",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2435c13c390c18c41db6d3900b0503ee6b1d8179.002.4",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-24T10:36:00-08:00",
+        "effective": "2026-11-24T17:51:00-08:00",
         "onset": "2026-11-24T21:00:00-08:00",
-        "expires": "2026-11-24T21:00:00-08:00",
+        "expires": "2026-11-25T14:00:00-08:00",
         "ends": "2026-11-25T08:00:00-08:00",
-        "headline": "High Surf Advisory issued November 24 at 10:36AM PST until November 25 at 8:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches. Highest surf and impacts\nlikely across west facing beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
+        "headline": "High Surf Advisory issued November 24 at 5:51PM PST until November 25 at 8:00AM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
         "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.528b0dc1a1328ccaf70933f8872bd3fbab5d0189.002.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2435c13c390c18c41db6d3900b0503ee6b1d8179.002.1",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-24T17:51:00-08:00",
+        "onset": "2026-11-25T08:00:00-08:00",
+        "expires": "2026-11-25T14:00:00-08:00",
+        "ends": "2026-11-26T12:00:00-08:00",
+        "headline": "Coastal Flood Warning issued November 24 at 5:51PM PST until November 26 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
+        "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2435c13c390c18c41db6d3900b0503ee6b1d8179.002.3",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-24T10:36:00-08:00",
-        "onset": "2026-11-24T10:36:00-08:00",
-        "expires": "2026-11-24T21:00:00-08:00",
+        "effective": "2026-11-24T17:51:00-08:00",
+        "onset": "2026-11-24T17:51:00-08:00",
+        "expires": "2026-11-25T14:00:00-08:00",
         "ends": "2026-11-25T08:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 24 at 10:36AM PST until November 25 at 8:00AM PST by NWS Los Angeles/Oxnard CA",
-        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches. Highest surf and impacts\nlikely across west facing beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
+        "headline": "Coastal Flood Advisory issued November 24 at 5:51PM PST until November 25 at 8:00AM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
+        "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
+        "sender_name": "NWS Los Angeles/Oxnard CA"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2435c13c390c18c41db6d3900b0503ee6b1d8179.002.2",
+        "event": "High Surf Warning",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-24T17:51:00-08:00",
+        "onset": "2026-11-25T08:00:00-08:00",
+        "expires": "2026-11-25T14:00:00-08:00",
+        "ends": "2026-11-26T12:00:00-08:00",
+        "headline": "High Surf Warning issued November 24 at 5:51PM PST until November 26 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, minor to moderate\ncoastal flooding. For the High Surf Advisory, large breaking\nwaves of 5 to 8 feet with dangerous rip currents. For the\nCoastal Flood Warning, significant coastal flooding expected.\nFor the High Surf Warning, large damaging breaking waves of 8\nto 15 feet with dangerous rip currents.\n\n* WHERE...Ventura County Beaches.\n\n* WHEN...For the Coastal Flood Advisory, until 8 AM PST\nWednesday. For the High Surf Advisory, from 9 PM this evening\nto 8 AM PST Wednesday. For the Coastal Flood Warning, from 8\nAM Wednesday to noon PST Thursday. For the High Surf Warning,\nfrom 8 AM Wednesday to noon PST Thursday.\n\n* IMPACTS...Damaging flooding of sea water is likely over some\nvulnerable low-lying coastal areas, especially around the time\nof high tide, including over beaches (especially from Faria\nBeach to Silver Strand Beach), roads, and structures.\nSignificant beach erosion is expected. Powerful waves and\nstrong rip currents will pose an exceptional risk of ocean\ndrowning and damage to coastal structures like piers\n(including Ventura Pier) and jetties. Large breaking waves can\ncause injury, wash people off beaches and rocks, and capsize\nsmall boats near shore. Large breaking waves may impact\nVentura and Channel Islands Harbors. Extremely high tides may\ncause dock damage and seawater spillage over low lying areas\ninside of harbor areas.\n\n* ADDITIONAL DETAILS...Extremely high tides of 8.0-8.4 feet will\nlikely peak between 7am and 11am. Coastal Flood and High Surf\nAdvisories are likely to follow the expiration of the\nrespective warnings.",
         "instruction": "Stay off of beaches and coastal walkways, roads, and structures.\nDo NOT drive around barricades or through water of unknown depth.\n\nEveryone should remain out of the water due to life-threatening\nsurf conditions. Stay off of jetties, piers, and other water side\ninfrastructure.",
         "sender_name": "NWS Los Angeles/Oxnard CA"
       },
@@ -2016,8 +2016,8 @@
       "start": "2026-11-24",
       "end": "2026-11-30"
     },
-    "generated_at_utc": "2026-11-24T15:55:32+00:00",
-    "generated_at_local": "2026-11-24T07:55:32-08:00",
+    "generated_at_utc": "2026-11-25T03:33:59+00:00",
+    "generated_at_local": "2026-11-24T19:33:59-08:00",
     "hilo": [
       {
         "t": "2026-11-23 01:09",
@@ -2632,5 +2632,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
