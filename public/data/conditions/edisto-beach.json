@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "edisto-beach",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-26T13:05:44+00:00",
+  "generated_at_utc": "2026-11-26T15:22:56+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:44+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:56+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:44+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:56+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:44+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:56+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T02:53:27+00:00"
+      "fetched_at_utc": "2026-11-26T15:21:37+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-26T13:05:44+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:56+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-26T08:00:00-05:00",
-      "wind_mph": 17.0,
-      "gust_mph": 24.166,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 4.0,
-      "air_temperature_f": 56.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
-    {
-      "time": "2026-11-26T09:00:00-05:00",
-      "wind_mph": 18.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 270.0,
-      "precip_probability_pct": 5.0,
-      "air_temperature_f": 56.0,
-      "wave_height_ft": 3.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-26T10:00:00-05:00",
       "wind_mph": 21.0,
@@ -1902,6 +1878,30 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-12-02T20:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 61.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-12-02T21:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 13.809,
+      "wind_direction_deg": 45.0,
+      "precip_probability_pct": 0.0,
+      "air_temperature_f": 60.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
@@ -1923,31 +1923,31 @@
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b4c82328d2ca9e5a3a79708760c7330c3bbc0cf.003.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eff4c72e6a6043a95eb4099d01339205028e9234.002.2",
+        "event": "Gale Warning",
+        "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-26T01:17:00-05:00",
-        "onset": "2026-11-26T01:17:00-05:00",
-        "expires": "2026-11-26T14:00:00-05:00",
-        "ends": "2026-11-26T16:00:00-05:00",
-        "headline": "Small Craft Advisory issued November 26 at 1:17AM EST until November 26 at 4:00PM EST by NWS Charleston SC",
+        "effective": "2026-11-26T08:41:00-05:00",
+        "onset": "2026-11-26T16:00:00-05:00",
+        "expires": "2026-11-26T16:45:00-05:00",
+        "ends": "2026-11-27T05:00:00-05:00",
+        "headline": "Gale Warning issued November 26 at 8:41AM EST until November 27 at 5:00AM EST by NWS Charleston SC",
         "description": "* WHAT...For the Small Craft Advisory, west winds 15 to 25 kt\nwith gusts up to 30 kt and seas 4 to 7 ft. For the Gale\nWarning, west winds 25 to 30 kt with gusts up to 35 kt and\nseas 5 to 8 ft expected.\n\n* WHERE...Edisto Beach to Savannah out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 4 PM EST this\nafternoon. For the Gale Warning, from 4 PM this afternoon to 5\nAM EST Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Charleston SC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b4c82328d2ca9e5a3a79708760c7330c3bbc0cf.003.2",
-        "event": "Gale Warning",
-        "severity": "Moderate",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eff4c72e6a6043a95eb4099d01339205028e9234.002.1",
+        "event": "Small Craft Advisory",
+        "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-26T01:17:00-05:00",
-        "onset": "2026-11-26T16:00:00-05:00",
-        "expires": "2026-11-26T14:00:00-05:00",
-        "ends": "2026-11-27T05:00:00-05:00",
-        "headline": "Gale Warning issued November 26 at 1:17AM EST until November 27 at 5:00AM EST by NWS Charleston SC",
+        "effective": "2026-11-26T08:41:00-05:00",
+        "onset": "2026-11-26T08:41:00-05:00",
+        "expires": "2026-11-26T16:45:00-05:00",
+        "ends": "2026-11-26T16:00:00-05:00",
+        "headline": "Small Craft Advisory issued November 26 at 8:41AM EST until November 26 at 4:00PM EST by NWS Charleston SC",
         "description": "* WHAT...For the Small Craft Advisory, west winds 15 to 25 kt\nwith gusts up to 30 kt and seas 4 to 7 ft. For the Gale\nWarning, west winds 25 to 30 kt with gusts up to 35 kt and\nseas 5 to 8 ft expected.\n\n* WHERE...Edisto Beach to Savannah out 20 NM.\n\n* WHEN...For the Small Craft Advisory, until 4 PM EST this\nafternoon. For the Gale Warning, from 4 PM this afternoon to 5\nAM EST Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Charleston SC"
@@ -1983,32 +1983,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-25",
-      "end": "2026-12-01"
+      "start": "2026-11-26",
+      "end": "2026-12-02"
     },
-    "generated_at_utc": "2026-11-26T02:53:27+00:00",
-    "generated_at_local": "2026-11-25T21:53:27-05:00",
+    "generated_at_utc": "2026-11-26T15:21:37+00:00",
+    "generated_at_local": "2026-11-26T10:21:37-05:00",
     "hilo": [
-      {
-        "t": "2026-11-24 00:35",
-        "v": -0.448,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-24 06:48",
-        "v": 7.314,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-24 13:20",
-        "v": -0.053,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-24 19:15",
-        "v": 6.082,
-        "type": "H"
-      },
       {
         "t": "2026-11-25 01:27",
         "v": -0.624,
@@ -2163,201 +2143,29 @@
         "t": "2026-12-02 20:42",
         "v": 0.44,
         "type": "L"
+      },
+      {
+        "t": "2026-12-03 03:09",
+        "v": 6.006,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-03 09:19",
+        "v": 0.642,
+        "type": "L"
+      },
+      {
+        "t": "2026-12-03 15:18",
+        "v": 5.703,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-03 21:35",
+        "v": 0.369,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-25 00:00",
-        "v": 0.241
-      },
-      {
-        "t": "2026-11-25 00:30",
-        "v": -0.243
-      },
-      {
-        "t": "2026-11-25 01:00",
-        "v": -0.537
-      },
-      {
-        "t": "2026-11-25 01:30",
-        "v": -0.623
-      },
-      {
-        "t": "2026-11-25 02:00",
-        "v": -0.469
-      },
-      {
-        "t": "2026-11-25 02:30",
-        "v": -0.069
-      },
-      {
-        "t": "2026-11-25 03:00",
-        "v": 0.553
-      },
-      {
-        "t": "2026-11-25 03:30",
-        "v": 1.355
-      },
-      {
-        "t": "2026-11-25 04:00",
-        "v": 2.288
-      },
-      {
-        "t": "2026-11-25 04:30",
-        "v": 3.291
-      },
-      {
-        "t": "2026-11-25 05:00",
-        "v": 4.301
-      },
-      {
-        "t": "2026-11-25 05:30",
-        "v": 5.253
-      },
-      {
-        "t": "2026-11-25 06:00",
-        "v": 6.086
-      },
-      {
-        "t": "2026-11-25 06:30",
-        "v": 6.747
-      },
-      {
-        "t": "2026-11-25 07:00",
-        "v": 7.194
-      },
-      {
-        "t": "2026-11-25 07:30",
-        "v": 7.398
-      },
-      {
-        "t": "2026-11-25 08:00",
-        "v": 7.357
-      },
-      {
-        "t": "2026-11-25 08:30",
-        "v": 7.101
-      },
-      {
-        "t": "2026-11-25 09:00",
-        "v": 6.646
-      },
-      {
-        "t": "2026-11-25 09:30",
-        "v": 6.019
-      },
-      {
-        "t": "2026-11-25 10:00",
-        "v": 5.255
-      },
-      {
-        "t": "2026-11-25 10:30",
-        "v": 4.399
-      },
-      {
-        "t": "2026-11-25 11:00",
-        "v": 3.497
-      },
-      {
-        "t": "2026-11-25 11:30",
-        "v": 2.603
-      },
-      {
-        "t": "2026-11-25 12:00",
-        "v": 1.766
-      },
-      {
-        "t": "2026-11-25 12:30",
-        "v": 1.035
-      },
-      {
-        "t": "2026-11-25 13:00",
-        "v": 0.45
-      },
-      {
-        "t": "2026-11-25 13:30",
-        "v": 0.047
-      },
-      {
-        "t": "2026-11-25 14:00",
-        "v": -0.154
-      },
-      {
-        "t": "2026-11-25 14:30",
-        "v": -0.139
-      },
-      {
-        "t": "2026-11-25 15:00",
-        "v": 0.093
-      },
-      {
-        "t": "2026-11-25 15:30",
-        "v": 0.526
-      },
-      {
-        "t": "2026-11-25 16:00",
-        "v": 1.128
-      },
-      {
-        "t": "2026-11-25 16:30",
-        "v": 1.859
-      },
-      {
-        "t": "2026-11-25 17:00",
-        "v": 2.665
-      },
-      {
-        "t": "2026-11-25 17:30",
-        "v": 3.492
-      },
-      {
-        "t": "2026-11-25 18:00",
-        "v": 4.279
-      },
-      {
-        "t": "2026-11-25 18:30",
-        "v": 4.972
-      },
-      {
-        "t": "2026-11-25 19:00",
-        "v": 5.522
-      },
-      {
-        "t": "2026-11-25 19:30",
-        "v": 5.891
-      },
-      {
-        "t": "2026-11-25 20:00",
-        "v": 6.051
-      },
-      {
-        "t": "2026-11-25 20:30",
-        "v": 5.994
-      },
-      {
-        "t": "2026-11-25 21:00",
-        "v": 5.727
-      },
-      {
-        "t": "2026-11-25 21:30",
-        "v": 5.266
-      },
-      {
-        "t": "2026-11-25 22:00",
-        "v": 4.642
-      },
-      {
-        "t": "2026-11-25 22:30",
-        "v": 3.894
-      },
-      {
-        "t": "2026-11-25 23:00",
-        "v": 3.069
-      },
-      {
-        "t": "2026-11-25 23:30",
-        "v": 2.22
-      },
       {
         "t": "2026-11-26 00:00",
         "v": 1.4
@@ -2549,6 +2357,198 @@
       {
         "t": "2026-11-26 23:30",
         "v": 3.708
+      },
+      {
+        "t": "2026-11-27 00:00",
+        "v": 2.89
+      },
+      {
+        "t": "2026-11-27 00:30",
+        "v": 2.058
+      },
+      {
+        "t": "2026-11-27 01:00",
+        "v": 1.267
+      },
+      {
+        "t": "2026-11-27 01:30",
+        "v": 0.566
+      },
+      {
+        "t": "2026-11-27 02:00",
+        "v": 0.001
+      },
+      {
+        "t": "2026-11-27 02:30",
+        "v": -0.392
+      },
+      {
+        "t": "2026-11-27 03:00",
+        "v": -0.588
+      },
+      {
+        "t": "2026-11-27 03:30",
+        "v": -0.569
+      },
+      {
+        "t": "2026-11-27 04:00",
+        "v": -0.312
+      },
+      {
+        "t": "2026-11-27 04:30",
+        "v": 0.169
+      },
+      {
+        "t": "2026-11-27 05:00",
+        "v": 0.844
+      },
+      {
+        "t": "2026-11-27 05:30",
+        "v": 1.671
+      },
+      {
+        "t": "2026-11-27 06:00",
+        "v": 2.598
+      },
+      {
+        "t": "2026-11-27 06:30",
+        "v": 3.568
+      },
+      {
+        "t": "2026-11-27 07:00",
+        "v": 4.52
+      },
+      {
+        "t": "2026-11-27 07:30",
+        "v": 5.394
+      },
+      {
+        "t": "2026-11-27 08:00",
+        "v": 6.136
+      },
+      {
+        "t": "2026-11-27 08:30",
+        "v": 6.698
+      },
+      {
+        "t": "2026-11-27 09:00",
+        "v": 7.048
+      },
+      {
+        "t": "2026-11-27 09:30",
+        "v": 7.161
+      },
+      {
+        "t": "2026-11-27 10:00",
+        "v": 7.048
+      },
+      {
+        "t": "2026-11-27 10:30",
+        "v": 6.729
+      },
+      {
+        "t": "2026-11-27 11:00",
+        "v": 6.224
+      },
+      {
+        "t": "2026-11-27 11:30",
+        "v": 5.561
+      },
+      {
+        "t": "2026-11-27 12:00",
+        "v": 4.78
+      },
+      {
+        "t": "2026-11-27 12:30",
+        "v": 3.927
+      },
+      {
+        "t": "2026-11-27 13:00",
+        "v": 3.052
+      },
+      {
+        "t": "2026-11-27 13:30",
+        "v": 2.205
+      },
+      {
+        "t": "2026-11-27 14:00",
+        "v": 1.438
+      },
+      {
+        "t": "2026-11-27 14:30",
+        "v": 0.794
+      },
+      {
+        "t": "2026-11-27 15:00",
+        "v": 0.312
+      },
+      {
+        "t": "2026-11-27 15:30",
+        "v": 0.02
+      },
+      {
+        "t": "2026-11-27 16:00",
+        "v": -0.065
+      },
+      {
+        "t": "2026-11-27 16:30",
+        "v": 0.053
+      },
+      {
+        "t": "2026-11-27 17:00",
+        "v": 0.358
+      },
+      {
+        "t": "2026-11-27 17:30",
+        "v": 0.832
+      },
+      {
+        "t": "2026-11-27 18:00",
+        "v": 1.443
+      },
+      {
+        "t": "2026-11-27 18:30",
+        "v": 2.15
+      },
+      {
+        "t": "2026-11-27 19:00",
+        "v": 2.906
+      },
+      {
+        "t": "2026-11-27 19:30",
+        "v": 3.661
+      },
+      {
+        "t": "2026-11-27 20:00",
+        "v": 4.365
+      },
+      {
+        "t": "2026-11-27 20:30",
+        "v": 4.972
+      },
+      {
+        "t": "2026-11-27 21:00",
+        "v": 5.441
+      },
+      {
+        "t": "2026-11-27 21:30",
+        "v": 5.74
+      },
+      {
+        "t": "2026-11-27 22:00",
+        "v": 5.852
+      },
+      {
+        "t": "2026-11-27 22:30",
+        "v": 5.762
+      },
+      {
+        "t": "2026-11-27 23:00",
+        "v": 5.471
+      },
+      {
+        "t": "2026-11-27 23:30",
+        "v": 4.998
       }
     ]
   },
@@ -2602,5 +2602,5 @@
       "grid_y": 60
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }

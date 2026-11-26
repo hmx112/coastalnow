@@ -2,59 +2,35 @@
   "schema_version": 1,
   "location": "emerald-isle",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-26T13:05:18+00:00",
+  "generated_at_utc": "2026-11-26T15:22:29+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:18+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:29+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:18+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:29+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T13:05:18+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:29+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T02:53:25+00:00"
+      "fetched_at_utc": "2026-11-26T15:21:35+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-26T13:05:18+00:00"
+      "fetched_at_utc": "2026-11-26T15:22:29+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-26T08:00:00-05:00",
-      "wind_mph": 21.0,
-      "gust_mph": 26.468,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 57.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 11.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Rain Showers Likely"
-    },
-    {
-      "time": "2026-11-26T09:00:00-05:00",
-      "wind_mph": 18.0,
-      "gust_mph": 25.317,
-      "wind_direction_deg": 180.0,
-      "precip_probability_pct": 31.0,
-      "air_temperature_f": 68.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 10.0,
-      "water_temperature_f": null,
-      "condition_text": "Chance Rain Showers"
-    },
     {
       "time": "2026-11-26T10:00:00-05:00",
       "wind_mph": 18.0,
@@ -1902,39 +1878,48 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-12-02T20:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
+    },
+    {
+      "time": "2026-12-02T21:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 0.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 56.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Clear"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6b890db775ec6a63702f7fd594545bef85f8ed44.001.1",
-        "event": "Flood Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-26T07:16:00-05:00",
-        "onset": "2026-11-26T07:16:00-05:00",
-        "expires": "2026-11-26T10:15:00-05:00",
-        "ends": "2026-11-26T10:15:00-05:00",
-        "headline": "Flood Advisory issued November 26 at 7:16AM EST until November 26 at 10:15AM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Flooding caused by excessive rainfall is expected.\n\n* WHERE...Southwestern Carteret County in eastern North Carolina...\nSouthern Craven County in eastern North Carolina...\nEastern Jones County in eastern North Carolina...\nNortheastern Onslow County in eastern North Carolina...\nSouthwestern Pamlico County in eastern North Carolina...\n\n* WHEN...Until 1015 AM EST.\n\n* IMPACTS...Minor flooding in low-lying and poor drainage areas.\nWater over roadways. River or stream flows are elevated.\n\n* ADDITIONAL DETAILS...\n- At 716 AM EST, Doppler radar indicated heavy rain. Minor flooding\nis ongoing or expected to begin shortly in the advisory area.\nBetween 3 and 6 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 1.5 inches are expected over\nthe area. This additional rain will result in minor flooding.\n- Some locations that will experience flooding include...\nNew Bern, Havelock, Morehead City, Newport, James City, Trent\nWoods, River Bend, Stella, Swansboro, South River, Cape Carteret,\nNorth River, Merrimon, Pine Knoll Shores, Harlowe, Maysville,\nSilverdale, Tuscarora, Croatan and Riverdale.\n- http://www.weather.gov/safety/flood",
-        "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nBe aware of your surroundings and do not drive on flooded roads.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.66b215fe3291b82124dcba0b74c1b5a1a9f254a6.003.1",
-        "event": "Wind Advisory",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-26T05:56:00-05:00",
-        "onset": "2026-11-26T05:56:00-05:00",
-        "expires": "2026-11-26T10:00:00-05:00",
-        "ends": "2026-11-26T10:00:00-05:00",
-        "headline": "Wind Advisory issued November 26 at 5:56AM EST until November 26 at 10:00AM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Southeast winds 20 to 30 mph with gusts up to 45 mph.\n\n* WHERE...Beaufort, Coastal Onslow, Mainland Dare, Mainland Hyde,\nPamlico, Southern Craven, Tyrrell, and West Carteret Counties.\n\n* WHEN...Until 10 AM EST this morning.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.",
-        "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7fd000fb13da558c823d62a920c33909f12e607c.002.1",
+        "event": "Flood Watch",
+        "severity": "Severe",
+        "certainty": "Possible",
+        "urgency": "Future",
+        "effective": "2026-11-26T10:02:00-05:00",
+        "onset": "2026-11-26T10:02:00-05:00",
+        "expires": "2026-11-26T13:00:00-05:00",
+        "ends": "2026-11-26T13:00:00-05:00",
+        "headline": "Flood Watch issued November 26 at 10:02AM EST until November 26 at 1:00PM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...A portion of eastern North Carolina, including the\nfollowing areas, Beaufort, Coastal Onslow, East Carteret, Hatteras\nIsland, Inland Onslow, Jones, Mainland Dare, Mainland Hyde,\nNorthern Craven, Northern Outer Banks, Ocracoke Island, Pamlico,\nSouthern Craven, Tyrrell, Washington and West Carteret.\n\n* WHEN...Until 1 PM EST this afternoon.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\nFlooding may occur in poor drainage and urban areas. Storm drains\nand ditches may become clogged with debris.\n\n* ADDITIONAL DETAILS...\n- Rainfall amounts 3 to 8 inches have fallen over the last 24\nhours. Additional rainfall amounts 0.5 to 1.5 inches will be\npossible through this afternoon.\n- http://www.weather.gov/safety/flood",
+        "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -1968,32 +1953,17 @@
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6f7b724dd7e5de8ea6c92ebeede9cf70e62502bf.001.1",
-        "event": "Flood Watch",
-        "severity": "Severe",
-        "certainty": "Possible",
-        "urgency": "Future",
-        "effective": "2026-11-25T23:48:00-05:00",
-        "onset": "2026-11-25T23:48:00-05:00",
-        "expires": "2026-11-26T13:00:00-05:00",
-        "ends": "2026-11-26T13:00:00-05:00",
-        "headline": "Flood Watch issued November 25 at 11:48PM EST until November 26 at 1:00PM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...A portion of eastern North Carolina, including the\nfollowing areas, Beaufort, Coastal Onslow, East Carteret, Hatteras\nIsland, Inland Onslow, Jones, Mainland Dare, Mainland Hyde,\nNorthern Craven, Northern Outer Banks, Ocracoke Island, Pamlico,\nSouthern Craven, Tyrrell, Washington and West Carteret.\n\n* WHEN...Through early Thursday afternoon.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\nFlooding may occur in poor drainage and urban areas. Storm drains\nand ditches may become clogged with debris.\n\n* ADDITIONAL DETAILS...\n- Rainfall totals of 4 to 6 inches are forecast, with locally\nhigher amounts possible especially near the Crystal Coast and\nsouthern Outer Banks.\n- http://www.weather.gov/safety/flood",
-        "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8026cf952c6895dcba39e247e7155c6c1b929095.001.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7c28625c60dec2423dba7ce9ff01c212692be145.005.1",
         "event": "Gale Warning",
         "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-26T06:08:00-05:00",
-        "onset": "2026-11-26T06:08:00-05:00",
-        "expires": "2026-11-26T18:15:00-05:00",
+        "effective": "2026-11-26T09:41:00-05:00",
+        "onset": "2026-11-26T09:41:00-05:00",
+        "expires": "2026-11-26T21:45:00-05:00",
         "ends": "2026-11-27T19:00:00-05:00",
-        "headline": "Gale Warning issued November 26 at 6:08AM EST until November 27 at 7:00PM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...Southwest winds 25 to 35 kt with gusts up to 40 kt and\nseas 12 to 17 ft.\n\n* WHERE...The coastal waters from Ocracoke Inlet to Surf City.\n\n* WHEN...Until 7 PM EST Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+        "headline": "Gale Warning issued November 26 at 9:41AM EST until November 27 at 7:00PM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...Southwest winds 25 to 35 kt with gusts up to 40 kt and\nseas 10 to 15 ft.\n\n* WHERE...The coastal waters from Ocracoke Inlet to Surf City.\n\n* WHEN...Until 7 PM EST Friday.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
         "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       }
@@ -2028,32 +1998,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-25",
-      "end": "2026-12-01"
+      "start": "2026-11-26",
+      "end": "2026-12-02"
     },
-    "generated_at_utc": "2026-11-26T02:53:25+00:00",
-    "generated_at_local": "2026-11-25T21:53:24-05:00",
+    "generated_at_utc": "2026-11-26T15:21:35+00:00",
+    "generated_at_local": "2026-11-26T10:21:35-05:00",
     "hilo": [
-      {
-        "t": "2026-11-24 00:03",
-        "v": -0.275,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-24 06:37",
-        "v": 3.198,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-24 13:12",
-        "v": -0.148,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-24 18:55",
-        "v": 2.168,
-        "type": "H"
-      },
       {
         "t": "2026-11-25 00:51",
         "v": -0.356,
@@ -2208,201 +2158,29 @@
         "t": "2026-12-02 20:33",
         "v": 0.104,
         "type": "L"
+      },
+      {
+        "t": "2026-12-03 02:59",
+        "v": 2.351,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-03 09:18",
+        "v": 0.331,
+        "type": "L"
+      },
+      {
+        "t": "2026-12-03 15:13",
+        "v": 2.031,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-03 21:24",
+        "v": 0.095,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-25 00:00",
-        "v": -0.23
-      },
-      {
-        "t": "2026-11-25 00:30",
-        "v": -0.334
-      },
-      {
-        "t": "2026-11-25 01:00",
-        "v": -0.351
-      },
-      {
-        "t": "2026-11-25 01:30",
-        "v": -0.27
-      },
-      {
-        "t": "2026-11-25 02:00",
-        "v": -0.093
-      },
-      {
-        "t": "2026-11-25 02:30",
-        "v": 0.172
-      },
-      {
-        "t": "2026-11-25 03:00",
-        "v": 0.509
-      },
-      {
-        "t": "2026-11-25 03:30",
-        "v": 0.898
-      },
-      {
-        "t": "2026-11-25 04:00",
-        "v": 1.319
-      },
-      {
-        "t": "2026-11-25 04:30",
-        "v": 1.748
-      },
-      {
-        "t": "2026-11-25 05:00",
-        "v": 2.16
-      },
-      {
-        "t": "2026-11-25 05:30",
-        "v": 2.533
-      },
-      {
-        "t": "2026-11-25 06:00",
-        "v": 2.845
-      },
-      {
-        "t": "2026-11-25 06:30",
-        "v": 3.08
-      },
-      {
-        "t": "2026-11-25 07:00",
-        "v": 3.223
-      },
-      {
-        "t": "2026-11-25 07:30",
-        "v": 3.267
-      },
-      {
-        "t": "2026-11-25 08:00",
-        "v": 3.211
-      },
-      {
-        "t": "2026-11-25 08:30",
-        "v": 3.062
-      },
-      {
-        "t": "2026-11-25 09:00",
-        "v": 2.826
-      },
-      {
-        "t": "2026-11-25 09:30",
-        "v": 2.518
-      },
-      {
-        "t": "2026-11-25 10:00",
-        "v": 2.154
-      },
-      {
-        "t": "2026-11-25 10:30",
-        "v": 1.756
-      },
-      {
-        "t": "2026-11-25 11:00",
-        "v": 1.346
-      },
-      {
-        "t": "2026-11-25 11:30",
-        "v": 0.947
-      },
-      {
-        "t": "2026-11-25 12:00",
-        "v": 0.582
-      },
-      {
-        "t": "2026-11-25 12:30",
-        "v": 0.271
-      },
-      {
-        "t": "2026-11-25 13:00",
-        "v": 0.033
-      },
-      {
-        "t": "2026-11-25 13:30",
-        "v": -0.12
-      },
-      {
-        "t": "2026-11-25 14:00",
-        "v": -0.179
-      },
-      {
-        "t": "2026-11-25 14:30",
-        "v": -0.143
-      },
-      {
-        "t": "2026-11-25 15:00",
-        "v": -0.023
-      },
-      {
-        "t": "2026-11-25 15:30",
-        "v": 0.173
-      },
-      {
-        "t": "2026-11-25 16:00",
-        "v": 0.431
-      },
-      {
-        "t": "2026-11-25 16:30",
-        "v": 0.731
-      },
-      {
-        "t": "2026-11-25 17:00",
-        "v": 1.05
-      },
-      {
-        "t": "2026-11-25 17:30",
-        "v": 1.365
-      },
-      {
-        "t": "2026-11-25 18:00",
-        "v": 1.652
-      },
-      {
-        "t": "2026-11-25 18:30",
-        "v": 1.889
-      },
-      {
-        "t": "2026-11-25 19:00",
-        "v": 2.059
-      },
-      {
-        "t": "2026-11-25 19:30",
-        "v": 2.148
-      },
-      {
-        "t": "2026-11-25 20:00",
-        "v": 2.151
-      },
-      {
-        "t": "2026-11-25 20:30",
-        "v": 2.067
-      },
-      {
-        "t": "2026-11-25 21:00",
-        "v": 1.9
-      },
-      {
-        "t": "2026-11-25 21:30",
-        "v": 1.664
-      },
-      {
-        "t": "2026-11-25 22:00",
-        "v": 1.373
-      },
-      {
-        "t": "2026-11-25 22:30",
-        "v": 1.05
-      },
-      {
-        "t": "2026-11-25 23:00",
-        "v": 0.715
-      },
-      {
-        "t": "2026-11-25 23:30",
-        "v": 0.393
-      },
       {
         "t": "2026-11-26 00:00",
         "v": 0.106
@@ -2594,6 +2372,198 @@
       {
         "t": "2026-11-26 23:30",
         "v": 0.991
+      },
+      {
+        "t": "2026-11-27 00:00",
+        "v": 0.668
+      },
+      {
+        "t": "2026-11-27 00:30",
+        "v": 0.361
+      },
+      {
+        "t": "2026-11-27 01:00",
+        "v": 0.092
+      },
+      {
+        "t": "2026-11-27 01:30",
+        "v": -0.12
+      },
+      {
+        "t": "2026-11-27 02:00",
+        "v": -0.261
+      },
+      {
+        "t": "2026-11-27 02:30",
+        "v": -0.32
+      },
+      {
+        "t": "2026-11-27 03:00",
+        "v": -0.291
+      },
+      {
+        "t": "2026-11-27 03:30",
+        "v": -0.166
+      },
+      {
+        "t": "2026-11-27 04:00",
+        "v": 0.047
+      },
+      {
+        "t": "2026-11-27 04:30",
+        "v": 0.337
+      },
+      {
+        "t": "2026-11-27 05:00",
+        "v": 0.687
+      },
+      {
+        "t": "2026-11-27 05:30",
+        "v": 1.078
+      },
+      {
+        "t": "2026-11-27 06:00",
+        "v": 1.487
+      },
+      {
+        "t": "2026-11-27 06:30",
+        "v": 1.893
+      },
+      {
+        "t": "2026-11-27 07:00",
+        "v": 2.271
+      },
+      {
+        "t": "2026-11-27 07:30",
+        "v": 2.601
+      },
+      {
+        "t": "2026-11-27 08:00",
+        "v": 2.865
+      },
+      {
+        "t": "2026-11-27 08:30",
+        "v": 3.047
+      },
+      {
+        "t": "2026-11-27 09:00",
+        "v": 3.137
+      },
+      {
+        "t": "2026-11-27 09:30",
+        "v": 3.131
+      },
+      {
+        "t": "2026-11-27 10:00",
+        "v": 3.035
+      },
+      {
+        "t": "2026-11-27 10:30",
+        "v": 2.853
+      },
+      {
+        "t": "2026-11-27 11:00",
+        "v": 2.596
+      },
+      {
+        "t": "2026-11-27 11:30",
+        "v": 2.279
+      },
+      {
+        "t": "2026-11-27 12:00",
+        "v": 1.92
+      },
+      {
+        "t": "2026-11-27 12:30",
+        "v": 1.538
+      },
+      {
+        "t": "2026-11-27 13:00",
+        "v": 1.156
+      },
+      {
+        "t": "2026-11-27 13:30",
+        "v": 0.794
+      },
+      {
+        "t": "2026-11-27 14:00",
+        "v": 0.474
+      },
+      {
+        "t": "2026-11-27 14:30",
+        "v": 0.213
+      },
+      {
+        "t": "2026-11-27 15:00",
+        "v": 0.026
+      },
+      {
+        "t": "2026-11-27 15:30",
+        "v": -0.077
+      },
+      {
+        "t": "2026-11-27 16:00",
+        "v": -0.089
+      },
+      {
+        "t": "2026-11-27 16:30",
+        "v": -0.019
+      },
+      {
+        "t": "2026-11-27 17:00",
+        "v": 0.127
+      },
+      {
+        "t": "2026-11-27 17:30",
+        "v": 0.338
+      },
+      {
+        "t": "2026-11-27 18:00",
+        "v": 0.599
+      },
+      {
+        "t": "2026-11-27 18:30",
+        "v": 0.89
+      },
+      {
+        "t": "2026-11-27 19:00",
+        "v": 1.19
+      },
+      {
+        "t": "2026-11-27 19:30",
+        "v": 1.476
+      },
+      {
+        "t": "2026-11-27 20:00",
+        "v": 1.729
+      },
+      {
+        "t": "2026-11-27 20:30",
+        "v": 1.928
+      },
+      {
+        "t": "2026-11-27 21:00",
+        "v": 2.06
+      },
+      {
+        "t": "2026-11-27 21:30",
+        "v": 2.114
+      },
+      {
+        "t": "2026-11-27 22:00",
+        "v": 2.087
+      },
+      {
+        "t": "2026-11-27 22:30",
+        "v": 1.982
+      },
+      {
+        "t": "2026-11-27 23:00",
+        "v": 1.807
+      },
+      {
+        "t": "2026-11-27 23:30",
+        "v": 1.573
       }
     ]
   },
@@ -2647,5 +2617,5 @@
       "grid_y": 53
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
