@@ -2,22 +2,22 @@
   "schema_version": 1,
   "location": "half-moon-bay",
   "timezone": "America/Los_Angeles",
-  "generated_at_utc": "2026-11-26T22:32:57+00:00",
+  "generated_at_utc": "2026-11-27T01:48:56+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T22:32:57+00:00"
+      "fetched_at_utc": "2026-11-27T01:48:56+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T22:32:57+00:00"
+      "fetched_at_utc": "2026-11-27T01:48:56+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T22:32:57+00:00"
+      "fetched_at_utc": "2026-11-27T01:48:56+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
@@ -27,46 +27,10 @@
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-26T22:32:57+00:00"
+      "fetched_at_utc": "2026-11-27T01:48:56+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-26T14:00:00-08:00",
-      "wind_mph": 8.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 0.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-26T15:00:00-08:00",
-      "wind_mph": 8.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 337.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 15.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Sunny"
-    },
-    {
-      "time": "2026-11-26T16:00:00-08:00",
-      "wind_mph": 7.0,
-      "gust_mph": 12.659,
-      "wind_direction_deg": 337.5,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 62.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 14.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Cloudy"
-    },
     {
       "time": "2026-11-26T17:00:00-08:00",
       "wind_mph": 8.0,
@@ -1902,54 +1866,75 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-12-03T02:00:00-08:00",
+      "wind_mph": 7.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": 6.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-12-03T03:00:00-08:00",
+      "wind_mph": 7.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 21.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": 6.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Slight Chance Light Rain"
+    },
+    {
+      "time": "2026-12-03T04:00:00-08:00",
+      "wind_mph": 7.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 337.5,
+      "precip_probability_pct": 30.0,
+      "air_temperature_f": 50.0,
+      "wave_height_ft": 6.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Chance Light Rain"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c5673f938e83f2d9b35ef02225957f60afaac099.002.2",
-        "event": "Beach Hazards Statement",
-        "severity": "Moderate",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-25T23:54:00-08:00",
-        "onset": "2026-11-26T00:00:00-08:00",
-        "expires": "2026-11-26T16:00:00-08:00",
-        "ends": "2026-11-27T22:00:00-08:00",
-        "headline": "Beach Hazards Statement issued November 25 at 11:54PM PST until November 27 at 10:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Coastal Flood Warning, significant coastal\nflooding with up to 2.5 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways.\nF For the Beach Hazards Statement, An increased risk for sneaker\nwaves and strong rip currents with breaking waves of 13 to 19 ft\nexpected.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore, San Francisco Peninsula Coast, Northern Monterey Bay\nand Southern Monterey Bay and Big Sur Coast Counties.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM PST\nThursday. For the Beach Hazards Statement, through Friday\nevening.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tidal gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW) at\n11:38 AM Thursday. These predictions include up to 1.5 ft of\nsurge that will enhance the astronomical tide and flooding\nthreat. High tide varies up to 90 minutes earlier or later along\nthe Pacific Coast and through the San Francisco Bay,\nrespectively.",
-        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
-        "sender_name": "NWS San Francisco CA"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c5673f938e83f2d9b35ef02225957f60afaac099.002.3",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b1d9e0dd4862d15c179978bd7038962d42af84a2.004.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-25T23:54:00-08:00",
-        "onset": "2026-11-25T23:54:00-08:00",
-        "expires": "2026-11-26T16:00:00-08:00",
-        "ends": "2026-11-26T16:00:00-08:00",
-        "headline": "Coastal Flood Advisory issued November 25 at 11:54PM PST until November 26 at 4:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...For the Coastal Flood Warning, significant coastal\nflooding with up to 2.5 feet of inundation above ground level is\npossible in low-lying areas near shorelines and tidal waterways.\nF For the Beach Hazards Statement, An increased risk for sneaker\nwaves and strong rip currents with breaking waves of 13 to 19 ft\nexpected.\n\n* WHERE...Coastal North Bay Including Point Reyes National\nSeashore, San Francisco Peninsula Coast, Northern Monterey Bay\nand Southern Monterey Bay and Big Sur Coast Counties.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM PST\nThursday. For the Beach Hazards Statement, through Friday\nevening.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...These predictions are approaching the\nhighest tide ever recorded. At the San Francisco tidal gauge,\nhigh tide is expected to be 2.2 ft above normal (8.0 ft MLLW) at\n11:38 AM Thursday. These predictions include up to 1.5 ft of\nsurge that will enhance the astronomical tide and flooding\nthreat. High tide varies up to 90 minutes earlier or later along\nthe Pacific Coast and through the San Francisco Bay,\nrespectively.",
+        "effective": "2026-11-26T15:35:00-08:00",
+        "onset": "2026-11-26T15:35:00-08:00",
+        "expires": "2026-11-26T23:45:00-08:00",
+        "ends": "2026-11-28T16:00:00-08:00",
+        "headline": "Coastal Flood Advisory issued November 26 at 3:35PM PST until November 28 at 4:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, Up to 1.7 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 13 to 19 ft.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM PST\nSaturday. For the Beach Hazards Statement, through Friday\nevening.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tidal gauge, high tide\nis expected to be 1.7 ft above normal (7.5 ft MLLW) at 12:31 PM\nFriday, 1.6 ft above normal (7.4 ft MLLW) at 1:28 PM Saturday,\nand 0.9 ft above normal (6.8 ft MLLW) at 2:32 PM Sunday. These\npredictions include up to 1.3 ft of surge that will enhance the\nastronomical tide and flooding threat. High tide varies up to 90\nminutes earlier or later along the Pacific Coast and through the\nSan Francisco Bay, respectively.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
       },
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ce07a140d813cb13e03c7898a3adf91f88f07f5b.007.1",
-        "event": "Small Craft Advisory",
-        "severity": "Minor",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b1d9e0dd4862d15c179978bd7038962d42af84a2.004.2",
+        "event": "Beach Hazards Statement",
+        "severity": "Moderate",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-26T08:42:00-08:00",
-        "onset": "2026-11-26T08:42:00-08:00",
-        "expires": "2026-11-26T15:00:00-08:00",
-        "ends": "2026-11-26T15:00:00-08:00",
-        "headline": "Small Craft Advisory issued November 26 at 8:42AM PST until November 26 at 3:00PM PST by NWS San Francisco CA",
-        "description": "* WHAT...Seas 9 to 14 ft.\n\n* WHERE...Coastal Waters from Point Reyes to Pigeon Point\nCalifornia out to 10 NM.\n\n* WHEN...Until 3 PM PST this afternoon.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-        "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+        "effective": "2026-11-26T15:35:00-08:00",
+        "onset": "2026-11-26T15:35:00-08:00",
+        "expires": "2026-11-26T23:45:00-08:00",
+        "ends": "2026-11-27T22:00:00-08:00",
+        "headline": "Beach Hazards Statement issued November 26 at 3:35PM PST until November 27 at 10:00PM PST by NWS San Francisco CA",
+        "description": "* WHAT...For the Coastal Flood Advisory, Up to 1.7 ft of\ninundation above ground level is possible in low-lying areas\nnear shorelines and tidal waterways. For the Beach Hazards\nStatement, An increased risk for sneaker waves and strong rip\ncurrents with breaking waves of 13 to 19 ft.\n\n* WHERE...The Pacific Coast.\n\n* WHEN...For the Coastal Flood Advisory, until 4 PM PST\nSaturday. For the Beach Hazards Statement, through Friday\nevening.\n\n* IMPACTS...High tides will result in flooding of low-lying\ninfrastructure, isolated road closures, and coastal erosion.\nRising tides will bring water and waves farther up the beach\nthan normal, restricting escape from beaches and coastal\nareas. Waves can sweep across the shoreline without warning,\npulling people into the sea from beaches, jetties, and rocks.\n\n* ADDITIONAL DETAILS...At the San Francisco tidal gauge, high tide\nis expected to be 1.7 ft above normal (7.5 ft MLLW) at 12:31 PM\nFriday, 1.6 ft above normal (7.4 ft MLLW) at 1:28 PM Saturday,\nand 0.9 ft above normal (6.8 ft MLLW) at 2:32 PM Sunday. These\npredictions include up to 1.3 ft of surge that will enhance the\nastronomical tide and flooding threat. High tide varies up to 90\nminutes earlier or later along the Pacific Coast and through the\nSan Francisco Bay, respectively.",
+        "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nStay off of jetties, piers, rocks, and other waterside\ninfrastructure. Remain out of the water to avoid hazardous surf\nand NEVER turn your back on the ocean. Monitor local weather,\nsurf and tide forecasts at www.weather.gov/mtr.",
         "sender_name": "NWS San Francisco CA"
       }
     ]
@@ -2582,5 +2567,5 @@
       "grid_y": 94
     }
   },
-  "refresh_state": "alerts-only-full-refresh"
+  "refresh_state": "live"
 }
