@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "nags-head",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-27T14:15:13+00:00",
+  "generated_at_utc": "2026-11-27T15:10:32+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T14:15:13+00:00"
+      "fetched_at_utc": "2026-11-27T15:10:32+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T12:48:06+00:00"
+      "fetched_at_utc": "2026-11-27T15:10:32+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T12:48:06+00:00"
+      "fetched_at_utc": "2026-11-27T15:10:32+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T02:52:26+00:00"
+      "fetched_at_utc": "2026-11-27T15:09:18+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-27T12:48:06+00:00"
+      "fetched_at_utc": "2026-11-27T15:10:32+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-27T07:00:00-05:00",
-      "wind_mph": 22.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 49.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-11-27T08:00:00-05:00",
-      "wind_mph": 23.0,
-      "gust_mph": 35.674,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Sunny"
-    },
-    {
-      "time": "2026-11-27T09:00:00-05:00",
-      "wind_mph": 24.0,
-      "gust_mph": 36.825,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 7.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Mostly Sunny"
-    },
     {
       "time": "2026-11-27T10:00:00-05:00",
       "wind_mph": 24.0,
@@ -1902,39 +1866,60 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-12-03T19:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-12-03T20:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 63.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-12-03T21:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 3.0,
+      "air_temperature_f": 62.0,
+      "wave_height_ft": null,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Cloudy"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3de368ae7932857f88124dd1136fa8f8bca11c53.001.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5ae82f8293ebae1d5be25888287a36dd1f746666.001.2",
         "event": "Coastal Flood Warning",
         "severity": "Severe",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-27T04:21:00-05:00",
-        "onset": "2026-11-27T04:21:00-05:00",
+        "effective": "2026-11-27T10:09:00-05:00",
+        "onset": "2026-11-27T10:09:00-05:00",
         "expires": "2026-11-27T15:00:00-05:00",
         "ends": "2026-11-27T15:00:00-05:00",
-        "headline": "Coastal Flood Warning issued November 27 at 4:21AM EST until November 27 at 3:00PM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of inundation\nabove ground level in low-lying areas near shorelines and tidal\nwaterways. For the High Surf Advisory, large breaking waves of 6\nto 9 feet in the surf zone.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST this\nafternoon. For the High Surf Advisory, until 10 AM EST this\nmorning.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level\nis possible in low lying areas near shorelines and tidal\nwaterways resulting in a elevated threat of property damage.\nFlooding will extend inland from the waterfront threatening\nsome homes and businesses. Isolated road closures and flooding\nof vehicles will be possible. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...Strong SW winds will result in minor water\nlevel rises (around 1-2 ft above ground level) for soundside\nlocations.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3de368ae7932857f88124dd1136fa8f8bca11c53.001.2",
-        "event": "High Surf Advisory",
-        "severity": "Minor",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-27T04:21:00-05:00",
-        "onset": "2026-11-27T04:21:00-05:00",
-        "expires": "2026-11-27T15:00:00-05:00",
-        "ends": "2026-11-27T10:00:00-05:00",
-        "headline": "High Surf Advisory issued November 27 at 4:21AM EST until November 27 at 10:00AM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of inundation\nabove ground level in low-lying areas near shorelines and tidal\nwaterways. For the High Surf Advisory, large breaking waves of 6\nto 9 feet in the surf zone.\n\n* WHERE...Northern Outer Banks.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST this\nafternoon. For the High Surf Advisory, until 10 AM EST this\nmorning.\n\n* IMPACTS...Up to 2 to 4 feet of inundation above ground level\nis possible in low lying areas near shorelines and tidal\nwaterways resulting in a elevated threat of property damage.\nFlooding will extend inland from the waterfront threatening\nsome homes and businesses. Isolated road closures and flooding\nof vehicles will be possible. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...Strong SW winds will result in minor water\nlevel rises (around 1-2 ft above ground level) for soundside\nlocations.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "headline": "Coastal Flood Warning issued November 27 at 10:09AM EST until November 27 at 3:00PM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Warning, 2 to 3 feet of inundation\nabove ground level in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...Areas along the beaches, Albemarle, Croatan, and\nRoanoke Sounds, Kitty Hawk Bay, and adjacent tidal creeks.\n\n* WHEN...Until 3 PM EST this afternoon.\n\n* IMPACTS...Up to 2 to 3 feet of inundation above ground level is\npossible in low lying areas near shorelines and tidal waterways\nresulting in a elevated threat of property damage. Flooding will\nextend inland from the waterfront threatening some homes and\nbusinesses. Isolated road closures possible. Dangerous swimming\nand surfing conditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...Strong SW winds will result in minor water\nlevel rises (around 1-2 ft above ground level) for soundside\nlocations.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
       {
@@ -1983,32 +1968,12 @@
     "prediction_mode": "hilo-derived",
     "curve_source": "derived_from_noaa_hilo",
     "range": {
-      "start": "2026-11-26",
-      "end": "2026-12-02"
+      "start": "2026-11-27",
+      "end": "2026-12-03"
     },
-    "generated_at_utc": "2026-11-27T02:52:26+00:00",
-    "generated_at_local": "2026-11-26T21:52:26-05:00",
+    "generated_at_utc": "2026-11-27T15:09:18+00:00",
+    "generated_at_local": "2026-11-27T10:09:18-05:00",
     "hilo": [
-      {
-        "t": "2026-11-25 00:50",
-        "v": -0.504,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-25 07:14",
-        "v": 4.799,
-        "type": "H"
-      },
-      {
-        "t": "2026-11-25 13:50",
-        "v": -0.341,
-        "type": "L"
-      },
-      {
-        "t": "2026-11-25 19:37",
-        "v": 3.42,
-        "type": "H"
-      },
       {
         "t": "2026-11-26 01:40",
         "v": -0.511,
@@ -2163,201 +2128,29 @@
         "t": "2026-12-03 21:18",
         "v": 0.214,
         "type": "L"
+      },
+      {
+        "t": "2026-12-04 03:49",
+        "v": 3.734,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-04 10:17",
+        "v": 0.603,
+        "type": "L"
+      },
+      {
+        "t": "2026-12-04 16:01",
+        "v": 2.879,
+        "type": "H"
+      },
+      {
+        "t": "2026-12-04 22:04",
+        "v": 0.234,
+        "type": "L"
       }
     ],
     "curve": [
-      {
-        "t": "2026-11-26 00:00",
-        "v": 0.18
-      },
-      {
-        "t": "2026-11-26 00:30",
-        "v": -0.161
-      },
-      {
-        "t": "2026-11-26 01:00",
-        "v": -0.394
-      },
-      {
-        "t": "2026-11-26 01:30",
-        "v": -0.504
-      },
-      {
-        "t": "2026-11-26 02:00",
-        "v": -0.476
-      },
-      {
-        "t": "2026-11-26 02:30",
-        "v": -0.295
-      },
-      {
-        "t": "2026-11-26 03:00",
-        "v": 0.03
-      },
-      {
-        "t": "2026-11-26 03:30",
-        "v": 0.48
-      },
-      {
-        "t": "2026-11-26 04:00",
-        "v": 1.028
-      },
-      {
-        "t": "2026-11-26 04:30",
-        "v": 1.64
-      },
-      {
-        "t": "2026-11-26 05:00",
-        "v": 2.282
-      },
-      {
-        "t": "2026-11-26 05:30",
-        "v": 2.914
-      },
-      {
-        "t": "2026-11-26 06:00",
-        "v": 3.499
-      },
-      {
-        "t": "2026-11-26 06:30",
-        "v": 4.001
-      },
-      {
-        "t": "2026-11-26 07:00",
-        "v": 4.391
-      },
-      {
-        "t": "2026-11-26 07:30",
-        "v": 4.646
-      },
-      {
-        "t": "2026-11-26 08:00",
-        "v": 4.751
-      },
-      {
-        "t": "2026-11-26 08:30",
-        "v": 4.704
-      },
-      {
-        "t": "2026-11-26 09:00",
-        "v": 4.518
-      },
-      {
-        "t": "2026-11-26 09:30",
-        "v": 4.204
-      },
-      {
-        "t": "2026-11-26 10:00",
-        "v": 3.78
-      },
-      {
-        "t": "2026-11-26 10:30",
-        "v": 3.268
-      },
-      {
-        "t": "2026-11-26 11:00",
-        "v": 2.699
-      },
-      {
-        "t": "2026-11-26 11:30",
-        "v": 2.103
-      },
-      {
-        "t": "2026-11-26 12:00",
-        "v": 1.515
-      },
-      {
-        "t": "2026-11-26 12:30",
-        "v": 0.967
-      },
-      {
-        "t": "2026-11-26 13:00",
-        "v": 0.49
-      },
-      {
-        "t": "2026-11-26 13:30",
-        "v": 0.111
-      },
-      {
-        "t": "2026-11-26 14:00",
-        "v": -0.149
-      },
-      {
-        "t": "2026-11-26 14:30",
-        "v": -0.276
-      },
-      {
-        "t": "2026-11-26 15:00",
-        "v": -0.263
-      },
-      {
-        "t": "2026-11-26 15:30",
-        "v": -0.118
-      },
-      {
-        "t": "2026-11-26 16:00",
-        "v": 0.148
-      },
-      {
-        "t": "2026-11-26 16:30",
-        "v": 0.515
-      },
-      {
-        "t": "2026-11-26 17:00",
-        "v": 0.957
-      },
-      {
-        "t": "2026-11-26 17:30",
-        "v": 1.443
-      },
-      {
-        "t": "2026-11-26 18:00",
-        "v": 1.936
-      },
-      {
-        "t": "2026-11-26 18:30",
-        "v": 2.401
-      },
-      {
-        "t": "2026-11-26 19:00",
-        "v": 2.804
-      },
-      {
-        "t": "2026-11-26 19:30",
-        "v": 3.117
-      },
-      {
-        "t": "2026-11-26 20:00",
-        "v": 3.316
-      },
-      {
-        "t": "2026-11-26 20:30",
-        "v": 3.387
-      },
-      {
-        "t": "2026-11-26 21:00",
-        "v": 3.328
-      },
-      {
-        "t": "2026-11-26 21:30",
-        "v": 3.146
-      },
-      {
-        "t": "2026-11-26 22:00",
-        "v": 2.853
-      },
-      {
-        "t": "2026-11-26 22:30",
-        "v": 2.47
-      },
-      {
-        "t": "2026-11-26 23:00",
-        "v": 2.021
-      },
-      {
-        "t": "2026-11-26 23:30",
-        "v": 1.538
-      },
       {
         "t": "2026-11-27 00:00",
         "v": 1.053
@@ -2549,6 +2342,198 @@
       {
         "t": "2026-11-27 23:30",
         "v": 2.47
+      },
+      {
+        "t": "2026-11-28 00:00",
+        "v": 2.054
+      },
+      {
+        "t": "2026-11-28 00:30",
+        "v": 1.608
+      },
+      {
+        "t": "2026-11-28 01:00",
+        "v": 1.161
+      },
+      {
+        "t": "2026-11-28 01:30",
+        "v": 0.744
+      },
+      {
+        "t": "2026-11-28 02:00",
+        "v": 0.384
+      },
+      {
+        "t": "2026-11-28 02:30",
+        "v": 0.105
+      },
+      {
+        "t": "2026-11-28 03:00",
+        "v": -0.073
+      },
+      {
+        "t": "2026-11-28 03:30",
+        "v": -0.139
+      },
+      {
+        "t": "2026-11-28 04:00",
+        "v": -0.081
+      },
+      {
+        "t": "2026-11-28 04:30",
+        "v": 0.108
+      },
+      {
+        "t": "2026-11-28 05:00",
+        "v": 0.416
+      },
+      {
+        "t": "2026-11-28 05:30",
+        "v": 0.825
+      },
+      {
+        "t": "2026-11-28 06:00",
+        "v": 1.311
+      },
+      {
+        "t": "2026-11-28 06:30",
+        "v": 1.845
+      },
+      {
+        "t": "2026-11-28 07:00",
+        "v": 2.394
+      },
+      {
+        "t": "2026-11-28 07:30",
+        "v": 2.926
+      },
+      {
+        "t": "2026-11-28 08:00",
+        "v": 3.41
+      },
+      {
+        "t": "2026-11-28 08:30",
+        "v": 3.816
+      },
+      {
+        "t": "2026-11-28 09:00",
+        "v": 4.12
+      },
+      {
+        "t": "2026-11-28 09:30",
+        "v": 4.305
+      },
+      {
+        "t": "2026-11-28 10:00",
+        "v": 4.358
+      },
+      {
+        "t": "2026-11-28 10:30",
+        "v": 4.286
+      },
+      {
+        "t": "2026-11-28 11:00",
+        "v": 4.098
+      },
+      {
+        "t": "2026-11-28 11:30",
+        "v": 3.804
+      },
+      {
+        "t": "2026-11-28 12:00",
+        "v": 3.42
+      },
+      {
+        "t": "2026-11-28 12:30",
+        "v": 2.967
+      },
+      {
+        "t": "2026-11-28 13:00",
+        "v": 2.47
+      },
+      {
+        "t": "2026-11-28 13:30",
+        "v": 1.956
+      },
+      {
+        "t": "2026-11-28 14:00",
+        "v": 1.453
+      },
+      {
+        "t": "2026-11-28 14:30",
+        "v": 0.989
+      },
+      {
+        "t": "2026-11-28 15:00",
+        "v": 0.59
+      },
+      {
+        "t": "2026-11-28 15:30",
+        "v": 0.276
+      },
+      {
+        "t": "2026-11-28 16:00",
+        "v": 0.065
+      },
+      {
+        "t": "2026-11-28 16:30",
+        "v": -0.031
+      },
+      {
+        "t": "2026-11-28 17:00",
+        "v": -0.007
+      },
+      {
+        "t": "2026-11-28 17:30",
+        "v": 0.135
+      },
+      {
+        "t": "2026-11-28 18:00",
+        "v": 0.384
+      },
+      {
+        "t": "2026-11-28 18:30",
+        "v": 0.723
+      },
+      {
+        "t": "2026-11-28 19:00",
+        "v": 1.128
+      },
+      {
+        "t": "2026-11-28 19:30",
+        "v": 1.568
+      },
+      {
+        "t": "2026-11-28 20:00",
+        "v": 2.014
+      },
+      {
+        "t": "2026-11-28 20:30",
+        "v": 2.432
+      },
+      {
+        "t": "2026-11-28 21:00",
+        "v": 2.793
+      },
+      {
+        "t": "2026-11-28 21:30",
+        "v": 3.072
+      },
+      {
+        "t": "2026-11-28 22:00",
+        "v": 3.247
+      },
+      {
+        "t": "2026-11-28 22:30",
+        "v": 3.307
+      },
+      {
+        "t": "2026-11-28 23:00",
+        "v": 3.255
+      },
+      {
+        "t": "2026-11-28 23:30",
+        "v": 3.102
       }
     ]
   },
@@ -2602,5 +2587,5 @@
       "grid_y": 119
     }
   },
-  "refresh_state": "alerts-only"
+  "refresh_state": "live"
 }
