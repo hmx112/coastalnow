@@ -2,47 +2,35 @@
   "schema_version": 1,
   "location": "ocracoke",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-27T01:49:14+00:00",
+  "generated_at_utc": "2026-11-27T02:52:49+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T01:49:14+00:00"
+      "fetched_at_utc": "2026-11-27T02:52:49+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T01:49:14+00:00"
+      "fetched_at_utc": "2026-11-27T02:52:49+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T01:49:14+00:00"
+      "fetched_at_utc": "2026-11-27T02:52:49+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-26T15:21:35+00:00"
+      "fetched_at_utc": "2026-11-27T02:52:26+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-27T01:49:14+00:00"
+      "fetched_at_utc": "2026-11-27T02:52:49+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-26T20:00:00-05:00",
-      "wind_mph": 28.0,
-      "gust_mph": 39.127,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 63.0,
-      "wave_height_ft": 10.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-11-26T21:00:00-05:00",
       "wind_mph": 28.0,
@@ -1902,38 +1890,50 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-12-03T08:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 8.055,
+      "wind_direction_deg": 315.0,
+      "precip_probability_pct": 1.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.38d611c89885f14f16fdf2699e75f02e51134a32.005.1",
-        "event": "Coastal Flood Warning",
-        "severity": "Severe",
-        "certainty": "Likely",
-        "urgency": "Expected",
-        "effective": "2026-11-26T15:02:00-05:00",
-        "onset": "2026-11-26T15:02:00-05:00",
-        "expires": "2026-11-27T03:15:00-05:00",
-        "ends": "2026-11-27T15:00:00-05:00",
-        "headline": "Coastal Flood Warning issued November 26 at 3:02PM EST until November 27 at 3:00PM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of inundation\nabove ground level expected in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 6 to 12 feet expected in the surf zone.\n\n* WHERE...Ocracoke Island and Hatteras Island.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST Friday.\nFor the High Surf Advisory, until 10 AM EST Friday.\n\n* IMPACTS...2 to 4 feet of inundation above ground level is\npossible in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 remain closed.\nDangerous swimming and surfing conditions and localized beach\nerosion.\n\n* ADDITIONAL DETAILS...Increasing SW winds this afternoon into\nFriday will result in minor water level rises (around 1-2 ft\nabove ground level) for soundside locations.",
-        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
-        "sender_name": "NWS Newport/Morehead City NC"
-      },
-      {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.38d611c89885f14f16fdf2699e75f02e51134a32.005.2",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7668eef9f37da704bfcab9221476e56ff3ed4bd.002.2",
         "event": "High Surf Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-26T15:02:00-05:00",
-        "onset": "2026-11-26T15:02:00-05:00",
-        "expires": "2026-11-27T03:15:00-05:00",
+        "effective": "2026-11-26T21:07:00-05:00",
+        "onset": "2026-11-26T21:07:00-05:00",
+        "expires": "2026-11-27T09:15:00-05:00",
         "ends": "2026-11-27T10:00:00-05:00",
-        "headline": "High Surf Advisory issued November 26 at 3:02PM EST until November 27 at 10:00AM EST by NWS Newport/Morehead City NC",
-        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of inundation\nabove ground level expected in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 6 to 12 feet expected in the surf zone.\n\n* WHERE...Ocracoke Island and Hatteras Island.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST Friday.\nFor the High Surf Advisory, until 10 AM EST Friday.\n\n* IMPACTS...2 to 4 feet of inundation above ground level is\npossible in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of vehicles\nwill be possible. Vulnerable portions of NC-12 remain closed.\nDangerous swimming and surfing conditions and localized beach\nerosion.\n\n* ADDITIONAL DETAILS...Increasing SW winds this afternoon into\nFriday will result in minor water level rises (around 1-2 ft\nabove ground level) for soundside locations.",
+        "headline": "High Surf Advisory issued November 26 at 9:07PM EST until November 27 at 10:00AM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of\ninundation above ground level expected in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 6 to 12 feet expected in the surf zone.\n\n* WHERE...Ocracoke Island and Hatteras Island.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST Friday.\nFor the High Surf Advisory, until 10 AM EST Friday.\n\n* IMPACTS...2 to 4 feet of inundation above ground level is\npossible in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of\nvehicles will be possible. Vulnerable portions of NC-12 remain\nclosed. Dangerous swimming and surfing conditions and\nlocalized beach erosion.\n\n* ADDITIONAL DETAILS...Increasing SW winds this afternoon into\nFriday will result in minor water level rises (around 1-2 ft\nabove ground level) for soundside locations.",
+        "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
+        "sender_name": "NWS Newport/Morehead City NC"
+      },
+      {
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7668eef9f37da704bfcab9221476e56ff3ed4bd.002.1",
+        "event": "Coastal Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "effective": "2026-11-26T21:07:00-05:00",
+        "onset": "2026-11-26T21:07:00-05:00",
+        "expires": "2026-11-27T09:15:00-05:00",
+        "ends": "2026-11-27T15:00:00-05:00",
+        "headline": "Coastal Flood Warning issued November 26 at 9:07PM EST until November 27 at 3:00PM EST by NWS Newport/Morehead City NC",
+        "description": "* WHAT...For the Coastal Flood Warning, 2 to 4 feet of\ninundation above ground level expected in low-lying areas near\nshorelines and tidal waterways. For the High Surf Advisory,\nlarge breaking waves of 6 to 12 feet expected in the surf zone.\n\n* WHERE...Ocracoke Island and Hatteras Island.\n\n* WHEN...For the Coastal Flood Warning, until 3 PM EST Friday.\nFor the High Surf Advisory, until 10 AM EST Friday.\n\n* IMPACTS...2 to 4 feet of inundation above ground level is\npossible in some areas near shorelines and tidal waterways\nresulting in an elevated threat of property damage. Flooding\nwill extend inland from the waterfront threatening some homes\nand businesses. Numerous road closures and flooding of\nvehicles will be possible. Vulnerable portions of NC-12 remain\nclosed. Dangerous swimming and surfing conditions and\nlocalized beach erosion.\n\n* ADDITIONAL DETAILS...Increasing SW winds this afternoon into\nFriday will result in minor water level rises (around 1-2 ft\nabove ground level) for soundside locations.",
         "instruction": "Take the necessary actions to protect flood-prone property. If\ntravel is required, do not drive around barricades or through\nwater of unknown depth.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.",
         "sender_name": "NWS Newport/Morehead City NC"
       },
@@ -1986,8 +1986,8 @@
       "start": "2026-11-26",
       "end": "2026-12-02"
     },
-    "generated_at_utc": "2026-11-26T15:21:35+00:00",
-    "generated_at_local": "2026-11-26T10:21:35-05:00",
+    "generated_at_utc": "2026-11-27T02:52:26+00:00",
+    "generated_at_local": "2026-11-26T21:52:26-05:00",
     "hilo": [
       {
         "t": "2026-11-26 01:33",
