@@ -2,71 +2,35 @@
   "schema_version": 1,
   "location": "corolla",
   "timezone": "America/New_York",
-  "generated_at_utc": "2026-11-27T23:34:52+00:00",
+  "generated_at_utc": "2026-11-28T02:44:52+00:00",
   "providers": {
     "alerts": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T23:34:52+00:00"
+      "fetched_at_utc": "2026-11-28T02:44:52+00:00"
     },
     "forecast": {
       "source": "NWS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T23:34:52+00:00"
+      "fetched_at_utc": "2026-11-28T02:44:52+00:00"
     },
     "marine": {
       "source": "NWS forecastGridData",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T23:34:52+00:00"
+      "fetched_at_utc": "2026-11-28T02:44:52+00:00"
     },
     "tide": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "ok",
-      "fetched_at_utc": "2026-11-27T15:09:22+00:00"
+      "fetched_at_utc": "2026-11-28T02:43:36+00:00"
     },
     "water_temperature": {
       "source": "NOAA/NOS/CO-OPS",
       "status": "unavailable",
-      "fetched_at_utc": "2026-11-27T23:34:52+00:00"
+      "fetched_at_utc": "2026-11-28T02:44:52+00:00"
     }
   },
   "hourly": [
-    {
-      "time": "2026-11-27T18:00:00-05:00",
-      "wind_mph": 23.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-11-27T19:00:00-05:00",
-      "wind_mph": 22.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 0.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
-    {
-      "time": "2026-11-27T20:00:00-05:00",
-      "wind_mph": 22.0,
-      "gust_mph": 34.523,
-      "wind_direction_deg": 225.0,
-      "precip_probability_pct": 1.0,
-      "air_temperature_f": 50.0,
-      "wave_height_ft": 5.0,
-      "wave_period_s": 11.0,
-      "water_temperature_f": null,
-      "condition_text": "Partly Cloudy"
-    },
     {
       "time": "2026-11-27T21:00:00-05:00",
       "wind_mph": 23.0,
@@ -1902,23 +1866,59 @@
       "wave_period_s": null,
       "water_temperature_f": null,
       "condition_text": "Partly Cloudy"
+    },
+    {
+      "time": "2026-12-04T06:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 10.357,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 5.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Mostly Sunny"
+    },
+    {
+      "time": "2026-12-04T07:00:00-05:00",
+      "wind_mph": 6.0,
+      "gust_mph": 11.508,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 58.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
+    },
+    {
+      "time": "2026-12-04T08:00:00-05:00",
+      "wind_mph": 7.0,
+      "gust_mph": 12.659,
+      "wind_direction_deg": 225.0,
+      "precip_probability_pct": 7.0,
+      "air_temperature_f": 59.0,
+      "wave_height_ft": 2.0,
+      "wave_period_s": null,
+      "water_temperature_f": null,
+      "condition_text": "Partly Sunny"
     }
   ],
   "alerts": {
     "status": "ok",
     "items": [
       {
-        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3c7fc721a6efc06e158d573fcb50cdf553093c02.004.1",
+        "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d3ab7990d7a4d75a60bb6ebc073959a1d17351fd.003.1",
         "event": "Coastal Flood Advisory",
         "severity": "Minor",
         "certainty": "Likely",
         "urgency": "Expected",
-        "effective": "2026-11-27T17:58:00-05:00",
-        "onset": "2026-11-27T17:58:00-05:00",
+        "effective": "2026-11-27T19:00:00-05:00",
+        "onset": "2026-11-27T19:00:00-05:00",
         "expires": "2026-11-27T22:00:00-05:00",
         "ends": "2026-11-27T22:00:00-05:00",
-        "headline": "Coastal Flood Advisory issued November 27 at 5:58PM EST until November 27 at 10:00PM EST by NWS Wakefield VA",
-        "description": "* WHAT...Up to 1 foot of inundation above ground level in low-\nlying areas near shorelines and tidal waterways.\n\n* WHERE...In North Carolina, Pasquotank, Camden, Western\nCurrituck and Eastern Currituck Counties. In Virginia,\nVirginia Beach.\n\n* WHEN...Until 10 PM EST this evening.\n\n* IMPACTS...Shallow flooding is expected in the most vulnerable\nlocations near the waterfront and shoreline resulting in a low\nthreat of property damage. Expect up to one foot of water above\nground level in low lying, vulnerable areas. Some roads and low\nlying property including parking lots, parks and lawns near the\nwaterfront will experience shallow flooding.",
+        "headline": "Coastal Flood Advisory issued November 27 at 7:00PM EST until November 27 at 10:00PM EST by NWS Wakefield VA",
+        "description": "* WHAT...Up to 1 foot of inundation above ground level in low-\nlying areas near shorelines and tidal waterways.\n\n* WHERE...In North Carolina, Pasquotank, Camden, Western\nCurrituck and Eastern Currituck Counties. In Virginia,\nVirginia Beach.\n\n* WHEN...Until 10 PM EST this evening.\n\n* IMPACTS...Shallow flooding is expected in the most vulnerable\nlocations near the waterfront and shoreline resulting in a low\nthreat of property damage. Expect up to one foot of water\nabove ground level in low lying, vulnerable areas. Some roads\nand low lying property including parking lots, parks and lawns\nnear the waterfront will experience shallow flooding.",
         "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
         "sender_name": "NWS Wakefield VA"
       },
@@ -1986,8 +1986,8 @@
       "start": "2026-11-27",
       "end": "2026-12-03"
     },
-    "generated_at_utc": "2026-11-27T15:09:22+00:00",
-    "generated_at_local": "2026-11-27T10:09:21-05:00",
+    "generated_at_utc": "2026-11-28T02:43:36+00:00",
+    "generated_at_local": "2026-11-27T21:43:36-05:00",
     "hilo": [
       {
         "t": "2026-11-27 02:32",
